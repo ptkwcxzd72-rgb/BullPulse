@@ -77,6 +77,13 @@ def d_(s: str) -> dt.date:
         return dt.date.min
 
 
+DEADLINE = float("inf")   # set from --budget-min: news gathering stops here so the nightly job finishes in time
+
+
+def out_of_time() -> bool:
+    return time.time() > DEADLINE
+
+
 def get_json(url: str, headers: dict | None = None, tries: int = 3):
     for attempt in range(tries):
         try:
@@ -119,6 +126,9 @@ def finnhub_news(stocks: list[dict], key: str, since: dt.date) -> list[dict]:
     out = []
     today = dt.date.today()
     for s in stocks:
+        if out_of_time():
+            print("::warning::News time budget reached during Finnhub; remaining US companies skipped tonight")
+            break
         sym = s["ticker"].replace(".", "")
         url = (f"https://finnhub.io/api/v1/company-news?symbol={urllib.parse.quote(sym)}"
                f"&from={since}&to={today}&token={key}")
@@ -139,13 +149,16 @@ def finnhub_news(stocks: list[dict], key: str, since: dt.date) -> list[dict]:
 def gdelt_news(stocks: list[dict], days: int, pause: float) -> list[dict]:
     out = []
     for k, s in enumerate(stocks):
+        if out_of_time():
+            print(f"::warning::News time budget reached; GDELT covered {k} of {len(stocks)} companies tonight")
+            break
         name = clean_name(s["name"])
         if len(name) < 4:  # very short names (e.g. "3i", "BP") need the full legal name to avoid noise
             name = s["name"]
         q = f'"{name}" (shares OR stock OR profit OR results OR investors) sourcelang:english'
         url = ("https://api.gdeltproject.org/api/v2/doc/doc?" + urllib.parse.urlencode(
             {"query": q, "mode": "ArtList", "format": "json", "maxrecords": 50, "timespan": f"{days}d", "sort": "DateDesc"}))
-        data = get_json(url) or {}
+        data = get_json(url, tries=2) or {}
         for a in data.get("articles", []):
             title = (a.get("title") or "").strip()
             seen = a.get("seendate", "")
@@ -169,7 +182,10 @@ def main() -> None:
     ap.add_argument("--gdelt-pause", type=float, default=5.0)
     ap.add_argument("--max-gdelt", type=int, default=0, help="limit GDELT queries (0 = all)")
     ap.add_argument("--prices", default="data/prices", help="only fetch news for stocks with a price file here ('' = all)")
+    ap.add_argument("--budget-min", type=float, default=20, help="stop fetching after this many minutes")
     args = ap.parse_args()
+    global DEADLINE
+    DEADLINE = time.time() + args.budget_min * 60
 
     stocks = load_universe(args.universe)
     if args.prices:

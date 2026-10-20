@@ -124,7 +124,7 @@ def main():
     ap.add_argument("--prices", default="data/prices", help="only stocks with a price file ('' for all)")
     ap.add_argument("--days", type=int, default=120, help="look-back for Form 4 filings")
     ap.add_argument("--pause", type=float, default=0.12)
-    ap.add_argument("--budget-min", type=float, default=12, help="stop reading new filings after this many minutes")
+    ap.add_argument("--budget-min", type=float, default=10, help="stop reading new filings after this many minutes")
     args = ap.parse_args()
     t0 = time.time()
     if not contact():

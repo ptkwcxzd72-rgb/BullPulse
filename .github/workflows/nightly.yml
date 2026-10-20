@@ -28,7 +28,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 355
+    timeout-minutes: 360
     environment:
       name: github-pages
     env:
@@ -65,6 +65,9 @@ jobs:
       - name: Sync end-of-day prices (cinar/indicator indicator-sync + Tiingo)
         if: ${{ !inputs.skip_us_prices }}
         run: scripts/sync_prices.sh
+        # whatever has been downloaded by then is kept and ranked, so the night's work is never lost
+        timeout-minutes: 268
+        continue-on-error: true
 
       - name: UK end-of-day prices (FTSE 100) and GBP exchange rates
         run: python scripts/sync_uk_prices.py
@@ -84,9 +87,13 @@ jobs:
 
       - name: Fetch news (Tiingo or Finnhub for US if available, GDELT otherwise)
         run: python scripts/fetch_news.py --days "${{ github.event.inputs.news_days || '2' }}"
+        timeout-minutes: 25
+        continue-on-error: true
 
       - name: Score headlines with FinBERT
         run: python scripts/score_news.py
+        timeout-minutes: 25
+        continue-on-error: true
 
       - name: Rank stocks (with data-quality checks and score history)
         run: go run ./cmd/screener

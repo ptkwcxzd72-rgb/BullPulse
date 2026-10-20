@@ -79,7 +79,7 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 
 ### Data limits to know about
 
-- **Tiingo free tier.** It allows about 50 requests an hour, 1,000 a day and 500 unique symbols a month. The nightly job therefore syncs 220 US stocks, about 4.6 hours at 75 seconds per request, to stay inside GitHub's 6-hour job limit. For the full S&P 500, use Tiingo's paid tier and set `TIINGO_TIER=power`.
+- **Tiingo free tier.** It allows about 50 requests an hour, 1,000 a day and 500 unique symbols a month. The nightly job therefore syncs 210 US stocks, about 4.4 hours at 75 seconds per request, to stay inside GitHub's 6-hour job limit. For the full S&P 500, use Tiingo's paid tier and set `TIINGO_TIER=power`.
 - **UK prices.** UK prices come from Yahoo Finance's public chart endpoint. It needs no key but is not an official API and could change or stop without notice; the script keeps each stock's previous file whenever a download looks wrong, and a failure never stops the US run. A paid source (for example EODHD) can replace it by writing the same CSV files.
 - **UK fundamentals.** UK reports are annual (half-year results are not filed in iXBRL), so UK growth is year on year. Debt uses the IFRS borrowing tags; companies that tag debt with their own extensions show "–" for those checks.
 - **Survivorship bias.** The universe uses today's index members, so backtests leave out companies that were later removed from the index. Validation results are flattered by this.

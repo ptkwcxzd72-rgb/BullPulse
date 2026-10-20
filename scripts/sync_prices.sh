@@ -17,7 +17,7 @@ fi
 if [[ "$TIER" == "power" ]]; then
   MAX="${MAX_TICKERS:-10000}"; DELAY=1
 else
-  MAX="${MAX_TICKERS:-220}"; DELAY=75   # 48 requests an hour; 220 tickers take about 4.6 hours
+  MAX="${MAX_TICKERS:-210}"; DELAY=75   # 48 requests an hour; 210 tickers take about 4.4 hours
 fi
 
 # provider tickers from every universe file (by header name), skipping blanks, capped at MAX
