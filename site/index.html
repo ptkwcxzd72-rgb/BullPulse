@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="BullPulse: UK &amp; US stock screener">
+<meta property="og:description" content="Nightly ranking of trend, momentum, news sentiment and revenue growth. Free, open source, not investment advice.">
+<meta property="og:image" content="https://ptkwcxzd72-rgb.github.io/BullPulse/og.png">
+<meta property="og:url" content="https://ptkwcxzd72-rgb.github.io/BullPulse/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="description" content="BullPulse: an end-of-day UK and US stock screener ranking trend, momentum and news sentiment. A research tool, not investment advice.">
 <title>BullPulse</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -36,6 +43,7 @@
   --up:#41c286; --up-soft:#12301f; --down:#f06b6b; --down-soft:#3a1b1b; --warn:#e9a440; --warn-soft:#382912;
   --ft:#3dbcab; --fm:#a68cf2; --fs:#eba648; --band-sma:#6d7891; color-scheme:dark}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--f-body)}
 .in{max-width:1440px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
@@ -84,7 +92,7 @@ main.in{padding-block:20px 48px;display:grid;gap:20px}
 .wtl span{color:var(--muted)}
 
 /* work area */
-.work{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:20px;align-items:start}
+.work{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;min-width:0}
 .ch{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px;padding:12px 16px;border-bottom:1px solid var(--line)}
 .ch h2{margin:0;font-family:var(--f-display);font-weight:600;font-size:17px}
@@ -94,13 +102,13 @@ main.in{padding-block:20px 48px;display:grid;gap:20px}
 .filters label{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted)}
 .filters input[type=range]{width:90px;accent-color:var(--accent)}
 .tw{overflow-x:auto}
-table{width:100%;border-collapse:collapse;min-width:640px;font-size:13px}
+table{width:100%;border-collapse:collapse;min-width:600px;font-size:13px}
 th{position:sticky;top:0;background:var(--surface);text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 th[data-k]{cursor:pointer;user-select:none}
 th[data-k]:hover{color:var(--ink)}
 th .ar{opacity:.8;margin-left:3px}
 th.r,td.r{text-align:right}
-td{padding:8px 10px;border-bottom:1px solid var(--grid);vertical-align:middle}
+td{padding:8px 8px;border-bottom:1px solid var(--grid);vertical-align:middle}
 tbody tr{cursor:pointer}
 tbody tr:hover td{background:var(--surface-2)}
 tbody tr.sel td{background:var(--accent-soft)}
@@ -200,6 +208,31 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .earlynote{padding:10px 16px;font-size:12.5px;color:var(--muted);border-bottom:1px solid var(--line);background:var(--surface-2)}
 .earlynote b{color:var(--ink)}
 
+/* overview: sector heatmap + rank movers */
+.ov{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:20px}
+.heat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;padding:14px 16px}
+.hc{border:0;border-radius:8px;padding:10px 12px;text-align:left;cursor:pointer;display:grid;gap:2px;color:var(--ink);background:color-mix(in srgb,var(--accent) calc(var(--h) * 1%),var(--surface-2))}
+.hc[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:-2px}
+.hc b{font-size:12.5px;font-weight:600;line-height:1.25}
+.hc .v{font-family:var(--f-mono);font-size:18px}
+.hc small{font-size:11px;color:var(--ink);opacity:.75}
+.mv{padding:6px 16px 14px;display:grid;gap:12px}
+.mv h3{margin:6px 0 2px;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.mv button{display:flex;justify-content:space-between;gap:10px;width:100%;border:0;background:transparent;padding:5px 6px;border-radius:6px;cursor:pointer;font-size:13px;text-align:left;color:var(--ink)}
+.mv button:hover{background:var(--surface-2)}
+.mv .num{white-space:nowrap}
+/* watchlist star */
+.star{border:0;background:transparent;cursor:pointer;color:var(--muted);font-size:15px;line-height:1;padding:2px 4px;border-radius:4px}
+.star[aria-pressed="true"]{color:var(--fs)}
+.star:hover{background:var(--surface-2)}
+.grow{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--fm);background:color-mix(in srgb,var(--fm) 16%,transparent);border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px}
+.hist{grid-column:1 / -1;display:grid;gap:4px}
+.hist svg{display:block;width:100%;height:56px}
+.qnote{margin:0 16px 12px;padding:8px 12px;border-radius:6px;font-size:12.5px;background:var(--warn-soft);color:var(--warn)}
+.gpanel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:8px;overflow:hidden}
+.gpanel div{background:var(--surface);padding:10px 12px;display:grid;gap:2px}
+.gpanel .v{font-family:var(--f-mono);font-size:15px}
+
 /* track */
 .track .tw table{min-width:560px}
 .mk .nodata{color:var(--muted);font-size:13px}
@@ -212,8 +245,8 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .method code{font-family:var(--f-mono);font-size:12px;background:var(--surface-2);padding:0 4px;border-radius:3px;color:var(--ink)}
 .disc{font-size:12px;color:var(--muted);max-width:120ch;margin:0}
 
-@media (max-width:1180px){.work{grid-template-columns:minmax(0,1fr)}.dos{position:static}.breadth{grid-template-columns:repeat(2,minmax(0,1fr))}.breadth .wtcard{grid-column:1 / -1}}
-@media (max-width:760px){.og,.pc{grid-template-columns:1fr}.breadth{grid-template-columns:1fr}.method{grid-template-columns:1fr}.risk{grid-template-columns:repeat(2,minmax(0,1fr))}.mstats{grid-template-columns:repeat(2,minmax(0,1fr))}.asof{text-align:left}.score{grid-template-columns:1fr;justify-items:start}#c-price{height:240px}.filters input[type=search]{width:120px}}
+@media (max-width:1180px){.ov{grid-template-columns:minmax(0,1fr)}.work{grid-template-columns:minmax(0,1fr)}.dos{position:static}.breadth{grid-template-columns:repeat(2,minmax(0,1fr))}.breadth .wtcard{grid-column:1 / -1}}
+@media (max-width:760px){.gpanel{grid-template-columns:repeat(2,minmax(0,1fr))}.og,.pc{grid-template-columns:1fr}.breadth{grid-template-columns:1fr}.method{grid-template-columns:1fr}.risk{grid-template-columns:repeat(2,minmax(0,1fr))}.mstats{grid-template-columns:repeat(2,minmax(0,1fr))}.asof{text-align:left}.score{grid-template-columns:1fr;justify-items:start}#c-price{height:240px}.filters input[type=search]{width:120px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -260,10 +293,21 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
     </article>
   </section>
 
+  <section class="ov" aria-label="Sectors and movers">
+    <div class="card">
+      <div class="ch"><h2>Sectors</h2><span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Average score in the selected market · select a sector to filter</span></div>
+      <div class="heat" id="heat"></div>
+    </div>
+    <div class="card">
+      <div class="ch"><h2>Rank movers this week</h2></div>
+      <div class="mv" id="movers"></div>
+    </div>
+  </section>
+
   <section class="work">
     <div class="card">
       <div class="ch">
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><h2 id="t-title">Ranked universe</h2><div class="vseg" role="group" aria-label="View"><button id="v-all" data-v="all" aria-pressed="true">All stocks</button><button id="v-early" data-v="early" aria-pressed="false">Early trend changes</button></div></div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><h2 id="t-title">Ranked universe</h2><div class="vseg" role="group" aria-label="View"><button id="v-all" data-v="all" aria-pressed="true">All stocks</button><button id="v-early" data-v="early" aria-pressed="false">Early trend changes</button><button id="v-grow" data-v="grow" aria-pressed="false">Growing &amp; turning up</button><button id="v-watch" data-v="watch" aria-pressed="false">★ Watchlist</button></div></div>
         <div class="filters">
           <input type="search" id="q" placeholder="Search" aria-label="Search name or ticker">
           <select id="sector" aria-label="Sector"><option value="">All sectors</option></select>
@@ -271,14 +315,17 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
         </div>
       </div>
       <div class="earlynote" id="earlynote" hidden><b>Early trend changes</b> are stocks whose long-term trend turned up recently (a golden cross within 60 days, or a move back above the 200-day average within 40 days), with momentum holding up, news tone improving and RSI below 70. Many early turns fail. These are candidates for closer research, not predictions of fast growth.</div>
+      <div class="earlynote" id="grownote" hidden><b>Growing &amp; turning up</b> are US companies whose latest reported revenue grew 15% or more year on year, with growth holding or speeding up (from SEC filings), and whose long-term price trend is up or has just turned up. Revenue growth is backward-looking and often already priced in. This is a research screen, not a forecast.</div>
+      <div class="earlynote" id="watchnote" hidden><b>Your watchlist</b> is saved in this browser only. Use the ☆ next to any company to add or remove it.</div>
       <div class="tw">
         <table>
           <thead><tr>
+            <th aria-label="Watchlist"></th>
             <th data-k="rank" class="r">#</th>
             <th data-k="name">Company</th>
             <th data-k="score">Score</th>
-            <th data-k="tr_raw">Trend</th>
             <th data-k="ret1y" class="r">1 year</th>
+            <th data-k="revGrowth" class="r">Revenue growth</th>
             <th data-k="tone30" class="r">News tone</th>
             <th data-k="rankChg" class="r">Week</th>
           </tr></thead>
@@ -292,7 +339,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
       <div class="dh">
         <div class="top">
           <div style="display:grid;gap:6px;min-width:0">
-            <h2 id="d-name">—</h2>
+            <h2 style="display:flex;align-items:center;gap:6px"><span id="d-name">—</span><button class="star" id="d-star" aria-pressed="false" aria-label="Add to watchlist">☆</button></h2>
             <div class="meta" id="d-meta"></div>
           </div>
           <div class="px" id="d-px">—</div>
@@ -309,7 +356,12 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
         <div class="pane"><div class="tag">RSI 14 <b id="t-rsi"></b></div><div id="c-rsi"></div></div>
         <div class="pane"><div class="tag">Volume · OBV</div><div id="c-vol"></div></div>
       </div>
+      <p class="qnote" id="d-qual" hidden></p>
       <div class="risk" id="d-risk"></div>
+      <section class="outl" aria-label="Growth" id="d-growsec">
+        <h3>Growth <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400" id="d-gsrc"></span></h3>
+        <div class="gpanel" id="d-growth"></div>
+      </section>
       <section class="outl" aria-label="Upside and downside">
         <h3>Upside and downside range <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">from 1-year realised volatility</span></h3>
         <div class="og">
@@ -394,6 +446,16 @@ nInMkt = { LSE: D.stocks.filter(s => s.ex === "LSE").length, US: D.stocks.filter
 breadthCard("LSE"); breadthCard("US");
 
 // Filters and table
+// watchlist, saved in this browser only
+let watch = new Set();
+try { watch = new Set(JSON.parse(localStorage.getItem("bp-watch") || "[]")); } catch (e) {}
+function toggleWatch(id){
+  watch.has(id) ? watch.delete(id) : watch.add(id);
+  try { localStorage.setItem("bp-watch", JSON.stringify([...watch])); } catch (e) {}
+  render();
+  if (state.sel) { const on = watch.has(state.sel.id); $("d-star").setAttribute("aria-pressed", on); $("d-star").textContent = on ? "★" : "☆"; }
+}
+const pctOrDash = v => v == null ? '<span class="flat">–</span>' : `<span class="${cls(v)}">${pct(v, 0)}</span>`;
 const state = { view: "all", mkt: "ALL", q: "", sector: "", min: 0, sortK: "score", dir: -1, sel: null };
 [...new Set(D.stocks.map(s => s.sector))].sort().forEach(s => $("sector").insertAdjacentHTML("beforeend", `<option>${s}</option>`));
 document.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
@@ -403,7 +465,7 @@ document.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
 });
 document.querySelectorAll(".vseg button").forEach(b => b.onclick = () => {
   state.view = b.dataset.v; document.querySelectorAll(".vseg button").forEach(x => x.setAttribute("aria-pressed", x === b));
-  $("earlynote").hidden = state.view !== "early"; render();
+  $("earlynote").hidden = state.view !== "early"; $("grownote").hidden = state.view !== "grow"; $("watchnote").hidden = state.view !== "watch"; render();
   const vis = visible(); if (vis.length && !vis.includes(state.sel)) select(vis[0]);
 });
 $("q").oninput = e => { state.q = e.target.value.trim().toLowerCase(); render(); };
@@ -414,9 +476,10 @@ document.querySelectorAll("th[data-k]").forEach(th => th.onclick = () => {
 });
 
 function visible(){
-  return D.stocks.filter(s => (state.view === "all" || s.early) && (state.mkt === "ALL" || s.ex === state.mkt) && (!state.sector || s.sector === state.sector) && s.score >= state.min &&
+  const inView = s => state.view === "all" || (state.view === "early" && s.early) || (state.view === "grow" && s.grower) || (state.view === "watch" && watch.has(s.id));
+  return D.stocks.filter(s => inView(s) && (state.mkt === "ALL" || s.ex === state.mkt) && (!state.sector || s.sector === state.sector) && s.score >= state.min &&
     (!state.q || s.name.toLowerCase().includes(state.q) || s.t.toLowerCase().includes(state.q)))
-   .sort((a, b) => { const x = a[state.sortK], y = b[state.sortK]; return (typeof x === "string" ? x.localeCompare(y) : (x - y)) * state.dir || b.score - a.score; });
+   .sort((a, b) => { const x = a[state.sortK], y = b[state.sortK]; if (x == null || y == null) return (x == null) - (y == null); return (typeof x === "string" ? x.localeCompare(y) : (x - y)) * state.dir || b.score - a.score; });
 }
 function spark(s){
   const v = s.spark.slice(-53), w = 56, h = 22, lo = Math.min(...v), hi = Math.max(...v);
@@ -425,24 +488,48 @@ function spark(s){
   const col = s.ret1y >= 0 ? "var(--up)" : "var(--down)";
   return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="${d}" fill="none" stroke="${col}" stroke-width="1.4" stroke-linejoin="round"/><circle cx="${X(v.length - 1)}" cy="${Y(v[v.length - 1])}" r="2" fill="${col}"/></svg>`;
 }
+function overview(){
+  const base = D.stocks.filter(s => state.mkt === "ALL" || s.ex === state.mkt);
+  const by = {};
+  base.forEach(s => (by[s.sector] = by[s.sector] || []).push(s));
+  const sectors = Object.entries(by).map(([k, v]) => [k, v.reduce((a, s) => a + s.score, 0) / v.length, v.length]).sort((a, b) => b[1] - a[1]);
+  $("heat").innerHTML = sectors.map(([k, avg, n]) => `<button class="hc" data-sec="${k}" aria-pressed="${state.sector === k}" style="--h:${Math.round(Math.max(0, Math.min(1, (avg - 20) / 60)) * 70)}"><b>${k}</b><span class="v">${avg.toFixed(0)}</span><small>${n} stock${n > 1 ? "s" : ""}</small></button>`).join("");
+  document.querySelectorAll(".hc").forEach(b => b.onclick = () => { state.sector = state.sector === b.dataset.sec ? "" : b.dataset.sec; $("sector").value = state.sector; render(); });
+  const moved = base.filter(s => s.rankChg);
+  const item = s => `<button data-go="${s.id}"><span>${s.name} <span class="lbl" style="text-transform:none;letter-spacing:0">${MKT[s.ex]} · #${s.rank}</span></span><span class="num ${s.rankChg > 0 ? "pos" : "neg"}">${s.rankChg > 0 ? "▲" : "▼"}${Math.abs(s.rankChg)}</span></button>`;
+  const up = [...moved].sort((a, b) => b.rankChg - a.rankChg).filter(s => s.rankChg > 0).slice(0, 5);
+  const dn = [...moved].sort((a, b) => a.rankChg - b.rankChg).filter(s => s.rankChg < 0).slice(0, 5);
+  $("movers").innerHTML = moved.length ? `<div><h3>Rising</h3>${up.map(item).join("") || '<p class="note" style="margin:0">None</p>'}</div><div><h3>Falling</h3>${dn.map(item).join("") || '<p class="note" style="margin:0">None</p>'}</div>` : '<p class="note" style="margin:8px 0">Rank changes appear after the second nightly run.</p>';
+  document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => { const s = D.stocks.find(x => x.id === b.dataset.go); select(s); if (matchMedia("(max-width: 1180px)").matches) $("dos").scrollIntoView({ block: "start" }); });
+}
+function histChart(pts){
+  if (!pts || pts.length < 2) return `<span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Score history builds up from the first nightly run (${pts && pts.length ? "1 day so far" : "none yet"}).</span>`;
+  const w = 600, h = 56, X = i => i / (pts.length - 1) * (w - 8) + 4, Y = v => h - 6 - v / 100 * (h - 12);
+  const d = pts.map((p, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p[1]).toFixed(1)).join("");
+  const last = pts[pts.length - 1];
+  return `<span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Score over the last ${pts.length} trading days (${shortDate(pts[0][0])} – ${shortDate(last[0])})</span>
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Score history"><line x1="0" x2="${w}" y1="${Y(50)}" y2="${Y(50)}" stroke="var(--line)" stroke-dasharray="3 3"/><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="${X(pts.length - 1)}" cy="${Y(last[1])}" r="3" fill="var(--accent)"/></svg>`;
+}
 function render(){
   const rows = visible();
   $("t-title").textContent = state.mkt === "ALL" ? "Ranked universe" : (state.mkt === "LSE" ? "UK ranking" : "US ranking");
   document.querySelectorAll("th[data-k]").forEach(th => { th.querySelector(".ar")?.remove(); if (th.dataset.k === state.sortK) th.insertAdjacentHTML("beforeend", `<span class="ar">${state.dir < 0 ? "↓" : "↑"}</span>`); th.setAttribute("aria-sort", th.dataset.k === state.sortK ? (state.dir < 0 ? "descending" : "ascending") : "none"); });
   $("tb").innerHTML = rows.map(s => {
-    const [tc, tl] = trendState(s);
     const rc = s.rankChg ? `<span class="${s.rankChg > 0 ? "pos" : "neg"}">${s.rankChg > 0 ? "▲" : "▼"}${Math.abs(s.rankChg)}</span>` : `<span class="flat">–</span>`;
     return `<tr data-id="${s.id}" tabindex="0" class="${s === state.sel ? "sel" : ""}">
+      <td><button class="star" data-w="${s.id}" aria-pressed="${watch.has(s.id)}" aria-label="${watch.has(s.id) ? "Remove from" : "Add to"} watchlist">${watch.has(s.id) ? "★" : "☆"}</button></td>
       <td class="r rk">${s.rank}</td>
-      <td><div class="co"><b>${s.name}${s.early ? '<span class="early" title="Early trend change">EARLY</span>' : ""}</b><small><span class="mkt ${s.ex}">${MKT[s.ex]}</span><span class="num">${s.t}</span><span>${s.sector}</span></small></div></td>
+      <td><div class="co"><b>${s.name}${s.early ? '<span class="early" title="Early trend change">EARLY</span>' : ""}${s.grower ? '<span class="grow" title="Revenue growing 15%+ with the trend up">GROWTH</span>' : ""}${(s.flags || []).length ? '<span class="flag" title="Data check: see stock page">DATA</span>' : ""}</b><small><span class="mkt ${s.ex}">${MKT[s.ex]}</span><span class="num">${s.t}</span><span>${s.sector}</span></small></div></td>
       <td><div class="sc"><span class="n">${s.score}</span><span class="stack" title="Trend ${s.T} · Momentum ${s.M} · Sentiment ${s.S}"><span style="width:${s.T * .4}%;background:var(--ft)"></span><span style="width:${s.M * .4}%;background:var(--fm)"></span><span style="width:${s.S * .2}%;background:var(--fs)"></span></span></div></td>
-      <td><span class="st ${tc}">${tl}</span></td>
       <td class="r"><div class="spk">${spark(s)}<span class="num ${cls(s.ret1y)}">${pct(s.ret1y, 0)}</span></div></td>
+      <td class="r num">${pctOrDash(s.revGrowth)}</td>
       <td class="r num"><span class="${cls(s.tone30)}">${sign(s.tone30, 2, "")}</span>${s.event ? '<span class="flag" title="Unusual burst of news in the last week">NEWS</span>' : ""}</td>
       <td class="r num">${rc}</td></tr>`;
   }).join("");
   $("empty").hidden = rows.length > 0;
-  $("empty").textContent = state.view === "early" ? "No early trend changes match these filters." : "No stocks match these filters. Lower the minimum score or clear the search.";
+  document.querySelectorAll("#tb .star").forEach(b => b.onclick = e => { e.stopPropagation(); toggleWatch(b.dataset.w); });
+  overview();
+  $("empty").textContent = state.view === "watch" ? "Your watchlist is empty. Use the ☆ next to a company to add it." : state.view === "grow" ? "No companies currently meet the growth screen with these filters." : state.view === "early" ? "No early trend changes match these filters." : "No stocks match these filters. Lower the minimum score or clear the search.";
   document.querySelectorAll("#tb tr").forEach(tr => {
     const go = () => { select(D.stocks.find(s => s.id === tr.dataset.id)); if (matchMedia("(max-width: 1180px)").matches) $("dos").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); };
     tr.onclick = go; tr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } };
@@ -511,7 +598,7 @@ function focusDate(d){
 const ser = (arr, T) => arr.map((v, i) => v == null ? { time: T[i] } : { time: T[i], value: v });
 function setMarkers(s){
   if (!showMarkers) { candles.setMarkers([]); return; }
-  const strong = D.series[s.id].arts.filter(a => Math.abs(a.s) >= .5 && cur.idx[a.d] != null).sort((a, b) => a.d < b.d ? -1 : 1);
+  const strong = (D.series[s.id].arts || []).filter(a => Math.abs(a.s) >= .5 && cur.idx[a.d] != null).sort((a, b) => a.d < b.d ? -1 : 1);
   const seen = new Set();
   candles.setMarkers(strong.filter(a => !seen.has(a.d) && seen.add(a.d)).map(a => ({ time: a.d, position: a.s > 0 ? "belowBar" : "aboveBar", color: a.s > 0 ? css("--up") : css("--down"), shape: "circle", size: .6 })));
 }
@@ -543,6 +630,9 @@ async function select(s){
   try { history.replaceState(null, "", "#" + s.id); } catch (e) {}
   // header
   $("d-name").textContent = s.name;
+  $("d-star").setAttribute("aria-pressed", watch.has(s.id)); $("d-star").textContent = watch.has(s.id) ? "★" : "☆";
+  $("d-star").onclick = () => toggleWatch(s.id);
+  const fl = s.flags || []; $("d-qual").hidden = !fl.length; $("d-qual").textContent = fl.length ? "Data check: " + fl.join("; ") + "." : "";
   $("d-meta").innerHTML = `<span class="mkt ${s.ex}">${MKT[s.ex]}</span><span class="num">${s.t}</span>·<span>${s.ex === "LSE" ? "London Stock Exchange" : "US listing"}</span>·<span>${s.sector}</span>`;
   $("d-px").innerHTML = `${price(s, s.price)}<small class="${cls(s.chg1d)}">${pct(s.chg1d, 2)} today · <span class="${cls(s.ret1y)}">${pct(s.ret1y)} 1y</span></small>`;
   // score
@@ -558,6 +648,17 @@ async function select(s){
   $("d-fac").innerHTML = `<div class="rkline" id="d-rk"></div>` + [["T", "Trend", "--ft"], ["M", "Momentum", "--fm"], ["S", "Sentiment", "--fs"]].map(([k, n, c]) =>
     `<div class="row"><span class="nm"><i style="background:var(${c})"></i>${n}</span><span class="bar"><span style="width:${s[k]}%;background:var(${c})"></span></span><span class="pv">${s[k]}</span><span class="why">${why[k]}</span></div>`).join("");
   $("d-rk").innerHTML = rkHtml;
+  $("d-fac").insertAdjacentHTML("beforeend", `<div class="hist">${histChart(X.hist)}</div>`);
+  // growth (SEC filings, US only)
+  const hasG = s.revGrowth != null;
+  $("d-growsec").hidden = s.ex !== "US";
+  $("d-gsrc").textContent = hasG ? `from SEC filings · ${s.fundBasis === "year" ? "fiscal year" : "quarter"} ending ${fmtDate(s.fundAsOf)}` : "no SEC revenue data for this company";
+  $("d-growth").innerHTML = hasG ? [
+    ["Revenue growth", pct(s.revGrowth, 1), "vs same period a year earlier"],
+    ["Acceleration", s.revAccel == null ? "–" : sign(s.revAccel * 100, 1, " pts"), s.revAccel == null ? "needs two quarters" : s.revAccel >= 0 ? "growth speeding up" : "growth slowing"],
+    ["EPS growth", s.epsGrowth == null ? "–" : pct(s.epsGrowth, 0), "diluted, year on year"],
+    ["Growth percentile", s.G == null ? "–" : String(s.G), "within US stocks shown"],
+  ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
   // series
   candles.setData(X.bars.map(b => ({ time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] })));
   s50.setData(ser(X.ind.sma50, T)); s200.setData(ser(X.ind.sma200, T)); bbU.setData(ser(X.ind.bbU, T)); bbL.setData(ser(X.ind.bbL, T));
@@ -604,13 +705,19 @@ async function select(s){
   if (s.price / s.hi52 - 1 <= -.25) con.push(`${Math.abs((s.price / s.hi52 - 1) * 100).toFixed(0)}% below its 52-week high`);
   if (s.event) con.push("Unusual burst of news in the past week: check what changed");
   if (s.early) pro.push("Early trend change: the uptrend is recent, so it is less established");
+  if (s.revGrowth != null) {
+    if (s.revGrowth >= 0.15) pro.push(`Revenue up ${pct(s.revGrowth, 0)} year on year${s.revAccel != null && s.revAccel > 0 ? ", and growth is speeding up" : ""}`);
+    else if (s.revGrowth < 0) con.push(`Revenue down ${pct(-s.revGrowth, 0).replace("+", "")} year on year`);
+    if (s.revAccel != null && s.revAccel < -0.05) con.push(`Revenue growth slowing by ${Math.abs(s.revAccel * 100).toFixed(0)} points`);
+  }
+  if (fl.length) con.push("Price data flagged by the data check: treat signals with caution");
   const li = xs => xs.length ? xs.map(x => `<li>${x}</li>`).join("") : `<li style="color:var(--muted)">Nothing notable</li>`;
   $("d-pro").innerHTML = li(pro); $("d-con").innerHTML = li(con);
   const st = s.score >= 70 ? ["strong", "Signals mostly positive"] : s.score >= 45 ? ["mixed", "Signals mixed"] : ["weak", "Signals mostly negative"];
   const sd = $("d-stance"); sd.className = "stance " + st[0]; sd.textContent = st[1];
   // news
-  const arts = X.arts.slice(0, 7);
-  $("d-ncount").textContent = `${X.arts.length} articles in 12 months`;
+  const arts = (X.arts || []).slice(0, 7);
+  $("d-ncount").textContent = `${(X.arts || []).length} articles in 12 months`;
   $("d-news").innerHTML = (arts.length ? "" : `<p class="note" style="margin:0">No scored articles in the last 12 months.</p>`) + arts.map(a => `<button class="art" data-d="${a.d}"><span class="d">${shortDate(a.d)}</span><span class="h">${a.h}</span><span class="lab ${a.lab}">${a.lab} ${Math.round(a.conf * 100)}%</span><span class="sub">${a.ev} · ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${a.src}</a>` : a.src} · relevance ${a.rel.toFixed(2)}</span></button>`).join("");
   document.querySelectorAll(".art").forEach(b => b.onclick = () => focusDate(b.dataset.d));
   document.querySelectorAll("#tb tr").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === s.id));

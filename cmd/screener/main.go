@@ -267,7 +267,7 @@ func main() {
 		}
 		sum, wsum := make([]float64, keep), make([]float64, keep)
 		cnt := make([]float64, keep)
-		var list []map[string]any
+		list := []map[string]any{}
 		sa := arts[id]
 		sort.Slice(sa, func(a, b int) bool { return sa[a].Date > sa[b].Date })
 		for _, a := range sa {
