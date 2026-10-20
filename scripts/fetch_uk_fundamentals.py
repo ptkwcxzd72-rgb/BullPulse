@@ -242,7 +242,7 @@ def main():
     ap.add_argument("--universe", default="universe/uk.csv")
     ap.add_argument("--max-age-days", type=int, default=7)
     ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--budget-min", type=float, default=25, help="stop after this many minutes; the rest continues next run")
+    ap.add_argument("--budget-min", type=float, default=15, help="stop after this many minutes; the rest continues next run")
     args = ap.parse_args()
     t0 = time.time()
 
