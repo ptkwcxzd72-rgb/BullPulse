@@ -185,7 +185,7 @@ const (
 	DefaultDiscount = 0.09
 	DefaultTerminal = 0.025
 	MaxGrowth       = 0.20
-	MinGrowth       = -0.05
+	MinGrowth       = 0.0 // the default never assumes shrinking cash flow; visitors can slide below zero
 )
 
 // Value is the equity value per share: five years at `growth`, five years fading linearly to

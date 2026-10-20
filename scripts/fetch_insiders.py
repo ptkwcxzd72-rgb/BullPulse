@@ -58,6 +58,17 @@ def _t(el, path: str) -> str:
     return (x.text or "").strip() if x is not None and x.text else ""
 
 
+ENTITY = {"inc", "llc", "lp", "l.p.", "trust", "fund", "corp", "corporation", "ltd", "partners", "holdings", "capital", "co", "plc", "group", "foundation"}
+
+
+def person_name(raw: str) -> str:
+    """SEC lists people as 'LAST FIRST MIDDLE'; show 'First Middle Last'. Entities are left as they are."""
+    parts = raw.replace(",", " ").split()
+    if len(parts) >= 2 and not ENTITY & {p.lower().strip(".") for p in parts} and not ENTITY & {p.lower() for p in parts}:
+        parts = parts[1:] + parts[:1]
+    return " ".join(p if p.isupper() and len(p) <= 3 and p.endswith(".") else p.title() for p in parts)
+
+
 def parse_form4(xml: bytes, issuer_cik: str) -> list[dict]:
     """Open-market purchases (P) and sales (S) of common stock in one Form 4."""
     try:
@@ -69,7 +80,7 @@ def parse_form4(xml: bytes, issuer_cik: str) -> list[dict]:
     owners = root.findall("reportingOwner")
     names, roles = [], []
     for o in owners:
-        names.append(_t(o, "reportingOwnerId/rptOwnerName").title())
+        names.append(person_name(_t(o, "reportingOwnerId/rptOwnerName")))
         rel = o.find("reportingOwnerRelationship")
         if rel is None:
             continue

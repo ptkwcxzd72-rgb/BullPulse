@@ -159,7 +159,9 @@ class Insiders(unittest.TestCase):
     def test_parse_purchase_only(self):
         tx = INS.parse_form4(FORM4, "320193")
         self.assertEqual(len(tx), 1)
-        self.assertEqual((tx[0]["code"], tx[0]["val"], tx[0]["who"], tx[0]["role"]), ("P", 20500, "Doe Jane", "Director"))
+        self.assertEqual((tx[0]["code"], tx[0]["val"], tx[0]["who"], tx[0]["role"]), ("P", 20500, "Jane Doe", "Director"))
+        self.assertEqual(INS.person_name("BERKSHIRE HATHAWAY INC"), "Berkshire Hathaway Inc")
+        self.assertEqual(INS.person_name("Buckley Mortimer J"), "Mortimer J Buckley")
         self.assertEqual(INS.parse_form4(FORM4, "999"), [])     # not this issuer
 
     def test_cluster(self):
