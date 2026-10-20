@@ -1,52 +1,90 @@
 name: Check setup
 
-# Quick check (under a minute) that the Tiingo keys reach the workflows and work.
-# Never prints the keys themselves.
+# SMOKE-TEST VARIANT (branch smoke-test only): US pipeline on 40 real companies with real SEC
+# data (fundamentals, Form 4 insiders, point-in-time history) and prices from a public chart
+# endpoint (no Tiingo calls, so the nightly job's hourly quota is untouched). Results are pushed
+# to the smoke-results branch for inspection. Never touches main.
 on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  check:
+  smoke:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     env:
-      EOD_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
-      NEWS_KEY: ${{ secrets.NEWS_UPDATES || secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
-      NEWS_SEPARATE: ${{ secrets.NEWS_UPDATES != '' }}
+      SEC_CONTACT_EMAIL: AdminContact@sample.com  # SEC documentation sample; test only
     steps:
-      - name: Are the secrets visible to the workflow?
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Sample of 40 and their prices
         run: |
-          if [[ -z "$EOD_KEY" ]]; then
-            echo "::error::No price key. Add an Actions secret named END_OF_DAY_DATA (Settings > Secrets and variables > Actions > Secrets)."
-            exit 1
-          fi
-          echo "::notice::Price key END_OF_DAY_DATA is visible (${#EOD_KEY} characters)."
-          if [[ "$NEWS_SEPARATE" == "true" ]]; then
-            echo "::notice::News key NEWS_UPDATES is visible (${#NEWS_KEY} characters)."
-          else
-            echo "::notice::No NEWS_UPDATES secret; news will use the price key."
-          fi
-
-      - name: Does Tiingo accept the keys?
+          mkdir -p /tmp/u data/prices
+          python3 - <<'PY'
+          import csv, json, time, urllib.request, datetime as dt
+          keep = "AAPL MSFT NVDA AMZN JPM XOM PFE KO TSLA NFLX CAT HD WMT INTC T PG MMM META GOOGL COST PEP MRK ABBV CVX ORCL CSCO MCD NKE DIS ADBE CRM TXN QCOM HON UNP LOW SBUX GS BA IBM".split()
+          rows = [r for r in csv.DictReader(open("universe/us.csv")) if r["ticker"] in keep]
+          with open("/tmp/u/us.csv", "w", newline="") as f:
+              w = csv.DictWriter(f, fieldnames=rows[0].keys(), lineterminator="\n"); w.writeheader(); w.writerows(rows)
+          ok = 0
+          for r in rows:
+              url = f"https://query1.finance.yahoo.com/v8/finance/chart/{r['ticker'].replace('.', '-')}?range=10y&interval=1d&includeAdjustedClose=true"
+              d = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})))["chart"]["result"][0]
+              q, adj = d["indicators"]["quote"][0], d["indicators"]["adjclose"][0]["adjclose"]
+              with open(f"data/prices/{r['provider_ticker']}.csv", "w") as f:
+                  f.write("Date,Open,High,Low,Close,Volume\n")
+                  for i, t in enumerate(d["timestamp"]):
+                      c = q["close"][i]
+                      if None in (c, q["open"][i], q["high"][i], q["low"][i], adj[i]): continue
+                      k = adj[i] / c
+                      f.write(f"{dt.datetime.utcfromtimestamp(t).date()},{q['open'][i]*k:.4f},{q['high'][i]*k:.4f},{q['low'][i]*k:.4f},{c*k:.4f},{int(q['volume'][i] or 0)}\n")
+              ok += 1; time.sleep(0.5)
+          print(f"::notice::Sample {len(rows)} companies, prices for {ok}")
+          PY
+      - name: Unit tests
+        run: go vet ./... && go test ./... && python -m unittest discover tests && echo "::notice::Unit tests pass"
+      - name: SEC fundamentals
+        run: python scripts/fetch_fundamentals.py --universe /tmp/u --max-age-days 0
+      - name: Form 4 insiders
+        run: python scripts/fetch_insiders.py --universe /tmp/u
+      - name: Point-in-time history
+        run: python scripts/fundamentals_history.py --universe /tmp/u
+      - name: Validate
         run: |
-          check () {
-            local label="$1" key="$2" url="$3"
-            key="$(echo -n "$key" | tr -d '[:space:]')"
-            code=$(curl -s -o /tmp/body -w "%{http_code}" -H "Content-Type: application/json" -H "Authorization: Token $key" "$url")
-            body="$(head -c 160 /tmp/body | tr -d '\n')"
-            case "$code" in
-              200) echo "::notice::OK - $label: HTTP 200 - ${body}" ;;
-              401|403) echo "::error::$label: HTTP $code - Tiingo rejected the key or the plan lacks access - ${body}"; return 1 ;;
-              429) echo "::warning::$label: HTTP 429 - hourly request limit reached; try again in an hour." ;;
-              *) echo "::warning::$label: HTTP $code - ${body}" ;;
-            esac
-          }
-          fail=0
-          check "Price key test" "$EOD_KEY" "https://api.tiingo.com/api/test" || fail=1
-          check "End-of-day prices (AAPL, last 10 days)" "$EOD_KEY" "https://api.tiingo.com/tiingo/daily/aapl/prices?startDate=$(date -u -d '10 days ago' +%F)" || fail=1
-          check "News (1 article)" "$NEWS_KEY" "https://api.tiingo.com/tiingo/news?tickers=aapl&limit=1" || echo "::warning::Tiingo news unavailable with this key; the nightly job will use GDELT for news instead."
-          exit $fail
+          go run ./cmd/validate -universe /tmp/u | tail -30
+          python3 - <<'PY'
+          import json
+          v = json.load(open("site/data/validation.json")); F = v.get("fundamentals") or {}
+          if not F: print("::warning::no fundamentals result"); raise SystemExit
+          print(f"::notice::PIT backtest: {F['stocks']} stocks, {F['from']} to {F['to']}, {F['profile']['months']} months, {F['profile']['observations']} observations")
+          for n, q in [("profile", F["profile"]), ("dcf", F["dcf_cheapness"]), ("implied", F["implied_growth_low"])]:
+              print(f"::notice::{n}: Q5-Q1 3m {q['q5_minus_q1'][1]*100:+.2f}% (t {q['q5_minus_q1_t'][1]:.2f}), months {q['months']}")
+          PY
+      - name: Rank (twice, to exercise alerts)
+        run: |
+          go run ./cmd/screener -universe /tmp/u -news /dev/null
+          go run ./cmd/screener -universe /tmp/u -news /dev/null
+          python3 - <<'PY'
+          import json, glob
+          s = json.load(open("site/data/snapshot.json"))["stocks"]
+          fp = [x for x in s if x.get("FP") is not None]
+          ins = [x["t"] for x in s if x.get("ins", {}).get("buyers")]
+          print(f"::notice::Ranked {len(s)}; profiles {len(fp)}; DCF {sum(1 for x in s if x.get('fairVs') is not None)}; insider buying at {ins}; feeds {len(glob.glob('site/feeds/*.xml'))}")
+          for x in sorted(fp, key=lambda x: x["t"])[:9]:
+              d = json.load(open(f"site/data/stocks/{x['id']}.json"))["fund"]["dcf"]
+              print(f"::notice::{x['t']}: price {x['price']:.0f}, profile {x['FP']}/30, DCF base {d.get('base') or 0:.0f} (implied growth {(d.get('implied') or 0)*100:.1f}%, net debt {(d.get('inputs') or {}).get('netDebt', 0)/1e9:.0f}bn) {d.get('skipped','')[:40]}")
+          PY
+      - name: Push results
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b smoke-results
+          git add -f site/data/snapshot.json site/data/stocks site/data/validation.json reports data/insiders.json data/fundamentals.json site/feeds
+          git commit -qm "smoke results"
+          git push -f origin smoke-results
