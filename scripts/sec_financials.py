@@ -27,6 +27,8 @@ LIAB_CUR = ["LiabilitiesCurrent"]
 DEBT_LT = ["LongTermDebtNoncurrent", "LongTermDebt"]
 DEBT_ST = ["LongTermDebtCurrent", "DebtCurrent", "ShortTermBorrowings"]
 SHARES = ["WeightedAverageNumberOfDilutedSharesOutstanding"]
+SBC = ["ShareBasedCompensation", "AllocatedShareBasedCompensationExpense"]
+TAX_RATE = 0.21   # US federal rate, used to put interest back on an after-tax basis
 
 
 def _d(s: str) -> dt.date:
@@ -146,9 +148,10 @@ def financials(facts: dict) -> dict:
 
     rev, ni, opi = durations(facts, REVENUE), durations(facts, NET_INCOME), durations(facts, OP_INCOME)
     ocf, capex, intr = durations(facts, OCF), durations(facts, CAPEX), durations(facts, INTEREST)
+    sbc = durations(facts, SBC)
     divp, dps, eps = durations(facts, DIV_PAID), durations(facts, DPS, "USD/shares"), durations(facts, EPS, "USD/shares")
     for name, p in (("revenue", rev), ("net_income", ni), ("op_income", opi), ("ocf", ocf), ("capex", capex),
-                    ("interest", intr), ("dividends_paid", divp)):
+                    ("interest", intr), ("dividends_paid", divp), ("sbc", sbc)):
         t = ttm(p)
         if t:
             put(name + "_ttm", t[1], 0)
@@ -158,6 +161,7 @@ def financials(facts: dict) -> dict:
     t = ttm(dps);  put("dps_ttm", t[1] if t else None)
 
     rev_y, ni_y, eps_y, ocf_y, capex_y, dps_y = (annual(x) for x in (rev, ni, eps, ocf, capex, dps))
+    sbc_y, int_y = annual(sbc), annual(intr)
     put("rev_cagr3", cagr(rev_y, 3))
     put("rev_cagr5", cagr(rev_y, 5))
     put("eps_5y_ago", back(eps_y, 5) if back(eps_y, 5) is not None else back(eps_y, 3))
@@ -178,6 +182,13 @@ def financials(facts: dict) -> dict:
     if fcf:
         put("fcf_avg3", sum(fcf) / len(fcf), 0)
         put("fcf_years", len(fcf))
+        # cash flow to the whole business (before interest), after share-based pay, for the DCF:
+        # operating cash flow - capex - share-based compensation + after-tax interest
+        fcff = [ocf_y[k] - capex_y.get(k, 0) - sbc_y.get(k, 0) + int_y.get(k, 0) * (1 - TAX_RATE) for k in both[-3:]]
+        put("fcff_avg3", sum(fcff) / len(fcff), 0)
+        sb = [sbc_y[k] for k in both[-3:] if k in sbc_y]
+        if sb:
+            put("sbc_avg3", sum(sb) / len(sb), 0)
 
     for name, concepts in (("equity", EQUITY), ("cash", CASH), ("assets_cur", ASSETS_CUR), ("liab_cur", LIAB_CUR)):
         x = latest(instants(facts, concepts))

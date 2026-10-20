@@ -66,6 +66,7 @@ class Financials(unittest.TestCase):
     def test_balance_and_cash_flow(self):
         f = SF.financials(self.facts())
         self.assertEqual(f["fcf_avg3"], 12)              # (10 + 12 + 14) / 3
+        self.assertEqual(f["fcff_avg3"], 12)             # no share-based pay or interest in this sample
         self.assertEqual(f["debt"], 30)
         self.assertEqual(f["equity"], 55)
         self.assertEqual(f["shares"], 10)
@@ -82,6 +83,14 @@ class Financials(unittest.TestCase):
         f = SF.financials(facts)
         self.assertEqual(f["fcf_avg3"], 20)              # fiscal years only
         self.assertEqual(f["ocf_ttm"], -50)              # the trailing twelve months still use the latest period
+
+    def test_fcff_subtracts_share_based_pay_and_adds_back_interest(self):
+        g = self.facts()["facts"]
+        g["us-gaap"]["ShareBasedCompensation"] = {"units": {"USD": [fact("2023-01-01", "2023-12-31", 3), fact("2024-01-01", "2024-12-31", 3), fact("2025-01-01", "2025-12-31", 3)]}}
+        g["us-gaap"]["InterestExpense"] = {"units": {"USD": [fact("2023-01-01", "2023-12-31", 1), fact("2024-01-01", "2024-12-31", 1), fact("2025-01-01", "2025-12-31", 1)]}}
+        f = SF.financials({"facts": g})
+        self.assertAlmostEqual(f["fcff_avg3"], 12 - 3 + 0.79, places=0)
+        self.assertEqual(f["sbc_avg3"], 3)
 
     def test_empty(self):
         self.assertEqual(SF.financials({"facts": {}}), {})

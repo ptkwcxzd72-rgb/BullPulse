@@ -542,7 +542,7 @@ func addFundamentals(rows []*Row, funds map[string]Fund) {
 			it.r.FairVs = it.d.VsPrice
 			it.r.detail["fund"] = map[string]any{"profile": pr, "dcf": it.d, "metrics": it.m,
 				"fin": map[string]any{"revenue": it.f.RevenueTTM, "netIncome": it.f.NetIncomeTTM, "fcfAvg3": it.f.FCFAvg3,
-					"cash": it.f.Cash, "debt": it.f.Debt, "equity": it.f.Equity, "shares": it.f.Shares, "ttmEnd": it.f.TTMEnd, "balanceEnd": it.f.BalanceEnd}}
+					"revCagr3": it.f.RevCAGR3, "cash": it.f.Cash, "debt": it.f.Debt, "equity": it.f.Equity, "shares": it.f.Shares, "ttmEnd": it.f.TTMEnd, "balanceEnd": it.f.BalanceEnd}}
 		}
 	}
 }

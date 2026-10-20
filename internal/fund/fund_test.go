@@ -10,6 +10,9 @@ func f(v float64) *float64 { return &v }
 func TestValueNoGrowthIsPerpetuity(t *testing.T) {
 	// with zero growth everywhere the DCF equals FCF / r per share
 	got := Value(DCFInputs{BaseFCF: 90, Shares: 10, Growth: 0, Terminal: 0, Discount: 0.09})
+	if v := Value(DCFInputs{BaseFCF: 90, NetDebt: 200, Shares: 10, Discount: 0.09}); math.Abs(v-80) > 1e-9 {
+		t.Fatalf("net debt: got %v, want 80", v)
+	}
 	if math.Abs(got-100) > 1e-9 {
 		t.Fatalf("got %v, want 100", got)
 	}
@@ -35,6 +38,28 @@ func TestEstimateDCF(t *testing.T) {
 	}
 	if EstimateDCF(Fin{FCFAvg3: f(-5), Shares: f(10)}, "Industrials", 50, nil).Skipped == "" {
 		t.Fatal("negative FCF should be skipped")
+	}
+}
+
+func TestImpliedGrowthRoundTrips(t *testing.T) {
+	in := DCFInputs{BaseFCF: 50, NetDebt: 100, Shares: 10, Growth: 0.07, Terminal: 0.025, Discount: 0.09}
+	price := Value(in)
+	if g := ImpliedGrowth(in, price); math.Abs(g-0.07) > 1e-6 {
+		t.Fatalf("implied %v, want 0.07", g)
+	}
+	if !math.IsNaN(ImpliedGrowth(in, 1e9)) {
+		t.Fatal("an impossible price should give NaN")
+	}
+}
+
+func TestDCFUsesFCFFAndNetDebt(t *testing.T) {
+	fin := Fin{FCFAvg3: f(100), FCFFAvg3: f(80), SBCAvg3: f(15), Debt: f(300), Cash: f(100), Shares: f(10), RevCAGR3: f(0.05)}
+	d := EstimateDCF(fin, "Industrials", 50, nil)
+	if d.Inputs.BaseFCF != 80 || d.Inputs.NetDebt != 200 || d.Inputs.SBC != 15 {
+		t.Fatalf("inputs %+v", d.Inputs)
+	}
+	if d.Implied == nil || *d.Implied >= d.Inputs.Growth {
+		t.Fatalf("price below value should imply lower growth: %v", d.Implied)
 	}
 }
 

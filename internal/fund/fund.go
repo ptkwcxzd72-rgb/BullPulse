@@ -33,6 +33,8 @@ type Fin struct {
 	NetMarginFY      *float64 `json:"net_margin_fy"`
 	NetMarginPrevFY  *float64 `json:"net_margin_prev_fy"`
 	FCFAvg3          *float64 `json:"fcf_avg3"`
+	FCFFAvg3         *float64 `json:"fcff_avg3"` // to the whole business: OCF - capex - share-based pay + after-tax interest
+	SBCAvg3          *float64 `json:"sbc_avg3"`
 	Equity           *float64 `json:"equity"`
 	Cash             *float64 `json:"cash"`
 	AssetsCur        *float64 `json:"assets_cur"`
@@ -142,7 +144,9 @@ func Compute(f Fin, price float64) Metrics {
 
 // DCFInputs are everything the website needs to recompute the estimate with its sliders.
 type DCFInputs struct {
-	BaseFCF  float64 `json:"baseFcf"`  // average free cash flow of the last three fiscal years
+	BaseFCF  float64 `json:"baseFcf"`  // average free cash flow to the business over the last three fiscal years
+	NetDebt  float64 `json:"netDebt"`  // debt minus cash, subtracted from the business value to get equity value
+	SBC      float64 `json:"sbc"`      // average yearly share-based pay already deducted from BaseFCF (for display)
 	Shares   float64 `json:"shares"`   // shares outstanding
 	Growth   float64 `json:"growth"`   // yearly growth for years 1-5 (from 3- or 5-year revenue growth, capped)
 	Terminal float64 `json:"terminal"` // growth after year 10
@@ -152,6 +156,7 @@ type DCFInputs struct {
 // DCF is a two-stage free-cash-flow estimate with a bear/base/bull range.
 type DCF struct {
 	Inputs   *DCFInputs `json:"inputs,omitempty"`
+	Implied  *float64   `json:"implied,omitempty"` // growth for years 1-5 that the current price implies (reverse DCF)
 	Bear     *float64   `json:"bear,omitempty"`
 	Base     *float64   `json:"base,omitempty"`
 	Bull     *float64   `json:"bull,omitempty"`
@@ -185,7 +190,29 @@ func Value(in DCFInputs) float64 {
 	}
 	tv := fcf * (1 + in.Terminal) / (in.Discount - in.Terminal)
 	pv += tv / math.Pow(1+in.Discount, 10)
-	return pv / in.Shares
+	return (pv - in.NetDebt) / in.Shares
+}
+
+// ImpliedGrowth is the reverse DCF: the growth rate for years 1-5 at which the model's value
+// equals the price, holding the other inputs. NaN when no rate in [-50%, +100%] fits.
+func ImpliedGrowth(in DCFInputs, price float64) float64 {
+	if price <= 0 || in.BaseFCF <= 0 {
+		return math.NaN()
+	}
+	lo, hi := -0.5, 1.0
+	at := func(g float64) float64 { in.Growth = g; return Value(in) }
+	if at(lo) > price || at(hi) < price {
+		return math.NaN()
+	}
+	for i := 0; i < 60; i++ {
+		mid := (lo + hi) / 2
+		if at(mid) < price {
+			lo = mid
+		} else {
+			hi = mid
+		}
+	}
+	return (lo + hi) / 2
 }
 
 // noDCFSectors are businesses whose cash flows don't fit a free-cash-flow model.
@@ -204,9 +231,27 @@ func EstimateDCF(f Fin, sector string, price float64, revGrowth *float64) DCF {
 	switch {
 	case noDCF(sector):
 		return DCF{Skipped: "Not meaningful for banks, insurers and property companies, whose cash flows don't follow a free-cash-flow model."}
-	case f.FCFAvg3 == nil || f.Shares == nil:
+	case (f.FCFFAvg3 == nil && f.FCFAvg3 == nil) || f.Shares == nil:
 		return DCF{Skipped: "Not enough cash-flow data in the filings."}
-	case *f.FCFAvg3 <= 0:
+	}
+	// prefer cash flow to the whole business, less share-based pay, then subtract net debt;
+	// fall back to free cash flow to shareholders (older data) with no debt adjustment
+	base, netDebt, sbc := 0.0, 0.0, 0.0
+	if f.FCFFAvg3 != nil {
+		base = *f.FCFFAvg3
+		if f.Debt != nil {
+			netDebt += *f.Debt
+		}
+		if f.Cash != nil {
+			netDebt -= *f.Cash
+		}
+		if f.SBCAvg3 != nil {
+			sbc = *f.SBCAvg3
+		}
+	} else {
+		base = *f.FCFAvg3
+	}
+	if base <= 0 {
 		return DCF{Skipped: "Free cash flow has been negative on average over the last three years, so a cash-flow valuation isn't meaningful."}
 	}
 	g := math.NaN()
@@ -220,14 +265,19 @@ func EstimateDCF(f Fin, sector string, price float64, revGrowth *float64) DCF {
 		g = 0.03
 	}
 	g = math.Max(MinGrowth, math.Min(MaxGrowth, g))
-	in := DCFInputs{BaseFCF: *f.FCFAvg3, Shares: *f.Shares, Growth: math.Round(g*1000) / 1000, Terminal: DefaultTerminal, Discount: DefaultDiscount}
-	base := Value(in)
-	bear := Value(DCFInputs{in.BaseFCF, in.Shares, in.Growth - 0.03, in.Terminal, in.Discount + 0.01})
-	bull := Value(DCFInputs{in.BaseFCF, in.Shares, in.Growth + 0.03, in.Terminal, in.Discount - 0.01})
-	d := DCF{Inputs: &in, Bear: p(bear), Base: p(base), Bull: p(bull)}
-	if base > 0 && price > 0 {
-		d.VsPrice = p(price/base - 1)
+	in := DCFInputs{BaseFCF: base, NetDebt: netDebt, SBC: sbc, Shares: *f.Shares, Growth: math.Round(g*1000) / 1000, Terminal: DefaultTerminal, Discount: DefaultDiscount}
+	mid := Value(in)
+	bearIn, bullIn := in, in
+	bearIn.Growth, bearIn.Discount = in.Growth-0.03, in.Discount+0.01
+	bullIn.Growth, bullIn.Discount = in.Growth+0.03, in.Discount-0.01
+	d := DCF{Inputs: &in, Bear: p(Value(bearIn)), Base: p(mid), Bull: p(Value(bullIn))}
+	if mid <= 0 {
+		d.Skipped = "Net debt is larger than the estimated value of the business, so the estimate per share is below zero."
 	}
+	if mid > 0 && price > 0 {
+		d.VsPrice = p(price/mid - 1)
+	}
+	d.Implied = p(ImpliedGrowth(in, price))
 	return d
 }
 

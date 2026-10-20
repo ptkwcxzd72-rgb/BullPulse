@@ -267,6 +267,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .dcf .sl label{display:grid;gap:4px;font-size:12px;color:var(--muted)}
 .dcf .sl label b{color:var(--ink);font-family:var(--f-mono);font-weight:500}
 .dcf .sl input{width:100%;accent-color:var(--accent)}
+.dcf .implied{margin:0;font-size:13px;padding:9px 12px;border-radius:8px;background:var(--surface-2)}
 .dcf .reset{justify-self:start;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer}
 .kv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:8px;overflow:hidden}
 .kv div{background:var(--surface);padding:8px 10px;display:grid;gap:1px}
@@ -412,7 +413,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
       <section class="outl" aria-label="Fair value estimate" id="d-dcfsec">
         <h3>Fair value estimate (DCF) <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">adjust the assumptions</span></h3>
         <div id="d-dcf"></div>
-        <p class="note">A two-stage discounted cash flow: average free cash flow of the last three years grows at the chosen rate for five years, fades to the long-run rate over the next five, and is discounted at the required return. Bear and bull move growth by 3 points and the return by 1 point. Free cash flow is measured after interest, so it approximates cash available to shareholders and debt is not subtracted again. It is a rough guide for comparison, highly sensitive to the inputs, and not a price target.</p>
+        <p class="note">A two-stage discounted cash flow. Cash flow to the whole business (operating cash flow less capital spending and share-based pay, before interest), averaged over three years, grows at the chosen rate for five years, slows to the long-run rate over the next five, and is discounted at the required return; net debt is then subtracted. Bear and bull move growth by 3 points and the return by 1 point. The reverse calculation shows what growth today's price assumes. A rough guide, very sensitive to the inputs, and not a price target.</p>
       </section>
       <section class="outl" aria-label="Upside and downside">
         <h3>Upside and downside range <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">from 1-year realised volatility</span></h3>
@@ -802,9 +803,17 @@ function dcfValue(i){
   let f = i.baseFcf, pv = 0;
   for (let t = 1; t <= 10; t++){ const g = t <= 5 ? i.growth : i.growth + (i.terminal - i.growth) * (t - 5) / 5; f *= 1 + g; pv += f / Math.pow(1 + i.discount, t); }
   pv += f * (1 + i.terminal) / (i.discount - i.terminal) / Math.pow(1 + i.discount, 10);
-  return pv / i.shares;
+  return (pv - (i.netDebt || 0)) / i.shares;
 }
-const money = v => { const a = Math.abs(v); return (v < 0 ? "−$" : "$") + (a >= 1e12 ? (a / 1e12).toFixed(2) + "tn" : a >= 1e9 ? (a / 1e9).toFixed(1) + "bn" : a >= 1e6 ? (a / 1e6).toFixed(0) + "m" : a.toFixed(0)); };
+// reverse DCF: the growth for years 1-5 at which the value equals the price
+function impliedGrowth(i, px){
+  if (!(px > 0) || i.baseFcf <= 0) return NaN;
+  let lo = -0.5, hi = 1; const at = g => dcfValue({ ...i, growth: g });
+  if (at(lo) > px || at(hi) < px) return NaN;
+  for (let k = 0; k < 60; k++){ const m = (lo + hi) / 2; at(m) < px ? lo = m : hi = m; }
+  return (lo + hi) / 2;
+}
+const money = (v, s) => { const gbx = s && s.ccy === "GBX"; if (gbx) v = v / 100; const a = Math.abs(v), c = gbx ? "£" : "$"; return (v < 0 ? "−" + c : c) + (a >= 1e12 ? (a / 1e12).toFixed(2) + "tn" : a >= 1e9 ? (a / 1e9).toFixed(1) + "bn" : a >= 1e6 ? (a / 1e6).toFixed(0) + "m" : a.toFixed(0)); };
 function fundamentals(s, F){
   const has = F && F.profile;
   $("d-fundsec").hidden = s.ex !== "US"; $("d-dcfsec").hidden = s.ex !== "US";
@@ -820,18 +829,21 @@ function fundamentals(s, F){
   const mark = c => c.ok == null ? ['u', '–'] : c.ok ? ['y', '✓'] : ['n', '✗'];
   const x1 = v => v == null ? "–" : v.toFixed(1) + "×", p1 = v => v == null ? "–" : (v * 100).toFixed(1) + "%";
   $("d-fund").innerHTML = `<div class="fpro">${radar(P.areas.map(a => a.score))}<div class="areas">${P.areas.map(a => `<details><summary><span>${a.name}</span><span class="pips">${Array.from({ length: 6 }, (_, i) => `<i class="${i < a.score ? "on" : ""}"></i>`).join("")}</span><b>${a.score}/6</b></summary><ul>${a.checks.map(c => { const [k, sym] = mark(c); return `<li><span class="k ${k}" aria-label="${k === "y" ? "pass" : k === "n" ? "fail" : "no data"}">${sym}</span><span>${c.n}<small>${c.d}</small></span></li>`; }).join("")}</ul></details>`).join("")}</div></div>
-    <div class="kv">${[["Market cap", M.mcap == null ? "–" : money(M.mcap)], ["P/E", x1(M.pe)], ["Price / sales", x1(M.ps)], ["FCF yield", p1(M.fcfYield)], ["Return on equity", p1(M.roe)], ["Debt / equity", p1(M.debtToEquity)], ["Dividend yield", p1(M.divYield)], ["Net cash", M.netCash == null ? "–" : money(M.netCash)]].map(([l, v]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span></div>`).join("")}</div>`;
+    <div class="kv">${[["Market cap", M.mcap == null ? "–" : money(M.mcap, s)], ["P/E", x1(M.pe)], ["Price / sales", x1(M.ps)], ["FCF yield", p1(M.fcfYield)], ["Return on equity", p1(M.roe)], ["Debt / equity", p1(M.debtToEquity)], ["Dividend yield", p1(M.divYield)], ["Net cash", M.netCash == null ? "–" : money(M.netCash, s)]].map(([l, v]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span></div>`).join("")}</div>`;
   const D0 = F.dcf;
   if (!D0 || !D0.inputs){ $("d-dcf").innerHTML = `<p class="note" style="margin:0">${(D0 && D0.skipped) || "Not enough data for an estimate."}</p>`; return; }
   const inp = { ...D0.inputs };
   const sliders = [["growth", "Growth, years 1–5", -0.05, 0.25, 0.005], ["discount", "Required return", 0.06, 0.14, 0.0025], ["terminal", "Long-run growth", 0, 0.04, 0.0025]];
-  $("d-dcf").innerHTML = `<div class="dcf"><div class="big" id="dcf-big"></div><div class="scale" id="dcf-scale"></div>
+  $("d-dcf").innerHTML = `<div class="dcf"><div class="big" id="dcf-big"></div><div class="scale" id="dcf-scale"></div><p class="implied" id="dcf-implied"></p>
     <div class="sl">${sliders.map(([k, l, lo, hi, st]) => `<label>${l} <b id="dcf-${k}-v"></b><input type="range" id="dcf-${k}" min="${lo}" max="${hi}" step="${st}" value="${inp[k]}"></label>`).join("")}</div>
-    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="reset" id="dcf-reset">Reset to defaults</button><span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Base free cash flow ${money(inp.baseFcf)} a year (3-year average) · ${(inp.shares / 1e6).toLocaleString("en-GB", { maximumFractionDigits: 0 })}m shares</span></div></div>`;
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="reset" id="dcf-reset">Reset to defaults</button><span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Cash flow ${money(inp.baseFcf, s)} a year (3-year average${inp.sbc ? `, after ${money(inp.sbc, s)} share-based pay` : ""}) · ${inp.netDebt >= 0 ? "net debt " + money(inp.netDebt, s) + " subtracted" : "net cash " + money(-inp.netDebt, s) + " added"} · ${(inp.shares / 1e6).toLocaleString("en-GB", { maximumFractionDigits: 0 })}m shares</span></div></div>`;
   const draw = () => {
     const base = dcfValue(inp), bear = dcfValue({ ...inp, growth: inp.growth - .03, discount: inp.discount + .01 }), bull = dcfValue({ ...inp, growth: inp.growth + .03, discount: inp.discount - .01 });
     sliders.forEach(([k]) => $(`dcf-${k}-v`).textContent = (inp[k] * 100).toFixed(1) + "%");
     if (!isFinite(base) || base <= 0){ $("dcf-big").innerHTML = `<span class="note">The required return must be above long-run growth.</span>`; $("dcf-scale").innerHTML = ""; return; }
+    const ig = impliedGrowth(inp, s.price), hist = fin.revCagr3;
+    $("dcf-implied").innerHTML = !isFinite(ig) ? (dcfValue({ ...inp, growth: -0.5 }) > s.price ? "<b>What the price implies:</b> even a 50% yearly decline in cash flow would leave the estimate above today's price." : "<b>What the price implies:</b> more than 100% growth a year, so the price rests on something this model can't capture.")
+      : `<b>What the price implies:</b> cash flow growing <b class="num">${(ig * 100).toFixed(1)}%</b> a year for five years, then slowing to ${(inp.terminal * 100).toFixed(1)}%${hist != null ? `. Revenue grew <b class="num">${(hist * 100).toFixed(1)}%</b> a year over the last three years` : ""}.`;
     const vs = s.price / base - 1;
     $("dcf-big").innerHTML = `<span><span class="lbl">Base estimate</span><br><b>${price(s, base)}</b></span><span><span class="lbl">Price vs estimate</span><br><b class="${vs < 0 ? "pos" : "neg"}">${vs < 0 ? pct(-vs, 0).replace("+", "") + " below" : pct(vs, 0).replace("+", "") + " above"}</b></span><span><span class="lbl">Range</span><br><b style="font-size:15px">${price(s, isFinite(bear) ? bear : 0)} – ${isFinite(bull) ? price(s, bull) : "∞"}</b></span>`;
     const vals = [bear, base, bull, s.price].filter(v => isFinite(v));
