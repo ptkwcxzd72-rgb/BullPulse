@@ -1,0 +1,20 @@
+{
+  "name": "BullPulse — UK & US stock screener",
+  "short_name": "BullPulse",
+  "description": "A free nightly screen of UK and US shares: trend, momentum, news sentiment, growth and fundamentals, every score explained. Not investment advice.",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0E1828",
+  "theme_color": "#0E1828",
+  "icons": [
+    { "src": "brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "brand/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "brand/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Strong fundamentals", "url": "app.html?view=fund" },
+    { "name": "Early trend changes", "url": "app.html?view=early" },
+    { "name": "Watchlist", "url": "app.html?view=watch" }
+  ]
+}

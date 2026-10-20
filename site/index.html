@@ -13,6 +13,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0E1828">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -618,6 +620,7 @@ document.querySelectorAll("[data-count]").forEach(el => io2.observe(el));
     <td class="r num" style="color:${s.tone30 >= 0 ? "#41C286" : "#F06B6B"}">${(s.tone30 >= 0 ? "+" : "−") + Math.abs(s.tone30).toFixed(2)}</td></tr>`).join("");
   $("wt-note").textContent = D.demo ? "Demo data with fictional companies, shown until the first nightly run publishes real rankings." : `Prices to the close of ${new Date(D.asof + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}. Not investment advice.`;
 })();
+if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 </script>
 </body>
 </html>

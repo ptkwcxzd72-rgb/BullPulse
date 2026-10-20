@@ -11,6 +11,9 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<meta name="theme-color" content="#0E1828">
 <meta name="description" content="BullPulse: an end-of-day UK and US stock screener ranking trend, momentum and news sentiment. A research tool, not investment advice.">
 <title>BullPulse Screener</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -234,6 +237,21 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .linkbtn{border:0;background:none;padding:0;color:var(--accent);font:inherit;text-decoration:underline;cursor:pointer}
 .evl{display:grid;gap:2px;font-size:12.5px}
 .evl div{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:4px 0;border-bottom:1px solid var(--grid)}
+.cmpbtn{font-size:11.5px;font-weight:600;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:999px;padding:1px 8px;background:transparent;cursor:pointer}
+.cmpbtn[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+.tray{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;display:flex;gap:8px;align-items:center;max-width:calc(100vw - 32px);background:var(--ink);color:var(--surface);border-radius:999px;padding:6px 6px 6px 14px;box-shadow:0 8px 30px rgba(0,0,0,.25);font-size:13px}
+.tray #tray-items{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.tray button{border:0;border-radius:999px;padding:6px 12px;font-weight:600;cursor:pointer;flex:none}
+#tray-go{background:var(--accent);color:#fff}
+.tray .cmpx{background:transparent;color:inherit;opacity:.8}
+.cmpcard .cmpx{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer}
+.cmpt{min-width:520px}
+.cmpt th{position:static;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink)}
+.cmpt td:first-child{color:var(--muted);font-size:12px;width:30%}
+.cmpt td{font-family:var(--f-mono);font-size:12.5px}
+.cmpt tr.best td.b{font-weight:700}
+#cmp-chart{padding:12px 16px 4px}
+#cmp-chart svg{width:100%;height:180px;display:block}
 .ins{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--up);background:var(--up-soft);border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px}
 .itx{display:grid;gap:4px;font-size:12.5px}
 .itx div{display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--grid)}
@@ -392,7 +410,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
       <div class="dh">
         <div class="top">
           <div style="display:grid;gap:6px;min-width:0">
-            <h2 style="display:flex;align-items:center;gap:6px"><span id="d-name">—</span><button class="star" id="d-star" aria-pressed="false" aria-label="Add to watchlist">☆</button><a class="rss" id="d-rss" href="#" title="Follow this stock's alerts in a feed reader">Follow</a></h2>
+            <h2 style="display:flex;align-items:center;gap:6px"><span id="d-name">—</span><button class="star" id="d-star" aria-pressed="false" aria-label="Add to watchlist">☆</button><a class="rss" id="d-rss" href="#" title="Follow this stock's alerts in a feed reader">Follow</a><button class="cmpbtn" id="d-cmp" aria-pressed="false">+ Compare</button></h2>
             <div class="meta" id="d-meta"></div>
           </div>
           <div class="px" id="d-px">—</div>
@@ -474,7 +492,13 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
     <div class="card"><h3>Running cost: free</h3><p>GitHub Actions runs the nightly jobs and GitHub Pages serves this static page, both free for a public repository. Scores are a research filter for further reading. They are not a forecast and not investment advice.</p></div>
   </section>
   <p class="disc">Ranks are percentiles within each market, so a UK score of 80 and a US score of 80 mean "top fifth of its own market", not equal strength. Backtested and simulated results are hypothetical. Prices for UK stocks are shown in pence.</p>
+  <section class="card cmpcard" id="cmp" hidden aria-label="Comparison">
+    <div class="ch"><h2>Side by side</h2><div style="display:flex;gap:8px;align-items:center"><button class="linkbtn" id="cmp-share">Copy link</button><button class="cmpx" id="cmp-close" aria-label="Close comparison">Close</button></div></div>
+    <div id="cmp-chart"></div>
+    <div class="tw"><table class="cmpt"><tbody id="cmp-body"></tbody></table></div>
+  </section>
 </main>
+<div class="tray" id="tray" hidden><span id="tray-items"></span><button id="tray-go">Compare</button><button class="cmpx" id="tray-clear" aria-label="Clear comparison">Clear</button></div>
 
 <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
 <script>
@@ -535,6 +559,25 @@ function toggleWatch(id){
 const fpCell = s => s.FP == null ? '<span class="flat">–</span>' : `<span class="fp" title="Value ${s.FA[0]} · Growth ${s.FA[1]} · Track record ${s.FA[2]} · Health ${s.FA[3]} · Dividends ${s.FA[4]} (each out of 6)"><span class="g" aria-hidden="true">${s.FA.map(v => `<i class="${v ? "" : "z"}" style="height:${Math.max(2, v / 6 * 14)}px"></i>`).join("")}</span>${s.FP}</span>`;
 const pctOrDash = v => v == null ? '<span class="flat">–</span>' : `<span class="${cls(v)}">${pct(v, 0)}</span>`;
 const state = { view: "all", mkt: "ALL", q: "", sector: "", min: 0, sortK: "score", dir: -1, sel: null };
+// shareable links: filters live in the query string, the open stock in the hash
+const QP = new URLSearchParams(location.search);
+if (["all", "early", "grow", "fund", "watch"].includes(QP.get("view"))) state.view = QP.get("view");
+if (["ALL", "LSE", "US"].includes(QP.get("mkt"))) state.mkt = QP.get("mkt");
+state.q = (QP.get("q") || "").toLowerCase(); state.sector = QP.get("sector") || ""; state.min = Math.max(0, Math.min(90, +QP.get("min") || 0));
+if (QP.get("sort")) { state.sortK = QP.get("sort"); state.dir = QP.get("dir") === "1" ? 1 : -1; }
+let compare = (QP.get("cmp") || "").split(",").filter(Boolean).slice(0, 3);
+function saveURL(){
+  const p = new URLSearchParams();
+  if (state.view !== "all") p.set("view", state.view);
+  if (state.mkt !== "ALL") p.set("mkt", state.mkt);
+  if (state.sector) p.set("sector", state.sector);
+  if (state.q) p.set("q", state.q);
+  if (state.min) p.set("min", state.min);
+  if (state.sortK !== "score" || state.dir !== -1) { p.set("sort", state.sortK); p.set("dir", state.dir); }
+  if (compare.length) p.set("cmp", compare.join(","));
+  const qs = p.toString();
+  try { history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash); } catch (e) {}
+}
 [...new Set(D.stocks.map(s => s.sector))].sort().forEach(s => $("sector").insertAdjacentHTML("beforeend", `<option>${s}</option>`));
 document.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
   state.mkt = b.dataset.m; document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
@@ -596,6 +639,7 @@ function histChart(pts){
     <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Score history"><line x1="0" x2="${w}" y1="${Y(50)}" y2="${Y(50)}" stroke="var(--line)" stroke-dasharray="3 3"/><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="${X(pts.length - 1)}" cy="${Y(last[1])}" r="3" fill="var(--accent)"/></svg>`;
 }
 function render(){
+  saveURL();
   const rows = visible();
   $("t-title").textContent = state.mkt === "ALL" ? "Ranked universe" : (state.mkt === "LSE" ? "UK ranking" : "US ranking");
   document.querySelectorAll("th[data-k]").forEach(th => { th.querySelector(".ar")?.remove(); if (th.dataset.k === state.sortK) th.insertAdjacentHTML("beforeend", `<span class="ar">${state.dir < 0 ? "↓" : "↑"}</span>`); th.setAttribute("aria-sort", th.dataset.k === state.sortK ? (state.dir < 0 ? "descending" : "ascending") : "none"); });
@@ -747,6 +791,7 @@ async function select(s){
   ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
   fundamentals(s, X.fund);
   insiders(s, X.insiders);
+  if (typeof trayUpdate === "function" && D) { const on = compare.includes(s.id); $("d-cmp").setAttribute("aria-pressed", on); $("d-cmp").textContent = on ? "✓ Comparing" : "+ Compare"; }
   $("d-rss").href = `feeds/${s.id}.xml`;
   const ev = X.events || [];
   $("d-evsec").hidden = !ev.length;
@@ -905,9 +950,75 @@ function fundamentals(s, F){
   draw();
 }
 
+// reflect state read from the link in the controls
+$("q").value = state.q; $("sector").value = state.sector; $("min").value = state.min; $("minv").textContent = state.min;
+document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x.dataset.m === state.mkt));
+document.querySelectorAll(".vseg button").forEach(x => x.setAttribute("aria-pressed", x.dataset.v === state.view));
+$("earlynote").hidden = state.view !== "early"; $("grownote").hidden = state.view !== "grow"; $("fundnote").hidden = state.view !== "fund"; $("watchnote").hidden = state.view !== "watch";
+
+// Compare up to three stocks
+function trayUpdate(){
+  compare = compare.filter(id => D.stocks.some(s => s.id === id));
+  $("tray").hidden = !compare.length || !$("cmp").hidden;
+  $("tray-items").textContent = compare.map(id => D.stocks.find(s => s.id === id).t).join(" · ") + (compare.length < 2 ? " · add another" : "");
+  $("tray-go").disabled = compare.length < 2; $("tray-go").style.opacity = compare.length < 2 ? .5 : 1;
+  if (state.sel) { const on = compare.includes(state.sel.id); $("d-cmp").setAttribute("aria-pressed", on); $("d-cmp").textContent = on ? "✓ Comparing" : "+ Compare"; }
+  saveURL();
+}
+$("d-cmp").onclick = () => {
+  const id = state.sel.id;
+  compare = compare.includes(id) ? compare.filter(x => x !== id) : [...compare, id].slice(-3);
+  trayUpdate();
+};
+$("tray-clear").onclick = () => { compare = []; $("cmp").hidden = true; trayUpdate(); };
+$("tray-go").onclick = () => openCompare();
+$("cmp-close").onclick = () => { $("cmp").hidden = true; trayUpdate(); };
+$("cmp-share").onclick = () => { try { navigator.clipboard.writeText(location.href); $("cmp-share").textContent = "Link copied"; setTimeout(() => $("cmp-share").textContent = "Copy link", 2000); } catch (e) {} };
+async function openCompare(){
+  const ss = compare.map(id => D.stocks.find(s => s.id === id)).filter(Boolean);
+  if (ss.length < 2) return;
+  const X = await Promise.all(ss.map(s => loadSeries(s).catch(() => ({}))));
+  const cols = ["var(--ft)", "var(--fm)", "var(--warn)"];
+  // rebased price lines over the charted window
+  const series = X.map(x => (x.bars || []).map(b => [b[0], b[4]]));
+  const n = Math.min(...series.map(v => v.length));
+  if (n > 2){
+    const w = 800, h = 180, pts = series.map(v => v.slice(-n).map(p => p[1] / v[v.length - n][1] * 100));
+    const lo = Math.min(...pts.flat()), hi = Math.max(...pts.flat()), Y = v => h - 16 - (v - lo) / ((hi - lo) || 1) * (h - 28), Xp = i => i / (n - 1) * (w - 60);
+    $("cmp-chart").innerHTML = `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Price rebased to 100"><line x1="0" x2="${w - 60}" y1="${Y(100)}" y2="${Y(100)}" stroke="var(--line)" stroke-dasharray="3 3"/>${pts.map((p, k) => `<path d="${p.map((v, i) => (i ? "L" : "M") + Xp(i).toFixed(1) + " " + Y(v).toFixed(1)).join("")}" fill="none" stroke="${cols[k]}" stroke-width="2" vector-effect="non-scaling-stroke"/><text x="${w - 56}" y="${Y(p[p.length - 1]) + 4}" font-size="12" fill="${cols[k]}" font-family="var(--f-mono)">${ss[k].t} ${(p[p.length - 1] - 100 >= 0 ? "+" : "") + (p[p.length - 1] - 100).toFixed(0)}%</text>`).join("")}</svg><span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Price rebased to 100, ${shortDate(series[0][series[0].length - n][0])} – ${shortDate(series[0][series[0].length - 1][0])}</span>`;
+  } else $("cmp-chart").innerHTML = "";
+  const F = X.map(x => x.fund || {}), M = F.map(f => f.metrics || {}), DC = F.map(f => f.dcf || {});
+  const p1 = v => v == null ? "–" : (v * 100).toFixed(1) + "%", x1 = v => v == null ? "–" : v.toFixed(1) + "×";
+  const rows = [
+    ["Market", ss.map(s => MKT[s.ex] + " · " + s.sector)],
+    ["Price", ss.map(s => price(s, s.price))],
+    ["Score (rank)", ss.map(s => `${s.score} (#${s.rank})`), ss.map(s => s.score)],
+    ["Trend · Momentum · Sentiment", ss.map(s => `${s.T} · ${s.M} · ${s.S}`)],
+    ["1-year return", ss.map(s => pct(s.ret1y, 0)), ss.map(s => s.ret1y)],
+    ["Revenue growth", ss.map(s => s.revGrowth == null ? "–" : pct(s.revGrowth, 1)), ss.map(s => s.revGrowth)],
+    ["Fundamentals profile", ss.map(s => s.FP == null ? "–" : `${s.FP}/30`), ss.map(s => s.FP)],
+    ["Value · Growth · Track · Health · Dividends", ss.map(s => s.FA ? s.FA.join(" · ") : "–")],
+    ["DCF base estimate", ss.map((s, k) => DC[k].base != null ? price(s, DC[k].base) : "–")],
+    ["Price vs estimate", ss.map(s => s.fairVs == null ? "–" : (s.fairVs < 0 ? pct(-s.fairVs, 0).replace("+", "") + " below" : pct(s.fairVs, 0).replace("+", "") + " above")), ss.map(s => s.fairVs == null ? null : -s.fairVs)],
+    ["Growth priced in", DC.map(d => d.implied == null ? "–" : (d.implied * 100).toFixed(1) + "% a year"), DC.map(d => d.implied == null ? null : -d.implied)],
+    ["P/E", M.map(m => x1(m.pe)), M.map(m => m.pe == null ? null : -m.pe)],
+    ["FCF yield", M.map(m => p1(m.fcfYield)), M.map(m => m.fcfYield)],
+    ["Dividend yield", M.map(m => p1(m.divYield)), M.map(m => m.divYield)],
+    ["Debt / equity", M.map(m => p1(m.debtToEquity)), M.map(m => m.debtToEquity == null ? null : -m.debtToEquity)],
+    ["Insider buying (90 days)", ss.map(s => s.ins ? (s.ins.buyers ? `${s.ins.buyers} buying, ${money(s.ins.buyVal, s)}` : "none") : "–")],
+    ["RSI 14", ss.map(s => s.rsi.toFixed(0))],
+    ["Volatility (1 year)", ss.map(s => (s.vol1y * 100).toFixed(0) + "%")],
+  ];
+  $("cmp-body").innerHTML = `<tr><th></th>${ss.map((s, k) => `<th><button class="linkbtn" data-go="${s.id}" style="color:${cols[k]};text-decoration:none;font-weight:700">${s.name}</button></th>`).join("")}</tr>` +
+    rows.map(([l, vals, num]) => { const best = num ? num.reduce((b, v, k) => v != null && (b < 0 || v > num[b]) ? k : b, -1) : -1; return `<tr><td>${l}</td>${vals.map((v, k) => `<td class="${k === best && num.filter(x => x != null).length > 1 ? "b" : ""}">${v}</td>`).join("")}</tr>`; }).join("");
+  $("cmp-body").querySelectorAll("[data-go]").forEach(b => b.onclick = () => { select(D.stocks.find(s => s.id === b.dataset.go)); $("dos").scrollIntoView({ block: "start" }); });
+  $("cmp").hidden = false; trayUpdate();
+  $("cmp").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+}
+
 render();
 const fromHash = (() => { try { return D.stocks.find(s => s.id === location.hash.slice(1)); } catch (e) { return null; } })();
-select(fromHash || visible()[0]);
+select(fromHash || visible()[0]).then(() => { trayUpdate(); if (compare.length >= 2 && QP.get("cmp")) openCompare(); });
 
 function retheme(){
   charts.forEach(([c, el, extra]) => { const o = baseOpts(el); c.applyOptions({ layout: o.layout, grid: o.grid }); c.priceScale("right").applyOptions({ borderColor: css("--line") }); c.timeScale().applyOptions({ borderColor: css("--line") }); });
@@ -935,6 +1046,7 @@ async function loadTrack(){
   $("track").hidden = false;
 }
 boot();
+if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 </script>
 </body>
 </html>
