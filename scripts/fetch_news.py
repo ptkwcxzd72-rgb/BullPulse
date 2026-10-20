@@ -42,6 +42,19 @@ def clean_name(name: str) -> str:
     return re.sub(r"\s+", " ", n).strip(" ,.&")
 
 
+def relevance(headline: str, stock: dict, base: float) -> float:
+    """Full weight when the headline names the company or its ticker; a market wrap or an
+    article about another company that merely tags this ticker gets a low weight."""
+    h = headline.lower()
+    name = clean_name(stock["name"]).lower()
+    first = name.split(" ")[0] if name else ""
+    tick = stock["ticker"].replace(".", "")
+    if (name and name in h) or (len(first) >= 4 and re.search(rf"\b{re.escape(first)}\b", h)) \
+            or re.search(rf"\b{re.escape(tick)}\b", headline):
+        return base
+    return round(base * 0.35, 2)
+
+
 def get_json(url: str, headers: dict | None = None, tries: int = 3):
     for attempt in range(tries):
         try:
@@ -74,7 +87,7 @@ def tiingo_news(stocks: list[dict], key: str, since: dt.date) -> list[dict]:
                 out.append({
                     "date": a.get("publishedDate", "")[:10], "ticker": s["ticker"].replace(".", ""), "market": s["market"],
                     "headline": a.get("title", "").strip(), "source": a.get("source") or "Tiingo", "url": a.get("url", ""),
-                    "rel": 1.0 if len(a.get("tickers", [])) <= 3 else 0.7, "via": "Tiingo"})
+                    "rel": relevance(a.get("title", ""), s, 1.0 if len(a.get("tickers", [])) <= 3 else 0.8), "via": "Tiingo"})
         time.sleep(1.5)
     return out
 
@@ -96,7 +109,7 @@ def finnhub_news(stocks: list[dict], key: str, since: dt.date) -> list[dict]:
             out.append({
                 "date": dt.datetime.utcfromtimestamp(ts).date().isoformat(), "ticker": sym, "market": s["market"],
                 "headline": a["headline"].strip(), "source": a.get("source") or "Finnhub", "url": a.get("url", ""),
-                "rel": 1.0 if len(related) <= 2 else 0.7, "via": "Finnhub"})
+                "rel": relevance(a["headline"], s, 1.0 if len(related) <= 2 else 0.8), "via": "Finnhub"})
         time.sleep(1.1)  # stay under 60 calls a minute
     return out
 
