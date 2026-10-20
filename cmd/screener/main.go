@@ -182,6 +182,9 @@ func main() {
 	out := flag.String("out", "site/data", "output directory for the website data")
 	fundPath := flag.String("fundamentals", "data/fundamentals.json", "growth figures from SEC filings")
 	fundUK := flag.String("fundamentals-uk", "data/fundamentals_uk.json", "annual-report figures for UK companies (ESEF)")
+	evPath := flag.String("events", "data/events.jsonl", "alert log (appended)")
+	feedDir := flag.String("feeds", "site/feeds", "RSS feeds directory")
+	siteURL := flag.String("site-url", "https://ptkwcxzd72-rgb.github.io/BullPulse/", "public address used in feed links")
 	insPath := flag.String("insiders", "data/insiders.json", "insider dealing from SEC Form 4 filings")
 	fxPath := flag.String("fx", "data/fx.json", "GBP exchange rates for UK companies reporting in other currencies")
 	histPath := flag.String("history", "data/history/scores.csv", "daily score history (appended)")
@@ -505,7 +508,21 @@ func main() {
 
 	day := asof.Format("2006-01-02")
 	history = history.with(day, rows)
+	events := loadEvents(*evPath, day, 90, detectEvents(day, rows, prev))
+	if err := saveEvents(*evPath, events); err != nil {
+		log.Error("events", "error", err)
+	}
+	if err := writeFeeds(*feedDir, *siteURL, rows, events); err != nil {
+		log.Error("feeds", "error", err)
+	}
+	evByID := map[string][]Event{}
+	for _, e := range events {
+		if len(evByID[e.ID]) < 10 {
+			evByID[e.ID] = append(evByID[e.ID], e)
+		}
+	}
 	for _, r := range rows {
+		r.detail["events"] = evByID[r.ID]
 		r.detail["hist"] = history.forStock(r.ID, 180)
 		b, _ := json.Marshal(r.detail)
 		if err := os.WriteFile(filepath.Join(*out, "stocks", r.ID+".json"), b, 0o644); err != nil {

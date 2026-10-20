@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="alternate" type="application/rss+xml" title="BullPulse: all alerts" href="feeds/all.xml">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="BullPulse: UK &amp; US stock screener">
 <meta property="og:description" content="Nightly ranking of trend, momentum, news sentiment and revenue growth. Free, open source, not investment advice.">
@@ -228,6 +229,11 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .star{border:0;background:transparent;cursor:pointer;color:var(--muted);font-size:15px;line-height:1;padding:2px 4px;border-radius:4px}
 .star[aria-pressed="true"]{color:var(--fs)}
 .star:hover{background:var(--surface-2)}
+.rss{font-size:11.5px;font-weight:600;color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);border-radius:999px;padding:1px 8px;text-decoration:none;font-family:var(--f-body,inherit)}
+.rss:hover{background:var(--warn-soft)}
+.linkbtn{border:0;background:none;padding:0;color:var(--accent);font:inherit;text-decoration:underline;cursor:pointer}
+.evl{display:grid;gap:2px;font-size:12.5px}
+.evl div{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:4px 0;border-bottom:1px solid var(--grid)}
 .ins{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--up);background:var(--up-soft);border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px}
 .itx{display:grid;gap:4px;font-size:12.5px}
 .itx div{display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--grid)}
@@ -362,7 +368,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
       <div class="earlynote" id="earlynote" hidden><b>Early trend changes</b> are stocks whose long-term trend turned up recently (a golden cross within 60 days, or a move back above the 200-day average within 40 days), with momentum holding up, news tone improving and RSI below 70. Many early turns fail. These are candidates for closer research, not predictions of fast growth.</div>
       <div class="earlynote" id="grownote" hidden><b>Growing &amp; turning up</b> are companies whose latest reported revenue grew 15% or more year on year, with growth holding or speeding up (from SEC filings in the US, annual reports in the UK), and whose long-term price trend is up or has just turned up. Revenue growth is backward-looking and often already priced in. This is a research screen, not a forecast.</div>
       <div class="earlynote" id="fundnote" hidden><b>Strong fundamentals</b> are companies passing at least 20 of the 30 checks in the Fundamentals Profile (value, growth, track record, financial health and dividends), computed from their filings and today's price. The profile describes the business as reported; it does not predict the share price and is not part of the score.</div>
-      <div class="earlynote" id="watchnote" hidden><b>Your watchlist</b> is saved in this browser only. Use the ☆ next to any company to add or remove it.</div>
+      <div class="earlynote" id="watchnote" hidden><b>Your watchlist</b> is saved in this browser only. Use the ☆ next to any company to add or remove it. To get alerts (rank moves, trend changes, new results, insider buying) without an account, <button class="linkbtn" id="opml">download your watchlist as a feed list</button> and import it into any RSS reader, or follow <a href="feeds/all.xml">all alerts</a>.</div>
       <div class="tw">
         <table>
           <thead><tr>
@@ -386,7 +392,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
       <div class="dh">
         <div class="top">
           <div style="display:grid;gap:6px;min-width:0">
-            <h2 style="display:flex;align-items:center;gap:6px"><span id="d-name">—</span><button class="star" id="d-star" aria-pressed="false" aria-label="Add to watchlist">☆</button></h2>
+            <h2 style="display:flex;align-items:center;gap:6px"><span id="d-name">—</span><button class="star" id="d-star" aria-pressed="false" aria-label="Add to watchlist">☆</button><a class="rss" id="d-rss" href="#" title="Follow this stock's alerts in a feed reader">Follow</a></h2>
             <div class="meta" id="d-meta"></div>
           </div>
           <div class="px" id="d-px">—</div>
@@ -408,6 +414,10 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
       <section class="outl" aria-label="Growth" id="d-growsec">
         <h3>Growth <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400" id="d-gsrc"></span></h3>
         <div class="gpanel" id="d-growth"></div>
+      </section>
+      <section class="outl" aria-label="Recent alerts" id="d-evsec" hidden>
+        <h3>Recent alerts <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">last 90 days</span></h3>
+        <div class="evl" id="d-ev"></div>
       </section>
       <section class="outl" aria-label="Insider dealing" id="d-inssec" hidden>
         <h3>Insider dealing <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">open-market trades on SEC Form 4 · last 90 days</span></h3>
@@ -531,6 +541,13 @@ document.querySelectorAll(".vseg button").forEach(b => b.onclick = () => {
   $("earlynote").hidden = state.view !== "early"; $("grownote").hidden = state.view !== "grow"; $("fundnote").hidden = state.view !== "fund"; $("watchnote").hidden = state.view !== "watch"; render();
   const vis = visible(); if (vis.length && !vis.includes(state.sel)) select(vis[0]);
 });
+$("opml").onclick = () => {
+  const base = new URL("feeds/", location.href).href, esc = t => t.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  const items = D.stocks.filter(s => watch.has(s.id)).map(s => `    <outline type="rss" text="${esc(s.name)}" title="${esc(s.name)}" xmlUrl="${base}${s.id}.xml" htmlUrl="${new URL("app.html#" + s.id, location.href).href}"/>`);
+  if (!items.length) { const b = $("opml"), t = b.textContent; b.textContent = "add companies to your watchlist first"; setTimeout(() => b.textContent = t, 2500); return; }
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n  <head><title>BullPulse watchlist</title></head>\n  <body>\n${items.join("\n")}\n  </body>\n</opml>\n`;
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([xml], { type: "text/x-opml" })); a.download = "bullpulse-watchlist.opml"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
 $("q").oninput = e => { state.q = e.target.value.trim().toLowerCase(); render(); };
 $("sector").onchange = e => { state.sector = e.target.value; render(); };
 $("min").oninput = e => { state.min = +e.target.value; $("minv").textContent = state.min; render(); };
@@ -725,6 +742,10 @@ async function select(s){
   ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
   fundamentals(s, X.fund);
   insiders(s, X.insiders);
+  $("d-rss").href = `feeds/${s.id}.xml`;
+  const ev = X.events || [];
+  $("d-evsec").hidden = !ev.length;
+  $("d-ev").innerHTML = ev.map(e => `<div><span class="num">${shortDate(e.date)}</span><span>${e.text}</span></div>`).join("");
   // series
   candles.setData(X.bars.map(b => ({ time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] })));
   s50.setData(ser(X.ind.sma50, T)); s200.setData(ser(X.ind.sma200, T)); bbU.setData(ser(X.ind.bbU, T)); bbL.setData(ser(X.ind.bbL, T));
