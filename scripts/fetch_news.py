@@ -61,7 +61,8 @@ def relevance(headline: str, stock: dict, base: float) -> float:
     if stock["ticker"].replace(".", "") in BROKERS and ANALYST.search(headline):
         return round(base * 0.3, 2)
     name = clean_name(stock["name"]).lower()
-    first = name.split(" ")[0] if name else ""
+    words = re.findall(r"[a-z0-9&']+", name)
+    first = words[0] if words else ""   # "amazon" from "amazon.com", "meta" from "meta platforms"
     tick = stock["ticker"].replace(".", "")
     if (name and name in h) or (len(first) >= 4 and re.search(rf"\b{re.escape(first)}\b", h)) \
             or re.search(rf"\b{re.escape(tick)}\b", headline):

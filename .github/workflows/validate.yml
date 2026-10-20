@@ -9,13 +9,14 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
       - name: Run validation
@@ -28,3 +29,15 @@ jobs:
           git diff --cached --quiet || git commit -m "Validation report $(date -u +%F)"
           git pull --rebase origin main
           git push
+
+      - name: Open an issue if the run failed (GitHub emails you about new issues)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Validate score failed on $(date -u +%F)"
+          if ! gh issue list --state open --label run-failure --search "$title" --json number --jq '.[0].number' | grep -q .; then
+            gh label create run-failure --color B60205 --description "Automated run failures" 2>/dev/null || true
+            gh issue create --title "$title" --label run-failure --body "The **Validate score** workflow failed. Open the run to see which step: $RUN_URL"
+          fi

@@ -15,6 +15,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write
 
 concurrency:
   group: nightly
@@ -34,13 +35,13 @@ jobs:
       TIINGO_TIER: ${{ vars.TIINGO_TIER || 'free' }}
       MAX_TICKERS: ${{ vars.MAX_TICKERS }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -51,7 +52,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Cache FinBERT model
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/huggingface
           key: finbert-v1
@@ -59,13 +60,17 @@ jobs:
       - name: Sync end-of-day prices (cinar/indicator indicator-sync + Tiingo)
         run: scripts/sync_prices.sh
 
+      - name: Revenue and earnings growth from SEC filings (weekly)
+        run: python scripts/fetch_fundamentals.py
+        continue-on-error: true
+
       - name: Fetch news (Tiingo or Finnhub for US if available, GDELT otherwise)
         run: python scripts/fetch_news.py --days "${{ github.event.inputs.news_days || '2' }}"
 
       - name: Score headlines with FinBERT
         run: python scripts/score_news.py
 
-      - name: Rank stocks
+      - name: Rank stocks (with data-quality checks and score history)
         run: go run ./cmd/screener
 
       - name: Commit data
@@ -77,8 +82,20 @@ jobs:
           git pull --rebase origin main
           git push
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
-      - uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v5
+
+      - name: Open an issue if the run failed (GitHub emails you about new issues)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Nightly update failed on $(date -u +%F)"
+          if ! gh issue list --state open --label run-failure --search "$title" --json number --jq '.[0].number' | grep -q .; then
+            gh label create run-failure --color B60205 --description "Automated run failures" 2>/dev/null || true
+            gh issue create --title "$title" --label run-failure --body "The **Nightly update** workflow failed. Open the run to see which step: $RUN_URL"
+          fi

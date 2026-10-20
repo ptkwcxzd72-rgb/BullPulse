@@ -1,0 +1,28 @@
+name: Tests
+
+# Runs the Go and Python unit tests on every push and pull request.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["data/**", "site/data/**", "reports/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Go vet and tests
+        run: go vet ./... && go test ./...
+      - name: Python tests (no network, no model)
+        run: python -m unittest discover tests -v
