@@ -17,16 +17,6 @@ jobs:
       TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
       KEY_AS_VARIABLE: ${{ vars.TIINGO_API_KEY != '' }}
     steps:
-      - name: Which secret names can the workflow see? (names only, never values)
-        env:
-          ALL_SECRETS: ${{ toJSON(secrets) }}
-        run: |
-          python3 - <<'PY'
-          import json, os
-          names = sorted(k for k in json.loads(os.environ["ALL_SECRETS"]) if k.lower() != "github_token")
-          print("::notice::Secrets visible to Actions: " + (", ".join(names) if names else "(none)"))
-          PY
-
       - name: Is the secret visible to the workflow?
         run: |
           if [[ -n "$TIINGO_API_KEY" ]]; then
