@@ -242,12 +242,14 @@ def main():
     ap.add_argument("--universe", default="universe/uk.csv")
     ap.add_argument("--max-age-days", type=int, default=7)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--budget-min", type=float, default=25, help="stop after this many minutes; the rest continues next run")
     args = ap.parse_args()
+    t0 = time.time()
 
     if os.path.exists(OUT) and args.max_age_days > 0:
         try:
             age = (dt.datetime.utcnow() - dt.datetime.fromisoformat(json.load(open(OUT))["generated"].rstrip("Z"))).days
-            if age < args.max_age_days:
+            if age < args.max_age_days and json.load(open(OUT)).get("complete", True):
                 print(f"UK fundamentals are {age} days old; skipping (weekly refresh)")
                 return
         except Exception:
@@ -257,9 +259,16 @@ def main():
     rows = list(csv.DictReader(open(args.universe, newline="")))
     if args.limit:
         rows = rows[: args.limit]
-    out, missing = {}, []
+    prev = json.load(open(OUT)).get("stocks", {}) if os.path.exists(OUT) else {}
+    out, missing, complete = {}, [], True
     for r in rows:
         t = r["ticker"]
+        if time.time() - t0 > args.budget_min * 60:
+            complete = False
+            key = "LSE-" + t.replace(".", "")
+            if key in prev:
+                out[key] = prev[key]
+            continue
         if not ids.get(t, {}).get("lei"):
             ids[t] = {**ids.get(t, {}), **find_lei(t)}
             time.sleep(0.5)
@@ -282,8 +291,8 @@ def main():
         out["LSE-" + t.replace(".", "")] = entry
         time.sleep(0.3)
     json.dump(ids, open(IDS, "w"), indent=1, sort_keys=True)
-    json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "stocks": out}, open(OUT, "w"), separators=(",", ":"))
-    print(f"::notice::UK annual-report figures for {len(out)} of {len(rows)} companies")
+    json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "complete": complete, "stocks": out}, open(OUT, "w"), separators=(",", ":"))
+    print(f"::notice::UK annual-report figures for {len(out)} of {len(rows)} companies" + ("" if complete else " (time budget reached; the rest continues next run)"))
     if missing:
         print("::warning::No UK figures for: " + ", ".join(missing[:40]))
 

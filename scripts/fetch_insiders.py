@@ -113,7 +113,9 @@ def main():
     ap.add_argument("--prices", default="data/prices", help="only stocks with a price file ('' for all)")
     ap.add_argument("--days", type=int, default=120, help="look-back for Form 4 filings")
     ap.add_argument("--pause", type=float, default=0.12)
+    ap.add_argument("--budget-min", type=float, default=20, help="stop reading new filings after this many minutes")
     args = ap.parse_args()
+    t0 = time.time()
     if not contact():
         print("::warning::Insider data skipped: SEC_CONTACT_EMAIL is not set.")
         return
@@ -140,6 +142,8 @@ def main():
         for form, acc, filed, doc in zip(rec.get("form", []), rec.get("accessionNumber", []), rec.get("filingDate", []), rec.get("primaryDocument", [])):
             if form != "4" or filed < since:
                 continue
+            if acc not in cache and time.time() - t0 > args.budget_min * 60:
+                continue   # out of time: picked up on the next run (the cache keeps what was read)
             if acc not in cache:
                 xml = fetch(f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc.replace('-', '')}/{doc.rsplit('/', 1)[-1]}")
                 time.sleep(args.pause)
