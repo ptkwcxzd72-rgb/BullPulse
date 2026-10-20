@@ -42,7 +42,22 @@ type Fin struct {
 	Debt             *float64 `json:"debt"`
 	Shares           *float64 `json:"shares"`
 	TTMEnd           string   `json:"ttm_end"`
+	Ccy              string   `json:"ccy"` // reporting currency when not USD (UK annual reports)
 	BalanceEnd       string   `json:"balance_end"`
+}
+
+// Scale multiplies every money amount by k (for example reporting currency -> pence),
+// leaving ratios, growth rates and share counts alone.
+func (f Fin) Scale(k float64) Fin {
+	for _, x := range []**float64{&f.RevenueTTM, &f.NetIncomeTTM, &f.OpIncomeTTM, &f.OCFTTM, &f.CapexTTM, &f.InterestTTM,
+		&f.DividendsPaidTTM, &f.EPSTTM, &f.DPSTTM, &f.EPS5yAgo, &f.EPSFY, &f.DPS3yAgo, &f.DPSFY, &f.FCFAvg3, &f.FCFFAvg3,
+		&f.SBCAvg3, &f.Equity, &f.Cash, &f.AssetsCur, &f.LiabCur, &f.Debt} {
+		if *x != nil {
+			v := **x * k
+			*x = &v
+		}
+	}
+	return f
 }
 
 // Metrics are the ratios derived from Fin and the price (nil when not meaningful).

@@ -61,8 +61,16 @@ jobs:
       - name: Sync end-of-day prices (cinar/indicator indicator-sync + Tiingo)
         run: scripts/sync_prices.sh
 
+      - name: UK end-of-day prices (FTSE 100) and GBP exchange rates
+        run: python scripts/sync_uk_prices.py
+        continue-on-error: true
+
       - name: Revenue and earnings growth from SEC filings (weekly)
         run: python scripts/fetch_fundamentals.py
+        continue-on-error: true
+
+      - name: UK annual-report figures from ESEF filings (weekly)
+        run: python scripts/fetch_uk_fundamentals.py
         continue-on-error: true
 
       - name: Fetch news (Tiingo or Finnhub for US if available, GDELT otherwise)

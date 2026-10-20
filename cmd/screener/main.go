@@ -169,6 +169,8 @@ func main() {
 	news := flag.String("news", "data/news/articles.jsonl", "scored news articles (JSON lines)")
 	out := flag.String("out", "site/data", "output directory for the website data")
 	fundPath := flag.String("fundamentals", "data/fundamentals.json", "growth figures from SEC filings")
+	fundUK := flag.String("fundamentals-uk", "data/fundamentals_uk.json", "annual-report figures for UK companies (ESEF)")
+	fxPath := flag.String("fx", "data/fx.json", "GBP exchange rates for UK companies reporting in other currencies")
 	histPath := flag.String("history", "data/history/scores.csv", "daily score history (appended)")
 	qualPath := flag.String("quality", "data/quality.json", "data-quality report (read by the price sync)")
 	flag.Parse()
@@ -186,8 +188,38 @@ func main() {
 		var f struct {
 			Stocks map[string]Fund `json:"stocks"`
 		}
-		if json.Unmarshal(b, &f) == nil {
+		if json.Unmarshal(b, &f) == nil && f.Stocks != nil {
 			funds = f.Stocks
+		}
+	}
+	// UK: annual-report figures, converted from the reporting currency into pence so they
+	// line up with London prices
+	var fx struct {
+		ToGBP map[string]float64 `json:"to_gbp"`
+	}
+	if b, err := os.ReadFile(*fxPath); err == nil {
+		json.Unmarshal(b, &fx)
+	}
+	if b, err := os.ReadFile(*fundUK); err == nil {
+		var f struct {
+			Stocks map[string]Fund `json:"stocks"`
+		}
+		if json.Unmarshal(b, &f) == nil {
+			for id, e := range f.Stocks {
+				if e.Fin != nil {
+					ccy := e.Fin.Ccy
+					if ccy == "" {
+						ccy = "GBP"
+					}
+					if r, ok := fx.ToGBP[ccy]; ok && r > 0 {
+						sc := e.Fin.Scale(r * 100)
+						e.Fin = &sc
+					} else {
+						e.Fin = nil
+					}
+				}
+				funds[id] = e
+			}
 		}
 	}
 	history := loadHistory(*histPath)

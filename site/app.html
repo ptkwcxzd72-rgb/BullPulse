@@ -356,8 +356,8 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
         </div>
       </div>
       <div class="earlynote" id="earlynote" hidden><b>Early trend changes</b> are stocks whose long-term trend turned up recently (a golden cross within 60 days, or a move back above the 200-day average within 40 days), with momentum holding up, news tone improving and RSI below 70. Many early turns fail. These are candidates for closer research, not predictions of fast growth.</div>
-      <div class="earlynote" id="grownote" hidden><b>Growing &amp; turning up</b> are US companies whose latest reported revenue grew 15% or more year on year, with growth holding or speeding up (from SEC filings), and whose long-term price trend is up or has just turned up. Revenue growth is backward-looking and often already priced in. This is a research screen, not a forecast.</div>
-      <div class="earlynote" id="fundnote" hidden><b>Strong fundamentals</b> are US companies passing at least 20 of the 30 checks in the Fundamentals Profile (value, growth, track record, financial health and dividends), all computed from SEC filings and today's price. The profile describes the business as reported; it does not predict the share price and is not part of the score.</div>
+      <div class="earlynote" id="grownote" hidden><b>Growing &amp; turning up</b> are companies whose latest reported revenue grew 15% or more year on year, with growth holding or speeding up (from SEC filings in the US, annual reports in the UK), and whose long-term price trend is up or has just turned up. Revenue growth is backward-looking and often already priced in. This is a research screen, not a forecast.</div>
+      <div class="earlynote" id="fundnote" hidden><b>Strong fundamentals</b> are companies passing at least 20 of the 30 checks in the Fundamentals Profile (value, growth, track record, financial health and dividends), computed from their filings and today's price. The profile describes the business as reported; it does not predict the share price and is not part of the score.</div>
       <div class="earlynote" id="watchnote" hidden><b>Your watchlist</b> is saved in this browser only. Use the ☆ next to any company to add or remove it.</div>
       <div class="tw">
         <table>
@@ -408,7 +408,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
       <section class="outl" aria-label="Fundamentals profile" id="d-fundsec">
         <h3>Fundamentals profile <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400" id="d-fsrc"></span></h3>
         <div id="d-fund"></div>
-        <p class="note">Thirty pass-or-fail checks, six in each area, from the company's SEC filings and today's price. Comparisons are with the other US companies shown here. "Growth" uses reported results, not analyst forecasts. A dash means the data isn't in the filings, and counts as a fail. Not part of the score.</p>
+        <p class="note">Thirty pass-or-fail checks, six in each area, from the company's filings (SEC filings in the US, the iXBRL annual report in the UK) and today's price. Comparisons are with the other companies in the same market. "Growth" uses reported results, not analyst forecasts. A dash means the data isn't in the filings, and counts as a fail. Not part of the score.</p>
       </section>
       <section class="outl" aria-label="Fair value estimate" id="d-dcfsec">
         <h3>Fair value estimate (DCF) <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">adjust the assumptions</span></h3>
@@ -584,7 +584,7 @@ function render(){
   $("empty").hidden = rows.length > 0;
   document.querySelectorAll("#tb .star").forEach(b => b.onclick = e => { e.stopPropagation(); toggleWatch(b.dataset.w); });
   overview();
-  $("empty").textContent = state.view === "watch" ? "Your watchlist is empty. Use the ☆ next to a company to add it." : state.view === "grow" ? "No companies currently meet the growth screen with these filters." : state.view === "fund" ? "No companies pass 20 or more fundamental checks with these filters (fundamentals cover US stocks only)." : state.view === "early" ? "No early trend changes match these filters." : "No stocks match these filters. Lower the minimum score or clear the search.";
+  $("empty").textContent = state.view === "watch" ? "Your watchlist is empty. Use the ☆ next to a company to add it." : state.view === "grow" ? "No companies currently meet the growth screen with these filters." : state.view === "fund" ? "No companies pass 20 or more fundamental checks with these filters." : state.view === "early" ? "No early trend changes match these filters." : "No stocks match these filters. Lower the minimum score or clear the search.";
   document.querySelectorAll("#tb tr").forEach(tr => {
     const go = () => { select(D.stocks.find(s => s.id === tr.dataset.id)); if (matchMedia("(max-width: 1180px)").matches) $("dos").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); };
     tr.onclick = go; tr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } };
@@ -706,13 +706,13 @@ async function select(s){
   $("d-fac").insertAdjacentHTML("beforeend", `<div class="hist">${histChart(X.hist)}</div>`);
   // growth (SEC filings, US only)
   const hasG = s.revGrowth != null;
-  $("d-growsec").hidden = s.ex !== "US";
-  $("d-gsrc").textContent = hasG ? `from SEC filings · ${s.fundBasis === "year" ? "fiscal year" : "quarter"} ending ${fmtDate(s.fundAsOf)}` : "no SEC revenue data for this company";
+  $("d-growsec").hidden = s.ex !== "US" && !hasG;
+  $("d-gsrc").textContent = hasG ? `from ${s.ex === "US" ? "SEC filings" : "the annual report"} · ${s.fundBasis === "year" ? "financial year" : "quarter"} ending ${fmtDate(s.fundAsOf)}` : "no SEC revenue data for this company";
   $("d-growth").innerHTML = hasG ? [
     ["Revenue growth", pct(s.revGrowth, 1), "vs same period a year earlier"],
-    ["Acceleration", s.revAccel == null ? "–" : sign(s.revAccel * 100, 1, " pts"), s.revAccel == null ? "needs two quarters" : s.revAccel >= 0 ? "growth speeding up" : "growth slowing"],
+    ["Acceleration", s.revAccel == null ? "–" : sign(s.revAccel * 100, 1, " pts"), s.revAccel == null ? (s.fundBasis === "year" ? "needs three years" : "needs two quarters") : s.revAccel >= 0 ? "growth speeding up" : "growth slowing"],
     ["EPS growth", s.epsGrowth == null ? "–" : pct(s.epsGrowth, 0), "diluted, year on year"],
-    ["Growth percentile", s.G == null ? "–" : String(s.G), "within US stocks shown"],
+    ["Growth percentile", s.G == null ? "–" : String(s.G), `within ${MKT[s.ex]} stocks shown`],
   ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
   fundamentals(s, X.fund);
   // series
@@ -816,8 +816,9 @@ function impliedGrowth(i, px){
 const money = (v, s) => { const gbx = s && s.ccy === "GBX"; if (gbx) v = v / 100; const a = Math.abs(v), c = gbx ? "£" : "$"; return (v < 0 ? "−" + c : c) + (a >= 1e12 ? (a / 1e12).toFixed(2) + "tn" : a >= 1e9 ? (a / 1e9).toFixed(1) + "bn" : a >= 1e6 ? (a / 1e6).toFixed(0) + "m" : a.toFixed(0)); };
 function fundamentals(s, F){
   const has = F && F.profile;
-  $("d-fundsec").hidden = s.ex !== "US"; $("d-dcfsec").hidden = s.ex !== "US";
-  if (s.ex !== "US") return;
+  const show = s.ex === "US" || has;
+  $("d-fundsec").hidden = !show; $("d-dcfsec").hidden = !show;
+  if (!show) return;
   if (!has){
     $("d-fsrc").textContent = "";
     $("d-fund").innerHTML = `<p class="note" style="margin:0">No balance-sheet and cash-flow data from SEC filings for this company yet. It is refreshed weekly.</p>`;
@@ -825,7 +826,7 @@ function fundamentals(s, F){
     return;
   }
   const P = F.profile, M = F.metrics || {}, fin = F.fin || {};
-  $("d-fsrc").textContent = `${P.total} of 30 · twelve months to ${fmtDate(P.asof || fin.ttmEnd)}`;
+  $("d-fsrc").textContent = `${P.total} of 30 · ${s.ex === "US" ? "twelve months" : "financial year"} to ${fmtDate(P.asof || fin.ttmEnd)}${s.ex === "US" ? "" : " · annual report"}`;
   const mark = c => c.ok == null ? ['u', '–'] : c.ok ? ['y', '✓'] : ['n', '✗'];
   const x1 = v => v == null ? "–" : v.toFixed(1) + "×", p1 = v => v == null ? "–" : (v * 100).toFixed(1) + "%";
   $("d-fund").innerHTML = `<div class="fpro">${radar(P.areas.map(a => a.score))}<div class="areas">${P.areas.map(a => `<details><summary><span>${a.name}</span><span class="pips">${Array.from({ length: 6 }, (_, i) => `<i class="${i < a.score ? "on" : ""}"></i>`).join("")}</span><b>${a.score}/6</b></summary><ul>${a.checks.map(c => { const [k, sym] = mark(c); return `<li><span class="k ${k}" aria-label="${k === "y" ? "pass" : k === "n" ? "fail" : "no data"}">${sym}</span><span>${c.n}<small>${c.d}</small></span></li>`; }).join("")}</ul></details>`).join("")}</div></div>

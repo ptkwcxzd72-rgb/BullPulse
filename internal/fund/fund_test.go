@@ -124,6 +124,14 @@ func TestBuildCountsChecks(t *testing.T) {
 	}
 }
 
+func TestScale(t *testing.T) {
+	fin := Fin{RevenueTTM: f(10), EPSTTM: f(0.5), Shares: f(7), RevCAGR3: f(0.1)}
+	g := fin.Scale(100)
+	if *g.RevenueTTM != 1000 || *g.EPSTTM != 50 || *g.Shares != 7 || *g.RevCAGR3 != 0.1 || *fin.RevenueTTM != 10 {
+		t.Fatalf("scale wrong: %v %v %v %v %v", *g.RevenueTTM, *g.EPSTTM, *g.Shares, *g.RevCAGR3, *fin.RevenueTTM)
+	}
+}
+
 func TestMedian(t *testing.T) {
 	if Median([]*float64{f(3), nil, f(1), f(2)}) != 2 || Median([]*float64{f(1), f(4)}) != 2.5 || !math.IsNaN(Median(nil)) {
 		t.Fatal("median wrong")

@@ -4,7 +4,7 @@
 # Needs TIINGO_API_KEY. Tiingo's free tier allows about 50 requests an hour, 1,000 a day and
 # 500 unique symbols a month, so on the free tier only the first MAX_TICKERS stocks are synced,
 # spaced out to respect the hourly limit. Set TIINGO_TIER=power (the paid tier) to sync all.
-# UK stocks are skipped until a UK end-of-day source is chosen (provider_ticker is empty).
+# UK stocks are synced separately by scripts/sync_uk_prices.py.
 set -euo pipefail
 
 INDICATOR_VERSION="v2.1.44"
@@ -26,7 +26,7 @@ import csv, glob
 for f in sorted(glob.glob("universe/*.csv")):
     for r in csv.DictReader(open(f, newline="")):
         t = (r.get("provider_ticker") or "").strip()
-        if t: print(t)' | head -n "$MAX")
+        if t and r.get("market") != "UK": print(t)' | head -n "$MAX")
 echo "Syncing ${#TICKERS[@]} tickers (tier: $TIER, delay: ${DELAY}s)"
 mkdir -p data/prices
 

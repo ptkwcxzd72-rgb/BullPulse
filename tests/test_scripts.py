@@ -9,6 +9,8 @@ import fetch_fundamentals as F  # noqa: E402
 import fetch_news as N  # noqa: E402
 import score_news as S  # noqa: E402
 import sec_financials as SF  # noqa: E402
+import fetch_uk_fundamentals as UKF  # noqa: E402
+import sync_uk_prices as UKP  # noqa: E402
 
 
 def fact(start, end, val, filed="2026-01-01"):
@@ -94,6 +96,48 @@ class Financials(unittest.TestCase):
 
     def test_empty(self):
         self.assertEqual(SF.financials({"facts": {}}), {})
+
+
+class UK(unittest.TestCase):
+    def xj(self, year, rev, ni):
+        a, b = f"{year}-01-01T00:00:00", f"{year + 1}-01-01T00:00:00"
+        def fact(c, v, unit="iso4217:USD", per=f"{a}/{b}", **extra):
+            return {"value": str(v), "dimensions": {"concept": "ifrs-full:" + c, "entity": "lei:X", "period": per, "unit": unit, **extra}}
+        return {"facts": {
+            "r": fact("Revenue", rev), "n": fact("ProfitLossAttributableToOwnersOfParent", ni),
+            "seg": fact("Revenue", 1, **{"ifrs-full:SegmentsAxis": "x"}),     # dimensioned: ignored
+            "e": fact("DilutedEarningsLossPerShare", ni / 10, unit="iso4217:USD/xbrli:shares"),
+            "o": fact("CashFlowsFromUsedInOperatingActivities", ni * 1.5), "c": fact("PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities", ni * .5),
+            "b": fact("Borrowings", 40, per=b), "cb": fact("CurrentPortionOfNoncurrentBorrowings", 5, per=b),
+            "q": fact("EquityAttributableToOwnersOfParent", 100, per=b), "sh": fact("AdjustedWeightedAverageShares", 10, unit="xbrli:shares")}}
+
+    def test_extract_and_map(self):
+        facts = UKF.extract(self.xj(2024, 200, 20))
+        self.assertEqual(len([f for f in facts if f["c"] == "Revenue"]), 1)
+        rev = [f for f in facts if f["c"] == "Revenue"][0]
+        self.assertEqual((rev["s"], rev["e"]), ("2024-01-01", "2024-12-31"))
+        filings = [("2025-03-01", facts), ("2024-03-01", UKF.extract(self.xj(2023, 160, 16))), ("2023-03-01", UKF.extract(self.xj(2022, 150, 12)))]
+        cf, ccy = UKF.to_companyfacts(filings)
+        self.assertEqual(ccy, "USD")
+        fin = SF.financials(cf)
+        self.assertEqual(fin["revenue_ttm"], 200)
+        self.assertEqual(fin["debt"], 40)          # total borrowings: current part not added again
+        self.assertEqual(fin["shares"], 10)
+        self.assertTrue(fin["profitable_3y"])
+        g = UKF.growth(cf)
+        self.assertAlmostEqual(g["rev_growth"], 0.25)
+        self.assertEqual(g["period"], "year")
+
+    def test_yahoo_symbols_and_parse(self):
+        self.assertEqual(UKP.yahoo_symbol("BT.A"), "BT-A.L")
+        self.assertEqual(UKP.yahoo_symbol("RR."), "RR.L")
+        d = {"chart": {"result": [{"meta": {"currency": "GBp"}, "timestamp": [1700000000, 1700086400],
+             "indicators": {"quote": [{"open": [100, 102], "high": [103, 104], "low": [99, 101], "close": [101, 103], "volume": [5, 6]}],
+                            "adjclose": [{"adjclose": [50.5, 103]}]}}]}}
+        ccy, rows = UKP.parse_chart(d)
+        self.assertEqual(ccy, "GBp")
+        self.assertEqual(rows[0][4], 50.5)          # adjusted for the later dividend/split
+        self.assertEqual(rows[0][1], 50.0)
 
 
 class News(unittest.TestCase):
