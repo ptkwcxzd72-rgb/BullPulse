@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: National Grid plc (NG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-NG</link>
+  <description>Alerts for National Grid plc from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

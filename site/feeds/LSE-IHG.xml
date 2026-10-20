@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: IHG Hotels &amp; Resorts (IHG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-IHG</link>
+  <description>Alerts for IHG Hotels &amp; Resorts from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

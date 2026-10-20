@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: London Stock Exchange Group (LSEG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-LSEG</link>
+  <description>Alerts for London Stock Exchange Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

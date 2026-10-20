@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: Aberdeen Group (ABDN)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-ABDN</link>
+  <description>Alerts for Aberdeen Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>
