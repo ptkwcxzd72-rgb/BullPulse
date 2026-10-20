@@ -69,6 +69,10 @@ jobs:
         run: python scripts/fetch_fundamentals.py
         continue-on-error: true
 
+      - name: Insider dealing from SEC Form 4 filings
+        run: python scripts/fetch_insiders.py
+        continue-on-error: true
+
       - name: UK annual-report figures from ESEF filings (weekly)
         run: python scripts/fetch_uk_fundamentals.py
         continue-on-error: true

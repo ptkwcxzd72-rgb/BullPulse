@@ -11,6 +11,7 @@ import score_news as S  # noqa: E402
 import sec_financials as SF  # noqa: E402
 import fetch_uk_fundamentals as UKF  # noqa: E402
 import sync_uk_prices as UKP  # noqa: E402
+import fetch_insiders as INS  # noqa: E402
 
 
 def fact(start, end, val, filed="2026-01-01"):
@@ -138,6 +139,34 @@ class UK(unittest.TestCase):
         self.assertEqual(ccy, "GBp")
         self.assertEqual(rows[0][4], 50.5)          # adjusted for the later dividend/split
         self.assertEqual(rows[0][1], 50.0)
+
+
+FORM4 = b"""<?xml version="1.0"?><ownershipDocument>
+<issuer><issuerCik>0000320193</issuerCik></issuer>
+<reportingOwner><reportingOwnerId><rptOwnerName>DOE JANE</rptOwnerName></reportingOwnerId>
+<reportingOwnerRelationship><isDirector>1</isDirector><isOfficer>0</isOfficer></reportingOwnerRelationship></reportingOwner>
+<nonDerivativeTable>
+<nonDerivativeTransaction><transactionDate><value>2026-09-01</value></transactionDate><transactionCoding><transactionCode>P</transactionCode></transactionCoding>
+<transactionAmounts><transactionShares><value>1000</value></transactionShares><transactionPricePerShare><value>20.5</value></transactionPricePerShare></transactionAmounts></nonDerivativeTransaction>
+<nonDerivativeTransaction><transactionDate><value>2026-09-02</value></transactionDate><transactionCoding><transactionCode>M</transactionCode></transactionCoding>
+<transactionAmounts><transactionShares><value>50</value></transactionShares><transactionPricePerShare><value>1</value></transactionPricePerShare></transactionAmounts></nonDerivativeTransaction>
+</nonDerivativeTable></ownershipDocument>"""
+
+
+class Insiders(unittest.TestCase):
+    def test_parse_purchase_only(self):
+        tx = INS.parse_form4(FORM4, "320193")
+        self.assertEqual(len(tx), 1)
+        self.assertEqual((tx[0]["code"], tx[0]["val"], tx[0]["who"], tx[0]["role"]), ("P", 20500, "Doe Jane", "Director"))
+        self.assertEqual(INS.parse_form4(FORM4, "999"), [])     # not this issuer
+
+    def test_cluster(self):
+        import datetime as dt
+        txs = [{"d": "2026-09-01", "code": "P", "who": "A", "val": 10}, {"d": "2026-09-05", "code": "P", "who": "B", "val": 5},
+               {"d": "2025-01-01", "code": "P", "who": "C", "val": 5}, {"d": "2026-09-03", "code": "S", "who": "A", "val": 99}]
+        s = INS.summarise(txs, dt.date(2026, 10, 20))
+        self.assertTrue(s["cluster"])
+        self.assertEqual((s["buyers"], s["buyVal"], s["sellVal"]), (2, 15, 99))
 
 
 class News(unittest.TestCase):

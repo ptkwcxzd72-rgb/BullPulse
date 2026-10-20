@@ -103,23 +103,35 @@ type Row struct {
 	FP     *int     `json:"FP,omitempty"`     // checks passed out of 30
 	FA     []int    `json:"FA,omitempty"`     // value, growth, track record, health, dividends (0-6 each)
 	FairVs *float64 `json:"fairVs,omitempty"` // price vs DCF base estimate (negative = below)
-	Grower    bool     `json:"grower"`
-	Flags     []string `json:"flags,omitempty"` // data-quality warnings shown on the site
+	Grower bool     `json:"grower"`
+	Flags  []string `json:"flags,omitempty"` // data-quality warnings shown on the site
+	Ins    *Insider `json:"ins,omitempty"`   // open-market insider dealing, last 90 days (US)
 
-	sentRaw  float64
-	lastDate time.Time
-	provider string
-	detail   map[string]any
+	sentRaw   float64
+	insRecent []map[string]any
+	lastDate  time.Time
+	provider  string
+	detail    map[string]any
 }
 
 // Fund is one company's growth figures from scripts/fetch_fundamentals.py.
 type Fund struct {
-	Period    string   `json:"period"`
-	AsOf      string   `json:"asof"`
-	RevGrowth *float64 `json:"rev_growth"`
-	RevAccel  *float64 `json:"rev_accel"`
-	EpsGrowth *float64 `json:"eps_growth"`
+	Period    string    `json:"period"`
+	AsOf      string    `json:"asof"`
+	RevGrowth *float64  `json:"rev_growth"`
+	RevAccel  *float64  `json:"rev_accel"`
+	EpsGrowth *float64  `json:"eps_growth"`
 	Fin       *fund.Fin `json:"fin"`
+}
+
+// Insider summarises Form 4 open-market dealing from scripts/fetch_insiders.py.
+type Insider struct {
+	Buyers  int              `json:"buyers"`
+	BuyVal  float64          `json:"buyVal"`
+	Sellers int              `json:"sellers"`
+	SellVal float64          `json:"sellVal"`
+	Cluster bool             `json:"cluster"`
+	Recent  []map[string]any `json:"recent,omitempty"`
 }
 
 // issue records a data-quality problem for data/quality.json.
@@ -170,6 +182,7 @@ func main() {
 	out := flag.String("out", "site/data", "output directory for the website data")
 	fundPath := flag.String("fundamentals", "data/fundamentals.json", "growth figures from SEC filings")
 	fundUK := flag.String("fundamentals-uk", "data/fundamentals_uk.json", "annual-report figures for UK companies (ESEF)")
+	insPath := flag.String("insiders", "data/insiders.json", "insider dealing from SEC Form 4 filings")
 	fxPath := flag.String("fx", "data/fx.json", "GBP exchange rates for UK companies reporting in other currencies")
 	histPath := flag.String("history", "data/history/scores.csv", "daily score history (appended)")
 	qualPath := flag.String("quality", "data/quality.json", "data-quality report (read by the price sync)")
@@ -220,6 +233,15 @@ func main() {
 				}
 				funds[id] = e
 			}
+		}
+	}
+	insiders := map[string]*Insider{}
+	if b, err := os.ReadFile(*insPath); err == nil {
+		var f struct {
+			Stocks map[string]*Insider `json:"stocks"`
+		}
+		if json.Unmarshal(b, &f) == nil && f.Stocks != nil {
+			insiders = f.Stocks
 		}
 	}
 	history := loadHistory(*histPath)
@@ -287,6 +309,13 @@ func main() {
 		}
 		if f, ok := funds[id]; ok {
 			row.RevGrowth, row.RevAccel, row.EpsGrowth, row.FundAsOf, row.FundBasis = f.RevGrowth, f.RevAccel, f.EpsGrowth, f.AsOf, f.Period
+		}
+		if in, ok := insiders[id]; ok && in != nil {
+			recent := in.Recent
+			sum := *in
+			sum.Recent = nil
+			row.Ins = &sum
+			row.insRecent = recent
 		}
 		if d := x.DaysAbove200(j); d >= 0 {
 			row.Cross200 = &d
@@ -375,6 +404,9 @@ func main() {
 			"sma50": nullable(x.SMA50, from), "sma200": nullable(x.SMA200, from), "bbU": nullable(x.BBUpper, from), "bbL": nullable(x.BBLower, from),
 			"rsi": nullable(x.RSI, from), "macd": nullable(x.MACD, from), "sig": nullable(x.Sig, from), "atr": nullable(x.ATR, from), "obv": nullable(x.OBV, from)}}
 		row.detail = detail
+		if row.insRecent != nil {
+			detail["insiders"] = row.insRecent
+		}
 		rows = append(rows, row)
 	}
 

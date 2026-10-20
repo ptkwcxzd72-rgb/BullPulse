@@ -228,6 +228,10 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .star{border:0;background:transparent;cursor:pointer;color:var(--muted);font-size:15px;line-height:1;padding:2px 4px;border-radius:4px}
 .star[aria-pressed="true"]{color:var(--fs)}
 .star:hover{background:var(--surface-2)}
+.ins{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--up);background:var(--up-soft);border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px}
+.itx{display:grid;gap:4px;font-size:12.5px}
+.itx div{display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--grid)}
+.itx small{color:var(--muted)}
 .grow{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--fm);background:color-mix(in srgb,var(--fm) 16%,transparent);border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px}
 .hist{grid-column:1 / -1;display:grid;gap:4px}
 .hist svg{display:block;width:100%;height:56px}
@@ -405,6 +409,11 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
         <h3>Growth <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400" id="d-gsrc"></span></h3>
         <div class="gpanel" id="d-growth"></div>
       </section>
+      <section class="outl" aria-label="Insider dealing" id="d-inssec" hidden>
+        <h3>Insider dealing <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">open-market trades on SEC Form 4 · last 90 days</span></h3>
+        <div id="d-ins"></div>
+        <p class="note">Directors and officers must report trades in their own company's shares within two business days. Purchases with their own money are the informative ones; insiders sell for many reasons, such as tax or planned sales. Two or more different insiders buying is flagged as cluster buying.</p>
+      </section>
       <section class="outl" aria-label="Fundamentals profile" id="d-fundsec">
         <h3>Fundamentals profile <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400" id="d-fsrc"></span></h3>
         <div id="d-fund"></div>
@@ -573,7 +582,7 @@ function render(){
     return `<tr data-id="${s.id}" tabindex="0" class="${s === state.sel ? "sel" : ""}">
       <td><button class="star" data-w="${s.id}" aria-pressed="${watch.has(s.id)}" aria-label="${watch.has(s.id) ? "Remove from" : "Add to"} watchlist">${watch.has(s.id) ? "★" : "☆"}</button></td>
       <td class="r rk">${s.rank}</td>
-      <td><div class="co"><b>${s.name}${s.early ? '<span class="early" title="Early trend change">EARLY</span>' : ""}${s.grower ? '<span class="grow" title="Revenue growing 15%+ with the trend up">GROWTH</span>' : ""}${(s.flags || []).length ? '<span class="flag" title="Data check: see stock page">DATA</span>' : ""}</b><small><span class="mkt ${s.ex}">${MKT[s.ex]}</span><span class="num">${s.t}</span><span>${s.sector}</span></small></div></td>
+      <td><div class="co"><b>${s.name}${s.early ? '<span class="early" title="Early trend change">EARLY</span>' : ""}${s.grower ? '<span class="grow" title="Revenue growing 15%+ with the trend up">GROWTH</span>' : ""}${s.ins && s.ins.cluster ? '<span class="ins" title="Several insiders bought shares in the open market in the last 90 days">INSIDER BUYING</span>' : ""}${(s.flags || []).length ? '<span class="flag" title="Data check: see stock page">DATA</span>' : ""}</b><small><span class="mkt ${s.ex}">${MKT[s.ex]}</span><span class="num">${s.t}</span><span>${s.sector}</span></small></div></td>
       <td><div class="sc"><span class="n">${s.score}</span><span class="stack" title="Trend ${s.T} · Momentum ${s.M} · Sentiment ${s.S}"><span style="width:${s.T * .4}%;background:var(--ft)"></span><span style="width:${s.M * .4}%;background:var(--fm)"></span><span style="width:${s.S * .2}%;background:var(--fs)"></span></span></div></td>
       <td class="r"><div class="spk">${spark(s)}<span class="num ${cls(s.ret1y)}">${pct(s.ret1y, 0)}</span></div></td>
       <td class="r num">${pctOrDash(s.revGrowth)}</td>
@@ -715,6 +724,7 @@ async function select(s){
     ["Growth percentile", s.G == null ? "–" : String(s.G), `within ${MKT[s.ex]} stocks shown`],
   ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
   fundamentals(s, X.fund);
+  insiders(s, X.insiders);
   // series
   candles.setData(X.bars.map(b => ({ time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] })));
   s50.setData(ser(X.ind.sma50, T)); s200.setData(ser(X.ind.sma200, T)); bbU.setData(ser(X.ind.bbU, T)); bbL.setData(ser(X.ind.bbL, T));
@@ -774,6 +784,7 @@ async function select(s){
     if (s.FP >= 20) pro.push(`Passes ${s.FP} of 30 fundamental checks`);
     else if (s.FP <= 10) con.push(`Passes only ${s.FP} of 30 fundamental checks`);
   }
+  if (s.ins && s.ins.buyers) pro.push(`${s.ins.buyers} insider${s.ins.buyers > 1 ? "s" : ""} bought ${money(s.ins.buyVal, s)} of shares in the open market in the last 90 days`);
   if (fl.length) con.push("Price data flagged by the data check: treat signals with caution");
   const li = xs => xs.length ? xs.map(x => `<li>${x}</li>`).join("") : `<li style="color:var(--muted)">Nothing notable</li>`;
   $("d-pro").innerHTML = li(pro); $("d-con").innerHTML = li(con);
@@ -785,6 +796,16 @@ async function select(s){
   $("d-news").innerHTML = (arts.length ? "" : `<p class="note" style="margin:0">No scored articles in the last 12 months.</p>`) + arts.map(a => `<button class="art" data-d="${a.d}"><span class="d">${shortDate(a.d)}</span><span class="h">${a.h}</span><span class="lab ${a.lab}">${a.lab} ${Math.round(a.conf * 100)}%</span><span class="sub">${a.ev} · ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${a.src}</a>` : a.src} · relevance ${a.rel.toFixed(2)}</span></button>`).join("");
   document.querySelectorAll(".art").forEach(b => b.onclick = () => focusDate(b.dataset.d));
   document.querySelectorAll("#tb tr").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === s.id));
+}
+
+// Insider dealing (SEC Form 4)
+function insiders(s, list){
+  $("d-inssec").hidden = !s.ins;
+  if (!s.ins) return;
+  const I = s.ins;
+  const head = `<div class="kv" style="grid-template-columns:repeat(4,minmax(0,1fr))">${[["Insiders buying", I.buyers], ["Bought", money(I.buyVal, s)], ["Insiders selling", I.sellers], ["Sold", money(I.sellVal, s)]].map(([l, v]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span></div>`).join("")}</div>`;
+  const rows = (list || []).map(t => `<div><span class="num">${shortDate(t.d)}</span><span>${t.who}<small> · ${t.role || "insider"}</small></span><span class="num ${t.code === "P" ? "pos" : "neg"}">${t.code === "P" ? "Bought" : "Sold"} ${money(t.val, s)}</span></div>`).join("");
+  $("d-ins").innerHTML = head + (rows ? `<div class="itx">${rows}</div>` : `<p class="note" style="margin:0">No open-market purchases or sales filed in the last 120 days.</p>`);
 }
 
 // Fundamentals profile and DCF

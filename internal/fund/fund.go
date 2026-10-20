@@ -394,7 +394,9 @@ func Build(f Fin, m Metrics, d DCF, sector string, revGrowth, revAccel, epsGrowt
 	c.add("Price-to-sales below its sector's median", m.PS != nil && !nan(ss), func() bool { return v(m.PS) < ss },
 		func() string { return fmt.Sprintf("P/S %s vs sector median %s", x1(v(m.PS)), x1(ss)) }, nodata)
 	c.add("Free-cash-flow yield above the market median", m.FCFYield != nil && !nan(med.FCFYieldMarket), func() bool { return v(m.FCFYield) > med.FCFYieldMarket },
-		func() string { return fmt.Sprintf("FCF yield %s vs market median %s", pct(v(m.FCFYield)), pct(med.FCFYieldMarket)) }, nodata)
+		func() string {
+			return fmt.Sprintf("FCF yield %s vs market median %s", pct(v(m.FCFYield)), pct(med.FCFYieldMarket))
+		}, nodata)
 	value := area("value", "Value", &c)
 
 	// 2. Growth (momentum of reported growth; not analyst forecasts)
@@ -402,11 +404,15 @@ func Build(f Fin, m Metrics, d DCF, sector string, revGrowth, revAccel, epsGrowt
 	c.add("Revenue is growing", revGrowth != nil, func() bool { return v(revGrowth) > 0 },
 		func() string { return "Revenue " + signed(v(revGrowth)) + " year on year" }, nodata)
 	c.add("Revenue growth above the market median", revGrowth != nil && !nan(med.RevGrowthMarket), func() bool { return v(revGrowth) > med.RevGrowthMarket },
-		func() string { return fmt.Sprintf("%s vs market median %s", signed(v(revGrowth)), signed(med.RevGrowthMarket)) }, nodata)
+		func() string {
+			return fmt.Sprintf("%s vs market median %s", signed(v(revGrowth)), signed(med.RevGrowthMarket))
+		}, nodata)
 	c.add("Revenue growing 10% or more", revGrowth != nil, func() bool { return v(revGrowth) >= 0.10 },
 		func() string { return "Revenue " + signed(v(revGrowth)) + " year on year" }, nodata)
 	c.add("Revenue growth is speeding up", revAccel != nil, func() bool { return v(revAccel) > 0 },
-		func() string { return fmt.Sprintf("Growth changed by %+.1f points versus the previous quarter", v(revAccel)*100) }, "Needs two comparable quarters")
+		func() string {
+			return fmt.Sprintf("Growth changed by %+.1f points versus the previous quarter", v(revAccel)*100)
+		}, "Needs two comparable quarters")
 	c.add("Earnings per share growing", epsGrowth != nil, func() bool { return v(epsGrowth) > 0 },
 		func() string { return "EPS " + signed(v(epsGrowth)) + " year on year" }, "Needs positive year-ago EPS")
 	c.add("Earnings per share growing 15% or more", epsGrowth != nil, func() bool { return v(epsGrowth) >= 0.15 },
@@ -427,11 +433,15 @@ func Build(f Fin, m Metrics, d DCF, sector string, revGrowth, revAccel, epsGrowt
 			return "At least one loss-making year"
 		}, nodata)
 	c.add("Profit margin higher than a year earlier", f.NetMarginFY != nil && f.NetMarginPrevFY != nil, func() bool { return v(f.NetMarginFY) > v(f.NetMarginPrevFY) },
-		func() string { return fmt.Sprintf("Net margin %s vs %s", pct(v(f.NetMarginFY)), pct(v(f.NetMarginPrevFY))) }, nodata)
+		func() string {
+			return fmt.Sprintf("Net margin %s vs %s", pct(v(f.NetMarginFY)), pct(v(f.NetMarginPrevFY)))
+		}, nodata)
 	c.add("Return on equity of 15% or more", m.ROE != nil, func() bool { return v(m.ROE) >= 0.15 },
 		func() string { return "ROE " + pct(v(m.ROE)) }, nodata)
 	c.add("Operating margin above the market median", m.OpMargin != nil && !nan(med.OpMarginMarket), func() bool { return v(m.OpMargin) > med.OpMarginMarket },
-		func() string { return fmt.Sprintf("%s vs market median %s", pct(v(m.OpMargin)), pct(med.OpMarginMarket)) }, nodata)
+		func() string {
+			return fmt.Sprintf("%s vs market median %s", pct(v(m.OpMargin)), pct(med.OpMarginMarket))
+		}, nodata)
 	past := area("past", "Track record", &c)
 
 	// 4. Financial health
