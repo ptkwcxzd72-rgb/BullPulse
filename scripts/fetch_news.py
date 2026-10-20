@@ -2,8 +2,9 @@
 
 Sources (both free):
   * Tiingo news API, for US tickers, when TIINGO_NEWS_KEY (or TIINGO_API_KEY) is set and the account has news access.
+  * Finnhub company news, for US tickers, when FINNHUB_API_KEY is set (free key, North America only).
   * GDELT DOC 2.0 API (no key), searched by company name. Used for UK stocks, and for US stocks
-    when Tiingo news is unavailable.
+    when neither Tiingo nor Finnhub news is available.
 
 New articles are appended to data/news/articles.jsonl with score=null; scripts/score_news.py
 scores them. Duplicates (same URL) are skipped and articles older than 400 days are pruned.
@@ -78,6 +79,28 @@ def tiingo_news(stocks: list[dict], key: str, since: dt.date) -> list[dict]:
     return out
 
 
+def finnhub_news(stocks: list[dict], key: str, since: dt.date) -> list[dict]:
+    """Finnhub company news (free key, about 60 calls a minute; North American companies only)."""
+    out = []
+    today = dt.date.today()
+    for s in stocks:
+        sym = s["ticker"].replace(".", "")
+        url = (f"https://finnhub.io/api/v1/company-news?symbol={urllib.parse.quote(sym)}"
+               f"&from={since}&to={today}&token={key}")
+        data = get_json(url) or []
+        for a in data if isinstance(data, list) else []:
+            ts = a.get("datetime")
+            if not ts or not a.get("headline"):
+                continue
+            related = [r for r in (a.get("related") or "").split(",") if r]
+            out.append({
+                "date": dt.datetime.utcfromtimestamp(ts).date().isoformat(), "ticker": sym, "market": s["market"],
+                "headline": a["headline"].strip(), "source": a.get("source") or "Finnhub", "url": a.get("url", ""),
+                "rel": 1.0 if len(related) <= 2 else 0.7, "via": "Finnhub"})
+        time.sleep(1.1)  # stay under 60 calls a minute
+    return out
+
+
 def gdelt_news(stocks: list[dict], days: int, pause: float) -> list[dict]:
     out = []
     for k, s in enumerate(stocks):
@@ -124,15 +147,26 @@ def main() -> None:
     fresh: list[dict] = []
     us = [s for s in stocks if s["market"] == "US"]
     gdelt_targets = [s for s in stocks if s["market"] != "US"]
+    finnhub_key = os.environ.get("FINNHUB_API_KEY", "").strip()
+    us_done = False
     if key and us:
         try:
             got = tiingo_news(us, key, since)
             print(f"Tiingo news: {len(got)} ticker-article pairs")
             fresh += got
+            us_done = True
         except urllib.error.HTTPError as e:
-            print(f"Tiingo news unavailable (HTTP {e.code}); using GDELT for US stocks too", file=sys.stderr)
-            gdelt_targets = stocks
-    else:
+            print(f"Tiingo news unavailable (HTTP {e.code})", file=sys.stderr)
+    if not us_done and finnhub_key and us:
+        try:
+            got = finnhub_news(us, finnhub_key, since)
+            print(f"Finnhub news: {len(got)} articles")
+            fresh += got
+            us_done = True
+        except urllib.error.HTTPError as e:
+            print(f"Finnhub news unavailable (HTTP {e.code})", file=sys.stderr)
+    if not us_done:
+        print("No US news API available; using GDELT for US stocks too")
         gdelt_targets = stocks
     if args.max_gdelt:
         gdelt_targets = gdelt_targets[: args.max_gdelt]

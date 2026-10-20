@@ -30,6 +30,7 @@ jobs:
       # prices: END_OF_DAY_DATA (or TIINGO_API_KEY); news: NEWS_UPDATES (falls back to the price key)
       TIINGO_API_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
       TIINGO_NEWS_KEY: ${{ secrets.NEWS_UPDATES || secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
+      FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
       TIINGO_TIER: ${{ vars.TIINGO_TIER || 'free' }}
       MAX_TICKERS: ${{ vars.MAX_TICKERS }}
     steps:
@@ -58,7 +59,7 @@ jobs:
       - name: Sync end-of-day prices (cinar/indicator indicator-sync + Tiingo)
         run: scripts/sync_prices.sh
 
-      - name: Fetch news (Tiingo for US if available, GDELT otherwise)
+      - name: Fetch news (Tiingo or Finnhub for US if available, GDELT otherwise)
         run: python scripts/fetch_news.py --days "${{ github.event.inputs.news_days || '2' }}"
 
       - name: Score headlines with FinBERT
@@ -73,6 +74,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data site/data
           git diff --cached --quiet || git commit -m "Nightly data $(date -u +%F)"
+          git pull --rebase origin main
           git push
 
       - uses: actions/configure-pages@v5
