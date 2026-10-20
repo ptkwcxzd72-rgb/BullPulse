@@ -24,7 +24,7 @@ jobs:
           python3 - <<'PY'
           import json, os
           names = sorted(k for k in json.loads(os.environ["ALL_SECRETS"]) if k.lower() != "github_token")
-          print("Secrets visible to Actions:", ", ".join(names) if names else "(none)")
+          print("::notice::Secrets visible to Actions: " + (", ".join(names) if names else "(none)"))
           PY
 
       - name: Is the secret visible to the workflow?
