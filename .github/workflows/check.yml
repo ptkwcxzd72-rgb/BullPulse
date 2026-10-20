@@ -1,7 +1,7 @@
 name: Check setup
 
-# Quick check (under a minute) that the Tiingo key reaches the workflows and works.
-# Never prints the key itself.
+# Quick check (under a minute) that the Tiingo keys reach the workflows and work.
+# Never prints the keys themselves.
 on:
   workflow_dispatch:
 
@@ -14,40 +14,39 @@ jobs:
     environment:
       name: github-pages
     env:
-      TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
-      KEY_AS_VARIABLE: ${{ vars.TIINGO_API_KEY != '' }}
+      EOD_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
+      NEWS_KEY: ${{ secrets.NEWS_UPDATES || secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
+      NEWS_SEPARATE: ${{ secrets.NEWS_UPDATES != '' }}
     steps:
-      - name: Is the secret visible to the workflow?
+      - name: Are the secrets visible to the workflow?
         run: |
-          if [[ -n "$TIINGO_API_KEY" ]]; then
-            echo "OK: secret TIINGO_API_KEY is set (${#TIINGO_API_KEY} characters)."
-            if [[ "$TIINGO_API_KEY" != "$(echo -n "$TIINGO_API_KEY" | tr -d '[:space:]')" ]]; then
-              echo "::warning::The key contains spaces or line breaks. Re-paste it without them."
-            fi
-          else
-            if [[ "$KEY_AS_VARIABLE" == "true" ]]; then
-              echo "::error::TIINGO_API_KEY exists as a *Variable*, not a *Secret*. Delete the variable (variables are not hidden in logs) and add it on the Secrets tab."
-            else
-              echo "::error::No secret named TIINGO_API_KEY. Add it under Settings > Secrets and variables > Actions > Secrets > New repository secret. Codespaces and Dependabot secrets are not visible to Actions."
-            fi
+          if [[ -z "$EOD_KEY" ]]; then
+            echo "::error::No price key. Add an Actions secret named END_OF_DAY_DATA (Settings > Secrets and variables > Actions > Secrets)."
             exit 1
           fi
+          echo "::notice::Price key END_OF_DAY_DATA is visible (${#EOD_KEY} characters)."
+          if [[ "$NEWS_SEPARATE" == "true" ]]; then
+            echo "::notice::News key NEWS_UPDATES is visible (${#NEWS_KEY} characters)."
+          else
+            echo "::notice::No NEWS_UPDATES secret; news will use the price key."
+          fi
 
-      - name: Does Tiingo accept the key?
+      - name: Does Tiingo accept the keys?
         run: |
-          KEY="$(echo -n "$TIINGO_API_KEY" | tr -d '[:space:]')"
           check () {
-            local label="$1" url="$2"
-            code=$(curl -s -o /tmp/body -w "%{http_code}" -H "Content-Type: application/json" -H "Authorization: Token $KEY" "$url")
+            local label="$1" key="$2" url="$3"
+            key="$(echo -n "$key" | tr -d '[:space:]')"
+            code=$(curl -s -o /tmp/body -w "%{http_code}" -H "Content-Type: application/json" -H "Authorization: Token $key" "$url")
+            body="$(head -c 160 /tmp/body | tr -d '\n')"
             case "$code" in
-              200) echo "OK   $label: HTTP 200, $(head -c 160 /tmp/body | tr -d '\n')" ;;
-              401|403) echo "::error::$label: HTTP $code. Tiingo rejected the key or this plan lacks access: $(head -c 200 /tmp/body)"; return 1 ;;
-              429) echo "::warning::$label: HTTP 429, hourly request limit reached. Try again in an hour." ;;
-              *) echo "::warning::$label: HTTP $code: $(head -c 200 /tmp/body)" ;;
+              200) echo "::notice::OK - $label: HTTP 200 - ${body}" ;;
+              401|403) echo "::error::$label: HTTP $code - Tiingo rejected the key or the plan lacks access - ${body}"; return 1 ;;
+              429) echo "::warning::$label: HTTP 429 - hourly request limit reached; try again in an hour." ;;
+              *) echo "::warning::$label: HTTP $code - ${body}" ;;
             esac
           }
           fail=0
-          check "Key test" "https://api.tiingo.com/api/test" || fail=1
-          check "End-of-day prices (AAPL, last 10 days)" "https://api.tiingo.com/tiingo/daily/aapl/prices?startDate=$(date -u -d '10 days ago' +%F)" || fail=1
-          check "News (1 article)" "https://api.tiingo.com/tiingo/news?tickers=aapl&limit=1" || echo "News is optional: GDELT is used when Tiingo news is unavailable."
+          check "Price key test" "$EOD_KEY" "https://api.tiingo.com/api/test" || fail=1
+          check "End-of-day prices (AAPL, last 10 days)" "$EOD_KEY" "https://api.tiingo.com/tiingo/daily/aapl/prices?startDate=$(date -u -d '10 days ago' +%F)" || fail=1
+          check "News (1 article)" "$NEWS_KEY" "https://api.tiingo.com/tiingo/news?tickers=aapl&limit=1" || echo "::warning::Tiingo news unavailable with this key; the nightly job will use GDELT for news instead."
           exit $fail

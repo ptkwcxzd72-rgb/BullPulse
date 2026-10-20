@@ -1,7 +1,7 @@
 """Fetch recent news for every stock in the BullPulse universe.
 
 Sources (both free):
-  * Tiingo news API, for US tickers, when TIINGO_API_KEY is set and the account has news access.
+  * Tiingo news API, for US tickers, when TIINGO_NEWS_KEY (or TIINGO_API_KEY) is set and the account has news access.
   * GDELT DOC 2.0 API (no key), searched by company name. Used for UK stocks, and for US stocks
     when Tiingo news is unavailable.
 
@@ -119,7 +119,7 @@ def main() -> None:
         stocks = [s for s in stocks if s.get("provider_ticker") and s["provider_ticker"] in have]
         print(f"{len(stocks)} stocks with price data")
     since = dt.date.today() - dt.timedelta(days=args.days)
-    key = os.environ.get("TIINGO_API_KEY", "").strip()
+    key = (os.environ.get("TIINGO_NEWS_KEY") or os.environ.get("TIINGO_API_KEY") or "").strip()
 
     fresh: list[dict] = []
     us = [s for s in stocks if s["market"] == "US"]

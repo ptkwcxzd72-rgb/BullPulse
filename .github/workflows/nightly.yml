@@ -27,7 +27,9 @@ jobs:
     environment:
       name: github-pages
     env:
-      TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+      # prices: END_OF_DAY_DATA (or TIINGO_API_KEY); news: NEWS_UPDATES (falls back to the price key)
+      TIINGO_API_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
+      TIINGO_NEWS_KEY: ${{ secrets.NEWS_UPDATES || secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
       TIINGO_TIER: ${{ vars.TIINGO_TIER || 'free' }}
       MAX_TICKERS: ${{ vars.MAX_TICKERS }}
     steps:

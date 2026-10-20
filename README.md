@@ -42,7 +42,7 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 
 ## Setup
 
-1. **Add your Tiingo key.** Go to Settings → Secrets and variables → Actions → *New repository secret*. Name it `TIINGO_API_KEY` and paste your token. The same token is used for prices and news.
+1. **Add your Tiingo keys.** Go to Settings → Secrets and variables → Actions → *New repository secret*. Add `END_OF_DAY_DATA` with the token used for prices and `NEWS_UPDATES` with the token used for news. If there is only one token, add just `END_OF_DAY_DATA`; news falls back to it. (`TIINGO_API_KEY` is also accepted for prices.) Then run Actions → *Check setup* to confirm both keys work.
 2. **Optional variables** (on the same page, *Variables* tab):
    - `TIINGO_TIER`: set to `free` (the default) or `power` (Tiingo's paid tier).
    - `MAX_TICKERS`: how many stocks to sync. The default is 220 on the free tier and all stocks on `power`.
@@ -67,7 +67,7 @@ Columns: `ticker,name,sector,market,provider_ticker`. `provider_ticker` is the s
 
 ```bash
 # prices (needs TIINGO_API_KEY in your environment)
-TIINGO_TIER=free MAX_TICKERS=20 scripts/sync_prices.sh
+TIINGO_API_KEY=... TIINGO_TIER=free MAX_TICKERS=20 scripts/sync_prices.sh
 
 # news + sentiment
 pip install --index-url https://download.pytorch.org/whl/cpu torch && pip install -r requirements.txt
