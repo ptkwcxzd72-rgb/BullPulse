@@ -177,7 +177,7 @@ def financials(facts: dict) -> dict:
         put("net_margin_fy", ni_y[yrs[-1]] / rev_y[yrs[-1]])
         put("net_margin_prev_fy", ni_y[yrs[-2]] / rev_y[yrs[-2]])
     # free cash flow history (fiscal years) for the DCF base
-    both = sorted(set(ocf_y) & set(capex_y)) or sorted(ocf_y)   # capex can be missing for asset-light firms
+    both = sorted(set(ocf_y) & set(capex_y))   # no capital spending reported: no free-cash-flow figures
     fcf = [ocf_y[k] - capex_y.get(k, 0) for k in both[-3:]]
     if fcf:
         put("fcf_avg3", sum(fcf) / len(fcf), 0)
@@ -204,5 +204,9 @@ def financials(facts: dict) -> dict:
         if p:
             k = max(p, key=lambda se: (se[1], se[0]))
             sh = (k[1], p[k])
+    if not sh and ni_y and eps_y:   # last resort: net income / earnings per share of the latest year
+        y = max(set(ni_y) & set(eps_y), default=None)
+        if y and eps_y[y] and ni_y[y] / eps_y[y] > 0:
+            sh = (y, ni_y[y] / eps_y[y])
     put("shares", sh[1] if sh else None, 0)
     return f

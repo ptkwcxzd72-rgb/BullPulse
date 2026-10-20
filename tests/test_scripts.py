@@ -82,7 +82,9 @@ class Financials(unittest.TestCase):
             return {"start": st, "end": en, "val": v, "filed": "2026-01-01", "form": form}
         facts = {"facts": {"us-gaap": {"NetCashProvidedByUsedInOperatingActivities": {"units": {"USD": [
             r("2023-01-01", "2023-12-31", 10, "10-K"), r("2024-01-01", "2024-12-31", 20, "10-K"), r("2025-01-01", "2025-12-31", 30, "10-K"),
-            r("2025-07-01", "2026-06-30", -50, "10-Q"), r("2025-04-01", "2026-03-31", -40, "10-Q")]}}}}}
+            r("2025-07-01", "2026-06-30", -50, "10-Q"), r("2025-04-01", "2026-03-31", -40, "10-Q")]}},
+            "PaymentsToAcquirePropertyPlantAndEquipment": {"units": {"USD": [
+            r("2023-01-01", "2023-12-31", 0, "10-K"), r("2024-01-01", "2024-12-31", 0, "10-K"), r("2025-01-01", "2025-12-31", 0, "10-K")]}}}}}
         f = SF.financials(facts)
         self.assertEqual(f["fcf_avg3"], 20)              # fiscal years only
         self.assertEqual(f["ocf_ttm"], -50)              # the trailing twelve months still use the latest period

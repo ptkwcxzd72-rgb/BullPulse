@@ -47,6 +47,9 @@ def get_json(url: str, tries: int = 4) -> dict | None:
     return None
 
 
+FX: dict = {"GBP": 1.0}   # GBP per unit of currency, filled by main() before prices are parsed
+
+
 def parse_chart(d: dict) -> tuple[str, list[list]]:
     """(currency, rows of [date, open, high, low, close, volume]) adjusted for splits and dividends."""
     res = (d or {}).get("chart", {}).get("result") or []
@@ -58,6 +61,8 @@ def parse_chart(d: dict) -> tuple[str, list[list]]:
     q = (r.get("indicators", {}).get("quote") or [{}])[0]
     adj = ((r.get("indicators", {}).get("adjclose") or [{}])[0]).get("adjclose") or [None] * len(ts)
     scale = {"GBp": 1.0, "GBX": 1.0, "GBP": 100.0}.get(ccy)
+    if scale is None and ccy in FX:   # a few FTSE 100 lines are quoted in dollars or euros: convert to pence
+        scale = FX[ccy] * 100
     if scale is None:
         return ccy, []
     out, seen = [], set()
@@ -114,6 +119,7 @@ def main():
     rows = list(csv.DictReader(open(args.universe, newline="")))
     if args.limit:
         rows = rows[: args.limit]
+    FX.update(fx_rates())
     ok, kept, failed = 0, [], []
     for r in rows:
         name = (r.get("provider_ticker") or "").strip()
@@ -133,9 +139,8 @@ def main():
             os.replace(tmp, path)
             ok += 1
         time.sleep(args.pause)
-    fx = fx_rates()
     os.makedirs("data", exist_ok=True)
-    json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "to_gbp": fx}, open("data/fx.json", "w"), indent=1)
+    json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "to_gbp": FX}, open("data/fx.json", "w"), indent=1)
     print(f"::notice::UK prices: {ok} of {len(rows)} updated; {len(kept)} kept their previous file; {len(failed)} missing")
     for k in kept[:10]:
         print(f"::warning::Kept previous prices for {k}")

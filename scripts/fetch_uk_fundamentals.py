@@ -48,7 +48,8 @@ MAP: dict[str, list[str]] = {
     "EarningsPerShareBasic": ["BasicEarningsLossPerShare", "BasicEarningsLossPerShareFromContinuingOperations"],
     "NetCashProvidedByUsedInOperatingActivities": ["CashFlowsFromUsedInOperatingActivities"],
     "PaymentsToAcquirePropertyPlantAndEquipment": ["PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",
-                                                   "PurchaseOfPropertyPlantAndEquipment"],
+                                                   "PurchaseOfPropertyPlantAndEquipment",
+                                                   "PurchaseOfPropertyPlantAndEquipmentIntangibleAssetsOtherThanGoodwillInvestmentPropertyAndOtherNoncurrentAssets"],
     "InterestExpense": ["FinanceCosts", "InterestExpense"],
     "InterestExpenseNonoperating": ["InterestPaidClassifiedAsFinancingActivities", "InterestPaidClassifiedAsOperatingActivities"],
     "PaymentsOfDividendsCommonStock": ["DividendsPaidToEquityHoldersOfParentClassifiedAsFinancingActivities",
@@ -92,8 +93,13 @@ def get_json(url: str, tries: int = 3):
 def find_lei(ticker: str) -> dict:
     """{'isin', 'lei'} via the LSE instrument record and GLEIF's ISIN mapping."""
     out = {}
-    inst = get_json("https://api.londonstockexchange.com/api/gw/lse/instruments/alldata/" + urllib.parse.quote(ticker.rstrip(".")))
-    isin = (inst or {}).get("isin")
+    isin = None
+    base = ticker.rstrip(".")
+    for tidm in dict.fromkeys([base, base + "."]):   # two-letter TIDMs carry a trailing dot (BP., RR.)
+        inst = get_json("https://api.londonstockexchange.com/api/gw/lse/instruments/alldata/" + urllib.parse.quote(tidm))
+        isin = (inst or {}).get("isin")
+        if isin:
+            break
     if not isin:
         return out
     out["isin"] = isin
@@ -202,7 +208,7 @@ def to_companyfacts(filings: list[tuple[str, list[dict]]]) -> tuple[dict, str]:
                     key = "USD"
                 elif u.startswith(f"iso4217:{ccy}/") or (target in PER_SHARE and u.startswith(f"iso4217:{ccy}")):
                     key = "USD/shares"
-                elif u == "xbrli:shares":
+                elif u.split(":")[-1] == "shares":
                     key = "shares"
                 else:
                     continue
