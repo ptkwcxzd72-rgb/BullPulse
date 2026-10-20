@@ -1,0 +1,80 @@
+name: Nightly update
+
+# Runs after the US close on weekdays: sync prices, fetch and score news,
+# rank every stock, commit the data and publish the website to GitHub Pages.
+on:
+  schedule:
+    - cron: "15 21 * * 1-5" # 21:15 UTC = after the 16:00 New York close (summer and winter)
+  workflow_dispatch:
+    inputs:
+      news_days:
+        description: "News look-back window in days (use 30 on the first run)"
+        default: "2"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: nightly
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    environment:
+      name: github-pages
+    env:
+      TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+      TIINGO_TIER: ${{ vars.TIINGO_TIER || 'free' }}
+      MAX_TICKERS: ${{ vars.MAX_TICKERS }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python packages (CPU-only PyTorch for FinBERT)
+        run: |
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install -r requirements.txt
+
+      - name: Cache FinBERT model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: finbert-v1
+
+      - name: Sync end-of-day prices (cinar/indicator indicator-sync + Tiingo)
+        run: scripts/sync_prices.sh
+
+      - name: Fetch news (Tiingo for US if available, GDELT otherwise)
+        run: python scripts/fetch_news.py --days "${{ github.event.inputs.news_days || '2' }}"
+
+      - name: Score headlines with FinBERT
+        run: python scripts/score_news.py
+
+      - name: Rank stocks
+        run: go run ./cmd/screener
+
+      - name: Commit data
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site/data
+          git diff --cached --quiet || git commit -m "Nightly data $(date -u +%F)"
+          git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4

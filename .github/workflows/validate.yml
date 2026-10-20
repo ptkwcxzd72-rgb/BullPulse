@@ -1,0 +1,29 @@
+name: Validate score
+
+# Re-runs the out-of-sample backtest (score quintiles vs forward returns) on the price
+# history in data/prices and publishes the results to the website's track-record table.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 1 * *" # monthly, on the 1st
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Run validation
+        run: go run ./cmd/validate
+      - name: Commit report
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports site/data/validation.json
+          git diff --cached --quiet || git commit -m "Validation report $(date -u +%F)"
+          git push
