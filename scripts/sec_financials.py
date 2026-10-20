@@ -37,9 +37,16 @@ def _rows(facts: dict, concept: str, unit: str, taxonomy: str = "us-gaap") -> li
     return facts.get("facts", {}).get(taxonomy, {}).get(concept, {}).get("units", {}).get(unit, [])
 
 
-def durations(facts: dict, concepts: list[str], unit: str = "USD") -> dict[tuple[str, str], float]:
+class Periods(dict):
+    """(start, end) -> value, plus .annual_keys: the periods reported as fiscal years in a 10-K
+    (some companies, such as Amazon, also file trailing-twelve-month columns in 10-Qs)."""
+    annual_keys: set
+
+
+def durations(facts: dict, concepts: list[str], unit: str = "USD") -> Periods:
     """(start, end) -> value. First concept in priority order wins; latest filing wins within one."""
-    out: dict[tuple[str, str], float] = {}
+    out = Periods()
+    out.annual_keys = set()
     for c in concepts:
         best: dict[tuple[str, str], tuple[str, float]] = {}
         for r in _rows(facts, c, unit):
@@ -47,6 +54,8 @@ def durations(facts: dict, concepts: list[str], unit: str = "USD") -> dict[tuple
                 k = (r["start"], r["end"])
                 if k not in best or r.get("filed", "") > best[k][0]:
                     best[k] = (r.get("filed", ""), float(r["val"]))
+                if str(r.get("form", "")).startswith(("10-K", "20-F", "40-F")):
+                    out.annual_keys.add(k)
         for k, (_, v) in best.items():
             out.setdefault(k, v)
     return out
@@ -74,8 +83,10 @@ def latest(series: dict[str, float]) -> tuple[str, float] | None:
 
 
 def annual(p: dict[tuple[str, str], float]) -> dict[str, float]:
-    """fiscal-year end date -> value for ~12-month durations."""
-    return {e: v for (s, e), v in p.items() if 350 <= (_d(e) - _d(s)).days <= 380}
+    """fiscal-year end date -> value for ~12-month durations reported in annual reports
+    (any ~12-month duration when the filing form isn't known)."""
+    keys = getattr(p, "annual_keys", None)
+    return {e: v for (s, e), v in p.items() if 350 <= (_d(e) - _d(s)).days <= 380 and (not keys or (s, e) in keys)}
 
 
 def ttm(p: dict[tuple[str, str], float]) -> tuple[str, float] | None:
@@ -162,7 +173,8 @@ def financials(facts: dict) -> dict:
         put("net_margin_fy", ni_y[yrs[-1]] / rev_y[yrs[-1]])
         put("net_margin_prev_fy", ni_y[yrs[-2]] / rev_y[yrs[-2]])
     # free cash flow history (fiscal years) for the DCF base
-    fcf = [ocf_y[k] - capex_y.get(k, 0) for k in sorted(ocf_y)[-3:]]
+    both = sorted(set(ocf_y) & set(capex_y)) or sorted(ocf_y)   # capex can be missing for asset-light firms
+    fcf = [ocf_y[k] - capex_y.get(k, 0) for k in both[-3:]]
     if fcf:
         put("fcf_avg3", sum(fcf) / len(fcf), 0)
         put("fcf_years", len(fcf))

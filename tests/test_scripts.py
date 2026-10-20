@@ -73,6 +73,16 @@ class Financials(unittest.TestCase):
         self.assertAlmostEqual(f["rev_cagr3"], (120 / 90) ** (1 / 3) - 1, places=4)
         self.assertGreater(f["net_margin_fy"], f["net_margin_prev_fy"])
 
+    def test_ttm_columns_in_quarterly_reports_are_not_fiscal_years(self):
+        def r(st, en, v, form):
+            return {"start": st, "end": en, "val": v, "filed": "2026-01-01", "form": form}
+        facts = {"facts": {"us-gaap": {"NetCashProvidedByUsedInOperatingActivities": {"units": {"USD": [
+            r("2023-01-01", "2023-12-31", 10, "10-K"), r("2024-01-01", "2024-12-31", 20, "10-K"), r("2025-01-01", "2025-12-31", 30, "10-K"),
+            r("2025-07-01", "2026-06-30", -50, "10-Q"), r("2025-04-01", "2026-03-31", -40, "10-Q")]}}}}}
+        f = SF.financials(facts)
+        self.assertEqual(f["fcf_avg3"], 20)              # fiscal years only
+        self.assertEqual(f["ocf_ttm"], -50)              # the trailing twelve months still use the latest period
+
     def test_empty(self):
         self.assertEqual(SF.financials({"facts": {}}), {})
 
