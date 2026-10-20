@@ -6,6 +6,10 @@ For each company with a CIK in the universe, downloads its XBRL "company facts" 
   * eps_growth   year-on-year diluted EPS growth (only when the year-ago EPS was positive)
   * period/asof  the period the figures describe and its end date
 
+Also extracts the raw figures behind the Fundamentals Profile and DCF (see sec_financials.py):
+trailing-twelve-month revenue, earnings, cash flow, capex, interest and dividends; balance-sheet
+debt, cash, equity and working capital; share count; and multi-year growth history.
+
 Writes data/fundamentals.json. Fundamentals change quarterly, so the nightly job runs this
 weekly (or when the file is missing). SEC asks for a descriptive User-Agent with a contact and
 at most 10 requests a second; this script makes about 2 a second.
@@ -23,6 +27,8 @@ import sys
 import time
 import urllib.error
 import urllib.request
+
+from sec_financials import financials
 
 OUT = "data/fundamentals.json"
 REVENUE = [  # in priority order; companies switch concepts over time (e.g. after ASC 606)
@@ -195,8 +201,11 @@ def main() -> None:
     result, missing = {}, []
     for i, s in enumerate(stocks):
         facts = get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{int(s['cik']):010d}.json")
-        a = analyse(facts) if facts else None
-        if a:
+        a = (analyse(facts) or {}) if facts else {}
+        fin = financials(facts) if facts else {}
+        if a or fin:
+            if fin:
+                a["fin"] = fin
             result[f"US-{s['ticker'].replace('.', '')}"] = a
         else:
             missing.append(s["ticker"])

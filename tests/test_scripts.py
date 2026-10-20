@@ -8,6 +8,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 import fetch_fundamentals as F  # noqa: E402
 import fetch_news as N  # noqa: E402
 import score_news as S  # noqa: E402
+import sec_financials as SF  # noqa: E402
 
 
 def fact(start, end, val, filed="2026-01-01"):
@@ -37,6 +38,43 @@ class Fundamentals(unittest.TestCase):
 
     def test_no_data(self):
         self.assertIsNone(F.analyse({"facts": {}}))
+
+
+class Financials(unittest.TestCase):
+    def facts(self):
+        g = {
+            "Revenues": {"units": {"USD": [fact("2023-01-01", "2023-12-31", 100), fact("2024-01-01", "2024-12-31", 110),
+                                           fact("2025-01-01", "2025-12-31", 120), fact("2025-01-01", "2025-06-30", 55),
+                                           fact("2026-01-01", "2026-06-30", 70), fact("2022-01-01", "2022-12-31", 90)]}},
+            "NetIncomeLoss": {"units": {"USD": [fact("2023-01-01", "2023-12-31", 8), fact("2024-01-01", "2024-12-31", 10),
+                                                fact("2025-01-01", "2025-12-31", 12)]}},
+            "NetCashProvidedByUsedInOperatingActivities": {"units": {"USD": [
+                fact("2023-01-01", "2023-12-31", 15), fact("2024-01-01", "2024-12-31", 18), fact("2025-01-01", "2025-12-31", 21)]}},
+            "PaymentsToAcquirePropertyPlantAndEquipment": {"units": {"USD": [
+                fact("2023-01-01", "2023-12-31", 5), fact("2024-01-01", "2024-12-31", 6), fact("2025-01-01", "2025-12-31", 7)]}},
+            "StockholdersEquity": {"units": {"USD": [{"end": "2025-12-31", "val": 50}, {"end": "2026-06-30", "val": 55}]}},
+            "LongTermDebtNoncurrent": {"units": {"USD": [{"end": "2026-06-30", "val": 25}]}},
+            "LongTermDebtCurrent": {"units": {"USD": [{"end": "2026-06-30", "val": 5}]}},
+        }
+        return {"facts": {"us-gaap": g, "dei": {"EntityCommonStockSharesOutstanding": {"units": {"shares": [{"end": "2026-07-20", "val": 10}]}}}}}
+
+    def test_ttm_from_year_to_date(self):
+        f = SF.financials(self.facts())
+        self.assertEqual(f["revenue_ttm"], 135)          # 120 + 70 - 55
+        self.assertEqual(f["ttm_end"], "2026-06-30")
+
+    def test_balance_and_cash_flow(self):
+        f = SF.financials(self.facts())
+        self.assertEqual(f["fcf_avg3"], 12)              # (10 + 12 + 14) / 3
+        self.assertEqual(f["debt"], 30)
+        self.assertEqual(f["equity"], 55)
+        self.assertEqual(f["shares"], 10)
+        self.assertTrue(f["profitable_3y"])
+        self.assertAlmostEqual(f["rev_cagr3"], (120 / 90) ** (1 / 3) - 1, places=4)
+        self.assertGreater(f["net_margin_fy"], f["net_margin_prev_fy"])
+
+    def test_empty(self):
+        self.assertEqual(SF.financials({"facts": {}}), {})
 
 
 class News(unittest.TestCase):

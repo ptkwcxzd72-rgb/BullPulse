@@ -22,6 +22,7 @@ import (
 
 	"github.com/cinar/indicator/v2/asset"
 	"github.com/ptkwcxzd72-rgb/BullPulse/internal/core"
+	"github.com/ptkwcxzd72-rgb/BullPulse/internal/fund"
 )
 
 const keep = 260 // bars sent to the browser for charts
@@ -98,6 +99,10 @@ type Row struct {
 	FundAsOf  string   `json:"fundAsOf,omitempty"`
 	FundBasis string   `json:"fundBasis,omitempty"`
 	GP        *float64 `json:"G"`
+	// Fundamentals Profile (30 checks) and DCF; shown and screened on, not in the composite
+	FP     *int     `json:"FP,omitempty"`     // checks passed out of 30
+	FA     []int    `json:"FA,omitempty"`     // value, growth, track record, health, dividends (0-6 each)
+	FairVs *float64 `json:"fairVs,omitempty"` // price vs DCF base estimate (negative = below)
 	Grower    bool     `json:"grower"`
 	Flags     []string `json:"flags,omitempty"` // data-quality warnings shown on the site
 
@@ -114,6 +119,7 @@ type Fund struct {
 	RevGrowth *float64 `json:"rev_growth"`
 	RevAccel  *float64 `json:"rev_accel"`
 	EpsGrowth *float64 `json:"eps_growth"`
+	Fin       *fund.Fin `json:"fin"`
 }
 
 // issue records a data-quality problem for data/quality.json.
@@ -354,6 +360,7 @@ func main() {
 		fresh = append(fresh, r)
 	}
 	rows = fresh
+	addFundamentals(rows, funds)
 
 	if len(rows) == 0 {
 		// Never replace the published data (or the demo) with an empty ranking.
@@ -467,6 +474,87 @@ func main() {
 	}
 	fmt.Printf("screener: %d stocks ranked, prices to %s; %d excluded (stale), %d flagged, %d to re-download\n",
 		len(rows), day, len(excluded), len(flagged), len(resync))
+}
+
+// addFundamentals computes ratios, the DCF and the 30-check profile for stocks with filing data.
+// Medians are taken within each market so "cheap" and "strong" are relative to peers.
+func addFundamentals(rows []*Row, funds map[string]Fund) {
+	type item struct {
+		r *Row
+		f fund.Fin
+		m fund.Metrics
+		d fund.DCF
+	}
+	byEx := map[string][]*item{}
+	for _, r := range rows {
+		f, ok := funds[r.ID]
+		if !ok || f.Fin == nil {
+			continue
+		}
+		it := &item{r: r, f: *f.Fin, m: fund.Compute(*f.Fin, r.Price)}
+		it.d = fund.EstimateDCF(it.f, r.Sector, r.Price, r.RevGrowth)
+		byEx[r.Ex] = append(byEx[r.Ex], it)
+	}
+	for _, items := range byEx {
+		col := func(get func(*item) *float64, keep func(*item) bool) []*float64 {
+			var v []*float64
+			for _, it := range items {
+				if keep == nil || keep(it) {
+					v = append(v, get(it))
+				}
+			}
+			return v
+		}
+		pays := func(it *item) bool { return it.m.DivYield != nil && *it.m.DivYield > 0 }
+		med := fund.Medians{
+			PEMarket:        fund.Median(col(func(it *item) *float64 { return it.m.PE }, nil)),
+			FCFYieldMarket:  fund.Median(col(func(it *item) *float64 { return it.m.FCFYield }, nil)),
+			RevGrowthMarket: fund.Median(col(func(it *item) *float64 { return it.r.RevGrowth }, nil)),
+			OpMarginMarket:  fund.Median(col(func(it *item) *float64 { return it.m.OpMargin }, nil)),
+			DivYieldPayers:  fund.Median(col(func(it *item) *float64 { return it.m.DivYield }, pays)),
+			PESector:        map[string]float64{}, PSSector: map[string]float64{},
+		}
+		sectors := map[string]bool{}
+		for _, it := range items {
+			sectors[it.r.Sector] = true
+		}
+		for sec := range sectors {
+			in := func(it *item) bool { return it.r.Sector == sec }
+			// sector medians need a few peers to mean anything
+			if pe := col(func(it *item) *float64 { return it.m.PE }, in); countNonNil(pe) >= 4 {
+				med.PESector[sec] = fund.Median(pe)
+			} else {
+				med.PESector[sec] = math.NaN()
+			}
+			if ps := col(func(it *item) *float64 { return it.m.PS }, in); countNonNil(ps) >= 4 {
+				med.PSSector[sec] = fund.Median(ps)
+			} else {
+				med.PSSector[sec] = math.NaN()
+			}
+		}
+		for _, it := range items {
+			pr := fund.Build(it.f, it.m, it.d, it.r.Sector, it.r.RevGrowth, it.r.RevAccel, it.r.EpsGrowth, med)
+			total := pr.Total
+			it.r.FP = &total
+			for _, a := range pr.Areas {
+				it.r.FA = append(it.r.FA, a.Score)
+			}
+			it.r.FairVs = it.d.VsPrice
+			it.r.detail["fund"] = map[string]any{"profile": pr, "dcf": it.d, "metrics": it.m,
+				"fin": map[string]any{"revenue": it.f.RevenueTTM, "netIncome": it.f.NetIncomeTTM, "fcfAvg3": it.f.FCFAvg3,
+					"cash": it.f.Cash, "debt": it.f.Debt, "equity": it.f.Equity, "shares": it.f.Shares, "ttmEnd": it.f.TTMEnd, "balanceEnd": it.f.BalanceEnd}}
+		}
+	}
+}
+
+func countNonNil(v []*float64) int {
+	n := 0
+	for _, x := range v {
+		if x != nil {
+			n++
+		}
+	}
+	return n
 }
 
 // scoreHistory holds one line per stock per day: date,id,score,T,M,S,rank.
