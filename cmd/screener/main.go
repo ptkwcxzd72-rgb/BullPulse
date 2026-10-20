@@ -184,7 +184,7 @@ func main() {
 	fundUK := flag.String("fundamentals-uk", "data/fundamentals_uk.json", "annual-report figures for UK companies (ESEF)")
 	evPath := flag.String("events", "data/events.jsonl", "alert log (appended)")
 	feedDir := flag.String("feeds", "site/feeds", "RSS feeds directory")
-	siteURL := flag.String("site-url", "https://ptkwcxzd72-rgb.github.io/BullPulse/", "public address used in feed links")
+	siteURL := flag.String("site-url", "https://bullpulse.co.uk/", "public address used in feed links")
 	insPath := flag.String("insiders", "data/insiders.json", "insider dealing from SEC Form 4 filings")
 	fxPath := flag.String("fx", "data/fx.json", "GBP exchange rates for UK companies reporting in other currencies")
 	histPath := flag.String("history", "data/history/scores.csv", "daily score history (appended)")
