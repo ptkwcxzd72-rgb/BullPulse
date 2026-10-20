@@ -10,7 +10,16 @@ Every weekday night it ranks each stock on three factors, as percentiles within 
 | Momentum | 40% | 12-month return, excluding the latest month |
 | Sentiment | 20% | 30-day news tone: headlines scored by FinBERT, weighted by relevance |
 
-Alongside the score, BullPulse shows **revenue and earnings growth from SEC filings** (US) and flags companies that are *growing and turning up*. It also builds a **Fundamentals Profile**: 30 pass-or-fail checks, six each for value, growth, track record, financial health and dividends, and a **fair-value estimate** from a two-stage discounted cash flow (DCF) whose growth, required return and long-run growth visitors can adjust on the page. The DCF is skipped for banks, insurers and property companies, and for companies with negative average free cash flow. All of this comes from SEC filings and today's price (no paid analyst forecasts). These figures are displayed and screened on, but not added to the composite until the validation shows they help.
+Alongside the score, BullPulse shows:
+
+- **Growth** from company filings (SEC filings in the US, iXBRL annual reports in the UK), and a *growing and turning up* screen.
+- **Fundamentals Profile**: 30 pass-or-fail checks, six each for value, growth, track record, financial health and dividends.
+- **Fair value (DCF)**: a two-stage discounted cash flow of cash flow to the whole business (after share-based pay, before interest), with net debt subtracted. Visitors can change growth, required return and long-run growth on the page. A **reverse DCF** shows the growth today's price implies. Skipped for banks, insurers and property companies, and when average free cash flow is negative.
+- **Insider dealing** (US): open-market buys and sells by directors and officers from SEC Form 4, with a *cluster buying* flag when two or more insiders buy within 90 days.
+- **Alerts without accounts**: RSS feeds for every stock and for everything (rank moves, trend changes, new results, insider buying, news bursts). A watchlist can be exported as an OPML feed list for any feed reader.
+- **Compare** up to three stocks side by side; every filter, view and comparison is kept in the page link, so screens can be shared. The site installs as an app on phones and works offline with the last data seen.
+
+These extra figures are displayed and screened on, but not added to the composite until the validation shows they help. The monthly validation includes a **point-in-time backtest** of the Fundamentals Profile, DCF and reverse DCF, rebuilt at every month-end from SEC filings as they were published, so the test never uses figures before investors could see them.
 
 For each stock, the website shows the score and the reasons behind it, linked price, news-tone, RSI and volume charts, and a statistical upside/downside range. It also lists the signals for and against the stock, and flags early trend changes. Visitors can keep a watchlist (saved in their own browser), browse a sector heatmap and see the week's biggest rank movers.
 
@@ -19,8 +28,10 @@ For each stock, the website shows the score and the reasons behind it, linked pr
 ## How it works
 
 ```
-SEC EDGAR filings ──► fetch_fundamentals.py (weekly) ──────┐
-Tiingo EOD prices ──► indicator-sync ──► data/prices/*.csv ─┐
+SEC EDGAR filings ──► fetch_fundamentals.py, fetch_insiders.py ─┐
+UK ESEF reports ───► fetch_uk_fundamentals.py (weekly) ──────────┤
+Tiingo EOD prices ──► indicator-sync ──► data/prices/*.csv ──────┤
+UK EOD prices ─────► sync_uk_prices.py ─┘                         │
 GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────┤
                          (FinBERT)                          ▼
                                     cmd/screener (Go + cinar/indicator)
@@ -46,6 +57,10 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 | News | GDELT DOC API (no key); Tiingo news if your plan includes it | Free |
 | Sentiment | FinBERT (`ProsusAI/finbert`), run on CPU inside the nightly job | Free |
 | Growth data | SEC EDGAR company facts (official, no key) | Free |
+| Insider dealing | SEC EDGAR Form 4 filings (official, no key) | Free |
+| UK prices | Yahoo Finance public chart endpoint (no key; unofficial) | Free |
+| UK fundamentals | filings.xbrl.org ESEF reports, GLEIF and LSE identifiers (no key) | Free |
+| Alerts for visitors | RSS feeds published with the site | Free |
 | US news | Finnhub free key (optional; GDELT otherwise) | Free |
 | Alerts | A GitHub issue is opened when a nightly or validation run fails (GitHub emails you) | Free |
 
@@ -63,7 +78,8 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 ### Data limits to know about
 
 - **Tiingo free tier.** It allows about 50 requests an hour, 1,000 a day and 500 unique symbols a month. The nightly job therefore syncs 220 US stocks, about 4.6 hours at 75 seconds per request, to stay inside GitHub's 6-hour job limit. For the full S&P 500, use Tiingo's paid tier and set `TIINGO_TIER=power`.
-- **UK prices.** No free automated source has been chosen yet. Stooq blocks automated downloads, and Tiingo's UK coverage is unconfirmed. `universe/uk.csv` lists the FTSE 100 (as of 1 Oct 2026) with an empty `provider_ticker` column. Fill that column, and add a matching `asset.Repository` adapter if the source is not Tiingo, to switch the UK on.
+- **UK prices.** UK prices come from Yahoo Finance's public chart endpoint. It needs no key but is not an official API and could change or stop without notice; the script keeps each stock's previous file whenever a download looks wrong, and a failure never stops the US run. A paid source (for example EODHD) can replace it by writing the same CSV files.
+- **UK fundamentals.** UK reports are annual (half-year results are not filed in iXBRL), so UK growth is year on year. Debt uses the IFRS borrowing tags; companies that tag debt with their own extensions show "–" for those checks.
 - **Survivorship bias.** The universe uses today's index members, so backtests leave out companies that were later removed from the index. Validation results are flattered by this.
 
 ## Universe
