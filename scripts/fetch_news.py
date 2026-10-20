@@ -42,10 +42,24 @@ def clean_name(name: str) -> str:
     return re.sub(r"\s+", " ", n).strip(" ,.&")
 
 
+BROKERS = {"JPM", "GS", "MS", "C", "BAC", "WFC", "HSBA", "BARC", "STAN", "LLOY", "NWG", "UBS", "DB", "SCHW", "RJF", "JEF"}
+ANALYST = re.compile(r"\b(sees|says|rates|upgrades?|downgrades?|initiates?|reiterates?|price target|top picks?|"
+                     r"overweight|underweight|outperform|underperform|bullish on|bearish on|analysts?|strategists?)\b", re.I)
+
+
+def norm_headline(h: str) -> str:
+    """Key for spotting the same story syndicated across outlets."""
+    return re.sub(r"[^a-z0-9]+", " ", h.lower()).strip()[:90]
+
+
 def relevance(headline: str, stock: dict, base: float) -> float:
     """Full weight when the headline names the company or its ticker; a market wrap or an
-    article about another company that merely tags this ticker gets a low weight."""
+    article about another company that merely tags this ticker gets a low weight. A bank's
+    analysts commenting on other companies ("JPMorgan sees upside in X") is not news about
+    the bank itself."""
     h = headline.lower()
+    if stock["ticker"].replace(".", "") in BROKERS and ANALYST.search(headline):
+        return round(base * 0.3, 2)
     name = clean_name(stock["name"]).lower()
     first = name.split(" ")[0] if name else ""
     tick = stock["ticker"].replace(".", "")
@@ -53,6 +67,13 @@ def relevance(headline: str, stock: dict, base: float) -> float:
             or re.search(rf"\b{re.escape(tick)}\b", headline):
         return base
     return round(base * 0.35, 2)
+
+
+def d_(s: str) -> dt.date:
+    try:
+        return dt.date.fromisoformat(s[:10])
+    except ValueError:
+        return dt.date.min
 
 
 def get_json(url: str, headers: dict | None = None, tries: int = 3):
@@ -199,11 +220,20 @@ def main() -> None:
                 existing.append(a)
                 keys.add((a["url"], a["ticker"]))
     cutoff = (dt.date.today() - dt.timedelta(days=400)).isoformat()
-    added = 0
+    # the same story syndicated by several outlets counts once (same ticker, same headline, within 3 days)
+    seen_story: dict[tuple[str, str], str] = {}
+    for a in existing:
+        seen_story[(a["ticker"], norm_headline(a["headline"]))] = a["date"]
+    added = dupes = 0
     for a in fresh:
         k = (a["url"], a["ticker"])
         if not a["url"] or k in keys:
             continue
+        sk = (a["ticker"], norm_headline(a["headline"]))
+        if sk in seen_story and abs((d_(a["date"]) - d_(seen_story[sk])).days) <= 3:
+            dupes += 1
+            continue
+        seen_story[sk] = a["date"]
         keys.add(k)
         a.update({"score": None, "label": "", "conf": 0.0, "event": ""})
         existing.append(a)
@@ -212,7 +242,7 @@ def main() -> None:
     with open(ARTICLES, "w") as fh:
         for a in sorted(kept, key=lambda a: (a["date"], a["ticker"])):
             fh.write(json.dumps(a, ensure_ascii=False) + "\n")
-    print(f"articles: {added} new, {len(kept)} kept")
+    print(f"articles: {added} new, {dupes} syndicated duplicates skipped, {len(kept)} kept")
 
 
 if __name__ == "__main__":

@@ -20,10 +20,35 @@ else
   MAX="${MAX_TICKERS:-220}"; DELAY=75   # 48 requests an hour; 220 tickers take about 4.6 hours
 fi
 
-# provider tickers from every universe file, skipping blanks, capped at MAX
-mapfile -t TICKERS < <(tail -q -n +2 universe/*.csv | awk -F',' '{print $NF}' | tr -d '\r' | grep -v '^$' | head -n "$MAX")
+# provider tickers from every universe file (by header name), skipping blanks, capped at MAX
+mapfile -t TICKERS < <(python3 -c '
+import csv, glob
+for f in sorted(glob.glob("universe/*.csv")):
+    for r in csv.DictReader(open(f, newline="")):
+        t = (r.get("provider_ticker") or "").strip()
+        if t: print(t)' | head -n "$MAX")
 echo "Syncing ${#TICKERS[@]} tickers (tier: $TIER, delay: ${DELAY}s)"
 mkdir -p data/prices
+
+# Tiingo serves split- and dividend-adjusted prices, but new days are appended to stored
+# history, which is not re-adjusted. So: (1) re-download any stock the screener flagged
+# (split-like jump), and (2) re-download everything once a month. Both cost the same number
+# of requests as a normal night (one per stock).
+MONTH="$(date -u +%Y-%m)"
+if [[ ! -f "data/prices/.refreshed-$MONTH" ]]; then
+  echo "Monthly full refresh: re-downloading all price history"
+  find data/prices -name '*.csv' -delete
+  rm -f data/prices/.refreshed-*
+  touch "data/prices/.refreshed-$MONTH"
+elif [[ -f data/quality.json ]]; then
+  python3 - <<'PY'
+import json, os
+for t in json.load(open("data/quality.json")).get("resync") or []:
+    p = os.path.join("data/prices", f"{t}.csv")
+    if os.path.exists(p):
+        os.remove(p); print(f"re-downloading {t} (flagged by the data check)")
+PY
+fi
 go run "github.com/cinar/indicator/v2/cmd/indicator-sync@${INDICATOR_VERSION}" \
   -source-name tiingo -source-config "$TIINGO_API_KEY" \
   -target-name filesystem -target-config data/prices \

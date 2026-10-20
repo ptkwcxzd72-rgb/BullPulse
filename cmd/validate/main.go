@@ -37,10 +37,13 @@ type obs struct {
 	fwd   [3]float64
 }
 
-type stat struct{ n int; sum, sum2 float64 }
+type stat struct {
+	n         int
+	sum, sum2 float64
+}
 
 func (s *stat) add(v float64) { s.n++; s.sum += v; s.sum2 += v * v }
-func (s stat) mean() float64   { return s.sum / float64(s.n) }
+func (s stat) mean() float64  { return s.sum / float64(s.n) }
 func (s stat) t() float64 {
 	if s.n < 3 {
 		return math.NaN()
@@ -59,19 +62,19 @@ func costs(market string) (buy, sell float64) {
 }
 
 type marketResult struct {
-	Market      string             `json:"market"`
-	Stocks      int                `json:"stocks"`
-	From        string             `json:"from,omitempty"`
-	To          string             `json:"to,omitempty"`
-	Months      int                `json:"months"`
-	Quintile    [3][5]float64      `json:"quintile_excess"` // mean forward excess return by horizon and quintile (Q1 = lowest)
-	Spread      [3]float64         `json:"q5_minus_q1"`
-	SpreadT     [3]float64         `json:"q5_minus_q1_t"`
-	SpreadHit   float64            `json:"q5_beats_q1_share_1m"`
-	Q5Turnover  float64            `json:"q5_monthly_turnover"`
-	Q5NetMonth  float64            `json:"q5_net_monthly_excess"`
-	Early       map[string]float64 `json:"early"`
-	ByYear      map[string]float64 `json:"spread_1m_by_year"`
+	Market     string             `json:"market"`
+	Stocks     int                `json:"stocks"`
+	From       string             `json:"from,omitempty"`
+	To         string             `json:"to,omitempty"`
+	Months     int                `json:"months"`
+	Quintile   [3][5]float64      `json:"quintile_excess"` // mean forward excess return by horizon and quintile (Q1 = lowest)
+	Spread     [3]float64         `json:"q5_minus_q1"`
+	SpreadT    [3]float64         `json:"q5_minus_q1_t"`
+	SpreadHit  float64            `json:"q5_beats_q1_share_1m"`
+	Q5Turnover float64            `json:"q5_monthly_turnover"`
+	Q5NetMonth float64            `json:"q5_net_monthly_excess"`
+	Early      map[string]float64 `json:"early"`
+	ByYear     map[string]float64 `json:"spread_1m_by_year"`
 }
 
 func pct(v float64) string { return fmt.Sprintf("%+.2f%%", v*100) }

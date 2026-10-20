@@ -32,6 +32,7 @@ type Stock struct {
 	Name           string
 	Sector         string
 	Market         string // "US" or "UK"
+	CIK            string // SEC company identifier (US only), for growth data
 	ProviderTicker string // file name of the price history in the price repository
 }
 
@@ -54,7 +55,8 @@ func Currency(market string) string {
 	return "USD"
 }
 
-// LoadUniverse reads every *.csv file in dir (columns: ticker,name,sector,market,provider_ticker).
+// LoadUniverse reads every *.csv file in dir. Columns are matched by header name:
+// ticker,name,sector,market,cik,provider_ticker (cik is optional).
 func LoadUniverse(dir string) ([]Stock, error) {
 	files, err := filepath.Glob(filepath.Join(dir, "*.csv"))
 	if err != nil {
@@ -71,11 +73,25 @@ func LoadUniverse(dir string) ([]Stock, error) {
 		if err != nil {
 			return nil, err
 		}
-		for i, r := range rows {
-			if i == 0 || len(r) < 5 {
-				continue
+		if len(rows) == 0 {
+			continue
+		}
+		col := map[string]int{}
+		for i, h := range rows[0] {
+			col[strings.TrimSpace(strings.ToLower(h))] = i
+		}
+		get := func(r []string, name string) string {
+			if i, ok := col[name]; ok && i < len(r) {
+				return strings.TrimSpace(r[i])
 			}
-			out = append(out, Stock{Ticker: r[0], Name: r[1], Sector: r[2], Market: r[3], ProviderTicker: r[4]})
+			return ""
+		}
+		for _, r := range rows[1:] {
+			s := Stock{Ticker: get(r, "ticker"), Name: get(r, "name"), Sector: get(r, "sector"), Market: get(r, "market"),
+				CIK: get(r, "cik"), ProviderTicker: get(r, "provider_ticker")}
+			if s.Ticker != "" {
+				out = append(out, s)
+			}
 		}
 	}
 	return out, nil
