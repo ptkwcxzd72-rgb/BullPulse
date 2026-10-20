@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BullPulse Brand Guidelines</title>
+<meta name="description" content="The BullPulse brand: logo, colour, typography, voice and motion, with downloadable assets.">
+<meta property="og:image" content="https://ptkwcxzd72-rgb.github.io/BullPulse/og.png">
+<meta name="theme-color" content="#0E1828">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: guideline book — midnight cover with the beating mark, then numbered chapters (the order is the reading order of a brand manual) on paper. */
+:root{
+  --midnight:#0E1828; --midnight-2:#13213A; --midnight-line:#22314A; --teal:#3DBCAB; --teal-deep:#0D7A6E; --amber:#EBA648; --violet:#6A48C6;
+  --up:#14814E; --down:#C13A3A; --paper:#F4F5F8; --surface:#FFFFFF; --surface-2:#EEF1F5; --ink:#0F1522; --muted:#566074; --line:#DDE1E8;
+  --accent:var(--teal-deep); --on-dark:#EEF2F8; --on-dark-muted:#97A3BA;
+  --f-display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif; --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace; color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0A0E16;--surface:#111724;--surface-2:#182031;--ink:#E6EAF2;--muted:#8E98AC;--line:#232C3D;--accent:var(--teal);color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0A0E16;--surface:#111724;--surface-2:#182031;--ink:#E6EAF2;--muted:#8E98AC;--line:#232C3D;--accent:var(--teal);color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--midnight);z-index:30}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--midnight);border-bottom:1px solid var(--midnight-line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.nav img{height:28px;display:block}
+.nav .links{display:flex;gap:20px;align-items:center}
+.nav .links a{color:var(--on-dark-muted);text-decoration:none;font-size:14.5px;font-weight:500}
+.nav .links a:hover{color:var(--on-dark)}
+.nav .links a.btn{color:var(--midnight)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14.5px/1 var(--f-body);text-decoration:none;padding:10px 16px;border-radius:999px;background:var(--teal);color:var(--midnight);border:0;cursor:pointer}
+.cover{background:var(--midnight);color:var(--on-dark);overflow:hidden}
+.cover .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:84px}
+.cover h1{font-size:clamp(42px,6vw,76px);font-weight:800;letter-spacing:-.035em;line-height:.98}
+.cover p{color:var(--on-dark-muted);max-width:52ch;font-size:18px;margin:18px 0 0}
+.mark-big{width:100%;max-width:420px;justify-self:center;overflow:visible}
+.mark-big path{fill:none;stroke:var(--teal);stroke-linecap:round;stroke-linejoin:round;stroke-width:3.2}
+.mark-big .draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1.8s cubic-bezier(.65,0,.35,1) .2s forwards}
+.mark-big .glow{opacity:0;filter:blur(6px);stroke-width:5;animation:beat 2.4s ease-in-out 2.1s infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes beat{0%,100%{opacity:0}12%{opacity:.85}30%{opacity:0}}
+.toc{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px;padding:0;list-style:none;font-size:14px}
+.toc a{color:var(--on-dark-muted);text-decoration:none}
+.toc a:hover{color:var(--teal)}
+.toc b{font:500 12px var(--f-mono);color:var(--teal);margin-right:6px}
+section.ch{padding-block:80px;border-bottom:1px solid var(--line)}
+.ch header{display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px 20px;margin-bottom:36px}
+.ch header .n{font:500 14px var(--f-mono);color:var(--accent);padding-top:12px}
+.ch h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.ch header p{grid-column:2;margin:0;color:var(--muted);max-width:64ch}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tile{border-radius:16px;border:1px solid var(--line);padding:32px;display:grid;gap:18px;align-content:space-between;min-height:220px}
+.tile.dark{background:var(--midnight);border-color:var(--midnight);color:var(--on-dark-muted)}
+.tile.light{background:#F4F5F8;color:#566074}
+.tile .art{display:grid;place-items:center;min-height:110px}
+.tile .art img{max-width:100%;height:auto}
+.tile .cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13.5px}
+.tile .cap a{font-weight:600;text-decoration:none;color:inherit;border-bottom:1px solid currentColor}
+.anat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;overflow-x:auto}
+.anat svg{display:block;width:100%;min-width:560px;height:auto}
+.rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rule{border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px;background:var(--surface)}
+.rule .art{height:84px;display:grid;place-items:center;background:var(--surface-2);border-radius:10px;overflow:hidden}
+.rule .art img{height:30px}
+.rule p{margin:0;font-size:14px;color:var(--muted)}
+.rule b{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--down)}
+.rule b.ok{color:var(--up)}
+.swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sw{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);text-align:left;padding:0;cursor:pointer;font:inherit;color:inherit}
+.sw .chip{height:110px;background:var(--c);display:flex;align-items:flex-end;padding:12px;color:var(--t,#fff);font:500 12px var(--f-mono)}
+.sw .meta{padding:14px;display:grid;gap:2px}
+.sw .meta b{font-family:var(--f-display);font-size:17px}
+.sw .meta span{font:12.5px var(--f-mono);color:var(--muted)}
+.sw .meta em{font-style:normal;font-size:13.5px;color:var(--muted)}
+.ratio{display:flex;height:44px;border-radius:12px;overflow:hidden;margin-top:18px}
+.ratio div{display:flex;align-items:center;padding:0 12px;font:500 12px var(--f-mono);white-space:nowrap;overflow:hidden}
+.type{display:grid;gap:14px}
+.face{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--surface)}
+.face .spec{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.02em;overflow-wrap:anywhere}
+.face dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px}
+.face dt{color:var(--muted)}
+.face dd{margin:0}
+.scale{display:grid;gap:10px;margin-top:8px}
+.scale div{display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.scale span{font:12.5px var(--f-mono);color:var(--muted)}
+.voice{width:100%;border-collapse:collapse;font-size:15px}
+.voice th{text-align:left;font:600 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 14px 10px}
+.voice td{padding:14px;border-top:1px solid var(--line);vertical-align:top}
+.voice td:first-child{font-weight:600;width:22%}
+.voice .no{color:var(--down);text-decoration:line-through;text-decoration-thickness:1px}
+.voice .yes{color:var(--up)}
+.motion{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.mo{border-radius:16px;background:var(--midnight);color:var(--on-dark-muted);padding:24px;display:grid;gap:14px}
+.mo svg{width:100%;height:140px}
+.mo .replay{justify-self:start;background:transparent;border:1px solid var(--midnight-line);color:var(--on-dark);border-radius:999px;padding:8px 14px;font:600 13px var(--f-body);cursor:pointer}
+.mo dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13.5px}
+.mo dt{color:var(--on-dark)}
+.mo dd{margin:0}
+.dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dl a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;background:var(--surface)}
+.dl a:hover{border-color:var(--accent)}
+.dl a span{font:12px var(--f-mono);color:var(--muted)}
+footer{background:var(--midnight);color:var(--on-dark-muted);font-size:13.5px}
+footer .wrap{padding-block:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--on-dark);text-decoration:none}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-size:14px}
+@media (max-width:900px){.cover .wrap{grid-template-columns:1fr}.grid2,.motion{grid-template-columns:1fr}.grid3,.rules,.swatches,.dl{grid-template-columns:repeat(2,minmax(0,1fr))}.face{grid-template-columns:1fr}.ch header{grid-template-columns:1fr}.ch header p{grid-column:1}.nav .links a.hide{display:none}}
+@media (max-width:560px){.grid3,.rules,.swatches,.dl{grid-template-columns:1fr}.ratio div{font-size:0;padding:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mark-big .draw{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a href="./" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+  <div class="links"><a class="hide" href="#logo">Logo</a><a class="hide" href="#colour">Colour</a><a class="hide" href="#type">Type</a><a class="hide" href="#voice">Voice</a><a class="btn" href="app.html">Open BullPulse</a></div>
+</div></header>
+
+<section class="cover" aria-labelledby="cover-title">
+  <div class="wrap">
+    <div>
+      <h1 id="cover-title">BullPulse brand guidelines</h1>
+      <p>One mark, a short palette and a plain voice. Use these rules to keep BullPulse recognisable and honest wherever it appears.</p>
+      <ol class="toc">
+        <li><a href="#logo"><b>01</b>Logo</a></li><li><a href="#construction"><b>02</b>Construction</a></li><li><a href="#usage"><b>03</b>Usage</a></li>
+        <li><a href="#colour"><b>04</b>Colour</a></li><li><a href="#type"><b>05</b>Typography</a></li><li><a href="#voice"><b>06</b>Voice</a></li>
+        <li><a href="#motion"><b>07</b>Motion</a></li><li><a href="#downloads"><b>08</b>Downloads</a></li>
+      </ol>
+    </div>
+    <svg class="mark-big" viewBox="2 2 44 30" aria-label="The BullPulse mark" role="img"><path class="glow" d="M6 8 C6 17 11 21 16 21 H19 L21.5 29 L24 5 L27 21 H32 C37 21 42 17 42 8"/><path class="draw" d="M6 8 C6 17 11 21 16 21 H19 L21.5 29 L24 5 L27 21 H32 C37 21 42 17 42 8"/></svg>
+  </div>
+</section>
+
+<main>
+<section class="ch" id="logo"><div class="wrap">
+  <header><span class="n">01</span><h2>Logo</h2><p>The logo is the mark and the wordmark together. "Bull" is set in the text colour and "Pulse" in teal. Use the version made for the background it sits on.</p></header>
+  <div class="grid2">
+    <div class="tile light"><div class="art"><img src="brand/bullpulse-logo.svg" alt="BullPulse logo for light backgrounds" width="320" height="61"></div><div class="cap"><span>Primary, on light</span><a href="brand/bullpulse-logo.svg" target="_blank" rel="noopener">SVG</a></div></div>
+    <div class="tile dark"><div class="art"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse logo for dark backgrounds" width="320" height="61"></div><div class="cap"><span>Primary, on Midnight</span><a href="brand/bullpulse-logo-on-dark.svg" target="_blank" rel="noopener">SVG</a></div></div>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="tile light"><div class="art"><img src="brand/bullpulse-mark.svg" alt="BullPulse mark" width="96" height="96"></div><div class="cap"><span>Mark alone</span><a href="brand/bullpulse-mark.svg" target="_blank" rel="noopener">SVG</a></div></div>
+    <div class="tile dark"><div class="art"><img src="brand/bullpulse-app-icon.svg" alt="BullPulse app icon" width="112" height="112" style="border-radius:24px"></div><div class="cap"><span>App icon and favicon</span><a href="brand/bullpulse-app-icon.svg" target="_blank" rel="noopener">SVG</a></div></div>
+    <div class="tile light" style="background:#FFFFFF"><div class="art" style="gap:14px"><img src="brand/bullpulse-logo-mono-black.svg" alt="One-colour BullPulse logo" width="210" height="40"></div><div class="cap"><span>One colour, for print and stamps</span><a href="brand/bullpulse-logo-mono-black.svg" target="_blank" rel="noopener">SVG</a></div></div>
+  </div>
+</div></section>
+
+<section class="ch" id="construction"><div class="wrap">
+  <header><span class="n">02</span><h2>Construction</h2><p>The mark is a single line. Two horns frame a heartbeat, and the heartbeat's spike rises higher than the horns: the bull and the pulse in one stroke.</p></header>
+  <div class="anat">
+    <svg viewBox="0 0 760 340" role="img" aria-label="The mark drawn on its 48-unit grid with its parts labelled">
+      <defs><pattern id="g" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" fill="none" stroke="var(--line)" stroke-width="1"/></pattern></defs>
+      <rect x="180" y="12" width="400" height="300" fill="url(#g)"/>
+      <g transform="translate(180 -8) scale(8.333)"><path d="M6 8 C6 17 11 21 16 21 H19 L21.5 29 L24 5 L27 21 H32 C37 21 42 17 42 8" fill="none" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <g font-family="Instrument Sans, system-ui, sans-serif" font-size="14" fill="var(--ink)">
+        <line x1="218" y1="62" x2="150" y2="62" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="20" y="58" font-weight="600">Left horn</text><text x="20" y="76" fill="var(--muted)" font-size="12.5">rises and curls outward</text>
+        <line x1="542" y1="62" x2="610" y2="62" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="620" y="58" font-weight="600">Right horn</text><text x="620" y="76" fill="var(--muted)" font-size="12.5">mirrors the left</text>
+        <text x="396" y="30" font-weight="600">Spike tip <tspan fill="var(--muted)" font-weight="400" font-size="12.5">rises above the horns</tspan></text>
+        <line x1="356" y1="246" x2="300" y2="296" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="40" y="300" font-weight="600">The beat</text><text x="40" y="318" fill="var(--muted)" font-size="12.5">dip, spike, return: a heartbeat</text>
+        <line x1="452" y1="167" x2="610" y2="210" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="620" y="206" font-weight="600">Baseline</text><text x="620" y="224" fill="var(--muted)" font-size="12.5">the head, level</text>
+      </g>
+      <text x="580" y="334" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="11.5" fill="var(--muted)">48 × 48 grid · stroke 3.2 units · round caps and joins</text>
+    </svg>
+  </div>
+</div></section>
+
+<section class="ch" id="usage"><div class="wrap">
+  <header><span class="n">03</span><h2>Usage</h2><p>Leave clear space around the logo equal to half the mark's height. Never set the full logo smaller than 120 pixels wide on screen; below that, use the mark alone, down to 16 pixels.</p></header>
+  <div class="rules">
+    <div class="rule"><div class="art"><img src="brand/bullpulse-logo.svg" alt="" width="160" height="30"></div><b class="ok">✓ Use the original files</b><p>Use the SVGs as supplied, scaled in proportion.</p></div>
+    <div class="rule"><div class="art"><img src="brand/bullpulse-logo.svg" alt="" width="160" height="30" style="transform:scaleX(1.5)"></div><b>✕ Don't stretch it</b><p>Never change the proportions or redraw the wordmark.</p></div>
+    <div class="rule"><div class="art"><img src="brand/bullpulse-logo.svg" alt="" width="160" height="30" style="filter:hue-rotate(140deg) saturate(2)"></div><b>✕ Don't recolour it</b><p>Use only the primary or one-colour versions.</p></div>
+    <div class="rule"><div class="art" style="background:linear-gradient(135deg,#f59e0b,#ec4899)"><img src="brand/bullpulse-logo.svg" alt="" width="160" height="30"></div><b>✕ Don't place it on busy colour</b><p>Use Paper, white or Midnight backgrounds.</p></div>
+  </div>
+</div></section>
+
+<section class="ch" id="colour"><div class="wrap">
+  <header><span class="n">04</span><h2>Colour</h2><p>Midnight and Pulse Teal carry the brand. Amber and Violet appear only in data, for sentiment and momentum. Green and red are kept for gains and losses, never for decoration. Select a swatch to copy its value.</p></header>
+  <div class="swatches" id="swatches"></div>
+  <div class="ratio" aria-label="Typical colour proportions">
+    <div style="flex:55;background:#0E1828;color:#EEF2F8">Midnight 55%</div>
+    <div style="flex:25;background:#F4F5F8;color:#566074">Paper 25%</div>
+    <div style="flex:12;background:#3DBCAB;color:#0E1828">Teal 12%</div>
+    <div style="flex:5;background:#EBA648;color:#0E1828">Amber</div>
+    <div style="flex:3;background:#6A48C6;color:#fff">Violet</div>
+  </div>
+</div></section>
+
+<section class="ch" id="type"><div class="wrap">
+  <header><span class="n">05</span><h2>Typography</h2><p>Three free Google Fonts: a characterful grotesque for headlines, a calm sans for reading, and a monospace for every number that needs to line up.</p></header>
+  <div class="type">
+    <div class="face"><div class="spec" style="font-family:var(--f-display);font-weight:800">Read the pulse.</div><dl><dt>Bricolage Grotesque</dt><dd>Display and headlines</dd><dt>Weights</dt><dd>800 headlines, 700 titles, 500 labels</dd><dt>Tracking</dt><dd>−2% to −3.5% at large sizes</dd></dl></div>
+    <div class="face"><div class="spec" style="font-family:var(--f-body);font-weight:500;font-size:clamp(28px,4vw,44px);line-height:1.2">Every score comes with its reasons.</div><dl><dt>Instrument Sans</dt><dd>Body, interface and labels</dd><dt>Weights</dt><dd>400 text, 500 interface, 600 emphasis</dd><dt>Size</dt><dd>16px body, 1.6 line height</dd></dl></div>
+    <div class="face"><div class="spec num" style="font-size:clamp(28px,4vw,44px);line-height:1.2">+16.4% · 82 · ▲3</div><dl><dt>JetBrains Mono</dt><dd>Prices, scores and dates</dd><dt>Rule</dt><dd>Tabular figures wherever numbers sit in columns</dd></dl></div>
+    <div class="scale">
+      <div><span>Hero · 84</span><b style="font-family:var(--f-display);font-weight:800;font-size:clamp(36px,6vw,84px);line-height:1;letter-spacing:-.035em">BullPulse</b></div>
+      <div><span>Section · 46</span><b style="font-family:var(--f-display);font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-.02em">Four signals, one score</b></div>
+      <div><span>Title · 21</span><b style="font-family:var(--f-display);font-weight:700;font-size:21px">Momentum</b></div>
+      <div><span>Body · 16</span><span style="font:16px/1.6 var(--f-body);color:var(--ink)">The 12-month return, skipping the latest month.</span></div>
+      <div><span>Label · 12</span><span style="font:600 12px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)">How it works</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="voice"><div class="wrap">
+  <header><span class="n">06</span><h2>Voice</h2><p>BullPulse sounds like a careful analyst, not a tipster. It says what the data shows, how sure it is, and where the limits are. Three rules: plain words, evidence first, never hype.</p></header>
+  <div class="anat" style="padding:8px 4px">
+    <table class="voice">
+      <thead><tr><th>Situation</th><th>Say</th><th>Not</th></tr></thead>
+      <tbody>
+        <tr><td>Describing the score</td><td class="yes">Ranks stocks on trend, momentum and news</td><td class="no">Predicts the next winners</td></tr>
+        <tr><td>A strong stock</td><td class="yes">Signals mostly positive</td><td class="no">Strong buy</td></tr>
+        <tr><td>Possible prices</td><td class="yes">A typical range over six months</td><td class="no">Price target</td></tr>
+        <tr><td>Early movers</td><td class="yes">Early trend change: candidates for research</td><td class="no">Get in before it explodes</td></tr>
+        <tr><td>Data problems</td><td class="yes">Prices missing between 3 and 12 June</td><td class="no">Hide it, or "minor issues"</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="ch" id="motion"><div class="wrap">
+  <header><span class="n">07</span><h2>Motion</h2><p>Motion should feel like a steady heartbeat: the line draws itself once, then beats slowly. Nothing flashes or bounces. When a visitor asks for reduced motion, everything holds still.</p></header>
+  <div class="motion">
+    <div class="mo">
+      <svg viewBox="2 2 44 30" id="m-demo" aria-label="Logo draw-on animation" role="img" style="overflow:visible"><path class="glow" d="M6 8 C6 17 11 21 16 21 H19 L21.5 29 L24 5 L27 21 H32 C37 21 42 17 42 8" fill="none" stroke="#3DBCAB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0;filter:blur(6px)"/><path class="draw" d="M6 8 C6 17 11 21 16 21 H19 L21.5 29 L24 5 L27 21 H32 C37 21 42 17 42 8" fill="none" stroke="#3DBCAB" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <dl><dt>Draw-on</dt><dd>1.8 s, ease-in-out, once on load</dd><dt>Beat</dt><dd>glow every 2.4 s, peaks at 12%, gone by 30%</dd></dl>
+      <button class="replay" id="replay" type="button">Replay</button>
+    </div>
+    <div class="mo">
+      <canvas id="m-pulse" style="width:100%;height:140px" aria-label="Pulse line animation" role="img"></canvas>
+      <dl><dt>Pulse line</dt><dd>teal trace, about 55 px a second, one heartbeat every 960 px</dd><dt>Reveal</dt><dd>sections rise 24 px and fade in over 0.8 s</dd></dl>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="downloads" style="border-bottom:0"><div class="wrap">
+  <header><span class="n">08</span><h2>Downloads</h2><p>All logo files are vector SVGs with the wordmark converted to outlines, so they look the same everywhere without fonts installed.</p></header>
+  <div class="dl">
+    <a href="brand/bullpulse-logo.svg" target="_blank" rel="noopener">Logo, light <span>SVG</span></a>
+    <a href="brand/bullpulse-logo-on-dark.svg" target="_blank" rel="noopener">Logo, dark <span>SVG</span></a>
+    <a href="brand/bullpulse-logo-mono-black.svg" target="_blank" rel="noopener">Logo, one colour black <span>SVG</span></a>
+    <a href="brand/bullpulse-logo-mono-white.svg" target="_blank" rel="noopener">Logo, one colour white <span>SVG</span></a>
+    <a href="brand/bullpulse-mark.svg" target="_blank" rel="noopener">Mark <span>SVG</span></a>
+    <a href="brand/bullpulse-mark-on-dark.svg" target="_blank" rel="noopener">Mark, dark <span>SVG</span></a>
+    <a href="brand/bullpulse-app-icon.svg" target="_blank" rel="noopener">App icon <span>SVG</span></a>
+    <a href="brand/apple-touch-icon.png" target="_blank" rel="noopener">App icon <span>PNG 180</span></a>
+    <a href="og.png" target="_blank" rel="noopener">Social preview <span>PNG 1200×630</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>BullPulse brand guidelines</span><span><a href="./">Home</a> · <a href="app.html">Screener</a> · <a href="https://github.com/ptkwcxzd72-rgb/BullPulse" target="_blank" rel="noopener">GitHub</a></span></div></footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.querySelectorAll(".mark-big path").forEach(p => p.style.setProperty("--len", Math.ceil(p.getTotalLength())));
+
+// colour swatches with copy
+const SW = [
+  ["Midnight", "#0E1828", "Backgrounds, nav, product frames", "#EEF2F8"],
+  ["Pulse Teal", "#3DBCAB", "Mark, buttons and highlights on dark", "#0E1828"],
+  ["Deep Teal", "#0D7A6E", "Mark, links and accents on light", "#FFFFFF"],
+  ["Signal Amber", "#EBA648", "Sentiment in charts and scores", "#0E1828"],
+  ["Momentum Violet", "#6A48C6", "Momentum in charts and scores", "#FFFFFF"],
+  ["Paper", "#F4F5F8", "Light backgrounds", "#0F1522"],
+  ["Ink", "#0F1522", "Text on light", "#F4F5F8"],
+  ["Gain / Loss", "#14814E", "Rises (green) and falls (#C13A3A) only", "#FFFFFF"],
+];
+const rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)).join(", ");
+$("swatches").innerHTML = SW.map(([n, h, use, t]) => `<button class="sw" type="button" data-hex="${h}" style="--c:${n === "Gain / Loss" ? "linear-gradient(90deg,#14814E 50%,#C13A3A 50%)" : h};--t:${t}"><div class="chip">${h}</div><div class="meta"><b>${n}</b><span>${h} · RGB ${rgb(h)}</span><em>${use}</em></div></button>`).join("");
+document.querySelectorAll(".sw").forEach(b => b.onclick = async () => {
+  const t = $("toast");
+  try { await navigator.clipboard.writeText(b.dataset.hex); t.textContent = `Copied ${b.dataset.hex}`; }
+  catch (e) { t.textContent = b.dataset.hex; }
+  t.hidden = false; clearTimeout(t._h); t._h = setTimeout(() => t.hidden = true, 1600);
+});
+
+// motion demo: replayable draw-on and beat
+function playMark(){
+  const svg = $("m-demo"), d = svg.querySelector(".draw"), g = svg.querySelector(".glow"), L = Math.ceil(d.getTotalLength());
+  if (reduce) return;
+  d.style.transition = "none"; d.style.strokeDasharray = L; d.style.strokeDashoffset = L; d.getBoundingClientRect();
+  d.style.transition = "stroke-dashoffset 1.8s cubic-bezier(.65,0,.35,1)"; d.style.strokeDashoffset = 0;
+  g.animate([{ opacity: 0 }, { opacity: .85, offset: .12 }, { opacity: 0, offset: .3 }, { opacity: 0 }], { duration: 2400, delay: 1900, iterations: Infinity });
+}
+playMark(); $("replay").onclick = () => { $("m-demo").querySelector(".glow").getAnimations().forEach(a => a.cancel()); playMark(); };
+
+// motion demo: pulse line
+(function(){
+  const c = $("m-pulse"), ctx = c.getContext("2d"); let t = 0;
+  function size(){ const r = devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = c.clientHeight * r; ctx.setTransform(r, 0, 0, r, 0, 0); }
+  size(); addEventListener("resize", size);
+  const shape = i => { const k = i % 160; return k === 100 ? 8 : k === 101 ? -40 : k === 102 ? 18 : k === 103 ? -5 : Math.sin(i * .21) * 2 + Math.sin(i * .053) * 4; };
+  (function frame(){
+    const w = c.clientWidth, h = c.clientHeight, off = t % 960; ctx.clearRect(0, 0, w, h); ctx.beginPath();
+    for (let x = -off, i = 0; x < w + 6; x += 6, i++) { const y = h * .62 + shape(i); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+    ctx.strokeStyle = "#3DBCAB"; ctx.lineWidth = 1.8; ctx.lineJoin = "round"; ctx.stroke();
+    if (!reduce) { t += .9; requestAnimationFrame(frame); }
+  })();
+})();
+</script>
+</body>
+</html>

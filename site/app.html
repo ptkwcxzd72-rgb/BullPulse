@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="BullPulse: UK &amp; US stock screener">
+<meta property="og:description" content="Nightly ranking of trend, momentum, news sentiment and revenue growth. Free, open source, not investment advice.">
+<meta property="og:image" content="https://ptkwcxzd72-rgb.github.io/BullPulse/og.png">
+<meta property="og:url" content="https://ptkwcxzd72-rgb.github.io/BullPulse/app.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="BullPulse: an end-of-day UK and US stock screener ranking trend, momentum and news sentiment. A research tool, not investment advice.">
+<title>BullPulse Screener</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark masthead band; market breadth strip; ranked ledger beside a sticky stock dossier; method notes */
+:root{
+  --bg:#f4f5f8; --surface:#ffffff; --surface-2:#eef1f5; --ink:#0f1522; --muted:#5a6274; --line:#dde1e8; --grid:#edf0f4;
+  --band:#0e1828; --band-ink:#eef2f8; --band-muted:#97a3ba; --band-line:#22314a;
+  --accent:#0d7a6e; --accent-soft:#d9eeeb;
+  --uk:#a3354a; --uk-soft:#f6e3e7; --us:#2c58a6; --us-soft:#e1e8f6;
+  --up:#14814e; --up-soft:#dcf0e5; --down:#c13a3a; --down-soft:#f8e2e2; --warn:#a96400; --warn-soft:#f6ead6;
+  --ft:#0d7a6e; --fm:#6a48c6; --fs:#c0740c; --band-sma:#8b95a8;
+  --f-display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a0e16; --surface:#111724; --surface-2:#182031; --ink:#e6eaf2; --muted:#8e98ac; --line:#232c3d; --grid:#192131;
+  --band:#060910; --band-ink:#eef2f8; --band-muted:#8a96ad; --band-line:#1c2638;
+  --accent:#3dbcab; --accent-soft:#12302d;
+  --uk:#e47b8e; --uk-soft:#3a1d25; --us:#82a6ee; --us-soft:#1b2944;
+  --up:#41c286; --up-soft:#12301f; --down:#f06b6b; --down-soft:#3a1b1b; --warn:#e9a440; --warn-soft:#382912;
+  --ft:#3dbcab; --fm:#a68cf2; --fs:#eba648; --band-sma:#6d7891; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a0e16; --surface:#111724; --surface-2:#182031; --ink:#e6eaf2; --muted:#8e98ac; --line:#232c3d; --grid:#192131;
+  --band:#060910; --band-ink:#eef2f8; --band-muted:#8a96ad; --band-line:#1c2638;
+  --accent:#3dbcab; --accent-soft:#12302d;
+  --uk:#e47b8e; --uk-soft:#3a1d25; --us:#82a6ee; --us-soft:#1b2944;
+  --up:#41c286; --up-soft:#12301f; --down:#f06b6b; --down-soft:#3a1b1b; --warn:#e9a440; --warn-soft:#382912;
+  --ft:#3dbcab; --fm:#a68cf2; --fs:#eba648; --band-sma:#6d7891; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--f-body)}
+.in{max-width:1440px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* masthead */
+.mast{background:var(--band);color:var(--band-ink)}
+.mast .in{padding-block:22px 18px;display:grid;gap:16px}
+.mrow{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px}
+.brand{display:grid;gap:6px}
+.brand .home{display:inline-block;line-height:0}
+.brand .home img{height:36px;width:auto}
+.brand svg{flex:none}
+.brand h1{font-family:var(--f-display);font-weight:700;font-size:clamp(24px,3.2vw,34px);line-height:1;margin:0;letter-spacing:-.015em;text-wrap:balance}
+.brand p{margin:4px 0 0;color:var(--band-muted);font-size:13.5px}
+.mctl{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.asof{color:var(--band-muted);font-size:12.5px;text-align:right}
+.asof b{color:var(--band-ink);font-weight:500}
+.seg{display:inline-flex;border:1px solid var(--band-line);border-radius:999px;padding:3px;gap:2px}
+.seg button{background:transparent;border:0;color:var(--band-muted);padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:500;font-size:13px}
+.seg button[aria-pressed="true"]{background:var(--band-ink);color:var(--band)}
+.demo{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--band-muted);border-top:1px solid var(--band-line);padding-top:12px}
+.demo b{color:var(--band-ink);font-weight:600}
+.tagdemo{flex:none;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--band-muted);color:var(--band-ink);padding:1px 6px;border-radius:3px;margin-top:1px}
+
+main.in{padding-block:20px 48px;display:grid;gap:20px}
+
+/* breadth */
+.breadth{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,.9fr);gap:12px}
+.mk{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:12px;align-content:start}
+.mk header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mk h2{margin:0;font-family:var(--f-display);font-weight:600;font-size:17px}
+.mstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mstats div{display:grid;gap:3px;align-content:start}
+.mstats .v{font-family:var(--f-mono);font-size:19px;line-height:1.15}
+.mstats .s{font-size:11.5px;color:var(--muted)}
+.meter{height:4px;border-radius:2px;background:var(--surface-2);overflow:hidden}
+.meter span{display:block;height:100%;border-radius:2px}
+.mkt{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:1px 6px;border-radius:3px;line-height:1.5}
+.mkt.LSE{color:var(--uk);background:var(--uk-soft)} .mkt.US{color:var(--us);background:var(--us-soft)}
+.wt{display:grid;gap:8px}
+.wtbar{display:flex;height:10px;border-radius:3px;overflow:hidden}
+.wtl{display:grid;gap:6px;font-size:12.5px}
+.wtl div{display:flex;align-items:center;gap:8px}
+.wtl i{width:9px;height:9px;border-radius:2px;flex:none}
+.wtl span{color:var(--muted)}
+
+/* work area */
+.work{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;min-width:0}
+.ch{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.ch h2{margin:0;font-family:var(--f-display);font-weight:600;font-size:17px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters select,.filters input[type=search]{background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:13px;min-width:0}
+.filters input[type=search]{width:150px}
+.filters label{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted)}
+.filters input[type=range]{width:90px;accent-color:var(--accent)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:600px;font-size:13px}
+th{position:sticky;top:0;background:var(--surface);text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th[data-k]{cursor:pointer;user-select:none}
+th[data-k]:hover{color:var(--ink)}
+th .ar{opacity:.8;margin-left:3px}
+th.r,td.r{text-align:right}
+td{padding:8px 8px;border-bottom:1px solid var(--grid);vertical-align:middle}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:var(--surface-2)}
+tbody tr.sel td{background:var(--accent-soft)}
+tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
+.rk{font-family:var(--f-mono);color:var(--muted);font-size:12px}
+.co{display:grid;gap:1px;min-width:0}
+.co b{font-weight:600;line-height:1.3}
+.co small{color:var(--muted);font-size:11.5px;display:flex;gap:6px;align-items:center;white-space:nowrap}
+.sc{display:flex;align-items:center;gap:8px}
+.sc .n{font-family:var(--f-mono);font-weight:500;width:24px;text-align:right}
+.stack{display:flex;width:84px;height:8px;border-radius:2px;background:var(--surface-2);overflow:hidden}
+.stack span{display:block;height:100%}
+.st{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.st.up{color:var(--up);background:var(--up-soft)} .st.mid{color:var(--warn);background:var(--warn-soft)} .st.dn{color:var(--down);background:var(--down-soft)}
+.pos{color:var(--up)} .neg{color:var(--down)} .flat{color:var(--muted)}
+.spk{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.spk svg{display:block}
+.flag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--warn);border:1px solid currentColor;border-radius:3px;padding:0 4px;margin-left:4px;vertical-align:1px}
+.empty{padding:28px 16px;color:var(--muted);text-align:center}
+
+/* dossier */
+.dos{position:sticky;top:12px}
+.dh{padding:16px;display:grid;gap:4px;border-bottom:1px solid var(--line)}
+.dh .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.dh h2{margin:0;font-family:var(--f-display);font-weight:700;font-size:24px;line-height:1.1;text-wrap:balance}
+.dh .meta{color:var(--muted);font-size:12.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.px{font-family:var(--f-mono);font-size:22px;text-align:right}
+.px small{display:block;font-size:12.5px}
+.score{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;padding:16px;border-bottom:1px solid var(--line);align-items:center}
+.ring{position:relative;width:104px;height:104px}
+.ring svg{display:block}
+.ring .c{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring .c b{font-family:var(--f-display);font-size:32px;font-weight:700;line-height:1}
+.ring .c span{font-size:11px;color:var(--muted)}
+.fac{display:grid;gap:10px}
+.rkline{font-size:13px;color:var(--muted)}.rkline b{color:var(--ink);font-family:var(--f-mono);font-weight:500}
+.fac .row{display:grid;grid-template-columns:96px minmax(0,1fr) 30px;gap:4px 10px;align-items:center}
+.fac .nm{font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px}
+.fac .nm i{width:8px;height:8px;border-radius:2px}
+.fac .bar{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.fac .bar span{display:block;height:100%;border-radius:3px}
+.fac .pv{font-family:var(--f-mono);font-size:12.5px;text-align:right}
+.fac .why{grid-column:2 / 4;font-size:12px;color:var(--muted);margin-top:-2px}
+.panes{display:grid}
+.pane{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+.pane .tag{position:absolute;left:12px;top:6px;z-index:3;font-size:11px;color:var(--muted);pointer-events:none;background:color-mix(in srgb,var(--surface) 88%,transparent);padding:0 4px;border-radius:2px;display:flex;gap:10px;align-items:center}
+.pane .tag b{font-family:var(--f-mono);font-weight:500;color:var(--ink)}
+.pane .tag i{display:inline-block;width:10px;height:2px;margin-right:4px;vertical-align:middle}
+#c-price{height:290px}#c-tone{height:92px}#c-rsi{height:92px}#c-vol{height:96px}
+.ovl{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--line)}
+.tg{border:1px solid var(--line);background:transparent;color:var(--muted);font-size:12px;font-weight:500;padding:3px 9px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.tg i{width:10px;height:2px;border-radius:1px}
+.tg[aria-pressed="true"]{color:var(--ink);border-color:var(--muted)}
+.risk{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.risk div{background:var(--surface);padding:10px 12px;display:grid;gap:2px}
+.risk .v{font-family:var(--f-mono);font-size:14px}
+.news{padding:12px 16px 16px;display:grid;gap:8px}
+.news h3{margin:0;font-family:var(--f-display);font-size:15px;font-weight:600;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.art{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:4px 10px;align-items:start;padding:7px 8px;border-radius:6px;cursor:pointer;border:0;background:transparent;text-align:left;width:100%}
+.art:hover{background:var(--surface-2)}
+.art .d{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);padding-top:1px}
+.art .h{font-size:13px;line-height:1.35}
+.art .sub{grid-column:2 / 4;font-size:11.5px;color:var(--muted)}
+.lab{font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:3px;white-space:nowrap}
+.lab.Positive{color:var(--up);background:var(--up-soft)} .lab.Negative{color:var(--down);background:var(--down-soft)} .lab.Neutral{color:var(--muted);background:var(--surface-2)}
+
+/* outlook */
+.outl{padding:16px;display:grid;gap:14px;border-bottom:1px solid var(--line)}
+.outl h3{margin:0;font-family:var(--f-display);font-size:15px;font-weight:600;display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.outl .note{font-size:12px;color:var(--muted);margin:0;max-width:70ch}
+.og{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:14px}
+.rt{width:100%;min-width:0;border-collapse:collapse;font-size:12.5px;table-layout:fixed}
+.rt th:first-child{width:22%}
+.rt td{overflow-wrap:anywhere}
+.rt th{position:static;background:transparent;padding:4px 6px;font-size:10px}
+.rt td{padding:6px;border-bottom:1px solid var(--grid)}
+.rt td:first-child{font-weight:600}
+.rng{display:grid;gap:3px}
+.rng .bx{position:relative;height:10px;border-radius:2px;background:var(--surface-2)}
+.rng .bx span{position:absolute;top:0;bottom:0;border-radius:2px}
+.rng .bx b{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink)}
+.rng small{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.lv{display:grid;gap:0;font-size:12.5px}
+.lv div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--grid)}
+.lv span{color:var(--muted)}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pc h4{margin:0 0 6px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+.pc h4 i{width:8px;height:8px;border-radius:50%}
+.pc ul{margin:0;padding-left:16px;display:grid;gap:4px;font-size:12.5px}
+.pc li::marker{color:var(--muted)}
+.stance{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.02em}
+.stance.strong{color:var(--up);background:var(--up-soft)} .stance.mixed{color:var(--warn);background:var(--warn-soft)} .stance.weak{color:var(--down);background:var(--down-soft)}
+.early{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px}
+.vseg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;gap:2px}
+.vseg button{border:0;background:transparent;color:var(--muted);font-size:12.5px;font-weight:500;padding:4px 11px;border-radius:999px;cursor:pointer}
+.vseg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.earlynote{padding:10px 16px;font-size:12.5px;color:var(--muted);border-bottom:1px solid var(--line);background:var(--surface-2)}
+.earlynote b{color:var(--ink)}
+
+/* overview: sector heatmap + rank movers */
+.ov{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:20px}
+.heat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;padding:14px 16px}
+.hc{border:0;border-radius:8px;padding:10px 12px;text-align:left;cursor:pointer;display:grid;gap:2px;color:var(--ink);background:color-mix(in srgb,var(--accent) calc(var(--h) * 1%),var(--surface-2))}
+.hc[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:-2px}
+.hc b{font-size:12.5px;font-weight:600;line-height:1.25}
+.hc .v{font-family:var(--f-mono);font-size:18px}
+.hc small{font-size:11px;color:var(--ink);opacity:.75}
+.mv{padding:6px 16px 14px;display:grid;gap:12px}
+.mv h3{margin:6px 0 2px;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.mv button{display:flex;justify-content:space-between;gap:10px;width:100%;border:0;background:transparent;padding:5px 6px;border-radius:6px;cursor:pointer;font-size:13px;text-align:left;color:var(--ink)}
+.mv button:hover{background:var(--surface-2)}
+.mv .num{white-space:nowrap}
+/* watchlist star */
+.star{border:0;background:transparent;cursor:pointer;color:var(--muted);font-size:15px;line-height:1;padding:2px 4px;border-radius:4px}
+.star[aria-pressed="true"]{color:var(--fs)}
+.star:hover{background:var(--surface-2)}
+.grow{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--fm);background:color-mix(in srgb,var(--fm) 16%,transparent);border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px}
+.hist{grid-column:1 / -1;display:grid;gap:4px}
+.hist svg{display:block;width:100%;height:56px}
+.qnote{margin:0 16px 12px;padding:8px 12px;border-radius:6px;font-size:12.5px;background:var(--warn-soft);color:var(--warn)}
+.gpanel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:8px;overflow:hidden}
+.gpanel div{background:var(--surface);padding:10px 12px;display:grid;gap:2px}
+.gpanel .v{font-family:var(--f-mono);font-size:15px}
+
+/* track */
+.track .tw table{min-width:560px}
+.mk .nodata{color:var(--muted);font-size:13px}
+
+/* method */
+.method{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.method .card{padding:16px;display:grid;gap:8px;align-content:start}
+.method h3{margin:0;font-family:var(--f-display);font-size:15px;font-weight:600}
+.method p{margin:0;color:var(--muted);font-size:13px;max-width:64ch}
+.method code{font-family:var(--f-mono);font-size:12px;background:var(--surface-2);padding:0 4px;border-radius:3px;color:var(--ink)}
+.disc{font-size:12px;color:var(--muted);max-width:120ch;margin:0}
+
+@media (max-width:1180px){.ov{grid-template-columns:minmax(0,1fr)}.work{grid-template-columns:minmax(0,1fr)}.dos{position:static}.breadth{grid-template-columns:repeat(2,minmax(0,1fr))}.breadth .wtcard{grid-column:1 / -1}}
+@media (max-width:760px){.gpanel{grid-template-columns:repeat(2,minmax(0,1fr))}.og,.pc{grid-template-columns:1fr}.breadth{grid-template-columns:1fr}.method{grid-template-columns:1fr}.risk{grid-template-columns:repeat(2,minmax(0,1fr))}.mstats{grid-template-columns:repeat(2,minmax(0,1fr))}.asof{text-align:left}.score{grid-template-columns:1fr;justify-items:start}#c-price{height:240px}.filters input[type=search]{width:120px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="in">
+    <div class="mrow">
+      <div class="brand">
+        <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="190" height="36"></a>
+        <p>Screener · end-of-day ranking for positions held weeks to months</p>
+      </div>
+      <div class="mctl">
+        <div class="asof">Prices to close of <b id="asof">—</b><br>Ranks recomputed nightly</div>
+        <div class="seg" role="group" aria-label="Market">
+          <button id="m-all" data-m="ALL" aria-pressed="true">All</button>
+          <button id="m-uk" data-m="LSE" aria-pressed="false">UK</button>
+          <button id="m-us" data-m="US" aria-pressed="false">US</button>
+        </div>
+      </div>
+    </div>
+    <div class="demo" id="banner"><span class="tagdemo" id="banner-tag">Demo</span><span id="banner-text">Loading…</span></div>
+  </div>
+</header>
+
+<main class="in">
+  <section class="breadth" aria-label="Market breadth">
+    <article class="mk" id="b-LSE"></article>
+    <article class="mk" id="b-US"></article>
+    <article class="mk wtcard">
+      <header><h2>How the score is built</h2></header>
+      <div class="wt">
+        <div class="wtbar"><span style="width:40%;background:var(--ft)"></span><span style="width:40%;background:var(--fm)"></span><span style="width:20%;background:var(--fs)"></span></div>
+        <div class="wtl">
+          <div><i style="background:var(--ft)"></i><b>Trend 40%</b><span>200-day average, golden cross, Super Trend</span></div>
+          <div><i style="background:var(--fm)"></i><b>Momentum 40%</b><span>12-month return excluding the last month</span></div>
+          <div><i style="background:var(--fs)"></i><b>Sentiment 20%</b><span>30-day relevance-weighted news tone</span></div>
+        </div>
+        <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Each factor is a percentile within its own market (0–100).</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="ov" aria-label="Sectors and movers">
+    <div class="card">
+      <div class="ch"><h2>Sectors</h2><span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Average score in the selected market · select a sector to filter</span></div>
+      <div class="heat" id="heat"></div>
+    </div>
+    <div class="card">
+      <div class="ch"><h2>Rank movers this week</h2></div>
+      <div class="mv" id="movers"></div>
+    </div>
+  </section>
+
+  <section class="work">
+    <div class="card">
+      <div class="ch">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><h2 id="t-title">Ranked universe</h2><div class="vseg" role="group" aria-label="View"><button id="v-all" data-v="all" aria-pressed="true">All stocks</button><button id="v-early" data-v="early" aria-pressed="false">Early trend changes</button><button id="v-grow" data-v="grow" aria-pressed="false">Growing &amp; turning up</button><button id="v-watch" data-v="watch" aria-pressed="false">★ Watchlist</button></div></div>
+        <div class="filters">
+          <input type="search" id="q" placeholder="Search" aria-label="Search name or ticker">
+          <select id="sector" aria-label="Sector"><option value="">All sectors</option></select>
+          <label for="min">Min score <input type="range" id="min" min="0" max="90" step="10" value="0"><span class="num" id="minv">0</span></label>
+        </div>
+      </div>
+      <div class="earlynote" id="earlynote" hidden><b>Early trend changes</b> are stocks whose long-term trend turned up recently (a golden cross within 60 days, or a move back above the 200-day average within 40 days), with momentum holding up, news tone improving and RSI below 70. Many early turns fail. These are candidates for closer research, not predictions of fast growth.</div>
+      <div class="earlynote" id="grownote" hidden><b>Growing &amp; turning up</b> are US companies whose latest reported revenue grew 15% or more year on year, with growth holding or speeding up (from SEC filings), and whose long-term price trend is up or has just turned up. Revenue growth is backward-looking and often already priced in. This is a research screen, not a forecast.</div>
+      <div class="earlynote" id="watchnote" hidden><b>Your watchlist</b> is saved in this browser only. Use the ☆ next to any company to add or remove it.</div>
+      <div class="tw">
+        <table>
+          <thead><tr>
+            <th aria-label="Watchlist"></th>
+            <th data-k="rank" class="r">#</th>
+            <th data-k="name">Company</th>
+            <th data-k="score">Score</th>
+            <th data-k="ret1y" class="r">1 year</th>
+            <th data-k="revGrowth" class="r">Revenue growth</th>
+            <th data-k="tone30" class="r">News tone</th>
+            <th data-k="rankChg" class="r">Week</th>
+          </tr></thead>
+          <tbody id="tb"></tbody>
+        </table>
+        <div class="empty" id="empty" hidden>No stocks match these filters. Lower the minimum score or clear the search.</div>
+      </div>
+    </div>
+
+    <aside class="card dos" id="dos" aria-live="polite">
+      <div class="dh">
+        <div class="top">
+          <div style="display:grid;gap:6px;min-width:0">
+            <h2 style="display:flex;align-items:center;gap:6px"><span id="d-name">—</span><button class="star" id="d-star" aria-pressed="false" aria-label="Add to watchlist">☆</button></h2>
+            <div class="meta" id="d-meta"></div>
+          </div>
+          <div class="px" id="d-px">—</div>
+        </div>
+      </div>
+      <div class="score">
+        <div class="ring"><svg width="104" height="104" viewBox="0 0 104 104" id="d-ring"></svg><div class="c"><b id="d-score">—</b><span id="d-rank">—</span></div></div>
+        <div class="fac" id="d-fac"></div>
+      </div>
+      <div class="ovl" id="ovl"></div>
+      <div class="panes">
+        <div class="pane"><div class="tag"><span><i style="background:var(--ft)"></i>50-day</span><span><i style="background:var(--band-sma)"></i>200-day</span><span><i style="background:var(--accent);height:6px;opacity:.35"></i>Range ahead</span></div><div id="c-price"></div></div>
+        <div class="pane"><div class="tag">Daily news tone <b id="t-tone"></b></div><div id="c-tone"></div></div>
+        <div class="pane"><div class="tag">RSI 14 <b id="t-rsi"></b></div><div id="c-rsi"></div></div>
+        <div class="pane"><div class="tag">Volume · OBV</div><div id="c-vol"></div></div>
+      </div>
+      <p class="qnote" id="d-qual" hidden></p>
+      <div class="risk" id="d-risk"></div>
+      <section class="outl" aria-label="Growth" id="d-growsec">
+        <h3>Growth <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400" id="d-gsrc"></span></h3>
+        <div class="gpanel" id="d-growth"></div>
+      </section>
+      <section class="outl" aria-label="Upside and downside">
+        <h3>Upside and downside range <span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">from 1-year realised volatility</span></h3>
+        <div class="og">
+          <table class="rt"><thead><tr><th>Horizon</th><th>Middle 50%</th><th>90% range</th></tr></thead><tbody id="d-range"></tbody></table>
+          <div class="lv" id="d-levels"></div>
+        </div>
+        <p class="note">The ranges show how far this stock's price has typically moved over each horizon, centred on today's price. They do not predict direction: one in ten outcomes is expected to fall outside the wide range.</p>
+      </section>
+      <section class="outl" aria-label="Signal summary">
+        <h3>Signal summary <span class="stance" id="d-stance"></span></h3>
+        <div class="pc">
+          <div><h4><i style="background:var(--up)"></i>Supporting</h4><ul id="d-pro"></ul></div>
+          <div><h4><i style="background:var(--down)"></i>Against</h4><ul id="d-con"></ul></div>
+        </div>
+        <p class="note">Generated from the indicators above with fixed rules. It summarises the evidence; it is not a recommendation to buy or sell.</p>
+      </section>
+      <div class="news">
+        <h3>Recent coverage <span class="lbl" id="d-ncount"></span></h3>
+        <div id="d-news"></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="card track" id="track" hidden>
+    <div class="ch"><h2>Track record of the score</h2><span class="lbl" id="track-meta"></span></div>
+    <div class="tw"><table><thead><tr><th>Market</th><th>Horizon</th><th class="r">Q1 lowest</th><th class="r">Q3</th><th class="r">Q5 highest</th><th class="r">Q5 − Q1</th><th class="r">t-stat</th></tr></thead><tbody id="track-body"></tbody></table></div>
+    <p class="disc" style="padding:12px 16px">Average forward return of each score quintile above its market's equal-weight average, from the validation backtest (price factors only, today's index members, so survivorship bias flatters these figures). A t-stat below about 2 means the difference could easily be chance.</p>
+  </section>
+
+  <section class="method">
+    <div class="card"><h3>Where the numbers come from</h3><p>Each night end-of-day bars are synced from Tiingo into the library's file repository with its own <code>indicator-sync</code> tool. A Go job runs <code>trend.Sma</code>, <code>momentum.Rsi</code>, <code>volatility.BollingerBands</code>, <code>volume.Obv</code> and the Golden Cross and Super Trend strategies over every stock, then writes this page's JSON.</p></div>
+    <div class="card"><h3>How news is scored</h3><p>Articles from GDELT (and Finnhub for US names) are matched to companies, de-duplicated, and scored by FinBERT as positive, neutral or negative. Tone is weighted by relevance and averaged over 30 days; a burst of coverage raises a news flag.</p></div>
+    <div class="card"><h3>Running cost: free</h3><p>GitHub Actions runs the nightly jobs and GitHub Pages serves this static page, both free for a public repository. Scores are a research filter for further reading. They are not a forecast and not investment advice.</p></div>
+  </section>
+  <p class="disc">Ranks are percentiles within each market, so a UK score of 80 and a US score of 80 mean "top fifth of its own market", not equal strength. Backtested and simulated results are hypothetical. Prices for UK stocks are shown in pence.</p>
+</main>
+
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+<script>
+const LC = LightweightCharts;
+let D;
+async function loadSeries(s){ if (!D.series[s.id]) D.series[s.id] = await (await fetch(`data/stocks/${s.id}.json`, { cache: "no-cache" })).json(); return D.series[s.id]; }
+async function boot(){
+  try { D = await (await fetch("data/snapshot.json", { cache: "no-cache" })).json(); }
+  catch (e) { $("banner-text").textContent = "No data yet: the first nightly run has not finished."; return; }
+  D.series = {};
+  start();
+}
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const $ = id => document.getElementById(id);
+const sign = (x, d = 1, suf = "%") => (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(d) + suf;
+const pct = (x, d = 1) => sign(x * 100, d);
+const cls = x => x > 0 ? "pos" : x < 0 ? "neg" : "flat";
+const MKT = { LSE: "UK", US: "US" };
+const price = (s, v) => s.ccy === "GBX" ? v.toLocaleString("en-GB", {minimumFractionDigits:1, maximumFractionDigits:1}) + "p" : "$" + v.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2});
+const fmtDate = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", {day:"numeric", month:"short", year:"numeric", timeZone:"UTC"});
+const shortDate = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", {day:"numeric", month:"short", timeZone:"UTC"});
+const trendState = s => s.tr_raw >= 75 ? ["up", "Uptrend"] : s.tr_raw >= 40 ? ["mid", "Mixed"] : ["dn", "Downtrend"];
+let nInMkt;
+
+function start(){
+$("asof").textContent = fmtDate(D.asof);
+$("banner-tag").textContent = D.demo ? "Demo" : "Live";
+$("banner-text").innerHTML = D.demo ? "<b>Fictional companies with simulated prices and news.</b> Shown until the first nightly run publishes real data. Indicators are computed by <code>cinar/indicator</code>." : `<b>${D.stocks.length} stocks ranked from end-of-day prices to ${fmtDate(D.asof)}.</b> Indicators by <code>cinar/indicator</code>; headlines scored by FinBERT. A research screen, not investment advice.`;
+loadTrack();
+
+// Market breadth cards
+function breadthCard(ex){
+  const b = D.breadth[ex];
+  if (!b) { $("b-" + ex).innerHTML = `<header><h2>${ex === "LSE" ? "United Kingdom" : "United States"}</h2><span class="mkt ${ex}">${ex === "LSE" ? "LSE" : "NYSE · NASDAQ"}</span></header><p class="nodata">No price data yet for this market.</p>`; return; }
+  const meter = (n, col) => `<div class="meter"><span style="width:${n / b.n * 100}%;background:var(${col})"></span></div>`;
+  $("b-" + ex).innerHTML = `
+    <header><h2>${ex === "LSE" ? "United Kingdom" : "United States"}</h2><span class="mkt ${ex}">${ex === "LSE" ? "LSE" : "NYSE · NASDAQ"}</span></header>
+    <div class="mstats">
+      <div><span class="lbl">Above 200-day</span><span class="v">${b.above200}<small style="font-size:12px;color:var(--muted)">/${b.n}</small></span>${meter(b.above200, "--ft")}</div>
+      <div><span class="lbl">Golden cross</span><span class="v">${b.gc}<small style="font-size:12px;color:var(--muted)">/${b.n}</small></span>${meter(b.gc, "--ft")}</div>
+      <div><span class="lbl">Up today</span><span class="v">${b.adv}<small style="font-size:12px;color:var(--muted)">/${b.n}</small></span>${meter(b.adv, "--up")}</div>
+      <div><span class="lbl">News tone</span><span class="v ${cls(b.tone)}">${sign(b.tone, 2, "")}</span><span class="s">${b.events ? b.events + " news flag" + (b.events > 1 ? "s" : "") : "no news flags"}</span></div>
+    </div>`;
+}
+nInMkt = { LSE: D.stocks.filter(s => s.ex === "LSE").length, US: D.stocks.filter(s => s.ex === "US").length };
+breadthCard("LSE"); breadthCard("US");
+
+// Filters and table
+// watchlist, saved in this browser only
+let watch = new Set();
+try { watch = new Set(JSON.parse(localStorage.getItem("bp-watch") || "[]")); } catch (e) {}
+function toggleWatch(id){
+  watch.has(id) ? watch.delete(id) : watch.add(id);
+  try { localStorage.setItem("bp-watch", JSON.stringify([...watch])); } catch (e) {}
+  render();
+  if (state.sel) { const on = watch.has(state.sel.id); $("d-star").setAttribute("aria-pressed", on); $("d-star").textContent = on ? "★" : "☆"; }
+}
+const pctOrDash = v => v == null ? '<span class="flat">–</span>' : `<span class="${cls(v)}">${pct(v, 0)}</span>`;
+const state = { view: "all", mkt: "ALL", q: "", sector: "", min: 0, sortK: "score", dir: -1, sel: null };
+[...new Set(D.stocks.map(s => s.sector))].sort().forEach(s => $("sector").insertAdjacentHTML("beforeend", `<option>${s}</option>`));
+document.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
+  state.mkt = b.dataset.m; document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render();
+  const vis = visible(); if (vis.length && !vis.includes(state.sel)) select(vis[0]);
+});
+document.querySelectorAll(".vseg button").forEach(b => b.onclick = () => {
+  state.view = b.dataset.v; document.querySelectorAll(".vseg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  $("earlynote").hidden = state.view !== "early"; $("grownote").hidden = state.view !== "grow"; $("watchnote").hidden = state.view !== "watch"; render();
+  const vis = visible(); if (vis.length && !vis.includes(state.sel)) select(vis[0]);
+});
+$("q").oninput = e => { state.q = e.target.value.trim().toLowerCase(); render(); };
+$("sector").onchange = e => { state.sector = e.target.value; render(); };
+$("min").oninput = e => { state.min = +e.target.value; $("minv").textContent = state.min; render(); };
+document.querySelectorAll("th[data-k]").forEach(th => th.onclick = () => {
+  const k = th.dataset.k; state.dir = state.sortK === k ? -state.dir : (k === "name" || k === "rank" ? 1 : -1); state.sortK = k; render();
+});
+
+function visible(){
+  const inView = s => state.view === "all" || (state.view === "early" && s.early) || (state.view === "grow" && s.grower) || (state.view === "watch" && watch.has(s.id));
+  return D.stocks.filter(s => inView(s) && (state.mkt === "ALL" || s.ex === state.mkt) && (!state.sector || s.sector === state.sector) && s.score >= state.min &&
+    (!state.q || s.name.toLowerCase().includes(state.q) || s.t.toLowerCase().includes(state.q)))
+   .sort((a, b) => { const x = a[state.sortK], y = b[state.sortK]; if (x == null || y == null) return (x == null) - (y == null); return (typeof x === "string" ? x.localeCompare(y) : (x - y)) * state.dir || b.score - a.score; });
+}
+function spark(s){
+  const v = s.spark.slice(-53), w = 56, h = 22, lo = Math.min(...v), hi = Math.max(...v);
+  const X = i => i / (v.length - 1) * w, Y = y => h - 2 - (y - lo) / ((hi - lo) || 1) * (h - 4);
+  const d = v.map((y, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(y).toFixed(1)).join("");
+  const col = s.ret1y >= 0 ? "var(--up)" : "var(--down)";
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="${d}" fill="none" stroke="${col}" stroke-width="1.4" stroke-linejoin="round"/><circle cx="${X(v.length - 1)}" cy="${Y(v[v.length - 1])}" r="2" fill="${col}"/></svg>`;
+}
+function overview(){
+  const base = D.stocks.filter(s => state.mkt === "ALL" || s.ex === state.mkt);
+  const by = {};
+  base.forEach(s => (by[s.sector] = by[s.sector] || []).push(s));
+  const sectors = Object.entries(by).map(([k, v]) => [k, v.reduce((a, s) => a + s.score, 0) / v.length, v.length]).sort((a, b) => b[1] - a[1]);
+  $("heat").innerHTML = sectors.map(([k, avg, n]) => `<button class="hc" data-sec="${k}" aria-pressed="${state.sector === k}" style="--h:${Math.round(Math.max(0, Math.min(1, (avg - 20) / 60)) * 70)}"><b>${k}</b><span class="v">${avg.toFixed(0)}</span><small>${n} stock${n > 1 ? "s" : ""}</small></button>`).join("");
+  document.querySelectorAll(".hc").forEach(b => b.onclick = () => { state.sector = state.sector === b.dataset.sec ? "" : b.dataset.sec; $("sector").value = state.sector; render(); });
+  const moved = base.filter(s => s.rankChg);
+  const item = s => `<button data-go="${s.id}"><span>${s.name} <span class="lbl" style="text-transform:none;letter-spacing:0">${MKT[s.ex]} · #${s.rank}</span></span><span class="num ${s.rankChg > 0 ? "pos" : "neg"}">${s.rankChg > 0 ? "▲" : "▼"}${Math.abs(s.rankChg)}</span></button>`;
+  const up = [...moved].sort((a, b) => b.rankChg - a.rankChg).filter(s => s.rankChg > 0).slice(0, 5);
+  const dn = [...moved].sort((a, b) => a.rankChg - b.rankChg).filter(s => s.rankChg < 0).slice(0, 5);
+  $("movers").innerHTML = moved.length ? `<div><h3>Rising</h3>${up.map(item).join("") || '<p class="note" style="margin:0">None</p>'}</div><div><h3>Falling</h3>${dn.map(item).join("") || '<p class="note" style="margin:0">None</p>'}</div>` : '<p class="note" style="margin:8px 0">Rank changes appear after the second nightly run.</p>';
+  document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => { const s = D.stocks.find(x => x.id === b.dataset.go); select(s); if (matchMedia("(max-width: 1180px)").matches) $("dos").scrollIntoView({ block: "start" }); });
+}
+function histChart(pts){
+  if (!pts || pts.length < 2) return `<span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Score history builds up from the first nightly run (${pts && pts.length ? "1 day so far" : "none yet"}).</span>`;
+  const w = 600, h = 56, X = i => i / (pts.length - 1) * (w - 8) + 4, Y = v => h - 6 - v / 100 * (h - 12);
+  const d = pts.map((p, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p[1]).toFixed(1)).join("");
+  const last = pts[pts.length - 1];
+  return `<span class="lbl" style="text-transform:none;letter-spacing:0;font-weight:400">Score over the last ${pts.length} trading days (${shortDate(pts[0][0])} – ${shortDate(last[0])})</span>
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Score history"><line x1="0" x2="${w}" y1="${Y(50)}" y2="${Y(50)}" stroke="var(--line)" stroke-dasharray="3 3"/><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="${X(pts.length - 1)}" cy="${Y(last[1])}" r="3" fill="var(--accent)"/></svg>`;
+}
+function render(){
+  const rows = visible();
+  $("t-title").textContent = state.mkt === "ALL" ? "Ranked universe" : (state.mkt === "LSE" ? "UK ranking" : "US ranking");
+  document.querySelectorAll("th[data-k]").forEach(th => { th.querySelector(".ar")?.remove(); if (th.dataset.k === state.sortK) th.insertAdjacentHTML("beforeend", `<span class="ar">${state.dir < 0 ? "↓" : "↑"}</span>`); th.setAttribute("aria-sort", th.dataset.k === state.sortK ? (state.dir < 0 ? "descending" : "ascending") : "none"); });
+  $("tb").innerHTML = rows.map(s => {
+    const rc = s.rankChg ? `<span class="${s.rankChg > 0 ? "pos" : "neg"}">${s.rankChg > 0 ? "▲" : "▼"}${Math.abs(s.rankChg)}</span>` : `<span class="flat">–</span>`;
+    return `<tr data-id="${s.id}" tabindex="0" class="${s === state.sel ? "sel" : ""}">
+      <td><button class="star" data-w="${s.id}" aria-pressed="${watch.has(s.id)}" aria-label="${watch.has(s.id) ? "Remove from" : "Add to"} watchlist">${watch.has(s.id) ? "★" : "☆"}</button></td>
+      <td class="r rk">${s.rank}</td>
+      <td><div class="co"><b>${s.name}${s.early ? '<span class="early" title="Early trend change">EARLY</span>' : ""}${s.grower ? '<span class="grow" title="Revenue growing 15%+ with the trend up">GROWTH</span>' : ""}${(s.flags || []).length ? '<span class="flag" title="Data check: see stock page">DATA</span>' : ""}</b><small><span class="mkt ${s.ex}">${MKT[s.ex]}</span><span class="num">${s.t}</span><span>${s.sector}</span></small></div></td>
+      <td><div class="sc"><span class="n">${s.score}</span><span class="stack" title="Trend ${s.T} · Momentum ${s.M} · Sentiment ${s.S}"><span style="width:${s.T * .4}%;background:var(--ft)"></span><span style="width:${s.M * .4}%;background:var(--fm)"></span><span style="width:${s.S * .2}%;background:var(--fs)"></span></span></div></td>
+      <td class="r"><div class="spk">${spark(s)}<span class="num ${cls(s.ret1y)}">${pct(s.ret1y, 0)}</span></div></td>
+      <td class="r num">${pctOrDash(s.revGrowth)}</td>
+      <td class="r num"><span class="${cls(s.tone30)}">${sign(s.tone30, 2, "")}</span>${s.event ? '<span class="flag" title="Unusual burst of news in the last week">NEWS</span>' : ""}</td>
+      <td class="r num">${rc}</td></tr>`;
+  }).join("");
+  $("empty").hidden = rows.length > 0;
+  document.querySelectorAll("#tb .star").forEach(b => b.onclick = e => { e.stopPropagation(); toggleWatch(b.dataset.w); });
+  overview();
+  $("empty").textContent = state.view === "watch" ? "Your watchlist is empty. Use the ☆ next to a company to add it." : state.view === "grow" ? "No companies currently meet the growth screen with these filters." : state.view === "early" ? "No early trend changes match these filters." : "No stocks match these filters. Lower the minimum score or clear the search.";
+  document.querySelectorAll("#tb tr").forEach(tr => {
+    const go = () => { select(D.stocks.find(s => s.id === tr.dataset.id)); if (matchMedia("(max-width: 1180px)").matches) $("dos").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); };
+    tr.onclick = go; tr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } };
+  });
+}
+
+// Charts
+const charts = [];
+function baseOpts(el){
+  return { autoSize: true,
+    layout: { background: { type: "solid", color: css("--surface") }, textColor: css("--muted"), fontFamily: css("--f-mono"), fontSize: 10.5 },
+    grid: { vertLines: { color: css("--grid") }, horzLines: { color: css("--grid") } },
+    rightPriceScale: { borderColor: css("--line"), minimumWidth: 70 }, timeScale: { borderColor: css("--line"), visible: false },
+    crosshair: { mode: LC.CrosshairMode.Normal }, handleScale: true, handleScroll: true, localization: { locale: "en-GB" } };
+}
+function mk(id, extra = {}){ const el = $(id); const c = LC.createChart(el, { ...baseOpts(el), ...extra }); charts.push([c, el, extra]); return c; }
+const lineOpts = { lineWidth: 1.5, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false };
+const cp = mk("c-price", { rightPriceScale: { borderColor: css("--line"), minimumWidth: 70, scaleMargins: { top: .08, bottom: .06 } } });
+const candles = cp.addCandlestickSeries({ borderVisible: false, priceLineVisible: true });
+const s50 = cp.addLineSeries({ ...lineOpts }), s200 = cp.addLineSeries({ ...lineOpts, lineWidth: 2 });
+const bbU = cp.addLineSeries({ ...lineOpts, lineWidth: 1, lineStyle: 2, visible: false }), bbL = cp.addLineSeries({ ...lineOpts, lineWidth: 1, lineStyle: 2, visible: false });
+const fan = [["p95", 1, 2], ["p75", 1, 0], ["p50", 1.5, 1], ["p25", 1, 0], ["p5", 1, 2]].map(([k, w, st]) => [k, cp.addLineSeries({ ...lineOpts, lineWidth: w, lineStyle: st })]);
+const Z = { p5: -1.645, p25: -0.674, p50: 0, p75: 0.674, p95: 1.645 };
+function futureDays(from, n){ const out = []; let d = new Date(from + "T12:00:00Z"); while (out.length < n){ d = new Date(d.getTime() + 864e5); const w = d.getUTCDay(); if (w && w < 6) out.push(d.toISOString().slice(0, 10)); } return out; }
+const qPrice = (s, z, days) => s.price * Math.exp(z * s.vol1y * Math.sqrt(days / 252));
+const ct = mk("c-tone"); const toneS = ct.addHistogramSeries({ priceLineVisible: false, lastValueVisible: false, priceFormat: { type: "custom", formatter: v => v.toFixed(2), minMove: .01 } });
+const cr = mk("c-rsi"); const rsiS = cr.addLineSeries({ ...lineOpts });
+const rsiLines = [70, 30].map(v => rsiS.createPriceLine({ price: v, lineStyle: 2, lineWidth: 1, axisLabelVisible: true }));
+const cv = mk("c-vol", { timeScale: { visible: true, borderColor: css("--line") } });
+const volS = cv.addHistogramSeries({ priceScaleId: "vol", priceLineVisible: false, lastValueVisible: false, priceFormat: { type: "volume" } });
+cv.priceScale("vol").applyOptions({ scaleMargins: { top: .3, bottom: 0 } });
+const obvS = cv.addLineSeries({ ...lineOpts, priceFormat: { type: "volume" } });
+
+const overlays = [
+  ["SMA 50 / 200", [s50, s200], true, "--ft"],
+  ["Bollinger 20·2", [bbU, bbL], false, "--band-sma"],
+  ["News markers", null, true, "--fs"],
+  ["Range ahead", fan.map(f => f[1]), true, "--accent"],
+];
+let showMarkers = true;
+overlays.forEach(([label, series, on, col], i) => {
+  const b = document.createElement("button"); b.className = "tg"; b.id = "ovl-" + i; b.innerHTML = `<i style="background:var(${col})"></i>${label}`;
+  const set = v => { b.setAttribute("aria-pressed", v); if (series) series.forEach(s => s.applyOptions({ visible: v })); else { showMarkers = v; if (state.sel) setMarkers(state.sel); } };
+  set(on); b.onclick = () => set(b.getAttribute("aria-pressed") !== "true"); $("ovl").appendChild(b);
+});
+
+let syncing = false;
+charts.forEach(([c]) => c.timeScale().subscribeVisibleLogicalRangeChange(r => {
+  if (syncing || !r) return; syncing = true; charts.forEach(([o]) => o !== c && o.timeScale().setVisibleLogicalRange(r)); syncing = false;
+}));
+let cur = null; // current series data
+const valAt = (ser, t) => { const i = cur.idx[t]; return i == null ? null : ser[i]; };
+const hostSeries = new Map([[cp, () => [candles, t => valAt(cur.close, t)]], [ct, () => [toneS, t => valAt(cur.tone, t) ?? 0]], [cr, () => [rsiS, t => valAt(cur.ind.rsi, t)]], [cv, () => [obvS, t => valAt(cur.ind.obv, t)]]]);
+charts.forEach(([c]) => c.subscribeCrosshairMove(p => {
+  if (!cur) return;
+  charts.forEach(([o]) => { if (o === c) return; if (!p.time) { o.clearCrosshairPosition(); return; } const [s, f] = hostSeries.get(o)(); const v = f(p.time); if (v != null) o.setCrosshairPosition(v, p.time, s); });
+}));
+function focusDate(d){
+  if (!cur || cur.idx[d] == null) return;
+  const i = cur.idx[d], r = cp.timeScale().getVisibleLogicalRange(), span = r ? r.to - r.from : 120;
+  if (!r || i < r.from || i > r.to) charts.forEach(([c]) => c.timeScale().setVisibleLogicalRange({ from: i - span / 2, to: i + span / 2 }));
+  cp.setCrosshairPosition(cur.close[i], d, candles);
+  charts.forEach(([o]) => { if (o === cp) return; const [s, f] = hostSeries.get(o)(); const v = f(d); if (v != null) o.setCrosshairPosition(v, d, s); });
+}
+
+const ser = (arr, T) => arr.map((v, i) => v == null ? { time: T[i] } : { time: T[i], value: v });
+function setMarkers(s){
+  if (!showMarkers) { candles.setMarkers([]); return; }
+  const strong = (D.series[s.id].arts || []).filter(a => Math.abs(a.s) >= .5 && cur.idx[a.d] != null).sort((a, b) => a.d < b.d ? -1 : 1);
+  const seen = new Set();
+  candles.setMarkers(strong.filter(a => !seen.has(a.d) && seen.add(a.d)).map(a => ({ time: a.d, position: a.s > 0 ? "belowBar" : "aboveBar", color: a.s > 0 ? css("--up") : css("--down"), shape: "circle", size: .6 })));
+}
+function paint(){
+  const s = state.sel; if (!s) return; const X = D.series[s.id], T = X.bars.map(b => b[0]);
+  candles.applyOptions({ upColor: css("--up"), downColor: css("--down"), wickUpColor: css("--up"), wickDownColor: css("--down"), priceFormat: { type: "price", precision: 2, minMove: .01 } });
+  s50.applyOptions({ color: css("--ft") }); fan.forEach(([k, se]) => se.applyOptions({ color: k === "p50" ? css("--accent") : css("--accent") + (k === "p5" || k === "p95" ? "99" : "cc") })); s200.applyOptions({ color: css("--band-sma") });
+  bbU.applyOptions({ color: css("--band-sma") }); bbL.applyOptions({ color: css("--band-sma") });
+  rsiS.applyOptions({ color: css("--fm") }); rsiLines.forEach(l => l.applyOptions({ color: css("--muted") }));
+  obvS.applyOptions({ color: css("--fm") });
+  toneS.setData(X.tone.map((v, i) => v == null ? { time: T[i] } : { time: T[i], value: v, color: v >= 0 ? css("--up") : css("--down") }));
+  volS.setData(X.bars.map(b => ({ time: b[0], value: b[5], color: (b[4] >= b[1] ? css("--up") : css("--down")) + "55" })));
+  setMarkers(s);
+}
+function ring(s){
+  const r = 44, C = 2 * Math.PI * r; let off = 0;
+  const segs = [["--ft", s.T * .4], ["--fm", s.M * .4], ["--fs", s.S * .2]].map(([c, v]) => {
+    const len = v / 100 * C, out = `<circle cx="52" cy="52" r="${r}" fill="none" stroke="var(${c})" stroke-width="9" stroke-dasharray="${Math.max(len - 1.5, 0)} ${C}" stroke-dashoffset="${-off}" transform="rotate(-90 52 52)"/>`; off += len; return out; }).join("");
+  return `<circle cx="52" cy="52" r="${r}" fill="none" stroke="var(--surface-2)" stroke-width="9"/>${segs}`;
+}
+let selToken = 0;
+async function select(s){
+  if (!s) return; const tok = ++selToken; state.sel = s;
+  document.querySelectorAll("#tb tr").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === s.id));
+  let X; try { X = await loadSeries(s); } catch (e) { return; }
+  if (tok !== selToken) return;
+  const T = X.bars.map(b => b[0]);
+  cur = { idx: Object.fromEntries(T.map((t, i) => [t, i])), close: X.bars.map(b => b[4]), tone: X.tone, ind: X.ind };
+  try { history.replaceState(null, "", "#" + s.id); } catch (e) {}
+  // header
+  $("d-name").textContent = s.name;
+  $("d-star").setAttribute("aria-pressed", watch.has(s.id)); $("d-star").textContent = watch.has(s.id) ? "★" : "☆";
+  $("d-star").onclick = () => toggleWatch(s.id);
+  const fl = s.flags || []; $("d-qual").hidden = !fl.length; $("d-qual").textContent = fl.length ? "Data check: " + fl.join("; ") + "." : "";
+  $("d-meta").innerHTML = `<span class="mkt ${s.ex}">${MKT[s.ex]}</span><span class="num">${s.t}</span>·<span>${s.ex === "LSE" ? "London Stock Exchange" : "US listing"}</span>·<span>${s.sector}</span>`;
+  $("d-px").innerHTML = `${price(s, s.price)}<small class="${cls(s.chg1d)}">${pct(s.chg1d, 2)} today · <span class="${cls(s.ret1y)}">${pct(s.ret1y)} 1y</span></small>`;
+  // score
+  $("d-ring").innerHTML = ring(s); $("d-score").textContent = s.score;
+  $("d-rank").textContent = "of 100";
+  const rkHtml = `Rank <b>#${s.rank}</b> of ${nInMkt[s.ex]} in the ${MKT[s.ex]}` + (s.rankChg ? ` · <span class="${s.rankChg > 0 ? "pos" : "neg"}">${s.rankChg > 0 ? "up" : "down"} ${Math.abs(s.rankChg)} this week</span>` : " · unchanged this week");
+  const gc = s.gc.long ? `golden cross ${s.gc.since}d ago` : "50-day below 200-day";
+  const why = {
+    T: [s.above200 ? "Above 200-day average" : "Below 200-day average", gc, `Super Trend ${s.st.long ? "long" : "flat"}`].join(" · "),
+    M: `12-month return ex. last month ${pct(s.mom)}`,
+    S: `30-day tone ${sign(s.tone30, 2, "")} (${s.toneChg >= 0 ? "up" : "down"} ${Math.abs(s.toneChg).toFixed(2)} vs 90-day) · ${s.newsN30} articles, ${s.newsVol.toFixed(1)}× usual`,
+  };
+  $("d-fac").innerHTML = `<div class="rkline" id="d-rk"></div>` + [["T", "Trend", "--ft"], ["M", "Momentum", "--fm"], ["S", "Sentiment", "--fs"]].map(([k, n, c]) =>
+    `<div class="row"><span class="nm"><i style="background:var(${c})"></i>${n}</span><span class="bar"><span style="width:${s[k]}%;background:var(${c})"></span></span><span class="pv">${s[k]}</span><span class="why">${why[k]}</span></div>`).join("");
+  $("d-rk").innerHTML = rkHtml;
+  $("d-fac").insertAdjacentHTML("beforeend", `<div class="hist">${histChart(X.hist)}</div>`);
+  // growth (SEC filings, US only)
+  const hasG = s.revGrowth != null;
+  $("d-growsec").hidden = s.ex !== "US";
+  $("d-gsrc").textContent = hasG ? `from SEC filings · ${s.fundBasis === "year" ? "fiscal year" : "quarter"} ending ${fmtDate(s.fundAsOf)}` : "no SEC revenue data for this company";
+  $("d-growth").innerHTML = hasG ? [
+    ["Revenue growth", pct(s.revGrowth, 1), "vs same period a year earlier"],
+    ["Acceleration", s.revAccel == null ? "–" : sign(s.revAccel * 100, 1, " pts"), s.revAccel == null ? "needs two quarters" : s.revAccel >= 0 ? "growth speeding up" : "growth slowing"],
+    ["EPS growth", s.epsGrowth == null ? "–" : pct(s.epsGrowth, 0), "diluted, year on year"],
+    ["Growth percentile", s.G == null ? "–" : String(s.G), "within US stocks shown"],
+  ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
+  // series
+  candles.setData(X.bars.map(b => ({ time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] })));
+  s50.setData(ser(X.ind.sma50, T)); s200.setData(ser(X.ind.sma200, T)); bbU.setData(ser(X.ind.bbU, T)); bbL.setData(ser(X.ind.bbL, T));
+  rsiS.setData(ser(X.ind.rsi, T)); obvS.setData(ser(X.ind.obv, T));
+  const fut = futureDays(T[T.length - 1], 126);
+  fan.forEach(([k, se]) => se.setData([{ time: T[T.length - 1], value: s.price }, ...fut.map((d, i) => ({ time: d, value: qPrice(s, Z[k], i + 1) }))]));
+  paint();
+  const n = T.length; charts.forEach(([c]) => c.timeScale().setVisibleLogicalRange({ from: n - 170, to: n + 128 }));
+  $("t-rsi").textContent = s.rsi.toFixed(1); $("t-tone").textContent = "30-day avg " + sign(s.tone30, 2, "");
+  // risk
+  const risk = [["ATR 14", (s.atrPct * 100).toFixed(2) + "%", "of price"], ["Volatility", s.hv ? (s.hv * 100).toFixed(0) + "%" : "—", "20-day, annualised"], ["RSI 14", s.rsi.toFixed(1), s.rsi >= 70 ? "stretched" : s.rsi <= 30 ? "washed out" : "neutral range"],
+    ["Golden cross", s.gc.long ? "Long" : "Flat", s.gc.long ? `${s.gc.since} days` : "no active signal"], ["Super Trend", s.st.long ? "Long" : "Flat", `since ${s.st.since} days`]];
+  $("d-risk").innerHTML = risk.map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("");
+  // outlook
+  const rowR = (lab, d) => {
+    const lo = qPrice(s, Z.p5, d), hi = qPrice(s, Z.p95, d), a1 = qPrice(s, Z.p25, d), a2 = qPrice(s, Z.p75, d);
+    const X0 = lo, W = hi - lo, P = v => ((v - X0) / W * 100).toFixed(1) + "%";
+    return `<tr><td>${lab}</td><td><div class="rng"><div class="bx"><span style="left:${P(a1)};width:calc(${P(a2)} - ${P(a1)});background:var(--accent);opacity:.55"></span><b style="left:calc(${P(s.price)} - 1px)"></b></div><small><span class="neg">${pct(a1 / s.price - 1, 0)}</span><span class="pos">${pct(a2 / s.price - 1, 0)}</span></small></div></td>
+      <td class="num" style="font-size:12px"><span class="neg">${price(s, lo)} (${pct(lo / s.price - 1, 0)})</span><br><span class="pos">${price(s, hi)} (${pct(hi / s.price - 1, 0)})</span></td></tr>`;
+  };
+  $("d-range").innerHTML = rowR("3 months", 63) + rowR("6 months", 126) + rowR("12 months", 252);
+  const atr = s.atrPct * s.price, dist = v => pct(s.price / v - 1);
+  $("d-levels").innerHTML = [
+    ["200-day average", `${price(s, s.sma200)} <span>(${dist(s.sma200)})</span>`],
+    ["50-day average", `${price(s, s.sma50)} <span>(${dist(s.sma50)})</span>`],
+    ["52-week high", `${price(s, s.hi52)} <span>(${pct(s.price / s.hi52 - 1)})</span>`],
+    ["52-week low", `${price(s, s.lo52)} <span>(${pct(s.price / s.lo52 - 1)})</span>`],
+    ["Price minus 2× ATR", `${price(s, s.price - 2 * atr)} <span>(${pct(-2 * s.atrPct)})</span>`],
+  ].map(([l, v]) => `<div><span>${l}</span><b class="num" style="font-weight:500">${v}</b></div>`).join("");
+  const pro = [], con = [];
+  const d200 = s.price / s.sma200 - 1;
+  (s.above200 ? pro : con).push(`${s.above200 ? "Above" : "Below"} its 200-day average by ${Math.abs(d200 * 100).toFixed(1)}%`);
+  if (s.gc.long) pro.push(s.gc.since <= 60 ? `Fresh golden cross ${s.gc.since} trading days ago` : `50-day average above 200-day for ${s.gc.since} trading days`);
+  else con.push("50-day average is below the 200-day");
+  (s.st.long ? pro : con).push(`Super Trend is ${s.st.long ? "long" : "flat"} (changed ${s.st.since} days ago)`);
+  if (s.M >= 60) pro.push(`Strong 12-month momentum (${pct(s.mom)}), percentile ${s.M} within its market`);
+  else if (s.M <= 40) con.push(`Weak 12-month momentum (${pct(s.mom)}), percentile ${s.M} within its market`);
+  if (s.toneChg >= .05) pro.push(`News tone improving: ${sign(s.tone30, 2, "")} over 30 days vs ${sign(s.tone90, 2, "")} over 90`);
+  else if (s.toneChg <= -.05) con.push(`News tone weakening: ${sign(s.tone30, 2, "")} over 30 days vs ${sign(s.tone90, 2, "")} over 90`);
+  if (s.rsi >= 70) con.push(`RSI ${s.rsi.toFixed(0)}: a sharp short-term rise, so entry timing carries more risk`);
+  if (s.rsi <= 30) con.push(`RSI ${s.rsi.toFixed(0)}: selling pressure is heavy`);
+  if (s.vol1y >= .35) con.push(`High volatility (${(s.vol1y * 100).toFixed(0)}% a year): wide range of outcomes`);
+  if (s.vol1y <= .22) pro.push(`Lower volatility than most (${(s.vol1y * 100).toFixed(0)}% a year)`);
+  if (s.price / s.hi52 - 1 <= -.25) con.push(`${Math.abs((s.price / s.hi52 - 1) * 100).toFixed(0)}% below its 52-week high`);
+  if (s.event) con.push("Unusual burst of news in the past week: check what changed");
+  if (s.early) pro.push("Early trend change: the uptrend is recent, so it is less established");
+  if (s.revGrowth != null) {
+    if (s.revGrowth >= 0.15) pro.push(`Revenue up ${pct(s.revGrowth, 0)} year on year${s.revAccel != null && s.revAccel > 0 ? ", and growth is speeding up" : ""}`);
+    else if (s.revGrowth < 0) con.push(`Revenue down ${pct(-s.revGrowth, 0).replace("+", "")} year on year`);
+    if (s.revAccel != null && s.revAccel < -0.05) con.push(`Revenue growth slowing by ${Math.abs(s.revAccel * 100).toFixed(0)} points`);
+  }
+  if (fl.length) con.push("Price data flagged by the data check: treat signals with caution");
+  const li = xs => xs.length ? xs.map(x => `<li>${x}</li>`).join("") : `<li style="color:var(--muted)">Nothing notable</li>`;
+  $("d-pro").innerHTML = li(pro); $("d-con").innerHTML = li(con);
+  const st = s.score >= 70 ? ["strong", "Signals mostly positive"] : s.score >= 45 ? ["mixed", "Signals mixed"] : ["weak", "Signals mostly negative"];
+  const sd = $("d-stance"); sd.className = "stance " + st[0]; sd.textContent = st[1];
+  // news
+  const arts = (X.arts || []).slice(0, 7);
+  $("d-ncount").textContent = `${(X.arts || []).length} articles in 12 months`;
+  $("d-news").innerHTML = (arts.length ? "" : `<p class="note" style="margin:0">No scored articles in the last 12 months.</p>`) + arts.map(a => `<button class="art" data-d="${a.d}"><span class="d">${shortDate(a.d)}</span><span class="h">${a.h}</span><span class="lab ${a.lab}">${a.lab} ${Math.round(a.conf * 100)}%</span><span class="sub">${a.ev} · ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${a.src}</a>` : a.src} · relevance ${a.rel.toFixed(2)}</span></button>`).join("");
+  document.querySelectorAll(".art").forEach(b => b.onclick = () => focusDate(b.dataset.d));
+  document.querySelectorAll("#tb tr").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === s.id));
+}
+
+render();
+const fromHash = (() => { try { return D.stocks.find(s => s.id === location.hash.slice(1)); } catch (e) { return null; } })();
+select(fromHash || visible()[0]);
+
+function retheme(){
+  charts.forEach(([c, el, extra]) => { const o = baseOpts(el); c.applyOptions({ layout: o.layout, grid: o.grid }); c.priceScale("right").applyOptions({ borderColor: css("--line") }); c.timeScale().applyOptions({ borderColor: css("--line") }); });
+  paint();
+}
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
+new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+}
+
+async function loadTrack(){
+  let v; try { v = await (await fetch("data/validation.json", { cache: "no-cache" })).json(); } catch (e) { return; }
+  if (!v.markets || !v.markets.length) return;
+  const H = ["1 month", "3 months", "6 months"];
+  $("track-body").innerHTML = v.markets.map(m => H.map((h, i) => `<tr><td>${i ? "" : (m.market === "UK" ? "UK" : "US") + ` <span class="lbl" style="text-transform:none;letter-spacing:0">${m.stocks} stocks, ${m.from.slice(0,4)}–${m.to.slice(0,4)}</span>`}</td><td>${h}</td>
+    <td class="r num ${cls(m.quintile_excess[i][0])}">${pct(m.quintile_excess[i][0], 2)}</td><td class="r num ${cls(m.quintile_excess[i][2])}">${pct(m.quintile_excess[i][2], 2)}</td><td class="r num ${cls(m.quintile_excess[i][4])}">${pct(m.quintile_excess[i][4], 2)}</td>
+    <td class="r num ${cls(m.q5_minus_q1[i])}"><b>${pct(m.q5_minus_q1[i], 2)}</b></td><td class="r num">${(m.q5_minus_q1_t[i] ?? NaN).toFixed(2)}</td></tr>`).join("")).join("");
+  $("track-meta").textContent = "Updated " + v.generated.slice(0, 10);
+  $("track").hidden = false;
+}
+boot();
+</script>
+</body>
+</html>
