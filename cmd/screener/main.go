@@ -198,9 +198,14 @@ func main() {
 		sa := arts[id]
 		sort.Slice(sa, func(a, b int) bool { return sa[a].Date > sa[b].Date })
 		for _, a := range sa {
+			// attach the article to the last trading day on or before its date, so weekend
+			// and holiday news (and news dated after the latest close) still counts
 			k, in := idx[a.Date]
 			if !in {
-				continue
+				k = sort.SearchStrings(dates, a.Date) - 1
+				if k < 0 || a.Date < dates[0] {
+					continue
+				}
 			}
 			sum[k] += *a.Score * a.Rel
 			wsum[k] += a.Rel
