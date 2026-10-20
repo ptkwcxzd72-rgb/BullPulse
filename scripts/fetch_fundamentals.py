@@ -41,8 +41,12 @@ def user_agent() -> str:
     return f"BullPulse research screener (github.com/ptkwcxzd72-rgb/BullPulse) {contact}"
 
 
+ERRORS: list[str] = []
+
+
 def get(url: str):
     req = urllib.request.Request(url, headers={"User-Agent": user_agent(), "Accept-Encoding": "gzip"})
+    last = ""
     for attempt in range(3):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
@@ -51,11 +55,14 @@ def get(url: str):
                     data = gzip.decompress(data)
                 return json.loads(data)
         except urllib.error.HTTPError as e:
+            last = f"HTTP {e.code} {e.reason}"
             if e.code == 404:
-                return None
+                break
             time.sleep(3 * (attempt + 1))
-        except Exception:
+        except Exception as e:  # network errors, bad JSON
+            last = f"{type(e).__name__}: {e}"[:200]
             time.sleep(3 * (attempt + 1))
+    ERRORS.append(f"{url.rsplit('/', 1)[-1]}: {last}")
     return None
 
 
@@ -191,8 +198,10 @@ def main() -> None:
     json.dump({"generated": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z", "source": "SEC EDGAR company facts",
                "stocks": result}, open(OUT, "w"), indent=0)
     print(f"growth data for {len(result)} companies; none for {len(missing)}: {', '.join(missing[:20])}")
+    for e in ERRORS[:5]:  # shown as annotations on the GitHub run
+        print(f"::warning::SEC request failed: {e}")
     if stocks and not result:
-        sys.exit("SEC returned no usable data")
+        sys.exit("::error::SEC returned no usable data")
 
 
 if __name__ == "__main__":
