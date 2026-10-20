@@ -181,8 +181,12 @@ def main() -> None:
     if os.path.exists(OUT) and args.max_age_days > 0:
         age = (time.time() - os.path.getmtime(OUT)) / 86400
         try:
-            fresh = json.load(open(OUT)).get("generated", "")
+            old = json.load(open(OUT))
+            fresh = old.get("generated", "")
             age = (dt.datetime.utcnow() - dt.datetime.fromisoformat(fresh.rstrip("Z"))).days
+            # files written before the Fundamentals Profile existed lack the "fin" figures: refresh now
+            if old.get("stocks") and not any("fin" in v for v in old["stocks"].values()):
+                age = args.max_age_days
         except Exception:
             pass
         if age < args.max_age_days:
