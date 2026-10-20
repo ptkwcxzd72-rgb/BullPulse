@@ -36,9 +36,13 @@ REVENUE = [  # in priority order; companies switch concepts over time (e.g. afte
 EPS = ["EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted", "EarningsPerShareBasic"]
 
 
+def contact() -> str:
+    """SEC requires a real contact email in the User-Agent (GitHub noreply addresses are refused)."""
+    return os.environ.get("SEC_CONTACT_EMAIL", "").strip()
+
+
 def user_agent() -> str:
-    contact = os.environ.get("SEC_CONTACT_EMAIL") or "258917638+ptkwcxzd72-rgb@users.noreply.github.com"
-    return f"BullPulse research screener (github.com/ptkwcxzd72-rgb/BullPulse) {contact}"
+    return f"BullPulse research screener {contact()}"
 
 
 ERRORS: list[str] = []
@@ -162,6 +166,11 @@ def main() -> None:
     ap.add_argument("--prices", default="data/prices", help="only stocks with a price file ('' = all)")
     ap.add_argument("--max-age-days", type=int, default=7, help="skip if the output is newer than this")
     args = ap.parse_args()
+
+    if not contact():
+        print("::warning::SEC_CONTACT_EMAIL is not set, so growth data was skipped. SEC requires a real contact "
+              "email for automated access: add it as an Actions secret named SEC_CONTACT_EMAIL.")
+        return
 
     if os.path.exists(OUT) and args.max_age_days > 0:
         age = (time.time() - os.path.getmtime(OUT)) / 86400

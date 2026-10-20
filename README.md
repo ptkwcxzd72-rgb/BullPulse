@@ -52,7 +52,7 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 ## Setup
 
 1. **Add your Tiingo keys.** Go to Settings → Secrets and variables → Actions → *New repository secret*. Add `END_OF_DAY_DATA` with the token used for prices and `NEWS_UPDATES` with the token used for news. If there is only one token, add just `END_OF_DAY_DATA`; news falls back to it. (`TIINGO_API_KEY` is also accepted for prices.) Then run Actions → *Check setup* to confirm both keys work.
-2. **Optional:** add `FINNHUB_API_KEY` (free at finnhub.io) for better US news, and `SEC_CONTACT_EMAIL` so SEC can reach you if needed.
+2. **Growth data and news (optional, free):** add `SEC_CONTACT_EMAIL`, a real email address. SEC requires one in every automated request and refuses GitHub noreply addresses; without it the growth data is skipped. Also add `FINNHUB_API_KEY` (free at finnhub.io) for better US news.
 3. **Optional variables** (on the same page, *Variables* tab):
    - `TIINGO_TIER`: set to `free` (the default) or `power` (Tiingo's paid tier).
    - `MAX_TICKERS`: how many stocks to sync. The default is 220 on the free tier and all stocks on `power`.

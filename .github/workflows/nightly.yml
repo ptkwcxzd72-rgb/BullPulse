@@ -32,6 +32,7 @@ jobs:
       TIINGO_API_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
       TIINGO_NEWS_KEY: ${{ secrets.NEWS_UPDATES || secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
       FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
       TIINGO_TIER: ${{ vars.TIINGO_TIER || 'free' }}
       MAX_TICKERS: ${{ vars.MAX_TICKERS }}
     steps:
