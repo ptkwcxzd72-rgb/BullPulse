@@ -219,6 +219,9 @@ def main() -> None:
     if not us_done:
         print("No US news API available; using GDELT for US stocks too")
         gdelt_targets = stocks
+    if gdelt_targets:   # start at a different company each night, so a time-limited run still covers everyone over a few nights
+        k = dt.date.today().toordinal() * 37 % len(gdelt_targets)
+        gdelt_targets = gdelt_targets[k:] + gdelt_targets[:k]
     if args.max_gdelt:
         gdelt_targets = gdelt_targets[: args.max_gdelt]
     got = gdelt_news(gdelt_targets, max(args.days, 1), args.gdelt_pause)
