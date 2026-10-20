@@ -261,6 +261,12 @@ func main() {
 		rows = append(rows, row)
 	}
 
+	if len(rows) == 0 {
+		// Never replace the published data (or the demo) with an empty ranking.
+		fmt.Println("screener: no stocks have enough price history yet; leaving site/data unchanged")
+		return
+	}
+
 	// percentile scores and ranks within each market
 	breadth := map[string]map[string]any{}
 	for _, ex := range []string{"LSE", "US"} {

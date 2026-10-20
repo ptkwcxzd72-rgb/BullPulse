@@ -1,0 +1,53 @@
+name: Check setup
+
+# Quick check (under a minute) that the Tiingo key reaches the workflows and works.
+# Never prints the key itself.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    env:
+      TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+      KEY_AS_VARIABLE: ${{ vars.TIINGO_API_KEY != '' }}
+    steps:
+      - name: Is the secret visible to the workflow?
+        run: |
+          if [[ -n "$TIINGO_API_KEY" ]]; then
+            echo "OK: secret TIINGO_API_KEY is set (${#TIINGO_API_KEY} characters)."
+            if [[ "$TIINGO_API_KEY" != "$(echo -n "$TIINGO_API_KEY" | tr -d '[:space:]')" ]]; then
+              echo "::warning::The key contains spaces or line breaks. Re-paste it without them."
+            fi
+          else
+            if [[ "$KEY_AS_VARIABLE" == "true" ]]; then
+              echo "::error::TIINGO_API_KEY exists as a *Variable*, not a *Secret*. Delete the variable (variables are not hidden in logs) and add it on the Secrets tab."
+            else
+              echo "::error::No secret named TIINGO_API_KEY. Add it under Settings > Secrets and variables > Actions > Secrets > New repository secret. Codespaces and Dependabot secrets are not visible to Actions."
+            fi
+            exit 1
+          fi
+
+      - name: Does Tiingo accept the key?
+        run: |
+          KEY="$(echo -n "$TIINGO_API_KEY" | tr -d '[:space:]')"
+          check () {
+            local label="$1" url="$2"
+            code=$(curl -s -o /tmp/body -w "%{http_code}" -H "Content-Type: application/json" -H "Authorization: Token $KEY" "$url")
+            case "$code" in
+              200) echo "OK   $label: HTTP 200, $(head -c 160 /tmp/body | tr -d '\n')" ;;
+              401|403) echo "::error::$label: HTTP $code. Tiingo rejected the key or this plan lacks access: $(head -c 200 /tmp/body)"; return 1 ;;
+              429) echo "::warning::$label: HTTP 429, hourly request limit reached. Try again in an hour." ;;
+              *) echo "::warning::$label: HTTP $code: $(head -c 200 /tmp/body)" ;;
+            esac
+          }
+          fail=0
+          check "Key test" "https://api.tiingo.com/api/test" || fail=1
+          check "End-of-day prices (AAPL, last 10 days)" "https://api.tiingo.com/tiingo/daily/aapl/prices?startDate=$(date -u -d '10 days ago' +%F)" || fail=1
+          check "News (1 article)" "https://api.tiingo.com/tiingo/news?tickers=aapl&limit=1" || echo "News is optional: GDELT is used when Tiingo news is unavailable."
+          exit $fail

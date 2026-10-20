@@ -10,8 +10,8 @@ set -euo pipefail
 INDICATOR_VERSION="v2.1.44"
 TIER="${TIINGO_TIER:-free}"
 if [[ -z "${TIINGO_API_KEY:-}" ]]; then
-  echo "::warning::TIINGO_API_KEY is not set; skipping price sync."
-  exit 0
+  echo "::error::TIINGO_API_KEY is not available to this job. Add it under Settings > Secrets and variables > Actions > Secrets (not Variables, Codespaces or Dependabot), named exactly TIINGO_API_KEY."
+  exit 1
 fi
 
 if [[ "$TIER" == "power" ]]; then
