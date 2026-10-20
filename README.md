@@ -10,7 +10,7 @@ Every weekday night it ranks each stock on three factors, as percentiles within 
 | Momentum | 40% | 12-month return, excluding the latest month |
 | Sentiment | 20% | 30-day news tone: headlines scored by FinBERT, weighted by relevance |
 
-Alongside the score, BullPulse shows **revenue and earnings growth from SEC filings** (US) and flags companies that are *growing and turning up*. These are displayed and screened on, but not added to the composite until the validation shows they help.
+Alongside the score, BullPulse shows **revenue and earnings growth from SEC filings** (US) and flags companies that are *growing and turning up*. It also builds a **Fundamentals Profile**: 30 pass-or-fail checks, six each for value, growth, track record, financial health and dividends, and a **fair-value estimate** from a two-stage discounted cash flow (DCF) whose growth, required return and long-run growth visitors can adjust on the page. The DCF is skipped for banks, insurers and property companies, and for companies with negative average free cash flow. All of this comes from SEC filings and today's price (no paid analyst forecasts). These figures are displayed and screened on, but not added to the composite until the validation shows they help.
 
 For each stock, the website shows the score and the reasons behind it, linked price, news-tone, RSI and volume charts, and a statistical upside/downside range. It also lists the signals for and against the stock, and flags early trend changes. Visitors can keep a watchlist (saved in their own browser), browse a sector heatmap and see the week's biggest rank movers.
 
