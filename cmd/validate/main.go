@@ -84,6 +84,7 @@ func main() {
 	prices := flag.String("prices", "data/prices", "price repository directory")
 	outMD := flag.String("report", "reports/validation.md", "markdown report path")
 	outJSON := flag.String("json", "site/data/validation.json", "JSON results path")
+	pitPath := flag.String("fund-pit", "data/fundamentals_pit.jsonl", "point-in-time fundamentals (scripts/fundamentals_history.py)")
 	flag.Parse()
 
 	stocks, err := core.LoadUniverse(*universe)
@@ -94,6 +95,8 @@ func main() {
 	repo := asset.NewFileSystemRepository(*prices)
 
 	var results []marketResult
+	var fres *fundResult
+	pit := loadPIT(*pitPath)
 	for _, market := range []string{"US", "UK"} {
 		var ss []core.Stock
 		var xs []*core.Series
@@ -264,6 +267,9 @@ func main() {
 			res.ByYear[y] = s.mean()
 		}
 		results = append(results, res)
+		if market == "US" {
+			fres = fundamentalsTest(ss, xs, ends, pos, pit)
+		}
 	}
 
 	// report
@@ -289,12 +295,30 @@ func main() {
 		}
 		b.WriteString("\n")
 	}
+	if fres != nil && fres.Profile.Months > 0 {
+		fmt.Fprintf(&b, "## Fundamentals (US, %d companies, %s to %s)\n\n", fres.Stocks, fres.From, fres.To)
+		b.WriteString("Rebuilt at each month-end from SEC filings published by then (point in time). Per-share figures are put on today's split basis and prices are adjusted back for later dividends. Higher quintile = more checks passed / cheaper / less growth priced in.\n\n")
+		b.WriteString("| Measure | Horizon | Q1 | Q3 | Q5 | Q5 − Q1 | t-stat |\n|---|---|---|---|---|---|---|\n")
+		row := func(name string, q qres) {
+			for h := range horizons {
+				fmt.Fprintf(&b, "| %s | %s | %s | %s | %s | %s | %.2f |\n", name, hNames[h], pct(q.Quintile[h][0]), pct(q.Quintile[h][2]), pct(q.Quintile[h][4]), pct(q.Spread[h]), q.SpreadT[h])
+				name = ""
+			}
+		}
+		row("Profile (30 checks)", fres.Profile)
+		row("Price below DCF", fres.DCF)
+		row("Low implied growth", fres.Implied)
+		for _, n := range []string{"Value", "Growth", "Track record", "Health", "Dividends"} {
+			row(n, fres.Areas[n])
+		}
+		b.WriteString("\n")
+	}
 	if len(results) == 0 {
 		b.WriteString("No market had enough price history to test (at least 20 stocks with 390+ trading days).\n")
 	}
 	os.MkdirAll(filepath.Dir(*outMD), 0o755)
 	os.WriteFile(*outMD, []byte(b.String()), 0o644)
-	js, _ := json.MarshalIndent(map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "markets": results}, "", " ")
+	js, _ := json.MarshalIndent(map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "markets": results, "fundamentals": fres}, "", " ")
 	os.MkdirAll(filepath.Dir(*outJSON), 0o755)
 	os.WriteFile(*outJSON, js, 0o644)
 	fmt.Print(b.String())

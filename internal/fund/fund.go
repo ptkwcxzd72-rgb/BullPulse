@@ -542,3 +542,73 @@ func peMissing(f Fin) string {
 	}
 	return "Not available in the filings"
 }
+
+// Peer is one company's inputs to the cross-sectional medians.
+type Peer struct {
+	Sector    string
+	M         Metrics
+	RevGrowth *float64
+}
+
+// PeerMedians computes the market and sector reference points for Build from one market's
+// companies. Sector medians need at least four peers with data, otherwise they are NaN.
+func PeerMedians(peers []Peer) Medians {
+	col := func(get func(Peer) *float64, keep func(Peer) bool) []*float64 {
+		var v []*float64
+		for _, p := range peers {
+			if keep == nil || keep(p) {
+				v = append(v, get(p))
+			}
+		}
+		return v
+	}
+	pays := func(p Peer) bool { return p.M.DivYield != nil && *p.M.DivYield > 0 }
+	med := Medians{
+		PEMarket:        Median(col(func(p Peer) *float64 { return p.M.PE }, nil)),
+		FCFYieldMarket:  Median(col(func(p Peer) *float64 { return p.M.FCFYield }, nil)),
+		RevGrowthMarket: Median(col(func(p Peer) *float64 { return p.RevGrowth }, nil)),
+		OpMarginMarket:  Median(col(func(p Peer) *float64 { return p.M.OpMargin }, nil)),
+		DivYieldPayers:  Median(col(func(p Peer) *float64 { return p.M.DivYield }, pays)),
+		PESector:        map[string]float64{}, PSSector: map[string]float64{},
+	}
+	count := func(v []*float64) int {
+		n := 0
+		for _, x := range v {
+			if x != nil {
+				n++
+			}
+		}
+		return n
+	}
+	for _, p := range peers {
+		sec := p.Sector
+		if _, done := med.PESector[sec]; done {
+			continue
+		}
+		in := func(q Peer) bool { return q.Sector == sec }
+		med.PESector[sec], med.PSSector[sec] = math.NaN(), math.NaN()
+		if v := col(func(q Peer) *float64 { return q.M.PE }, in); count(v) >= 4 {
+			med.PESector[sec] = Median(v)
+		}
+		if v := col(func(q Peer) *float64 { return q.M.PS }, in); count(v) >= 4 {
+			med.PSSector[sec] = Median(v)
+		}
+	}
+	return med
+}
+
+// PerShare multiplies the per-share amounts by k and divides the share count by k
+// (k = 1/split factor puts as-reported figures on today's split-adjusted basis).
+func (f Fin) PerShare(k float64) Fin {
+	for _, x := range []**float64{&f.EPSTTM, &f.DPSTTM, &f.EPS5yAgo, &f.EPSFY, &f.DPS3yAgo, &f.DPSFY} {
+		if *x != nil {
+			v := **x * k
+			*x = &v
+		}
+	}
+	if f.Shares != nil && k != 0 {
+		v := *f.Shares / k
+		f.Shares = &v
+	}
+	return f
+}

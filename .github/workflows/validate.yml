@@ -1,7 +1,8 @@
 name: Validate score
 
 # Re-runs the out-of-sample backtest (score quintiles vs forward returns) on the price
-# history in data/prices and publishes the results to the website's track-record table.
+# history in data/prices, plus a point-in-time test of the Fundamentals Profile and DCF rebuilt
+# from SEC filings, and publishes the results to the website's track-record table.
 on:
   workflow_dispatch:
   schedule:
@@ -19,6 +20,14 @@ jobs:
       - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Point-in-time fundamentals from SEC filings
+        env:
+          SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+        run: python scripts/fundamentals_history.py
+        continue-on-error: true
       - name: Run validation
         run: go run ./cmd/validate
       - name: Commit report

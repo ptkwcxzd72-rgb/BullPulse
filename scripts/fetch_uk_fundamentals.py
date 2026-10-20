@@ -279,7 +279,7 @@ def main():
         fin = financials(facts)
         fin["ccy"] = ccy
         entry = {**growth(facts), "fin": fin, "source": "ESEF annual report", "lei": lei}
-        out["LSE-" + t] = entry
+        out["LSE-" + t.replace(".", "")] = entry
         time.sleep(0.3)
     json.dump(ids, open(IDS, "w"), indent=1, sort_keys=True)
     json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "stocks": out}, open(OUT, "w"), separators=(",", ":"))

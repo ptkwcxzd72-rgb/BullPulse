@@ -11,3 +11,6 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+# rebuilt by the monthly validation run
+data/fundamentals_pit.jsonl

@@ -148,7 +148,7 @@ def main():
                 cache[acc] = {"f": filed, "tx": parse_form4(xml, cik)}
                 new += 1
             txs += cache[acc]["tx"]
-        out["US-" + r["ticker"]] = summarise(txs, today)
+        out["US-" + r["ticker"].replace(".", "")] = summarise(txs, today)
     # forget filings that have dropped out of the window
     cache = {k: v for k, v in cache.items() if v["f"] >= since}
     os.makedirs(os.path.dirname(CACHE), exist_ok=True)

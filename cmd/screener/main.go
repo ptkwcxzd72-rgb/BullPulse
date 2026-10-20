@@ -577,42 +577,11 @@ func addFundamentals(rows []*Row, funds map[string]Fund) {
 		byEx[r.Ex] = append(byEx[r.Ex], it)
 	}
 	for _, items := range byEx {
-		col := func(get func(*item) *float64, keep func(*item) bool) []*float64 {
-			var v []*float64
-			for _, it := range items {
-				if keep == nil || keep(it) {
-					v = append(v, get(it))
-				}
-			}
-			return v
+		peers := make([]fund.Peer, len(items))
+		for k, it := range items {
+			peers[k] = fund.Peer{Sector: it.r.Sector, M: it.m, RevGrowth: it.r.RevGrowth}
 		}
-		pays := func(it *item) bool { return it.m.DivYield != nil && *it.m.DivYield > 0 }
-		med := fund.Medians{
-			PEMarket:        fund.Median(col(func(it *item) *float64 { return it.m.PE }, nil)),
-			FCFYieldMarket:  fund.Median(col(func(it *item) *float64 { return it.m.FCFYield }, nil)),
-			RevGrowthMarket: fund.Median(col(func(it *item) *float64 { return it.r.RevGrowth }, nil)),
-			OpMarginMarket:  fund.Median(col(func(it *item) *float64 { return it.m.OpMargin }, nil)),
-			DivYieldPayers:  fund.Median(col(func(it *item) *float64 { return it.m.DivYield }, pays)),
-			PESector:        map[string]float64{}, PSSector: map[string]float64{},
-		}
-		sectors := map[string]bool{}
-		for _, it := range items {
-			sectors[it.r.Sector] = true
-		}
-		for sec := range sectors {
-			in := func(it *item) bool { return it.r.Sector == sec }
-			// sector medians need a few peers to mean anything
-			if pe := col(func(it *item) *float64 { return it.m.PE }, in); countNonNil(pe) >= 4 {
-				med.PESector[sec] = fund.Median(pe)
-			} else {
-				med.PESector[sec] = math.NaN()
-			}
-			if ps := col(func(it *item) *float64 { return it.m.PS }, in); countNonNil(ps) >= 4 {
-				med.PSSector[sec] = fund.Median(ps)
-			} else {
-				med.PSSector[sec] = math.NaN()
-			}
-		}
+		med := fund.PeerMedians(peers)
 		for _, it := range items {
 			pr := fund.Build(it.f, it.m, it.d, it.r.Sector, it.r.RevGrowth, it.r.RevAccel, it.r.EpsGrowth, med)
 			total := pr.Total
@@ -626,16 +595,6 @@ func addFundamentals(rows []*Row, funds map[string]Fund) {
 					"revCagr3": it.f.RevCAGR3, "cash": it.f.Cash, "debt": it.f.Debt, "equity": it.f.Equity, "shares": it.f.Shares, "ttmEnd": it.f.TTMEnd, "balanceEnd": it.f.BalanceEnd}}
 		}
 	}
-}
-
-func countNonNil(v []*float64) int {
-	n := 0
-	for _, x := range v {
-		if x != nil {
-			n++
-		}
-	}
-	return n
 }
 
 // scoreHistory holds one line per stock per day: date,id,score,T,M,S,rank.

@@ -460,6 +460,11 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
   <section class="card track" id="track" hidden>
     <div class="ch"><h2>Track record of the score</h2><span class="lbl" id="track-meta"></span></div>
     <div class="tw"><table><thead><tr><th>Market</th><th>Horizon</th><th class="r">Q1 lowest</th><th class="r">Q3</th><th class="r">Q5 highest</th><th class="r">Q5 − Q1</th><th class="r">t-stat</th></tr></thead><tbody id="track-body"></tbody></table></div>
+    <div id="track-fund" hidden>
+      <div class="ch" style="border-top:1px solid var(--line)"><h2>Do the fundamentals help?</h2><span class="lbl" id="track-fmeta"></span></div>
+      <div class="tw"><table><thead><tr><th>Measure</th><th class="r">Q1 3 months</th><th class="r">Q5 3 months</th><th class="r">Q5 − Q1, 1 month</th><th class="r">Q5 − Q1, 3 months</th><th class="r">Q5 − Q1, 6 months</th><th class="r">t-stat, 3 months</th></tr></thead><tbody id="track-fbody"></tbody></table></div>
+      <p class="disc" style="padding:12px 16px">Each measure rebuilt at every month-end using only SEC filings published by then, so the test never sees figures before investors could. Q5 = most checks passed, cheapest against the DCF, or least growth priced in. Until a measure shows a consistent positive spread with a t-stat above about 2, it stays out of the score.</p>
+    </div>
     <p class="disc" style="padding:12px 16px">Average forward return of each score quintile above its market's equal-weight average, from the validation backtest (price factors only, today's index members, so survivorship bias flatters these figures). A t-stat below about 2 means the difference could easily be chance.</p>
   </section>
 
@@ -920,6 +925,13 @@ async function loadTrack(){
     <td class="r num ${cls(m.quintile_excess[i][0])}">${pct(m.quintile_excess[i][0], 2)}</td><td class="r num ${cls(m.quintile_excess[i][2])}">${pct(m.quintile_excess[i][2], 2)}</td><td class="r num ${cls(m.quintile_excess[i][4])}">${pct(m.quintile_excess[i][4], 2)}</td>
     <td class="r num ${cls(m.q5_minus_q1[i])}"><b>${pct(m.q5_minus_q1[i], 2)}</b></td><td class="r num">${(m.q5_minus_q1_t[i] ?? NaN).toFixed(2)}</td></tr>`).join("")).join("");
   $("track-meta").textContent = "Updated " + v.generated.slice(0, 10);
+  const F = v.fundamentals;
+  if (F && F.profile && F.profile.months){
+    const rows = [["Fundamentals profile (30 checks)", F.profile], ["Price below DCF estimate", F.dcf_cheapness], ["Low growth priced in (reverse DCF)", F.implied_growth_low], ...["Value", "Growth", "Track record", "Health", "Dividends"].map(n => ["&nbsp;&nbsp;" + n + " checks", F.areas[n]])];
+    $("track-fbody").innerHTML = rows.filter(r => r[1] && r[1].months).map(([n, q]) => `<tr><td>${n}</td><td class="r num ${cls(q.quintile_excess[1][0])}">${pct(q.quintile_excess[1][0], 2)}</td><td class="r num ${cls(q.quintile_excess[1][4])}">${pct(q.quintile_excess[1][4], 2)}</td>${[0, 1, 2].map(h => `<td class="r num ${cls(q.q5_minus_q1[h])}">${h === 1 ? "<b>" : ""}${pct(q.q5_minus_q1[h], 2)}${h === 1 ? "</b>" : ""}</td>`).join("")}<td class="r num">${(q.q5_minus_q1_t[1] ?? NaN).toFixed(2)}</td></tr>`).join("");
+    $("track-fmeta").textContent = `US, ${F.stocks} companies, ${F.from.slice(0, 7)} to ${F.to.slice(0, 7)}`;
+    $("track-fund").hidden = false;
+  }
   $("track").hidden = false;
 }
 boot();
