@@ -1,7 +1,7 @@
 name: Check setup
 
-# Quick check (under a minute) that the Tiingo keys reach the workflows and work.
-# Never prints the keys themselves.
+# SMOKE-TEST VARIANT (branch smoke-test only): reproduce the nightly with real Tiingo prices
+# for a small sample, then rank. Never touches main.
 on:
   workflow_dispatch:
 
@@ -9,44 +9,33 @@ permissions:
   contents: read
 
 jobs:
-  check:
+  smoke:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     env:
-      EOD_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
-      NEWS_KEY: ${{ secrets.NEWS_UPDATES || secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
-      NEWS_SEPARATE: ${{ secrets.NEWS_UPDATES != '' }}
+      TIINGO_API_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
     steps:
-      - name: Are the secrets visible to the workflow?
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Sample prices from Tiingo (12 tickers)
         run: |
-          if [[ -z "$EOD_KEY" ]]; then
-            echo "::error::No price key. Add an Actions secret named END_OF_DAY_DATA (Settings > Secrets and variables > Actions > Secrets)."
-            exit 1
-          fi
-          echo "::notice::Price key END_OF_DAY_DATA is visible (${#EOD_KEY} characters)."
-          if [[ "$NEWS_SEPARATE" == "true" ]]; then
-            echo "::notice::News key NEWS_UPDATES is visible (${#NEWS_KEY} characters)."
-          else
-            echo "::notice::No NEWS_UPDATES secret; news will use the price key."
-          fi
-
-      - name: Does Tiingo accept the keys?
+          python3 - <<'PY'
+          import csv
+          rows = list(csv.DictReader(open("universe/us.csv")))[:12]
+          with open("/tmp/us12.csv", "w", newline="") as f:
+              w = csv.DictWriter(f, fieldnames=rows[0].keys(), lineterminator="\n"); w.writeheader(); w.writerows(rows)
+          PY
+          mkdir -p /tmp/u && cp /tmp/us12.csv /tmp/u/us.csv && cp universe/uk.csv /tmp/u/uk.csv
+          go run github.com/cinar/indicator/v2/cmd/indicator-sync@v2.1.44 -source-name tiingo -source-config "$TIINGO_API_KEY" -target-name filesystem -target-config data/prices -days 3650 -delay 2 $(python3 -c "import csv;print(' '.join(r['provider_ticker'] for r in csv.DictReader(open('/tmp/u/us.csv'))))")
+          f=$(ls data/prices/*.csv | grep -v uk- | head -1); echo "::notice::$(ls data/prices/*.csv | grep -vc uk-) US files; $f head: $(head -3 $f | tr '\n' '|') tail: $(tail -1 $f)"
+      - name: SEC and insiders for the sample
         run: |
-          check () {
-            local label="$1" key="$2" url="$3"
-            key="$(echo -n "$key" | tr -d '[:space:]')"
-            code=$(curl -s -o /tmp/body -w "%{http_code}" -H "Content-Type: application/json" -H "Authorization: Token $key" "$url")
-            body="$(head -c 160 /tmp/body | tr -d '\n')"
-            case "$code" in
-              200) echo "::notice::OK - $label: HTTP 200 - ${body}" ;;
-              401|403) echo "::error::$label: HTTP $code - Tiingo rejected the key or the plan lacks access - ${body}"; return 1 ;;
-              429) echo "::warning::$label: HTTP 429 - hourly request limit reached; try again in an hour." ;;
-              *) echo "::warning::$label: HTTP $code - ${body}" ;;
-            esac
-          }
-          fail=0
-          check "Price key test" "$EOD_KEY" "https://api.tiingo.com/api/test" || fail=1
-          check "End-of-day prices (AAPL, last 10 days)" "$EOD_KEY" "https://api.tiingo.com/tiingo/daily/aapl/prices?startDate=$(date -u -d '10 days ago' +%F)" || fail=1
-          check "News (1 article)" "$NEWS_KEY" "https://api.tiingo.com/tiingo/news?tickers=aapl&limit=1" || echo "::warning::Tiingo news unavailable with this key; the nightly job will use GDELT for news instead."
-          exit $fail
+          python scripts/fetch_fundamentals.py --universe /tmp/u --max-age-days 0
+          python scripts/fetch_insiders.py --universe /tmp/u
+      - name: Rank
+        run: go run ./cmd/screener -universe /tmp/u && echo "::notice::screener ok"
