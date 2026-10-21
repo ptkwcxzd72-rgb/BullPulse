@@ -15,6 +15,7 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"sort"
 	"strconv"
 	"strings"
@@ -191,10 +192,24 @@ func main() {
 	qualPath := flag.String("quality", "data/quality.json", "data-quality report (read by the price sync)")
 	flag.Parse()
 	log := slog.Default()
+	// a crash is reported as a GitHub annotation (run logs are not always readable), with the
+	// innermost frames of our own code
+	defer func() {
+		if r := recover(); r != nil {
+			var frames []string
+			for _, l := range strings.Split(string(debug.Stack()), "\n") {
+				if strings.Contains(l, "BullPulse/") && strings.Contains(l, ".go:") {
+					frames = append(frames, strings.TrimSpace(l))
+				}
+			}
+			fmt.Printf("::error::screener crashed: %v at %s\n", r, strings.Join(frames, " <- "))
+			os.Exit(2)
+		}
+	}()
 
 	stocks, err := core.LoadUniverse(*universe)
 	if err != nil {
-		log.Error("universe", "error", err)
+		fmt.Printf("::error::screener: universe: %v\n", err)
 		os.Exit(1)
 	}
 	repo := asset.NewFileSystemRepository(*prices)
@@ -550,7 +565,7 @@ func main() {
 		"stocks": rows, "breadth": breadth, "weights": map[string]float64{"trend": core.WTrend, "momentum": core.WMomentum, "sentiment": core.WSentiment}}
 	b, _ := json.Marshal(snap)
 	if err := os.WriteFile(filepath.Join(*out, "snapshot.json"), b, 0o644); err != nil {
-		log.Error("write snapshot", "error", err)
+		fmt.Printf("::error::screener: writing snapshot: %v\n", err)
 		os.Exit(1)
 	}
 	fmt.Printf("screener: %d stocks ranked, prices to %s; %d excluded (stale), %d flagged, %d to re-download\n",

@@ -99,6 +99,8 @@ jobs:
         run: go run ./cmd/screener
 
       - name: Commit data
+        # saved even if ranking failed, so downloaded prices and filings are never lost
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "bullpulse-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
