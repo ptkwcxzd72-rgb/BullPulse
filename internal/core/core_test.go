@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+
+	"github.com/cinar/indicator/v2/strategy"
 )
 
 func TestPercentiles(t *testing.T) {
@@ -92,5 +94,13 @@ func TestLoadUniverseByHeader(t *testing.T) {
 	}
 	if u[1].ID() != "LSE-BP" || Currency(u[1].Market) != "GBX" {
 		t.Fatalf("UK mapping went wrong: %+v", u[1])
+	}
+}
+
+func TestPositionsWithMoreActionsThanBars(t *testing.T) {
+	acts := []strategy.Action{strategy.Buy, strategy.Hold, strategy.Sell, strategy.Hold, strategy.Buy}
+	got := positions(3, acts)
+	if len(got) != 3 || got[0] != 0 || got[2] != 1 {
+		t.Fatalf("got %v", got)
 	}
 }

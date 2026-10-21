@@ -140,6 +140,10 @@ func collect(cs ...<-chan float64) [][]float64 {
 func positions(n int, acts []strategy.Action) []int {
 	out := make([]int, n)
 	off := n - len(acts)
+	if off < 0 { // the strategy emitted more actions than bars (short histories): keep the latest n
+		acts = acts[-off:]
+		off = 0
+	}
 	pos := 0
 	for i, a := range acts {
 		if a == strategy.Buy {

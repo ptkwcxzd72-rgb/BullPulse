@@ -178,6 +178,17 @@ def main() -> None:
               "email for automated access: add it as an Actions secret named SEC_CONTACT_EMAIL.")
         return
 
+    have = None
+    if args.prices and os.path.isdir(args.prices):
+        have = {os.path.splitext(f)[0] for f in os.listdir(args.prices)}
+    stocks = []
+    for f in sorted(glob.glob(os.path.join(args.universe, "*.csv"))):
+        for r in csv.DictReader(open(f, newline="")):
+            if r.get("cik") and (have is None or r.get("provider_ticker") in have):
+                stocks.append(r)
+    if not stocks:
+        print("no US stocks with prices yet; SEC figures not fetched")
+        return
     if os.path.exists(OUT) and args.max_age_days > 0:
         age = (time.time() - os.path.getmtime(OUT)) / 86400
         try:
@@ -187,20 +198,18 @@ def main() -> None:
             # files written before the Fundamentals Profile existed lack the "fin" figures: refresh now
             if old.get("stocks") and not any("fin" in v for v in old["stocks"].values()):
                 age = args.max_age_days
+            # refresh at once when most stocks with prices have no figures yet (for example after a
+            # run that had no US prices, or when new stocks were added)
+            have_ids = set(old.get("stocks") or {})
+            want = {f"US-{r['ticker'].replace('.', '')}" for r in stocks}
+            if want and len(want & have_ids) < 0.8 * len(want):
+                age = args.max_age_days
         except Exception:
             pass
         if age < args.max_age_days:
             print(f"fundamentals are {age:.0f} days old; skipping (weekly refresh)")
             return
 
-    have = None
-    if args.prices and os.path.isdir(args.prices):
-        have = {os.path.splitext(f)[0] for f in os.listdir(args.prices)}
-    stocks = []
-    for f in sorted(glob.glob(os.path.join(args.universe, "*.csv"))):
-        for r in csv.DictReader(open(f, newline="")):
-            if r.get("cik") and (have is None or r.get("provider_ticker") in have):
-                stocks.append(r)
     print(f"fetching SEC company facts for {len(stocks)} companies")
     result, missing = {}, []
     for i, s in enumerate(stocks):
