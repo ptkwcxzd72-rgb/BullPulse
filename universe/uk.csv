@@ -1,101 +1,101 @@
 ticker,name,sector,market,cik,provider_ticker
-III,3i,Financial services,UK,,uk-iii
-ABDN,Aberdeen Group,Financial Services,UK,,uk-abdn
-ADM,Admiral Group,Insurance,UK,,uk-adm
-AAF,Airtel Africa,Telecommunications services,UK,,uk-aaf
-ALW,Alliance Witan,Investment Trusts,UK,,uk-alw
-AAL,Anglo American plc,Mining,UK,,uk-aal
-ANTO,Antofagasta plc,Mining,UK,,uk-anto
-ABF,Associated British Foods,Food & tobacco,UK,,uk-abf
-AZN,AstraZeneca,Pharmaceuticals & biotechnology,UK,,uk-azn
-AUTO,Autotrader Group,Media,UK,,uk-auto
-AV,Aviva,Life insurance,UK,,uk-av
-BAB,Babcock International,Aerospace & defence,UK,,uk-bab
-BA,BAE Systems,Aerospace & defence,UK,,uk-ba
-BBY,Balfour Beatty,Construction & Materials,UK,,uk-bby
-BARC,Barclays,Banks,UK,,uk-barc
-BTRW,Barratt Redrow,Household goods & home construction,UK,,uk-btrw
-BP,BP,Oil & gas producers,UK,,uk-bp
-BATS,British American Tobacco,Tobacco,UK,,uk-bats
-BLND,British Land,Real estate,UK,,uk-blnd
-BT.A,BT Group,Telecommunications services,UK,,uk-bt-a
-BNZL,Bunzl,Support services,UK,,uk-bnzl
-BRBY,Burberry Group,Personal goods,UK,,uk-brby
-CNA,Centrica,Multiline utilities,UK,,uk-cna
-CCEP,Coca-Cola Europacific Partners,Beverages,UK,,uk-ccep
-CCH,Coca-Cola HBC,Beverages,UK,,uk-cch
-CPG,Compass Group,Support services,UK,,uk-cpg
-CCC,Computacenter,Software & Computer Services,UK,,uk-ccc
-CTEC,Convatec,Health care equipment & supplies,UK,,uk-ctec
-CRDA,Croda International,Chemicals,UK,,uk-crda
-DCC,DCC,Support services,UK,,uk-dcc
-DGE,Diageo,Beverages,UK,,uk-dge
-DPLM,Diploma,Industrial Support services,UK,,uk-dplm
-EZJ,EasyJet,Travel and Leisure,UK,,uk-ezj
-EDV,Endeavour Mining,Mining,UK,,uk-edv
-EXPN,Experian,Support services,UK,,uk-expn
-FCIT,F & C Investment Trust,Collective investments,UK,,uk-fcit
-FRES,Fresnillo plc,Mining,UK,,uk-fres
-GAW,Games Workshop,Leisure Goods,UK,,uk-gaw
-GLEN,Glencore,Mining,UK,,uk-glen
-GSK,GSK plc,Pharmaceuticals & biotechnology,UK,,uk-gsk
-HLN,Haleon,Pharmaceuticals & biotechnology,UK,,uk-hln
-HLMA,Halma plc,Electronic equipment & parts,UK,,uk-hlma
-HSX,Hiscox,Non-life Insurance,UK,,uk-hsx
-HWDN,Howdens Joinery,Homebuilding & construction supplies,UK,,uk-hwdn
-HSBA,HSBC,Banks,UK,,uk-hsba
-ICG,ICG,Financial services,UK,,uk-icg
-IGG,IG Group,Financial services,UK,,uk-igg
-IHG,IHG Hotels & Resorts,Travel & leisure,UK,,uk-ihg
-IMI,IMI,Industrial engineering,UK,,uk-imi
-IMB,Imperial Brands,Tobacco,UK,,uk-imb
-INF,Informa,Media,UK,,uk-inf
-IAG,International Airlines Group,Travel & leisure,UK,,uk-iag
-ITRK,Intertek,Support services,UK,,uk-itrk
-INVP,Investec,Financial Services,UK,,uk-invp
-ITH,Ithaca Energy,Oil & Gas Producers,UK,,uk-ith
-JD,JD Sports,General retailers,UK,,uk-jd
-BGEO,Lion Finance Group,Banking Services,UK,,uk-bgeo
-KGF,Kingfisher plc,Retailers,UK,,uk-kgf
-LAND,Land Securities,Real estate investment trusts,UK,,uk-land
-LGEN,Legal & General,Life insurance,UK,,uk-lgen
-LLOY,Lloyds Banking Group,Banks,UK,,uk-lloy
-LMP,LondonMetric Property,Real Estate Investment Trusts,UK,,uk-lmp
-LSEG,London Stock Exchange Group,Financial services,UK,,uk-lseg
-MNG,M&G,Financial services,UK,,uk-mng
-MKS,Marks & Spencer,Food & drug retailing,UK,,uk-mks
-MRO,Melrose Industries,Aerospace & defence,UK,,uk-mro
-MTLN,Metlen Energy & Metals,Multiline utilities,UK,,uk-mtln
-NG,National Grid plc,Multiline utilities,UK,,uk-ng
-NWG,NatWest Group,Banks,UK,,uk-nwg
-NXT,Next plc,General retailers,UK,,uk-nxt
-PSON,Pearson plc,Media,UK,,uk-pson
-PSH,Pershing Square Holdings,Financial services,UK,,uk-psh
-PCT,Polar Capital Technology Trust,Investment trusts,UK,,uk-pct
-PRU,Prudential plc,Life insurance,UK,,uk-pru
-RKT,Reckitt,Household goods & home construction,UK,,uk-rkt
-REL,RELX,Media,UK,,uk-rel
-RTO,Rentokil Initial,Support services,UK,,uk-rto
-RIO,Rio Tinto,Mining,UK,,uk-rio
-RR,Rolls-Royce Holdings,Aerospace & defence,UK,,uk-rr
-SGE,Sage Group,Software & computer services,UK,,uk-sge
-SBRY,Sainsbury's,Food & drug retailing,UK,,uk-sbry
-SMT,Scottish Mortgage Investment Trust,Collective investments,UK,,uk-smt
-SGRO,Segro,Real estate investment trusts,UK,,uk-sgro
-SVT,Severn Trent,Multiline utilities,UK,,uk-svt
-SHEL,Shell plc,Oil & gas producers,UK,,uk-shel
-SMIN,Smiths Group,General industrials,UK,,uk-smin
-SN,Smith & Nephew,Health care equipment & supplies,UK,,uk-sn
-SPX,Spirax Group,Industrial engineering,UK,,uk-spx
-SSE,SSE plc,Electrical utilities & independent power producers,UK,,uk-sse
-STAN,Standard Chartered,Banks,UK,,uk-stan
-SDLF,Standard Life,Life insurance,UK,,uk-sdlf
-STJ,St. James's Place,Financial services,UK,,uk-stj
-TSCO,Tesco,Food & drug retailing,UK,,uk-tsco
-BBOX,Tritax Big Box REIT,Real Estate Investment Trusts,UK,,uk-bbox
-ULVR,Unilever,Personal goods,UK,,uk-ulvr
-UU,United Utilities,Multiline utilities,UK,,uk-uu
-VOD,Vodafone Group,Mobile telecommunications,UK,,uk-vod
-WEIR,Weir,Industrial goods and services,UK,,uk-weir
-WTB,Whitbread,Retail hospitality,UK,,uk-wtb
-WPP,WPP,Media,UK,,uk-wpp
+III,3i,Financials,UK,,uk-iii
+ABDN,Aberdeen Group,Financials,UK,,uk-abdn
+ADM,Admiral Group,Financials,UK,,uk-adm
+AAF,Airtel Africa,Communication Services,UK,,uk-aaf
+ALW,Alliance Witan,Financials,UK,,uk-alw
+AAL,Anglo American plc,Materials,UK,,uk-aal
+ANTO,Antofagasta plc,Materials,UK,,uk-anto
+ABF,Associated British Foods,Consumer Staples,UK,,uk-abf
+AZN,AstraZeneca,Health Care,UK,,uk-azn
+AUTO,Autotrader Group,Communication Services,UK,,uk-auto
+AV,Aviva,Financials,UK,,uk-av
+BAB,Babcock International,Industrials,UK,,uk-bab
+BA,BAE Systems,Industrials,UK,,uk-ba
+BBY,Balfour Beatty,Industrials,UK,,uk-bby
+BARC,Barclays,Financials,UK,,uk-barc
+BTRW,Barratt Redrow,Consumer Discretionary,UK,,uk-btrw
+BP,BP,Energy,UK,,uk-bp
+BATS,British American Tobacco,Consumer Staples,UK,,uk-bats
+BLND,British Land,Real Estate,UK,,uk-blnd
+BT.A,BT Group,Communication Services,UK,,uk-bt-a
+BNZL,Bunzl,Industrials,UK,,uk-bnzl
+BRBY,Burberry Group,Consumer Staples,UK,,uk-brby
+CNA,Centrica,Utilities,UK,,uk-cna
+CCEP,Coca-Cola Europacific Partners,Consumer Staples,UK,,uk-ccep
+CCH,Coca-Cola HBC,Consumer Staples,UK,,uk-cch
+CPG,Compass Group,Industrials,UK,,uk-cpg
+CCC,Computacenter,Information Technology,UK,,uk-ccc
+CTEC,Convatec,Health Care,UK,,uk-ctec
+CRDA,Croda International,Materials,UK,,uk-crda
+DCC,DCC,Industrials,UK,,uk-dcc
+DGE,Diageo,Consumer Staples,UK,,uk-dge
+DPLM,Diploma,Industrials,UK,,uk-dplm
+EZJ,EasyJet,Consumer Discretionary,UK,,uk-ezj
+EDV,Endeavour Mining,Materials,UK,,uk-edv
+EXPN,Experian,Industrials,UK,,uk-expn
+FCIT,F & C Investment Trust,Financials,UK,,uk-fcit
+FRES,Fresnillo plc,Materials,UK,,uk-fres
+GAW,Games Workshop,Consumer Discretionary,UK,,uk-gaw
+GLEN,Glencore,Materials,UK,,uk-glen
+GSK,GSK plc,Health Care,UK,,uk-gsk
+HLN,Haleon,Health Care,UK,,uk-hln
+HLMA,Halma plc,Industrials,UK,,uk-hlma
+HSX,Hiscox,Financials,UK,,uk-hsx
+HWDN,Howdens Joinery,Consumer Discretionary,UK,,uk-hwdn
+HSBA,HSBC,Financials,UK,,uk-hsba
+ICG,ICG,Financials,UK,,uk-icg
+IGG,IG Group,Financials,UK,,uk-igg
+IHG,IHG Hotels & Resorts,Consumer Discretionary,UK,,uk-ihg
+IMI,IMI,Industrials,UK,,uk-imi
+IMB,Imperial Brands,Consumer Staples,UK,,uk-imb
+INF,Informa,Communication Services,UK,,uk-inf
+IAG,International Airlines Group,Consumer Discretionary,UK,,uk-iag
+ITRK,Intertek,Industrials,UK,,uk-itrk
+INVP,Investec,Financials,UK,,uk-invp
+ITH,Ithaca Energy,Energy,UK,,uk-ith
+JD,JD Sports,Consumer Discretionary,UK,,uk-jd
+BGEO,Lion Finance Group,Financials,UK,,uk-bgeo
+KGF,Kingfisher plc,Consumer Discretionary,UK,,uk-kgf
+LAND,Land Securities,Real Estate,UK,,uk-land
+LGEN,Legal & General,Financials,UK,,uk-lgen
+LLOY,Lloyds Banking Group,Financials,UK,,uk-lloy
+LMP,LondonMetric Property,Real Estate,UK,,uk-lmp
+LSEG,London Stock Exchange Group,Financials,UK,,uk-lseg
+MNG,M&G,Financials,UK,,uk-mng
+MKS,Marks & Spencer,Consumer Staples,UK,,uk-mks
+MRO,Melrose Industries,Industrials,UK,,uk-mro
+MTLN,Metlen Energy & Metals,Utilities,UK,,uk-mtln
+NG,National Grid plc,Utilities,UK,,uk-ng
+NWG,NatWest Group,Financials,UK,,uk-nwg
+NXT,Next plc,Consumer Discretionary,UK,,uk-nxt
+PSON,Pearson plc,Communication Services,UK,,uk-pson
+PSH,Pershing Square Holdings,Financials,UK,,uk-psh
+PCT,Polar Capital Technology Trust,Financials,UK,,uk-pct
+PRU,Prudential plc,Financials,UK,,uk-pru
+RKT,Reckitt,Consumer Discretionary,UK,,uk-rkt
+REL,RELX,Communication Services,UK,,uk-rel
+RTO,Rentokil Initial,Industrials,UK,,uk-rto
+RIO,Rio Tinto,Materials,UK,,uk-rio
+RR,Rolls-Royce Holdings,Industrials,UK,,uk-rr
+SGE,Sage Group,Information Technology,UK,,uk-sge
+SBRY,Sainsbury's,Consumer Staples,UK,,uk-sbry
+SMT,Scottish Mortgage Investment Trust,Financials,UK,,uk-smt
+SGRO,Segro,Real Estate,UK,,uk-sgro
+SVT,Severn Trent,Utilities,UK,,uk-svt
+SHEL,Shell plc,Energy,UK,,uk-shel
+SMIN,Smiths Group,Industrials,UK,,uk-smin
+SN,Smith & Nephew,Health Care,UK,,uk-sn
+SPX,Spirax Group,Industrials,UK,,uk-spx
+SSE,SSE plc,Utilities,UK,,uk-sse
+STAN,Standard Chartered,Financials,UK,,uk-stan
+SDLF,Standard Life,Financials,UK,,uk-sdlf
+STJ,St. James's Place,Financials,UK,,uk-stj
+TSCO,Tesco,Consumer Staples,UK,,uk-tsco
+BBOX,Tritax Big Box REIT,Real Estate,UK,,uk-bbox
+ULVR,Unilever,Consumer Staples,UK,,uk-ulvr
+UU,United Utilities,Utilities,UK,,uk-uu
+VOD,Vodafone Group,Communication Services,UK,,uk-vod
+WEIR,Weir,Industrials,UK,,uk-weir
+WTB,Whitbread,Consumer Discretionary,UK,,uk-wtb
+WPP,WPP,Communication Services,UK,,uk-wpp
