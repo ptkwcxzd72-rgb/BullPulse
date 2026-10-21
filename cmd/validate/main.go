@@ -179,9 +179,9 @@ func main() {
 				ob[k].score = 0.5*tp[k] + 0.5*mp[k]
 				ob[k].mp = mp[k]
 				x, j := xs[ob[k].stock], ob[k].j
-				fresh := (x.GoldenCross[j] == 1 && core.Since(x.GoldenCross, j) <= 60) || (func() bool { a := x.DaysAbove200(j); return a >= 0 && a <= 40 })()
+				fresh := (x.GoldenCross[j] == 1 && core.Since(x.GoldenCross, j) <= 60) || (func() bool { a := x.DaysAbove200(j); return a >= 0 && a <= 20 })()
 				pm, had := prevMP[ob[k].stock]
-				ob[k].early = fresh && (!had || mp[k] >= pm || mp[k] >= 50) && x.RSI[j] < 70
+				ob[k].early = fresh && ((had && mp[k] > pm) || mp[k] >= 40) && x.RSI[j] < 70
 			}
 			for k := range ob {
 				prevMP[ob[k].stock] = mp[k]

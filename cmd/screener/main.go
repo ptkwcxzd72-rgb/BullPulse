@@ -498,8 +498,12 @@ func main() {
 			if p, ok := prev[r.ID]; ok && p.Rank > 0 {
 				r.RankChg = p.Rank - r.Rank
 			}
-			fresh := (r.GC.Long == 1 && r.GC.Since <= 60) || (r.Cross200 != nil && *r.Cross200 <= 40)
-			r.Early = fresh && (r.MP >= r.Mp || r.MP >= 50) && r.ToneChg > 0 && r.RSI < 70
+			fresh := (r.GC.Long == 1 && r.GC.Since <= 60) || (r.Cross200 != nil && *r.Cross200 <= 20)
+			// news must not be turning against the stock: tone steady or improving, and not clearly
+			// negative. (Requiring a strict improvement excluded everything while the news history
+			// was only days old, because 30- and 90-day tone are then identical.)
+			newsOK := r.ToneChg >= 0 && (r.NewsN30 == 0 || r.Tone30 > -0.1)
+			r.Early = fresh && (r.MP > r.Mp || r.MP >= 40) && newsOK && r.RSI < 70
 			// growing and turning up: revenue growth of 15%+ that is holding or speeding up,
 			// with the long-term trend positive or freshly turned
 			if r.RevGrowth != nil && *r.RevGrowth >= 0.15 && (r.RevAccel == nil || *r.RevAccel >= -0.02) &&
