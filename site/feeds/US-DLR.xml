@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: Digital Realty (DLR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DLR</link>
+  <description>Alerts for Digital Realty from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

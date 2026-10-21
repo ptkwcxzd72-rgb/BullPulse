@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: Camden Property Trust (CPT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CPT</link>
+  <description>Alerts for Camden Property Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

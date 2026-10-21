@@ -5,5 +5,12 @@
   <link>https://bullpulse.co.uk/app.html#LSE-PSON</link>
   <description>Alerts for Pearson plc from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Pearson plc: Unusual burst of news coverage (30-day tone -0.04)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PSON</link>
+   <guid>2026-10-21-LSE-PSON-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.04). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

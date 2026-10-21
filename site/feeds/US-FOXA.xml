@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: Fox Corporation (Class A) (FOXA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FOXA</link>
+  <description>Alerts for Fox Corporation (Class A) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

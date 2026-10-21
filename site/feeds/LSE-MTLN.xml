@@ -5,5 +5,12 @@
   <link>https://bullpulse.co.uk/app.html#LSE-MTLN</link>
   <description>Alerts for Metlen Energy &amp; Metals from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Metlen Energy &amp; Metals: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MTLN</link>
+   <guid>2026-10-21-LSE-MTLN-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

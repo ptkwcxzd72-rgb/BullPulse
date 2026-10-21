@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: Alexandria Real Estate Equities (ARE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ARE</link>
+  <description>Alerts for Alexandria Real Estate Equities from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

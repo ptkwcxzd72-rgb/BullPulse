@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: Dollar Tree (DLTR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DLTR</link>
+  <description>Alerts for Dollar Tree from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: DTE Energy (DTE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DTE</link>
+  <description>Alerts for DTE Energy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

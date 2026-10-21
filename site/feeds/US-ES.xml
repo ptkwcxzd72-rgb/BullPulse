@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ <channel>
+  <title>BullPulse: Eversource Energy (ES)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ES</link>
+  <description>Alerts for Eversource Energy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

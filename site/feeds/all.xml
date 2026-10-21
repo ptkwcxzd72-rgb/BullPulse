@@ -5,5 +5,173 @@
   <link>https://bullpulse.co.uk/app.html</link>
   <description>Rank moves, trend changes, new results and insider buying across the BullPulse universe.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Aberdeen Group: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABDN</link>
+   <guid>2026-10-21-LSE-ABDN-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>British American Tobacco: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid>2026-10-21-LSE-BATS-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diageo: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-DGE</link>
+   <guid>2026-10-21-LSE-DGE-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Endeavour Mining: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EDV</link>
+   <guid>2026-10-21-LSE-EDV-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Endeavour Mining: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EDV</link>
+   <guid>2026-10-21-LSE-EDV-growth</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Imperial Brands: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IMB</link>
+   <guid>2026-10-21-LSE-IMB-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Airlines Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid>2026-10-21-LSE-IAG-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Airlines Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid>2026-10-21-LSE-IAG-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JD Sports: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
+   <guid>2026-10-21-LSE-JD-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kingfisher plc: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-KGF</link>
+   <guid>2026-10-21-LSE-KGF-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Metlen Energy &amp; Metals: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MTLN</link>
+   <guid>2026-10-21-LSE-MTLN-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Pearson plc: Unusual burst of news coverage (30-day tone -0.04)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PSON</link>
+   <guid>2026-10-21-LSE-PSON-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.04). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Polar Capital Technology Trust: Unusual burst of news coverage (30-day tone -0.39)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PCT</link>
+   <guid>2026-10-21-LSE-PCT-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Prudential plc: Unusual burst of news coverage (30-day tone +0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PRU</link>
+   <guid>2026-10-21-LSE-PRU-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Reckitt: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RKT</link>
+   <guid>2026-10-21-LSE-RKT-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rio Tinto: Unusual burst of news coverage (30-day tone -0.21)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RIO</link>
+   <guid>2026-10-21-LSE-RIO-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rolls-Royce Holdings: Unusual burst of news coverage (30-day tone -0.20)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RR</link>
+   <guid>2026-10-21-LSE-RR-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shell plc: Unusual burst of news coverage (30-day tone +0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SHEL</link>
+   <guid>2026-10-21-LSE-SHEL-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Spirax Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SPX</link>
+   <guid>2026-10-21-LSE-SPX-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>SSE plc: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SSE</link>
+   <guid>2026-10-21-LSE-SSE-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Standard Chartered: Unusual burst of news coverage (30-day tone +0.23)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-STAN</link>
+   <guid>2026-10-21-LSE-STAN-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Unilever: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ULVR</link>
+   <guid>2026-10-21-LSE-ULVR-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Unilever: Unusual burst of news coverage (30-day tone +0.15)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ULVR</link>
+   <guid>2026-10-21-LSE-ULVR-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>WPP: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-WPP</link>
+   <guid>2026-10-21-LSE-WPP-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

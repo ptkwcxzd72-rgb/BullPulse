@@ -5,5 +5,19 @@
   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
   <description>Alerts for International Airlines Group from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>International Airlines Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid>2026-10-21-LSE-IAG-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Airlines Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid>2026-10-21-LSE-IAG-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>
