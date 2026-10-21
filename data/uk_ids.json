@@ -481,5 +481,20 @@
   "isin": "GB00BH4HKS39",
   "legal_name": "VODAFONE GROUP PUBLIC LIMITED COMPANY",
   "lei": "213800TB53ELEUKM7Q61"
+ },
+ "WEIR": {
+  "isin": "GB0009465807",
+  "legal_name": "WEIR PLC",
+  "lei": "549300KDR56WHY9I3D10"
+ },
+ "WPP": {
+  "isin": "JE00B8KF9B49",
+  "legal_name": "WPP PLC",
+  "lei": "549300LSGBXPYHXGDT93"
+ },
+ "WTB": {
+  "isin": "GB00B1KJJ408",
+  "legal_name": "WHITBREAD PLC",
+  "lei": "21380099VMZKRMN3EX36"
  }
 }
