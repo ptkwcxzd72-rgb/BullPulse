@@ -6,11 +6,11 @@
   <description>Alerts for Imperial Brands from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Imperial Brands: Closed below its 200-day average</title>
+   <title>Imperial Brands: Closed back above its 200-day average</title>
    <link>https://bullpulse.co.uk/app.html#LSE-IMB</link>
    <guid>2026-10-21-LSE-IMB-trend</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

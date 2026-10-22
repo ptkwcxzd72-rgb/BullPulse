@@ -5,19 +5,5 @@
   <link>https://bullpulse.co.uk/app.html#LSE-ULVR</link>
   <description>Alerts for Unilever from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
-  <item>
-   <title>Unilever: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-ULVR</link>
-   <guid>2026-10-21-LSE-ULVR-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Unilever: Unusual burst of news coverage (30-day tone +0.15)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-ULVR</link>
-   <guid>2026-10-21-LSE-ULVR-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.15). BullPulse is a research screen, not investment advice.</description>
-  </item>
  </channel>
 </rss>

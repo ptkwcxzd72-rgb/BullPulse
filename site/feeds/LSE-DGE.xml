@@ -6,11 +6,11 @@
   <description>Alerts for Diageo from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Diageo: Joined the early trend changes screen</title>
+   <title>Diageo: Unusual burst of news coverage (30-day tone -0.28)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-DGE</link>
-   <guid>2026-10-21-LSE-DGE-early</guid>
+   <guid>2026-10-21-LSE-DGE-news</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+   <description>Unusual burst of news coverage (30-day tone -0.28). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>
