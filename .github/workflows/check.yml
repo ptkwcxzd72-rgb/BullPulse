@@ -1,52 +1,43 @@
 name: Check setup
 
-# Quick check (under a minute) that the Tiingo keys reach the workflows and work.
-# Never prints the keys themselves.
+# PROBE VARIANT (branch probe only): which free sources answer for benchmarks, FX history,
+# UK announcements (FCA NSM) and earnings dates. Pushes raw samples to probe-results.
 on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  check:
+  probe:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     env:
-      EOD_KEY: ${{ secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
-      NEWS_KEY: ${{ secrets.NEWS_UPDATES || secrets.END_OF_DAY_DATA || secrets.TIINGO_API_KEY }}
-      NEWS_SEPARATE: ${{ secrets.NEWS_UPDATES != '' }}
+      FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
     steps:
-      - name: Are the secrets visible to the workflow?
+      - uses: actions/checkout@v6
+      - name: Probe
         run: |
-          if [[ -z "$EOD_KEY" ]]; then
-            echo "::error::No price key. Add an Actions secret named END_OF_DAY_DATA (Settings > Secrets and variables > Actions > Secrets)."
-            exit 1
-          fi
-          echo "::notice::Price key END_OF_DAY_DATA is visible (${#EOD_KEY} characters)."
-          if [[ "$NEWS_SEPARATE" == "true" ]]; then
-            echo "::notice::News key NEWS_UPDATES is visible (${#NEWS_KEY} characters)."
-          else
-            echo "::notice::No NEWS_UPDATES secret; news will use the price key."
-          fi
-
-      - name: Does Tiingo accept the keys?
+          mkdir -p out
+          UA="Mozilla/5.0"
+          for s in SPY ISF.L %5EFTSE %5EGSPC GBPUSD%3DX AAPL; do
+            c=$(curl -s -o out/y_$s.json -w '%{http_code}' -A "$UA" "https://query1.finance.yahoo.com/v8/finance/chart/$s?range=10y&interval=1d&events=div%2Csplit&includeAdjustedClose=true")
+            echo "::notice::Yahoo $s HTTP $c $(wc -c < out/y_$s.json) bytes $(python3 -c "import json,sys;d=json.load(open('out/y_$s.json'))['chart']['result'][0];print(d['meta'].get('currency'),len(d['timestamp']),'divs',len((d.get('events') or {}).get('dividends',{})))" 2>&1 | tail -1)"
+          done
+          # FCA National Storage Mechanism search API (public, used by data.fca.org.uk)
+          for body in '{"from":0,"size":5,"sort":"submitted_date","sortorder":"desc","criteriaObj":{"criteria":[{"name":"company_lei","value":["","549300MKFYEKVRWML317",""]}],"dateCriteria":[]}}' \
+                      '{"from":0,"size":5,"sort":"submitted_date","sortorder":"desc","keyword":"Shell plc","criteriaObj":{"criteria":[],"dateCriteria":[]}}' \
+                      '{"from":0,"size":5,"sort":"submitted_date","sortorder":"desc","criteriaObj":{"criteria":[{"name":"company","value":["Shell plc"]}],"dateCriteria":[]}}'; do
+            c=$(curl -s -o out/nsm.json -w '%{http_code}' -A "$UA" -H 'Content-Type: application/json' -H 'Origin: https://data.fca.org.uk' -H 'Referer: https://data.fca.org.uk/' -X POST 'https://api.data.fca.org.uk/search?index=fca-nsm-searchdata' -d "$body")
+            echo "::notice::NSM HTTP $c $(head -c 400 out/nsm.json | tr '\n' ' ')"
+          done
+          cp out/nsm.json out/nsm_last.json
+          c=$(curl -s -o out/fh.json -w '%{http_code}' "https://finnhub.io/api/v1/calendar/earnings?from=$(date -u +%F)&to=$(date -u -d '+45 days' +%F)&token=$FINNHUB_API_KEY")
+          echo "::notice::Finnhub earnings HTTP $c $(python3 -c "import json;d=json.load(open('out/fh.json'));e=d.get('earningsCalendar',[]);print(len(e), e[:2], sorted({x['symbol'][-2:] for x in e})[:8])" 2>&1 | tail -1 | head -c 400)"
+          c=$(curl -s -o out/fhd.json -w '%{http_code}' "https://finnhub.io/api/v1/stock/dividend?symbol=AAPL&from=2025-01-01&to=2026-10-30&token=$FINNHUB_API_KEY")
+          echo "::notice::Finnhub dividends HTTP $c $(head -c 200 out/fhd.json)"
+          c=$(curl -s -o out/lse.json -w '%{http_code}' -A "$UA" "https://api.londonstockexchange.com/api/gw/lse/instruments/alldata/SHEL")
+          echo "::notice::LSE instrument fields: $(python3 -c "import json;print(sorted(json.load(open('out/lse.json')).keys())[:60])" | head -c 900)"
+      - name: Push samples
         run: |
-          check () {
-            local label="$1" key="$2" url="$3"
-            key="$(echo -n "$key" | tr -d '[:space:]')"
-            code=$(curl -s -o /tmp/body -w "%{http_code}" -H "Content-Type: application/json" -H "Authorization: Token $key" "$url")
-            body="$(head -c 160 /tmp/body | tr -d '\n')"
-            case "$code" in
-              200) echo "::notice::OK - $label: HTTP 200 - ${body}" ;;
-              401|403) echo "::error::$label: HTTP $code - Tiingo rejected the key or the plan lacks access - ${body}"; return 1 ;;
-              429) echo "::warning::$label: HTTP 429 - hourly request limit reached; try again in an hour." ;;
-              *) echo "::warning::$label: HTTP $code - ${body}" ;;
-            esac
-          }
-          fail=0
-          check "Price key test" "$EOD_KEY" "https://api.tiingo.com/api/test" || fail=1
-          check "End-of-day prices (AAPL, last 10 days)" "$EOD_KEY" "https://api.tiingo.com/tiingo/daily/aapl/prices?startDate=$(date -u -d '10 days ago' +%F)" || fail=1
-          check "News (1 article)" "$NEWS_KEY" "https://api.tiingo.com/tiingo/news?tickers=aapl&limit=1" || echo "::warning::Tiingo news unavailable with this key; the nightly job will use GDELT for news instead."
-          exit $fail
+          git config user.name "bullpulse-bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b probe-results; git add -f out; git commit -qm "probe samples"; git push -f origin probe-results
