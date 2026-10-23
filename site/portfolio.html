@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BullPulse Portfolio Builder</title>
+<meta name="description" content="Build a model portfolio from UK and US stocks: choose holdings, a weighting method and limits, then see the allocation, sector mix, estimated risk and a hypothetical past year. Free, no account.">
+<link rel="canonical" href="https://bullpulse.co.uk/portfolio.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="bp.css">
+<style>
+.pagehead{padding-block:6px 26px}
+.pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:70ch}
+.pl{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:22px;align-items:start}
+.build{position:sticky;top:14px;display:grid;gap:0;overflow:hidden}
+.sec{padding:16px 18px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.sec:last-child{border-bottom:0}
+.sec h2{margin:0;font:650 17px var(--f-display);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.adder{display:flex;gap:6px}
+.adder input{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:8px 10px;font-size:13.5px}
+.quick{display:flex;gap:6px;flex-wrap:wrap}
+.quick button,.chipb{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:600;cursor:pointer;color:var(--ink)}
+.quick button:hover,.chipb:hover{border-color:var(--accent)}
+.quick select{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 8px;font-size:12.5px}
+.hl{display:grid;gap:2px;max-height:330px;overflow:auto}
+.h{display:grid;grid-template-columns:minmax(0,1fr) auto 26px;gap:8px;align-items:center;padding:6px 4px;border-bottom:1px solid var(--grid);font-size:13px}
+.h b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.h small{color:var(--muted);font-size:12px}
+.h input{width:62px;border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:12.5px;text-align:right;background:var(--surface)}
+.h .x{border:0;background:transparent;color:var(--muted);font-size:17px;cursor:pointer;border-radius:6px;line-height:1}
+.h .x:hover{color:var(--down);background:var(--surface-2)}
+.set{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 12px;align-items:center;font-size:13px}
+.set label{color:var(--muted)}
+.set input[type=number],.set select{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 8px;font-size:13px;width:100%;min-width:0}
+.set .two{display:flex;gap:6px}
+.methods{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.methods button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 10px;text-align:left;cursor:pointer;font-size:12px;color:var(--muted)}
+.methods button b{display:block;color:var(--ink);font-size:13px;margin-bottom:2px}
+.methods button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.actions{display:flex;gap:6px;flex-wrap:wrap}
+.bbtn{border:0;border-radius:8px;padding:7px 12px;font-weight:600;font-size:13px;cursor:pointer;background:var(--accent);color:#fff}
+.bbtn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.res{display:grid;gap:22px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.stats div{background:var(--surface);padding:14px 16px;display:grid;gap:2px}
+.stats .v{font:650 24px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.stats .s{font-size:12px;color:var(--muted)}
+.warnbox{padding:10px 14px;border-radius:10px;background:var(--warn-soft);color:var(--warn);font-size:13px}
+.at td,.at th{padding:9px 8px}
+.at td b{font-weight:600}
+.wbar{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;width:90px;display:inline-block;vertical-align:middle;margin-right:8px}
+.wbar span{display:block;height:100%;background:var(--accent);border-radius:3px}
+.mix{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mix .card{padding:16px 18px;display:grid;gap:8px}
+.mix h3{margin:0 0 4px;font:650 16px var(--f-display)}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:4px 10px;align-items:center;font-size:13px}
+.mrow .bar2{grid-column:1 / -1;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;margin-bottom:4px}
+.mrow .bar2 span{display:block;height:100%;border-radius:3px}
+.mrow b{text-align:right;font-variant-numeric:tabular-nums}
+.perf{padding:16px 18px;display:grid;gap:10px}
+.perf svg{width:100%;height:220px;display:block}
+.perf .leg{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.perf .leg b{color:var(--ink);font-weight:600}
+.emptyp{padding:40px 24px;text-align:center;color:var(--muted)}
+.emptyp h2{margin:0 0 6px;color:var(--ink);font:650 20px var(--f-display)}
+@media (max-width:1060px){.pl{grid-template-columns:minmax(0,1fr)}.build{position:static}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.mix{grid-template-columns:1fr}.at th:nth-child(5),.at td:nth-child(5){display:none}}
+</style>
+</head>
+<body>
+<header class="masthead night">
+  <div class="in mastbar">
+    <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+    <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html">Screener</a><a href="portfolio.html" aria-current="page">Portfolio</a><a href="alerts.html">Alerts</a></nav>
+  </div>
+  <div class="in pagehead">
+    <h1>Portfolio builder</h1>
+    <p>Pick stocks, choose how to weight them and set limits for any single holding or sector. You'll see the allocation, the sector and market mix, an estimate of risk and how this mix would have done over the past year. Everything stays in your browser.</p>
+  </div>
+</header>
+
+<main class="in">
+  <div class="pl">
+    <aside class="card build" aria-label="Build the portfolio">
+      <section class="sec">
+        <h2>Holdings <span class="sub" id="hcount"></span></h2>
+        <div class="adder"><input id="add" list="stocklist" placeholder="Add a company by name or ticker" aria-label="Add a company"><datalist id="stocklist"></datalist><button class="bbtn" id="addbtn">Add</button></div>
+        <div class="quick">
+          <button id="q-watch">Add my watchlist</button>
+          <button id="q-top">Add top 10 by score</button>
+          <button id="q-fund">Add top 10 fundamentals</button>
+          <select id="q-mkt" aria-label="Market for quick adds"><option value="ALL">Both markets</option><option value="LSE">UK only</option><option value="US">US only</option></select>
+        </div>
+        <div class="hl" id="hl"></div>
+      </section>
+      <section class="sec">
+        <h2>How to weight them</h2>
+        <div class="methods" id="methods">
+          <button data-m="equal"><b>Equal</b>Same amount in each</button>
+          <button data-m="score"><b>By score</b>More in higher-scoring stocks</button>
+          <button data-m="invvol"><b>Lower risk</b>More in steadier stocks</button>
+          <button data-m="manual"><b>Your own</b>Type a % for each (limits off)</button>
+        </div>
+      </section>
+      <section class="sec">
+        <h2>Amount and limits</h2>
+        <div class="set">
+          <label for="amt">Amount to invest</label><div class="two"><input type="number" id="amt" min="0" step="500" value="10000"><select id="ccy" aria-label="Currency" style="width:84px"><option value="GBP">£ GBP</option><option value="USD">$ USD</option></select></div>
+          <label for="hcap">Most in one stock</label><div class="two"><input type="number" id="hcap" min="1" max="100" step="1" value="15"><span class="sub" style="align-self:center">%</span></div>
+          <label for="scap">Most in one sector</label><div class="two"><input type="number" id="scap" min="1" max="100" step="1" value="35"><span class="sub" style="align-self:center">%</span></div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="actions"><button class="bbtn" id="save">Save</button><button class="bbtn ghost" id="share">Copy link</button><button class="bbtn ghost" id="csv">Download CSV</button><button class="bbtn ghost" id="clear">Clear</button></div>
+        <div class="quick" id="savedp"></div>
+      </section>
+    </aside>
+
+    <section class="res" id="res" aria-live="polite"></section>
+  </div>
+  <p class="disc" style="margin-top:22px">A model for research and learning, not investment advice or a recommendation to buy or sell. Past performance is hypothetical: it uses today's choice of stocks and weights on the last year of prices, in each stock's own currency, with no dealing costs, taxes or currency moves. Risk figures come from the last year of daily prices and will change.</p>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const MKT = { LSE: "UK", US: "US" };
+const COLORS = ["#0d7a6e", "#6a48c6", "#d08a1e", "#3d7fd6", "#c13a3a", "#3dbcab", "#8b5e34", "#a3354a", "#5a6274", "#14814e", "#eba648"];
+let D, BY = {}, SER = {};
+let P = { h: [], m: "equal", a: 10000, c: "GBP", hc: 15, sc: 35, mw: {} };
+const enc = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const dec = t => { try { return JSON.parse(decodeURIComponent(escape(atob(t.replace(/-/g, "+").replace(/_/g, "/"))))); } catch (e) { return null; } };
+
+// price of one share in the chosen base currency
+function px(s){
+  const usdGbp = (D.fx && D.fx.USD) || 0.75;              // pounds per dollar
+  const local = s.ccy === "GBX" ? s.price / 100 : s.price;  // pounds or dollars
+  if (P.c === "GBP") return s.ccy === "GBX" ? local : local * usdGbp;
+  return s.ccy === "GBX" ? local / usdGbp : local;
+}
+const money = v => (P.c === "GBP" ? "£" : "$") + Math.round(v).toLocaleString("en-GB");
+
+// raw weights by method, then holding and sector limits applied by repeatedly moving the excess
+function weights(){
+  const hs = P.h.map(id => BY[id]).filter(Boolean);
+  if (!hs.length) return { w: {}, ok: true };
+  let raw = {};
+  hs.forEach(s => {
+    raw[s.id] = P.m === "equal" ? 1 : P.m === "score" ? Math.max(s.score, 1) : P.m === "invvol" ? 1 / Math.max(s.vol1y || .3, .05) : Math.max(+P.mw[s.id] || 0, 0);
+  });
+  let tot = Object.values(raw).reduce((a, b) => a + b, 0);
+  if (!tot) { hs.forEach(s => raw[s.id] = 1); tot = hs.length; }
+  let w = Object.fromEntries(hs.map(s => [s.id, raw[s.id] / tot]));
+  if (P.m === "manual") return { w, ok: true };
+  const hc = Math.max(.01, (+P.hc || 100) / 100), sc = Math.max(.01, (+P.sc || 100) / 100);
+  let ok = true;
+  for (let it = 0; it < 200; it++) {
+    let excess = 0;
+    for (const id in w) if (w[id] > hc + 1e-9) { excess += w[id] - hc; w[id] = hc; }
+    const secTot = {};
+    hs.forEach(s => secTot[s.sector] = (secTot[s.sector] || 0) + w[s.id]);
+    for (const sec in secTot) if (secTot[sec] > sc + 1e-9) {
+      const f = sc / secTot[sec];
+      hs.filter(s => s.sector === sec).forEach(s => { excess += w[s.id] * (1 - f); w[s.id] *= f; });
+      secTot[sec] = sc;
+    }
+    if (excess < 1e-9) break;
+    const open = hs.filter(s => w[s.id] < hc - 1e-9 && secTot[s.sector] < sc - 1e-9);
+    if (!open.length) { ok = false; break; }
+    const base = open.reduce((a, s) => a + raw[s.id], 0);
+    open.forEach(s => w[s.id] += excess * raw[s.id] / base);
+  }
+  const t = Object.values(w).reduce((a, b) => a + b, 0);
+  if (Math.abs(t - 1) > 1e-6) { ok = false; for (const id in w) w[id] /= t; }
+  return { w, ok };
+}
+
+async function loadSeries(ids){
+  await Promise.all(ids.filter(id => !SER[id]).map(async id => {
+    try { const x = await (await fetch(`data/stocks/${id}.json`)).json(); SER[id] = Object.fromEntries(x.bars.map(b => [b[0], b[4]])); } catch (e) { SER[id] = {}; }
+  }));
+}
+// annualised volatility of the weighted mix, from daily returns on dates all holdings traded
+function risk(w){
+  const ids = Object.keys(w).filter(id => w[id] > 0);
+  if (ids.length < 1) return null;
+  let dates = Object.keys(SER[ids[0]] || {});
+  ids.slice(1).forEach(id => { const d = SER[id] || {}; dates = dates.filter(x => x in d); });
+  dates.sort();
+  if (dates.length < 60) return null;
+  const R = ids.map(id => dates.slice(1).map((d, i) => Math.log(SER[id][d] / SER[id][dates[i]])));
+  const n = R[0].length, mean = R.map(r => r.reduce((a, b) => a + b, 0) / n);
+  let pv = 0;
+  for (let i = 0; i < ids.length; i++) for (let j = 0; j < ids.length; j++) {
+    let c = 0; for (let k = 0; k < n; k++) c += (R[i][k] - mean[i]) * (R[j][k] - mean[j]);
+    pv += w[ids[i]] * w[ids[j]] * c / (n - 1);
+  }
+  const vol = Math.sqrt(pv * 252);
+  const avg = ids.reduce((a, id, i) => a + w[id] * Math.sqrt(R[i].reduce((s, x) => s + (x - mean[i]) ** 2, 0) / (n - 1) * 252), 0);
+  // buy-and-hold path from the first common date
+  const path = dates.map(d => ids.reduce((a, id) => a + w[id] * SER[id][d] / SER[id][dates[0]], 0));
+  let peak = 0, dd = 0; path.forEach(v => { peak = Math.max(peak, v); dd = Math.min(dd, v / peak - 1); });
+  return { vol, avg, dates, path, dd, ret: path[path.length - 1] - 1 };
+}
+
+function save(){ try { localStorage.setItem("bp-portfolio", JSON.stringify(P)); } catch (e) {} }
+function drawHoldings(w){
+  $("hcount").textContent = P.h.length ? `${P.h.length} stock${P.h.length > 1 ? "s" : ""}` : "";
+  $("hl").innerHTML = P.h.map(id => {
+    const s = BY[id]; if (!s) return "";
+    return `<div class="h"><span><b>${esc(s.name)}</b><small><span class="mkt ${s.ex}">${MKT[s.ex]}</span> ${esc(s.t)}, score ${s.score}</small></span>
+      ${P.m === "manual" ? `<span><input type="number" min="0" max="100" step="1" value="${P.mw[id] ?? ""}" placeholder="%" data-mw="${id}" aria-label="Weight for ${esc(s.name)}"></span>` : `<span class="num sub">${w[id] != null ? (w[id] * 100).toFixed(1) + "%" : ""}</span>`}
+      <button class="x" data-rm="${id}" aria-label="Remove ${esc(s.name)}">×</button></div>`;
+  }).join("") || `<p class="sub" style="margin:4px 0">No stocks yet. Add companies by name, or use the quick buttons above.</p>`;
+  $("hl").querySelectorAll("[data-rm]").forEach(b => b.onclick = () => { P.h = P.h.filter(x => x !== b.dataset.rm); update(); });
+  $("hl").querySelectorAll("[data-mw]").forEach(i => i.onchange = () => { P.mw[i.dataset.mw] = i.value; update(false); });
+  document.querySelectorAll("#methods button").forEach(b => b.setAttribute("aria-pressed", b.dataset.m === P.m));
+}
+
+async function update(redrawList = true){
+  save();
+  const { w, ok } = weights();
+  if (redrawList || P.m !== "manual") drawHoldings(w);
+  const hs = P.h.map(id => BY[id]).filter(Boolean);
+  if (!hs.length) {
+    $("res").innerHTML = `<div class="card emptyp"><h2>Start with a few stocks</h2><p>Add companies on the left. Try "Add top 10 by score", then change the weighting and limits to see how the mix changes.</p></div>`;
+    return;
+  }
+  const amt = Math.max(0, +P.a || 0);
+  const wa = (k, filt = () => true) => { let n = 0, d = 0; hs.forEach(s => { const v = s[k]; if (v != null && filt(s)) { n += w[s.id] * v; d += w[s.id]; } }); return d ? { v: n / d, cover: d } : null; };
+  const sc = wa("score"), fp = wa("FP"), dy = hs.reduce((a, s) => a + w[s.id] * (s.divY || 0), 0), r1 = wa("ret1y");
+  const big = hs.reduce((a, s) => w[s.id] > (w[a.id] || 0) ? s : a, hs[0]);
+  // first draw without risk (series may still be loading)
+  const draw = rk => {
+    const sectors = {}, markets = {};
+    hs.forEach(s => { sectors[s.sector] = (sectors[s.sector] || 0) + w[s.id]; markets[MKT[s.ex]] = (markets[MKT[s.ex]] || 0) + w[s.id]; });
+    const mix = (o, colorBy) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v], i) => `<div class="mrow"><span>${esc(k)}</span><b>${(v * 100).toFixed(1)}%</b><span class="bar2"><span style="width:${v * 100}%;background:${colorBy ? colorBy(k) : COLORS[i % COLORS.length]}"></span></span></div>`).join("");
+    const rows = hs.slice().sort((a, b) => w[b.id] - w[a.id]).map(s => {
+      const cash = amt * w[s.id], per = px(s), sh = per > 0 ? Math.floor(cash / per) : 0;
+      return `<tr><td><b>${esc(s.name)}</b><div class="sub"><span class="mkt ${s.ex}">${MKT[s.ex]}</span> ${esc(s.t)}, ${esc(s.sector)}</div></td>
+        <td class="r"><span class="wbar"><span style="width:${Math.min(100, w[s.id] / Math.max(...Object.values(w)) * 100)}%"></span></span><b class="num">${(w[s.id] * 100).toFixed(1)}%</b></td>
+        <td class="r num">${money(cash)}</td><td class="r num">${sh.toLocaleString("en-GB")}</td>
+        <td class="r num">${s.ccy === "GBX" ? s.price.toLocaleString("en-GB", { maximumFractionDigits: 1 }) + "p" : "$" + s.price.toFixed(2)}</td>
+        <td class="r num">${s.score}</td></tr>`;
+    }).join("");
+    let chart = "";
+    if (rk && rk.path.length > 2) {
+      const W = 800, H = 220, lo = Math.min(...rk.path, 1), hi = Math.max(...rk.path, 1), X = i => i / (rk.path.length - 1) * (W - 70), Y = v => H - 22 - (v - lo) / ((hi - lo) || 1) * (H - 40);
+      const d = rk.path.map((v, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1)).join("");
+      const fmt = dt => new Date(dt + "T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "2-digit", timeZone: "UTC" });
+      chart = `<div class="card perf"><h3 style="margin:0;font:650 16px var(--f-display)">How this mix would have done over the past year</h3>
+        <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Hypothetical value of the portfolio over the past year">
+          <line x1="0" x2="${W - 70}" y1="${Y(1)}" y2="${Y(1)}" stroke="var(--line)" stroke-dasharray="4 4"/>
+          <path d="${d}L${X(rk.path.length - 1)} ${H - 22}L0 ${H - 22}Z" fill="color-mix(in srgb,var(--teal) 16%,transparent)"/>
+          <path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <text x="${W - 64}" y="${Y(rk.path[rk.path.length - 1]) + 4}" font-size="13" fill="var(--ink)" font-weight="600">${(rk.ret >= 0 ? "+" : "") + (rk.ret * 100).toFixed(1)}%</text>
+          <text x="0" y="${H - 4}" font-size="11" fill="var(--muted)">${fmt(rk.dates[0])}</text><text x="${W - 110}" y="${H - 4}" font-size="11" fill="var(--muted)">${fmt(rk.dates[rk.dates.length - 1])}</text>
+        </svg>
+        <div class="leg"><span>Return <b class="${rk.ret >= 0 ? "pos" : "neg"}">${(rk.ret >= 0 ? "+" : "") + (rk.ret * 100).toFixed(1)}%</b></span><span>Worst fall from a high <b class="neg">${(rk.dd * 100).toFixed(1)}%</b></span><span>${money(amt)} would now be <b>${money(amt * (1 + rk.ret))}</b></span></div></div>`;
+    }
+    $("res").innerHTML = `
+      ${ok ? "" : `<div class="warnbox">These limits can't all be met with ${hs.length} stock${hs.length > 1 ? "s" : ""}${Object.keys(sectors).length < 3 ? " in so few sectors" : ""}, so some holdings are above them. Add more stocks or raise the limits.</div>`}
+      <div class="stats">
+        <div><span class="sub">Estimated yearly swing</span><span class="v">${rk ? (rk.vol * 100).toFixed(0) + "%" : "…"}</span><span class="s">${rk ? `volatility; ${(rk.avg * 100).toFixed(0)}% if the stocks moved together` : "working it out from daily prices"}</span></div>
+        <div><span class="sub">Average score</span><span class="v">${sc ? sc.v.toFixed(0) : "–"}</span><span class="s">weighted by holding</span></div>
+        <div><span class="sub">Dividend yield</span><span class="v">${(dy * 100).toFixed(1)}%</span><span class="s">about ${money(amt * dy)} a year</span></div>
+        <div><span class="sub">Fundamental checks</span><span class="v">${fp ? fp.v.toFixed(0) + "/30" : "–"}</span><span class="s">${fp && fp.cover < .999 ? `covers ${(fp.cover * 100).toFixed(0)}% of the money` : "weighted average"}</span></div>
+      </div>
+      <div class="card"><div class="ch"><h2>Allocation</h2><span class="sub">${money(amt)} across ${hs.length} stock${hs.length > 1 ? "s" : ""}; largest ${esc(big.name)} at ${(w[big.id] * 100).toFixed(1)}%</span></div>
+        <div class="tw"><table class="at"><thead><tr><th>Company</th><th class="r">Weight</th><th class="r">Amount</th><th class="r">Shares, about</th><th class="r">Price</th><th class="r">Score</th></tr></thead><tbody>${rows}</tbody></table></div></div>
+      <div class="mix"><div class="card"><h3>By sector</h3>${mix(sectors)}</div><div class="card"><h3>By market</h3>${mix(markets, k => k === "UK" ? "var(--uk)" : "var(--us)")}${r1 ? `<p class="sub" style="margin:8px 0 0">Weighted 1-year return of these stocks: <b class="${r1.v >= 0 ? "pos" : "neg"}">${(r1.v >= 0 ? "+" : "") + (r1.v * 100).toFixed(1)}%</b></p>` : ""}</div></div>
+      ${chart}`;
+  };
+  draw(null);
+  const ids = hs.map(s => s.id);
+  await loadSeries(ids);
+  if (P.h.join() === ids.join()) draw(risk(w));
+}
+
+function addIds(ids){ ids.forEach(id => { if (BY[id] && !P.h.includes(id) && P.h.length < 40) P.h.push(id); }); update(); }
+function pick(list, n){ const m = $("q-mkt").value; return list.filter(s => m === "ALL" || s.ex === m).slice(0, n).map(s => s.id); }
+function drawSaved(){
+  let saved = []; try { saved = JSON.parse(localStorage.getItem("bp-portfolios") || "[]"); } catch (e) {}
+  $("savedp").innerHTML = saved.length ? `<span class="sub" style="align-self:center">Saved</span>` + saved.map((x, i) => `<button class="chipb" data-s="${i}">${esc(x.name)}</button><button class="chipb" data-d="${i}" aria-label="Delete ${esc(x.name)}" title="Delete" style="padding:4px 8px">×</button>`).join("") : "";
+  $("savedp").querySelectorAll("[data-s]").forEach(b => b.onclick = () => { P = { ...P, ...saved[+b.dataset.s].p }; syncInputs(); update(); });
+  $("savedp").querySelectorAll("[data-d]").forEach(b => b.onclick = () => { saved.splice(+b.dataset.d, 1); try { localStorage.setItem("bp-portfolios", JSON.stringify(saved)); } catch (e) {} drawSaved(); });
+}
+function syncInputs(){ $("amt").value = P.a; $("ccy").value = P.c; $("hcap").value = P.hc; $("scap").value = P.sc; }
+
+(async () => {
+  try { D = await (await fetch("data/snapshot.json", { cache: "no-cache" })).json(); }
+  catch (e) { $("res").innerHTML = `<div class="card emptyp"><h2>Prices aren't available right now</h2><p>Check your connection and refresh the page.</p></div>`; return; }
+  D.stocks.forEach(s => BY[s.id] = s);
+  $("stocklist").innerHTML = D.stocks.slice().sort((a, b) => a.name.localeCompare(b.name)).map(s => `<option value="${esc(s.name)} (${esc(s.t)})"></option>`).join("");
+  const fromHash = location.hash.startsWith("#p=") ? dec(location.hash.slice(3)) : null;
+  let stored = null; try { stored = JSON.parse(localStorage.getItem("bp-portfolio")); } catch (e) {}
+  P = { ...P, ...(fromHash || stored || {}) };
+  if (!fromHash && !stored) P.h = D.stocks.slice().sort((a, b) => b.score - a.score).slice(0, 8).map(s => s.id);
+  syncInputs();
+  const addFromInput = () => {
+    const v = $("add").value.trim().toLowerCase(); if (!v) return;
+    const s = D.stocks.find(s => `${s.name} (${s.t})`.toLowerCase() === v) || D.stocks.find(s => s.t.toLowerCase() === v) || D.stocks.find(s => s.name.toLowerCase().includes(v));
+    if (s) { addIds([s.id]); $("add").value = ""; } else { $("add").setCustomValidity("No company matches that name or ticker"); $("add").reportValidity(); setTimeout(() => $("add").setCustomValidity(""), 2000); }
+  };
+  $("addbtn").onclick = addFromInput; $("add").onkeydown = e => { if (e.key === "Enter") addFromInput(); };
+  $("add").oninput = () => { const v = $("add").value; if (D.stocks.some(s => `${s.name} (${s.t})` === v)) addFromInput(); };
+  $("q-watch").onclick = () => { let w = []; try { w = JSON.parse(localStorage.getItem("bp-watch") || "[]"); } catch (e) {} if (!w.length) { $("q-watch").textContent = "Watchlist is empty"; setTimeout(() => $("q-watch").textContent = "Add my watchlist", 1800); return; } addIds(w); };
+  $("q-top").onclick = () => addIds(pick(D.stocks.slice().sort((a, b) => b.score - a.score), 10));
+  $("q-fund").onclick = () => addIds(pick(D.stocks.filter(s => s.FP != null).sort((a, b) => b.FP - a.FP || b.score - a.score), 10));
+  document.querySelectorAll("#methods button").forEach(b => b.onclick = () => {
+    if (b.dataset.m === "manual" && P.m !== "manual") { const { w } = weights(); P.h.forEach(id => P.mw[id] = +((w[id] || 0) * 100).toFixed(1)); }
+    P.m = b.dataset.m; update();
+  });
+  ["amt", "hcap", "scap"].forEach(k => $(k).oninput = () => { P[{ amt: "a", hcap: "hc", scap: "sc" }[k]] = +$(k).value; update(false); });
+  $("ccy").onchange = () => { P.c = $("ccy").value; update(false); };
+  $("clear").onclick = () => { P.h = []; P.mw = {}; update(); };
+  $("save").onclick = () => {
+    const label = `${P.h.length} stocks, ${new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" })}`;
+    let saved = []; try { saved = JSON.parse(localStorage.getItem("bp-portfolios") || "[]"); } catch (e) {}
+    saved.unshift({ name: label, p: JSON.parse(JSON.stringify(P)) });
+    try { localStorage.setItem("bp-portfolios", JSON.stringify(saved.slice(0, 12))); } catch (e) {}
+    drawSaved(); $("save").textContent = "Saved"; setTimeout(() => $("save").textContent = "Save", 1500);
+  };
+  $("share").onclick = async () => {
+    const url = location.href.split("#")[0] + "#p=" + enc(P);
+    try { history.replaceState(null, "", url); await navigator.clipboard.writeText(url); $("share").textContent = "Link copied"; } catch (e) { $("share").textContent = "Copy the address bar"; }
+    setTimeout(() => $("share").textContent = "Copy link", 1800);
+  };
+  $("csv").onclick = () => {
+    const { w } = weights(), amt = +P.a || 0;
+    const lines = [["Company", "Ticker", "Market", "Sector", "Weight %", `Amount (${P.c})`, "Shares (about)", "Price", "Price currency", "Score"].join(",")];
+    P.h.map(id => BY[id]).filter(Boolean).forEach(s => { const cash = amt * w[s.id]; lines.push([`"${s.name.replace(/"/g, '""')}"`, s.t, MKT[s.ex], `"${s.sector}"`, (w[s.id] * 100).toFixed(2), cash.toFixed(2), Math.floor(cash / px(s)), s.price, s.ccy === "GBX" ? "GBp" : "USD", s.score].join(",")); });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([lines.join("\n") + "\n"], { type: "text/csv" })); a.download = "bullpulse-portfolio.csv"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  };
+  drawSaved();
+  update();
+})();
+if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+</script>
+</body>
+</html>

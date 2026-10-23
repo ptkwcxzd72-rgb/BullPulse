@@ -112,18 +112,32 @@ func saveEvents(path string, all []Event) error {
 	return os.WriteFile(path, []byte(b.String()), 0o644)
 }
 
+type rssGUID struct {
+	Perma bool   `xml:"isPermaLink,attr"`
+	Value string `xml:",chardata"`
+}
+
+type atomLink struct {
+	XMLName xml.Name `xml:"atom:link"`
+	Href    string   `xml:"href,attr"`
+	Rel     string   `xml:"rel,attr"`
+	Type    string   `xml:"type,attr"`
+}
+
 type rssItem struct {
-	Title   string `xml:"title"`
-	Link    string `xml:"link"`
-	GUID    string `xml:"guid"`
-	PubDate string `xml:"pubDate"`
-	Desc    string `xml:"description"`
+	Title   string  `xml:"title"`
+	Link    string  `xml:"link"`
+	GUID    rssGUID `xml:"guid"`
+	PubDate string  `xml:"pubDate"`
+	Desc    string  `xml:"description"`
 }
 
 type rssDoc struct {
 	XMLName xml.Name `xml:"rss"`
 	Version string   `xml:"version,attr"`
+	Atom    string   `xml:"xmlns:atom,attr"`
 	Channel struct {
+		Self  atomLink  `xml:"atom:link"`
 		Title string    `xml:"title"`
 		Link  string    `xml:"link"`
 		Desc  string    `xml:"description"`
@@ -139,9 +153,10 @@ func writeFeeds(dir, base string, rows []*Row, all []Event) error {
 	for _, e := range all {
 		byID[e.ID] = append(byID[e.ID], e)
 	}
-	feed := func(title, link, desc string, evs []Event, limit int) []byte {
+	feed := func(file, title, link, desc string, evs []Event, limit int) []byte {
 		var d rssDoc
-		d.Version = "2.0"
+		d.Version, d.Atom = "2.0", "http://www.w3.org/2005/Atom"
+		d.Channel.Self = atomLink{Href: base + "feeds/" + file, Rel: "self", Type: "application/rss+xml"}
 		d.Channel.Title, d.Channel.Link, d.Channel.Desc, d.Channel.TTL = title, link, desc, 720
 		for i, e := range evs {
 			if i >= limit {
@@ -150,23 +165,38 @@ func writeFeeds(dir, base string, rows []*Row, all []Event) error {
 			t, _ := time.Parse("2006-01-02", e.Date)
 			d.Channel.Items = append(d.Channel.Items, rssItem{
 				Title: e.Name + ": " + strings.TrimSuffix(e.Text, "."), Link: base + "app.html#" + e.ID,
-				GUID: e.Date + "-" + e.ID + "-" + e.Kind, PubDate: t.Add(22 * time.Hour).Format(time.RFC1123Z),
+				GUID: rssGUID{Value: e.Date + "-" + e.ID + "-" + e.Kind}, PubDate: t.Add(22 * time.Hour).Format(time.RFC1123Z),
 				Desc: e.Text + " BullPulse is a research screen, not investment advice.",
 			})
 		}
 		b, _ := xml.MarshalIndent(d, "", " ")
 		return append([]byte(xml.Header), b...)
 	}
-	if err := os.WriteFile(filepath.Join(dir, "all.xml"), feed("BullPulse: all alerts", base+"app.html",
+	if err := os.WriteFile(filepath.Join(dir, "all.xml"), feed("all.xml", "BullPulse: all alerts", base+"app.html",
 		"Rank moves, trend changes, new results and insider buying across the BullPulse universe.", all, 200), 0o644); err != nil {
 		return err
 	}
 	for _, r := range rows {
-		b := feed("BullPulse: "+r.Name+" ("+r.T+")", base+"app.html#"+r.ID,
+		b := feed(r.ID+".xml", "BullPulse: "+r.Name+" ("+r.T+")", base+"app.html#"+r.ID,
 			"Alerts for "+r.Name+" from the BullPulse nightly screen.", byID[r.ID], 50)
 		if err := os.WriteFile(filepath.Join(dir, r.ID+".xml"), b, 0o644); err != nil {
 			return err
 		}
 	}
 	return nil
+}
+
+// writeEventsJSON publishes the alert log for the website's Alerts page.
+func writeEventsJSON(path string, all []Event, limit int) error {
+	if len(all) > limit {
+		all = all[:limit]
+	}
+	if all == nil {
+		all = []Event{}
+	}
+	b, err := json.Marshal(map[string]any{"events": all})
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(path, b, 0o644)
 }

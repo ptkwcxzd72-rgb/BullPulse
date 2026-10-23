@@ -39,7 +39,7 @@ func TestDetectEventsAndFeeds(t *testing.T) {
 		t.Fatal(err)
 	}
 	b, _ := os.ReadFile(filepath.Join(dir, "US-A.xml"))
-	if !strings.Contains(string(b), "<rss version=\"2.0\">") || !strings.Contains(string(b), "https://x/app.html#US-A") {
+	if !strings.Contains(string(b), "<rss version=\"2.0\"") || !strings.Contains(string(b), "isPermaLink=\"false\"") || !strings.Contains(string(b), "https://x/app.html#US-A") {
 		t.Fatalf("feed looks wrong: %s", b)
 	}
 }

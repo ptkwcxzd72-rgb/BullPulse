@@ -104,9 +104,17 @@ type Row struct {
 	FP     *int     `json:"FP,omitempty"`     // checks passed out of 30
 	FA     []int    `json:"FA,omitempty"`     // value, growth, track record, health, dividends (0-6 each)
 	FairVs *float64 `json:"fairVs,omitempty"` // price vs DCF base estimate (negative = below)
-	Grower bool     `json:"grower"`
-	Flags  []string `json:"flags,omitempty"` // data-quality warnings shown on the site
-	Ins    *Insider `json:"ins,omitempty"`   // open-market insider dealing, last 90 days (US)
+	// headline ratios for the custom screen builder and portfolio page
+	PE      *float64 `json:"pe,omitempty"`
+	DivY    *float64 `json:"divY,omitempty"`
+	FCFY    *float64 `json:"fcfY,omitempty"`
+	ROE     *float64 `json:"roe,omitempty"`
+	DE      *float64 `json:"de,omitempty"`
+	Implied *float64 `json:"implied,omitempty"` // growth the price implies (reverse DCF)
+	McapBn  *float64 `json:"mcapBn,omitempty"`  // market cap, USD billions
+	Grower  bool     `json:"grower"`
+	Flags   []string `json:"flags,omitempty"` // data-quality warnings shown on the site
+	Ins     *Insider `json:"ins,omitempty"`   // open-market insider dealing, last 90 days (US)
 
 	sentRaw   float64
 	insRecent []map[string]any
@@ -442,7 +450,7 @@ func main() {
 		fresh = append(fresh, r)
 	}
 	rows = fresh
-	addFundamentals(rows, funds)
+	addFundamentals(rows, funds, fx.ToGBP)
 
 	if len(rows) == 0 {
 		// Never replace the published data (or the demo) with an empty ranking.
@@ -534,6 +542,9 @@ func main() {
 	if err := writeFeeds(*feedDir, *siteURL, rows, events); err != nil {
 		log.Error("feeds", "error", err)
 	}
+	if err := writeEventsJSON(filepath.Join(*out, "events.json"), events, 600); err != nil {
+		log.Error("events json", "error", err)
+	}
 	evByID := map[string][]Event{}
 	for _, e := range events {
 		if len(evByID[e.ID]) < 10 {
@@ -566,7 +577,7 @@ func main() {
 	}
 
 	snap := map[string]any{"demo": false, "fundamentals": fundAsOf, "quality": map[string]int{"excluded": len(excluded), "flagged": len(flagged)}, "asof": asof.Format("2006-01-02"), "generated": time.Now().UTC().Format(time.RFC3339),
-		"stocks": rows, "breadth": breadth, "weights": map[string]float64{"trend": core.WTrend, "momentum": core.WMomentum, "sentiment": core.WSentiment}}
+		"stocks": rows, "breadth": breadth, "fx": fx.ToGBP, "weights": map[string]float64{"trend": core.WTrend, "momentum": core.WMomentum, "sentiment": core.WSentiment}}
 	b, _ := json.Marshal(snap)
 	if err := os.WriteFile(filepath.Join(*out, "snapshot.json"), b, 0o644); err != nil {
 		fmt.Printf("::error::screener: writing snapshot: %v\n", err)
@@ -578,7 +589,15 @@ func main() {
 
 // addFundamentals computes ratios, the DCF and the 30-check profile for stocks with filing data.
 // Medians are taken within each market so "cheap" and "strong" are relative to peers.
-func addFundamentals(rows []*Row, funds map[string]Fund) {
+// usdPerGBP converts pounds to dollars from data/fx.json (which stores GBP per unit).
+func usdPerGBP(fx map[string]float64) (float64, bool) {
+	if g, ok := fx["USD"]; ok && g > 0 {
+		return 1 / g, true
+	}
+	return 0, false
+}
+
+func addFundamentals(rows []*Row, funds map[string]Fund, fx map[string]float64) {
 	type item struct {
 		r *Row
 		f fund.Fin
@@ -609,6 +628,20 @@ func addFundamentals(rows []*Row, funds map[string]Fund) {
 				it.r.FA = append(it.r.FA, a.Score)
 			}
 			it.r.FairVs = it.d.VsPrice
+			it.r.PE, it.r.DivY, it.r.FCFY, it.r.ROE, it.r.DE, it.r.Implied = it.m.PE, it.m.DivYield, it.m.FCFYield, it.m.ROE, it.m.DebtToEquity, it.d.Implied
+			if it.m.MarketCap != nil {
+				usd := *it.m.MarketCap / 1e9 // US: dollars
+				if it.r.Ex == "LSE" {
+					usd = math.NaN()
+					if r, ok := usdPerGBP(fx); ok {
+						usd = *it.m.MarketCap / 100 * r / 1e9 // pence -> pounds -> dollars
+					}
+				}
+				if !math.IsNaN(usd) {
+					v := math.Round(usd*100) / 100
+					it.r.McapBn = &v
+				}
+			}
 			it.r.detail["fund"] = map[string]any{"profile": pr, "dcf": it.d, "metrics": it.m,
 				"fin": map[string]any{"revenue": it.f.RevenueTTM, "netIncome": it.f.NetIncomeTTM, "fcfAvg3": it.f.FCFAvg3,
 					"revCagr3": it.f.RevCAGR3, "cash": it.f.Cash, "debt": it.f.Debt, "equity": it.f.Equity, "shares": it.f.Shares, "ttmEnd": it.f.TTMEnd, "balanceEnd": it.f.BalanceEnd}}
