@@ -6,5 +6,12 @@
   <link>https://bullpulse.co.uk/app.html#LSE-TSCO</link>
   <description>Alerts for Tesco from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Tesco: Rank moved down 68 places to #100 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-TSCO</link>
+   <guid isPermaLink="false">2026-10-22-LSE-TSCO-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 68 places to #100 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

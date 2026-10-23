@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-MTRO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Metro Bank (MTRO)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-MTRO</link>
+  <description>Alerts for Metro Bank from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

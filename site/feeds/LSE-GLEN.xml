@@ -7,6 +7,13 @@
   <description>Alerts for Glencore from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
+   <title>Glencore: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GLEN</link>
+   <guid isPermaLink="false">2026-10-23-LSE-GLEN-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
    <title>Glencore: Rank moved down 26 places to #28 (score 62)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-GLEN</link>
    <guid isPermaLink="false">2026-10-23-LSE-GLEN-rank</guid>
@@ -14,11 +21,11 @@
    <description>Rank moved down 26 places to #28 (score 62). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Glencore: Closed below its 200-day average</title>
+   <title>Glencore: Rank moved down 84 places to #112 (score 61)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-GLEN</link>
-   <guid isPermaLink="false">2026-10-23-LSE-GLEN-trend</guid>
-   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+   <guid isPermaLink="false">2026-10-22-LSE-GLEN-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 84 places to #112 (score 61). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

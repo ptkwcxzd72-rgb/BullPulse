@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-SRE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Sirius Real Estate (SRE)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-SRE</link>
+  <description>Alerts for Sirius Real Estate from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

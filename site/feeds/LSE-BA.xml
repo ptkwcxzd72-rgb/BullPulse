@@ -6,5 +6,12 @@
   <link>https://bullpulse.co.uk/app.html#LSE-BA</link>
   <description>Alerts for BAE Systems from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>BAE Systems: Rank moved down 157 places to #228 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BA</link>
+   <guid isPermaLink="false">2026-10-22-LSE-BA-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 157 places to #228 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

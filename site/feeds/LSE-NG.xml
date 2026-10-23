@@ -7,11 +7,11 @@
   <description>Alerts for National Grid plc from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>National Grid plc: Unusual burst of news coverage (30-day tone +0.02)</title>
+   <title>National Grid plc: Rank moved down 149 places to #218 (score 43)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-NG</link>
-   <guid isPermaLink="false">2026-10-22-LSE-NG-news</guid>
+   <guid isPermaLink="false">2026-10-22-LSE-NG-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.02). BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved down 149 places to #218 (score 43). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

@@ -1,14 +1,54 @@
 {
- "asof": "2026-10-23",
- "checked": 309,
+ "asof": "2026-10-22",
+ "checked": 556,
  "excluded": [],
  "flagged": [
+  {
+   "id": "LSE-BCG",
+   "reason": "price moved -99% on 24 Aug 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-GDWN",
+   "reason": "price moved -48% on 23 Mar 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-MEGP",
+   "reason": "price moved -99% on 2 Mar 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-RPI",
+   "reason": "price moved +47% on 31 Mar 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-ROSE",
+   "reason": "price moved -99% on 18 Feb 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-ROR",
+   "reason": "price moved +67% on 16 Jul 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-SPI",
+   "reason": "price moved +49% on 14 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-TATE",
+   "reason": "price moved +45% on 14 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
   {
    "id": "US-ECHO",
    "reason": "price moved +70% on 26 Aug 2025; history will be re-downloaded in case of an unadjusted split"
   }
  ],
  "resync": [
+  "uk-bcg",
+  "uk-gdwn",
+  "uk-megp",
+  "uk-rpi",
+  "uk-rose",
+  "uk-ror",
+  "uk-spi",
+  "uk-tate",
   "echo"
  ]
 }

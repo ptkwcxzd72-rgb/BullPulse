@@ -6,12 +6,5 @@
   <link>https://bullpulse.co.uk/app.html#US-FDS</link>
   <description>Alerts for FactSet from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
-  <item>
-   <title>FactSet: Rank moved up 36 places to #72 (score 63)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FDS</link>
-   <guid isPermaLink="false">2026-10-22-US-FDS-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 36 places to #72 (score 63). BullPulse is a research screen, not investment advice.</description>
-  </item>
  </channel>
 </rss>

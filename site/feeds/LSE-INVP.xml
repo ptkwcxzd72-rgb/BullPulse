@@ -7,11 +7,11 @@
   <description>Alerts for Investec from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Investec: Unusual burst of news coverage (30-day tone -0.36)</title>
+   <title>Investec: Rank moved down 171 places to #250 (score 35)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-INVP</link>
-   <guid isPermaLink="false">2026-10-22-LSE-INVP-news</guid>
+   <guid isPermaLink="false">2026-10-22-LSE-INVP-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.36). BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved down 171 places to #250 (score 35). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

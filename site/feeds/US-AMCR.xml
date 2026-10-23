@@ -6,12 +6,5 @@
   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
   <description>Alerts for Amcor from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
-  <item>
-   <title>Amcor: Unusual burst of news coverage (30-day tone +0.01)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
-   <guid isPermaLink="false">2026-10-22-US-AMCR-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.01). BullPulse is a research screen, not investment advice.</description>
-  </item>
  </channel>
 </rss>
