@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ARE.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: Alexandria Real Estate Equities (ARE)</title>
   <link>https://bullpulse.co.uk/app.html#US-ARE</link>
   <description>Alerts for Alexandria Real Estate Equities from the BullPulse nightly screen.</description>

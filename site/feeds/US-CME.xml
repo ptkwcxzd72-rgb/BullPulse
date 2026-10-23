@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CME.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: CME Group (CME)</title>
   <link>https://bullpulse.co.uk/app.html#US-CME</link>
   <description>Alerts for CME Group from the BullPulse nightly screen.</description>
@@ -8,7 +9,7 @@
   <item>
    <title>CME Group: Rank moved up 48 places to #71 (score 63)</title>
    <link>https://bullpulse.co.uk/app.html#US-CME</link>
-   <guid>2026-10-22-US-CME-rank</guid>
+   <guid isPermaLink="false">2026-10-22-US-CME-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Rank moved up 48 places to #71 (score 63). BullPulse is a research screen, not investment advice.</description>
   </item>

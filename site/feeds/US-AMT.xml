@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMT.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: American Tower (AMT)</title>
   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
   <description>Alerts for American Tower from the BullPulse nightly screen.</description>
@@ -8,7 +9,7 @@
   <item>
    <title>American Tower: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
    <link>https://bullpulse.co.uk/app.html#US-AMT</link>
-   <guid>2026-10-22-US-AMT-insider</guid>
+   <guid isPermaLink="false">2026-10-22-US-AMT-insider</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
   </item>

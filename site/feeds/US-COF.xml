@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-COF.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: Capital One (COF)</title>
   <link>https://bullpulse.co.uk/app.html#US-COF</link>
   <description>Alerts for Capital One from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Capital One: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-COF</link>
-   <guid>2026-10-21-US-COF-trend</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
    <title>Capital One: Rank moved up 37 places to #116 (score 46)</title>
    <link>https://bullpulse.co.uk/app.html#US-COF</link>
-   <guid>2026-10-21-US-COF-rank</guid>
+   <guid isPermaLink="false">2026-10-21-US-COF-rank</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Rank moved up 37 places to #116 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-10-21-US-COF-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

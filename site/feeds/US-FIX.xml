@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FIX.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: Comfort Systems USA (FIX)</title>
   <link>https://bullpulse.co.uk/app.html#US-FIX</link>
   <description>Alerts for Comfort Systems USA from the BullPulse nightly screen.</description>

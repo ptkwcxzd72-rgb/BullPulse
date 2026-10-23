@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CEG.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: Constellation Energy (CEG)</title>
   <link>https://bullpulse.co.uk/app.html#US-CEG</link>
   <description>Alerts for Constellation Energy from the BullPulse nightly screen.</description>

@@ -1,1003 +1,1193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/all.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: all alerts</title>
   <link>https://bullpulse.co.uk/app.html</link>
   <description>Rank moves, trend changes, new results and insider buying across the BullPulse universe.</description>
   <ttl>720</ttl>
   <item>
-   <title>Aberdeen Group: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-ABDN</link>
-   <guid>2026-10-22-LSE-ABDN-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <title>Anglo American plc: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AAL</link>
+   <guid isPermaLink="false">2026-10-23-LSE-AAL-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Compass Group: Rank moved down 49 places to #66 (score 40)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
-   <guid>2026-10-22-LSE-CPG-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 49 places to #66 (score 40). BullPulse is a research screen, not investment advice.</description>
+   <title>Associated British Foods: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-23-LSE-ABF-early</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Compass Group: The 50-day average fell below the 200-day</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
-   <guid>2026-10-22-LSE-CPG-cross</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+   <title>Balfour Beatty: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BBY</link>
+   <guid isPermaLink="false">2026-10-23-LSE-BBY-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Imperial Brands: Closed below its 200-day average</title>
+   <title>Barratt Redrow: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BTRW</link>
+   <guid isPermaLink="false">2026-10-23-LSE-BTRW-early</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Barratt Redrow: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BTRW</link>
+   <guid isPermaLink="false">2026-10-23-LSE-BTRW-growth</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BT Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BTA</link>
+   <guid isPermaLink="false">2026-10-23-LSE-BTA-early</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Compass Group: Rank moved up 46 places to #20 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-CPG-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 46 places to #20 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Compass Group: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-CPG-cross</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Convatec: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CTEC</link>
+   <guid isPermaLink="false">2026-10-23-LSE-CTEC-cross</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Glencore: Rank moved down 26 places to #28 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GLEN</link>
+   <guid isPermaLink="false">2026-10-23-LSE-GLEN-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #28 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Glencore: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GLEN</link>
+   <guid isPermaLink="false">2026-10-23-LSE-GLEN-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>HSBC: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HSBA</link>
+   <guid isPermaLink="false">2026-10-23-LSE-HSBA-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IMI: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IMI</link>
+   <guid isPermaLink="false">2026-10-23-LSE-IMI-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Imperial Brands: Closed back above its 200-day average</title>
    <link>https://bullpulse.co.uk/app.html#LSE-IMB</link>
-   <guid>2026-10-22-LSE-IMB-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <guid isPermaLink="false">2026-10-23-LSE-IMB-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Informa: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-INF</link>
+   <guid isPermaLink="false">2026-10-23-LSE-INF-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>International Airlines Group: Closed back above its 200-day average</title>
+   <title>International Airlines Group: Rank moved down 26 places to #78 (score 33)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
-   <guid>2026-10-22-LSE-IAG-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+   <guid isPermaLink="false">2026-10-23-LSE-IAG-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #78 (score 33). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>International Airlines Group: Joined the early trend changes screen</title>
+   <title>International Airlines Group: Closed below its 200-day average</title>
    <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
-   <guid>2026-10-22-LSE-IAG-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <guid isPermaLink="false">2026-10-23-LSE-IAG-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Airlines Group: Unusual burst of news coverage (30-day tone -0.14)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-IAG-news</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.14). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Intertek: Unusual burst of news coverage (30-day tone +0.04)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ITRK</link>
+   <guid isPermaLink="false">2026-10-23-LSE-ITRK-news</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.04). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Marks &amp; Spencer: Unusual burst of news coverage (30-day tone +0.11)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MKS</link>
+   <guid isPermaLink="false">2026-10-23-LSE-MKS-news</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.11). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NatWest Group: Rank moved down 30 places to #64 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-NWG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-NWG-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 30 places to #64 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NatWest Group: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-NWG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-NWG-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Polar Capital Technology Trust: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PCT</link>
+   <guid isPermaLink="false">2026-10-23-LSE-PCT-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Standard Chartered: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-STAN</link>
+   <guid isPermaLink="false">2026-10-23-LSE-STAN-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Whitbread: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-WTB</link>
+   <guid isPermaLink="false">2026-10-23-LSE-WTB-early</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Investec: Unusual burst of news coverage (30-day tone -0.36)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-INVP</link>
-   <guid>2026-10-22-LSE-INVP-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.36). BullPulse is a research screen, not investment advice.</description>
+   <title>American International Group: Unusual burst of news coverage (30-day tone -0.04)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIG</link>
+   <guid isPermaLink="false">2026-10-23-US-AIG-news</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.04). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>JD Sports: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
-   <guid>2026-10-22-LSE-JD-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+   <title>Erie Indemnity: Rank moved up 33 places to #146 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ERIE</link>
+   <guid isPermaLink="false">2026-10-23-US-ERIE-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #146 (score 37). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>JD Sports: Unusual burst of news coverage (30-day tone +0.07)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
-   <guid>2026-10-22-LSE-JD-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.07). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Kingfisher plc: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-KGF</link>
-   <guid>2026-10-22-LSE-KGF-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>London Stock Exchange Group: Unusual burst of news coverage (30-day tone +0.06)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-LSEG</link>
-   <guid>2026-10-22-LSE-LSEG-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.06). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>National Grid plc: Unusual burst of news coverage (30-day tone +0.02)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-NG</link>
-   <guid>2026-10-22-LSE-NG-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.02). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Reckitt: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-RKT</link>
-   <guid>2026-10-22-LSE-RKT-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Spirax Group: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-SPX</link>
-   <guid>2026-10-22-LSE-SPX-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Unilever: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-ULVR</link>
-   <guid>2026-10-22-LSE-ULVR-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Abbott Laboratories: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-ABT</link>
-   <guid>2026-10-22-US-ABT-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Air Products: Rank moved down 34 places to #57 (score 67)</title>
-   <link>https://bullpulse.co.uk/app.html#US-APD</link>
-   <guid>2026-10-22-US-APD-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 34 places to #57 (score 67). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Align Technology: Rank moved down 25 places to #150 (score 36)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ALGN</link>
-   <guid>2026-10-22-US-ALGN-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 25 places to #150 (score 36). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Alliant Energy: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-LNT</link>
-   <guid>2026-10-22-US-LNT-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Alliant Energy: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-LNT</link>
-   <guid>2026-10-22-US-LNT-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Alliant Energy: Unusual burst of news coverage (30-day tone +0.62)</title>
-   <link>https://bullpulse.co.uk/app.html#US-LNT</link>
-   <guid>2026-10-22-US-LNT-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.62). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Amcor: Unusual burst of news coverage (30-day tone +0.01)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
-   <guid>2026-10-22-US-AMCR-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.01). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Ameren: Rank moved up 34 places to #118 (score 49)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
-   <guid>2026-10-22-US-AEE-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 34 places to #118 (score 49). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Ameren: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
-   <guid>2026-10-22-US-AEE-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Ameren: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
-   <guid>2026-10-22-US-AEE-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>American Tower: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
-   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
-   <guid>2026-10-22-US-AMT-insider</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Ameriprise Financial: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-AMP</link>
-   <guid>2026-10-22-US-AMP-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Ametek: Rank moved down 35 places to #45 (score 69)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AME</link>
-   <guid>2026-10-22-US-AME-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 35 places to #45 (score 69). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Amphenol: Rank moved down 39 places to #69 (score 63)</title>
-   <link>https://bullpulse.co.uk/app.html#US-APH</link>
-   <guid>2026-10-22-US-APH-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 39 places to #69 (score 63). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Amphenol: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-APH</link>
-   <guid>2026-10-22-US-APH-trend</guid>
+   <title>Freeport-McMoRan: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-22-US-FCX-trend</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Analog Devices: Rank moved down 21 places to #25 (score 76)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ADI</link>
-   <guid>2026-10-22-US-ADI-rank</guid>
+   <title>Freeport-McMoRan: Rank moved down 32 places to #81 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-22-US-FCX-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 21 places to #25 (score 76). BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved down 32 places to #81 (score 60). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Atmos Energy: Rank moved up 59 places to #125 (score 46)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ATO</link>
-   <guid>2026-10-22-US-ATO-rank</guid>
+   <title>Fortive: Unusual burst of news coverage (30-day tone -0.01)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FTV</link>
+   <guid isPermaLink="false">2026-10-22-US-FTV-news</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 59 places to #125 (score 46). BullPulse is a research screen, not investment advice.</description>
+   <description>Unusual burst of news coverage (30-day tone -0.01). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Atmos Energy: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-ATO</link>
-   <guid>2026-10-22-US-ATO-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Autodesk: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-ADSK</link>
-   <guid>2026-10-22-US-ADSK-early</guid>
+   <title>Fortive: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FTV</link>
+   <guid isPermaLink="false">2026-10-22-US-FTV-early</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>AutoZone: Rank moved up 34 places to #166 (score 29)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AZO</link>
-   <guid>2026-10-22-US-AZO-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 34 places to #166 (score 29). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>AutoZone: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-AZO</link>
-   <guid>2026-10-22-US-AZO-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Avery Dennison: Rank moved down 21 places to #131 (score 43)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AVY</link>
-   <guid>2026-10-22-US-AVY-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 21 places to #131 (score 43). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Avery Dennison: Unusual burst of news coverage (30-day tone -0.55)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AVY</link>
-   <guid>2026-10-22-US-AVY-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.55). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Ball Corporation: Rank moved up 32 places to #39 (score 71)</title>
-   <link>https://bullpulse.co.uk/app.html#US-BALL</link>
-   <guid>2026-10-22-US-BALL-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 32 places to #39 (score 71). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Best Buy: Rank moved down 29 places to #40 (score 71)</title>
-   <link>https://bullpulse.co.uk/app.html#US-BBY</link>
-   <guid>2026-10-22-US-BBY-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 29 places to #40 (score 71). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Bloom Energy: Rank moved down 28 places to #74 (score 62)</title>
-   <link>https://bullpulse.co.uk/app.html#US-BE</link>
-   <guid>2026-10-22-US-BE-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 28 places to #74 (score 62). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Bloom Energy: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-BE</link>
-   <guid>2026-10-22-US-BE-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Brown–Forman: Golden cross: the 50-day average moved above the 200-day</title>
-   <link>https://bullpulse.co.uk/app.html#US-BFB</link>
-   <guid>2026-10-22-US-BFB-cross</guid>
+   <title>Fortive: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-FTV</link>
+   <guid isPermaLink="false">2026-10-22-US-FTV-cross</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Bunge Global: Unusual burst of news coverage (30-day tone -0.02)</title>
-   <link>https://bullpulse.co.uk/app.html#US-BG</link>
-   <guid>2026-10-22-US-BG-news</guid>
+   <title>Flex Ltd.: Unusual burst of news coverage (30-day tone +0.22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FLEX</link>
+   <guid isPermaLink="false">2026-10-22-US-FLEX-news</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.02). BullPulse is a research screen, not investment advice.</description>
+   <description>Unusual burst of news coverage (30-day tone +0.22). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>BXP, Inc.: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-BXP</link>
-   <guid>2026-10-22-US-BXP-trend</guid>
+   <title>Flex Ltd.: Rank moved down 28 places to #66 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FLEX</link>
+   <guid isPermaLink="false">2026-10-22-US-FLEX-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved down 28 places to #66 (score 66). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Casey&#39;s: Rank moved up 20 places to #133 (score 42)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CASY</link>
-   <guid>2026-10-22-US-CASY-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 20 places to #133 (score 42). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Cboe Global Markets: Rank moved up 25 places to #15 (score 79)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
-   <guid>2026-10-22-US-CBOE-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 25 places to #15 (score 79). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>CBRE Group: Rank moved down 35 places to #198 (score 14)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CBRE</link>
-   <guid>2026-10-22-US-CBRE-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 35 places to #198 (score 14). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Cencora: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-COR</link>
-   <guid>2026-10-22-US-COR-early</guid>
+   <title>FedEx: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
+   <guid isPermaLink="false">2026-10-22-US-FDX-early</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>CenterPoint Energy: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-CNP</link>
-   <guid>2026-10-22-US-CNP-trend</guid>
+   <title>FedEx: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
+   <guid isPermaLink="false">2026-10-22-US-FDX-trend</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>CenterPoint Energy: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-CNP</link>
-   <guid>2026-10-22-US-CNP-early</guid>
+   <title>FedEx: Rank moved up 33 places to #4 (score 88)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
+   <guid isPermaLink="false">2026-10-22-US-FDX-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved up 33 places to #4 (score 88). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Citizens Financial Group: Rank moved up 27 places to #55 (score 68)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
-   <guid>2026-10-22-US-CFG-rank</guid>
+   <title>FactSet: Rank moved up 36 places to #72 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FDS</link>
+   <guid isPermaLink="false">2026-10-22-US-FDS-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 27 places to #55 (score 68). BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved up 36 places to #72 (score 63). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Citizens Financial Group: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
-   <guid>2026-10-22-US-CFG-trend</guid>
+   <title>F5, Inc.: Unusual burst of news coverage (30-day tone +0.16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
+   <guid isPermaLink="false">2026-10-22-US-FFIV-news</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+   <description>Unusual burst of news coverage (30-day tone +0.16). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Citizens Financial Group: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
-   <guid>2026-10-22-US-CFG-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Citizens Financial Group: Joined the growing and turning up screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
-   <guid>2026-10-22-US-CFG-growth</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>CME Group: Rank moved up 48 places to #71 (score 63)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CME</link>
-   <guid>2026-10-22-US-CME-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 48 places to #71 (score 63). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Consolidated Edison: Unusual burst of news coverage (30-day tone +0.23)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ED</link>
-   <guid>2026-10-22-US-ED-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.23). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>CSX Corporation: Rank moved up 49 places to #16 (score 79)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CSX</link>
-   <guid>2026-10-22-US-CSX-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 49 places to #16 (score 79). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Deckers Brands: Rank moved down 24 places to #199 (score 13)</title>
-   <link>https://bullpulse.co.uk/app.html#US-DECK</link>
-   <guid>2026-10-22-US-DECK-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 24 places to #199 (score 13). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Dominion Energy: Rank moved up 41 places to #98 (score 55)</title>
-   <link>https://bullpulse.co.uk/app.html#US-D</link>
-   <guid>2026-10-22-US-D-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 41 places to #98 (score 55). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Dominion Energy: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-D</link>
-   <guid>2026-10-22-US-D-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Dominion Energy: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-D</link>
-   <guid>2026-10-22-US-D-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Dominion Energy: Joined the growing and turning up screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-D</link>
-   <guid>2026-10-22-US-D-growth</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>D. R. Horton: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-DHI</link>
-   <guid>2026-10-22-US-DHI-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>DTE Energy: Rank moved up 44 places to #139 (score 39)</title>
-   <link>https://bullpulse.co.uk/app.html#US-DTE</link>
-   <guid>2026-10-22-US-DTE-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 44 places to #139 (score 39). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>DTE Energy: Unusual burst of news coverage (30-day tone +0.40)</title>
-   <link>https://bullpulse.co.uk/app.html#US-DTE</link>
-   <guid>2026-10-22-US-DTE-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.40). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Duke Energy: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-DUK</link>
-   <guid>2026-10-22-US-DUK-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Duke Energy: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-DUK</link>
-   <guid>2026-10-22-US-DUK-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Eaton Corporation: Rank moved down 44 places to #124 (score 47)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid>2026-10-22-US-ETN-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 44 places to #124 (score 47). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Eaton Corporation: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid>2026-10-22-US-ETN-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Edwards Lifesciences: Rank moved up 34 places to #22 (score 77)</title>
-   <link>https://bullpulse.co.uk/app.html#US-EW</link>
-   <guid>2026-10-22-US-EW-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 34 places to #22 (score 77). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Entergy: Rank moved up 36 places to #100 (score 55)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETR</link>
-   <guid>2026-10-22-US-ETR-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 36 places to #100 (score 55). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Entergy: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETR</link>
-   <guid>2026-10-22-US-ETR-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Equifax: Rank moved up 22 places to #164 (score 31)</title>
-   <link>https://bullpulse.co.uk/app.html#US-EFX</link>
-   <guid>2026-10-22-US-EFX-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 22 places to #164 (score 31). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Equifax: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-EFX</link>
-   <guid>2026-10-22-US-EFX-trend</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Essex Property Trust: Rank moved up 22 places to #85 (score 59)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ESS</link>
-   <guid>2026-10-22-US-ESS-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 22 places to #85 (score 59). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Expedia Group: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
-   <guid>2026-10-22-US-EXPE-early</guid>
+   <title>Extra Space Storage: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXR</link>
+   <guid isPermaLink="false">2026-10-22-US-EXR-early</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>Expeditors International: Rank moved up 25 places to #10 (score 81)</title>
    <link>https://bullpulse.co.uk/app.html#US-EXPD</link>
-   <guid>2026-10-22-US-EXPD-rank</guid>
+   <guid isPermaLink="false">2026-10-22-US-EXPD-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Rank moved up 25 places to #10 (score 81). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Extra Space Storage: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-EXR</link>
-   <guid>2026-10-22-US-EXR-early</guid>
+   <title>Expedia Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-10-22-US-EXPE-early</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>F5, Inc.: Unusual burst of news coverage (30-day tone +0.16)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
-   <guid>2026-10-22-US-FFIV-news</guid>
+   <title>Essex Property Trust: Rank moved up 22 places to #85 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ESS</link>
+   <guid isPermaLink="false">2026-10-22-US-ESS-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.16). BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved up 22 places to #85 (score 59). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>FactSet: Rank moved up 36 places to #72 (score 63)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FDS</link>
-   <guid>2026-10-22-US-FDS-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 36 places to #72 (score 63). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>FedEx: Rank moved up 33 places to #4 (score 88)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
-   <guid>2026-10-22-US-FDX-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 33 places to #4 (score 88). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>FedEx: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
-   <guid>2026-10-22-US-FDX-trend</guid>
+   <title>Equifax: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-EFX</link>
+   <guid isPermaLink="false">2026-10-22-US-EFX-trend</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>FedEx: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
-   <guid>2026-10-22-US-FDX-early</guid>
+   <title>Equifax: Rank moved up 22 places to #164 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EFX</link>
+   <guid isPermaLink="false">2026-10-22-US-EFX-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #164 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Entergy: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETR</link>
+   <guid isPermaLink="false">2026-10-22-US-ETR-early</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Flex Ltd.: Rank moved down 28 places to #66 (score 66)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FLEX</link>
-   <guid>2026-10-22-US-FLEX-rank</guid>
+   <title>Entergy: Rank moved up 36 places to #100 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETR</link>
+   <guid isPermaLink="false">2026-10-22-US-ETR-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 28 places to #66 (score 66). BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved up 36 places to #100 (score 55). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Flex Ltd.: Unusual burst of news coverage (30-day tone +0.22)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FLEX</link>
-   <guid>2026-10-22-US-FLEX-news</guid>
+   <title>Edwards Lifesciences: Rank moved up 34 places to #22 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EW</link>
+   <guid isPermaLink="false">2026-10-22-US-EW-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.22). BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved up 34 places to #22 (score 77). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Fortive: Golden cross: the 50-day average moved above the 200-day</title>
-   <link>https://bullpulse.co.uk/app.html#US-FTV</link>
-   <guid>2026-10-22-US-FTV-cross</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Fortive: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-FTV</link>
-   <guid>2026-10-22-US-FTV-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Fortive: Unusual burst of news coverage (30-day tone -0.01)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FTV</link>
-   <guid>2026-10-22-US-FTV-news</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.01). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Freeport-McMoRan: Rank moved down 32 places to #81 (score 60)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
-   <guid>2026-10-22-US-FCX-rank</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 32 places to #81 (score 60). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Freeport-McMoRan: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
-   <guid>2026-10-22-US-FCX-trend</guid>
+   <title>Eaton Corporation: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
+   <guid isPermaLink="false">2026-10-22-US-ETN-trend</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Fidelity National Information Services: Unusual burst of news coverage (30-day tone -0.03)</title>
-   <link>https://bullpulse.co.uk/app.html#US-FIS</link>
-   <guid>2026-10-21-US-FIS-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.03). BullPulse is a research screen, not investment advice.</description>
+   <title>Eaton Corporation: Rank moved down 44 places to #124 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
+   <guid isPermaLink="false">2026-10-22-US-ETN-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 44 places to #124 (score 47). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Expeditors International: Unusual burst of news coverage (30-day tone -0.09)</title>
-   <link>https://bullpulse.co.uk/app.html#US-EXPD</link>
-   <guid>2026-10-21-US-EXPD-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.09). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Estée Lauder Companies (The): Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-EL</link>
-   <guid>2026-10-21-US-EL-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <title>Duke Energy: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-DUK</link>
+   <guid isPermaLink="false">2026-10-22-US-DUK-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Entergy: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETR</link>
-   <guid>2026-10-21-US-ETR-trend</guid>
+   <title>Duke Energy: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-DUK</link>
+   <guid isPermaLink="false">2026-10-22-US-DUK-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>DTE Energy: Unusual burst of news coverage (30-day tone +0.40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DTE</link>
+   <guid isPermaLink="false">2026-10-22-US-DTE-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>DTE Energy: Rank moved up 44 places to #139 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DTE</link>
+   <guid isPermaLink="false">2026-10-22-US-DTE-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 44 places to #139 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>D. R. Horton: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-DHI</link>
+   <guid isPermaLink="false">2026-10-22-US-DHI-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dominion Energy: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-D</link>
+   <guid isPermaLink="false">2026-10-22-US-D-growth</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dominion Energy: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-D</link>
+   <guid isPermaLink="false">2026-10-22-US-D-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dominion Energy: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-D</link>
+   <guid isPermaLink="false">2026-10-22-US-D-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dominion Energy: Rank moved up 41 places to #98 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-D</link>
+   <guid isPermaLink="false">2026-10-22-US-D-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 41 places to #98 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Deckers Brands: Rank moved down 24 places to #199 (score 13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DECK</link>
+   <guid isPermaLink="false">2026-10-22-US-DECK-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #199 (score 13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CSX Corporation: Rank moved up 49 places to #16 (score 79)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CSX</link>
+   <guid isPermaLink="false">2026-10-22-US-CSX-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 49 places to #16 (score 79). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Consolidated Edison: Unusual burst of news coverage (30-day tone +0.23)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ED</link>
+   <guid isPermaLink="false">2026-10-22-US-ED-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CME Group: Rank moved up 48 places to #71 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CME</link>
+   <guid isPermaLink="false">2026-10-22-US-CME-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 48 places to #71 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Citizens Financial Group: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
+   <guid isPermaLink="false">2026-10-22-US-CFG-growth</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Citizens Financial Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
+   <guid isPermaLink="false">2026-10-22-US-CFG-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Citizens Financial Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
+   <guid isPermaLink="false">2026-10-22-US-CFG-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Citizens Financial Group: Rank moved up 27 places to #55 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CFG</link>
+   <guid isPermaLink="false">2026-10-22-US-CFG-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #55 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CenterPoint Energy: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CNP</link>
+   <guid isPermaLink="false">2026-10-22-US-CNP-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CenterPoint Energy: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CNP</link>
+   <guid isPermaLink="false">2026-10-22-US-CNP-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cencora: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-COR</link>
+   <guid isPermaLink="false">2026-10-22-US-COR-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CBRE Group: Rank moved down 35 places to #198 (score 14)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBRE</link>
+   <guid isPermaLink="false">2026-10-22-US-CBRE-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #198 (score 14). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cboe Global Markets: Rank moved up 25 places to #15 (score 79)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-10-22-US-CBOE-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #15 (score 79). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Casey&#39;s: Rank moved up 20 places to #133 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CASY</link>
+   <guid isPermaLink="false">2026-10-22-US-CASY-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #133 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BXP, Inc.: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-BXP</link>
+   <guid isPermaLink="false">2026-10-22-US-BXP-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bunge Global: Unusual burst of news coverage (30-day tone -0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BG</link>
+   <guid isPermaLink="false">2026-10-22-US-BG-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brown–Forman: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-BFB</link>
+   <guid isPermaLink="false">2026-10-22-US-BFB-cross</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bloom Energy: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-BE</link>
+   <guid isPermaLink="false">2026-10-22-US-BE-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bloom Energy: Rank moved down 28 places to #74 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BE</link>
+   <guid isPermaLink="false">2026-10-22-US-BE-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #74 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Best Buy: Rank moved down 29 places to #40 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BBY</link>
+   <guid isPermaLink="false">2026-10-22-US-BBY-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #40 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ball Corporation: Rank moved up 32 places to #39 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BALL</link>
+   <guid isPermaLink="false">2026-10-22-US-BALL-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #39 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Avery Dennison: Unusual burst of news coverage (30-day tone -0.55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AVY</link>
+   <guid isPermaLink="false">2026-10-22-US-AVY-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Avery Dennison: Rank moved down 21 places to #131 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AVY</link>
+   <guid isPermaLink="false">2026-10-22-US-AVY-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #131 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AutoZone: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-AZO</link>
+   <guid isPermaLink="false">2026-10-22-US-AZO-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AutoZone: Rank moved up 34 places to #166 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AZO</link>
+   <guid isPermaLink="false">2026-10-22-US-AZO-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #166 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Autodesk: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADSK</link>
+   <guid isPermaLink="false">2026-10-22-US-ADSK-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atmos Energy: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ATO</link>
+   <guid isPermaLink="false">2026-10-22-US-ATO-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atmos Energy: Rank moved up 59 places to #125 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ATO</link>
+   <guid isPermaLink="false">2026-10-22-US-ATO-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 59 places to #125 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Analog Devices: Rank moved down 21 places to #25 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADI</link>
+   <guid isPermaLink="false">2026-10-22-US-ADI-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #25 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amphenol: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-APH</link>
+   <guid isPermaLink="false">2026-10-22-US-APH-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amphenol: Rank moved down 39 places to #69 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APH</link>
+   <guid isPermaLink="false">2026-10-22-US-APH-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 39 places to #69 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ametek: Rank moved down 35 places to #45 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AME</link>
+   <guid isPermaLink="false">2026-10-22-US-AME-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #45 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ameriprise Financial: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMP</link>
+   <guid isPermaLink="false">2026-10-22-US-AMP-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American Tower: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+   <guid isPermaLink="false">2026-10-22-US-AMT-insider</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ameren: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
+   <guid isPermaLink="false">2026-10-22-US-AEE-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ameren: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
+   <guid isPermaLink="false">2026-10-22-US-AEE-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ameren: Rank moved up 34 places to #118 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
+   <guid isPermaLink="false">2026-10-22-US-AEE-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #118 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amcor: Unusual burst of news coverage (30-day tone +0.01)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-10-22-US-AMCR-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.01). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Alliant Energy: Unusual burst of news coverage (30-day tone +0.62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LNT</link>
+   <guid isPermaLink="false">2026-10-22-US-LNT-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Alliant Energy: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-LNT</link>
+   <guid isPermaLink="false">2026-10-22-US-LNT-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Alliant Energy: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-LNT</link>
+   <guid isPermaLink="false">2026-10-22-US-LNT-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Align Technology: Rank moved down 25 places to #150 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALGN</link>
+   <guid isPermaLink="false">2026-10-22-US-ALGN-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #150 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Air Products: Rank moved down 34 places to #57 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APD</link>
+   <guid isPermaLink="false">2026-10-22-US-APD-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #57 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Abbott Laboratories: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ABT</link>
+   <guid isPermaLink="false">2026-10-22-US-ABT-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Unilever: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ULVR</link>
+   <guid isPermaLink="false">2026-10-22-LSE-ULVR-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Spirax Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SPX</link>
+   <guid isPermaLink="false">2026-10-22-LSE-SPX-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Reckitt: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RKT</link>
+   <guid isPermaLink="false">2026-10-22-LSE-RKT-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>National Grid plc: Unusual burst of news coverage (30-day tone +0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-NG</link>
+   <guid isPermaLink="false">2026-10-22-LSE-NG-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>London Stock Exchange Group: Unusual burst of news coverage (30-day tone +0.06)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-LSEG</link>
+   <guid isPermaLink="false">2026-10-22-LSE-LSEG-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.06). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kingfisher plc: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-KGF</link>
+   <guid isPermaLink="false">2026-10-22-LSE-KGF-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JD Sports: Unusual burst of news coverage (30-day tone +0.07)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
+   <guid isPermaLink="false">2026-10-22-LSE-JD-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.07). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JD Sports: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
+   <guid isPermaLink="false">2026-10-22-LSE-JD-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Investec: Unusual burst of news coverage (30-day tone -0.36)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-INVP</link>
+   <guid isPermaLink="false">2026-10-22-LSE-INVP-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Airlines Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid isPermaLink="false">2026-10-22-LSE-IAG-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Airlines Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid isPermaLink="false">2026-10-22-LSE-IAG-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Imperial Brands: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IMB</link>
+   <guid isPermaLink="false">2026-10-22-LSE-IMB-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Compass Group: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
+   <guid isPermaLink="false">2026-10-22-LSE-CPG-cross</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Compass Group: Rank moved down 49 places to #66 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
+   <guid isPermaLink="false">2026-10-22-LSE-CPG-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 49 places to #66 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aberdeen Group: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABDN</link>
+   <guid isPermaLink="false">2026-10-22-LSE-ABDN-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aberdeen Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABDN</link>
+   <guid isPermaLink="false">2026-10-21-LSE-ABDN-trend</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Eaton Corporation: Joined the growing and turning up screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid>2026-10-21-US-ETN-growth</guid>
+   <title>Associated British Foods: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-21-LSE-ABF-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Barratt Redrow: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BTRW</link>
+   <guid isPermaLink="false">2026-10-21-LSE-BTRW-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Barratt Redrow: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BTRW</link>
+   <guid isPermaLink="false">2026-10-21-LSE-BTRW-growth</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Eaton Corporation: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid>2026-10-21-US-ETN-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Eaton Corporation: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid>2026-10-21-US-ETN-trend</guid>
+   <title>British American Tobacco: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-21-LSE-BATS-trend</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Eaton Corporation: Rank moved up 24 places to #80 (score 63)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid>2026-10-21-US-ETN-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 24 places to #80 (score 63). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>DoorDash: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-DASH</link>
-   <guid>2026-10-21-US-DASH-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Dollar Tree: Unusual burst of news coverage (30-day tone +0.58)</title>
-   <link>https://bullpulse.co.uk/app.html#US-DLTR</link>
-   <guid>2026-10-21-US-DLTR-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.58). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Dollar General: Unusual burst of news coverage (30-day tone +0.24)</title>
-   <link>https://bullpulse.co.uk/app.html#US-DG</link>
-   <guid>2026-10-21-US-DG-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.24). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Deere &amp; Company: Rank moved down 22 places to #48 (score 71)</title>
-   <link>https://bullpulse.co.uk/app.html#US-DE</link>
-   <guid>2026-10-21-US-DE-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 22 places to #48 (score 71). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Cummins: Rank moved up 28 places to #117 (score 46)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CMI</link>
-   <guid>2026-10-21-US-CMI-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 28 places to #117 (score 46). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Crown Castle: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-CCI</link>
-   <guid>2026-10-21-US-CCI-trend</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Crown Castle: Rank moved down 35 places to #194 (score 16)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CCI</link>
-   <guid>2026-10-21-US-CCI-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 35 places to #194 (score 16). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>CRH plc: Unusual burst of news coverage (30-day tone +0.17)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CRH</link>
-   <guid>2026-10-21-US-CRH-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.17). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Colgate-Palmolive: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-CL</link>
-   <guid>2026-10-21-US-CL-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Coherent Corp.: Rank moved down 38 places to #76 (score 64)</title>
-   <link>https://bullpulse.co.uk/app.html#US-COHR</link>
-   <guid>2026-10-21-US-COHR-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 38 places to #76 (score 64). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Cognizant: Golden cross: the 50-day average moved above the 200-day</title>
-   <link>https://bullpulse.co.uk/app.html#US-CTSH</link>
-   <guid>2026-10-21-US-CTSH-cross</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Cboe Global Markets: Rank moved up 59 places to #40 (score 72)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
-   <guid>2026-10-21-US-CBOE-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 59 places to #40 (score 72). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Caterpillar Inc.: Rank moved down 27 places to #112 (score 50)</title>
-   <link>https://bullpulse.co.uk/app.html#US-CAT</link>
-   <guid>2026-10-21-US-CAT-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 27 places to #112 (score 50). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Capital One: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-COF</link>
-   <guid>2026-10-21-US-COF-trend</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Capital One: Rank moved up 37 places to #116 (score 46)</title>
-   <link>https://bullpulse.co.uk/app.html#US-COF</link>
-   <guid>2026-10-21-US-COF-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 37 places to #116 (score 46). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Bunge Global: The 50-day average fell below the 200-day</title>
-   <link>https://bullpulse.co.uk/app.html#US-BG</link>
-   <guid>2026-10-21-US-BG-cross</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Brown–Forman: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-BFB</link>
-   <guid>2026-10-21-US-BFB-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Brown &amp; Brown: Unusual burst of news coverage (30-day tone +0.27)</title>
-   <link>https://bullpulse.co.uk/app.html#US-BRO</link>
-   <guid>2026-10-21-US-BRO-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.27). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>BNY Mellon: Rank moved up 31 places to #47 (score 71)</title>
-   <link>https://bullpulse.co.uk/app.html#US-BNY</link>
-   <guid>2026-10-21-US-BNY-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 31 places to #47 (score 71). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Avery Dennison: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-AVY</link>
-   <guid>2026-10-21-US-AVY-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Arch Capital Group: Rank moved down 37 places to #74 (score 64)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ACGL</link>
-   <guid>2026-10-21-US-ACGL-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 37 places to #74 (score 64). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Ameren: Rank moved down 33 places to #152 (score 34)</title>
-   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
-   <guid>2026-10-21-US-AEE-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 33 places to #152 (score 34). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Allegion: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-ALLE</link>
-   <guid>2026-10-21-US-ALLE-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Allegion: Rank moved up 21 places to #129 (score 42)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ALLE</link>
-   <guid>2026-10-21-US-ALLE-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 21 places to #129 (score 42). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Airbnb: Rank moved down 25 places to #57 (score 69)</title>
-   <link>https://bullpulse.co.uk/app.html#US-ABNB</link>
-   <guid>2026-10-21-US-ABNB-rank</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 25 places to #57 (score 69). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Accenture: Golden cross: the 50-day average moved above the 200-day</title>
-   <link>https://bullpulse.co.uk/app.html#US-ACN</link>
-   <guid>2026-10-21-US-ACN-cross</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Abbott Laboratories: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#US-ABT</link>
-   <guid>2026-10-21-US-ABT-trend</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>London Stock Exchange Group: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-LSEG</link>
-   <guid>2026-10-21-LSE-LSEG-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Land Securities: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-LAND</link>
-   <guid>2026-10-21-LSE-LAND-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>International Airlines Group: Closed below its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
-   <guid>2026-10-21-LSE-IAG-trend</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Imperial Brands: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-IMB</link>
-   <guid>2026-10-21-LSE-IMB-trend</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Experian: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-EXPN</link>
-   <guid>2026-10-21-LSE-EXPN-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Diageo: Unusual burst of news coverage (30-day tone -0.28)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-DGE</link>
-   <guid>2026-10-21-LSE-DGE-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.28). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Convatec: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-CTEC</link>
-   <guid>2026-10-21-LSE-CTEC-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Coca-Cola Europacific Partners: Unusual burst of news coverage (30-day tone +0.11)</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-CCEP</link>
-   <guid>2026-10-21-LSE-CCEP-news</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone +0.11). BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>BT Group: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-BTA</link>
-   <guid>2026-10-21-LSE-BTA-early</guid>
+   <title>British American Tobacco: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-21-LSE-BATS-early</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>British Land: Joined the early trend changes screen</title>
    <link>https://bullpulse.co.uk/app.html#LSE-BLND</link>
-   <guid>2026-10-21-LSE-BLND-early</guid>
+   <guid isPermaLink="false">2026-10-21-LSE-BLND-early</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>British American Tobacco: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
-   <guid>2026-10-21-LSE-BATS-early</guid>
+   <title>BT Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BTA</link>
+   <guid isPermaLink="false">2026-10-21-LSE-BTA-early</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>British American Tobacco: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
-   <guid>2026-10-21-LSE-BATS-trend</guid>
+   <title>Coca-Cola Europacific Partners: Unusual burst of news coverage (30-day tone +0.11)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CCEP</link>
+   <guid isPermaLink="false">2026-10-21-LSE-CCEP-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.11). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Convatec: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CTEC</link>
+   <guid isPermaLink="false">2026-10-21-LSE-CTEC-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diageo: Unusual burst of news coverage (30-day tone -0.28)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-DGE</link>
+   <guid isPermaLink="false">2026-10-21-LSE-DGE-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Experian: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EXPN</link>
+   <guid isPermaLink="false">2026-10-21-LSE-EXPN-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Imperial Brands: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IMB</link>
+   <guid isPermaLink="false">2026-10-21-LSE-IMB-trend</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Barratt Redrow: Joined the growing and turning up screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-BTRW</link>
-   <guid>2026-10-21-LSE-BTRW-growth</guid>
+   <title>International Airlines Group: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IAG</link>
+   <guid isPermaLink="false">2026-10-21-LSE-IAG-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Land Securities: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-LAND</link>
+   <guid isPermaLink="false">2026-10-21-LSE-LAND-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>London Stock Exchange Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-LSEG</link>
+   <guid isPermaLink="false">2026-10-21-LSE-LSEG-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Abbott Laboratories: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ABT</link>
+   <guid isPermaLink="false">2026-10-21-US-ABT-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Accenture: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACN</link>
+   <guid isPermaLink="false">2026-10-21-US-ACN-cross</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Airbnb: Rank moved down 25 places to #57 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ABNB</link>
+   <guid isPermaLink="false">2026-10-21-US-ABNB-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #57 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allegion: Rank moved up 21 places to #129 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALLE</link>
+   <guid isPermaLink="false">2026-10-21-US-ALLE-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #129 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allegion: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALLE</link>
+   <guid isPermaLink="false">2026-10-21-US-ALLE-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ameren: Rank moved down 33 places to #152 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AEE</link>
+   <guid isPermaLink="false">2026-10-21-US-AEE-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 33 places to #152 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arch Capital Group: Rank moved down 37 places to #74 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACGL</link>
+   <guid isPermaLink="false">2026-10-21-US-ACGL-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #74 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Avery Dennison: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AVY</link>
+   <guid isPermaLink="false">2026-10-21-US-AVY-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BNY Mellon: Rank moved up 31 places to #47 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BNY</link>
+   <guid isPermaLink="false">2026-10-21-US-BNY-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 31 places to #47 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brown &amp; Brown: Unusual burst of news coverage (30-day tone +0.27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRO</link>
+   <guid isPermaLink="false">2026-10-21-US-BRO-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brown–Forman: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-BFB</link>
+   <guid isPermaLink="false">2026-10-21-US-BFB-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bunge Global: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-BG</link>
+   <guid isPermaLink="false">2026-10-21-US-BG-cross</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Rank moved up 37 places to #116 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-10-21-US-COF-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #116 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-10-21-US-COF-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Caterpillar Inc.: Rank moved down 27 places to #112 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CAT</link>
+   <guid isPermaLink="false">2026-10-21-US-CAT-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #112 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cboe Global Markets: Rank moved up 59 places to #40 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-10-21-US-CBOE-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 59 places to #40 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cognizant: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTSH</link>
+   <guid isPermaLink="false">2026-10-21-US-CTSH-cross</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Coherent Corp.: Rank moved down 38 places to #76 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-COHR</link>
+   <guid isPermaLink="false">2026-10-21-US-COHR-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #76 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Colgate-Palmolive: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CL</link>
+   <guid isPermaLink="false">2026-10-21-US-CL-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CRH plc: Unusual burst of news coverage (30-day tone +0.17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CRH</link>
+   <guid isPermaLink="false">2026-10-21-US-CRH-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Crown Castle: Rank moved down 35 places to #194 (score 16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CCI</link>
+   <guid isPermaLink="false">2026-10-21-US-CCI-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #194 (score 16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Crown Castle: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CCI</link>
+   <guid isPermaLink="false">2026-10-21-US-CCI-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cummins: Rank moved up 28 places to #117 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMI</link>
+   <guid isPermaLink="false">2026-10-21-US-CMI-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #117 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Deere &amp; Company: Rank moved down 22 places to #48 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DE</link>
+   <guid isPermaLink="false">2026-10-21-US-DE-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #48 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dollar General: Unusual burst of news coverage (30-day tone +0.24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DG</link>
+   <guid isPermaLink="false">2026-10-21-US-DG-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dollar Tree: Unusual burst of news coverage (30-day tone +0.58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLTR</link>
+   <guid isPermaLink="false">2026-10-21-US-DLTR-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>DoorDash: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-DASH</link>
+   <guid isPermaLink="false">2026-10-21-US-DASH-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eaton Corporation: Rank moved up 24 places to #80 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
+   <guid isPermaLink="false">2026-10-21-US-ETN-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #80 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eaton Corporation: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
+   <guid isPermaLink="false">2026-10-21-US-ETN-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eaton Corporation: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
+   <guid isPermaLink="false">2026-10-21-US-ETN-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eaton Corporation: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
+   <guid isPermaLink="false">2026-10-21-US-ETN-growth</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Barratt Redrow: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-BTRW</link>
-   <guid>2026-10-21-LSE-BTRW-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Associated British Foods: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
-   <guid>2026-10-21-LSE-ABF-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Aberdeen Group: Closed back above its 200-day average</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-ABDN</link>
-   <guid>2026-10-21-LSE-ABDN-trend</guid>
+   <title>Entergy: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETR</link>
+   <guid isPermaLink="false">2026-10-21-US-ETR-trend</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Estée Lauder Companies (The): Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EL</link>
+   <guid isPermaLink="false">2026-10-21-US-EL-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expeditors International: Unusual burst of news coverage (30-day tone -0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPD</link>
+   <guid isPermaLink="false">2026-10-21-US-EXPD-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fidelity National Information Services: Unusual burst of news coverage (30-day tone -0.03)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIS</link>
+   <guid isPermaLink="false">2026-10-21-US-FIS-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.03). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

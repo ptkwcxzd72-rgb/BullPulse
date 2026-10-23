@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AME.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: Ametek (AME)</title>
   <link>https://bullpulse.co.uk/app.html#US-AME</link>
   <description>Alerts for Ametek from the BullPulse nightly screen.</description>
@@ -8,7 +9,7 @@
   <item>
    <title>Ametek: Rank moved down 35 places to #45 (score 69)</title>
    <link>https://bullpulse.co.uk/app.html#US-AME</link>
-   <guid>2026-10-22-US-AME-rank</guid>
+   <guid isPermaLink="false">2026-10-22-US-AME-rank</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Rank moved down 35 places to #45 (score 69). BullPulse is a research screen, not investment advice.</description>
   </item>

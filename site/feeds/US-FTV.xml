@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FTV.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: Fortive (FTV)</title>
   <link>https://bullpulse.co.uk/app.html#US-FTV</link>
   <description>Alerts for Fortive from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Fortive: Golden cross: the 50-day average moved above the 200-day</title>
+   <title>Fortive: Unusual burst of news coverage (30-day tone -0.01)</title>
    <link>https://bullpulse.co.uk/app.html#US-FTV</link>
-   <guid>2026-10-22-US-FTV-cross</guid>
+   <guid isPermaLink="false">2026-10-22-US-FTV-news</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+   <description>Unusual burst of news coverage (30-day tone -0.01). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>Fortive: Joined the early trend changes screen</title>
    <link>https://bullpulse.co.uk/app.html#US-FTV</link>
-   <guid>2026-10-22-US-FTV-early</guid>
+   <guid isPermaLink="false">2026-10-22-US-FTV-early</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Fortive: Unusual burst of news coverage (30-day tone -0.01)</title>
+   <title>Fortive: Golden cross: the 50-day average moved above the 200-day</title>
    <link>https://bullpulse.co.uk/app.html#US-FTV</link>
-   <guid>2026-10-22-US-FTV-news</guid>
+   <guid isPermaLink="false">2026-10-22-US-FTV-cross</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Unusual burst of news coverage (30-day tone -0.01). BullPulse is a research screen, not investment advice.</description>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

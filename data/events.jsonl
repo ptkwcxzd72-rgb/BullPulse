@@ -1,142 +1,169 @@
-{"date":"2026-10-21","id":"LSE-ABDN","name":"Aberdeen Group","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-21","id":"LSE-ABF","name":"Associated British Foods","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-BTRW","name":"Barratt Redrow","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-BTRW","name":"Barratt Redrow","kind":"growth","text":"Joined the growing and turning up screen."}
-{"date":"2026-10-21","id":"LSE-BATS","name":"British American Tobacco","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-21","id":"LSE-BATS","name":"British American Tobacco","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-BLND","name":"British Land","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-BTA","name":"BT Group","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-CCEP","name":"Coca-Cola Europacific Partners","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.11)."}
-{"date":"2026-10-21","id":"LSE-CTEC","name":"Convatec","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-DGE","name":"Diageo","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.28)."}
-{"date":"2026-10-21","id":"LSE-EXPN","name":"Experian","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-IMB","name":"Imperial Brands","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-21","id":"LSE-IAG","name":"International Airlines Group","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-21","id":"LSE-LAND","name":"Land Securities","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"LSE-LSEG","name":"London Stock Exchange Group","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-ABT","name":"Abbott Laboratories","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-21","id":"US-ACN","name":"Accenture","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
-{"date":"2026-10-21","id":"US-ABNB","name":"Airbnb","kind":"rank","text":"Rank moved down 25 places to #57 (score 69)."}
-{"date":"2026-10-21","id":"US-ALLE","name":"Allegion","kind":"rank","text":"Rank moved up 21 places to #129 (score 42)."}
-{"date":"2026-10-21","id":"US-ALLE","name":"Allegion","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-AEE","name":"Ameren","kind":"rank","text":"Rank moved down 33 places to #152 (score 34)."}
-{"date":"2026-10-21","id":"US-ACGL","name":"Arch Capital Group","kind":"rank","text":"Rank moved down 37 places to #74 (score 64)."}
-{"date":"2026-10-21","id":"US-AVY","name":"Avery Dennison","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-BNY","name":"BNY Mellon","kind":"rank","text":"Rank moved up 31 places to #47 (score 71)."}
-{"date":"2026-10-21","id":"US-BRO","name":"Brown \u0026 Brown","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.27)."}
-{"date":"2026-10-21","id":"US-BFB","name":"Brown–Forman","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-BG","name":"Bunge Global","kind":"cross","text":"The 50-day average fell below the 200-day."}
-{"date":"2026-10-21","id":"US-COF","name":"Capital One","kind":"rank","text":"Rank moved up 37 places to #116 (score 46)."}
-{"date":"2026-10-21","id":"US-COF","name":"Capital One","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-21","id":"US-CAT","name":"Caterpillar Inc.","kind":"rank","text":"Rank moved down 27 places to #112 (score 50)."}
-{"date":"2026-10-21","id":"US-CBOE","name":"Cboe Global Markets","kind":"rank","text":"Rank moved up 59 places to #40 (score 72)."}
-{"date":"2026-10-21","id":"US-CTSH","name":"Cognizant","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
-{"date":"2026-10-21","id":"US-COHR","name":"Coherent Corp.","kind":"rank","text":"Rank moved down 38 places to #76 (score 64)."}
-{"date":"2026-10-21","id":"US-CL","name":"Colgate-Palmolive","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-CRH","name":"CRH plc","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.17)."}
-{"date":"2026-10-21","id":"US-CCI","name":"Crown Castle","kind":"rank","text":"Rank moved down 35 places to #194 (score 16)."}
-{"date":"2026-10-21","id":"US-CCI","name":"Crown Castle","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-21","id":"US-CMI","name":"Cummins","kind":"rank","text":"Rank moved up 28 places to #117 (score 46)."}
-{"date":"2026-10-21","id":"US-DE","name":"Deere \u0026 Company","kind":"rank","text":"Rank moved down 22 places to #48 (score 71)."}
-{"date":"2026-10-21","id":"US-DG","name":"Dollar General","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.24)."}
-{"date":"2026-10-21","id":"US-DLTR","name":"Dollar Tree","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.58)."}
-{"date":"2026-10-21","id":"US-DASH","name":"DoorDash","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"rank","text":"Rank moved up 24 places to #80 (score 63)."}
-{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"growth","text":"Joined the growing and turning up screen."}
-{"date":"2026-10-21","id":"US-ETR","name":"Entergy","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-21","id":"US-EL","name":"Estée Lauder Companies (The)","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-21","id":"US-EXPD","name":"Expeditors International","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.09)."}
 {"date":"2026-10-21","id":"US-FIS","name":"Fidelity National Information Services","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.03)."}
-{"date":"2026-10-22","id":"US-FCX","name":"Freeport-McMoRan","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-22","id":"US-FCX","name":"Freeport-McMoRan","kind":"rank","text":"Rank moved down 32 places to #81 (score 60)."}
-{"date":"2026-10-22","id":"US-FTV","name":"Fortive","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.01)."}
-{"date":"2026-10-22","id":"US-FTV","name":"Fortive","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-FTV","name":"Fortive","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
-{"date":"2026-10-22","id":"US-FLEX","name":"Flex Ltd.","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.22)."}
-{"date":"2026-10-22","id":"US-FLEX","name":"Flex Ltd.","kind":"rank","text":"Rank moved down 28 places to #66 (score 66)."}
-{"date":"2026-10-22","id":"US-FDX","name":"FedEx","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-FDX","name":"FedEx","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-FDX","name":"FedEx","kind":"rank","text":"Rank moved up 33 places to #4 (score 88)."}
-{"date":"2026-10-22","id":"US-FDS","name":"FactSet","kind":"rank","text":"Rank moved up 36 places to #72 (score 63)."}
-{"date":"2026-10-22","id":"US-FFIV","name":"F5, Inc.","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.16)."}
-{"date":"2026-10-22","id":"US-EXR","name":"Extra Space Storage","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-EXPD","name":"Expeditors International","kind":"rank","text":"Rank moved up 25 places to #10 (score 81)."}
-{"date":"2026-10-22","id":"US-EXPE","name":"Expedia Group","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-ESS","name":"Essex Property Trust","kind":"rank","text":"Rank moved up 22 places to #85 (score 59)."}
-{"date":"2026-10-22","id":"US-EFX","name":"Equifax","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-EFX","name":"Equifax","kind":"rank","text":"Rank moved up 22 places to #164 (score 31)."}
-{"date":"2026-10-22","id":"US-ETR","name":"Entergy","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-ETR","name":"Entergy","kind":"rank","text":"Rank moved up 36 places to #100 (score 55)."}
-{"date":"2026-10-22","id":"US-EW","name":"Edwards Lifesciences","kind":"rank","text":"Rank moved up 34 places to #22 (score 77)."}
-{"date":"2026-10-22","id":"US-ETN","name":"Eaton Corporation","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-22","id":"US-ETN","name":"Eaton Corporation","kind":"rank","text":"Rank moved down 44 places to #124 (score 47)."}
-{"date":"2026-10-22","id":"US-DUK","name":"Duke Energy","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-DUK","name":"Duke Energy","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-DTE","name":"DTE Energy","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.40)."}
-{"date":"2026-10-22","id":"US-DTE","name":"DTE Energy","kind":"rank","text":"Rank moved up 44 places to #139 (score 39)."}
-{"date":"2026-10-22","id":"US-DHI","name":"D. R. Horton","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"growth","text":"Joined the growing and turning up screen."}
-{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"rank","text":"Rank moved up 41 places to #98 (score 55)."}
-{"date":"2026-10-22","id":"US-DECK","name":"Deckers Brands","kind":"rank","text":"Rank moved down 24 places to #199 (score 13)."}
-{"date":"2026-10-22","id":"US-CSX","name":"CSX Corporation","kind":"rank","text":"Rank moved up 49 places to #16 (score 79)."}
-{"date":"2026-10-22","id":"US-ED","name":"Consolidated Edison","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.23)."}
-{"date":"2026-10-22","id":"US-CME","name":"CME Group","kind":"rank","text":"Rank moved up 48 places to #71 (score 63)."}
-{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"growth","text":"Joined the growing and turning up screen."}
-{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"rank","text":"Rank moved up 27 places to #55 (score 68)."}
-{"date":"2026-10-22","id":"US-CNP","name":"CenterPoint Energy","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-CNP","name":"CenterPoint Energy","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-COR","name":"Cencora","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-CBRE","name":"CBRE Group","kind":"rank","text":"Rank moved down 35 places to #198 (score 14)."}
-{"date":"2026-10-22","id":"US-CBOE","name":"Cboe Global Markets","kind":"rank","text":"Rank moved up 25 places to #15 (score 79)."}
-{"date":"2026-10-22","id":"US-CASY","name":"Casey's","kind":"rank","text":"Rank moved up 20 places to #133 (score 42)."}
-{"date":"2026-10-22","id":"US-BXP","name":"BXP, Inc.","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-BG","name":"Bunge Global","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.02)."}
-{"date":"2026-10-22","id":"US-BFB","name":"Brown–Forman","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
-{"date":"2026-10-22","id":"US-BE","name":"Bloom Energy","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-22","id":"US-BE","name":"Bloom Energy","kind":"rank","text":"Rank moved down 28 places to #74 (score 62)."}
-{"date":"2026-10-22","id":"US-BBY","name":"Best Buy","kind":"rank","text":"Rank moved down 29 places to #40 (score 71)."}
-{"date":"2026-10-22","id":"US-BALL","name":"Ball Corporation","kind":"rank","text":"Rank moved up 32 places to #39 (score 71)."}
-{"date":"2026-10-22","id":"US-AVY","name":"Avery Dennison","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.55)."}
-{"date":"2026-10-22","id":"US-AVY","name":"Avery Dennison","kind":"rank","text":"Rank moved down 21 places to #131 (score 43)."}
-{"date":"2026-10-22","id":"US-AZO","name":"AutoZone","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-AZO","name":"AutoZone","kind":"rank","text":"Rank moved up 34 places to #166 (score 29)."}
-{"date":"2026-10-22","id":"US-ADSK","name":"Autodesk","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-ATO","name":"Atmos Energy","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-ATO","name":"Atmos Energy","kind":"rank","text":"Rank moved up 59 places to #125 (score 46)."}
-{"date":"2026-10-22","id":"US-ADI","name":"Analog Devices","kind":"rank","text":"Rank moved down 21 places to #25 (score 76)."}
-{"date":"2026-10-22","id":"US-APH","name":"Amphenol","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-22","id":"US-APH","name":"Amphenol","kind":"rank","text":"Rank moved down 39 places to #69 (score 63)."}
-{"date":"2026-10-22","id":"US-AME","name":"Ametek","kind":"rank","text":"Rank moved down 35 places to #45 (score 69)."}
-{"date":"2026-10-22","id":"US-AMP","name":"Ameriprise Financial","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-AMT","name":"American Tower","kind":"insider","text":"Cluster buying: 2 insiders bought shares in the open market in the last 90 days."}
-{"date":"2026-10-22","id":"US-AEE","name":"Ameren","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-AEE","name":"Ameren","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-AEE","name":"Ameren","kind":"rank","text":"Rank moved up 34 places to #118 (score 49)."}
-{"date":"2026-10-22","id":"US-AMCR","name":"Amcor","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.01)."}
-{"date":"2026-10-22","id":"US-LNT","name":"Alliant Energy","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.62)."}
-{"date":"2026-10-22","id":"US-LNT","name":"Alliant Energy","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"US-LNT","name":"Alliant Energy","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"US-ALGN","name":"Align Technology","kind":"rank","text":"Rank moved down 25 places to #150 (score 36)."}
-{"date":"2026-10-22","id":"US-APD","name":"Air Products","kind":"rank","text":"Rank moved down 34 places to #57 (score 67)."}
-{"date":"2026-10-22","id":"US-ABT","name":"Abbott Laboratories","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"LSE-ULVR","name":"Unilever","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"LSE-SPX","name":"Spirax Group","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"LSE-RKT","name":"Reckitt","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"LSE-NG","name":"National Grid plc","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.02)."}
-{"date":"2026-10-22","id":"LSE-LSEG","name":"London Stock Exchange Group","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.06)."}
-{"date":"2026-10-22","id":"LSE-KGF","name":"Kingfisher plc","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"LSE-JD","name":"JD Sports","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.07)."}
-{"date":"2026-10-22","id":"LSE-JD","name":"JD Sports","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"LSE-INVP","name":"Investec","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.36)."}
-{"date":"2026-10-22","id":"LSE-IAG","name":"International Airlines Group","kind":"early","text":"Joined the early trend changes screen."}
-{"date":"2026-10-22","id":"LSE-IAG","name":"International Airlines Group","kind":"trend","text":"Closed back above its 200-day average."}
-{"date":"2026-10-22","id":"LSE-IMB","name":"Imperial Brands","kind":"trend","text":"Closed below its 200-day average."}
-{"date":"2026-10-22","id":"LSE-CPG","name":"Compass Group","kind":"cross","text":"The 50-day average fell below the 200-day."}
-{"date":"2026-10-22","id":"LSE-CPG","name":"Compass Group","kind":"rank","text":"Rank moved down 49 places to #66 (score 40)."}
+{"date":"2026-10-21","id":"US-EXPD","name":"Expeditors International","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.09)."}
+{"date":"2026-10-21","id":"US-EL","name":"Estée Lauder Companies (The)","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"US-ETR","name":"Entergy","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"growth","text":"Joined the growing and turning up screen."}
+{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-21","id":"US-ETN","name":"Eaton Corporation","kind":"rank","text":"Rank moved up 24 places to #80 (score 63)."}
+{"date":"2026-10-21","id":"US-DASH","name":"DoorDash","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"US-DLTR","name":"Dollar Tree","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.58)."}
+{"date":"2026-10-21","id":"US-DG","name":"Dollar General","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.24)."}
+{"date":"2026-10-21","id":"US-DE","name":"Deere \u0026 Company","kind":"rank","text":"Rank moved down 22 places to #48 (score 71)."}
+{"date":"2026-10-21","id":"US-CMI","name":"Cummins","kind":"rank","text":"Rank moved up 28 places to #117 (score 46)."}
+{"date":"2026-10-21","id":"US-CCI","name":"Crown Castle","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-21","id":"US-CCI","name":"Crown Castle","kind":"rank","text":"Rank moved down 35 places to #194 (score 16)."}
+{"date":"2026-10-21","id":"US-CRH","name":"CRH plc","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.17)."}
+{"date":"2026-10-21","id":"US-CL","name":"Colgate-Palmolive","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"US-COHR","name":"Coherent Corp.","kind":"rank","text":"Rank moved down 38 places to #76 (score 64)."}
+{"date":"2026-10-21","id":"US-CTSH","name":"Cognizant","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-10-21","id":"US-CBOE","name":"Cboe Global Markets","kind":"rank","text":"Rank moved up 59 places to #40 (score 72)."}
+{"date":"2026-10-21","id":"US-CAT","name":"Caterpillar Inc.","kind":"rank","text":"Rank moved down 27 places to #112 (score 50)."}
+{"date":"2026-10-21","id":"US-COF","name":"Capital One","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-21","id":"US-COF","name":"Capital One","kind":"rank","text":"Rank moved up 37 places to #116 (score 46)."}
+{"date":"2026-10-21","id":"US-BG","name":"Bunge Global","kind":"cross","text":"The 50-day average fell below the 200-day."}
+{"date":"2026-10-21","id":"US-BFB","name":"Brown–Forman","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"US-BRO","name":"Brown \u0026 Brown","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.27)."}
+{"date":"2026-10-21","id":"US-BNY","name":"BNY Mellon","kind":"rank","text":"Rank moved up 31 places to #47 (score 71)."}
+{"date":"2026-10-21","id":"US-AVY","name":"Avery Dennison","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"US-ACGL","name":"Arch Capital Group","kind":"rank","text":"Rank moved down 37 places to #74 (score 64)."}
+{"date":"2026-10-21","id":"US-AEE","name":"Ameren","kind":"rank","text":"Rank moved down 33 places to #152 (score 34)."}
+{"date":"2026-10-21","id":"US-ALLE","name":"Allegion","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"US-ALLE","name":"Allegion","kind":"rank","text":"Rank moved up 21 places to #129 (score 42)."}
+{"date":"2026-10-21","id":"US-ABNB","name":"Airbnb","kind":"rank","text":"Rank moved down 25 places to #57 (score 69)."}
+{"date":"2026-10-21","id":"US-ACN","name":"Accenture","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-10-21","id":"US-ABT","name":"Abbott Laboratories","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-21","id":"LSE-LSEG","name":"London Stock Exchange Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-LAND","name":"Land Securities","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-IAG","name":"International Airlines Group","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-21","id":"LSE-IMB","name":"Imperial Brands","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-21","id":"LSE-EXPN","name":"Experian","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-DGE","name":"Diageo","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.28)."}
+{"date":"2026-10-21","id":"LSE-CTEC","name":"Convatec","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-CCEP","name":"Coca-Cola Europacific Partners","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.11)."}
+{"date":"2026-10-21","id":"LSE-BTA","name":"BT Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-BLND","name":"British Land","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-BATS","name":"British American Tobacco","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-BATS","name":"British American Tobacco","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-21","id":"LSE-BTRW","name":"Barratt Redrow","kind":"growth","text":"Joined the growing and turning up screen."}
+{"date":"2026-10-21","id":"LSE-BTRW","name":"Barratt Redrow","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-ABF","name":"Associated British Foods","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-21","id":"LSE-ABDN","name":"Aberdeen Group","kind":"trend","text":"Closed back above its 200-day average."}
 {"date":"2026-10-22","id":"LSE-ABDN","name":"Aberdeen Group","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-22","id":"LSE-CPG","name":"Compass Group","kind":"rank","text":"Rank moved down 49 places to #66 (score 40)."}
+{"date":"2026-10-22","id":"LSE-CPG","name":"Compass Group","kind":"cross","text":"The 50-day average fell below the 200-day."}
+{"date":"2026-10-22","id":"LSE-IMB","name":"Imperial Brands","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-22","id":"LSE-IAG","name":"International Airlines Group","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"LSE-IAG","name":"International Airlines Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"LSE-INVP","name":"Investec","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.36)."}
+{"date":"2026-10-22","id":"LSE-JD","name":"JD Sports","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"LSE-JD","name":"JD Sports","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.07)."}
+{"date":"2026-10-22","id":"LSE-KGF","name":"Kingfisher plc","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"LSE-LSEG","name":"London Stock Exchange Group","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.06)."}
+{"date":"2026-10-22","id":"LSE-NG","name":"National Grid plc","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.02)."}
+{"date":"2026-10-22","id":"LSE-RKT","name":"Reckitt","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"LSE-SPX","name":"Spirax Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"LSE-ULVR","name":"Unilever","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-ABT","name":"Abbott Laboratories","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-APD","name":"Air Products","kind":"rank","text":"Rank moved down 34 places to #57 (score 67)."}
+{"date":"2026-10-22","id":"US-ALGN","name":"Align Technology","kind":"rank","text":"Rank moved down 25 places to #150 (score 36)."}
+{"date":"2026-10-22","id":"US-LNT","name":"Alliant Energy","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-LNT","name":"Alliant Energy","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-LNT","name":"Alliant Energy","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.62)."}
+{"date":"2026-10-22","id":"US-AMCR","name":"Amcor","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.01)."}
+{"date":"2026-10-22","id":"US-AEE","name":"Ameren","kind":"rank","text":"Rank moved up 34 places to #118 (score 49)."}
+{"date":"2026-10-22","id":"US-AEE","name":"Ameren","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-AEE","name":"Ameren","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-AMT","name":"American Tower","kind":"insider","text":"Cluster buying: 2 insiders bought shares in the open market in the last 90 days."}
+{"date":"2026-10-22","id":"US-AMP","name":"Ameriprise Financial","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-AME","name":"Ametek","kind":"rank","text":"Rank moved down 35 places to #45 (score 69)."}
+{"date":"2026-10-22","id":"US-APH","name":"Amphenol","kind":"rank","text":"Rank moved down 39 places to #69 (score 63)."}
+{"date":"2026-10-22","id":"US-APH","name":"Amphenol","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-22","id":"US-ADI","name":"Analog Devices","kind":"rank","text":"Rank moved down 21 places to #25 (score 76)."}
+{"date":"2026-10-22","id":"US-ATO","name":"Atmos Energy","kind":"rank","text":"Rank moved up 59 places to #125 (score 46)."}
+{"date":"2026-10-22","id":"US-ATO","name":"Atmos Energy","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-ADSK","name":"Autodesk","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-AZO","name":"AutoZone","kind":"rank","text":"Rank moved up 34 places to #166 (score 29)."}
+{"date":"2026-10-22","id":"US-AZO","name":"AutoZone","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-AVY","name":"Avery Dennison","kind":"rank","text":"Rank moved down 21 places to #131 (score 43)."}
+{"date":"2026-10-22","id":"US-AVY","name":"Avery Dennison","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.55)."}
+{"date":"2026-10-22","id":"US-BALL","name":"Ball Corporation","kind":"rank","text":"Rank moved up 32 places to #39 (score 71)."}
+{"date":"2026-10-22","id":"US-BBY","name":"Best Buy","kind":"rank","text":"Rank moved down 29 places to #40 (score 71)."}
+{"date":"2026-10-22","id":"US-BE","name":"Bloom Energy","kind":"rank","text":"Rank moved down 28 places to #74 (score 62)."}
+{"date":"2026-10-22","id":"US-BE","name":"Bloom Energy","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-22","id":"US-BFB","name":"Brown–Forman","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-10-22","id":"US-BG","name":"Bunge Global","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.02)."}
+{"date":"2026-10-22","id":"US-BXP","name":"BXP, Inc.","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-CASY","name":"Casey's","kind":"rank","text":"Rank moved up 20 places to #133 (score 42)."}
+{"date":"2026-10-22","id":"US-CBOE","name":"Cboe Global Markets","kind":"rank","text":"Rank moved up 25 places to #15 (score 79)."}
+{"date":"2026-10-22","id":"US-CBRE","name":"CBRE Group","kind":"rank","text":"Rank moved down 35 places to #198 (score 14)."}
+{"date":"2026-10-22","id":"US-COR","name":"Cencora","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-CNP","name":"CenterPoint Energy","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-CNP","name":"CenterPoint Energy","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"rank","text":"Rank moved up 27 places to #55 (score 68)."}
+{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-CFG","name":"Citizens Financial Group","kind":"growth","text":"Joined the growing and turning up screen."}
+{"date":"2026-10-22","id":"US-CME","name":"CME Group","kind":"rank","text":"Rank moved up 48 places to #71 (score 63)."}
+{"date":"2026-10-22","id":"US-ED","name":"Consolidated Edison","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.23)."}
+{"date":"2026-10-22","id":"US-CSX","name":"CSX Corporation","kind":"rank","text":"Rank moved up 49 places to #16 (score 79)."}
+{"date":"2026-10-22","id":"US-DECK","name":"Deckers Brands","kind":"rank","text":"Rank moved down 24 places to #199 (score 13)."}
+{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"rank","text":"Rank moved up 41 places to #98 (score 55)."}
+{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-D","name":"Dominion Energy","kind":"growth","text":"Joined the growing and turning up screen."}
+{"date":"2026-10-22","id":"US-DHI","name":"D. R. Horton","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-DTE","name":"DTE Energy","kind":"rank","text":"Rank moved up 44 places to #139 (score 39)."}
+{"date":"2026-10-22","id":"US-DTE","name":"DTE Energy","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.40)."}
+{"date":"2026-10-22","id":"US-DUK","name":"Duke Energy","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-DUK","name":"Duke Energy","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-ETN","name":"Eaton Corporation","kind":"rank","text":"Rank moved down 44 places to #124 (score 47)."}
+{"date":"2026-10-22","id":"US-ETN","name":"Eaton Corporation","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-22","id":"US-EW","name":"Edwards Lifesciences","kind":"rank","text":"Rank moved up 34 places to #22 (score 77)."}
+{"date":"2026-10-22","id":"US-ETR","name":"Entergy","kind":"rank","text":"Rank moved up 36 places to #100 (score 55)."}
+{"date":"2026-10-22","id":"US-ETR","name":"Entergy","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-EFX","name":"Equifax","kind":"rank","text":"Rank moved up 22 places to #164 (score 31)."}
+{"date":"2026-10-22","id":"US-EFX","name":"Equifax","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-ESS","name":"Essex Property Trust","kind":"rank","text":"Rank moved up 22 places to #85 (score 59)."}
+{"date":"2026-10-22","id":"US-EXPE","name":"Expedia Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-EXPD","name":"Expeditors International","kind":"rank","text":"Rank moved up 25 places to #10 (score 81)."}
+{"date":"2026-10-22","id":"US-EXR","name":"Extra Space Storage","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-FFIV","name":"F5, Inc.","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.16)."}
+{"date":"2026-10-22","id":"US-FDS","name":"FactSet","kind":"rank","text":"Rank moved up 36 places to #72 (score 63)."}
+{"date":"2026-10-22","id":"US-FDX","name":"FedEx","kind":"rank","text":"Rank moved up 33 places to #4 (score 88)."}
+{"date":"2026-10-22","id":"US-FDX","name":"FedEx","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-22","id":"US-FDX","name":"FedEx","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-FLEX","name":"Flex Ltd.","kind":"rank","text":"Rank moved down 28 places to #66 (score 66)."}
+{"date":"2026-10-22","id":"US-FLEX","name":"Flex Ltd.","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.22)."}
+{"date":"2026-10-22","id":"US-FTV","name":"Fortive","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-10-22","id":"US-FTV","name":"Fortive","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-22","id":"US-FTV","name":"Fortive","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.01)."}
+{"date":"2026-10-22","id":"US-FCX","name":"Freeport-McMoRan","kind":"rank","text":"Rank moved down 32 places to #81 (score 60)."}
+{"date":"2026-10-22","id":"US-FCX","name":"Freeport-McMoRan","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"US-ERIE","name":"Erie Indemnity","kind":"rank","text":"Rank moved up 33 places to #146 (score 37)."}
+{"date":"2026-10-23","id":"US-AIG","name":"American International Group","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.04)."}
+{"date":"2026-10-23","id":"LSE-WTB","name":"Whitbread","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-23","id":"LSE-STAN","name":"Standard Chartered","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-PCT","name":"Polar Capital Technology Trust","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-NWG","name":"NatWest Group","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-NWG","name":"NatWest Group","kind":"rank","text":"Rank moved down 30 places to #64 (score 42)."}
+{"date":"2026-10-23","id":"LSE-MKS","name":"Marks \u0026 Spencer","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.11)."}
+{"date":"2026-10-23","id":"LSE-ITRK","name":"Intertek","kind":"news","text":"Unusual burst of news coverage (30-day tone +0.04)."}
+{"date":"2026-10-23","id":"LSE-IAG","name":"International Airlines Group","kind":"news","text":"Unusual burst of news coverage (30-day tone -0.14)."}
+{"date":"2026-10-23","id":"LSE-IAG","name":"International Airlines Group","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-IAG","name":"International Airlines Group","kind":"rank","text":"Rank moved down 26 places to #78 (score 33)."}
+{"date":"2026-10-23","id":"LSE-INF","name":"Informa","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-IMB","name":"Imperial Brands","kind":"trend","text":"Closed back above its 200-day average."}
+{"date":"2026-10-23","id":"LSE-IMI","name":"IMI","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-HSBA","name":"HSBC","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-GLEN","name":"Glencore","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-GLEN","name":"Glencore","kind":"rank","text":"Rank moved down 26 places to #28 (score 62)."}
+{"date":"2026-10-23","id":"LSE-CTEC","name":"Convatec","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-10-23","id":"LSE-CPG","name":"Compass Group","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-10-23","id":"LSE-CPG","name":"Compass Group","kind":"rank","text":"Rank moved up 46 places to #20 (score 67)."}
+{"date":"2026-10-23","id":"LSE-BTA","name":"BT Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-23","id":"LSE-BTRW","name":"Barratt Redrow","kind":"growth","text":"Joined the growing and turning up screen."}
+{"date":"2026-10-23","id":"LSE-BTRW","name":"Barratt Redrow","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-23","id":"LSE-BBY","name":"Balfour Beatty","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-10-23","id":"LSE-ABF","name":"Associated British Foods","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-10-23","id":"LSE-AAL","name":"Anglo American plc","kind":"trend","text":"Closed below its 200-day average."}

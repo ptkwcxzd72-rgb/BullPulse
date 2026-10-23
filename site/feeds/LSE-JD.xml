@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-JD.xml" rel="self" type="application/rss+xml"></atom:link>
   <title>BullPulse: JD Sports (JD)</title>
   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
   <description>Alerts for JD Sports from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>JD Sports: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
-   <guid>2026-10-22-LSE-JD-early</guid>
-   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
    <title>JD Sports: Unusual burst of news coverage (30-day tone +0.07)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
-   <guid>2026-10-22-LSE-JD-news</guid>
+   <guid isPermaLink="false">2026-10-22-LSE-JD-news</guid>
    <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
    <description>Unusual burst of news coverage (30-day tone +0.07). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JD Sports: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-JD</link>
+   <guid isPermaLink="false">2026-10-22-LSE-JD-early</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>
