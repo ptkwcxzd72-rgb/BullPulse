@@ -5,5 +5,12 @@
   <link>https://bullpulse.co.uk/app.html#US-APD</link>
   <description>Alerts for Air Products from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Air Products: Rank moved down 34 places to #57 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APD</link>
+   <guid>2026-10-22-US-APD-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #57 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

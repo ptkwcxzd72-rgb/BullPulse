@@ -5,5 +5,19 @@
   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
   <description>Alerts for Compass Group from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Compass Group: Rank moved down 49 places to #66 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
+   <guid>2026-10-22-LSE-CPG-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 49 places to #66 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Compass Group: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CPG</link>
+   <guid>2026-10-22-LSE-CPG-cross</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

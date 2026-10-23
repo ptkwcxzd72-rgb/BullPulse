@@ -5,5 +5,19 @@
   <link>https://bullpulse.co.uk/app.html#US-ATO</link>
   <description>Alerts for Atmos Energy from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Atmos Energy: Rank moved up 59 places to #125 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ATO</link>
+   <guid>2026-10-22-US-ATO-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 59 places to #125 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atmos Energy: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ATO</link>
+   <guid>2026-10-22-US-ATO-trend</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

@@ -5,5 +5,12 @@
   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
   <description>Alerts for F5, Inc. from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>F5, Inc.: Unusual burst of news coverage (30-day tone +0.16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
+   <guid>2026-10-22-US-FFIV-news</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.16). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>
