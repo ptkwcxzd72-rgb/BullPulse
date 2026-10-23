@@ -14,3 +14,4 @@ __pycache__/
 
 # rebuilt by the monthly validation run
 data/fundamentals_pit.jsonl
+data/fundamentals_pit_uk.jsonl

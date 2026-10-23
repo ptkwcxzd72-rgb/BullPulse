@@ -28,13 +28,18 @@ jobs:
           SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
         run: python scripts/fundamentals_history.py
         continue-on-error: true
+      - name: Point-in-time UK fundamentals (from the cached annual reports)
+        run: python scripts/uk_fundamentals_history.py
+        continue-on-error: true
       - name: Run validation
         run: go run ./cmd/validate
+      - name: Month-end history for "Test this screen"
+        run: go run ./cmd/panel
       - name: Commit report
         run: |
           git config user.name "bullpulse-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports site/data/validation.json
+          git add reports site/data/validation.json site/data/panel.json
           git diff --cached --quiet || git commit -m "Validation report $(date -u +%F)"
           git pull --rebase origin main
           git push
