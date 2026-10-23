@@ -76,9 +76,9 @@
         </div>
       </div>
       <div class="card">
-        <h2>Your watchlist as a feed list</h2>
+        <h2>Your watchlist and holdings as a feed list</h2>
         <p id="wtext">Star companies in the screener to build a watchlist. You can then download it as one file that any feed reader imports in a single step.</p>
-        <div><button class="btn ghost" id="opml">Download watchlist feeds (OPML)</button></div>
+        <div><button class="btn ghost" id="opml">Download feeds (OPML)</button></div>
         <ol class="steps2">
           <li>Download the file.</li>
           <li>In your feed reader, choose Import, often listed as "Import OPML".</li>
@@ -97,8 +97,10 @@ const MKT = { LSE: "UK", US: "US" };
 const base = new URL(".", location.href).href;
 let watch = new Set();
 try { watch = new Set(JSON.parse(localStorage.getItem("bp-watch") || "[]")); } catch (e) {}
+let mine = new Set();
+try { mine = new Set(((JSON.parse(localStorage.getItem("bp-holdings")) || {}).lots || []).map(l => l.id)); } catch (e) {}
 const qp = new URLSearchParams(location.search);
-const state = { kind: qp.get("kind") || "", stock: qp.get("stock") || "", onlyWatch: qp.get("watch") === "1" };
+const state = { kind: qp.get("kind") || "", stock: qp.get("stock") || "", onlyWatch: qp.get("watch") === "1", onlyMine: qp.get("mine") === "1" };
 const fmtDay = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" });
 const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -115,22 +117,24 @@ function saveURL(){
   if (state.kind) p.set("kind", state.kind);
   if (state.stock) p.set("stock", state.stock);
   if (state.onlyWatch) p.set("watch", "1");
+  if (state.onlyMine) p.set("mine", "1");
   const q = p.toString();
   try { history.replaceState(null, "", location.pathname + (q ? "?" + q : "")); } catch (e) {}
 }
 function render(){
   saveURL();
-  const pool = E.filter(e => (!state.stock || e.id === state.stock) && (!state.onlyWatch || watch.has(e.id)));
+  const pool = E.filter(e => (!state.stock || e.id === state.stock) && (!state.onlyWatch || watch.has(e.id)) && (!state.onlyMine || mine.has(e.id)));
   const counts = {};
   pool.forEach(e => counts[e.kind] = (counts[e.kind] || 0) + 1);
   $("chips").innerHTML = `<button class="chip" data-k="" aria-pressed="${!state.kind}">All<span class="n">${pool.length}</span></button>` +
     Object.keys(KINDS).filter(k => counts[k]).map(k => `<button class="chip" data-k="${k}" aria-pressed="${state.kind === k}">${KINDS[k]}<span class="n">${counts[k]}</span></button>`).join("") +
-    (state.stock ? "" : `<label class="onlyw"><input type="checkbox" id="ow" ${state.onlyWatch ? "checked" : ""}> Only my watchlist (${watch.size})</label>`);
+    (state.stock ? "" : `<label class="onlyw"><input type="checkbox" id="ow" ${state.onlyWatch ? "checked" : ""}> Only my watchlist (${watch.size})</label><label class="onlyw" style="margin-left:0"><input type="checkbox" id="om" ${state.onlyMine ? "checked" : ""}> Only my holdings (${mine.size})</label>`);
   document.querySelectorAll(".chip").forEach(b => b.onclick = () => { state.kind = b.dataset.k; render(); });
   if ($("ow")) $("ow").onchange = e => { state.onlyWatch = e.target.checked; render(); };
+  if ($("om")) $("om").onchange = e => { state.onlyMine = e.target.checked; render(); };
   const rows = pool.filter(e => !state.kind || e.kind === state.kind);
   if (!rows.length) {
-    $("list").innerHTML = `<p class="empty">${state.onlyWatch && !watch.size ? "Your watchlist is empty. Star companies in the screener to follow them here." : state.stock ? "No alerts for this company in the last 90 days. Alerts appear when its rank moves sharply, its trend turns, it files results, insiders buy or news spikes." : "No alerts match this filter."}</p>`;
+    $("list").innerHTML = `<p class="empty">${state.onlyMine && !mine.size ? `You haven't added any holdings. Add them on the <a href="portfolio.html#mine">Portfolio page</a> to see alerts for what you own.` : state.onlyWatch && !watch.size ? "Your watchlist is empty. Star companies in the screener to follow them here." : state.stock ? "No alerts for this company in the last 90 days. Alerts appear when its rank moves sharply, its trend turns, it files results, insiders buy or news spikes." : "No alerts match this filter."}</p>`;
     return;
   }
   const byDay = {};
@@ -141,7 +145,7 @@ function render(){
   }).join("")}</div>`).join("");
 }
 $("opml").onclick = () => {
-  const items = [...watch].map(id => S[id] ? `    <outline type="rss" text="${esc(S[id].name)}" title="${esc(S[id].name)}" xmlUrl="${base}feeds/${id}.xml" htmlUrl="${base}app.html#${id}"/>` : "").filter(Boolean);
+  const items = [...new Set([...watch, ...mine])].map(id => S[id] ? `    <outline type="rss" text="${esc(S[id].name)}" title="${esc(S[id].name)}" xmlUrl="${base}feeds/${id}.xml" htmlUrl="${base}app.html#${id}"/>` : "").filter(Boolean);
   if (!items.length) { $("wtext").textContent = "Your watchlist is empty. Star companies in the screener first, then come back to download the file."; return; }
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n  <head><title>BullPulse watchlist</title></head>\n  <body>\n${items.join("\n")}\n  </body>\n</opml>\n`;
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([xml], { type: "text/x-opml" })); a.download = "bullpulse-watchlist.opml"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
@@ -151,7 +155,7 @@ $("opml").onclick = () => {
     const [ev, snap] = await Promise.all([fetch("data/events.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : { events: [] }), fetch("data/snapshot.json", { cache: "no-cache" }).then(r => r.json())]);
     E = ev.events || []; (snap.stocks || []).forEach(s => S[s.id] = s);
   } catch (e) { $("list").innerHTML = `<p class="empty">Alerts could not be loaded. Check your connection and refresh the page.</p>`; return; }
-  if (watch.size) $("wtext").textContent = `Your watchlist has ${watch.size} compan${watch.size === 1 ? "y" : "ies"}. Download it as one file that any feed reader imports in a single step.`;
+  if (watch.size || mine.size) $("wtext").textContent = `Your watchlist and holdings cover ${new Set([...watch, ...mine]).size} companies. Download it as one file that any feed reader imports in a single step.`;
   if (state.stock && S[state.stock]) {
     const s = S[state.stock];
     $("stockhead").hidden = false;

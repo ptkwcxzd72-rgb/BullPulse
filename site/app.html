@@ -62,6 +62,7 @@
       </div>
       <div class="filters">
         <input type="search" id="q" placeholder="Search by name or ticker" aria-label="Search by name or ticker">
+        <select id="idxf" aria-label="Index"><option value="">All indices</option><option>FTSE 100</option><option>FTSE 250</option><option>S&amp;P 500</option></select>
         <select id="sector" aria-label="Sector"><option value="">All sectors</option></select>
         <label for="min">Minimum score <input type="range" id="min" min="0" max="90" step="10" value="0"><span class="num" id="minv">0</span></label>
       </div>
@@ -71,7 +72,8 @@
           <div><h4>Keep stocks that match every rule</h4><div id="rules"></div><button class="addrule" id="addrule">Add a rule</button></div>
           <div><h4>Rank what's left by</h4><div id="weights"></div><p class="sub" style="margin:6px 0 0">Each factor is a 0–100 percentile within its own market. When a stock has no figure for a factor (for example no fair-value estimate for banks), its weight is shared among the others.</p></div>
         </div>
-        <div class="bfoot"><span class="count" id="bcount"></span><input id="scrname" placeholder="Name this screen" aria-label="Screen name"><button class="bbtn" id="scrsave">Save</button><button class="bbtn ghost" id="scrshare">Copy link</button><button class="bbtn ghost" id="scrreset">Start again</button></div>
+        <div class="bfoot"><span class="count" id="bcount"></span><input id="scrname" placeholder="Name this screen" aria-label="Screen name"><button class="bbtn" id="scrsave">Save</button><button class="bbtn ghost" id="scrshare">Copy link</button><button class="bbtn ghost" id="scrreset">Start again</button><button class="bbtn" id="bttest" style="background:var(--midnight);color:#fff">Test on past data</button></div>
+        <div class="bt" id="bt" hidden></div>
         <div class="saved" id="saved"></div>
       </section>
       <div class="earlynote" id="earlynote" hidden><b>Early trend changes</b> are stocks whose long-term trend turned up recently (a golden cross within the last 60 trading days, or a move back above the 200-day average within 20), with momentum rising or in the top 60% of its market, news tone steady or improving and RSI below 70, so the move is not already stretched. Many early turns fail. These are candidates for closer research, not predictions of fast growth.</div>
@@ -122,9 +124,10 @@
         <button role="tab" data-tab="range" aria-selected="false">Range</button>
       </div>
       <div class="tp" data-tab="over" role="tabpanel">
+      <section class="sumbox" aria-label="Summary"><p id="d-summary"></p><div class="dates" id="d-dates"></div></section>
       <div class="ovl" id="ovl"></div>
       <div class="panes">
-        <div class="pane"><div class="tag2"><span><i style="background:var(--ft)"></i>50-day</span><span><i style="background:var(--band-sma)"></i>200-day</span><span><i style="background:var(--accent);height:6px;opacity:.35"></i>Range ahead</span></div><div id="c-price"></div></div>
+        <div class="pane"><div class="tag2"><span><i style="background:var(--ft)"></i>50-day</span><span><i style="background:var(--band-sma)"></i>200-day</span><span><i style="background:var(--accent);height:6px;opacity:.35"></i>Range ahead</span><span><i style="background:var(--muted)"></i>Market index</span></div><div id="c-price"></div></div>
         <div class="pane"><div class="tag2">Daily news tone <b id="t-tone"></b></div><div id="c-tone"></div></div>
         <div class="pane"><div class="tag2">RSI 14 <b id="t-rsi"></b></div><div id="c-rsi"></div></div>
         <div class="pane"><div class="tag2">Volume and on-balance volume</div><div id="c-vol"></div></div>
@@ -279,7 +282,7 @@ const state = { view: "all", mkt: "ALL", q: "", sector: "", min: 0, sortK: "scor
 const QP = new URLSearchParams(location.search);
 if (["all", "early", "grow", "fund", "watch", "custom"].includes(QP.get("view"))) state.view = QP.get("view");
 if (["ALL", "LSE", "US"].includes(QP.get("mkt"))) state.mkt = QP.get("mkt");
-state.q = (QP.get("q") || "").toLowerCase(); state.sector = QP.get("sector") || ""; state.min = Math.max(0, Math.min(90, +QP.get("min") || 0));
+state.q = (QP.get("q") || "").toLowerCase(); state.sector = QP.get("sector") || ""; state.idx = QP.get("idx") || ""; state.min = Math.max(0, Math.min(90, +QP.get("min") || 0));
 if (QP.get("sort")) { state.sortK = QP.get("sort"); state.dir = QP.get("dir") === "1" ? 1 : -1; }
 if (state.sortK === "my" && state.view !== "custom") state.sortK = "score";
 let compare = (QP.get("cmp") || "").split(",").filter(Boolean).slice(0, 3);
@@ -388,11 +391,208 @@ $("scrshare").onclick = async () => { saveURL(); try { await navigator.clipboard
 $("scrreset").onclick = () => { screen = blankScreen(); $("scrname").value = ""; persistScreen(); drawBuilder(); render(); };
 drawBuilder();
 
+// ---------- Test this screen on past data ----------
+let PANEL = null;
+const NOHIST = new Set(["S", "tone30", "insb"]);
+async function runBacktest(){
+  const box = $("bt"); box.hidden = false;
+  if (!PANEL) {
+    box.innerHTML = `<p class="btnote">Loading ten years of month-end data…</p>`;
+    try { PANEL = await (await fetch("data/panel.json", { cache: "no-cache" })).json(); }
+    catch (e) { box.innerHTML = `<p class="btnote">The history file isn't available yet. It's built by the monthly validation run; try again after it has run.</p>`; return; }
+  }
+  const P = PANEL, F = P.fields, sc = P.scale, nM = P.months.length;
+  const topN = +(($("bt-n") || {}).value || 20), costs = ($("bt-c") || { checked: true }).checked;
+  const val = (k, mi, i) => { const v = F[k] && F[k][mi] ? F[k][mi][i] : null; return v == null ? null : v / (sc[k] || 1); };
+  const ignored = screen.rules.filter(r => NOHIST.has(r[0])).map(r => FIELD[r[0]].l);
+  const w = screen.w, wsum0 = Object.entries(w).filter(([k]) => k !== "S").reduce((a, [, v]) => a + (+v || 0), 0);
+  const inMkt = i => (state.mkt === "ALL" || P.ex[i] === state.mkt) && (!state.idx || P.idx[i] === state.idx) && (!state.sector || P.sector[i] === state.sector);
+  const ok = (mi, i) => screen.rules.every(([f, op, a, b]) => {
+    if (NOHIST.has(f)) return true;
+    let v = val(f, mi, i); if (v == null) return false;
+    if (FIELD[f] && FIELD[f].pc) v *= 100;
+    if (op === ">=") return a === "" || a == null || v >= +a;
+    if (op === "<=") return a === "" || a == null || v <= +a;
+    return (a === "" || v >= +a) && (b === "" || b == null || v <= +b);
+  });
+  const myScore = (mi, i) => {
+    const comp = { T: val("T", mi, i), M: val("M", mi, i), G: val("G", mi, i), F: val("FP", mi, i) == null ? null : val("FP", mi, i) / 30 * 100, V: val("Vp", mi, i) };
+    let n = 0, d = 0; for (const k in comp) if ((w[k] || 0) > 0 && comp[k] != null) { n += w[k] * comp[k]; d += w[k]; }
+    return d ? n / d : (val("score", mi, i) ?? 0);
+  };
+  const series = { scr: [], avg: [], idx: [] }, held = [], turns = [], dates = [];
+  let prev = new Set();
+  for (let mi = 0; mi < nM; mi++) {
+    const elig = [], pick = [];
+    for (let i = 0; i < P.ids.length; i++) {
+      if (!inMkt(i) || F.score[mi][i] == null || P.fwd[mi][i] == null) continue;
+      elig.push(i); if (ok(mi, i)) pick.push(i);
+    }
+    if (elig.length < 20) continue;
+    pick.sort((a, b) => myScore(mi, b) - myScore(mi, a));
+    const hold = topN ? pick.slice(0, topN) : pick;
+    const r = arr => arr.length ? arr.reduce((a, i) => a + P.fwd[mi][i] / 1e4, 0) / arr.length : 0;
+    const now = new Set(hold), buys = hold.filter(i => !prev.has(i));
+    const turnover = hold.length ? buys.length / hold.length : 0;
+    let cost = 0;
+    if (costs && hold.length) cost = buys.reduce((a, i) => a + 0.001 + (P.ex[i] === "LSE" ? 0.005 : 0), 0) / hold.length + [...prev].filter(i => !now.has(i)).length / Math.max(hold.length, 1) * 0.001;
+    series.scr.push(hold.length ? r(hold) - cost : 0); series.avg.push(r(elig));
+    const bk = state.mkt === "LSE" ? ["ftse100"] : state.mkt === "US" ? ["sp500"] : ["ftse100", "sp500"];
+    const bv = bk.map(k => P.bench[k] && P.bench[k][mi] != null ? P.bench[k][mi] / 1e4 : null).filter(v => v != null);
+    series.idx.push(bv.length ? bv.reduce((a, b) => a + b, 0) / bv.length : null);
+    held.push(hold.length); turns.push(turnover); dates.push(P.months[mi]); prev = now;
+  }
+  if (dates.length < 12) { box.innerHTML = `<p class="btnote">Not enough history for this market and filter to test.</p>`; return; }
+  const grow = rs => { let v = 100; return [100, ...rs.map(r => v *= 1 + (r ?? 0))]; };
+  const stats = rs => {
+    const g = grow(rs), yrs = rs.length / 12, cagr = Math.pow(g[g.length - 1] / 100, 1 / yrs) - 1;
+    const m = rs.reduce((a, b) => a + (b ?? 0), 0) / rs.length, sd = Math.sqrt(rs.reduce((a, b) => a + ((b ?? 0) - m) ** 2, 0) / (rs.length - 1)) * Math.sqrt(12);
+    let peak = 0, dd = 0; g.forEach(v => { peak = Math.max(peak, v); dd = Math.min(dd, v / peak - 1); });
+    return { g, cagr, sd, dd };
+  };
+  const S = stats(series.scr), A = stats(series.avg), hasIdx = series.idx.some(v => v != null), I = hasIdx ? stats(series.idx) : null;
+  const beat = series.scr.filter((r, k) => r > series.avg[k]).length / series.scr.length;
+  const avgHeld = held.reduce((a, b) => a + b, 0) / held.length, avgTurn = turns.reduce((a, b) => a + b, 0) / turns.length;
+  const empty = held.filter(h => !h).length;
+  // chart
+  const Wd = 800, H = 220, all = [...S.g, ...A.g, ...(I ? I.g : [])], lo = Math.min(...all), hi = Math.max(...all);
+  const X = k => k / (S.g.length - 1) * (Wd - 60), Y = v => H - 22 - (Math.log(v) - Math.log(lo)) / ((Math.log(hi) - Math.log(lo)) || 1) * (H - 36);
+  const path = g => g.map((v, k) => (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(v).toFixed(1)).join("");
+  const lbl = (g, c) => `<text x="${Wd - 54}" y="${Y(g[g.length - 1]) + 4}" font-size="12" fill="${c}" font-weight="600">${Math.round(g[g.length - 1])}</text>`;
+  const idxName = state.mkt === "LSE" ? "FTSE 100" : state.mkt === "US" ? "S&P 500" : "FTSE 100 and S&P 500";
+  const years = {};
+  series.scr.forEach((r, k) => { const y = dates[k].slice(0, 4); years[y] = years[y] || { s: 1, a: 1 }; years[y].s *= 1 + r; years[y].a *= 1 + series.avg[k]; });
+  const p1 = v => (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(1) + "%";
+  box.innerHTML = `
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h4>How this screen would have done</h4><span class="sub">${dates[0].slice(0, 7)} to ${dates[dates.length - 1].slice(0, 7)}, rebalanced monthly</span></div>
+    <div class="btc"><label>Hold <select id="bt-n"><option value="10">top 10</option><option value="20">top 20</option><option value="30">top 30</option><option value="0">every match</option></select> by your ranking</label>
+      <label><input type="checkbox" id="bt-c" ${costs ? "checked" : ""}> Include dealing costs and UK stamp duty</label></div>
+    <svg viewBox="0 0 ${Wd} ${H}" preserveAspectRatio="none" role="img" aria-label="Growth of 100 for the screen, the average stock and the index">
+      <line x1="0" x2="${Wd - 60}" y1="${Y(100)}" y2="${Y(100)}" stroke="var(--line)" stroke-dasharray="4 4"/>
+      ${I ? `<path d="${path(I.g)}" fill="none" stroke="var(--muted)" stroke-width="1.5" vector-effect="non-scaling-stroke" stroke-dasharray="5 4"/>` : ""}
+      <path d="${path(A.g)}" fill="none" stroke="var(--fm)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <path d="${path(S.g)}" fill="none" stroke="var(--accent)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>
+      ${lbl(S.g, "var(--accent)")}${lbl(A.g, "var(--fm)")}${I ? lbl(I.g, "var(--muted)") : ""}
+    </svg>
+    <div class="btleg"><span><i style="background:var(--accent)"></i>Your screen</span><span><i style="background:var(--fm)"></i>Average stock in the same market</span>${I ? `<span><i style="background:var(--muted)"></i>${idxName} index fund</span>` : ""}<span>Growth of 100, log scale</span></div>
+    <div class="tw"><table class="btt"><thead><tr><th></th><th>Your screen</th><th>Average stock</th>${I ? `<th>${idxName}</th>` : ""}</tr></thead><tbody>
+      <tr><td>Return a year</td><td><b>${p1(S.cagr)}</b></td><td>${p1(A.cagr)}</td>${I ? `<td>${p1(I.cagr)}</td>` : ""}</tr>
+      <tr><td>Yearly swing (volatility)</td><td>${(S.sd * 100).toFixed(1)}%</td><td>${(A.sd * 100).toFixed(1)}%</td>${I ? `<td>${(I.sd * 100).toFixed(1)}%</td>` : ""}</tr>
+      <tr><td>Worst fall from a high</td><td>${p1(S.dd)}</td><td>${p1(A.dd)}</td>${I ? `<td>${p1(I.dd)}</td>` : ""}</tr>
+      <tr><td>Months beating the average stock</td><td>${(beat * 100).toFixed(0)}%</td><td></td>${I ? "<td></td>" : ""}</tr>
+      <tr><td>Stocks held, on average</td><td>${avgHeld.toFixed(1)}</td><td></td>${I ? "<td></td>" : ""}</tr>
+      <tr><td>Holdings replaced each month</td><td>${(avgTurn * 100).toFixed(0)}%</td><td></td>${I ? "<td></td>" : ""}</tr>
+    </tbody></table></div>
+    <div class="years">${Object.entries(years).map(([y, v]) => `<span><b>${y}</b><span class="${v.s >= v.a ? "pos" : "neg"}">${p1(v.s - 1)}</span> vs ${p1(v.a - 1)}</span>`).join("")}</div>
+    <p class="btnote">${empty ? `In ${empty} month${empty > 1 ? "s" : ""} no stock passed the rules, so the screen held cash. ` : ""}${ignored.length ? `Ignored in this test because there is no history: ${ignored.join(", ")}. ` : ""}Sentiment has no history, so your ranking uses the other factors. Each month-end uses only figures published by then. The stock list is today's index members, so companies that fell out of the index are missing, which flatters every column. Past results are hypothetical and do not predict future returns.</p>`;
+  $("bt-n").value = String(topN);
+  $("bt-n").onchange = runBacktest; $("bt-c").onchange = runBacktest;
+}
+$("bttest").onclick = runBacktest;
+
+// ---------- Plain-English summary, key dates and glossary ----------
+const GLOSS = {
+  "Trend": "Whether the price is in a long-term uptrend: above its 200-day average, the 50-day average above the 200-day (golden cross), and the Super Trend signal. Shown as a percentile within its market.",
+  "Momentum": "How much the shares rose over the past 12 months, leaving out the latest month (short-term moves often reverse). Percentile within its market.",
+  "Sentiment": "The tone of the past 30 days of news headlines, scored positive, neutral or negative by FinBERT, a language model trained on financial text.",
+  "P/E": "Price divided by the last twelve months' earnings per share: roughly how many years of today's profit you pay for. Lower is cheaper, but low P/Es can signal trouble.",
+  "Price / sales": "Market value divided by a year's revenue. Useful when profits are small or temporarily low.",
+  "FCF yield": "Free cash flow (operating cash flow minus capital spending) as a percentage of market value: the cash the business generates for each pound or dollar of share price.",
+  "Return on equity": "Profit as a percentage of shareholders' equity: how much the company earns on the money invested in it.",
+  "Debt / equity": "Borrowings as a percentage of shareholders' equity. Higher means more financial risk if business turns down.",
+  "Dividend yield": "A year's dividends per share as a percentage of the share price.",
+  "Market cap": "The total value of all the company's shares at today's price.",
+  "Net cash": "Cash minus borrowings. Positive means more cash than debt.",
+  "ATR 14": "Average true range over 14 days: the typical daily price swing, as a percentage of the price.",
+  "Volatility": "How much the price moves, as an annual percentage. Higher means a wider range of outcomes, up and down.",
+  "RSI 14": "Relative strength index: above 70 the shares have risen fast and may be stretched; below 30 they have fallen hard.",
+  "Golden cross": "The 50-day average moving above the 200-day average, a classic sign of a long-term uptrend starting.",
+  "Super Trend": "A trend-following signal based on price and daily range. 'Long' means the trend is up.",
+  "Revenue growth": "Sales compared with the same period a year earlier, from the company's filings.",
+  "Acceleration": "Whether revenue growth is speeding up or slowing compared with the previous period.",
+  "EPS growth": "Growth in earnings per share compared with a year earlier.",
+  "Growth percentile": "Revenue growth ranked against other stocks in the same market (100 = fastest).",
+  "Fundamentals profile": "30 pass-or-fail checks from the company's filings: six each for value, growth, track record, financial health and dividends.",
+  "Fair value estimate": "A discounted cash flow: what the business is worth if cash flow grows at the chosen rate, discounted at the required return, minus net debt. Very sensitive to the inputs.",
+  "Base estimate": "The fair value using the default assumptions shown on the sliders.",
+  "Insiders buying": "Directors and officers who bought shares with their own money in the open market in the last 90 days, from SEC Form 4 filings.",
+};
+let tipEl = null;
+function glossify(root){
+  root.querySelectorAll(".lbl, .fac .nm, .outl h3, .risk .lbl, .kv .lbl, .gpanel .lbl").forEach(el => {
+    if (el.querySelector(".gl")) return;
+    const txt = (el.firstChild && el.firstChild.nodeType === 3 ? el.firstChild.textContent : el.textContent).trim();
+    const key = Object.keys(GLOSS).find(k => txt === k || txt.startsWith(k + " "));
+    if (!key) return;
+    const b = document.createElement("button");
+    b.className = "gl"; b.type = "button"; b.textContent = "?"; b.dataset.g = key; b.setAttribute("aria-label", "What is " + key + "?");
+    if (el.firstChild && el.firstChild.nodeType === 3) el.insertBefore(b, el.firstChild.nextSibling); else el.appendChild(b);
+  });
+}
+function showTip(b){
+  hideTip(); const r = b.getBoundingClientRect();
+  tipEl = document.createElement("div"); tipEl.className = "gltip"; tipEl.setAttribute("role", "tooltip");
+  tipEl.innerHTML = `<b>${b.dataset.g}</b>${GLOSS[b.dataset.g]}`; document.body.appendChild(tipEl);
+  const w = tipEl.offsetWidth, h = tipEl.offsetHeight;
+  tipEl.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + "px";
+  tipEl.style.top = (r.top - h - 8 > 8 ? r.top - h - 8 : r.bottom + 8) + "px";
+}
+function hideTip(){ if (tipEl) { tipEl.remove(); tipEl = null; } }
+document.addEventListener("mouseover", e => { const b = e.target.closest && e.target.closest(".gl"); if (b) showTip(b); });
+document.addEventListener("mouseout", e => { if (e.target.closest && e.target.closest(".gl")) hideTip(); });
+document.addEventListener("focusin", e => { if (e.target.classList && e.target.classList.contains("gl")) showTip(e.target); });
+document.addEventListener("focusout", e => { if (e.target.classList && e.target.classList.contains("gl")) hideTip(); });
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".gl"); if (b) { e.preventDefault(); e.stopPropagation(); tipEl ? hideTip() : showTip(b); } }, true);
+addEventListener("scroll", hideTip, true);
+
+const longDate = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+function summary(s, X){
+  const mk = MKT[s.ex], idxName = s.ex === "LSE" ? "the FTSE 100" : "the S&P 500";
+  const parts = [];
+  parts.push(`${s.name} ranks #${s.rank} of ${nInMkt[s.ex]} ${mk} stocks, with a score of ${s.score} out of 100.`);
+  const tr = s.tr_raw >= 75 ? "up" : s.tr_raw >= 40 ? "mixed" : "down";
+  const gcTxt = s.gc.long ? (s.gc.since <= 60 ? `, with a golden cross ${s.gc.since} trading days ago` : "") : "";
+  const mom = s.M >= 67 ? "strong" : s.M >= 34 ? "middling" : "weak";
+  parts.push(`Its long-term trend is ${tr} (${s.above200 ? "above" : "below"} the 200-day average${gcTxt}) and 12-month momentum is ${mom} for its market.`);
+  let yr = `Over the past year the shares ${s.ret1y >= 0 ? "rose" : "fell"} ${Math.abs(s.ret1y * 100).toFixed(0)}%`;
+  if (s.vsIdx != null) yr += Math.abs(s.vsIdx) < 0.005 ? `, in line with ${idxName} with dividends included` : `, ${Math.abs(s.vsIdx * 100).toFixed(0)} points ${s.vsIdx >= 0 ? "better" : "worse"} than ${idxName} with dividends included`;
+  parts.push(yr + ".");
+  if (s.newsN30) parts.push(`News over the past month has been ${s.tone30 > 0.15 ? "mostly positive" : s.tone30 < -0.15 ? "mostly negative" : "mixed to neutral"}${s.event ? ", with an unusual burst of coverage in the last week" : ""}.`);
+  const F = X.fund;
+  if (F && F.profile) {
+    const ar = F.profile.areas.slice().sort((a, b) => b.score - a.score);
+    parts.push(`It passes ${F.profile.total} of 30 fundamental checks, strongest on ${ar[0].name.toLowerCase()} (${ar[0].score} of 6) and weakest on ${ar[ar.length - 1].name.toLowerCase()} (${ar[ar.length - 1].score} of 6).`);
+    if (F.dcf && F.dcf.base != null && s.fairVs != null) {
+      let t = `The price is ${Math.abs(s.fairVs * 100).toFixed(0)}% ${s.fairVs < 0 ? "below" : "above"} our base fair-value estimate`;
+      if (F.dcf.implied != null) t += ` and implies cash flow growing about ${(F.dcf.implied * 100).toFixed(0)}% a year`;
+      if (F.fin && F.fin.revCagr3 != null) t += `, against revenue growth of ${(F.fin.revCagr3 * 100).toFixed(0)}% a year over the last three years`;
+      parts.push(t + ".");
+    }
+  }
+  if (s.ins && s.ins.buyers) parts.push(`${s.ins.buyers} insider${s.ins.buyers > 1 ? "s" : ""} bought shares in the open market in the last 90 days.`);
+  if (s.nextRes) parts.push(`${s.resEst ? "Results are expected around" : "Results are due on"} ${longDate(s.nextRes)}.`);
+  return parts.join(" ");
+}
+function keyDates(s){
+  const out = [];
+  if (s.nextRes) out.push(`<span>${s.resEst ? "Results expected around" : "Next results"} <b>${shortDate(s.nextRes)}</b></span>`);
+  if (s.div) {
+    const amt = s.ccy === "GBX" ? s.div.amt.toFixed(2) + "p" : "$" + s.div.amt.toFixed(2);
+    out.push(`<span>Last dividend <b>${amt}</b> (ex ${shortDate(s.div.last)})</span>`);
+    if (s.div.next) out.push(`<span>Next ex-dividend expected around <b>${shortDate(s.div.next)}</b></span>`);
+    out.push(`<span>Paid in the last year <b>${(s.div.yld * 100).toFixed(1)}%</b> of the price</span>`);
+  } else if (D.stocks.some(o => o.ex === s.ex && o.div)) out.push(`<span>No dividend in the last five years</span>`); // only when dividend data exists for this market
+  if (s.vsIdx != null) out.push(`<span>1 year vs ${s.ex === "LSE" ? "FTSE 100" : "S&P 500"} <b class="${cls(s.vsIdx)}">${pct(s.vsIdx, 0)}</b></span>`);
+  if (s.idx) out.push(`<span>${s.idx}</span>`);
+  return out.join("");
+}
+
 function saveURL(){
   const p = new URLSearchParams();
   if (state.view !== "all") p.set("view", state.view);
   if (state.mkt !== "ALL") p.set("mkt", state.mkt);
   if (state.sector) p.set("sector", state.sector);
+  if (state.idx) p.set("idx", state.idx);
   if (state.q) p.set("q", state.q);
   if (state.min) p.set("min", state.min);
   if (state.sortK !== "score" || state.dir !== -1) { p.set("sort", state.sortK); p.set("dir", state.dir); }
@@ -426,6 +626,7 @@ $("opml").onclick = () => {
 };
 $("q").oninput = e => { state.q = e.target.value.trim().toLowerCase(); render(); };
 $("sector").onchange = e => { state.sector = e.target.value; render(); };
+$("idxf").onchange = e => { state.idx = e.target.value; render(); };
 $("min").oninput = e => { state.min = +e.target.value; $("minv").textContent = state.min; render(); };
 document.querySelectorAll("th[data-k]").forEach(th => th.onclick = () => {
   const k = th.dataset.k; state.dir = state.sortK === k ? -state.dir : (k === "name" || k === "rank" ? 1 : -1); state.sortK = k; render();
@@ -434,7 +635,7 @@ document.querySelectorAll("th[data-k]").forEach(th => th.onclick = () => {
 function visible(){
   if (state.view === "custom") scoreCustom();
   const inView = s => (state.view === "custom" && passes(s)) || state.view === "all" || (state.view === "early" && s.early) || (state.view === "grow" && s.grower) || (state.view === "fund" && s.FP >= 20) || (state.view === "watch" && watch.has(s.id));
-  return D.stocks.filter(s => inView(s) && (state.mkt === "ALL" || s.ex === state.mkt) && (!state.sector || s.sector === state.sector) && s.score >= state.min &&
+  return D.stocks.filter(s => inView(s) && (state.mkt === "ALL" || s.ex === state.mkt) && (!state.sector || s.sector === state.sector) && (!state.idx || s.idx === state.idx) && s.score >= state.min &&
     (!state.q || s.name.toLowerCase().includes(state.q) || s.t.toLowerCase().includes(state.q)))
    .sort((a, b) => { const x = a[state.sortK], y = b[state.sortK]; if (x == null || y == null) return (x == null) - (y == null); return (typeof x === "string" ? x.localeCompare(y) : (x - y)) * state.dir || b.score - a.score; });
 }
@@ -525,11 +726,24 @@ const volS = cv.addHistogramSeries({ priceScaleId: "vol", priceLineVisible: fals
 cv.priceScale("vol").applyOptions({ scaleMargins: { top: .3, bottom: 0 } });
 const obvS = cv.addLineSeries({ ...lineOpts, priceFormat: { type: "volume" } });
 
+const benchS = cp.addLineSeries({ ...lineOpts, lineWidth: 1.5, lineStyle: 0 });
+let BENCH = null;
+fetch("data/bench.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(b => { BENCH = b; if (state.sel) drawBench(state.sel); }).catch(() => {});
+function drawBench(s){
+  const key = s.ex === "LSE" ? "ftse100" : "sp500", b = BENCH && BENCH[key];
+  if (!b || !cur) { benchS.setData([]); return; }
+  const T = Object.keys(cur.idx).sort(), t0 = T[0], c0 = cur.close[0];
+  const ser0 = b.daily.filter(p => p[0] >= t0);
+  if (!ser0.length) { benchS.setData([]); return; }
+  const k = ser0[0][1];
+  benchS.setData(ser0.filter(p => cur.idx[p[0]] != null).map(p => ({ time: p[0], value: p[1] / k * c0 })));
+}
 const overlays = [
   ["SMA 50 / 200", [s50, s200], true, "--ft"],
   ["Bollinger bands", [bbU, bbL], false, "--band-sma"],
   ["News markers", null, true, "--fs"],
   ["Range ahead", fan.map(f => f[1]), true, "--accent"],
+  ["Market index", [benchS], true, "--muted"],
 ];
 let showMarkers = true;
 overlays.forEach(([label, series, on, col], i) => {
@@ -622,6 +836,8 @@ async function select(s){
     ["Growth percentile", s.G == null ? "–" : String(s.G), `within ${MKT[s.ex]} stocks shown`],
   ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
   $("d-pulse").innerHTML = pulse(s);
+  $("d-summary").textContent = summary(s, X);
+  $("d-dates").innerHTML = keyDates(s);
   fundamentals(s, X.fund);
   insiders(s, X.insiders);
   if (typeof trayUpdate === "function" && D) { const on = compare.includes(s.id); $("d-cmp").setAttribute("aria-pressed", on); $("d-cmp").textContent = on ? "Comparing" : "Compare"; }
@@ -631,6 +847,7 @@ async function select(s){
   $("d-ev").innerHTML = ev.map(e => `<div><span class="num">${shortDate(e.date)}</span><span>${e.text}</span></div>`).join("");
   // series
   candles.setData(X.bars.map(b => ({ time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] })));
+  benchS.applyOptions({ color: css("--muted") }); drawBench(s);
   s50.setData(ser(X.ind.sma50, T)); s200.setData(ser(X.ind.sma200, T)); bbU.setData(ser(X.ind.bbU, T)); bbL.setData(ser(X.ind.bbL, T));
   rsiS.setData(ser(X.ind.rsi, T)); obvS.setData(ser(X.ind.obv, T));
   const fut = futureDays(T[T.length - 1], 126);
@@ -700,6 +917,7 @@ async function select(s){
   $("d-news").innerHTML = (arts.length ? "" : `<p class="note" style="margin:0">No scored articles in the last 12 months.</p>`) + arts.map(a => `<button class="art" data-d="${a.d}"><span class="d">${shortDate(a.d)}</span><span class="h">${a.h}</span><span class="lab ${a.lab}">${a.lab} ${Math.round(a.conf * 100)}%</span><span class="sub">${a.ev} · ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${a.src}</a>` : a.src} · relevance ${a.rel.toFixed(2)}</span></button>`).join("");
   document.querySelectorAll(".art").forEach(b => b.onclick = () => focusDate(b.dataset.d));
   document.querySelectorAll("#tb tr").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === s.id));
+  glossify($("dos"));
 }
 
 // Dossier tabs (remembered per browser)
@@ -809,7 +1027,7 @@ function fundamentals(s, F){
 }
 
 // reflect state read from the link in the controls
-$("q").value = state.q; $("sector").value = state.sector; $("min").value = state.min; $("minv").textContent = state.min;
+$("q").value = state.q; $("sector").value = state.sector; $("idxf").value = state.idx || ""; $("min").value = state.min; $("minv").textContent = state.min;
 document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x.dataset.m === state.mkt));
 document.querySelectorAll(".vseg button").forEach(x => x.setAttribute("aria-pressed", x.dataset.v === state.view));
 $("earlynote").hidden = state.view !== "early"; $("grownote").hidden = state.view !== "grow"; $("fundnote").hidden = state.view !== "fund"; $("watchnote").hidden = state.view !== "watch";

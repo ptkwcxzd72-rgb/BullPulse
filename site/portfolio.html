@@ -66,6 +66,14 @@
 .perf svg{width:100%;height:220px;display:block}
 .perf .leg{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
 .perf .leg b{color:var(--ink);font-weight:600}
+.ptabs{display:flex;gap:4px;margin:14px 0 4px}
+.ptabs button{border:1px solid var(--night-line);background:transparent;color:var(--night-muted);border-radius:999px;padding:6px 14px;font-weight:600;font-size:13.5px;cursor:pointer}
+.ptabs button[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:var(--midnight)}
+.gain{font-variant-numeric:tabular-nums}
+.alist{display:grid;gap:2px;font-size:13px}
+.alist a{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:7px 4px;border-bottom:1px solid var(--grid);color:var(--ink);text-decoration:none}
+.alist a:hover{background:var(--surface-2)}
+.trade.buy{color:var(--up)} .trade.sell{color:var(--down)}
 .emptyp{padding:40px 24px;text-align:center;color:var(--muted)}
 .emptyp h2{margin:0 0 6px;color:var(--ink);font:650 20px var(--f-display)}
 @media (max-width:1060px){.pl{grid-template-columns:minmax(0,1fr)}.build{position:static}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -79,12 +87,48 @@
     <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html">Screener</a><a href="portfolio.html" aria-current="page">Portfolio</a><a href="alerts.html">Alerts</a></nav>
   </div>
   <div class="in pagehead">
-    <h1>Portfolio builder</h1>
-    <p>Pick stocks, choose how to weight them and set limits for any single holding or sector. You'll see the allocation, the sector and market mix, an estimate of risk and how this mix would have done over the past year. Everything stays in your browser.</p>
+    <h1>Portfolio</h1>
+    <div class="ptabs" role="tablist" aria-label="Portfolio views"><button role="tab" data-v="model" aria-selected="true">Model portfolio</button><button role="tab" data-v="mine" aria-selected="false">My holdings</button></div>
+    <p id="ptext">Pick stocks, choose how to weight them and set limits for any single holding or sector. You'll see the allocation, the sector and market mix, an estimate of risk and how this mix would have done over the past year. Everything stays in your browser.</p>
   </div>
 </header>
 
 <main class="in">
+  <div id="mine-view" hidden>
+    <div class="pl">
+      <aside class="card build" aria-label="Your holdings">
+        <section class="sec">
+          <h2>Add a holding</h2>
+          <div class="set">
+            <label for="h-stock">Company</label><input id="h-stock" list="stocklist" placeholder="Name or ticker" style="border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:13px;min-width:0">
+            <label for="h-sh">Shares</label><input type="number" id="h-sh" min="0" step="any">
+            <label for="h-px" id="h-pxl">Price paid</label><input type="number" id="h-px" min="0" step="any" placeholder="per share">
+            <label for="h-d">Date bought</label><input type="date" id="h-d" style="border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:13px">
+            <label for="h-acct">Account</label><input id="h-acct" placeholder="For example ISA, SIPP" style="border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:13px;min-width:0">
+          </div>
+          <div class="actions"><button class="bbtn" id="h-add">Add holding</button></div>
+          <p class="sub" style="margin:0">UK prices are in pence, US prices in dollars. The date lets us separate currency gains from share-price gains.</p>
+        </section>
+        <section class="sec">
+          <h2>Import from your broker</h2>
+          <p class="sub" style="margin:0">Download your holdings as a CSV file from your broker's website, then choose it here. We look for columns such as ticker or symbol, quantity, and average or book cost. The file is read in your browser and never uploaded.</p>
+          <input type="file" id="h-file" accept=".csv,text/csv" aria-label="Broker CSV file">
+          <p class="sub" id="h-imp" style="margin:0"></p>
+        </section>
+        <section class="sec">
+          <h2>Settings</h2>
+          <div class="set">
+            <label for="h-ccy">Show values in</label><select id="h-ccy"><option value="GBP">£ pounds</option><option value="USD">$ dollars</option></select>
+            <label for="h-target">Target mix</label><select id="h-target"><option value="">None</option><option value="model">My model portfolio</option></select>
+          </div>
+          <div class="actions"><button class="bbtn ghost" id="h-csv">Download CSV</button><button class="bbtn ghost" id="h-clear">Remove all</button></div>
+        </section>
+      </aside>
+      <section class="res" id="hres" aria-live="polite"></section>
+    </div>
+    <p class="disc" style="margin-top:22px">Prices are the latest end-of-day closes; currency conversion uses daily exchange rates. Figures are estimates for your own tracking, not a statement from your broker, and not investment advice. Your holdings are stored only in this browser.</p>
+  </div>
+  <div id="model-view">
   <div class="pl">
     <aside class="card build" aria-label="Build the portfolio">
       <section class="sec">
@@ -123,7 +167,8 @@
 
     <section class="res" id="res" aria-live="polite"></section>
   </div>
-  <p class="disc" style="margin-top:22px">A model for research and learning, not investment advice or a recommendation to buy or sell. Past performance is hypothetical: it uses today's choice of stocks and weights on the last year of prices, in each stock's own currency, with no dealing costs, taxes or currency moves. Risk figures come from the last year of daily prices and will change.</p>
+  </div>
+  <p class="disc" style="margin-top:22px" id="model-disc">A model for research and learning, not investment advice or a recommendation to buy or sell. Past performance is hypothetical: it uses today's choice of stocks and weights on the last year of prices, in each stock's own currency, with no dealing costs, taxes or currency moves. Risk figures come from the last year of daily prices and will change.</p>
 </main>
 
 <script>
@@ -132,6 +177,8 @@ const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(
 const MKT = { LSE: "UK", US: "US" };
 const COLORS = ["#0d7a6e", "#6a48c6", "#d08a1e", "#3d7fd6", "#c13a3a", "#3dbcab", "#8b5e34", "#a3354a", "#5a6274", "#14814e", "#eba648"];
 let D, BY = {}, SER = {};
+let BENCHP = null;
+fetch("data/bench.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(b => { BENCHP = b; }).catch(() => {});
 let P = { h: [], m: "equal", a: 10000, c: "GBP", hc: 15, sc: 35, mw: {} };
 const enc = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 const dec = t => { try { return JSON.parse(decodeURIComponent(escape(atob(t.replace(/-/g, "+").replace(/_/g, "/"))))); } catch (e) { return null; } };
@@ -250,7 +297,21 @@ async function update(redrawList = true){
     }).join("");
     let chart = "";
     if (rk && rk.path.length > 2) {
-      const W = 800, H = 220, lo = Math.min(...rk.path, 1), hi = Math.max(...rk.path, 1), X = i => i / (rk.path.length - 1) * (W - 70), Y = v => H - 22 - (v - lo) / ((hi - lo) || 1) * (H - 40);
+      // the indices blended by how much is in each market, rebalanced daily
+      let bp = null;
+      if (BENCHP) {
+        const uk = hs.reduce((a, s) => a + (s.ex === "LSE" ? w[s.id] : 0), 0);
+        const look = k => { const m = new Map(((BENCHP[k] || {}).daily || []).map(r => [r[0], r[1]])); return rk.dates.map(d => m.get(d)); };
+        const f = look("ftse100"), u = look("sp500");
+        let v = 1, lf = null, lu = null; bp = [];
+        for (let i = 0; i < rk.dates.length; i++) {
+          if (i && f[i] && u[i] && lf && lu) v *= 1 + uk * (f[i] / lf - 1) + (1 - uk) * (u[i] / lu - 1);
+          if (f[i]) lf = f[i]; if (u[i]) lu = u[i]; bp.push(v);
+        }
+        if (bp.length !== rk.path.length || bp[bp.length - 1] === 1) bp = null;
+      }
+      const all = bp ? rk.path.concat(bp) : rk.path;
+      const W = 800, H = 220, lo = Math.min(...all, 1), hi = Math.max(...all, 1), X = i => i / (rk.path.length - 1) * (W - 70), Y = v => H - 22 - (v - lo) / ((hi - lo) || 1) * (H - 40);
       const d = rk.path.map((v, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1)).join("");
       const fmt = dt => new Date(dt + "T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "2-digit", timeZone: "UTC" });
       chart = `<div class="card perf"><h3 style="margin:0;font:650 16px var(--f-display)">How this mix would have done over the past year</h3>
@@ -258,10 +319,11 @@ async function update(redrawList = true){
           <line x1="0" x2="${W - 70}" y1="${Y(1)}" y2="${Y(1)}" stroke="var(--line)" stroke-dasharray="4 4"/>
           <path d="${d}L${X(rk.path.length - 1)} ${H - 22}L0 ${H - 22}Z" fill="color-mix(in srgb,var(--teal) 16%,transparent)"/>
           <path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          ${bp ? `<path d="${bp.map((v, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1)).join("")}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>` : ""}
           <text x="${W - 64}" y="${Y(rk.path[rk.path.length - 1]) + 4}" font-size="13" fill="var(--ink)" font-weight="600">${(rk.ret >= 0 ? "+" : "") + (rk.ret * 100).toFixed(1)}%</text>
           <text x="0" y="${H - 4}" font-size="11" fill="var(--muted)">${fmt(rk.dates[0])}</text><text x="${W - 110}" y="${H - 4}" font-size="11" fill="var(--muted)">${fmt(rk.dates[rk.dates.length - 1])}</text>
         </svg>
-        <div class="leg"><span>Return <b class="${rk.ret >= 0 ? "pos" : "neg"}">${(rk.ret >= 0 ? "+" : "") + (rk.ret * 100).toFixed(1)}%</b></span><span>Worst fall from a high <b class="neg">${(rk.dd * 100).toFixed(1)}%</b></span><span>${money(amt)} would now be <b>${money(amt * (1 + rk.ret))}</b></span></div></div>`;
+        <div class="leg"><span>Return <b class="${rk.ret >= 0 ? "pos" : "neg"}">${(rk.ret >= 0 ? "+" : "") + (rk.ret * 100).toFixed(1)}%</b></span><span>Worst fall from a high <b class="neg">${(rk.dd * 100).toFixed(1)}%</b></span><span>${money(amt)} would now be <b>${money(amt * (1 + rk.ret))}</b></span>${bp ? `<span><span aria-hidden="true" style="display:inline-block;width:22px;border-top:2px dashed var(--muted);vertical-align:middle"></span> Indices in the same UK/US mix (FTSE 100, S&amp;P 500, dividends reinvested, before currency moves) <b class="${bp[bp.length - 1] >= 1 ? "pos" : "neg"}">${(bp[bp.length - 1] >= 1 ? "+" : "") + ((bp[bp.length - 1] - 1) * 100).toFixed(1)}%</b></span>` : ""}</div></div>`;
     }
     $("res").innerHTML = `
       ${ok ? "" : `<div class="warnbox">These limits can't all be met with ${hs.length} stock${hs.length > 1 ? "s" : ""}${Object.keys(sectors).length < 3 ? " in so few sectors" : ""}, so some holdings are above them. Add more stocks or raise the limits.</div>`}
@@ -280,6 +342,159 @@ async function update(redrawList = true){
   const ids = hs.map(s => s.id);
   await loadSeries(ids);
   if (P.h.join() === ids.join()) draw(risk(w));
+}
+
+// ---------- My holdings ----------
+let H = { lots: [], c: "GBP", target: "" }, FXH = null, EVENTS = null;
+try { H = { ...H, ...(JSON.parse(localStorage.getItem("bp-holdings")) || {}) }; } catch (e) {}
+const saveH = () => { try { localStorage.setItem("bp-holdings", JSON.stringify(H)); } catch (e) {} };
+// dollars per pound on a date (latest on or before), current rate when unknown
+function usdPerGbp(day){
+  const now = 1 / ((D.fx && D.fx.USD) || 0.75);
+  if (!day || !FXH || !FXH.length) return now;
+  let lo = 0, hi = FXH.length - 1, k = -1;
+  while (lo <= hi) { const m = (lo + hi) >> 1; if (FXH[m][0] <= day) { k = m; lo = m + 1; } else hi = m - 1; }
+  return k < 0 ? FXH[0][1] : FXH[k][1];
+}
+// value of one share-price unit in the base currency at a given dollars-per-pound rate
+function toBase(s, unitPrice, upg){
+  const local = s.ccy === "GBX" ? unitPrice / 100 : unitPrice;  // pounds or dollars
+  if (H.c === "GBP") return s.ccy === "GBX" ? local : local / upg;
+  return s.ccy === "GBX" ? local * upg : local;
+}
+const hm = v => (v < 0 ? "−" : "") + (H.c === "GBP" ? "£" : "$") + Math.abs(Math.round(v)).toLocaleString("en-GB");
+function parseCSV(text){
+  const rows = []; let row = [], f = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true; else if (c === ",") { row.push(f); f = ""; } else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; } else f += c;
+  }
+  if (f || row.length) { row.push(f); rows.push(row); }
+  return rows.filter(r => r.some(x => x.trim()));
+}
+const num = v => { const x = parseFloat(String(v || "").replace(/[£$,\s]|GBX|GBp|p$/gi, "")); return isFinite(x) ? x : null; };
+function findStock(code, name){
+  const c = String(code || "").toUpperCase().replace(/^(LON:|LSE:|NYSE:|NASDAQ:)/, "").replace(/(\.L|\.LN|:LN| LN| US)$/, "").replace(/\.$/, "").trim();
+  if (c) { const s = D.stocks.find(s => s.t.toUpperCase() === c || s.t.replace(".", "").toUpperCase() === c.replace(".", "")); if (s) return s; }
+  const n = String(name || "").toLowerCase().replace(/\b(plc|inc|ltd|group|holdings|corporation|corp|ordinary shares?|ord)\b\.?/g, "").replace(/[^a-z0-9 ]/g, "").trim();
+  if (n.length > 2) return D.stocks.find(s => s.name.toLowerCase().replace(/[^a-z0-9 ]/g, "").startsWith(n)) || D.stocks.find(s => n.startsWith(s.name.toLowerCase().replace(/[^a-z0-9 ]/g, "").split(" ")[0]) && s.name.length > 3);
+  return null;
+}
+function importCSV(text){
+  const rows = parseCSV(text); if (rows.length < 2) return "The file has no rows.";
+  let h = 0; while (h < Math.min(rows.length, 10) && !rows[h].some(c => /qty|quantity|shares|units|holding/i.test(c))) h++;
+  if (h >= rows.length) return "Couldn't find a quantity or shares column.";
+  const head = rows[h].map(c => c.trim().toLowerCase());
+  const col = re => head.findIndex(c => re.test(c));
+  const iT = col(/^(ticker|symbol|epic|code|tidm|instrument code|stock code)/), iN = col(/name|description|security|investment|holding$|stock$|instrument$/);
+  const iQ = col(/qty|quantity|shares|units/), iP = col(/avg|average|cost price|purchase price|price paid|book cost per|unit cost/), iC = col(/book cost|total cost|cost \(|^cost$|value at cost|amount invested/), iD = col(/date/);
+  let added = 0; const miss = [];
+  for (const r of rows.slice(h + 1)) {
+    const s = findStock(iT >= 0 ? r[iT] : "", iN >= 0 ? r[iN] : ""), q = num(r[iQ]);
+    if (!s || !q) { const lab = (iT >= 0 ? r[iT] : "") || (iN >= 0 ? r[iN] : ""); if (lab && q) miss.push(lab.trim()); continue; }
+    let p = iP >= 0 ? num(r[iP]) : null;
+    if (p == null && iC >= 0 && num(r[iC])) p = num(r[iC]) / q;
+    if (p != null && s.ccy === "GBX" && p < s.price / 20) p *= 100; // pounds given for a pence-quoted share
+    let d = iD >= 0 ? (r[iD] || "").trim() : "";
+    const m = d.match(/^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})$/); if (m) d = `${m[3]}-${m[2].padStart(2, "0")}-${m[1].padStart(2, "0")}`; else if (!/^\d{4}-\d{2}-\d{2}/.test(d)) d = ""; else d = d.slice(0, 10);
+    H.lots.push({ id: s.id, sh: q, px: p ?? s.price, d, acct: "", est: p == null }); added++;
+  }
+  saveH(); drawHoldings2();
+  return `Added ${added} holding${added === 1 ? "" : "s"}.` + (miss.length ? ` Not in BullPulse's lists, so skipped: ${miss.slice(0, 12).join(", ")}${miss.length > 12 ? "…" : ""}.` : "");
+}
+async function drawHoldings2(){
+  if (!FXH) { try { FXH = (await (await fetch("data/fx_history.json")).json()).usdPerGbp; } catch (e) { FXH = []; } }
+  if (!EVENTS) { try { EVENTS = (await (await fetch("data/events.json", { cache: "no-cache" })).json()).events; } catch (e) { EVENTS = []; } }
+  $("h-ccy").value = H.c; $("h-target").value = H.target || "";
+  const lots = H.lots.filter(l => BY[l.id]);
+  if (!lots.length) { $("hres").innerHTML = `<div class="card emptyp"><h2>Track what you own</h2><p>Add holdings on the left, or import the CSV file your broker lets you download. You'll see value, gains split into share price and currency, dividends, alerts for your companies and, if you choose a target mix, the trades to rebalance.</p></div>`; return; }
+  const upgNow = usdPerGbp(null);
+  const by = {};
+  let tv = 0, tc = 0, tfx = 0, tday = 0, tdiv = 0;
+  lots.forEach(l => {
+    const s = BY[l.id], upgBuy = usdPerGbp(l.d);
+    const val = l.sh * toBase(s, s.price, upgNow), cost = l.sh * toBase(s, l.px, upgBuy);
+    const fx = l.sh * (toBase(s, l.px, upgNow) - toBase(s, l.px, upgBuy));
+    const day = val - val / (1 + s.chg1d);
+    const div = s.div ? val * s.div.yld : (s.divY ? val * s.divY : 0);
+    const o = by[l.id] = by[l.id] || { s, sh: 0, val: 0, cost: 0, fx: 0, day: 0, div: 0, accts: new Set(), est: false };
+    o.sh += l.sh; o.val += val; o.cost += cost; o.fx += fx; o.day += day; o.div += div; if (l.acct) o.accts.add(l.acct); if (l.est) o.est = true;
+    tv += val; tc += cost; tfx += fx; tday += day; tdiv += div;
+  });
+  const items = Object.values(by).sort((a, b) => b.val - a.val);
+  // target mix from the model portfolio
+  let tw = null;
+  if (H.target === "model") { const { w } = weights(); tw = w; }
+  const g = tv - tc, gp = tc ? g / tc : 0;
+  const rows = items.map(o => {
+    const s = o.s, w = o.val / tv, t = tw ? (tw[s.id] || 0) : null;
+    let trade = "";
+    if (t != null) { const diff = (t - w) * tv, per = toBase(s, s.price, upgNow), shs = per > 0 ? Math.round(diff / per) : 0; trade = Math.abs(diff) < tv * 0.005 || !shs ? `<span class="sub">hold</span>` : `<span class="trade ${shs > 0 ? "buy" : "sell"}">${shs > 0 ? "Buy" : "Sell"} ${Math.abs(shs).toLocaleString("en-GB")}</span>`; }
+    const gain = o.val - o.cost;
+    return `<tr><td><b>${esc(s.name)}</b><div class="sub"><span class="mkt ${s.ex}">${MKT[s.ex]}</span> ${esc(s.t)}${o.accts.size ? ", " + esc([...o.accts].join(", ")) : ""}${o.est ? ", cost not in file" : ""}</div></td>
+      <td class="r num">${o.sh.toLocaleString("en-GB", { maximumFractionDigits: 4 })}</td>
+      <td class="r num">${hm(o.val)}</td>
+      <td class="r num gain ${cls(gain)}">${hm(gain)}<div class="sub">${o.cost ? pct1(gain / o.cost) : ""}${Math.abs(o.fx) >= 1 ? `, currency ${hm(o.fx)}` : ""}</div></td>
+      <td class="r num">${(w * 100).toFixed(1)}%${t != null ? `<div class="sub">target ${(t * 100).toFixed(1)}%</div>` : ""}</td>
+      ${tw ? `<td class="r">${trade}</td>` : ""}
+      <td class="r num">${s.score}</td></tr>`;
+  }).join("");
+  // model holdings not yet owned
+  const missing = tw ? Object.keys(tw).filter(id => !by[id] && tw[id] > 0).map(id => { const s = BY[id], per = toBase(s, s.price, upgNow), shs = per > 0 ? Math.round(tw[id] * tv / per) : 0; return `<tr><td><b>${esc(s.name)}</b><div class="sub"><span class="mkt ${s.ex}">${MKT[s.ex]}</span> ${esc(s.t)}, in your target mix</div></td><td class="r num">0</td><td class="r num">${hm(0)}</td><td></td><td class="r num">0%<div class="sub">target ${(tw[id] * 100).toFixed(1)}%</div></td><td class="r"><span class="trade buy">Buy ${shs.toLocaleString("en-GB")}</span></td><td class="r num">${s.score}</td></tr>`; }).join("") : "";
+  const sectors = {}, markets = {};
+  items.forEach(o => { sectors[o.s.sector] = (sectors[o.s.sector] || 0) + o.val / tv; markets[MKT[o.s.ex]] = (markets[MKT[o.s.ex]] || 0) + o.val / tv; });
+  const mix = (o, colorBy) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v], i) => `<div class="mrow"><span>${esc(k)}</span><b>${(v * 100).toFixed(1)}%</b><span class="bar2"><span style="width:${v * 100}%;background:${colorBy ? colorBy(k) : COLORS[i % COLORS.length]}"></span></span></div>`).join("");
+  const held = new Set(Object.keys(by));
+  const myEv = (EVENTS || []).filter(e => held.has(e.id)).slice(0, 12);
+  $("hres").innerHTML = `
+    <div class="stats">
+      <div><span class="sub">Value</span><span class="v">${hm(tv)}</span><span class="s">${items.length} holding${items.length > 1 ? "s" : ""}; ${tday >= 0 ? "up" : "down"} ${hm(Math.abs(tday))} on the day</span></div>
+      <div><span class="sub">Gain or loss</span><span class="v ${cls(g)}">${hm(g)}</span><span class="s">${pct1(gp)} on ${hm(tc)} invested</span></div>
+      <div><span class="sub">From currency moves</span><span class="v ${cls(tfx)}">${hm(tfx)}</span><span class="s">part of the gain or loss</span></div>
+      <div><span class="sub">Dividends, a year</span><span class="v">${hm(tdiv)}</span><span class="s">at the last year's payouts</span></div>
+    </div>
+    <div class="card"><div class="ch"><h2>Your holdings</h2><span class="sub">Latest closes; ${H.c === "GBP" ? "pounds" : "dollars"} at today's exchange rate</span></div>
+      <div class="tw"><table class="at"><thead><tr><th>Company</th><th class="r">Shares</th><th class="r">Value</th><th class="r">Gain or loss</th><th class="r">Weight</th>${tw ? `<th class="r">To rebalance</th>` : ""}<th class="r">Score</th></tr></thead><tbody>${rows}${missing}</tbody></table></div></div>
+    <div class="mix"><div class="card"><h3>By sector</h3>${mix(sectors)}</div><div class="card"><h3>By market</h3>${mix(markets, k => k === "UK" ? "var(--uk)" : "var(--us)")}</div></div>
+    <div class="card" style="padding:16px 18px;display:grid;gap:8px"><h3 style="margin:0;font:650 16px var(--f-display)">Alerts for your companies</h3>
+      ${myEv.length ? `<div class="alist">${myEv.map(e => `<a href="app.html#${e.id}"><span class="sub">${new Date(e.date + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" })}</span><span><b>${esc(e.name)}</b>: ${esc(e.text)}</span></a>`).join("")}</div>` : `<p class="sub" style="margin:0">No alerts for your companies in the last 90 days.</p>`}
+      <p style="margin:0"><a href="alerts.html?mine=1">See them on the Alerts page</a>, where you can also follow your holdings in a feed reader.</p></div>`;
+}
+const pct1 = v => (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(1) + "%";
+const cls = x => x > 0 ? "pos" : x < 0 ? "neg" : "flat";
+function setView(v){
+  document.querySelectorAll(".ptabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.v === v));
+  $("mine-view").hidden = v !== "mine"; $("model-view").hidden = v !== "model"; $("model-disc").hidden = v !== "model";
+  $("ptext").textContent = v === "mine" ? "Track the shares you actually own: value, gains split into share price and currency, dividends, alerts and the trades that would bring you back to a target mix. Everything stays in your browser." : "Pick stocks, choose how to weight them and set limits for any single holding or sector. You'll see the allocation, the sector and market mix, an estimate of risk and how this mix would have done over the past year. Everything stays in your browser.";
+  try { localStorage.setItem("bp-pview", v); } catch (e) {}
+  if (v === "mine") drawHoldings2();
+}
+function initHoldings(){
+  document.querySelectorAll(".ptabs button").forEach(b => b.onclick = () => setView(b.dataset.v));
+  const sync = () => { const s = D.stocks.find(s => `${s.name} (${s.t})` === $("h-stock").value); $("h-pxl").textContent = s ? `Price paid (${s.ccy === "GBX" ? "pence" : "dollars"})` : "Price paid"; if (s && !$("h-px").value) $("h-px").placeholder = (s.ccy === "GBX" ? "now " + s.price.toFixed(1) + "p" : "now $" + s.price.toFixed(2)); };
+  $("h-stock").oninput = sync;
+  $("h-add").onclick = () => {
+    const v = $("h-stock").value.trim().toLowerCase();
+    const s = D.stocks.find(s => `${s.name} (${s.t})`.toLowerCase() === v) || D.stocks.find(s => s.t.toLowerCase() === v) || D.stocks.find(s => s.name.toLowerCase().includes(v));
+    const sh = +$("h-sh").value;
+    if (!s || !(sh > 0)) { $("h-add").textContent = !s ? "Choose a company" : "Enter the shares"; setTimeout(() => $("h-add").textContent = "Add holding", 1800); return; }
+    const px = +$("h-px").value || s.price;
+    H.lots.push({ id: s.id, sh, px, d: $("h-d").value || "", acct: $("h-acct").value.trim(), est: !$("h-px").value });
+    ["h-stock", "h-sh", "h-px", "h-d"].forEach(k => $(k).value = ""); saveH(); drawHoldings2();
+  };
+  $("h-file").onchange = async e => { const f = e.target.files[0]; if (!f) return; $("h-imp").textContent = importCSV(await f.text()); e.target.value = ""; };
+  $("h-ccy").onchange = () => { H.c = $("h-ccy").value; saveH(); drawHoldings2(); };
+  $("h-target").onchange = () => { H.target = $("h-target").value; saveH(); drawHoldings2(); };
+  $("h-clear").onclick = () => { if ($("h-clear").dataset.sure) { H.lots = []; saveH(); drawHoldings2(); $("h-clear").textContent = "Remove all"; delete $("h-clear").dataset.sure; } else { $("h-clear").dataset.sure = 1; $("h-clear").textContent = "Click again to remove all"; setTimeout(() => { $("h-clear").textContent = "Remove all"; delete $("h-clear").dataset.sure; }, 3000); } };
+  $("h-csv").onclick = () => {
+    const lines = [["Company", "Ticker", "Market", "Shares", "Price paid", "Date bought", "Account"].join(",")];
+    H.lots.forEach(l => { const s = BY[l.id]; if (s) lines.push([`"${s.name.replace(/"/g, '""')}"`, s.t, MKT[s.ex], l.sh, l.px, l.d, `"${(l.acct || "").replace(/"/g, '""')}"`].join(",")); });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([lines.join("\n") + "\n"], { type: "text/csv" })); a.download = "bullpulse-holdings.csv"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  };
+  let v = "model"; try { v = localStorage.getItem("bp-pview") || "model"; } catch (e) {}
+  if (location.hash === "#mine") v = "mine";
+  setView(v);
 }
 
 function addIds(ids){ ids.forEach(id => { if (BY[id] && !P.h.includes(id) && P.h.length < 40) P.h.push(id); }); update(); }
@@ -339,6 +554,7 @@ function syncInputs(){ $("amt").value = P.a; $("ccy").value = P.c; $("hcap").val
   };
   drawSaved();
   update();
+  initHoldings();
 })();
 if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 </script>

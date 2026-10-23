@@ -70,7 +70,7 @@ jobs:
         timeout-minutes: 268
         continue-on-error: true
 
-      - name: UK end-of-day prices (FTSE 100) and GBP exchange rates
+      - name: UK end-of-day prices (FTSE 350), index benchmarks, exchange rates and dividends
         run: python scripts/sync_uk_prices.py
         # done by the evening job; run here only for a same-day re-rank
         if: ${{ inputs.skip_us_prices }}
@@ -90,6 +90,12 @@ jobs:
 
       - name: UK annual-report figures from ESEF filings (weekly)
         run: python scripts/fetch_uk_fundamentals.py
+        # done by the evening job; run here only for a same-day re-rank
+        if: ${{ inputs.skip_us_prices }}
+        continue-on-error: true
+
+      - name: Next results dates (Finnhub)
+        run: python scripts/fetch_earnings_dates.py
         # done by the evening job; run here only for a same-day re-rank
         if: ${{ inputs.skip_us_prices }}
         continue-on-error: true

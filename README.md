@@ -19,6 +19,10 @@ Alongside the score, BullPulse shows:
 - **Fair value (DCF)**: a two-stage discounted cash flow of cash flow to the whole business (after share-based pay, before interest), with net debt subtracted. Visitors can change growth, required return and long-run growth on the page. A **reverse DCF** shows the growth today's price implies. Skipped for banks, insurers and property companies, and when average free cash flow is negative.
 - **Insider dealing** (US): open-market buys and sells by directors and officers from SEC Form 4, with a *cluster buying* flag when two or more insiders buy within 90 days.
 - **Alerts without accounts**: RSS feeds for every stock and for everything (rank moves, trend changes, new results, insider buying, news bursts). A watchlist can be exported as an OPML feed list for any feed reader.
+- **Build your own screen** from 31 fields and six factors, and **test it on past data**: ten years of month-ends rebuilt from point-in-time prices and filings, with dealing costs and UK stamp duty, against the average stock and the FTSE 100 / S&P 500 (total return).
+- **Index comparisons**: every stock's one-year return against its index, an index line on its chart, and an index line on the model portfolio.
+- **Portfolio**: a model-portfolio builder (weights, limits, risk, past year) and a holdings tracker. Holdings can be typed in or imported from a broker's CSV file; the page shows value, gain or loss split into share price and currency, dividends, sector and market mix, alerts for the companies held and the trades that would bring the holdings back to the model mix. Everything stays in the visitor's browser.
+- **Plain English**: a rule-based summary paragraph on every stock, an explanation of each term on hover, and key dates (next results, last and next ex-dividend).
 - **Compare** up to three stocks side by side; every filter, view and comparison is kept in the page link, so screens can be shared. The site installs as an app on phones and works offline with the last data seen.
 
 These extra figures are displayed and screened on, but not added to the composite until the validation shows they help. The monthly validation includes a **point-in-time backtest** of the Fundamentals Profile, DCF and reverse DCF, rebuilt at every month-end from SEC filings as they were published, so the test never uses figures before investors could see them.
@@ -33,7 +37,8 @@ For each stock, the website shows the score and the reasons behind it, linked pr
 SEC EDGAR filings ──► fetch_fundamentals.py, fetch_insiders.py ─┐
 UK ESEF reports ───► fetch_uk_fundamentals.py (weekly) ──────────┤
 Tiingo EOD prices ──► indicator-sync ──► data/prices/*.csv ──────┤
-UK EOD prices ─────► sync_uk_prices.py ─┘                         │
+UK EOD prices, index funds, FX, dividends ► sync_uk_prices.py ───┤
+Finnhub results dates ─► fetch_earnings_dates.py ─────────────────┘
 GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────┤
                          (FinBERT)                          ▼
                                     cmd/screener (Go + cinar/indicator)
@@ -47,6 +52,7 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 - **Data checks.** Stocks whose last price is over a week old are left out. Gaps and split-like jumps are flagged on the site, and the stock is re-downloaded the next night. All prices are re-downloaded once a month so split and dividend adjustments stay correct. The report is in `data/quality.json`.
 - **Score history.** Every night's scores are appended to `data/history/scores.csv`, and each stock page charts its last 180 days. In a few months this history lets the validation test whether news sentiment adds value.
 - **News handling.** Company-specific stories (results, guidance, deals, legal) count more than general coverage. Headlines that don't name the company count at 35%. Bank analyst notes about other companies don't count as news about the bank. The same story syndicated by several outlets counts once.
+- **Two schedules.** `evening.yml` (17:15 UTC on weekdays, after the London close) fetches UK prices, the index funds (ISF.L for the FTSE 100, SPY for the S&P 500), exchange rates, dividends, filings, insider dealing, results dates and news. `nightly.yml` (21:15 UTC) fetches US prices, ranks everything and publishes the site. `validate.yml` (monthly) rebuilds the point-in-time history, the validation report and `site/data/panel.json`, which the screen backtest reads.
 - [`site/`](site) is a static page with no server. It shows fictional demo data until the first nightly run publishes real data.
 
 ## Running cost: free
@@ -63,7 +69,8 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 | UK prices | Yahoo Finance public chart endpoint (no key; unofficial) | Free |
 | UK fundamentals | filings.xbrl.org ESEF reports, GLEIF and LSE identifiers (no key) | Free |
 | Alerts for visitors | RSS feeds published with the site | Free |
-| US news | Finnhub free key (optional; GDELT otherwise) | Free |
+| US news and results dates | Finnhub free key (optional; GDELT otherwise) | Free |
+| Index benchmarks, FX, dividends | Yahoo Finance public chart endpoint | Free |
 | Alerts | A GitHub issue is opened when a nightly or validation run fails (GitHub emails you) | Free |
 
 ## Setup
@@ -87,7 +94,7 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 ## Universe
 
 - `universe/us.csv`: S&P 500 constituents from [datasets/s-and-p-500-companies](https://github.com/datasets/s-and-p-500-companies).
-- `universe/uk.csv`: FTSE 100 constituents.
+- `universe/uk.csv`: FTSE 100 constituents; `universe/uk250.csv`: FTSE 250 constituents (both carry an `index` column).
 
 Columns: `ticker,name,sector,market,provider_ticker`. `provider_ticker` is the symbol used by the price source and the file name in `data/prices`.
 

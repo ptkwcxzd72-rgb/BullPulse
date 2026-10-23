@@ -399,7 +399,7 @@ footer .legal{grid-column:1 / -1;font-size:12.5px;line-height:1.6;max-width:110c
       </div>
       <div class="stats">
         <div class="stat rv"><div class="v num" data-count="0" data-prefix="£">£0<small>/month</small></div><p>Running cost. Free data, open models and free hosting, by design.</p></div>
-        <div class="stat rv d1"><div class="v num" id="stat-stocks" data-count="220">220</div><p id="stat-stocks-p">US shares ranked every night on free data. FTSE 100 support is built in and switches on with a UK price source.</p></div>
+        <div class="stat rv d1"><div class="v num" id="stat-stocks" data-count="220">220</div><p id="stat-stocks-p">Shares ranked every night on free data: the FTSE 350 and the largest S&P 500 companies.</p></div>
         <div class="stat rv d2"><div class="v num" id="stat-news" data-count="1000" data-suffix="+">1,000+</div><p>Headlines read and scored on a typical night.</p></div>
       </div>
       <div class="principles">
@@ -575,7 +575,7 @@ document.querySelectorAll("[data-count]").forEach(el => io2.observe(el));
   if (!D.demo && S.length) {
     const us = S.filter(s => s.ex === "US").length, uk = S.length - us, el = $("stat-stocks");
     el.dataset.count = S.length; el.textContent = S.length;
-    $("stat-stocks-p").textContent = uk ? `Shares ranked every night: ${us} US and ${uk} UK.` : `US shares ranked every night on free data. FTSE 100 support is built in and switches on with a UK price source.`;
+    $("stat-stocks-p").textContent = uk ? `Shares ranked every night: ${us} US and ${uk} UK.` : `Shares ranked every night on free data: the FTSE 350 and the largest S&P 500 companies.`;
   }
   if (!S.length) return;
   // ticker tape (duplicated for a seamless loop)

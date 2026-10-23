@@ -601,6 +601,9 @@ func main() {
 	if err := writeBenchJSON(filepath.Join(*out, "bench.json"), benches); err != nil {
 		log.Error("bench", "error", err)
 	}
+	if err := writeFXJSON(filepath.Join(filepath.Dir(*fxPath), "fx_history.csv"), filepath.Join(*out, "fx_history.json")); err != nil && !os.IsNotExist(err) {
+		log.Error("fx history", "error", err)
+	}
 	history = history.with(day, rows)
 	var events []Event
 	if prevAsof == day { // same prices as the last run: keep that run's alerts for the day

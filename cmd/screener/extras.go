@@ -173,3 +173,31 @@ func readJSON(path string, v any) bool {
 func benchPaths(dir string) map[string]string {
 	return map[string]string{"ftse100": filepath.Join(dir, "bench-ftse100.csv"), "sp500": filepath.Join(dir, "bench-sp500.csv")}
 }
+
+// writeFXJSON publishes the daily dollars-per-pound history for the holdings page, which
+// converts past purchase costs at the rate of the day they were bought.
+func writeFXJSON(src, dst string) error {
+	f, err := os.Open(src)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	rows, err := csv.NewReader(f).ReadAll()
+	if err != nil {
+		return err
+	}
+	var out [][2]any
+	for _, r := range rows {
+		if len(r) < 2 || r[0] == "date" {
+			continue
+		}
+		if v, err := strconv.ParseFloat(r[1], 64); err == nil && v > 0 {
+			out = append(out, [2]any{r[0], v})
+		}
+	}
+	b, err := json.Marshal(map[string]any{"usdPerGbp": out})
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(dst, b, 0o644)
+}

@@ -357,3 +357,31 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .saved{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .saved .del{border:0;padding:0 2px;color:var(--muted);background:transparent}
 @media (max-width:760px){.bgrid{grid-template-columns:1fr}.rule{grid-template-columns:minmax(0,1fr) 84px;}.rule .vals{grid-column:1}.wrow{grid-template-columns:100px minmax(0,1fr) 36px}}
+
+/* ---------- screen backtest ---------- */
+.bt{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px;display:grid;gap:14px}
+.rankcard .bt .tw{height:auto;min-height:0;max-height:none;overflow-x:auto}
+.bt h4{margin:0;font:650 16px var(--f-display);color:var(--ink)}
+.btc{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.btc select{border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:var(--surface);font-size:13px}
+.bt svg{width:100%;height:220px;display:block}
+.btleg{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.btleg i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.btt{width:100%;border-collapse:collapse;font-size:13px;min-width:0}
+.btt th,.btt td{padding:7px 8px;border-bottom:1px solid var(--grid);text-align:right;position:static}
+.btt th:first-child,.btt td:first-child{text-align:left}
+.years{display:flex;gap:6px;flex-wrap:wrap}
+.years span{font-size:12px;border-radius:8px;padding:4px 8px;background:var(--surface-2);font-variant-numeric:tabular-nums}
+.years b{font-weight:600;margin-right:4px}
+.btnote{font-size:12.5px;color:var(--muted);margin:0;max-width:90ch}
+
+/* ---------- summary, key dates, glossary ---------- */
+.sumbox{padding:16px 20px;border-bottom:1px solid var(--line);display:grid;gap:12px}
+.sumbox p{margin:0;font-size:14px;line-height:1.6;max-width:75ch}
+.dates{display:flex;gap:8px;flex-wrap:wrap}
+.dates span{font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.dates b{color:var(--ink);font-weight:600}
+.gl{display:inline-grid;place-items:center;width:15px;height:15px;margin-left:4px;border-radius:50%;border:1px solid currentColor;background:transparent;color:var(--muted);font:600 10px/1 var(--f-body);cursor:help;vertical-align:1px;padding:0;opacity:.75}
+.gl:hover,.gl:focus-visible{opacity:1;color:var(--accent)}
+.gltip{position:fixed;z-index:80;max-width:300px;background:var(--midnight);color:var(--night-ink);font-size:12.5px;line-height:1.5;padding:9px 12px;border-radius:10px;box-shadow:0 10px 30px rgba(14,24,40,.3);pointer-events:none}
+.gltip b{display:block;color:var(--teal);margin-bottom:2px}
