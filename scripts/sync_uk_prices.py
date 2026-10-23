@@ -61,7 +61,20 @@ def unfinished_day(now: dt.datetime | None = None) -> str:
     return now.date().isoformat() if now.hour < 17 else ""
 
 
-def parse_chart(d: dict) -> tuple[str, list[list]]:
+def parse_dividends(d: dict, scale: float) -> list[list]:
+    """[[ex-date, amount per share in the price's units], ...] from a chart response."""
+    try:
+        evs = (d["chart"]["result"][0].get("events") or {}).get("dividends") or {}
+    except (KeyError, IndexError, TypeError):
+        return []
+    out = []
+    for e in evs.values():
+        if e.get("amount"):
+            out.append([dt.datetime.fromtimestamp(e["date"], dt.timezone.utc).date().isoformat(), round(e["amount"] * scale, 4)])
+    return sorted(out)
+
+
+def parse_chart(d: dict, scale_override: float | None = None) -> tuple[str, list[list]]:
     """(currency, rows of [date, open, high, low, close, volume]) adjusted for splits and dividends."""
     res = (d or {}).get("chart", {}).get("result") or []
     if not res:
@@ -71,7 +84,7 @@ def parse_chart(d: dict) -> tuple[str, list[list]]:
     ts = r.get("timestamp") or []
     q = (r.get("indicators", {}).get("quote") or [{}])[0]
     adj = ((r.get("indicators", {}).get("adjclose") or [{}])[0]).get("adjclose") or [None] * len(ts)
-    scale = {"GBp": 1.0, "GBX": 1.0, "GBP": 100.0}.get(ccy)
+    scale = scale_override or {"GBp": 1.0, "GBX": 1.0, "GBP": 100.0}.get(ccy)
     if scale is None and ccy in FX:   # a few FTSE 100 lines are quoted in dollars or euros: convert to pence
         scale = FX[ccy] * 100
     if scale is None:
@@ -122,38 +135,108 @@ def fx_rates() -> dict:
     return out
 
 
+def write_bars(path: str, bars: list[list]) -> None:
+    tmp = path + ".tmp"
+    with open(tmp, "w", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["Date", "Open", "High", "Low", "Close", "Volume"])
+        w.writerows(bars)
+    os.replace(tmp, path)
+
+
+# index proxies with dividends reinvested (adjusted closes), comparable with the adjusted stock prices
+BENCHMARKS = {"bench-ftse100": "ISF.L", "bench-sp500": "SPY"}
+
+
+def sync_benchmarks(out_dir: str) -> None:
+    for name, sym in BENCHMARKS.items():
+        _, bars = parse_chart(get_json(CHART.format(sym=sym, rng="10y")), scale_override=1.0)
+        if len(bars) > 260:
+            write_bars(os.path.join(out_dir, name + ".csv"), bars)
+        else:
+            print(f"::warning::Benchmark {sym} not updated")
+        time.sleep(1)
+
+
+def sync_fx_history(path: str = "data/fx_history.csv") -> None:
+    """Daily dollars and euros per pound, for converting past costs and filings."""
+    series = {}
+    for ccy in ("USD", "EUR"):
+        d = get_json(CHART.format(sym=f"GBP{ccy}%3DX", rng="10y"))
+        try:
+            r = d["chart"]["result"][0]
+            for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]):
+                if c:
+                    series.setdefault(dt.datetime.fromtimestamp(t, dt.timezone.utc).date().isoformat(), {})[ccy] = round(c, 5)
+        except Exception:
+            print(f"::warning::No GBP/{ccy} history")
+            return
+        time.sleep(1)
+    with open(path, "w", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["date", "usd_per_gbp", "eur_per_gbp"])
+        for day in sorted(series):
+            v = series[day]
+            if "USD" in v and "EUR" in v:
+                w.writerow([day, v["USD"], v["EUR"]])
+
+
+def us_dividends(universe: str, prices: str) -> dict:
+    """Ex-dividend dates and amounts (dollars) for US stocks with prices, from monthly charts."""
+    out = {}
+    for r in csv.DictReader(open(universe, newline="")):
+        if not os.path.exists(os.path.join(prices, (r.get("provider_ticker") or "") + ".csv")):
+            continue
+        sym = r["ticker"].replace(".", "-")
+        d = get_json(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=5y&interval=1mo&events=div")
+        divs = parse_dividends(d, 1.0)
+        if divs:
+            out["US-" + r["ticker"].replace(".", "")] = divs
+        time.sleep(0.6)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--universe", default="universe/uk.csv")
+    ap.add_argument("--universe", default="universe/uk*.csv", help="UK universe files (glob)")
+    ap.add_argument("--us-universe", default="universe/us.csv", help="for US dividend history ('' to skip)")
     ap.add_argument("--out", default="data/prices")
     ap.add_argument("--pause", type=float, default=1.0)
     ap.add_argument("--limit", type=int, default=0, help="only the first N stocks (testing)")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
-    rows = list(csv.DictReader(open(args.universe, newline="")))
+    import glob
+    rows = [r for f in sorted(glob.glob(args.universe)) for r in csv.DictReader(open(f, newline=""))]
     if args.limit:
         rows = rows[: args.limit]
     FX.update(fx_rates())
     ok, kept, failed = 0, [], []
+    divs = {}
     for r in rows:
         name = (r.get("provider_ticker") or "").strip()
         if not name:
             continue
         path = os.path.join(args.out, name + ".csv")
-        ccy, bars = parse_chart(get_json(CHART.format(sym=yahoo_symbol(r["ticker"]), rng="10y")))
+        d = get_json(CHART.format(sym=yahoo_symbol(r["ticker"]), rng="10y"))
+        ccy, bars = parse_chart(d)
+        if bars:
+            scale = {"GBp": 1.0, "GBX": 1.0, "GBP": 100.0}.get(ccy) or FX.get(ccy, 0) * 100
+            dv = [x for x in parse_dividends(d, scale) if x[0] >= (dt.date.today() - dt.timedelta(days=5 * 366)).isoformat()]
+            if dv:
+                divs["LSE-" + r["ticker"].replace(".", "")] = dv
         why = "no data" if not bars and not ccy else (f"quoted in {ccy}, not pence" if not bars else looks_sane(bars, path))
         if why:
             (kept if os.path.exists(path) else failed).append(f"{r['ticker']} ({why})")
         else:
-            tmp = path + ".tmp"
-            with open(tmp, "w", newline="") as f:
-                w = csv.writer(f, lineterminator="\n")
-                w.writerow(["Date", "Open", "High", "Low", "Close", "Volume"])
-                w.writerows(bars)
-            os.replace(tmp, path)
+            write_bars(path, bars)
             ok += 1
         time.sleep(args.pause)
     os.makedirs("data", exist_ok=True)
+    sync_benchmarks(args.out)
+    sync_fx_history()
+    if args.us_universe and os.path.exists(args.us_universe):
+        divs.update(us_dividends(args.us_universe, args.out))
+    json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "dividends": divs}, open("data/dividends.json", "w"), separators=(",", ":"))
     json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "to_gbp": FX}, open("data/fx.json", "w"), indent=1)
     print(f"::notice::UK prices: {ok} of {len(rows)} updated; {len(kept)} kept their previous file; {len(failed)} missing")
     for k in kept[:10]:

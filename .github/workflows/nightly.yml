@@ -1,7 +1,8 @@
 name: Nightly update
 
-# Runs after the US close on weekdays: sync prices, fetch and score news,
-# rank every stock, commit the data and publish the website to GitHub Pages.
+# Runs after the US close on weekdays: sync US prices, rank every stock, commit the data and
+# publish the website. UK prices, filings, insiders, results dates and news are gathered by the
+# evening job (evening.yml) a few hours earlier, so this job only has the long US price sync.
 on:
   schedule:
     - cron: "15 21 * * 1-5" # 21:15 UTC = after the 16:00 New York close (summer and winter)
@@ -71,28 +72,40 @@ jobs:
 
       - name: UK end-of-day prices (FTSE 100) and GBP exchange rates
         run: python scripts/sync_uk_prices.py
+        # done by the evening job; run here only for a same-day re-rank
+        if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
       - name: Revenue and earnings growth from SEC filings (weekly)
         run: python scripts/fetch_fundamentals.py
+        # done by the evening job; run here only for a same-day re-rank
+        if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
       - name: Insider dealing from SEC Form 4 filings
         run: python scripts/fetch_insiders.py
+        # done by the evening job; run here only for a same-day re-rank
+        if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
       - name: UK annual-report figures from ESEF filings (weekly)
         run: python scripts/fetch_uk_fundamentals.py
+        # done by the evening job; run here only for a same-day re-rank
+        if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
       - name: Fetch news (Tiingo or Finnhub for US if available, GDELT otherwise)
         run: python scripts/fetch_news.py --days "${{ github.event.inputs.news_days || '2' }}"
         timeout-minutes: 25
+        # done by the evening job; run here only for a same-day re-rank
+        if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
       - name: Score headlines with FinBERT
         run: python scripts/score_news.py
         timeout-minutes: 25
+        # done by the evening job; run here only for a same-day re-rank
+        if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
       - name: Rank stocks (with data-quality checks and score history)

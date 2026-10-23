@@ -47,3 +47,17 @@ func TestDetectEventsAndFeeds(t *testing.T) {
 		t.Fatalf("feed looks wrong: %s", b)
 	}
 }
+
+func TestDivInfoAndResults(t *testing.T) {
+	h := [][2]any{{"2025-11-01", 2.0}, {"2026-02-01", 2.0}, {"2026-05-01", 2.0}, {"2026-08-01", 2.5}}
+	d := divInfo(h, "2026-10-20", 100)
+	if d == nil || d.Last != "2026-08-01" || d.TTM != 8.5 || d.Yld != 0.085 || d.Next == "" || d.Next < "2026-10-20" {
+		t.Fatalf("got %+v", d)
+	}
+	if divInfo([][2]any{{"2026-08-01", 50.0}}, "2026-10-20", 100) != nil {
+		t.Fatal("an implausible yield should be dropped")
+	}
+	if got := ukResultsEstimate("2025-12-31", "2026-10-20"); got != "2027-03-16" {
+		t.Fatalf("estimate %s", got)
+	}
+}

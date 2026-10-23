@@ -1,0 +1,89 @@
+name: Evening data
+
+# After the London close on weekdays: UK prices (FTSE 350), benchmarks, exchange rates and
+# dividends; SEC and UK annual-report figures; insider dealing; results dates; news and its
+# FinBERT tone. The nightly job then only syncs US prices and ranks everything.
+on:
+  schedule:
+    - cron: "15 17 * * 1-5" # 17:15 UTC = after the London close (16:30 UK time) in winter and summer
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: evening
+  cancel-in-progress: false
+
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    env:
+      TIINGO_NEWS_KEY: ${{ secrets.NEWS_UPDATES }}
+      FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install Python packages (CPU-only PyTorch for FinBERT)
+        run: |
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install -r requirements.txt
+      - name: Cache FinBERT model
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/huggingface
+          key: finbert-v1
+      - name: UK prices, benchmarks, exchange rates and dividends
+        run: python scripts/sync_uk_prices.py
+        timeout-minutes: 30
+        continue-on-error: true
+      - name: SEC figures (weekly, or sooner when coverage is thin)
+        run: python scripts/fetch_fundamentals.py
+        timeout-minutes: 20
+        continue-on-error: true
+      - name: Insider dealing from SEC Form 4
+        run: python scripts/fetch_insiders.py --budget-min 20
+        timeout-minutes: 25
+        continue-on-error: true
+      - name: UK annual-report figures from ESEF filings
+        run: python scripts/fetch_uk_fundamentals.py --budget-min 35
+        timeout-minutes: 40
+        continue-on-error: true
+      - name: US results dates
+        run: python scripts/fetch_earnings_dates.py
+        timeout-minutes: 5
+        continue-on-error: true
+      - name: News
+        run: python scripts/fetch_news.py --days 2 --budget-min 40
+        timeout-minutes: 45
+        continue-on-error: true
+      - name: Score headlines with FinBERT
+        run: python scripts/score_news.py
+        timeout-minutes: 30
+        continue-on-error: true
+      - name: Commit data
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Evening data $(date -u +%F)"
+          git pull --rebase origin main
+          git push
+      - name: Open an issue if the run failed (GitHub emails you about new issues)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Evening data failed on $(date -u +%F)"
+          if ! gh issue list --state open --label run-failure --search "$title" --json number --jq '.[0].number' | grep -q .; then
+            gh label create run-failure --color B60205 --description "Automated run failures" 2>/dev/null || true
+            gh issue create --title "$title" --label run-failure --body "The **Evening data** workflow failed. Open the run to see which step: $RUN_URL"
+          fi

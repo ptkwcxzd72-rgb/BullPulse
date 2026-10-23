@@ -14,7 +14,7 @@ xBRL-JSON, free and without a key. This script:
 UK reports are annual (half-year results are not in ESEF), so growth is year on year and the
 "twelve months" figures are the latest financial year. Weekly, like the SEC step.
 
-    python scripts/fetch_uk_fundamentals.py [--universe universe/uk.csv] [--max-age-days 7]
+    python scripts/fetch_uk_fundamentals.py [--universe "universe/uk*.csv"] [--max-age-days 7]
 """
 from __future__ import annotations
 
@@ -245,24 +245,27 @@ def growth(facts: dict) -> dict:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--universe", default="universe/uk.csv")
+    ap.add_argument("--universe", default="universe/uk*.csv", help="UK universe files (glob)")
     ap.add_argument("--max-age-days", type=int, default=7)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--budget-min", type=float, default=10, help="stop after this many minutes; the rest continues next run")
     args = ap.parse_args()
     t0 = time.time()
 
+    import glob
+    rows = [r for f in sorted(glob.glob(args.universe)) for r in csv.DictReader(open(f, newline=""))]
     if os.path.exists(OUT) and args.max_age_days > 0:
         try:
-            age = (dt.datetime.utcnow() - dt.datetime.fromisoformat(json.load(open(OUT))["generated"].rstrip("Z"))).days
-            if age < args.max_age_days and json.load(open(OUT)).get("complete", True):
+            old = json.load(open(OUT))
+            age = (dt.datetime.utcnow() - dt.datetime.fromisoformat(old["generated"].rstrip("Z"))).days
+            covered = len(set(old.get("stocks", {})) & {"LSE-" + r["ticker"].replace(".", "") for r in rows})
+            if age < args.max_age_days and old.get("complete", True) and covered >= 0.7 * len(rows):
                 print(f"UK fundamentals are {age} days old; skipping (weekly refresh)")
                 return
         except Exception:
             pass
 
     ids = json.load(open(IDS)) if os.path.exists(IDS) else {}
-    rows = list(csv.DictReader(open(args.universe, newline="")))
     if args.limit:
         rows = rows[: args.limit]
     prev = json.load(open(OUT)).get("stocks", {}) if os.path.exists(OUT) else {}

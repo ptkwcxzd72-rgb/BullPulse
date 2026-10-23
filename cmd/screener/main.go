@@ -115,6 +115,11 @@ type Row struct {
 	Grower  bool     `json:"grower"`
 	Flags   []string `json:"flags,omitempty"` // data-quality warnings shown on the site
 	Ins     *Insider `json:"ins,omitempty"`   // open-market insider dealing, last 90 days (US)
+	Idx     string   `json:"idx,omitempty"`   // index membership
+	VsIdx   *float64 `json:"vsIdx,omitempty"` // 1-year return minus its market index's (dividends included)
+	Div     *DivInfo `json:"div,omitempty"`
+	NextRes string   `json:"nextRes,omitempty"` // next results date
+	ResEst  bool     `json:"resEst,omitempty"`  // true when estimated from the financial year end
 
 	sentRaw   float64
 	insRecent []map[string]any
@@ -131,6 +136,16 @@ type Fund struct {
 	RevAccel  *float64  `json:"rev_accel"`
 	EpsGrowth *float64  `json:"eps_growth"`
 	Fin       *fund.Fin `json:"fin"`
+}
+
+// DivInfo is the dividend record from the price source: last ex-date and amount, the
+// trailing-12-month total (in the price's units) and an estimate of the next ex-date.
+type DivInfo struct {
+	Last string  `json:"last"`
+	Amt  float64 `json:"amt"`
+	TTM  float64 `json:"ttm"`
+	Yld  float64 `json:"yld"`
+	Next string  `json:"next,omitempty"`
 }
 
 // Insider summarises Form 4 open-market dealing from scripts/fetch_insiders.py.
@@ -192,6 +207,8 @@ func main() {
 	fundPath := flag.String("fundamentals", "data/fundamentals.json", "growth figures from SEC filings")
 	fundUK := flag.String("fundamentals-uk", "data/fundamentals_uk.json", "annual-report figures for UK companies (ESEF)")
 	evPath := flag.String("events", "data/events.jsonl", "alert log (appended)")
+	divPath := flag.String("dividends", "data/dividends.json", "ex-dividend history from the price source")
+	earnPath := flag.String("earnings", "data/earnings.json", "next US results dates")
 	feedDir := flag.String("feeds", "site/feeds", "RSS feeds directory")
 	siteURL := flag.String("site-url", "https://bullpulse.co.uk/", "public address used in feed links")
 	insPath := flag.String("insiders", "data/insiders.json", "insider dealing from SEC Form 4 filings")
@@ -305,7 +322,7 @@ func main() {
 			asof = x.Dates[j]
 		}
 		id := s.ID()
-		row := &Row{T: s.Ticker, Ex: core.Exchange(s.Market), Name: s.Name, Sector: s.Sector, Ccy: core.Currency(s.Market), ID: id,
+		row := &Row{Idx: s.Index, T: s.Ticker, Ex: core.Exchange(s.Market), Name: s.Name, Sector: s.Sector, Ccy: core.Currency(s.Market), ID: id,
 			Price: x.Close[j], Chg1d: x.Close[j]/x.Close[j-1] - 1, Ret1y: x.Close[j]/x.Close[j-252] - 1,
 			Mom: x.Momentum(j), TrRaw: x.TrendRaw(j), Above200: x.Close[j] > x.SMA200[j],
 			GC: pos{x.GoldenCross[j], core.Since(x.GoldenCross, j)}, ST: pos{x.SuperTrend[j], core.Since(x.SuperTrend, j)},
@@ -543,6 +560,47 @@ func main() {
 	}
 
 	day := asof.Format("2006-01-02")
+	// benchmarks, dividends and results dates
+	benches := map[string]*bench{}
+	for k, p := range benchPaths(*prices) {
+		benches[k] = loadBench(p)
+	}
+	var divs struct {
+		Dividends map[string][][2]any `json:"dividends"`
+	}
+	readJSON(*divPath, &divs)
+	var earn struct {
+		Next map[string]string `json:"next"`
+	}
+	readJSON(*earnPath, &earn)
+	for _, r := range rows {
+		bk := "sp500"
+		if r.Ex == "LSE" {
+			bk = "ftse100"
+		}
+		if b := benches[bk]; b != nil {
+			if br := b.ret1y(day); !math.IsNaN(br) {
+				v := r4(r.Ret1y - br)
+				r.VsIdx = &v
+			}
+		}
+		if h, ok := divs.Dividends[r.ID]; ok {
+			r.Div = divInfo(h, day, r.Price)
+			from := len(h) - 12
+			if from < 0 {
+				from = 0
+			}
+			r.detail["divs"] = h[from:]
+		}
+		if d, ok := earn.Next[r.ID]; ok && d >= day {
+			r.NextRes = d
+		} else if f, ok := funds[r.ID]; ok && r.Ex == "LSE" && f.Period == "year" && f.AsOf != "" {
+			r.NextRes, r.ResEst = ukResultsEstimate(f.AsOf, day), true
+		}
+	}
+	if err := writeBenchJSON(filepath.Join(*out, "bench.json"), benches); err != nil {
+		log.Error("bench", "error", err)
+	}
 	history = history.with(day, rows)
 	var events []Event
 	if prevAsof == day { // same prices as the last run: keep that run's alerts for the day
