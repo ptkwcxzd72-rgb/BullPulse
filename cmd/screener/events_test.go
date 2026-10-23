@@ -27,11 +27,15 @@ func TestDetectEventsAndFeeds(t *testing.T) {
 	}
 	dir := t.TempDir()
 	log := filepath.Join(dir, "e.jsonl")
-	all := loadEvents(log, "2026-10-20", 90, ev)
+	all := loadEvents(log, "2026-10-20", 90, ev, true)
 	if err := saveEvents(log, all); err != nil {
 		t.Fatal(err)
 	}
-	again := loadEvents(log, "2026-10-20", 90, ev) // rerun on the same day replaces, not duplicates
+	again := loadEvents(log, "2026-10-20", 90, ev, true)  // rerun on the same day replaces, not duplicates
+	keep := loadEvents(log, "2026-10-20", 90, nil, false) // re-run on the same prices keeps the day's alerts
+	if len(keep) != len(ev) {
+		t.Fatalf("same-day re-run kept %d events, want %d", len(keep), len(ev))
+	}
 	if len(again) != len(ev) {
 		t.Fatalf("got %d events after rerun, want %d", len(again), len(ev))
 	}

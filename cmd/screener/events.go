@@ -80,7 +80,7 @@ func detectEvents(day string, rows []*Row, prev map[string]Row) []Event {
 }
 
 // loadEvents reads the log, drops anything older than keepDays and replaces today's entries.
-func loadEvents(path, day string, keepDays int, today []Event) []Event {
+func loadEvents(path, day string, keepDays int, today []Event, replaceDay bool) []Event {
 	cut := ""
 	if t, err := time.Parse("2006-01-02", day); err == nil {
 		cut = t.AddDate(0, 0, -keepDays).Format("2006-01-02")
@@ -90,7 +90,7 @@ func loadEvents(path, day string, keepDays int, today []Event) []Event {
 		sc := bufio.NewScanner(f)
 		for sc.Scan() {
 			var e Event
-			if json.Unmarshal(sc.Bytes(), &e) == nil && e.Date >= cut && e.Date != day {
+			if json.Unmarshal(sc.Bytes(), &e) == nil && e.Date >= cut && (!replaceDay || e.Date != day) {
 				all = append(all, e)
 			}
 		}

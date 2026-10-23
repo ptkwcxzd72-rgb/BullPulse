@@ -276,12 +276,15 @@ func main() {
 
 	// previous snapshot, for week-on-week rank change and momentum trend
 	prev := map[string]Row{}
+	prevAsof := "" // a re-run on the same prices compares with the day before, not with itself
 	if b, err := os.ReadFile(filepath.Join(*out, "snapshot.json")); err == nil {
 		var old struct {
-			Demo   bool  `json:"demo"`
-			Stocks []Row `json:"stocks"`
+			Demo   bool   `json:"demo"`
+			Asof   string `json:"asof"`
+			Stocks []Row  `json:"stocks"`
 		}
 		if json.Unmarshal(b, &old) == nil && !old.Demo {
+			prevAsof = old.Asof
 			for _, r := range old.Stocks {
 				prev[r.ID] = r
 			}
@@ -496,6 +499,9 @@ func main() {
 			r.Mp = r.MP
 			if p, ok := prev[r.ID]; ok {
 				r.Mp = p.MP
+				if prevAsof == asof.Format("2006-01-02") {
+					r.Mp = p.Mp
+				}
 			}
 		}
 		sort.SliceStable(m, func(a, b int) bool { return m[a].Score > m[b].Score })
@@ -505,6 +511,9 @@ func main() {
 			r.Rank = i + 1
 			if p, ok := prev[r.ID]; ok && p.Rank > 0 {
 				r.RankChg = p.Rank - r.Rank
+				if prevAsof == asof.Format("2006-01-02") {
+					r.RankChg = p.RankChg + p.Rank - r.Rank
+				}
 			}
 			fresh := (r.GC.Long == 1 && r.GC.Since <= 60) || (r.Cross200 != nil && *r.Cross200 <= 20)
 			// news must not be turning against the stock: tone steady or improving, and not clearly
@@ -535,7 +544,12 @@ func main() {
 
 	day := asof.Format("2006-01-02")
 	history = history.with(day, rows)
-	events := loadEvents(*evPath, day, 90, detectEvents(day, rows, prev))
+	var events []Event
+	if prevAsof == day { // same prices as the last run: keep that run's alerts for the day
+		events = loadEvents(*evPath, day, 90, nil, false)
+	} else {
+		events = loadEvents(*evPath, day, 90, detectEvents(day, rows, prev), true)
+	}
 	if err := saveEvents(*evPath, events); err != nil {
 		log.Error("events", "error", err)
 	}
