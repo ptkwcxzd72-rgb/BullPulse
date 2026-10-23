@@ -50,6 +50,17 @@ def get_json(url: str, tries: int = 4) -> dict | None:
 FX: dict = {"GBP": 1.0}   # GBP per unit of currency, filled by main() before prices are parsed
 
 
+def unfinished_day(now: dt.datetime | None = None) -> str:
+    """Today's date while the London market is open or the closing auction is settling
+    (before 17:00 UK time), else ''. Run in the evening, today's bar is a proper close."""
+    try:
+        from zoneinfo import ZoneInfo
+        now = now or dt.datetime.now(ZoneInfo("Europe/London"))
+    except Exception:
+        now = now or dt.datetime.utcnow()
+    return now.date().isoformat() if now.hour < 17 else ""
+
+
 def parse_chart(d: dict) -> tuple[str, list[list]]:
     """(currency, rows of [date, open, high, low, close, volume]) adjusted for splits and dividends."""
     res = (d or {}).get("chart", {}).get("result") or []
@@ -66,11 +77,14 @@ def parse_chart(d: dict) -> tuple[str, list[list]]:
     if scale is None:
         return ccy, []
     out, seen = [], set()
+    unfinished = unfinished_day()
     for i, t in enumerate(ts):
         o, h, lo, c, v = (q.get(k, [None] * len(ts))[i] for k in ("open", "high", "low", "close", "volume"))
         if None in (o, h, lo, c) or c <= 0:
             continue
         day = dt.datetime.fromtimestamp(t, dt.timezone.utc).date().isoformat()
+        if day == unfinished:    # today's bar while London is still trading is not a close
+            continue
         if day in seen:          # Yahoo sometimes repeats the live day
             continue
         seen.add(day)

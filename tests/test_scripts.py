@@ -131,6 +131,11 @@ class UK(unittest.TestCase):
         self.assertAlmostEqual(g["rev_growth"], 0.25)
         self.assertEqual(g["period"], "year")
 
+    def test_unfinished_day(self):
+        import datetime as dt
+        self.assertEqual(UKP.unfinished_day(dt.datetime(2026, 10, 23, 11, 0)), "2026-10-23")
+        self.assertEqual(UKP.unfinished_day(dt.datetime(2026, 10, 23, 22, 0)), "")
+
     def test_yahoo_symbols_and_parse(self):
         self.assertEqual(UKP.yahoo_symbol("BT.A"), "BT-A.L")
         self.assertEqual(UKP.yahoo_symbol("RR."), "RR.L")
