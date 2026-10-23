@@ -69,7 +69,7 @@
 .emptyp{padding:40px 24px;text-align:center;color:var(--muted)}
 .emptyp h2{margin:0 0 6px;color:var(--ink);font:650 20px var(--f-display)}
 @media (max-width:1060px){.pl{grid-template-columns:minmax(0,1fr)}.build{position:static}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.mix{grid-template-columns:1fr}.at th:nth-child(5),.at td:nth-child(5){display:none}}
+@media (max-width:640px){.mix{grid-template-columns:1fr}.at th:nth-child(5),.at td:nth-child(5),.at th:nth-child(6),.at td:nth-child(6){display:none}.wbar{display:none}.at{min-width:0}}
 </style>
 </head>
 <body>
@@ -110,7 +110,7 @@
       <section class="sec">
         <h2>Amount and limits</h2>
         <div class="set">
-          <label for="amt">Amount to invest</label><div class="two"><input type="number" id="amt" min="0" step="500" value="10000"><select id="ccy" aria-label="Currency" style="width:84px"><option value="GBP">£ GBP</option><option value="USD">$ USD</option></select></div>
+          <label for="amt">Amount to invest</label><div class="two"><input type="number" id="amt" min="0" step="500" value="10000"><select id="ccy" aria-label="Currency" style="width:64px"><option value="GBP">£</option><option value="USD">$</option></select></div>
           <label for="hcap">Most in one stock</label><div class="two"><input type="number" id="hcap" min="1" max="100" step="1" value="15"><span class="sub" style="align-self:center">%</span></div>
           <label for="scap">Most in one sector</label><div class="two"><input type="number" id="scap" min="1" max="100" step="1" value="35"><span class="sub" style="align-self:center">%</span></div>
         </div>
