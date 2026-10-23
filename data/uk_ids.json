@@ -1,4 +1,5 @@
 {
+ "3IN": {},
  "AAF": {
   "isin": "GB00BKDRYJ47",
   "legal_name": "AIRTEL AFRICA PLC",
@@ -9,6 +10,7 @@
   "legal_name": "ANGLO AMERICAN PLC",
   "lei": "549300S9XF92D1X8ME43"
  },
+ "AAS": {},
  "ABDN": {
   "isin": "GB00BF8Q6K64",
   "legal_name": "ABERDEEN GROUP PLC",
@@ -24,16 +26,29 @@
   "legal_name": "ADMIRAL GROUP PLC",
   "lei": "213800FGVM7Z9EJB2685"
  },
+ "AEP": {},
+ "AGT": {},
+ "AIE": {},
+ "ALFA": {},
  "ALW": {
   "isin": "GB00B11V7W98",
   "legal_name": "ALLIANCE WITAN PLC",
   "lei": "213800SZZD4E2IOZ9W55"
  },
+ "AMRQ": {},
  "ANTO": {
   "isin": "GB0000456144",
   "legal_name": "ANTOFAGASTA PLC",
   "lei": "213800MY6QVH4FVLD628"
  },
+ "AO": {},
+ "APN": {},
+ "ASC": {},
+ "ASHM": {},
+ "ASL": {},
+ "ATG": {},
+ "ATT": {},
+ "ATYM": {},
  "AUTO": {
   "isin": "GB00BVYVFW23",
   "legal_name": "AUTOTRADER GROUP PLC",
@@ -44,6 +59,7 @@
   "legal_name": "AVIVA PLC",
   "lei": "YF0Y5B0IB8SM0ZFG9G81"
  },
+ "AVON": {},
  "AZN": {
   "isin": "GB0009895292",
   "legal_name": "ASTRAZENECA PLC",
@@ -89,6 +105,7 @@
   "legal_name": "BRITISH LAND COMPANY PUBLIC LIMITED COMPANY(THE)",
   "lei": "RV5B68J2GV3QGMRPW209"
  },
+ "BME": {},
  "BNZL": {
   "isin": "GB00B0744B38",
   "legal_name": "BUNZL PUBLIC LIMITED COMPANY",
@@ -182,6 +199,7 @@
   "legal_name": "F&C INVESTMENT TRUST PLC",
   "lei": "213800W6B18ZHTNG7371"
  },
+ "FOUR": {},
  "FRES": {
   "isin": "GB00B2QPKJ12",
   "legal_name": "FRESNILLO PLC",
