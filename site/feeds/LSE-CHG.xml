@@ -6,5 +6,19 @@
   <link>https://bullpulse.co.uk/app.html#LSE-CHG</link>
   <description>Alerts for Chemring Group from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Chemring Group: Rank moved up 42 places to #209 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CHG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-CHG-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #209 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Chemring Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CHG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-CHG-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

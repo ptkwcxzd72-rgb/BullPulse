@@ -7,18 +7,11 @@
   <description>Alerts for Eaton Corporation from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Eaton Corporation: Joined the growing and turning up screen</title>
+   <title>Eaton Corporation: Rank moved up 24 places to #80 (score 63)</title>
    <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid isPermaLink="false">2026-10-21-US-ETN-growth</guid>
+   <guid isPermaLink="false">2026-10-21-US-ETN-rank</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
-   <title>Eaton Corporation: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid isPermaLink="false">2026-10-21-US-ETN-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved up 24 places to #80 (score 63). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>Eaton Corporation: Closed back above its 200-day average</title>
@@ -28,11 +21,18 @@
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Eaton Corporation: Rank moved up 24 places to #80 (score 63)</title>
+   <title>Eaton Corporation: Joined the early trend changes screen</title>
    <link>https://bullpulse.co.uk/app.html#US-ETN</link>
-   <guid isPermaLink="false">2026-10-21-US-ETN-rank</guid>
+   <guid isPermaLink="false">2026-10-21-US-ETN-early</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 24 places to #80 (score 63). BullPulse is a research screen, not investment advice.</description>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eaton Corporation: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ETN</link>
+   <guid isPermaLink="false">2026-10-21-US-ETN-growth</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

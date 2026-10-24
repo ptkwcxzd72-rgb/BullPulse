@@ -6,5 +6,12 @@
   <link>https://bullpulse.co.uk/app.html#LSE-CWK</link>
   <description>Alerts for Cranswick from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Cranswick: Rank moved up 23 places to #242 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-CWK</link>
+   <guid isPermaLink="false">2026-10-23-LSE-CWK-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #242 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>
