@@ -7,11 +7,18 @@
   <description>Alerts for Eurowag from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Eurowag: Rank moved down 34 places to #260 (score 33)</title>
+   <title>Eurowag: Rank moved up 21 places to #239 (score 39)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-EWG</link>
-   <guid isPermaLink="false">2026-10-23-LSE-EWG-rank</guid>
-   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 34 places to #260 (score 33). BullPulse is a research screen, not investment advice.</description>
+   <guid isPermaLink="false">2026-10-26-LSE-EWG-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #239 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eurowag: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EWG</link>
+   <guid isPermaLink="false">2026-10-26-LSE-EWG-trend</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>Eurowag: Closed below its 200-day average</title>
@@ -19,6 +26,13 @@
    <guid isPermaLink="false">2026-10-23-LSE-EWG-trend</guid>
    <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eurowag: Rank moved down 34 places to #260 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EWG</link>
+   <guid isPermaLink="false">2026-10-23-LSE-EWG-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #260 (score 33). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

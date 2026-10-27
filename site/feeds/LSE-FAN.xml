@@ -6,5 +6,19 @@
   <link>https://bullpulse.co.uk/app.html#LSE-FAN</link>
   <description>Alerts for Volution Group from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Volution Group: Rank moved down 25 places to #280 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-FAN</link>
+   <guid isPermaLink="false">2026-10-26-LSE-FAN-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #280 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Volution Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-FAN</link>
+   <guid isPermaLink="false">2026-10-26-LSE-FAN-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

@@ -6,5 +6,12 @@
   <link>https://bullpulse.co.uk/app.html#LSE-AJB</link>
   <description>Alerts for AJ Bell from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>AJ Bell: Rank moved down 21 places to #193 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AJB</link>
+   <guid isPermaLink="false">2026-10-26-LSE-AJB-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #193 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

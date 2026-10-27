@@ -7,11 +7,11 @@
   <description>Alerts for Freeport-McMoRan from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Freeport-McMoRan: Rank moved up 26 places to #67 (score 65)</title>
+   <title>Freeport-McMoRan: Joined the early trend changes screen</title>
    <link>https://bullpulse.co.uk/app.html#US-FCX</link>
-   <guid isPermaLink="false">2026-10-23-US-FCX-rank</guid>
+   <guid isPermaLink="false">2026-10-23-US-FCX-early</guid>
    <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 26 places to #67 (score 65). BullPulse is a research screen, not investment advice.</description>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>Freeport-McMoRan: Closed back above its 200-day average</title>
@@ -21,11 +21,11 @@
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
-   <title>Freeport-McMoRan: Joined the early trend changes screen</title>
+   <title>Freeport-McMoRan: Rank moved up 26 places to #67 (score 65)</title>
    <link>https://bullpulse.co.uk/app.html#US-FCX</link>
-   <guid isPermaLink="false">2026-10-23-US-FCX-early</guid>
+   <guid isPermaLink="false">2026-10-23-US-FCX-rank</guid>
    <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+   <description>Rank moved up 26 places to #67 (score 65). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

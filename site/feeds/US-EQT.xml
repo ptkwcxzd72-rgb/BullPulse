@@ -7,11 +7,11 @@
   <description>Alerts for EQT Corporation from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>EQT Corporation: Rank moved up 24 places to #163 (score 33)</title>
+   <title>EQT Corporation: Closed below its 200-day average</title>
    <link>https://bullpulse.co.uk/app.html#US-EQT</link>
-   <guid isPermaLink="false">2026-10-23-US-EQT-rank</guid>
-   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved up 24 places to #163 (score 33). BullPulse is a research screen, not investment advice.</description>
+   <guid isPermaLink="false">2026-10-26-US-EQT-trend</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>EQT Corporation: Closed back above its 200-day average</title>
@@ -19,6 +19,13 @@
    <guid isPermaLink="false">2026-10-23-US-EQT-trend</guid>
    <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EQT Corporation: Rank moved up 24 places to #163 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EQT</link>
+   <guid isPermaLink="false">2026-10-23-US-EQT-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #163 (score 33). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

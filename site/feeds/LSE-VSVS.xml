@@ -6,5 +6,12 @@
   <link>https://bullpulse.co.uk/app.html#LSE-VSVS</link>
   <description>Alerts for Vesuvius from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Vesuvius: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-VSVS</link>
+   <guid isPermaLink="false">2026-10-26-LSE-VSVS-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

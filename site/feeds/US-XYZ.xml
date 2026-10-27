@@ -6,5 +6,12 @@
   <link>https://bullpulse.co.uk/app.html#US-XYZ</link>
   <description>Alerts for Block, Inc. from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Block, Inc.: Rank moved down 20 places to #67 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XYZ</link>
+   <guid isPermaLink="false">2026-10-26-US-XYZ-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #67 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

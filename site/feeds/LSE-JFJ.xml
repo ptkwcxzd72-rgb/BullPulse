@@ -7,11 +7,25 @@
   <description>Alerts for JPMorgan Japanese Investment Trust from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>JPMorgan Japanese Investment Trust: Rank moved down 72 places to #202 (score 47)</title>
+   <title>JPMorgan Japanese Investment Trust: Rank moved up 56 places to #146 (score 58)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-JFJ</link>
-   <guid isPermaLink="false">2026-10-23-LSE-JFJ-rank</guid>
-   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 72 places to #202 (score 47). BullPulse is a research screen, not investment advice.</description>
+   <guid isPermaLink="false">2026-10-26-LSE-JFJ-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 56 places to #146 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JPMorgan Japanese Investment Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-JFJ</link>
+   <guid isPermaLink="false">2026-10-26-LSE-JFJ-trend</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JPMorgan Japanese Investment Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-JFJ</link>
+   <guid isPermaLink="false">2026-10-26-LSE-JFJ-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>JPMorgan Japanese Investment Trust: Closed below its 200-day average</title>
@@ -19,6 +33,13 @@
    <guid isPermaLink="false">2026-10-23-LSE-JFJ-trend</guid>
    <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
    <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JPMorgan Japanese Investment Trust: Rank moved down 72 places to #202 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-JFJ</link>
+   <guid isPermaLink="false">2026-10-23-LSE-JFJ-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 72 places to #202 (score 47). BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

@@ -6,5 +6,12 @@
   <link>https://bullpulse.co.uk/app.html#US-FERG</link>
   <description>Alerts for Ferguson Enterprises from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Ferguson Enterprises: Unusual burst of news coverage (30-day tone +0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FERG</link>
+   <guid isPermaLink="false">2026-10-26-US-FERG-news</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

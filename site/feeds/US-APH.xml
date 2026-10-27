@@ -6,5 +6,26 @@
   <link>https://bullpulse.co.uk/app.html#US-APH</link>
   <description>Alerts for Amphenol from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Amphenol: Rank moved up 34 places to #44 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APH</link>
+   <guid isPermaLink="false">2026-10-26-US-APH-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #44 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amphenol: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-APH</link>
+   <guid isPermaLink="false">2026-10-26-US-APH-trend</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amphenol: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-APH</link>
+   <guid isPermaLink="false">2026-10-26-US-APH-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>
