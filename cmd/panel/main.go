@@ -217,7 +217,7 @@ func main() {
 			// fundamentals as published by this date
 			rs := rowsPIT[ss[i].ID()]
 			k := sort.Search(len(rs), func(q int) bool { return rs[q].Date > ds }) - 1
-			if k < 0 || rs[k].Date < d.AddDate(0, -15, 0).Format("2006-01-02") {
+			if k < 0 || rs[k].Date < d.AddDate(0, -15, 0).Format("2006-01-02") || ss[i].Trust {
 				continue
 			}
 			r := rs[k]
@@ -361,14 +361,18 @@ func main() {
 		bench[name] = r
 	}
 	ids, ex, sec, idx := make([]string, n), make([]string, n), make([]string, n), make([]string, n)
+	trust := make([]int, n)
 	for i, s := range ss {
 		ids[i], ex[i], sec[i], idx[i] = s.ID(), core.Exchange(s.Market), s.Sector, s.Index
+		if s.Trust {
+			trust[i] = 1
+		}
 	}
 	scale := map[string]float64{}
 	for _, f := range fields {
 		scale[f.Key] = f.Scale
 	}
-	doc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months, "ids": ids, "ex": ex, "sector": sec, "idx": idx,
+	doc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months, "ids": ids, "ex": ex, "sector": sec, "idx": idx, "trust": trust,
 		"scale": scale, "fields": data, "fwd": fwd, "bench": bench,
 		"note": "Month-end values from information available at each date. Returns include dividends. Sentiment, news and insider data have no history."}
 	b, err := json.Marshal(doc)
@@ -382,4 +386,49 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Printf("panel: %d stocks, %d month-ends (%s to %s), %.1f MB\n", n, len(ends), months[0], months[len(months)-1], float64(len(b))/1e6)
+	if err := writeValHist(filepath.Join(filepath.Dir(*out), "valhist.json"), months, ids, data, scale, 60); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+}
+
+// writeValHist saves each stock's month-end P/E, dividend yield and free-cash-flow yield for the
+// last n months (as published at the time), so a stock page can show today's valuation against
+// its own history without loading the whole panel.
+func writeValHist(path string, months, ids []string, data map[string][][]any, scale map[string]float64, n int) error {
+	from := len(months) - n
+	if from < 0 {
+		from = 0
+	}
+	keys := []string{"pe", "divY", "fcfY"}
+	out := map[string]map[string][]any{}
+	for i, id := range ids {
+		rec := map[string][]any{}
+		for _, k := range keys {
+			col, have := make([]any, 0, len(months)-from), 0
+			for mi := from; mi < len(months); mi++ {
+				var v any
+				if mi < len(data[k]) && data[k][mi] != nil {
+					v = data[k][mi][i]
+				}
+				if v != nil {
+					have++
+				}
+				col = append(col, v)
+			}
+			if have >= 12 {
+				rec[k] = col
+			}
+		}
+		if len(rec) > 0 {
+			out[id] = rec
+		}
+	}
+	doc := map[string]any{"months": months[from:], "scale": map[string]float64{"pe": scale["pe"], "divY": scale["divY"], "fcfY": scale["fcfY"]}, "stocks": out}
+	b, err := json.Marshal(doc)
+	if err != nil {
+		return err
+	}
+	fmt.Printf("valuation history: %d stocks, %.2f MB\n", len(out), float64(len(b))/1e6)
+	return os.WriteFile(path, b, 0o644)
 }

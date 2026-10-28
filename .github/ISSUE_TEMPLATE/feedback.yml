@@ -1,0 +1,31 @@
+name: Feedback
+description: Tell us what's missing, confusing or wrong on BullPulse
+labels: [feedback]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Please don't include personal or account details: issues are public.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of feedback?
+      options:
+        - Something looks wrong (a price, a figure, a company)
+        - Something is confusing
+        - A feature I'd like
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Which page or company?
+      placeholder: For example, the Portfolio page, or Unilever (ULVR)
+  - type: textarea
+    id: what
+    attributes:
+      label: Tell us more
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true

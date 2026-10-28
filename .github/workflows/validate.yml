@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write # to start "Publish site" once the new files are on the site-data branch
 
 jobs:
   validate:
@@ -39,10 +40,15 @@ jobs:
         run: |
           git config user.name "bullpulse-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports site/data/validation.json site/data/panel.json
+          git add reports
           git diff --cached --quiet || git commit -m "Validation report $(date -u +%F)"
           git pull --rebase origin main
           git push
+          scripts/site_data.sh push --only data/validation.json data/panel.json data/valhist.json
+      - name: Publish the website with the new files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
 
       - name: Open an issue if the run failed (GitHub emails you about new issues)
         if: failure()

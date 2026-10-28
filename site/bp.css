@@ -385,3 +385,18 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .gl:hover,.gl:focus-visible{opacity:1;color:var(--accent)}
 .gltip{position:fixed;z-index:80;max-width:300px;background:var(--midnight);color:var(--night-ink);font-size:12.5px;line-height:1.5;padding:9px 12px;border-radius:10px;box-shadow:0 10px 30px rgba(14,24,40,.3);pointer-events:none}
 .gltip b{display:block;color:var(--teal);margin-bottom:2px}
+.bt .split{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:12px}
+.bt .split h5{margin:0;font:650 14px var(--f-display)}
+.btnote.warn{color:var(--warn)}
+.pt{width:100%;border-collapse:collapse;font-size:13px}
+.pt th,.pt td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.pt th{font-size:11.5px;color:var(--muted);font-weight:600}
+.pt .r{text-align:right}.pt tr.me td{background:var(--accent-soft)}
+.pt a{color:var(--ink);font-weight:600;text-decoration:none}.pt a:hover{text-decoration:underline}
+.vrow{display:grid;gap:6px}
+.vbar{position:relative;height:10px;border-radius:5px;background:var(--surface-2)}
+.vbar .rng{position:absolute;top:0;bottom:0;border-radius:5px;background:color-mix(in srgb,var(--accent) 22%,transparent)}
+.vbar .med{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--muted);transform:translateX(-1px)}
+.vbar .now{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--surface);transform:translate(-6px,-50%)}
+.vlab{display:flex;justify-content:space-between}
+.copylei{border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:6px;padding:0 6px;font:500 12px var(--f-mono);cursor:pointer}

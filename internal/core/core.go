@@ -35,6 +35,7 @@ type Stock struct {
 	CIK            string // SEC company identifier (US only), for growth data
 	ProviderTicker string // file name of the price history in the price repository
 	Index          string // "FTSE 100", "FTSE 250" or "S&P 500"
+	Trust          bool   // investment trust or closed-end fund ("type" column = "trust")
 }
 
 // ID is the stable identifier used in file names and URLs, e.g. US-AAPL or LSE-BP.
@@ -89,7 +90,8 @@ func LoadUniverse(dir string) ([]Stock, error) {
 		}
 		for _, r := range rows[1:] {
 			s := Stock{Ticker: get(r, "ticker"), Name: get(r, "name"), Sector: get(r, "sector"), Market: get(r, "market"),
-				CIK: get(r, "cik"), ProviderTicker: get(r, "provider_ticker"), Index: get(r, "index")}
+				CIK: get(r, "cik"), ProviderTicker: get(r, "provider_ticker"), Index: get(r, "index"),
+				Trust: strings.EqualFold(get(r, "type"), "trust")}
 			if s.Ticker != "" {
 				out = append(out, s)
 			}

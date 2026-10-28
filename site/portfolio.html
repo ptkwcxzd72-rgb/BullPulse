@@ -74,11 +74,14 @@
 .alist a{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:7px 4px;border-bottom:1px solid var(--grid);color:var(--ink);text-decoration:none}
 .alist a:hover{background:var(--surface-2)}
 .trade.buy{color:var(--up)} .trade.sell{color:var(--down)}
+.restore{padding:16px 18px;margin-bottom:18px;display:grid;gap:10px;border-color:var(--accent)}
+.restore h2{margin:0;font:650 17px var(--f-display)}.restore p{margin:0}
 .emptyp{padding:40px 24px;text-align:center;color:var(--muted)}
 .emptyp h2{margin:0 0 6px;color:var(--ink);font:650 20px var(--f-display)}
 @media (max-width:1060px){.pl{grid-template-columns:minmax(0,1fr)}.build{position:static}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.mix{grid-template-columns:1fr}.at th:nth-child(5),.at td:nth-child(5),.at th:nth-child(6),.at td:nth-child(6){display:none}.wbar{display:none}.at{min-width:0}}
 </style>
+<script src="common.js" defer></script>
 </head>
 <body>
 <header class="masthead night">
@@ -95,6 +98,7 @@
 
 <main class="in">
   <div id="mine-view" hidden>
+    <div class="card restore" id="restore" role="region" aria-label="Restore" hidden></div>
     <div class="pl">
       <aside class="card build" aria-label="Your holdings">
         <section class="sec">
@@ -122,6 +126,12 @@
             <label for="h-target">Target mix</label><select id="h-target"><option value="">None</option><option value="model">My model portfolio</option></select>
           </div>
           <div class="actions"><button class="bbtn ghost" id="h-csv">Download CSV</button><button class="bbtn ghost" id="h-clear">Remove all</button></div>
+        </section>
+        <section class="sec">
+          <h2>Back up or move to another device</h2>
+          <p class="sub" style="margin:0">Your holdings live only in this browser, so clearing its data deletes them. Keep a backup file, or open a restore link on your phone or another computer. Both include your holdings, watchlist, saved screens and model portfolios.</p>
+          <div class="actions"><button class="bbtn ghost" id="b-save">Save backup file</button><label class="bbtn ghost" style="cursor:pointer">Restore from file<input type="file" id="b-file" accept=".json,application/json" hidden></label><button class="bbtn ghost" id="b-link">Copy restore link</button></div>
+          <p class="sub" id="b-msg" style="margin:0"></p>
         </section>
       </aside>
       <section class="res" id="hres" aria-live="polite"></section>
@@ -470,6 +480,75 @@ function setView(v){
   try { localStorage.setItem("bp-pview", v); } catch (e) {}
   if (v === "mine") drawHoldings2();
 }
+
+// ---------- Backup, restore and restore links (all in the browser; the link keeps data after "#", which is never sent to a server) ----------
+const BKEYS = ["bp-holdings", "bp-watch", "bp-screens", "bp-portfolios", "bp-portfolio"];
+function backupData(){
+  const d = { app: "BullPulse", v: 1, saved: new Date().toISOString(), data: {} };
+  BKEYS.forEach(k => { try { const v = localStorage.getItem(k); if (v != null) d.data[k] = JSON.parse(v); } catch (e) {} });
+  return d;
+}
+const b64u = bytes => btoa(String.fromCharCode(...bytes)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const unb64u = t => Uint8Array.from(atob(t.replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0));
+async function pack(obj){
+  const raw = new TextEncoder().encode(JSON.stringify(obj));
+  if (typeof CompressionStream === "undefined") return "j" + b64u(raw);
+  const z = new Uint8Array(await new Response(new Blob([raw]).stream().pipeThrough(new CompressionStream("deflate-raw"))).arrayBuffer());
+  let s = ""; for (let i = 0; i < z.length; i += 8192) s += String.fromCharCode(...z.subarray(i, i + 8192));
+  return "z" + btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+async function unpack(t){
+  const bytes = unb64u(t.slice(1));
+  const raw = t[0] === "z" ? new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"))).arrayBuffer()) : bytes;
+  return JSON.parse(new TextDecoder().decode(raw));
+}
+function describe(d){
+  const x = d.data || {}, n = (x["bp-holdings"] && x["bp-holdings"].lots || []).length, w = (x["bp-watch"] || []).length, sc = Object.keys(x["bp-screens"] || {}).length, pf = Object.keys(x["bp-portfolios"] || {}).length;
+  return [n && `${n} holding${n > 1 ? "s" : ""}`, w && `${w} watchlist compan${w > 1 ? "ies" : "y"}`, sc && `${sc} saved screen${sc > 1 ? "s" : ""}`, pf && `${pf} model portfolio${pf > 1 ? "s" : ""}`].filter(Boolean).join(", ") || "nothing";
+}
+function offerRestore(d, source){
+  if (!d || d.app !== "BullPulse" || !d.data) { $("b-msg").textContent = "That isn't a BullPulse backup."; return; }
+  const box = $("restore"); setView("mine");
+  box.hidden = false;
+  box.innerHTML = `<h2>Restore from ${source}?</h2><p>It contains ${describe(d)}${d.saved ? `, saved ${new Date(d.saved).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}` : ""}. This browser has ${describe(backupData())}.</p>
+    <div class="actions"><button class="bbtn" id="r-merge">Add to what's here</button><button class="bbtn ghost" id="r-replace">Replace what's here</button><button class="bbtn ghost" id="r-cancel">Cancel</button></div>`;
+  const done = msg => { box.hidden = true; box.innerHTML = ""; $("b-msg").textContent = msg; try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} };
+  $("r-cancel").onclick = () => done("Nothing was changed.");
+  const apply = merge => {
+    Object.entries(d.data).forEach(([k, v]) => {
+      if (!BKEYS.includes(k)) return;
+      let out = v;
+      if (merge) {
+        let cur = null; try { cur = JSON.parse(localStorage.getItem(k)); } catch (e) {}
+        if (cur != null) {
+          if (k === "bp-holdings") out = { ...cur, lots: [...(cur.lots || []), ...((v && v.lots) || [])] };
+          else if (Array.isArray(cur) && Array.isArray(v)) out = [...new Set([...cur, ...v])];
+          else if (typeof cur === "object" && typeof v === "object" && !Array.isArray(cur)) out = { ...cur, ...v };
+        }
+      }
+      try { localStorage.setItem(k, JSON.stringify(out)); } catch (e) {}
+    });
+    try { H = { lots: [], c: "GBP", target: "", ...(JSON.parse(localStorage.getItem("bp-holdings")) || {}) }; } catch (e) {}
+    done(`Restored: ${describe(d)}.`); drawHoldings2();
+  };
+  $("r-merge").onclick = () => apply(true);
+  $("r-replace").onclick = () => apply(false);
+}
+function initBackup(){
+  $("b-save").onclick = () => {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(backupData(), null, 1)], { type: "application/json" }));
+    a.download = `bullpulse-backup-${new Date().toISOString().slice(0, 10)}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    $("b-msg").textContent = "Backup saved to your downloads.";
+  };
+  $("b-file").onchange = async e => { const f = e.target.files[0]; e.target.value = ""; if (!f) return; try { offerRestore(JSON.parse(await f.text()), "this file"); } catch (er) { $("b-msg").textContent = "That file couldn't be read as a BullPulse backup."; } };
+  $("b-link").onclick = async () => {
+    const url = location.origin + location.pathname + "#restore=" + await pack(backupData());
+    try { await navigator.clipboard.writeText(url); $("b-msg").innerHTML = `Restore link copied${url.length > 6000 ? " (it's long, so send it by email or a notes app rather than a text message)" : ""}. <b>Anyone with the link can see your holdings</b>, so share it only with yourself.`; }
+    catch (e) { $("b-msg").innerHTML = `Copy this link: <input readonly value="${esc(url)}" style="width:100%" onclick="this.select()">`; }
+  };
+  if (location.hash.startsWith("#restore=")) unpack(location.hash.slice(9)).then(d => offerRestore(d, "this link")).catch(() => { $("b-msg").textContent = "This restore link is damaged or incomplete."; setView("mine"); });
+}
 function initHoldings(){
   document.querySelectorAll(".ptabs button").forEach(b => b.onclick = () => setView(b.dataset.v));
   const sync = () => { const s = D.stocks.find(s => `${s.name} (${s.t})` === $("h-stock").value); $("h-pxl").textContent = s ? `Price paid (${s.ccy === "GBX" ? "pence" : "dollars"})` : "Price paid"; if (s && !$("h-px").value) $("h-px").placeholder = (s.ccy === "GBX" ? "now " + s.price.toFixed(1) + "p" : "now $" + s.price.toFixed(2)); };
@@ -555,6 +634,7 @@ function syncInputs(){ $("amt").value = P.a; $("ccy").value = P.c; $("hcap").val
   drawSaved();
   update();
   initHoldings();
+  initBackup();
 })();
 if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 </script>

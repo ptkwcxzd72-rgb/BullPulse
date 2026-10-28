@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Does the score work?</title>
+<meta name="description" content="An honest, regularly updated test of whether BullPulse's score has picked better-performing UK and US stocks over the past nine years, including the years it didn't.">
+<link rel="canonical" href="https://bullpulse.co.uk/score.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="bp.css">
+<style>
+.pagehead{padding-block:6px 26px}
+.pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:72ch}
+main{display:grid;gap:22px;padding-block:24px 40px}
+.verdict{padding:22px 24px;display:grid;gap:10px;border-left:4px solid var(--warn)}
+.verdict.good{border-left-color:var(--up)}
+.verdict h2{margin:0;font:700 22px/1.25 var(--f-display)}
+.verdict p{margin:0;max-width:85ch;color:var(--ink)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.sec{padding:18px 20px;display:grid;gap:12px;align-content:start}
+.sec h2{margin:0;font:650 18px var(--f-display)}
+.sec h3{margin:0;font:650 15px var(--f-display)}
+.sec p{margin:0;color:var(--muted);font-size:14px;max-width:80ch}
+.sec svg{width:100%;height:auto;display:block}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.facts div{background:var(--surface);padding:12px 14px;display:grid;gap:2px}
+.facts .v{font:650 20px/1.15 var(--f-display);font-variant-numeric:tabular-nums}
+.facts .s{font-size:12px;color:var(--muted)}
+.tt{width:100%;border-collapse:collapse;font-size:13.5px}
+.tt th,.tt td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+.tt th:first-child,.tt td:first-child{text-align:left}
+.tt th{font-size:12px;color:var(--muted);font-weight:600}
+.pill{font-size:11.5px;font-weight:600;border-radius:999px;padding:1px 8px;white-space:nowrap}
+.pill.no{background:var(--warn-soft);color:var(--warn)} .pill.yes{background:var(--up-soft);color:var(--up)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+ol.how{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--muted);font-size:14px;max-width:85ch}
+@media (max-width:900px){.grid2{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<script src="common.js" defer></script>
+</head>
+<body>
+<header class="masthead night">
+  <div class="in mastbar">
+    <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+    <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html">Screener</a><a href="portfolio.html">Portfolio</a><a href="alerts.html">Alerts</a></nav>
+  </div>
+  <div class="in pagehead">
+    <h1>Does the score work?</h1>
+    <p>Every month BullPulse re-checks whether its score would have picked better-performing stocks in the past, using only the information available at each date. This page shows the result as it stands, including where the evidence is weak.</p>
+  </div>
+</header>
+
+<main class="in" id="main">
+  <p class="sub">Loading the latest test…</p>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const pp = (v, d = 2) => (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(d) + "%";
+const HZ = ["1 month", "3 months", "6 months"];
+const MK = { US: "US (S&P 500)", UK: "UK (FTSE 100 and FTSE 250)" };
+const sig = t => Math.abs(t) >= 2;
+
+// grouped bars: five quintiles x three horizons, excess return vs the market average
+function quintileChart(q){
+  const W = 520, H = 220, pad = 34, all = q.flat(), m = Math.max(0.004, ...all.map(Math.abs)) * 1.15;
+  const y = v => H / 2 - v / m * (H / 2 - 22), gw = (W - pad) / 5, bw = gw / 4.2, cols = ["var(--accent)", "var(--fm)", "var(--amber)"];
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Average return above or below the market for each fifth of stocks by score"><line x1="${pad}" x2="${W}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)"/>`;
+  [m * .8, -m * .8].forEach(v => svg += `<text x="0" y="${y(v) + 4}" font-size="11" fill="var(--muted)">${pp(v, 1)}</text>`);
+  for (let k = 0; k < 5; k++) {
+    for (let h = 0; h < 3; h++) {
+      const v = q[h][k], x = pad + k * gw + gw * .1 + h * bw, top = Math.min(y(0), y(v));
+      svg += `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${(bw - 2).toFixed(1)}" height="${Math.max(1, Math.abs(y(v) - y(0))).toFixed(1)}" rx="2" fill="${cols[h]}"><title>${HZ[h]}: ${pp(v)}</title></rect>`;
+    }
+    svg += `<text x="${(pad + k * gw + gw / 2).toFixed(1)}" y="${H - 4}" font-size="11.5" text-anchor="middle" fill="var(--muted)">${k === 0 ? "Lowest fifth" : k === 4 ? "Highest fifth" : "Q" + (k + 1)}</text>`;
+  }
+  return svg + `</svg><div class="legend">${HZ.map((h, i) => `<span><i style="background:${cols[i]}"></i>Next ${h}</span>`).join("")}</div>`;
+}
+function yearChart(by){
+  const ys = Object.keys(by).sort(), W = 520, H = 160, m = Math.max(0.01, ...ys.map(y => Math.abs(by[y]))) * 1.15, bw = (W - 30) / ys.length;
+  const y = v => H / 2 - v / m * (H / 2 - 18);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Monthly gap between the top and bottom fifth, by year"><line x1="30" x2="${W}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)"/>`;
+  ys.forEach((yr, i) => {
+    const v = by[yr], x = 30 + i * bw + bw * .18, top = Math.min(y(0), y(v));
+    svg += `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${(bw * .64).toFixed(1)}" height="${Math.max(1, Math.abs(y(v) - y(0))).toFixed(1)}" rx="2" fill="${v >= 0 ? "var(--up)" : "var(--down)"}"><title>${yr}: ${pp(v)} a month</title></rect>`;
+    svg += `<text x="${(30 + i * bw + bw / 2).toFixed(1)}" y="${H - 2}" font-size="11" text-anchor="middle" fill="var(--muted)">${yr.slice(2)}</text>`;
+  });
+  [m * .8, -m * .8].forEach(v => svg += `<text x="0" y="${y(v) + 4}" font-size="10.5" fill="var(--muted)">${pp(v, 1)}</text>`);
+  return svg + "</svg>";
+}
+function marketSection(m){
+  const t1 = m.q5_minus_q1_t, sp = m.q5_minus_q1, good = sp.filter((v, h) => v > 0 && sig(t1[h])).length;
+  const yrs = Object.values(m.spread_1m_by_year || {}), posY = yrs.filter(v => v > 0).length;
+  return `<section class="card sec">
+    <h2>${MK[m.market] || m.market}</h2>
+    <p>${m.stocks} stocks, ${m.months} month-ends from ${m.from.slice(0, 7)} to ${m.to.slice(0, 7)}. Each month the stocks are split into five equal groups by score, and each group's return over the next one, three and six months is compared with the average stock.</p>
+    <div class="facts">
+      <div><span class="sub">Top minus bottom fifth, next month</span><span class="v ${sp[0] >= 0 ? "pos" : "neg"}">${pp(sp[0])}</span><span class="s">${sig(t1[0]) ? "statistically clear" : "within the range luck could produce"}</span></div>
+      <div><span class="sub">Over the next 6 months</span><span class="v ${sp[2] >= 0 ? "pos" : "neg"}">${pp(sp[2], 1)}</span><span class="s">t-statistic ${t1[2].toFixed(2)} (2 or more is clear)</span></div>
+      <div><span class="sub">Months the top fifth beat the bottom</span><span class="v">${(m.q5_beats_q1_share_1m * 100).toFixed(0)}%</span><span class="s">50% is a coin toss</span></div>
+      <div><span class="sub">Top fifth after dealing costs</span><span class="v ${m.q5_net_monthly_excess >= 0 ? "pos" : "neg"}">${pp(m.q5_net_monthly_excess)}</span><span class="s">a month vs the average stock; ${(m.q5_monthly_turnover * 100).toFixed(0)}% replaced monthly</span></div>
+    </div>
+    <h3>Return above or below the average stock, by fifth</h3>
+    ${quintileChart(m.quintile_excess)}
+    <h3>Gap between the top and bottom fifth, each year</h3>
+    <p>${posY} of ${yrs.length} years positive. A score that works should be positive in most years, not just one or two.</p>
+    ${yearChart(m.spread_1m_by_year || {})}
+    ${m.early ? `<h3>Early trend changes</h3><p>Stocks flagged as early trend changes did ${pp(m.early["1 month"])} against the average stock over the next month, ${pp(m.early["3 months"])} over three months and ${pp(m.early["6 months"])} over six (${m.early.observations.toLocaleString("en-GB")} flags).</p>` : ""}
+  </section>`;
+}
+function fundSection(F){
+  if (!F || !F.profile) return "";
+  const rows = [["Fundamentals Profile (all 30 checks)", F.profile], ["Price below the fair-value estimate", F.dcf_cheapness], ["Little growth priced in (reverse DCF)", F.implied_growth_low], ...Object.entries(F.areas || {}).map(([n, q]) => [`${n} checks`, q])];
+  return `<section class="card sec"><h2>The fundamentals and fair value</h2>
+    <p>These are shown on every stock page but are not part of the score. They are tested the same way, rebuilt at each month-end from company filings as they were published (${F.stocks} stocks, ${F.from.slice(0, 7)} to ${F.to.slice(0, 7)}). They join the score only if they prove useful.</p>
+    <div class="tw"><table class="tt"><thead><tr><th>Measure</th><th>Top minus bottom fifth, 1 month</th><th>6 months</th><th>Clear?</th></tr></thead><tbody>
+    ${rows.map(([n, q]) => `<tr><td>${esc(n)}</td><td class="${q.q5_minus_q1[0] >= 0 ? "pos" : "neg"}">${pp(q.q5_minus_q1[0])}</td><td class="${q.q5_minus_q1[2] >= 0 ? "pos" : "neg"}">${pp(q.q5_minus_q1[2], 1)}</td><td>${q.q5_minus_q1.some((v, h) => v > 0 && sig(q.q5_minus_q1_t[h])) ? `<span class="pill yes">Yes</span>` : `<span class="pill no">Not yet</span>`}</td></tr>`).join("")}
+    </tbody></table></div></section>`;
+}
+(async () => {
+  let V;
+  try { V = await (await fetch("data/validation.json", { cache: "no-cache" })).json(); }
+  catch (e) { $("main").innerHTML = `<p class="sub">The test results couldn't be loaded. Check your connection and refresh the page.</p>`; return; }
+  const ms = V.markets || [];
+  const clear = ms.filter(m => m.q5_minus_q1.some((v, h) => v > 0 && sig(m.q5_minus_q1_t[h])));
+  const allPos = ms.every(m => m.q5_minus_q1.every(v => v > 0));
+  const good = clear.length === ms.length && ms.length;
+  const head = good ? "Yes, so far: higher-scored stocks have done better, by a clear margin."
+    : allPos ? "Not proven. Higher-scored stocks did a little better, but not by more than luck could explain."
+    : "Not proven. The results are mixed, and too small to tell apart from luck.";
+  $("main").innerHTML = `
+    <section class="card verdict ${good ? "good" : ""}"><h2>${head}</h2>
+      <p>${ms.map(m => `In the ${m.market}, the top fifth of stocks by score beat the bottom fifth by ${pp(m.q5_minus_q1[0])} a month on average (${pp(m.q5_minus_q1[2], 1)} over six months), with a t-statistic of ${m.q5_minus_q1_t[0].toFixed(2)}.`).join(" ")} A t-statistic below about 2 means a gap this size could easily come from chance.</p>
+      <p>So treat the score as a quick way to sort a long list by trend and momentum, not as evidence that a stock will do well. We'll keep publishing this test every month, whatever it shows. Last updated ${new Date(V.generated).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}.</p>
+    </section>
+    <div class="grid2">${ms.map(marketSection).join("")}</div>
+    ${fundSection(V.fundamentals)}
+    <section class="card sec"><h2>How the test works, and its limits</h2>
+      <ol class="how">
+        <li>At each month-end the score is rebuilt from prices up to that day only. Sentiment is left out because there isn't enough news history yet.</li>
+        <li>Stocks are sorted into five equal groups by score within their own market, and each group's return over the next one, three and six months is compared with the average stock in that market.</li>
+        <li>The 3- and 6-month results overlap from month to month, so their t-statistics use only non-overlapping periods.</li>
+        <li>The stock lists are today's index members. Companies that fell out of the index (often after falling sharply) are missing, which flatters every group, though not one more than another.</li>
+        <li>The score's weights were set before this test was run and have not been tuned to it. Past results don't predict future returns. Nothing here is investment advice.</li>
+      </ol>
+      <p>The code and the full monthly report are on <a href="https://github.com/ptkwcxzd72-rgb/BullPulse/blob/main/reports/validation.md" target="_blank" rel="noopener">GitHub</a>.</p>
+    </section>`;
+})();
+</script>
+</body>
+</html>

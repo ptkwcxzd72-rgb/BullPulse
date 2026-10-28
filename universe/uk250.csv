@@ -1,251 +1,251 @@
-ticker,name,sector,market,cik,provider_ticker,index
-3IN,3i Infrastructure,Financials,UK,,uk-3in,FTSE 250
-FOUR,4imprint,Communication Services,UK,,uk-four,FTSE 250
-AAS,Aberdeen Asia Focus,Financials,UK,,uk-aas,FTSE 250
-ASL,Aberforth Smaller Companies Trust,Financials,UK,,uk-asl,FTSE 250
-AEP,AEP Plantations,Consumer Staples,UK,,uk-aep,FTSE 250
-ALFA,Alfa Financial Software,Information Technology,UK,,uk-alfa,FTSE 250
-ATT,Allianz Technology Trust,Financials,UK,,uk-att,FTSE 250
-AMRQ,Amaroq,Materials,UK,,uk-amrq,FTSE 250
-AO,AO World,Consumer Discretionary,UK,,uk-ao,FTSE 250
-APN,Applied Nutrition,Consumer Staples,UK,,uk-apn,FTSE 250
-ASHM,Ashmore Group,Financials,UK,,uk-ashm,FTSE 250
-AIE,Ashoka India Equity Investment Trust,Financials,UK,,uk-aie,FTSE 250
-ASC,ASOS,Consumer Discretionary,UK,,uk-asc,FTSE 250
-ATYM,Atalaya Mining,Materials,UK,,uk-atym,FTSE 250
-ATG,Auction Technology Group,Information Technology,UK,,uk-atg,FTSE 250
-AGT,AVI Global Trust,Financials,UK,,uk-agt,FTSE 250
-AVON,Avon Technologies,Industrials,UK,,uk-avon,FTSE 250
-BME,B&M,Consumer Discretionary,UK,,uk-bme,FTSE 250
-BGFD,Baillie Gifford Japan Trust,Financials,UK,,uk-bgfd,FTSE 250
-USA,Baillie Gifford US Growth Trust,Financials,UK,,uk-usa,FTSE 250
-BCG,Baltic Classifieds,Consumer Discretionary,UK,,uk-bcg,FTSE 250
-BNKR,Bankers Investment Trust,Financials,UK,,uk-bnkr,FTSE 250
-BAG,A.G. Barr,Consumer Staples,UK,,uk-bag,FTSE 250
-AJB,AJ Bell,Financials,UK,,uk-ajb,FTSE 250
-BWY,Bellway,Consumer Discretionary,UK,,uk-bwy,FTSE 250
-BKG,Berkeley Group Holdings,Consumer Discretionary,UK,,uk-bkg,FTSE 250
-BHMG,BH Macro,Financials,UK,,uk-bhmg,FTSE 250
-BYG,Big Yellow Group,Real Estate,UK,,uk-byg,FTSE 250
-BPCR,Biopharma Credit,Financials,UK,,uk-bpcr,FTSE 250
-BRGE,BlackRock Greater Europe Investment Trust,Financials,UK,,uk-brge,FTSE 250
-BRSC,BlackRock Smaller Companies Trust,Financials,UK,,uk-brsc,FTSE 250
-BRWM,BlackRock World Mining Trust,Financials,UK,,uk-brwm,FTSE 250
-BMY,Bloomsbury Publishing,Communication Services,UK,,uk-bmy,FTSE 250
-BOY,Bodycote,Industrials,UK,,uk-boy,FTSE 250
-BREE,Breedon Group,Industrials,UK,,uk-bree,FTSE 250
-BPT,Bridgepoint Group,Financials,UK,,uk-bpt,FTSE 250
-BUT,Brunner Investment Trust,Financials,UK,,uk-but,FTSE 250
-BYIT,Bytes Technology Group,Information Technology,UK,,uk-byit,FTSE 250
-CLDN,Caledonia Investments,Financials,UK,,uk-cldn,FTSE 250
-CGT,Capital Gearing Trust,Financials,UK,,uk-cgt,FTSE 250
-CWR,Ceres Power,Energy,UK,,uk-cwr,FTSE 250
-CHG,Chemring Group,Industrials,UK,,uk-chg,FTSE 250
-CSN,Chesnara,Financials,UK,,uk-csn,FTSE 250
-CTY,City of London Investment Trust,Financials,UK,,uk-cty,FTSE 250
-CKN,Clarkson,Industrials,UK,,uk-ckn,FTSE 250
-CBG,Close Brothers Group,Financials,UK,,uk-cbg,FTSE 250
-CMCX,CMC Markets,Financials,UK,,uk-cmcx,FTSE 250
-COA,Coats Group,Consumer Staples,UK,,uk-coa,FTSE 250
-CORD,Cordiant Digital Infrastructure,Financials,UK,,uk-cord,FTSE 250
-COST,Costain Group,Industrials,UK,,uk-cost,FTSE 250
-CWK,Cranswick,Consumer Staples,UK,,uk-cwk,FTSE 250
-CURY,Currys,Consumer Discretionary,UK,,uk-cury,FTSE 250
-CVSG,CVS Group,Health Care,UK,,uk-cvsg,FTSE 250
-DLN,Derwent London,Real Estate,UK,,uk-dln,FTSE 250
-DSCV,discoverIE,Industrials,UK,,uk-dscv,FTSE 250
-DOM,Domino's Pizza,Consumer Discretionary,UK,,uk-dom,FTSE 250
-DRX,Drax Group,Utilities,UK,,uk-drx,FTSE 250
-DOCS,Dr. Martens,Consumer Discretionary,UK,,uk-docs,FTSE 250
-DNLM,Dunelm Group,Consumer Discretionary,UK,,uk-dnlm,FTSE 250
-EDIN,Edinburgh Investment Trust,Financials,UK,,uk-edin,FTSE 250
-EWI,Edinburgh Worldwide Investment Trust,Financials,UK,,uk-ewi,FTSE 250
-ELM,Elementis,Materials,UK,,uk-elm,FTSE 250
-ENOG,Energean,Energy,UK,,uk-enog,FTSE 250
-ENT,Entain,Consumer Discretionary,UK,,uk-ent,FTSE 250
-ESCT,European Smaller Companies Trust,Financials,UK,,uk-esct,FTSE 250
-EWG,Eurowag,Financials,UK,,uk-ewg,FTSE 250
-FCSS,Fidelity China Special Situations,Financials,UK,,uk-fcss,FTSE 250
-FEML,Fidelity Emerging Markets,Financials,UK,,uk-feml,FTSE 250
-FEV,Fidelity European Trust,Financials,UK,,uk-fev,FTSE 250
-FSV,Fidelity Special Values,Financials,UK,,uk-fsv,FTSE 250
-FGT,Finsbury Growth & Income Trust,Financials,UK,,uk-fgt,FTSE 250
-FGP,FirstGroup,Consumer Discretionary,UK,,uk-fgp,FTSE 250
-FGEN,Foresight Environmental Infrastructure,Financials,UK,,uk-fgen,FTSE 250
-FSG,Foresight Group,Financials,UK,,uk-fsg,FTSE 250
-FRAS,Frasers Group,Consumer Discretionary,UK,,uk-fras,FTSE 250
-FCH,Funding Circle,Financials,UK,,uk-fch,FTSE 250
-GFRD,Galliford Try,Industrials,UK,,uk-gfrd,FTSE 250
-GAMA,Gamma Communications,Communication Services,UK,,uk-gama,FTSE 250
-GCP,GCP Infrastructure Investments,Financials,UK,,uk-gcp,FTSE 250
-GEN,Genuit Group,Industrials,UK,,uk-gen,FTSE 250
-GNS,Genus,Health Care,UK,,uk-gns,FTSE 250
-DATA,GlobalData,Communication Services,UK,,uk-data,FTSE 250
-GSCT,Global Smaller Companies Trust,Financials,UK,,uk-gsct,FTSE 250
-GDWN,Goodwin,Industrials,UK,,uk-gdwn,FTSE 250
-GFTU,Grafton Group,Industrials,UK,,uk-gftu,FTSE 250
-GRI,Grainger,Real Estate,UK,,uk-gri,FTSE 250
-GPE,Great Portland Estates,Real Estate,UK,,uk-gpe,FTSE 250
-UKW,Greencoat UK Wind,Financials,UK,,uk-ukw,FTSE 250
-GNC,Greencore,Consumer Staples,UK,,uk-gnc,FTSE 250
-GRG,Greggs,Consumer Staples,UK,,uk-grg,FTSE 250
-HFD,Halfords,Consumer Discretionary,UK,,uk-hfd,FTSE 250
-HMSO,Hammerson,Real Estate,UK,,uk-hmso,FTSE 250
-HANA,Hansa Investment Company,Financials,UK,,uk-hana,FTSE 250
-HBR,Harbour Energy,Energy,UK,,uk-hbr,FTSE 250
-HVPE,HarbourVest Global Private Equity,Financials,UK,,uk-hvpe,FTSE 250
-HWG,Harworth Group,Real Estate,UK,,uk-hwg,FTSE 250
-HAS,Hays,Industrials,UK,,uk-has,FTSE 250
-HTWS,Helios Towers,Communication Services,UK,,uk-htws,FTSE 250
-HFEL,Henderson Far East Income,Financials,UK,,uk-hfel,FTSE 250
-HSL,Henderson Smaller Companies Investment Trust,Financials,UK,,uk-hsl,FTSE 250
-HRI,Herald Investment Trust,Financials,UK,,uk-hri,FTSE 250
-HGT,Hg Capital Trust,Financials,UK,,uk-hgt,FTSE 250
-HICL,HICL Infrastructure Company,Financials,UK,,uk-hicl,FTSE 250
-HIK,Hikma Pharmaceuticals,Health Care,UK,,uk-hik,FTSE 250
-HILS,Hill & Smith,Industrials,UK,,uk-hils,FTSE 250
-HFG,Hilton Food Group,Consumer Staples,UK,,uk-hfg,FTSE 250
-HOC,Hochschild Mining,Materials,UK,,uk-hoc,FTSE 250
-BOWL,Hollywood Bowl Group,Consumer Discretionary,UK,,uk-bowl,FTSE 250
-HTG,Hunting,Energy,UK,,uk-htg,FTSE 250
-ICGT,ICG Enterprise Trust,Financials,UK,,uk-icgt,FTSE 250
-INCH,Inchcape,Consumer Discretionary,UK,,uk-inch,FTSE 250
-IHP,IntegraFin Holdings,Financials,UK,,uk-ihp,FTSE 250
-INPP,International Public Partnerships,Financials,UK,,uk-inpp,FTSE 250
-IWG,International Workplace Group,Industrials,UK,,uk-iwg,FTSE 250
-IAD,Invesco Asia Dragon Trust,Financials,UK,,uk-iad,FTSE 250
-IPO,IP Group,Financials,UK,,uk-ipo,FTSE 250
-ITV,ITV,Communication Services,UK,,uk-itv,FTSE 250
-JMAT,Johnson Matthey,Materials,UK,,uk-jmat,FTSE 250
-JSG,Johnson Service Group,Industrials,UK,,uk-jsg,FTSE 250
-JAM,JPMorgan American Investment Trust,Financials,UK,,uk-jam,FTSE 250
-JCH,JPMorgan Claverhouse Investment Trust,Financials,UK,,uk-jch,FTSE 250
-JEMI,JPMorgan Emerging Markets Dividend Income,Financials,UK,,uk-jemi,FTSE 250
-JMGI,JPMorgan Emerging Markets Growth & Income,Financials,UK,,uk-jmgi,FTSE 250
-JEDT,JPMorgan European Discovery,Financials,UK,,uk-jedt,FTSE 250
-JEGI,JPMorgan European Growth & Income,Financials,UK,,uk-jegi,FTSE 250
-JGGI,JPMorgan Global Growth & Income,Financials,UK,,uk-jggi,FTSE 250
-JFJ,JPMorgan Japanese Investment Trust,Financials,UK,,uk-jfj,FTSE 250
-JUP,Jupiter Fund Management,Financials,UK,,uk-jup,FTSE 250
-KNOS,Kainos,Information Technology,UK,,uk-knos,FTSE 250
-KLR,Keller Group,Industrials,UK,,uk-klr,FTSE 250
-KIE,Kier Group,Industrials,UK,,uk-kie,FTSE 250
-LRE,Lancashire Holdings,Financials,UK,,uk-lre,FTSE 250
-LWDB,Law Debenture,Financials,UK,,uk-lwdb,FTSE 250
-EMG,Man Group,Financials,UK,,uk-emg,FTSE 250
-MEGP,ME Group International,Consumer Discretionary,UK,,uk-megp,FTSE 250
-MRC,Mercantile Investment Trust,Financials,UK,,uk-mrc,FTSE 250
-MRCH,Merchants Trust,Financials,UK,,uk-mrch,FTSE 250
-MNO,Meridian Mining,Materials,UK,,uk-mno,FTSE 250
-MTRO,Metro Bank,Financials,UK,,uk-mtro,FTSE 250
-PAGE,Michael Page,Industrials,UK,,uk-page,FTSE 250
-MAB,Mitchells & Butlers,Consumer Discretionary,UK,,uk-mab,FTSE 250
-MTO,Mitie,Industrials,UK,,uk-mto,FTSE 250
-GROW,Molten Ventures,Financials,UK,,uk-grow,FTSE 250
-MNDI,Mondi,Materials,UK,,uk-mndi,FTSE 250
-MNKS,Monks Investment Trust,Financials,UK,,uk-mnks,FTSE 250
-MONY,MONY Group,Communication Services,UK,,uk-mony,FTSE 250
-MOON,Moonpig,Consumer Discretionary,UK,,uk-moon,FTSE 250
-MGAM,Morgan Advanced Materials,Industrials,UK,,uk-mgam,FTSE 250
-MGNS,Morgan Sindall Group,Industrials,UK,,uk-mgns,FTSE 250
-MUT,Murray Income Trust,Financials,UK,,uk-mut,FTSE 250
-MYI,Murray International Trust,Financials,UK,,uk-myi,FTSE 250
-NCC,NCC Group,Information Technology,UK,,uk-ncc,FTSE 250
-NBPE,Neuberger Private Equity Partners,Financials,UK,,uk-nbpe,FTSE 250
-N91,Ninety One,Financials,UK,,uk-n91,FTSE 250
-NAIT,North American Income Trust,Financials,UK,,uk-nait,FTSE 250
-NAS,North Atlantic Smaller Companies Investment Trust,Financials,UK,,uk-nas,FTSE 250
-OCI,Oakley Capital Investments,Financials,UK,,uk-oci,FTSE 250
-OCDO,Ocado Group,Consumer Staples,UK,,uk-ocdo,FTSE 250
-OSB,OSB Group,Financials,UK,,uk-osb,FTSE 250
-OXB,Oxford Biomedica,Health Care,UK,,uk-oxb,FTSE 250
-OXIG,Oxford Instruments,Industrials,UK,,uk-oxig,FTSE 250
-ONT,Oxford Nanopore Technologies,Health Care,UK,,uk-ont,FTSE 250
-PHI,Pacific Horizon Investment Trust,Financials,UK,,uk-phi,FTSE 250
-PAF,Pan African Resources,Materials,UK,,uk-paf,FTSE 250
-PINT,Pantheon Infrastructure,Financials,UK,,uk-pint,FTSE 250
-PIN,Pantheon International,Financials,UK,,uk-pin,FTSE 250
-PAG,Paragon Banking Group,Financials,UK,,uk-pag,FTSE 250
-PEY,Partners Group Private Equity,Financials,UK,,uk-pey,FTSE 250
-PPET,Patria Private Equity Trust,Financials,UK,,uk-ppet,FTSE 250
-PNN,Pennon Group,Utilities,UK,,uk-pnn,FTSE 250
-PSN,Persimmon,Consumer Discretionary,UK,,uk-psn,FTSE 250
-PNL,Personal Assets Trust,Financials,UK,,uk-pnl,FTSE 250
-PETS,Pets at Home,Consumer Discretionary,UK,,uk-pets,FTSE 250
-PTEC,Playtech,Information Technology,UK,,uk-ptec,FTSE 250
-PLUS,Plus500,Financials,UK,,uk-plus,FTSE 250
-PCGH,Polar Capital Global Healthcare Trust,Financials,UK,,uk-pcgh,FTSE 250
-POLN,Pollen Street Group,Financials,UK,,uk-poln,FTSE 250
-PPH,PPHE Hotel Group,Consumer Discretionary,UK,,uk-pph,FTSE 250
-PFD,Premier Foods,Consumer Staples,UK,,uk-pfd,FTSE 250
-PHP,Primary Health Properties,Real Estate,UK,,uk-php,FTSE 250
-PRN,Princes Group,Consumer Staples,UK,,uk-prn,FTSE 250
-QQ,Qinetiq,Industrials,UK,,uk-qq,FTSE 250
-QLT,Quilter,Financials,UK,,uk-qlt,FTSE 250
-RNK,Rank Group,Consumer Discretionary,UK,,uk-rnk,FTSE 250
-RPI,Raspberry Pi Holdings,Information Technology,UK,,uk-rpi,FTSE 250
-RAT,Rathbones,Financials,UK,,uk-rat,FTSE 250
-RSW,Renishaw,Industrials,UK,,uk-rsw,FTSE 250
-RHIM,RHI Magnesita,Industrials,UK,,uk-rhim,FTSE 250
-RMV,Rightmove,Communication Services,UK,,uk-rmv,FTSE 250
-RCP,RIT Capital Partners,Financials,UK,,uk-rcp,FTSE 250
-ROSE,Rosebank Industries,Industrials,UK,,uk-rose,FTSE 250
-ROR,Rotork,Industrials,UK,,uk-ror,FTSE 250
-RS1,RS Group,Industrials,UK,,uk-rs1,FTSE 250
-RTW,RTW Biotech Opportunities,Financials,UK,,uk-rtw,FTSE 250
-RICA,Ruffer Investment Company,Financials,UK,,uk-rica,FTSE 250
-SAFE,Safestore,Real Estate,UK,,uk-safe,FTSE 250
-SAGA,Saga,Consumer Discretionary,UK,,uk-saga,FTSE 250
-SVS,Savills,Real Estate,UK,,uk-svs,FTSE 250
-MNTN,Schiehallion Fund,Financials,UK,,uk-mntn,FTSE 250
-ATR,Schroder Asian Total Return Investment Company,Financials,UK,,uk-atr,FTSE 250
-SDP,Schroder AsiaPacific Fund,Financials,UK,,uk-sdp,FTSE 250
-SOI,Schroder Oriental Income Fund,Financials,UK,,uk-soi,FTSE 250
-SAIN,Scottish American Investment Company,Financials,UK,,uk-sain,FTSE 250
-SEIT,SDCL Efficiency Income Trust,Financials,UK,,uk-seit,FTSE 250
-SEQI,Sequoia Economic Infrastructure Income Fund,Financials,UK,,uk-seqi,FTSE 250
-SSIT,Seraphim Space Investment Trust,Financials,UK,,uk-ssit,FTSE 250
-SRP,Serco,Industrials,UK,,uk-srp,FTSE 250
-SHC,Shaftesbury Capital,Real Estate,UK,,uk-shc,FTSE 250
-SHAW,Shawbrook Bank,Financials,UK,,uk-shaw,FTSE 250
-SRE,Sirius Real Estate,Real Estate,UK,,uk-sre,FTSE 250
-SCT,Softcat,Information Technology,UK,,uk-sct,FTSE 250
-SPI,Spire Healthcare,Health Care,UK,,uk-spi,FTSE 250
-SSPG,SSP Group,Consumer Discretionary,UK,,uk-sspg,FTSE 250
-SUPR,Supermarket Income REIT,Real Estate,UK,,uk-supr,FTSE 250
-SYNC,Syncona,Financials,UK,,uk-sync,FTSE 250
-THRL,Target Healthcare REIT,Real Estate,UK,,uk-thrl,FTSE 250
-TATE,Tate & Lyle,Consumer Staples,UK,,uk-tate,FTSE 250
-TW,Taylor Wimpey,Consumer Discretionary,UK,,uk-tw,FTSE 250
-TBCG,TBC Bank,Financials,UK,,uk-tbcg,FTSE 250
-TEP,Telecom Plus,Utilities,UK,,uk-tep,FTSE 250
-TMPL,Temple Bar Investment Trust,Financials,UK,,uk-tmpl,FTSE 250
-TEM,Templeton Emerging Markets Investment Trust,Financials,UK,,uk-tem,FTSE 250
-TRIG,The Renewables Infrastructure Group,Financials,UK,,uk-trig,FTSE 250
-THG,THG,Consumer Discretionary,UK,,uk-thg,FTSE 250
-TCAP,TP ICAP,Financials,UK,,uk-tcap,FTSE 250
-TRN,Trainline,Consumer Discretionary,UK,,uk-trn,FTSE 250
-TPK,Travis Perkins,Industrials,UK,,uk-tpk,FTSE 250
-TRY,TR Property Investment Trust,Financials,UK,,uk-try,FTSE 250
-TRST,Trustpilot,Information Technology,UK,,uk-trst,FTSE 250
-TFIF,Twentyfour Income Fund,Financials,UK,,uk-tfif,FTSE 250
-UTG,Unite Group,Real Estate,UK,,uk-utg,FTSE 250
-UEM,Utilico Emerging Markets,Financials,UK,,uk-uem,FTSE 250
-VSVS,Vesuvius,Industrials,UK,,uk-vsvs,FTSE 250
-VCT,Victrex,Materials,UK,,uk-vct,FTSE 250
-VEIL,Vietnam Enterprise Investments,Financials,UK,,uk-veil,FTSE 250
-VOF,VinaCapital Vietnam Opportunity Fund,Financials,UK,,uk-vof,FTSE 250
-VTY,Vistry Group,Consumer Discretionary,UK,,uk-vty,FTSE 250
-VLX,Volex,Industrials,UK,,uk-vlx,FTSE 250
-FAN,Volution Group,Industrials,UK,,uk-fan,FTSE 250
-WOSG,Watches of Switzerland,Consumer Discretionary,UK,,uk-wosg,FTSE 250
-JDW,Wetherspoons,Consumer Discretionary,UK,,uk-jdw,FTSE 250
-SMWH,WHSmith,Consumer Discretionary,UK,,uk-smwh,FTSE 250
-WIX,Wickes,Consumer Discretionary,UK,,uk-wix,FTSE 250
-WIZZ,Wizz Air,Consumer Discretionary,UK,,uk-wizz,FTSE 250
-WKP,Workspace Group,Real Estate,UK,,uk-wkp,FTSE 250
-WWH,Worldwide Healthcare Trust,Financials,UK,,uk-wwh,FTSE 250
-XPP,XP Power,Industrials,UK,,uk-xpp,FTSE 250
-XPS,XPS Pensions,Financials,UK,,uk-xps,FTSE 250
-YNGA,Young's,Consumer Discretionary,UK,,uk-ynga,FTSE 250
-ZIG,Zigup,Industrials,UK,,uk-zig,FTSE 250
+ticker,name,sector,market,cik,provider_ticker,index,type
+3IN,3i Infrastructure,Financials,UK,,uk-3in,FTSE 250,trust
+FOUR,4imprint,Communication Services,UK,,uk-four,FTSE 250,
+AAS,Aberdeen Asia Focus,Financials,UK,,uk-aas,FTSE 250,trust
+ASL,Aberforth Smaller Companies Trust,Financials,UK,,uk-asl,FTSE 250,trust
+AEP,AEP Plantations,Consumer Staples,UK,,uk-aep,FTSE 250,
+ALFA,Alfa Financial Software,Information Technology,UK,,uk-alfa,FTSE 250,
+ATT,Allianz Technology Trust,Financials,UK,,uk-att,FTSE 250,trust
+AMRQ,Amaroq,Materials,UK,,uk-amrq,FTSE 250,
+AO,AO World,Consumer Discretionary,UK,,uk-ao,FTSE 250,
+APN,Applied Nutrition,Consumer Staples,UK,,uk-apn,FTSE 250,
+ASHM,Ashmore Group,Financials,UK,,uk-ashm,FTSE 250,
+AIE,Ashoka India Equity Investment Trust,Financials,UK,,uk-aie,FTSE 250,trust
+ASC,ASOS,Consumer Discretionary,UK,,uk-asc,FTSE 250,
+ATYM,Atalaya Mining,Materials,UK,,uk-atym,FTSE 250,
+ATG,Auction Technology Group,Information Technology,UK,,uk-atg,FTSE 250,
+AGT,AVI Global Trust,Financials,UK,,uk-agt,FTSE 250,trust
+AVON,Avon Technologies,Industrials,UK,,uk-avon,FTSE 250,
+BME,B&M,Consumer Discretionary,UK,,uk-bme,FTSE 250,
+BGFD,Baillie Gifford Japan Trust,Financials,UK,,uk-bgfd,FTSE 250,trust
+USA,Baillie Gifford US Growth Trust,Financials,UK,,uk-usa,FTSE 250,trust
+BCG,Baltic Classifieds,Consumer Discretionary,UK,,uk-bcg,FTSE 250,
+BNKR,Bankers Investment Trust,Financials,UK,,uk-bnkr,FTSE 250,trust
+BAG,A.G. Barr,Consumer Staples,UK,,uk-bag,FTSE 250,
+AJB,AJ Bell,Financials,UK,,uk-ajb,FTSE 250,
+BWY,Bellway,Consumer Discretionary,UK,,uk-bwy,FTSE 250,
+BKG,Berkeley Group Holdings,Consumer Discretionary,UK,,uk-bkg,FTSE 250,
+BHMG,BH Macro,Financials,UK,,uk-bhmg,FTSE 250,trust
+BYG,Big Yellow Group,Real Estate,UK,,uk-byg,FTSE 250,
+BPCR,Biopharma Credit,Financials,UK,,uk-bpcr,FTSE 250,trust
+BRGE,BlackRock Greater Europe Investment Trust,Financials,UK,,uk-brge,FTSE 250,trust
+BRSC,BlackRock Smaller Companies Trust,Financials,UK,,uk-brsc,FTSE 250,trust
+BRWM,BlackRock World Mining Trust,Financials,UK,,uk-brwm,FTSE 250,trust
+BMY,Bloomsbury Publishing,Communication Services,UK,,uk-bmy,FTSE 250,
+BOY,Bodycote,Industrials,UK,,uk-boy,FTSE 250,
+BREE,Breedon Group,Industrials,UK,,uk-bree,FTSE 250,
+BPT,Bridgepoint Group,Financials,UK,,uk-bpt,FTSE 250,
+BUT,Brunner Investment Trust,Financials,UK,,uk-but,FTSE 250,trust
+BYIT,Bytes Technology Group,Information Technology,UK,,uk-byit,FTSE 250,
+CLDN,Caledonia Investments,Financials,UK,,uk-cldn,FTSE 250,trust
+CGT,Capital Gearing Trust,Financials,UK,,uk-cgt,FTSE 250,trust
+CWR,Ceres Power,Energy,UK,,uk-cwr,FTSE 250,
+CHG,Chemring Group,Industrials,UK,,uk-chg,FTSE 250,
+CSN,Chesnara,Financials,UK,,uk-csn,FTSE 250,
+CTY,City of London Investment Trust,Financials,UK,,uk-cty,FTSE 250,trust
+CKN,Clarkson,Industrials,UK,,uk-ckn,FTSE 250,
+CBG,Close Brothers Group,Financials,UK,,uk-cbg,FTSE 250,
+CMCX,CMC Markets,Financials,UK,,uk-cmcx,FTSE 250,
+COA,Coats Group,Consumer Staples,UK,,uk-coa,FTSE 250,
+CORD,Cordiant Digital Infrastructure,Financials,UK,,uk-cord,FTSE 250,trust
+COST,Costain Group,Industrials,UK,,uk-cost,FTSE 250,
+CWK,Cranswick,Consumer Staples,UK,,uk-cwk,FTSE 250,
+CURY,Currys,Consumer Discretionary,UK,,uk-cury,FTSE 250,
+CVSG,CVS Group,Health Care,UK,,uk-cvsg,FTSE 250,
+DLN,Derwent London,Real Estate,UK,,uk-dln,FTSE 250,
+DSCV,discoverIE,Industrials,UK,,uk-dscv,FTSE 250,
+DOM,Domino's Pizza,Consumer Discretionary,UK,,uk-dom,FTSE 250,
+DRX,Drax Group,Utilities,UK,,uk-drx,FTSE 250,
+DOCS,Dr. Martens,Consumer Discretionary,UK,,uk-docs,FTSE 250,
+DNLM,Dunelm Group,Consumer Discretionary,UK,,uk-dnlm,FTSE 250,
+EDIN,Edinburgh Investment Trust,Financials,UK,,uk-edin,FTSE 250,trust
+EWI,Edinburgh Worldwide Investment Trust,Financials,UK,,uk-ewi,FTSE 250,trust
+ELM,Elementis,Materials,UK,,uk-elm,FTSE 250,
+ENOG,Energean,Energy,UK,,uk-enog,FTSE 250,
+ENT,Entain,Consumer Discretionary,UK,,uk-ent,FTSE 250,
+ESCT,European Smaller Companies Trust,Financials,UK,,uk-esct,FTSE 250,trust
+EWG,Eurowag,Financials,UK,,uk-ewg,FTSE 250,
+FCSS,Fidelity China Special Situations,Financials,UK,,uk-fcss,FTSE 250,trust
+FEML,Fidelity Emerging Markets,Financials,UK,,uk-feml,FTSE 250,trust
+FEV,Fidelity European Trust,Financials,UK,,uk-fev,FTSE 250,trust
+FSV,Fidelity Special Values,Financials,UK,,uk-fsv,FTSE 250,trust
+FGT,Finsbury Growth & Income Trust,Financials,UK,,uk-fgt,FTSE 250,trust
+FGP,FirstGroup,Consumer Discretionary,UK,,uk-fgp,FTSE 250,
+FGEN,Foresight Environmental Infrastructure,Financials,UK,,uk-fgen,FTSE 250,trust
+FSG,Foresight Group,Financials,UK,,uk-fsg,FTSE 250,
+FRAS,Frasers Group,Consumer Discretionary,UK,,uk-fras,FTSE 250,
+FCH,Funding Circle,Financials,UK,,uk-fch,FTSE 250,
+GFRD,Galliford Try,Industrials,UK,,uk-gfrd,FTSE 250,
+GAMA,Gamma Communications,Communication Services,UK,,uk-gama,FTSE 250,
+GCP,GCP Infrastructure Investments,Financials,UK,,uk-gcp,FTSE 250,trust
+GEN,Genuit Group,Industrials,UK,,uk-gen,FTSE 250,
+GNS,Genus,Health Care,UK,,uk-gns,FTSE 250,
+DATA,GlobalData,Communication Services,UK,,uk-data,FTSE 250,
+GSCT,Global Smaller Companies Trust,Financials,UK,,uk-gsct,FTSE 250,trust
+GDWN,Goodwin,Industrials,UK,,uk-gdwn,FTSE 250,
+GFTU,Grafton Group,Industrials,UK,,uk-gftu,FTSE 250,
+GRI,Grainger,Real Estate,UK,,uk-gri,FTSE 250,
+GPE,Great Portland Estates,Real Estate,UK,,uk-gpe,FTSE 250,
+UKW,Greencoat UK Wind,Financials,UK,,uk-ukw,FTSE 250,trust
+GNC,Greencore,Consumer Staples,UK,,uk-gnc,FTSE 250,
+GRG,Greggs,Consumer Staples,UK,,uk-grg,FTSE 250,
+HFD,Halfords,Consumer Discretionary,UK,,uk-hfd,FTSE 250,
+HMSO,Hammerson,Real Estate,UK,,uk-hmso,FTSE 250,
+HANA,Hansa Investment Company,Financials,UK,,uk-hana,FTSE 250,trust
+HBR,Harbour Energy,Energy,UK,,uk-hbr,FTSE 250,
+HVPE,HarbourVest Global Private Equity,Financials,UK,,uk-hvpe,FTSE 250,trust
+HWG,Harworth Group,Real Estate,UK,,uk-hwg,FTSE 250,
+HAS,Hays,Industrials,UK,,uk-has,FTSE 250,
+HTWS,Helios Towers,Communication Services,UK,,uk-htws,FTSE 250,
+HFEL,Henderson Far East Income,Financials,UK,,uk-hfel,FTSE 250,trust
+HSL,Henderson Smaller Companies Investment Trust,Financials,UK,,uk-hsl,FTSE 250,trust
+HRI,Herald Investment Trust,Financials,UK,,uk-hri,FTSE 250,trust
+HGT,Hg Capital Trust,Financials,UK,,uk-hgt,FTSE 250,trust
+HICL,HICL Infrastructure Company,Financials,UK,,uk-hicl,FTSE 250,trust
+HIK,Hikma Pharmaceuticals,Health Care,UK,,uk-hik,FTSE 250,
+HILS,Hill & Smith,Industrials,UK,,uk-hils,FTSE 250,
+HFG,Hilton Food Group,Consumer Staples,UK,,uk-hfg,FTSE 250,
+HOC,Hochschild Mining,Materials,UK,,uk-hoc,FTSE 250,
+BOWL,Hollywood Bowl Group,Consumer Discretionary,UK,,uk-bowl,FTSE 250,
+HTG,Hunting,Energy,UK,,uk-htg,FTSE 250,
+ICGT,ICG Enterprise Trust,Financials,UK,,uk-icgt,FTSE 250,trust
+INCH,Inchcape,Consumer Discretionary,UK,,uk-inch,FTSE 250,
+IHP,IntegraFin Holdings,Financials,UK,,uk-ihp,FTSE 250,
+INPP,International Public Partnerships,Financials,UK,,uk-inpp,FTSE 250,trust
+IWG,International Workplace Group,Industrials,UK,,uk-iwg,FTSE 250,
+IAD,Invesco Asia Dragon Trust,Financials,UK,,uk-iad,FTSE 250,trust
+IPO,IP Group,Financials,UK,,uk-ipo,FTSE 250,
+ITV,ITV,Communication Services,UK,,uk-itv,FTSE 250,
+JMAT,Johnson Matthey,Materials,UK,,uk-jmat,FTSE 250,
+JSG,Johnson Service Group,Industrials,UK,,uk-jsg,FTSE 250,
+JAM,JPMorgan American Investment Trust,Financials,UK,,uk-jam,FTSE 250,trust
+JCH,JPMorgan Claverhouse Investment Trust,Financials,UK,,uk-jch,FTSE 250,trust
+JEMI,JPMorgan Emerging Markets Dividend Income,Financials,UK,,uk-jemi,FTSE 250,trust
+JMGI,JPMorgan Emerging Markets Growth & Income,Financials,UK,,uk-jmgi,FTSE 250,trust
+JEDT,JPMorgan European Discovery,Financials,UK,,uk-jedt,FTSE 250,trust
+JEGI,JPMorgan European Growth & Income,Financials,UK,,uk-jegi,FTSE 250,trust
+JGGI,JPMorgan Global Growth & Income,Financials,UK,,uk-jggi,FTSE 250,trust
+JFJ,JPMorgan Japanese Investment Trust,Financials,UK,,uk-jfj,FTSE 250,trust
+JUP,Jupiter Fund Management,Financials,UK,,uk-jup,FTSE 250,
+KNOS,Kainos,Information Technology,UK,,uk-knos,FTSE 250,
+KLR,Keller Group,Industrials,UK,,uk-klr,FTSE 250,
+KIE,Kier Group,Industrials,UK,,uk-kie,FTSE 250,
+LRE,Lancashire Holdings,Financials,UK,,uk-lre,FTSE 250,
+LWDB,Law Debenture,Financials,UK,,uk-lwdb,FTSE 250,trust
+EMG,Man Group,Financials,UK,,uk-emg,FTSE 250,
+MEGP,ME Group International,Consumer Discretionary,UK,,uk-megp,FTSE 250,
+MRC,Mercantile Investment Trust,Financials,UK,,uk-mrc,FTSE 250,trust
+MRCH,Merchants Trust,Financials,UK,,uk-mrch,FTSE 250,trust
+MNO,Meridian Mining,Materials,UK,,uk-mno,FTSE 250,
+MTRO,Metro Bank,Financials,UK,,uk-mtro,FTSE 250,
+PAGE,Michael Page,Industrials,UK,,uk-page,FTSE 250,
+MAB,Mitchells & Butlers,Consumer Discretionary,UK,,uk-mab,FTSE 250,
+MTO,Mitie,Industrials,UK,,uk-mto,FTSE 250,
+GROW,Molten Ventures,Financials,UK,,uk-grow,FTSE 250,
+MNDI,Mondi,Materials,UK,,uk-mndi,FTSE 250,
+MNKS,Monks Investment Trust,Financials,UK,,uk-mnks,FTSE 250,trust
+MONY,MONY Group,Communication Services,UK,,uk-mony,FTSE 250,
+MOON,Moonpig,Consumer Discretionary,UK,,uk-moon,FTSE 250,
+MGAM,Morgan Advanced Materials,Industrials,UK,,uk-mgam,FTSE 250,
+MGNS,Morgan Sindall Group,Industrials,UK,,uk-mgns,FTSE 250,
+MUT,Murray Income Trust,Financials,UK,,uk-mut,FTSE 250,trust
+MYI,Murray International Trust,Financials,UK,,uk-myi,FTSE 250,trust
+NCC,NCC Group,Information Technology,UK,,uk-ncc,FTSE 250,
+NBPE,Neuberger Private Equity Partners,Financials,UK,,uk-nbpe,FTSE 250,trust
+N91,Ninety One,Financials,UK,,uk-n91,FTSE 250,
+NAIT,North American Income Trust,Financials,UK,,uk-nait,FTSE 250,trust
+NAS,North Atlantic Smaller Companies Investment Trust,Financials,UK,,uk-nas,FTSE 250,trust
+OCI,Oakley Capital Investments,Financials,UK,,uk-oci,FTSE 250,trust
+OCDO,Ocado Group,Consumer Staples,UK,,uk-ocdo,FTSE 250,
+OSB,OSB Group,Financials,UK,,uk-osb,FTSE 250,
+OXB,Oxford Biomedica,Health Care,UK,,uk-oxb,FTSE 250,
+OXIG,Oxford Instruments,Industrials,UK,,uk-oxig,FTSE 250,
+ONT,Oxford Nanopore Technologies,Health Care,UK,,uk-ont,FTSE 250,
+PHI,Pacific Horizon Investment Trust,Financials,UK,,uk-phi,FTSE 250,trust
+PAF,Pan African Resources,Materials,UK,,uk-paf,FTSE 250,
+PINT,Pantheon Infrastructure,Financials,UK,,uk-pint,FTSE 250,trust
+PIN,Pantheon International,Financials,UK,,uk-pin,FTSE 250,trust
+PAG,Paragon Banking Group,Financials,UK,,uk-pag,FTSE 250,
+PEY,Partners Group Private Equity,Financials,UK,,uk-pey,FTSE 250,trust
+PPET,Patria Private Equity Trust,Financials,UK,,uk-ppet,FTSE 250,trust
+PNN,Pennon Group,Utilities,UK,,uk-pnn,FTSE 250,
+PSN,Persimmon,Consumer Discretionary,UK,,uk-psn,FTSE 250,
+PNL,Personal Assets Trust,Financials,UK,,uk-pnl,FTSE 250,trust
+PETS,Pets at Home,Consumer Discretionary,UK,,uk-pets,FTSE 250,
+PTEC,Playtech,Information Technology,UK,,uk-ptec,FTSE 250,
+PLUS,Plus500,Financials,UK,,uk-plus,FTSE 250,
+PCGH,Polar Capital Global Healthcare Trust,Financials,UK,,uk-pcgh,FTSE 250,trust
+POLN,Pollen Street Group,Financials,UK,,uk-poln,FTSE 250,
+PPH,PPHE Hotel Group,Consumer Discretionary,UK,,uk-pph,FTSE 250,
+PFD,Premier Foods,Consumer Staples,UK,,uk-pfd,FTSE 250,
+PHP,Primary Health Properties,Real Estate,UK,,uk-php,FTSE 250,
+PRN,Princes Group,Consumer Staples,UK,,uk-prn,FTSE 250,
+QQ,Qinetiq,Industrials,UK,,uk-qq,FTSE 250,
+QLT,Quilter,Financials,UK,,uk-qlt,FTSE 250,
+RNK,Rank Group,Consumer Discretionary,UK,,uk-rnk,FTSE 250,
+RPI,Raspberry Pi Holdings,Information Technology,UK,,uk-rpi,FTSE 250,
+RAT,Rathbones,Financials,UK,,uk-rat,FTSE 250,
+RSW,Renishaw,Industrials,UK,,uk-rsw,FTSE 250,
+RHIM,RHI Magnesita,Industrials,UK,,uk-rhim,FTSE 250,
+RMV,Rightmove,Communication Services,UK,,uk-rmv,FTSE 250,
+RCP,RIT Capital Partners,Financials,UK,,uk-rcp,FTSE 250,trust
+ROSE,Rosebank Industries,Industrials,UK,,uk-rose,FTSE 250,
+ROR,Rotork,Industrials,UK,,uk-ror,FTSE 250,
+RS1,RS Group,Industrials,UK,,uk-rs1,FTSE 250,
+RTW,RTW Biotech Opportunities,Financials,UK,,uk-rtw,FTSE 250,trust
+RICA,Ruffer Investment Company,Financials,UK,,uk-rica,FTSE 250,trust
+SAFE,Safestore,Real Estate,UK,,uk-safe,FTSE 250,
+SAGA,Saga,Consumer Discretionary,UK,,uk-saga,FTSE 250,
+SVS,Savills,Real Estate,UK,,uk-svs,FTSE 250,
+MNTN,Schiehallion Fund,Financials,UK,,uk-mntn,FTSE 250,trust
+ATR,Schroder Asian Total Return Investment Company,Financials,UK,,uk-atr,FTSE 250,trust
+SDP,Schroder AsiaPacific Fund,Financials,UK,,uk-sdp,FTSE 250,trust
+SOI,Schroder Oriental Income Fund,Financials,UK,,uk-soi,FTSE 250,trust
+SAIN,Scottish American Investment Company,Financials,UK,,uk-sain,FTSE 250,trust
+SEIT,SDCL Efficiency Income Trust,Financials,UK,,uk-seit,FTSE 250,trust
+SEQI,Sequoia Economic Infrastructure Income Fund,Financials,UK,,uk-seqi,FTSE 250,trust
+SSIT,Seraphim Space Investment Trust,Financials,UK,,uk-ssit,FTSE 250,trust
+SRP,Serco,Industrials,UK,,uk-srp,FTSE 250,
+SHC,Shaftesbury Capital,Real Estate,UK,,uk-shc,FTSE 250,
+SHAW,Shawbrook Bank,Financials,UK,,uk-shaw,FTSE 250,
+SRE,Sirius Real Estate,Real Estate,UK,,uk-sre,FTSE 250,
+SCT,Softcat,Information Technology,UK,,uk-sct,FTSE 250,
+SPI,Spire Healthcare,Health Care,UK,,uk-spi,FTSE 250,
+SSPG,SSP Group,Consumer Discretionary,UK,,uk-sspg,FTSE 250,
+SUPR,Supermarket Income REIT,Real Estate,UK,,uk-supr,FTSE 250,
+SYNC,Syncona,Financials,UK,,uk-sync,FTSE 250,trust
+THRL,Target Healthcare REIT,Real Estate,UK,,uk-thrl,FTSE 250,
+TATE,Tate & Lyle,Consumer Staples,UK,,uk-tate,FTSE 250,
+TW,Taylor Wimpey,Consumer Discretionary,UK,,uk-tw,FTSE 250,
+TBCG,TBC Bank,Financials,UK,,uk-tbcg,FTSE 250,
+TEP,Telecom Plus,Utilities,UK,,uk-tep,FTSE 250,
+TMPL,Temple Bar Investment Trust,Financials,UK,,uk-tmpl,FTSE 250,trust
+TEM,Templeton Emerging Markets Investment Trust,Financials,UK,,uk-tem,FTSE 250,trust
+TRIG,The Renewables Infrastructure Group,Financials,UK,,uk-trig,FTSE 250,trust
+THG,THG,Consumer Discretionary,UK,,uk-thg,FTSE 250,
+TCAP,TP ICAP,Financials,UK,,uk-tcap,FTSE 250,
+TRN,Trainline,Consumer Discretionary,UK,,uk-trn,FTSE 250,
+TPK,Travis Perkins,Industrials,UK,,uk-tpk,FTSE 250,
+TRY,TR Property Investment Trust,Financials,UK,,uk-try,FTSE 250,trust
+TRST,Trustpilot,Information Technology,UK,,uk-trst,FTSE 250,
+TFIF,Twentyfour Income Fund,Financials,UK,,uk-tfif,FTSE 250,trust
+UTG,Unite Group,Real Estate,UK,,uk-utg,FTSE 250,
+UEM,Utilico Emerging Markets,Financials,UK,,uk-uem,FTSE 250,trust
+VSVS,Vesuvius,Industrials,UK,,uk-vsvs,FTSE 250,
+VCT,Victrex,Materials,UK,,uk-vct,FTSE 250,
+VEIL,Vietnam Enterprise Investments,Financials,UK,,uk-veil,FTSE 250,trust
+VOF,VinaCapital Vietnam Opportunity Fund,Financials,UK,,uk-vof,FTSE 250,trust
+VTY,Vistry Group,Consumer Discretionary,UK,,uk-vty,FTSE 250,
+VLX,Volex,Industrials,UK,,uk-vlx,FTSE 250,
+FAN,Volution Group,Industrials,UK,,uk-fan,FTSE 250,
+WOSG,Watches of Switzerland,Consumer Discretionary,UK,,uk-wosg,FTSE 250,
+JDW,Wetherspoons,Consumer Discretionary,UK,,uk-jdw,FTSE 250,
+SMWH,WHSmith,Consumer Discretionary,UK,,uk-smwh,FTSE 250,
+WIX,Wickes,Consumer Discretionary,UK,,uk-wix,FTSE 250,
+WIZZ,Wizz Air,Consumer Discretionary,UK,,uk-wizz,FTSE 250,
+WKP,Workspace Group,Real Estate,UK,,uk-wkp,FTSE 250,
+WWH,Worldwide Healthcare Trust,Financials,UK,,uk-wwh,FTSE 250,trust
+XPP,XP Power,Industrials,UK,,uk-xpp,FTSE 250,
+XPS,XPS Pensions,Financials,UK,,uk-xps,FTSE 250,
+YNGA,Young's,Consumer Discretionary,UK,,uk-ynga,FTSE 250,
+ZIG,Zigup,Industrials,UK,,uk-zig,FTSE 250,

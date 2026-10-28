@@ -199,3 +199,22 @@ class News(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NightlyGuardTest(unittest.TestCase):
+    def test_duplicates_and_close(self):
+        import datetime as dt
+        import nightly_guard as g
+        utc = dt.timezone.utc
+        now = dt.datetime(2026, 10, 28, 22, 0, tzinfo=utc)
+        quick = {"id": 1, "status": "completed", "conclusion": "success", "event": "workflow_dispatch",
+                 "run_started_at": "2026-10-28T14:00:00Z", "updated_at": "2026-10-28T14:40:00Z"}
+        skipped = {"id": 2, "status": "completed", "conclusion": "success", "event": "schedule",
+                   "run_started_at": "2026-10-28T21:15:00Z", "updated_at": "2026-10-28T21:15:30Z"}
+        self.assertEqual(g.duplicate([quick, skipped], now), "")
+        real = {"id": 3, "status": "completed", "conclusion": "success", "event": "workflow_run",
+                "run_started_at": "2026-10-28T20:00:00Z", "updated_at": "2026-10-29T00:30:00Z"}
+        self.assertIn("run 3", g.duplicate([real], now))
+        self.assertIn("in_progress", g.duplicate([{"id": 4, "status": "in_progress"}], now))
+        self.assertAlmostEqual(g.wait_for_close(dt.datetime(2026, 10, 28, 19, 30, tzinfo=utc)), 40 * 60)
+        self.assertEqual(g.wait_for_close(dt.datetime(2026, 10, 31, 12, 0, tzinfo=utc)), 0)  # Saturday

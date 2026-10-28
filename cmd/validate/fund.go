@@ -127,7 +127,7 @@ func fundamentalsTest(ss []core.Stock, xs []*core.Series, ends []time.Time, pos 
 		for i, x := range xs {
 			rs := pit[ss[i].ID()]
 			j, ok := pos[i][d]
-			if len(rs) == 0 || !ok {
+			if len(rs) == 0 || !ok || ss[i].Trust { // investment trusts are valued on their assets
 				continue
 			}
 			k := sort.Search(len(rs), func(n int) bool { return rs[n].Date > ds }) - 1

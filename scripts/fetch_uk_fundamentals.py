@@ -253,7 +253,7 @@ def main():
     t0 = time.time()
 
     import glob
-    rows = [r for f in sorted(glob.glob(args.universe)) for r in csv.DictReader(open(f, newline=""))]
+    rows = [r for f in sorted(glob.glob(args.universe)) for r in csv.DictReader(open(f, newline="")) if (r.get("type") or "") != "trust"]  # trusts: asset-based, checks do not apply
     if os.path.exists(OUT) and args.max_age_days > 0:
         try:
             old = json.load(open(OUT))

@@ -2,10 +2,17 @@ name: Nightly update
 
 # Runs after the US close on weekdays: sync US prices, rank every stock, commit the data and
 # publish the website. UK prices, filings, insiders, results dates and news are gathered by the
-# evening job (evening.yml) a few hours earlier, so this job only has the long US price sync.
+# evening job (evening.yml), so this job only has the long US price sync.
+#
+# It starts as soon as the evening job finishes, so the two never overlap. GitHub often starts
+# scheduled jobs hours late (or skips them), so the 21:15 UTC schedule stays as a fallback; the
+# guard job makes sure only one of them does the night's work (scripts/nightly_guard.py).
 on:
+  workflow_run:
+    workflows: ["Evening data"]
+    types: [completed]
   schedule:
-    - cron: "15 21 * * 1-5" # 21:15 UTC = after the 16:00 New York close (summer and winter)
+    - cron: "15 21 * * 1-5" # fallback: 21:15 UTC = after the 16:00 New York close (summer and winter)
   workflow_dispatch:
     inputs:
       news_days:
@@ -21,13 +28,32 @@ permissions:
   pages: write
   id-token: write
   issues: write
+  actions: read
 
 concurrency:
   group: nightly
   cancel-in-progress: false
 
 jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    outputs:
+      run: ${{ steps.guard.outputs.run }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: scripts
+      - id: guard
+        name: Run tonight? (skip duplicates; wait for the New York close)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+        run: python3 scripts/nightly_guard.py
+
   update:
+    needs: guard
+    if: needs.guard.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 360
     environment:
@@ -42,6 +68,9 @@ jobs:
       MAX_TICKERS: ${{ vars.MAX_TICKERS }}
     steps:
       - uses: actions/checkout@v6
+
+      - name: Get the website data (site-data branch)
+        run: scripts/site_data.sh pull
 
       - uses: actions/setup-go@v6
         with:
@@ -114,6 +143,12 @@ jobs:
         if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
+      - name: Pick up data the evening job committed while prices were syncing
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main || echo "::warning::Could not update from main; ranking with the data checked out"
+
       - name: Rank stocks (with data-quality checks and score history)
         run: go run ./cmd/screener
 
@@ -123,10 +158,11 @@ jobs:
         run: |
           git config user.name "bullpulse-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data site/data site/feeds
+          git add data
           git diff --cached --quiet || git commit -m "Nightly data $(date -u +%F)"
           git pull --rebase origin main
           git push
+          scripts/site_data.sh push
 
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5

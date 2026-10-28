@@ -116,10 +116,12 @@ type Row struct {
 	Flags   []string `json:"flags,omitempty"` // data-quality warnings shown on the site
 	Ins     *Insider `json:"ins,omitempty"`   // open-market insider dealing, last 90 days (US)
 	Idx     string   `json:"idx,omitempty"`   // index membership
+	Trust   bool     `json:"trust,omitempty"` // investment trust: valued on its assets, so the company checks don't apply
 	VsIdx   *float64 `json:"vsIdx,omitempty"` // 1-year return minus its market index's (dividends included)
 	Div     *DivInfo `json:"div,omitempty"`
 	NextRes string   `json:"nextRes,omitempty"` // next results date
 	ResEst  bool     `json:"resEst,omitempty"`  // true when estimated from the financial year end
+	LEI     string   `json:"lei,omitempty"`     // legal entity identifier (UK), for finding official announcements
 
 	sentRaw   float64
 	insRecent []map[string]any
@@ -322,7 +324,7 @@ func main() {
 			asof = x.Dates[j]
 		}
 		id := s.ID()
-		row := &Row{Idx: s.Index, T: s.Ticker, Ex: core.Exchange(s.Market), Name: s.Name, Sector: s.Sector, Ccy: core.Currency(s.Market), ID: id,
+		row := &Row{Idx: s.Index, Trust: s.Trust, T: s.Ticker, Ex: core.Exchange(s.Market), Name: s.Name, Sector: s.Sector, Ccy: core.Currency(s.Market), ID: id,
 			Price: x.Close[j], Chg1d: x.Close[j]/x.Close[j-1] - 1, Ret1y: x.Close[j]/x.Close[j-252] - 1,
 			Mom: x.Momentum(j), TrRaw: x.TrendRaw(j), Above200: x.Close[j] > x.SMA200[j],
 			GC: pos{x.GoldenCross[j], core.Since(x.GoldenCross, j)}, ST: pos{x.SuperTrend[j], core.Since(x.SuperTrend, j)},
@@ -353,7 +355,7 @@ func main() {
 				break
 			}
 		}
-		if f, ok := funds[id]; ok {
+		if f, ok := funds[id]; ok && !s.Trust {
 			row.RevGrowth, row.RevAccel, row.EpsGrowth, row.FundAsOf, row.FundBasis = f.RevGrowth, f.RevAccel, f.EpsGrowth, f.AsOf, f.Period
 		}
 		if in, ok := insiders[id]; ok && in != nil {
@@ -573,7 +575,17 @@ func main() {
 		Next map[string]string `json:"next"`
 	}
 	readJSON(*earnPath, &earn)
+	var ukIDs map[string]struct {
+		LEI string `json:"lei"`
+	}
+	readJSON(filepath.Join(filepath.Dir(*fxPath), "uk_ids.json"), &ukIDs)
 	for _, r := range rows {
+		if r.Ex == "LSE" {
+			r.LEI = ukIDs[r.T].LEI
+			if r.LEI == "" {
+				r.LEI = ukIDs[strings.TrimSuffix(r.T, ".")].LEI
+			}
+		}
 		bk := "sp500"
 		if r.Ex == "LSE" {
 			bk = "ftse100"
@@ -616,6 +628,9 @@ func main() {
 	}
 	if err := writeFeeds(*feedDir, *siteURL, rows, events); err != nil {
 		log.Error("feeds", "error", err)
+	}
+	if err := writePages(filepath.Dir(*out), *siteURL, rows, asof); err != nil {
+		log.Error("stock pages", "error", err)
 	}
 	if err := writeEventsJSON(filepath.Join(*out, "events.json"), events, 600); err != nil {
 		log.Error("events json", "error", err)
@@ -683,6 +698,10 @@ func addFundamentals(rows []*Row, funds map[string]Fund, fx map[string]float64) 
 	for _, r := range rows {
 		f, ok := funds[r.ID]
 		if !ok || f.Fin == nil {
+			continue
+		}
+		if r.Trust { // investment income and asset values: P/E, fair value and the 30 checks would mislead
+			r.detail["fund"] = map[string]any{"trust": true}
 			continue
 		}
 		it := &item{r: r, f: *f.Fin, m: fund.Compute(*f.Fin, r.Price)}

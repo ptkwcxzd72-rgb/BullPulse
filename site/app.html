@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="bp.css">
+<script src="common.js" defer></script>
 </head>
 <body>
 
@@ -29,7 +30,6 @@
     <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
     <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html" aria-current="page">Screener</a><a href="portfolio.html">Portfolio</a><a href="alerts.html">Alerts</a></nav>
     <div class="mctl">
-      <div class="asof">Prices to the close of <b id="asof">—</b></div>
       <div class="seg" role="group" aria-label="Market">
         <button id="m-all" data-m="ALL" aria-pressed="true">All</button>
         <button id="m-uk" data-m="LSE" aria-pressed="false">UK</button>
@@ -62,7 +62,7 @@
       </div>
       <div class="filters">
         <input type="search" id="q" placeholder="Search by name or ticker" aria-label="Search by name or ticker">
-        <select id="idxf" aria-label="Index"><option value="">All indices</option><option>FTSE 100</option><option>FTSE 250</option><option>S&amp;P 500</option></select>
+        <select id="idxf" aria-label="Index"><option value="">All indices</option><option>FTSE 100</option><option>FTSE 250</option><option>S&amp;P 500</option><option value="co">Companies only (no trusts)</option><option value="trust">Investment trusts only</option></select>
         <select id="sector" aria-label="Sector"><option value="">All sectors</option></select>
         <label for="min">Minimum score <input type="range" id="min" min="0" max="90" step="10" value="0"><span class="num" id="minv">0</span></label>
       </div>
@@ -173,6 +173,15 @@
         <div id="d-dcf"></div>
         <p class="note">A two-stage discounted cash flow. Cash flow to the whole business (operating cash flow less capital spending and share-based pay, before interest), averaged over three years, grows at the chosen rate for five years (by default the 3-year revenue growth, kept between 0% and 20%), slows to the long-run rate over the next five, and is discounted at the required return; net debt is then subtracted. Bear and bull move growth by 3 points and the return by 1 point. The reverse calculation shows what growth today's price assumes. A rough guide, very sensitive to the inputs, and not a price target.</p>
       </section>
+      <section class="outl" aria-label="Valuation against its own history" id="d-valsec" hidden>
+        <h3>Valuation against its own history <span class="sub" id="d-valsrc"></span></h3>
+        <div id="d-val"></div>
+        <p class="note">Each bar runs from the lowest to the highest value at the last 60 month-ends, using the figures published at the time; the line marks the middle (median) and the dot today. A low P/E or a high yield against its own past can mean the shares are cheap, or that the market expects worse results.</p>
+      </section>
+      <section class="outl" aria-label="Similar companies" id="d-peersec">
+        <h3>Similar companies <span class="sub" id="d-peersrc"></span></h3>
+        <div class="tw"><table class="pt" id="d-peers"></table></div>
+      </section>
       </div>
       <div class="tp" data-tab="range" role="tabpanel" hidden>
       <section class="outl" aria-label="Upside and downside">
@@ -199,7 +208,7 @@
   </section>
 
   <section class="card track" id="track" hidden>
-    <div class="ch"><h2>Track record of the score</h2><span class="lbl" id="track-meta"></span></div>
+    <div class="ch"><h2>Track record of the score</h2><span class="lbl"><span id="track-meta"></span> <a href="score.html">Does the score work?</a></span></div>
     <div class="tw"><table><thead><tr><th>Market</th><th>Horizon</th><th class="r">Q1 lowest</th><th class="r">Q3</th><th class="r">Q5 highest</th><th class="r">Q5 − Q1</th><th class="r">t-stat</th></tr></thead><tbody id="track-body"></tbody></table></div>
     <div id="track-fund" hidden>
       <div class="ch" style="border-top:1px solid var(--line)"><h2>Do the fundamentals help?</h2><span class="lbl" id="track-fmeta"></span></div>
@@ -236,6 +245,7 @@ async function boot(){
 }
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const $ = id => document.getElementById(id);
+const esc = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" })[c]);
 const sign = (x, d = 1, suf = "%") => (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(d) + suf;
 const pct = (x, d = 1) => sign(x * 100, d);
 const cls = x => x > 0 ? "pos" : x < 0 ? "neg" : "flat";
@@ -247,7 +257,6 @@ const trendState = s => s.tr_raw >= 75 ? ["up", "Uptrend"] : s.tr_raw >= 40 ? ["
 let nInMkt;
 
 function start(){
-$("asof").textContent = fmtDate(D.asof);
 $("banner-tag").textContent = D.demo ? "Demo" : "Live";
 $("banner-text").innerHTML = D.demo ? "<b>Fictional companies with simulated prices and news.</b> Shown until the first nightly run publishes real data. Indicators are computed by <code>cinar/indicator</code>." : `<b>${D.stocks.length} stocks ranked from end-of-day prices to ${fmtDate(D.asof)}.</b> Indicators by <code>cinar/indicator</code>; headlines scored by FinBERT. A research screen, not investment advice.`;
 loadTrack();
@@ -394,6 +403,7 @@ drawBuilder();
 // ---------- Test this screen on past data ----------
 let PANEL = null;
 const NOHIST = new Set(["S", "tone30", "insb"]);
+const BTSEEN = new Set();
 async function runBacktest(){
   const box = $("bt"); box.hidden = false;
   if (!PANEL) {
@@ -406,7 +416,7 @@ async function runBacktest(){
   const val = (k, mi, i) => { const v = F[k] && F[k][mi] ? F[k][mi][i] : null; return v == null ? null : v / (sc[k] || 1); };
   const ignored = screen.rules.filter(r => NOHIST.has(r[0])).map(r => FIELD[r[0]].l);
   const w = screen.w, wsum0 = Object.entries(w).filter(([k]) => k !== "S").reduce((a, [, v]) => a + (+v || 0), 0);
-  const inMkt = i => (state.mkt === "ALL" || P.ex[i] === state.mkt) && (!state.idx || P.idx[i] === state.idx) && (!state.sector || P.sector[i] === state.sector);
+  const inMkt = i => (state.mkt === "ALL" || P.ex[i] === state.mkt) && idxOK(P.idx[i], P.trust && P.trust[i]) && (!state.sector || P.sector[i] === state.sector);
   const ok = (mi, i) => screen.rules.every(([f, op, a, b]) => {
     if (NOHIST.has(f)) return true;
     let v = val(f, mi, i); if (v == null) return false;
@@ -454,6 +464,20 @@ async function runBacktest(){
   const beat = series.scr.filter((r, k) => r > series.avg[k]).length / series.scr.length;
   const avgHeld = held.reduce((a, b) => a + b, 0) / held.length, avgTurn = turns.reduce((a, b) => a + b, 0) / turns.length;
   const empty = held.filter(h => !h).length;
+  // overfitting guard: does the edge hold in both halves of the period?
+  const half = Math.floor(series.scr.length / 2);
+  const ann = rs => Math.pow(rs.reduce((v, r) => v * (1 + (r ?? 0)), 1), 12 / rs.length) - 1;
+  const halves = [[0, half], [half, series.scr.length]].map(([a, b]) => {
+    const sc = ann(series.scr.slice(a, b)), av = ann(series.avg.slice(a, b));
+    return { from: dates[a].slice(0, 7), to: dates[b - 1].slice(0, 7), sc, av, ex: sc - av };
+  });
+  const both = halves.every(h => h.ex > 0.005), none = halves.every(h => h.ex <= 0.005);
+  const verdict = both ? "It beat the average stock in both halves. That's encouraging, but not proof: the rules were still chosen with the whole period in view."
+    : none ? "It didn't beat the average stock in either half."
+    : `It only beat the average stock in the ${halves[0].ex > 0.005 ? "earlier" : "later"} half. An edge that shows up in one period and not the other is often luck, or rules fitted to the past.`;
+  const key = JSON.stringify([screen.rules, screen.w, state.mkt, state.idx, state.sector]);
+  BTSEEN.add(key);
+  const tried = BTSEEN.size >= 5 ? ` You've tested ${BTSEEN.size} versions of this screen in this visit. The more versions you try, the more likely the best-looking one did well by chance.` : "";
   // chart
   const Wd = 800, H = 220, all = [...S.g, ...A.g, ...(I ? I.g : [])], lo = Math.min(...all), hi = Math.max(...all);
   const X = k => k / (S.g.length - 1) * (Wd - 60), Y = v => H - 22 - (Math.log(v) - Math.log(lo)) / ((Math.log(hi) - Math.log(lo)) || 1) * (H - 36);
@@ -483,6 +507,11 @@ async function runBacktest(){
       <tr><td>Stocks held, on average</td><td>${avgHeld.toFixed(1)}</td><td></td>${I ? "<td></td>" : ""}</tr>
       <tr><td>Holdings replaced each month</td><td>${(avgTurn * 100).toFixed(0)}%</td><td></td>${I ? "<td></td>" : ""}</tr>
     </tbody></table></div>
+    <div class="split"><h5>Does it hold up in both halves?</h5>
+      <div class="tw"><table class="btt"><thead><tr><th></th><th>Your screen, a year</th><th>Average stock, a year</th><th>Difference</th></tr></thead><tbody>
+      ${halves.map((h, k) => `<tr><td>${k ? "Later" : "Earlier"} half, ${h.from} to ${h.to}</td><td>${p1(h.sc)}</td><td>${p1(h.av)}</td><td class="${h.ex > 0 ? "pos" : "neg"}"><b>${(h.ex >= 0 ? "+" : "−") + Math.abs(h.ex * 100).toFixed(1)} pts</b></td></tr>`).join("")}
+      </tbody></table></div>
+      <p class="btnote ${both ? "" : "warn"}">${verdict}${tried}</p></div>
     <div class="years">${Object.entries(years).map(([y, v]) => `<span><b>${y}</b><span class="${v.s >= v.a ? "pos" : "neg"}">${p1(v.s - 1)}</span> vs ${p1(v.a - 1)}</span>`).join("")}</div>
     <p class="btnote">${empty ? `In ${empty} month${empty > 1 ? "s" : ""} no stock passed the rules, so the screen held cash. ` : ""}${ignored.length ? `Ignored in this test because there is no history: ${ignored.join(", ")}. ` : ""}Sentiment has no history, so your ranking uses the other factors. Each month-end uses only figures published by then. The stock list is today's index members, so companies that fell out of the index are missing, which flatters every column. Past results are hypothetical and do not predict future returns.</p>`;
   $("bt-n").value = String(topN);
@@ -490,6 +519,50 @@ async function runBacktest(){
 }
 $("bttest").onclick = runBacktest;
 
+
+// ---------- Context: valuation against its own past, and similar companies ----------
+let VALH = null;
+function peersOf(s, n){
+  const dist = o => s.mcapBn > 0 && o.mcapBn > 0 ? Math.abs(Math.log(o.mcapBn / s.mcapBn)) : 10 + Math.abs(o.score - s.score) / 10;
+  return D.stocks.filter(o => o !== s && o.ex === s.ex && o.sector === s.sector && !!o.trust === !!s.trust).sort((a, b) => dist(a) - dist(b)).slice(0, n);
+}
+async function context(s){
+  // peers
+  const ps = peersOf(s, 6), cell = (v, f) => v == null ? '<span class="flat">–</span>' : f(v);
+  const p1 = v => (v * 100).toFixed(1) + "%";
+  $("d-peersrc").textContent = ps.length ? `${MKT[s.ex]} ${s.sector}${s.trust ? " investment trusts" : ""}, closest in size` : "";
+  $("d-peersec").hidden = !ps.length;
+  const row = (o, me) => `<tr class="${me ? "me" : ""}"><td>${me ? `<b>${esc(o.name)}</b>` : `<a href="#${encodeURIComponent(o.id)}">${esc(o.name)}</a>`}<div class="sub">${esc(o.t)}${o.mcapBn ? `, $${o.mcapBn >= 10 ? o.mcapBn.toFixed(0) : o.mcapBn.toFixed(1)}bn` : ""}</div></td>
+    <td class="r num">${o.score}</td><td class="r num ${cls(o.ret1y)}">${pct(o.ret1y, 0)}</td>
+    <td class="r num">${cell(o.pe, v => v.toFixed(1))}</td><td class="r num">${cell(o.div ? o.div.yld : o.divY, p1)}</td>
+    <td class="r num">${cell(o.FP, v => v + "/30")}</td><td class="r num">${cell(o.fairVs, v => `<span class="${v < 0 ? "pos" : "neg"}">${pct(v, 0)}</span>`)}</td></tr>`;
+  $("d-peers").innerHTML = ps.length ? `<thead><tr><th>Company</th><th class="r">Score</th><th class="r">1 year</th><th class="r">P/E</th><th class="r">Dividend</th><th class="r">Checks</th><th class="r">vs fair value</th></tr></thead><tbody>${row(s, true)}${ps.map(o => row(o, false)).join("")}</tbody>` : "";
+  // valuation history
+  $("d-valsec").hidden = true;
+  if (s.trust) return;
+  if (!VALH) { try { VALH = await (await fetch("data/valhist.json")).json(); } catch (e) { VALH = { stocks: {} }; } }
+  if (state.sel !== s) return;
+  const h = VALH.stocks && VALH.stocks[s.id]; if (!h) return;
+  const items = [["pe", "P/E ratio", s.pe, v => v.toFixed(1), true], ["divY", "Dividend yield", s.div ? s.div.yld : s.divY, p1, false], ["fcfY", "Free-cash-flow yield", s.fcfY, p1, false]];
+  const out = [];
+  for (const [k, label, now, f, lowCheap] of items) {
+    if (!h[k] || now == null) continue;
+    const sc = VALH.scale[k] || 1, xs = h[k].filter(v => v != null).map(v => v / sc).filter(v => k !== "pe" || v > 0);
+    if (xs.length < 12) continue;
+    const sorted = xs.slice().sort((a, b) => a - b), lo = sorted[0], hi = sorted[sorted.length - 1], med = sorted[Math.floor(sorted.length / 2)];
+    const below = xs.filter(v => v < now).length / xs.length;
+    const span = Math.max(hi, now) - Math.min(lo, now) || 1, base = Math.min(lo, now), X = v => ((v - base) / span * 100).toFixed(1);
+    const cheapness = lowCheap ? 1 - below : below; // share of months it was dearer than now
+    const word = cheapness >= 0.8 ? "cheaper than usual" : cheapness <= 0.2 ? "dearer than usual" : "about usual";
+    out.push(`<div class="vrow"><div><b>${label}</b> <span class="num">${f(now)}</span><div class="sub">${word}: ${lowCheap ? "lower" : "higher"} than at ${Math.round(cheapness * 100)}% of month-ends</div></div>
+      <div class="vbar" aria-hidden="true"><span class="rng" style="left:${X(lo)}%;width:${(X(hi) - X(lo)).toFixed(1)}%"></span><span class="med" style="left:${X(med)}%"></span><span class="now" style="left:${X(now)}%"></span></div>
+      <div class="sub vlab"><span>${f(lo)}</span><span>median ${f(med)}</span><span>${f(hi)}</span></div></div>`);
+  }
+  if (!out.length) return;
+  $("d-valsrc").textContent = `${VALH.months.length} month-ends to ${fmtDate(VALH.months[VALH.months.length - 1])}`;
+  $("d-val").innerHTML = out.join("");
+  $("d-valsec").hidden = false;
+}
 // ---------- Plain-English summary, key dates and glossary ----------
 const GLOSS = {
   "Trend": "Whether the price is in a long-term uptrend: above its 200-day average, the 50-day average above the 200-day (golden cross), and the Super Trend signal. Shown as a percentile within its market.",
@@ -559,6 +632,7 @@ function summary(s, X){
   parts.push(yr + ".");
   if (s.newsN30) parts.push(`News over the past month has been ${s.tone30 > 0.15 ? "mostly positive" : s.tone30 < -0.15 ? "mostly negative" : "mixed to neutral"}${s.event ? ", with an unusual burst of coverage in the last week" : ""}.`);
   const F = X.fund;
+  if (s.trust) parts.push("It is an investment trust, so it is judged on price trend, momentum and news only; profit-based checks don't apply.");
   if (F && F.profile) {
     const ar = F.profile.areas.slice().sort((a, b) => b.score - a.score);
     parts.push(`It passes ${F.profile.total} of 30 fundamental checks, strongest on ${ar[0].name.toLowerCase()} (${ar[0].score} of 6) and weakest on ${ar[ar.length - 1].name.toLowerCase()} (${ar[ar.length - 1].score} of 6).`);
@@ -573,6 +647,11 @@ function summary(s, X){
   if (s.nextRes) parts.push(`${s.resEst ? "Results are expected around" : "Results are due on"} ${longDate(s.nextRes)}.`);
   return parts.join(" ");
 }
+const idxOK = (idx, trust) => !state.idx || (state.idx === "trust" ? !!trust : state.idx === "co" ? !trust : idx === state.idx);
+document.addEventListener("click", e => {
+  const b = e.target.closest && e.target.closest(".copylei"); if (!b) return;
+  const t = b.textContent; (navigator.clipboard ? navigator.clipboard.writeText(b.dataset.lei) : Promise.reject()).then(() => { b.textContent = "Copied"; setTimeout(() => b.textContent = t, 1500); }).catch(() => {});
+});
 function keyDates(s){
   const out = [];
   if (s.nextRes) out.push(`<span>${s.resEst ? "Results expected around" : "Next results"} <b>${shortDate(s.nextRes)}</b></span>`);
@@ -583,7 +662,8 @@ function keyDates(s){
     out.push(`<span>Paid in the last year <b>${(s.div.yld * 100).toFixed(1)}%</b> of the price</span>`);
   } else if (D.stocks.some(o => o.ex === s.ex && o.div)) out.push(`<span>No dividend in the last five years</span>`); // only when dividend data exists for this market
   if (s.vsIdx != null) out.push(`<span>1 year vs ${s.ex === "LSE" ? "FTSE 100" : "S&P 500"} <b class="${cls(s.vsIdx)}">${pct(s.vsIdx, 0)}</b></span>`);
-  if (s.idx) out.push(`<span>${s.idx}</span>`);
+  if (s.idx) out.push(`<span>${s.idx}${s.trust ? ", investment trust" : ""}</span>`);
+  if (s.lei) out.push(`<span>Official announcements and director dealings: search the FCA's <a href="https://data.fca.org.uk/" target="_blank" rel="noopener">National Storage Mechanism</a> for <button class="copylei" data-lei="${esc(s.lei)}" title="Copy the company's LEI">LEI ${esc(s.lei)}</button></span>`);
   return out.join("");
 }
 
@@ -635,7 +715,7 @@ document.querySelectorAll("th[data-k]").forEach(th => th.onclick = () => {
 function visible(){
   if (state.view === "custom") scoreCustom();
   const inView = s => (state.view === "custom" && passes(s)) || state.view === "all" || (state.view === "early" && s.early) || (state.view === "grow" && s.grower) || (state.view === "fund" && s.FP >= 20) || (state.view === "watch" && watch.has(s.id));
-  return D.stocks.filter(s => inView(s) && (state.mkt === "ALL" || s.ex === state.mkt) && (!state.sector || s.sector === state.sector) && (!state.idx || s.idx === state.idx) && s.score >= state.min &&
+  return D.stocks.filter(s => inView(s) && (state.mkt === "ALL" || s.ex === state.mkt) && (!state.sector || s.sector === state.sector) && idxOK(s.idx, s.trust) && s.score >= state.min &&
     (!state.q || s.name.toLowerCase().includes(state.q) || s.t.toLowerCase().includes(state.q)))
    .sort((a, b) => { const x = a[state.sortK], y = b[state.sortK]; if (x == null || y == null) return (x == null) - (y == null); return (typeof x === "string" ? x.localeCompare(y) : (x - y)) * state.dir || b.score - a.score; });
 }
@@ -839,6 +919,7 @@ async function select(s){
   $("d-summary").textContent = summary(s, X);
   $("d-dates").innerHTML = keyDates(s);
   fundamentals(s, X.fund);
+  context(s);
   insiders(s, X.insiders);
   if (typeof trayUpdate === "function" && D) { const on = compare.includes(s.id); $("d-cmp").setAttribute("aria-pressed", on); $("d-cmp").textContent = on ? "Comparing" : "Compare"; }
   $("d-rss").href = `alerts.html?stock=${encodeURIComponent(s.id)}`;
@@ -984,6 +1065,11 @@ function impliedGrowth(i, px){
 const money = (v, s) => { const gbx = s && s.ccy === "GBX"; if (gbx) v = v / 100; const a = Math.abs(v), c = gbx ? "£" : "$"; return (v < 0 ? "−" + c : c) + (a >= 1e12 ? (a / 1e12).toFixed(2) + "tn" : a >= 1e9 ? (a / 1e9).toFixed(1) + "bn" : a >= 1e7 ? (a / 1e6).toFixed(0) + "m" : a >= 1e6 ? (a / 1e6).toFixed(1) + "m" : a >= 1e3 ? (a / 1e3).toFixed(0) + "k" : a.toFixed(0)); };
 function fundamentals(s, F){
   const has = F && F.profile;
+  if (s.trust) {
+    $("d-fundsec").hidden = false; $("d-dcfsec").hidden = true; $("d-fsrc").textContent = "";
+    $("d-fund").innerHTML = `<p class="note" style="margin:0"><b>${esc(s.name)} is an investment trust.</b> Its value depends on the investments it holds and on whether its shares trade above or below their net asset value. Profit-based measures such as the P/E ratio, the cash-flow fair value and the 30 company checks would mislead here, so they're not shown. The trend, momentum and news scores still apply. For the net asset value and discount, see the trust's own website.</p>`;
+    return;
+  }
   const show = s.ex === "US" || has;
   $("d-fundsec").hidden = !show; $("d-dcfsec").hidden = !show;
   if (!show) return;
