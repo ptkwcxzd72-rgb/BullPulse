@@ -7,18 +7,18 @@
   <description>Alerts for Allegion from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Allegion: Joined the early trend changes screen</title>
-   <link>https://bullpulse.co.uk/app.html#US-ALLE</link>
-   <guid isPermaLink="false">2026-10-21-US-ALLE-early</guid>
-   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
-  </item>
-  <item>
    <title>Allegion: Rank moved up 21 places to #129 (score 42)</title>
    <link>https://bullpulse.co.uk/app.html#US-ALLE</link>
    <guid isPermaLink="false">2026-10-21-US-ALLE-rank</guid>
    <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
    <description>Rank moved up 21 places to #129 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allegion: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALLE</link>
+   <guid isPermaLink="false">2026-10-21-US-ALLE-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

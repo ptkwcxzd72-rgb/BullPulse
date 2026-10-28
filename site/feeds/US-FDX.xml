@@ -7,11 +7,25 @@
   <description>Alerts for FedEx from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>FedEx: Closed below its 200-day average</title>
+   <title>FedEx: Rank moved up 51 places to #5 (score 84)</title>
    <link>https://bullpulse.co.uk/app.html#US-FDX</link>
-   <guid isPermaLink="false">2026-10-23-US-FDX-trend</guid>
-   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+   <guid isPermaLink="false">2026-10-27-US-FDX-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 51 places to #5 (score 84). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>FedEx: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
+   <guid isPermaLink="false">2026-10-27-US-FDX-trend</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>FedEx: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
+   <guid isPermaLink="false">2026-10-27-US-FDX-early</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>FedEx: Rank moved down 46 places to #50 (score 69)</title>
@@ -19,6 +33,13 @@
    <guid isPermaLink="false">2026-10-23-US-FDX-rank</guid>
    <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
    <description>Rank moved down 46 places to #50 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>FedEx: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FDX</link>
+   <guid isPermaLink="false">2026-10-23-US-FDX-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
   </item>
  </channel>
 </rss>

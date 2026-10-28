@@ -6,5 +6,19 @@
   <link>https://bullpulse.co.uk/app.html#LSE-HOC</link>
   <description>Alerts for Hochschild Mining from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
+  <item>
+   <title>Hochschild Mining: Rank moved down 26 places to #183 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HOC</link>
+   <guid isPermaLink="false">2026-10-27-LSE-HOC-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #183 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hochschild Mining: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HOC</link>
+   <guid isPermaLink="false">2026-10-27-LSE-HOC-cross</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
  </channel>
 </rss>

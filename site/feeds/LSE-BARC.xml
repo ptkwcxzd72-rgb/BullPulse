@@ -7,11 +7,18 @@
   <description>Alerts for Barclays from the BullPulse nightly screen.</description>
   <ttl>720</ttl>
   <item>
-   <title>Barclays: Rank moved down 37 places to #233 (score 40)</title>
+   <title>Barclays: Rank moved down 38 places to #271 (score 29)</title>
    <link>https://bullpulse.co.uk/app.html#LSE-BARC</link>
-   <guid isPermaLink="false">2026-10-26-LSE-BARC-rank</guid>
-   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
-   <description>Rank moved down 37 places to #233 (score 40). BullPulse is a research screen, not investment advice.</description>
+   <guid isPermaLink="false">2026-10-27-LSE-BARC-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #271 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Barclays: Unusual burst of news coverage (30-day tone -0.11)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BARC</link>
+   <guid isPermaLink="false">2026-10-27-LSE-BARC-news</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.11). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>Barclays: The 50-day average fell below the 200-day</title>
@@ -19,6 +26,13 @@
    <guid isPermaLink="false">2026-10-26-LSE-BARC-cross</guid>
    <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
    <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Barclays: Rank moved down 37 places to #233 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BARC</link>
+   <guid isPermaLink="false">2026-10-26-LSE-BARC-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #233 (score 40). BullPulse is a research screen, not investment advice.</description>
   </item>
   <item>
    <title>Barclays: Rank moved down 143 places to #202 (score 47)</title>
