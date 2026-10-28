@@ -1,6 +1,6 @@
 # BullPulse validation report
 
-Generated 2026-10-23. Price-only composite (50% trend, 50% momentum percentiles within each market); weights fixed in advance. Returns are forward excess returns over the equal-weight average of the same market.
+Generated 2026-10-28. Price-only composite (50% trend, 50% momentum percentiles within each market); weights fixed in advance. Returns are forward excess returns over the equal-weight average of the same market.
 
 **Caveats.** The universe is today's index members, so stocks that were delisted or dropped from the index are missing (survivorship bias flatters results). News sentiment has no history and is excluded. 3- and 6-month samples overlap; their t-statistics use non-overlapping months only.
 
@@ -29,30 +29,30 @@ Early trend changes (3634 flags): mean excess return +0.18% at 1 month, +0.25% a
 | 2025 | +0.88% |
 | 2026 | +2.43% |
 
-## UK (346 stocks, 106 month-ends, 2017-11-30 to 2026-08-28)
+## UK (338 stocks, 106 month-ends, 2017-11-30 to 2026-08-28)
 
 | Horizon | Q1 (lowest) | Q2 | Q3 | Q4 | Q5 (highest) | Q5 − Q1 | t-stat |
 |---|---|---|---|---|---|---|---|
-| 1 month | -0.17% | -0.48% | -0.30% | +1.07% | -0.12% | +0.05% | 0.10 |
-| 3 months | -0.93% | -1.32% | -0.79% | +3.36% | -0.33% | +0.60% | 0.40 |
-| 6 months | -1.59% | -2.67% | -1.73% | +3.88% | +2.12% | +3.72% | 0.09 |
+| 1 month | -0.15% | -0.47% | -0.31% | +1.07% | -0.14% | +0.01% | 0.02 |
+| 3 months | -0.91% | -1.30% | -0.82% | +3.44% | -0.39% | +0.52% | 0.39 |
+| 6 months | -1.56% | -2.67% | -1.77% | +3.96% | +2.11% | +3.67% | 0.11 |
 
-Q5 beat Q1 in 57% of months (1-month horizon). Top-quintile monthly turnover 32%; estimated net monthly excess return of holding Q5 after costs: -0.35%.
+Q5 beat Q1 in 58% of months (1-month horizon). Top-quintile monthly turnover 32%; estimated net monthly excess return of holding Q5 after costs: -0.36%.
 
-Early trend changes (6663 flags): mean excess return -0.46% at 1 month, +0.24% at 3 months, +0.89% at 6 months.
+Early trend changes (6552 flags): mean excess return -0.47% at 1 month, +0.26% at 3 months, +0.89% at 6 months.
 
 | Year | Mean monthly Q5 − Q1 |
 |---|---|
-| 2017 | +1.37% |
-| 2018 | +0.04% |
-| 2019 | +0.89% |
-| 2020 | -0.03% |
-| 2021 | -1.14% |
+| 2017 | +1.18% |
+| 2018 | +0.01% |
+| 2019 | +0.88% |
+| 2020 | +0.08% |
+| 2021 | -1.16% |
 | 2022 | -0.43% |
-| 2023 | -0.17% |
-| 2024 | +0.24% |
-| 2025 | +1.22% |
-| 2026 | -0.64% |
+| 2023 | -0.30% |
+| 2024 | +0.30% |
+| 2025 | +1.02% |
+| 2026 | -0.75% |
 
 ## Fundamentals (US, 208 companies, 2016-10-31 to 2026-08-31)
 
@@ -60,19 +60,19 @@ Rebuilt at each month-end from SEC filings published by then (point in time). Pe
 
 | Measure | Horizon | Q1 | Q3 | Q5 | Q5 − Q1 | t-stat |
 |---|---|---|---|---|---|---|
-| Profile (30 checks) | 1 month | +0.32% | -0.00% | +0.03% | -0.29% | -0.94 |
-|  | 3 months | +1.15% | -0.26% | -0.24% | -1.39% | -2.02 |
-|  | 6 months | +3.37% | -0.62% | -0.81% | -4.18% | -2.62 |
-| Price below DCF | 1 month | -0.01% | +0.20% | +0.11% | +0.12% | 0.30 |
-|  | 3 months | -0.14% | +0.26% | -0.02% | +0.12% | -0.49 |
-|  | 6 months | -0.08% | +0.35% | -0.36% | -0.28% | 0.12 |
-| Low implied growth | 1 month | +0.02% | -0.28% | +0.01% | -0.02% | -0.04 |
-|  | 3 months | +0.17% | -0.63% | -0.08% | -0.25% | -0.33 |
-|  | 6 months | +0.28% | -1.09% | -0.33% | -0.61% | -0.03 |
-| Value | 1 month | -0.06% | -0.04% | +0.11% | +0.17% | 0.48 |
-|  | 3 months | -0.06% | -0.20% | +0.18% | +0.24% | -0.25 |
-|  | 6 months | -0.01% | -0.59% | +0.03% | +0.04% | -0.08 |
-| Growth | 1 month | -0.02% | -0.13% | +0.19% | +0.21% | 0.68 |
+| Profile (30 checks) | 1 month | +0.33% | -0.01% | +0.03% | -0.30% | -0.98 |
+|  | 3 months | +1.16% | -0.25% | -0.26% | -1.41% | -2.02 |
+|  | 6 months | +3.38% | -0.65% | -0.83% | -4.21% | -2.62 |
+| Price below DCF | 1 month | -0.01% | +0.20% | +0.11% | +0.12% | 0.31 |
+|  | 3 months | -0.14% | +0.25% | -0.03% | +0.11% | -0.51 |
+|  | 6 months | -0.08% | +0.34% | -0.37% | -0.29% | 0.11 |
+| Low implied growth | 1 month | +0.02% | -0.28% | +0.00% | -0.02% | -0.05 |
+|  | 3 months | +0.17% | -0.63% | -0.08% | -0.26% | -0.34 |
+|  | 6 months | +0.28% | -1.09% | -0.32% | -0.60% | -0.02 |
+| Value | 1 month | -0.05% | -0.04% | +0.10% | +0.16% | 0.45 |
+|  | 3 months | -0.06% | -0.21% | +0.17% | +0.23% | -0.27 |
+|  | 6 months | -0.02% | -0.59% | +0.01% | +0.03% | -0.09 |
+| Growth | 1 month | -0.02% | -0.13% | +0.19% | +0.21% | 0.69 |
 |  | 3 months | -0.17% | +0.05% | +0.31% | +0.49% | 0.32 |
 |  | 6 months | +0.38% | +0.01% | +0.69% | +0.31% | 0.39 |
 | Track record | 1 month | +0.14% | -0.01% | -0.03% | -0.17% | -0.59 |
@@ -81,7 +81,7 @@ Rebuilt at each month-end from SEC filings published by then (point in time). Pe
 | Health | 1 month | -0.18% | -0.11% | +0.24% | +0.41% | 1.43 |
 |  | 3 months | -0.31% | -0.16% | +0.66% | +0.98% | 0.75 |
 |  | 6 months | -0.25% | -0.96% | +1.07% | +1.32% | 0.66 |
-| Dividends | 1 month | +0.56% | -0.20% | -0.27% | -0.82% | -1.99 |
-|  | 3 months | +1.59% | -0.44% | -0.96% | -2.55% | -2.38 |
-|  | 6 months | +3.24% | -0.97% | -2.09% | -5.34% | -2.05 |
+| Dividends | 1 month | +0.56% | -0.19% | -0.27% | -0.83% | -2.00 |
+|  | 3 months | +1.59% | -0.45% | -0.96% | -2.55% | -2.39 |
+|  | 6 months | +3.24% | -0.97% | -2.10% | -5.34% | -2.06 |
 
