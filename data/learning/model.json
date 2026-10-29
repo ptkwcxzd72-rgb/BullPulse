@@ -1,0 +1,74 @@
+{
+ "adopted": false,
+ "since": "2026-10-29",
+ "horizonMonths": 6,
+ "weights": {
+  "M": 0.5,
+  "T": 0.5
+ },
+ "sentimentWeight": 0.2,
+ "calibration": [
+  {
+   "decile": 1,
+   "prob": 0.464,
+   "n": 3162
+  },
+  {
+   "decile": 2,
+   "prob": 0.47,
+   "n": 3090
+  },
+  {
+   "decile": 3,
+   "prob": 0.476,
+   "n": 3094
+  },
+  {
+   "decile": 4,
+   "prob": 0.479,
+   "n": 3098
+  },
+  {
+   "decile": 5,
+   "prob": 0.501,
+   "n": 3067
+  },
+  {
+   "decile": 6,
+   "prob": 0.501,
+   "n": 3120
+  },
+  {
+   "decile": 7,
+   "prob": 0.501,
+   "n": 3111
+  },
+  {
+   "decile": 8,
+   "prob": 0.501,
+   "n": 3091
+  },
+  {
+   "decile": 9,
+   "prob": 0.504,
+   "n": 3092
+  },
+  {
+   "decile": 10,
+   "prob": 0.515,
+   "n": 3170
+  }
+ ],
+ "tried": [
+  "Learned weights",
+  "Learned weights by market conditions"
+ ],
+ "updated": "2026-10-29",
+ "changes": [
+  {
+   "date": "2026-10-29",
+   "event": "start",
+   "reason": "Original recipe: trend and momentum equally, plus 20% news sentiment. Weights set by hand before any test."
+  }
+ ]
+}
