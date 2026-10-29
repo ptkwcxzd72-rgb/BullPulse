@@ -13,7 +13,7 @@
 # files, which are kept from the published copy (they are only rebuilt monthly).
 set -euo pipefail
 BRANCH=site-data
-KEEP=(data/panel.json data/validation.json data/valhist.json)
+KEEP=(data/panel.json data/validation.json data/valhist.json data/learning.json data/eventstudy.json data/live.json)
 
 fetch() { git fetch -q --depth=1 origin "$BRANCH" 2>/dev/null; }
 

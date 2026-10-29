@@ -143,6 +143,11 @@ jobs:
         if: ${{ inputs.skip_us_prices }}
         continue-on-error: true
 
+      - name: Keep the daily news record permanently
+        run: python scripts/news_daily.py
+        if: ${{ inputs.skip_us_prices }}
+        continue-on-error: true
+
       - name: Pick up data the evening job committed while prices were syncing
         run: |
           git config user.name "bullpulse-bot"

@@ -218,3 +218,24 @@ class NightlyGuardTest(unittest.TestCase):
         self.assertIn("in_progress", g.duplicate([{"id": 4, "status": "in_progress"}], now))
         self.assertAlmostEqual(g.wait_for_close(dt.datetime(2026, 10, 28, 19, 30, tzinfo=utc)), 40 * 60)
         self.assertEqual(g.wait_for_close(dt.datetime(2026, 10, 31, 12, 0, tzinfo=utc)), 0)  # Saturday
+
+
+class InsiderHistoryTest(unittest.TestCase):
+    def test_parse_bulk_tables(self):
+        import io as _io
+        import zipfile as _zf
+        import insider_history as IH
+        buf = _io.BytesIO()
+        with _zf.ZipFile(buf, "w") as z:
+            z.writestr("SUBMISSION.tsv", "ACCESSION_NUMBER\tFILING_DATE\tDOCUMENT_TYPE\tISSUERCIK\n"
+                       "A1\t05-MAR-2024\t4\t0000320193\nA2\t06-MAR-2024\t4\t999\nA3\t07-MAR-2024\t3\t320193\n")
+            z.writestr("REPORTINGOWNER.tsv", "ACCESSION_NUMBER\tRPTOWNERNAME\tRPTOWNER_RELATIONSHIP\tRPTOWNER_TITLE\n"
+                       "A1\tCOOK TIMOTHY\tOFFICER\tCEO\n")
+            z.writestr("NONDERIV_TRANS.tsv", "ACCESSION_NUMBER\tTRANS_DATE\tTRANS_CODE\tTRANS_SHARES\tTRANS_PRICEPERSHARE\n"
+                       "A1\t01-MAR-2024\tP\t100\t170.5\nA1\t01-MAR-2024\tM\t100\t0\nA2\t01-MAR-2024\tP\t5\t1\n")
+        rows = IH.parse(buf.getvalue(), {"320193": "US-AAPL"})
+        self.assertEqual(len(rows), 1)
+        r = rows[0]
+        self.assertEqual((r["filed"], r["trade"], r["id"], r["code"], r["value"], r["role"]),
+                         ("2024-03-05", "2024-03-01", "US-AAPL", "P", 17050, "OFFICER"))
+        self.assertEqual(IH.quarters("2025q3", __import__("datetime").date(2026, 2, 1)), ["2025q3", "2025q4", "2026q1"])

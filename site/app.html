@@ -124,7 +124,7 @@
         <button role="tab" data-tab="range" aria-selected="false">Range</button>
       </div>
       <div class="tp" data-tab="over" role="tabpanel">
-      <section class="sumbox" aria-label="Summary"><p id="d-summary"></p><div class="dates" id="d-dates"></div></section>
+      <section class="sumbox" aria-label="Summary"><p id="d-summary"></p><div class="dates" id="d-dates"></div><div class="evid" id="d-evid" hidden></div></section>
       <div class="ovl" id="ovl"></div>
       <div class="panes">
         <div class="pane"><div class="tag2"><span><i style="background:var(--ft)"></i>50-day</span><span><i style="background:var(--band-sma)"></i>200-day</span><span><i style="background:var(--accent);height:6px;opacity:.35"></i>Range ahead</span><span><i style="background:var(--muted)"></i>Market index</span></div><div id="c-price"></div></div>
@@ -311,6 +311,7 @@ const FIELDS = [
   ["fairVs", "Price vs fair value (negative = below)", s => s.fairVs, 1], ["implied", "Growth the price implies", s => s.implied, 1],
   ["mcapBn", "Market cap, $bn", s => s.mcapBn], ["rsi", "RSI (14 days)", s => s.rsi], ["vol1y", "Volatility (1 year)", s => s.vol1y, 1],
   ["tone30", "News tone, 30 days (−1 to +1)", s => s.newsN30 ? s.tone30 : null], ["insb", "Insiders buying, 90 days", s => s.ins ? s.ins.buyers : null],
+  ["sue", "Earnings surprise (standardised, US)", s => s.sue], ["prob6", "Chance of beating sector, 6 months", s => s.prob6, 1],
 ];
 const FIELD = Object.fromEntries(FIELDS.map(([k, l, g, pc]) => [k, { k, l, g, pc: !!pc }]));
 const FACTORS = [["T", "Trend", "--ft"], ["M", "Momentum", "--fm"], ["S", "Sentiment", "--fs"], ["G", "Growth", "--blue"], ["F", "Fundamentals", "--accent"], ["V", "Value vs fair price", "--amber"]];
@@ -402,7 +403,8 @@ drawBuilder();
 
 // ---------- Test this screen on past data ----------
 let PANEL = null;
-const NOHIST = new Set(["S", "tone30", "insb"]);
+const NOHIST = new Set(["S", "tone30", "prob6"]);
+const PKEY = { insb: "insB" }; // screen field -> history panel field where the names differ
 const BTSEEN = new Set();
 async function runBacktest(){
   const box = $("bt"); box.hidden = false;
@@ -413,7 +415,8 @@ async function runBacktest(){
   }
   const P = PANEL, F = P.fields, sc = P.scale, nM = P.months.length;
   const topN = +(($("bt-n") || {}).value || 20), costs = ($("bt-c") || { checked: true }).checked;
-  const val = (k, mi, i) => { const v = F[k] && F[k][mi] ? F[k][mi][i] : null; return v == null ? null : v / (sc[k] || 1); };
+  const val = (k, mi, i) => { k = PKEY[k] || k; const v = F[k] && F[k][mi] ? F[k][mi][i] : null; return v == null ? null : v / (sc[k] || 1); };
+  const member = (mi, i) => !F.mem || F.mem[mi][i] == null || F.mem[mi][i] > 0; // only while in its index
   const ignored = screen.rules.filter(r => NOHIST.has(r[0])).map(r => FIELD[r[0]].l);
   const w = screen.w, wsum0 = Object.entries(w).filter(([k]) => k !== "S").reduce((a, [, v]) => a + (+v || 0), 0);
   const inMkt = i => (state.mkt === "ALL" || P.ex[i] === state.mkt) && idxOK(P.idx[i], P.trust && P.trust[i]) && (!state.sector || P.sector[i] === state.sector);
@@ -435,7 +438,7 @@ async function runBacktest(){
   for (let mi = 0; mi < nM; mi++) {
     const elig = [], pick = [];
     for (let i = 0; i < P.ids.length; i++) {
-      if (!inMkt(i) || F.score[mi][i] == null || P.fwd[mi][i] == null) continue;
+      if (!inMkt(i) || !member(mi, i) || F.score[mi][i] == null || P.fwd[mi][i] == null) continue;
       elig.push(i); if (ok(mi, i)) pick.push(i);
     }
     if (elig.length < 20) continue;
@@ -513,7 +516,7 @@ async function runBacktest(){
       </tbody></table></div>
       <p class="btnote ${both ? "" : "warn"}">${verdict}${tried}</p></div>
     <div class="years">${Object.entries(years).map(([y, v]) => `<span><b>${y}</b><span class="${v.s >= v.a ? "pos" : "neg"}">${p1(v.s - 1)}</span> vs ${p1(v.a - 1)}</span>`).join("")}</div>
-    <p class="btnote">${empty ? `In ${empty} month${empty > 1 ? "s" : ""} no stock passed the rules, so the screen held cash. ` : ""}${ignored.length ? `Ignored in this test because there is no history: ${ignored.join(", ")}. ` : ""}Sentiment has no history, so your ranking uses the other factors. Each month-end uses only figures published by then. The stock list is today's index members, so companies that fell out of the index are missing, which flatters every column. Past results are hypothetical and do not predict future returns.</p>`;
+    <p class="btnote">${empty ? `In ${empty} month${empty > 1 ? "s" : ""} no stock passed the rules, so the screen held cash. ` : ""}${ignored.length ? `Ignored in this test because there is no history: ${ignored.join(", ")}. ` : ""}Sentiment has no history, so your ranking uses the other factors. Each month-end uses only figures published by then. Each month counts only the stocks in their index at the time (S&amp;P 500 history; UK stocks count throughout). Companies that left the index and stopped trading are still missing, which flatters every column. Past results are hypothetical and do not predict future returns.</p>`;
   $("bt-n").value = String(topN);
   $("bt-n").onchange = runBacktest; $("bt-c").onchange = runBacktest;
 }
@@ -563,6 +566,33 @@ async function context(s){
   $("d-val").innerHTML = out.join("");
   $("d-valsec").hidden = false;
 }
+// ---------- What happened after similar events (cmd/learn event studies) ----------
+let EVS = null;
+async function evidence(s){
+  const box = $("d-evid"); box.hidden = true;
+  if (!EVS) { try { EVS = await (await fetch("data/eventstudy.json")).json(); } catch (e) { EVS = { types: [] }; } }
+  if (state.sel !== s) return;
+  const T = Object.fromEntries((EVS.types || []).map(t => [t.key, t]));
+  const seen = new Map();
+  (EVS.types || []).forEach(t => (t.recent || []).forEach(r => { if (r.id === s.id) seen.set(t.key, r.date); }));
+  // tonight's signals, which can be newer than the monthly study
+  if (s.gc && s.gc.long && s.gc.since <= 30 && !seen.has("golden_cross")) seen.set("golden_cross", "");
+  if (s.ins && s.ins.cluster && !seen.has("ins_cluster")) seen.set("ins_cluster", "");
+  if (s.sue != null && s.sue >= 2 && !seen.has("sue_pos")) seen.set("sue_pos", "");
+  if (s.sue != null && s.sue <= -2 && !seen.has("sue_neg")) seen.set("sue_neg", "");
+  const lines = [];
+  for (const [k, d] of seen) {
+    const t = T[k]; if (!t) continue;
+    const h = t.horizons || [], m1 = h[0], m3 = h[1];
+    if (!m3 || !m3.n || m3.n < 50) { lines.push(`<li><b>${esc(t.name)}</b>${d ? ` (${shortDate(d)})` : ""}: too few past cases with known outcomes to say what usually follows.</li>`); continue; }
+    const clear = h.some(x => x.t != null && Math.abs(x.t) >= 2 && x.months >= 12);
+    lines.push(`<li><b>${esc(t.name)}</b>${d ? ` (${shortDate(d)})` : ""}: after ${m3.n.toLocaleString("en-GB")} past cases, shares went on to do ${pct(m1.mean, 1)} against their sector over the next month and ${pct(m3.mean, 1)} over three months, beating it ${Math.round((m3.hit || 0) * 100)}% of the time. ${clear ? "That's a clear effect." : "That's within what luck could produce."}</li>`);
+  }
+  if (!lines.length) return;
+  box.innerHTML = `<h4>What followed similar events in the past</h4><ul>${lines.join("")}</ul><a href="score.html">How these are measured</a>`;
+  box.hidden = false;
+}
+
 // ---------- Plain-English summary, key dates and glossary ----------
 const GLOSS = {
   "Trend": "Whether the price is in a long-term uptrend: above its 200-day average, the 50-day average above the 200-day (golden cross), and the Super Trend signal. Shown as a percentile within its market.",
@@ -645,6 +675,7 @@ function summary(s, X){
   }
   if (s.ins && s.ins.buyers) parts.push(`${s.ins.buyers} insider${s.ins.buyers > 1 ? "s" : ""} bought shares in the open market in the last 90 days.`);
   if (s.nextRes) parts.push(`${s.resEst ? "Results are expected around" : "Results are due on"} ${longDate(s.nextRes)}.`);
+  if (s.prob6 != null) parts.push(`In past months the model hadn't seen, stocks it ranked like this beat their sector over the next six months ${Math.round(s.prob6 * 100)}% of the time${Math.abs(s.prob6 - 0.5) < 0.03 ? ", close to a coin toss" : ""}.`);
   return parts.join(" ");
 }
 const idxOK = (idx, trust) => !state.idx || (state.idx === "trust" ? !!trust : state.idx === "co" ? !trust : idx === state.idx);
@@ -917,6 +948,7 @@ async function select(s){
   ].map(([l, v, sub]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span><span style="font-size:11.5px;color:var(--muted)">${sub}</span></div>`).join("") : "";
   $("d-pulse").innerHTML = pulse(s);
   $("d-summary").textContent = summary(s, X);
+  evidence(s);
   $("d-dates").innerHTML = keyDates(s);
   fundamentals(s, X.fund);
   context(s);

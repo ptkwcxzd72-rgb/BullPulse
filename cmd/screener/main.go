@@ -122,8 +122,12 @@ type Row struct {
 	NextRes string   `json:"nextRes,omitempty"` // next results date
 	ResEst  bool     `json:"resEst,omitempty"`  // true when estimated from the financial year end
 	LEI     string   `json:"lei,omitempty"`     // legal entity identifier (UK), for finding official announcements
+	Prob6   *float64 `json:"prob6,omitempty"`   // calibrated chance of beating its sector over six months
+	SUE     *float64 `json:"sue,omitempty"`     // standardised earnings surprise, latest quarter (US)
 
 	sentRaw   float64
+	ret1m     float64 // last month's return (short-term reversal signal)
+	modelPct  float64 // percentile of the learned model's part of the score
 	insRecent []map[string]any
 	lastDate  time.Time
 	provider  string
@@ -216,6 +220,7 @@ func main() {
 	insPath := flag.String("insiders", "data/insiders.json", "insider dealing from SEC Form 4 filings")
 	fxPath := flag.String("fx", "data/fx.json", "GBP exchange rates for UK companies reporting in other currencies")
 	histPath := flag.String("history", "data/history/scores.csv", "daily score history (appended)")
+	modelPath := flag.String("model", "data/learning/model.json", "learned model (cmd/learn)")
 	qualPath := flag.String("quality", "data/quality.json", "data-quality report (read by the price sync)")
 	flag.Parse()
 	log := slog.Default()
@@ -335,6 +340,10 @@ func main() {
 			hi, lo = math.Max(hi, x.High[i]), math.Min(lo, x.Low[i])
 		}
 		row.Hi52, row.Lo52 = hi, lo
+		row.ret1m = math.NaN()
+		if j >= 21 && x.Close[j-21] > 0 {
+			row.ret1m = x.Close[j]/x.Close[j-21] - 1
+		}
 		row.lastDate, row.provider = x.Dates[j], s.ProviderTicker
 
 		// data quality: split-like jumps (stored history not re-adjusted) and long gaps
@@ -356,6 +365,7 @@ func main() {
 			}
 		}
 		if f, ok := funds[id]; ok && !s.Trust {
+			row.SUE = sueOf(f, x.Dates[j])
 			row.RevGrowth, row.RevAccel, row.EpsGrowth, row.FundAsOf, row.FundBasis = f.RevGrowth, f.RevAccel, f.EpsGrowth, f.AsOf, f.Period
 		}
 		if in, ok := insiders[id]; ok && in != nil {
@@ -480,6 +490,14 @@ func main() {
 		return
 	}
 
+	// the learned model (cmd/learn) and today's market conditions
+	model := loadModel(*modelPath)
+	var benchList []*bench
+	for _, p := range benchPaths(*prices) {
+		benchList = append(benchList, loadBench(p))
+	}
+	regime := marketRegime(benchList)
+
 	// percentile scores and ranks within each market
 	breadth := map[string]map[string]any{}
 	for _, ex := range []string{"LSE", "US"} {
@@ -523,6 +541,7 @@ func main() {
 				}
 			}
 		}
+		applyModel(m, model, regime)
 		sort.SliceStable(m, func(a, b int) bool { return m[a].Score > m[b].Score })
 		above, gc, adv, events := 0, 0, 0, 0
 		var toneSum float64
@@ -649,6 +668,16 @@ func main() {
 			log.Error("write", "id", r.ID, "error", err)
 		}
 	}
+	modelName := "original"
+	if model.Adopted {
+		modelName = "learned-" + model.Since
+	}
+	if err := savePredictions(filepath.Join(filepath.Dir(*histPath), "predictions.csv"), day, modelName, rows); err != nil {
+		log.Error("predictions", "error", err)
+	}
+	if err := recordMembership(filepath.Join(filepath.Dir(*histPath), "membership.csv"), day, stocks); err != nil {
+		log.Error("membership", "error", err)
+	}
 	if err := history.save(*histPath); err != nil {
 		log.Error("history", "error", err)
 	}
@@ -667,7 +696,8 @@ func main() {
 	}
 
 	snap := map[string]any{"demo": false, "fundamentals": fundAsOf, "quality": map[string]int{"excluded": len(excluded), "flagged": len(flagged)}, "asof": asof.Format("2006-01-02"), "generated": time.Now().UTC().Format(time.RFC3339),
-		"stocks": rows, "breadth": breadth, "fx": fx.ToGBP, "weights": map[string]float64{"trend": core.WTrend, "momentum": core.WMomentum, "sentiment": core.WSentiment}}
+		"stocks": rows, "breadth": breadth, "fx": fx.ToGBP, "weights": map[string]float64{"trend": core.WTrend, "momentum": core.WMomentum, "sentiment": core.WSentiment},
+		"model": map[string]any{"adopted": model.Adopted, "since": model.Since, "weights": model.Weights, "sentiment": model.Sentiment, "regime": regime}}
 	b, _ := json.Marshal(snap)
 	if err := os.WriteFile(filepath.Join(*out, "snapshot.json"), b, 0o644); err != nil {
 		fmt.Printf("::error::screener: writing snapshot: %v\n", err)

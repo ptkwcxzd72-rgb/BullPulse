@@ -44,6 +44,21 @@ type Fin struct {
 	TTMEnd           string   `json:"ttm_end"`
 	Ccy              string   `json:"ccy"` // reporting currency when not USD (UK annual reports)
 	BalanceEnd       string   `json:"balance_end"`
+	// latest quarter's earnings per share minus the same quarter a year earlier, and the spread of
+	// that change over the previous eight quarters (for a standardised earnings surprise)
+	EPSQEnd  string   `json:"eps_q_end,omitempty"`
+	EPSQDiff *float64 `json:"eps_q_diff,omitempty"`
+	EPSQSD   *float64 `json:"eps_q_sd,omitempty"`
+}
+
+// SUE is the standardised earnings surprise: the latest quarter's change in earnings per share
+// on the same quarter a year earlier, divided by how much that change has varied over the
+// previous eight quarters. NaN when there is too little history.
+func (f Fin) SUE() float64 {
+	if f.EPSQDiff == nil || f.EPSQSD == nil || *f.EPSQSD <= 0 {
+		return math.NaN()
+	}
+	return math.Max(-10, math.Min(10, *f.EPSQDiff / *f.EPSQSD))
 }
 
 // Scale multiplies every money amount by k (for example reporting currency -> pence),
@@ -51,7 +66,7 @@ type Fin struct {
 func (f Fin) Scale(k float64) Fin {
 	for _, x := range []**float64{&f.RevenueTTM, &f.NetIncomeTTM, &f.OpIncomeTTM, &f.OCFTTM, &f.CapexTTM, &f.InterestTTM,
 		&f.DividendsPaidTTM, &f.EPSTTM, &f.DPSTTM, &f.EPS5yAgo, &f.EPSFY, &f.DPS3yAgo, &f.DPSFY, &f.FCFAvg3, &f.FCFFAvg3,
-		&f.SBCAvg3, &f.Equity, &f.Cash, &f.AssetsCur, &f.LiabCur, &f.Debt} {
+		&f.SBCAvg3, &f.Equity, &f.Cash, &f.AssetsCur, &f.LiabCur, &f.Debt, &f.EPSQDiff, &f.EPSQSD} {
 		if *x != nil {
 			v := **x * k
 			*x = &v
@@ -600,7 +615,7 @@ func PeerMedians(peers []Peer) Medians {
 // PerShare multiplies the per-share amounts by k and divides the share count by k
 // (k = 1/split factor puts as-reported figures on today's split-adjusted basis).
 func (f Fin) PerShare(k float64) Fin {
-	for _, x := range []**float64{&f.EPSTTM, &f.DPSTTM, &f.EPS5yAgo, &f.EPSFY, &f.DPS3yAgo, &f.DPSFY} {
+	for _, x := range []**float64{&f.EPSTTM, &f.DPSTTM, &f.EPS5yAgo, &f.EPSFY, &f.DPS3yAgo, &f.DPSFY, &f.EPSQDiff, &f.EPSQSD} {
 		if *x != nil {
 			v := **x * k
 			*x = &v

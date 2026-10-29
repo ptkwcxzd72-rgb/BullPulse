@@ -2,6 +2,8 @@ package main
 
 import (
 	"os"
+
+	"github.com/ptkwcxzd72-rgb/BullPulse/internal/core"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -48,5 +50,20 @@ func TestPeersOfSkipsTrustsAndOtherMarkets(t *testing.T) {
 	ps := peersOf(a, []*Row{a, b, c, d}, 5)
 	if len(ps) != 1 || ps[0] != b {
 		t.Fatalf("peers = %v", ps)
+	}
+}
+
+func TestRecordMembership(t *testing.T) {
+	p := filepath.Join(t.TempDir(), "m.csv")
+	a := core.Stock{Ticker: "BP", Market: "UK", Index: "FTSE 100"}
+	b := core.Stock{Ticker: "XX", Market: "UK", Index: "FTSE 250"}
+	recordMembership(p, "2026-10-01", []core.Stock{a, b})
+	recordMembership(p, "2026-10-02", []core.Stock{a, b})
+	b.Index = "FTSE 100"
+	recordMembership(p, "2026-10-03", []core.Stock{b})
+	got, _ := os.ReadFile(p)
+	want := "date,id,index,event\n2026-10-01,LSE-BP,FTSE 100,present\n2026-10-01,LSE-XX,FTSE 250,present\n2026-10-03,LSE-XX,FTSE 250,left\n2026-10-03,LSE-XX,FTSE 100,joined\n2026-10-03,LSE-BP,FTSE 100,left\n"
+	if string(got) != want {
+		t.Errorf("got\n%s", got)
 	}
 }

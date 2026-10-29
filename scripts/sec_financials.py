@@ -139,6 +139,46 @@ def back(series: dict[str, float], years: int) -> float | None:
     return old[0] if old else None
 
 
+def quarters(p: dict[tuple[str, str], float]) -> dict[str, float]:
+    """quarter end -> value for single quarters (about three months). Fourth quarters, which
+    companies usually report only inside the full year, are derived as the year minus the
+    nine months to the third quarter."""
+    q = {e: v for (s, e), v in p.items() if 80 <= (_d(e) - _d(s)).days <= 100}
+    for (s, e), fy in p.items():
+        if not 350 <= (_d(e) - _d(s)).days <= 380 or e in q:
+            continue
+        nine = [v for (s2, e2), v in p.items() if s2 == s and 260 <= (_d(e2) - _d(s2)).days <= 285]
+        if nine:
+            q[e] = fy - nine[0]
+    return q
+
+
+def eps_surprise(eps: dict[tuple[str, str], float]) -> dict:
+    """Latest quarter's earnings per share against the same quarter a year earlier (a seasonal
+    random walk: the simplest forecast that needs no analysts), and the spread of that change
+    over the previous eight quarters, for a standardised surprise."""
+    q = quarters(eps)
+    ends = sorted(q)
+    def year_before(e):
+        c = [e2 for e2 in ends if abs((_d(e2) - (_d(e) - dt.timedelta(days=365))).days) <= 20]
+        return c[0] if c else None
+    diffs = []
+    for e in ends:
+        b = year_before(e)
+        if b is not None:
+            diffs.append((e, q[e] - q[b]))
+    if not diffs:
+        return {}
+    out = {"eps_q_end": diffs[-1][0], "eps_q_diff": round(diffs[-1][1], 4)}
+    prior = [d for _, d in diffs[-9:-1]]
+    if len(prior) >= 4:
+        m = sum(prior) / len(prior)
+        sd = (sum((x - m) ** 2 for x in prior) / (len(prior) - 1)) ** 0.5
+        if sd > 0:
+            out["eps_q_sd"] = round(sd, 4)
+    return out
+
+
 def financials(facts: dict) -> dict:
     """The raw figures the screener needs. Missing items are simply left out."""
     f: dict = {}
@@ -158,6 +198,7 @@ def financials(facts: dict) -> dict:
             if name == "revenue":
                 put("ttm_end", t[0])
     t = ttm(eps);  put("eps_ttm", t[1] if t else None)
+    f.update(eps_surprise(eps))
     t = ttm(dps);  put("dps_ttm", t[1] if t else None)
 
     rev_y, ni_y, eps_y, ocf_y, capex_y, dps_y = (annual(x) for x in (rev, ni, eps, ocf, capex, dps))

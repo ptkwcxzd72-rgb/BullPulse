@@ -61,6 +61,21 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 - **Visitor counts (optional).** Set `GOATCOUNTER` in `site/common.js` to a [GoatCounter](https://www.goatcounter.com) site code to count visits without cookies. Feedback comes in through the GitHub issue form linked in every page's footer.
 - [`site/`](site) is a static site with no server.
 
+## How the score learns
+
+`cmd/learn` runs monthly (in `validate.yml`) after the history panel is rebuilt:
+
+- **Outcome:** each stock's return over the next six months against the median of its own sector in its market, so it learns stock selection, not which sector boomed.
+- **Signals tested:** trend, momentum, revenue growth, the fundamentals checks, price against fair value, low volatility, short-term reversal, insider buying (US, SEC Form 4 since 2015) and earnings surprises (US, quarterly filings). News sentiment keeps its original 20% until there is enough history (it is recorded permanently from October 2026 in `data/history/news_daily/`).
+- **Method:** each month a cross-sectional regression of the outcome rank on the signals' ranks; weights are the average, shrunk towards zero by their own evidence (no weight below t = 2). Walk-forward only: every month is predicted from earlier months whose outcomes were known.
+- **Champion and challenger:** the model in use is replaced only when a challenger (learned weights, or weights that depend on whether the market is above its 10-month average) beats it out of sample with a t-statistic above a bar that rises with every kind of challenger ever tried, and does not lose over the last 24 months, which are held back. Every trial is logged in `data/learning/trials.jsonl` and every change in `data/learning/model.json`, which the nightly screener reads.
+- **Probabilities:** the model's out-of-sample predictions are calibrated into the chance of beating the sector over six months, shown on every stock.
+- **Event studies:** returns against the sector after insider buying and selling, earnings surprises, golden and death crosses, new 52-week highs and (as history builds up) types of news.
+- **Live record:** every night's scores and probabilities are kept in `data/history/scores.csv` and `data/history/predictions.csv` and graded after one and six months.
+- **Survivorship:** S&P 500 membership history (`universe/history/`) keeps stocks out of months before they joined; universe changes are recorded from now on in `data/history/membership.csv`.
+
+All of it is shown on the [Does the score work?](https://bullpulse.co.uk/score.html) page.
+
 ## Running cost: free
 
 | Part | Service | Cost |

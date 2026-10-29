@@ -7,7 +7,7 @@
 // scripts/uk_fundamentals_history.py). It also records each stock's return over the following
 // month and the index proxies' monthly returns, so the browser can replay any screen.
 //
-// Sentiment, news tone and insider dealing have no history and are left out.
+// Sentiment and news tone have no long history yet and are left out.
 package main
 
 import (
@@ -25,6 +25,8 @@ import (
 	"github.com/cinar/indicator/v2/asset"
 	"github.com/ptkwcxzd72-rgb/BullPulse/internal/core"
 	"github.com/ptkwcxzd72-rgb/BullPulse/internal/fund"
+	"github.com/ptkwcxzd72-rgb/BullPulse/internal/insider"
+	"github.com/ptkwcxzd72-rgb/BullPulse/internal/member"
 	"github.com/ptkwcxzd72-rgb/BullPulse/internal/pit"
 )
 
@@ -37,6 +39,10 @@ var fields = []struct {
 	{"ret1y", 1000}, {"mom", 1000}, {"d200", 1000}, {"hi52", 1000}, {"rsi", 1}, {"vol1y", 1000},
 	{"revGrowth", 1000}, {"epsGrowth", 1000}, {"pe", 10}, {"divY", 1000}, {"fcfY", 1000}, {"roe", 1000}, {"de", 1000},
 	{"fairVs", 1000}, {"implied", 1000}, {"mcapBn", 10}, {"Vp", 1},
+	// for the learning (cmd/learn): last month's return (short-term reversal), standardised
+	// earnings surprise, officers and directors buying in the last 90 days, and whether the stock
+	// was in its index at the time (1) or not yet / no longer (0)
+	{"rev1m", 1000}, {"sue", 100}, {"insB", 1}, {"mem", 1},
 }
 
 type fxRow struct {
@@ -96,6 +102,8 @@ func main() {
 	fxPath := flag.String("fx-history", "data/fx_history.csv", "daily dollars and euros per pound")
 	out := flag.String("out", "site/data/panel.json", "output")
 	years := flag.Int("years", 10, "history length")
+	insDir := flag.String("insiders", "data/history/insiders", "insider-dealing history")
+	memDir := flag.String("membership", "universe/history", "index membership history")
 	flag.Parse()
 
 	stocks, err := core.LoadUniverse(*universe)
@@ -109,6 +117,8 @@ func main() {
 		rowsPIT[k] = v
 	}
 	fx := loadFX(*fxPath)
+	ins := insider.Load(*insDir)
+	mem := member.Load(*memDir)
 
 	var ss []core.Stock
 	var xs []*core.Series
@@ -206,6 +216,16 @@ func main() {
 				vals["hi52"][i] = c/hi - 1
 			}
 			vals["rsi"][i] = x.RSI[j]
+			if j >= 21 {
+				vals["rev1m"][i] = c/x.Close[j-21] - 1
+			}
+			vals["mem"][i] = 0
+			if mem.Member(ss[i].Market, ss[i].Ticker, ds) {
+				vals["mem"][i] = 1
+			}
+			if ss[i].Market != "UK" {
+				vals["insB"][i] = float64(insider.Buyers(ins[ss[i].ID()], d, 90))
+			}
 			vals["vol1y"][i] = x.RealisedVol(j)
 			if mi+1 < len(ends) {
 				if k := at(x, ends[mi+1]); k > j && ends[mi+1].Sub(x.Dates[k]) <= 7*24*time.Hour {
@@ -222,6 +242,9 @@ func main() {
 			}
 			r := rs[k]
 			f := r.Fin.PerShare(1 / r.Split)
+			if qe, err := time.Parse("2006-01-02", r.Fin.EPSQEnd); err == nil && d.Sub(qe) <= 135*24*time.Hour {
+				vals["sue"][i] = f.SUE() // only while that quarter is the latest one
+			}
 			if ss[i].Market == "UK" {
 				g := toGBP(fx, r.Fin.Ccy, ds)
 				if math.IsNaN(g) {

@@ -400,3 +400,7 @@ tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 .vbar .now{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--surface);transform:translate(-6px,-50%)}
 .vlab{display:flex;justify-content:space-between}
 .copylei{border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:6px;padding:0 6px;font:500 12px var(--f-mono);cursor:pointer}
+.evid{border-top:1px solid var(--line);margin-top:10px;padding-top:10px;font-size:13px}
+.evid h4{margin:0 0 6px;font:650 13.5px var(--f-display)}
+.evid ul{margin:0 0 6px;padding-left:18px;display:grid;gap:4px;color:var(--muted)}
+.evid b{color:var(--ink)}

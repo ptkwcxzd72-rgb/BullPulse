@@ -39,6 +39,15 @@ main{display:grid;gap:22px;padding-block:24px 40px}
 .pill.no{background:var(--warn-soft);color:var(--warn)} .pill.yes{background:var(--up-soft);color:var(--up)}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.ev td.n{color:var(--muted)}
+.ev tr.few td{opacity:.55}
+.calbar,.callab{max-width:680px}
+.calbar{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;align-items:end;height:120px;border-bottom:1px solid var(--line);padding-top:6px}
+.calbar div{background:color-mix(in srgb,var(--accent) 70%,transparent);border-radius:3px 3px 0 0;position:relative}
+.calbar div span{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.callab{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;font-size:11px;color:var(--muted);text-align:center}
+.tag{font-size:11.5px;font-weight:600;border-radius:999px;padding:2px 9px;background:var(--surface-2);color:var(--muted)}
+.tag.on{background:var(--accent-soft);color:var(--accent)}
 ol.how{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--muted);font-size:14px;max-width:85ch}
 @media (max-width:900px){.grid2{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
@@ -124,6 +133,73 @@ function fundSection(F){
     ${rows.map(([n, q]) => `<tr><td>${esc(n)}</td><td class="${q.q5_minus_q1[0] >= 0 ? "pos" : "neg"}">${pp(q.q5_minus_q1[0])}</td><td class="${q.q5_minus_q1[2] >= 0 ? "pos" : "neg"}">${pp(q.q5_minus_q1[2], 1)}</td><td>${q.q5_minus_q1.some((v, h) => v > 0 && sig(q.q5_minus_q1_t[h])) ? `<span class="pill yes">Yes</span>` : `<span class="pill no">Not yet</span>`}</td></tr>`).join("")}
     </tbody></table></div></section>`;
 }
+
+// ---------- learning, live record and event studies ----------
+const r1 = (v, d = 1) => v == null ? "–" : (v * 100).toFixed(d) + "%";
+const sgn = (v, d = 2) => v == null ? "–" : (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(d) + "%";
+function learningSection(L){
+  if (!L) return "";
+  const M = L.model || {}, ev = L.evidence || [];
+  const inUse = M.adopted ? `a learned model, adopted on ${fmtLong(M.since)}` : "the original recipe (trend and momentum equally, plus 20% news sentiment)";
+  const yrs = L.oosByYear || [];
+  const bars = yrs.length ? (() => {
+    const W = 520, H = 170, m = Math.max(0.05, ...yrs.flatMap(y => [Math.abs(y.champion || 0), Math.abs(y.learned || 0)])) * 1.15, bw = (W - 30) / yrs.length, Y = v => H / 2 - v / m * (H / 2 - 18);
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Out-of-sample rank correlation by year" style="max-width:680px"><line x1="30" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
+    yrs.forEach((y, i) => {
+      [["champion", "var(--accent)"], ["learned", "var(--fm)"]].forEach(([k, c], j) => {
+        const v = y[k]; if (v == null) return;
+        const x = 30 + i * bw + bw * (.16 + j * .34), top = Math.min(Y(0), Y(v));
+        s += `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${(bw * .3).toFixed(1)}" height="${Math.max(1, Math.abs(Y(v) - Y(0))).toFixed(1)}" rx="2" fill="${c}"><title>${y.year} ${k === "champion" ? "model in use" : "learned challenger"}: ${v.toFixed(3)}</title></rect>`;
+      });
+      s += `<text x="${(30 + i * bw + bw / 2).toFixed(1)}" y="${H - 2}" font-size="11" text-anchor="middle" fill="var(--muted)">${y.year}</text>`;
+    });
+    return s + `<text x="0" y="${Y(m * .8) + 4}" font-size="10.5" fill="var(--muted)">${(m * .8).toFixed(2)}</text><text x="0" y="${Y(-m * .8) + 4}" font-size="10.5" fill="var(--muted)">${(-m * .8).toFixed(2)}</text></svg>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Model in use</span><span><i style="background:var(--fm)"></i>Learned challenger (no bar = it found no signal worth using)</span></div>`;
+  })() : "";
+  const cal = L.calibration || [];
+  const calHtml = cal.length ? `<h3>How sure can it be?</h3>
+    <p>Stocks are split into tenths by the model. For each tenth, the share that went on to beat their sector over six months, in months the model hadn't seen. A model with real skill would rise steeply from left to right; 50% everywhere would mean no skill.</p>
+    <div class="calbar">${cal.map(c => `<div style="height:${Math.max(4, (c.prob - 0.3) / 0.4 * 100)}%"><span>${Math.round(c.prob * 100)}%</span></div>`).join("")}</div>
+    <div class="callab">${cal.map(c => `<span>${c.decile === 1 ? "lowest" : c.decile === 10 ? "highest" : c.decile}</span>`).join("")}</div>
+    <p>Brier score ${L.brier != null ? L.brier.toFixed(4) : "–"} (0.25 is a coin toss; lower is better).</p>` : "";
+  return `<section class="card sec"><h2>How the score learns</h2>
+    <p>Every month the score re-checks which signals have helped pick stocks that beat their own sector over the next six months. Each signal gets weight only if its evidence is strong (t-statistic above 2), and a new set of weights replaces the current one only if it beats it on months it hadn't seen, by more than luck allows for the number of ideas tried, without losing over the last ${L.holdoutMonths} months.</p>
+    <div class="facts" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div><span class="sub">In use now</span><span class="v" style="font-size:16px">${M.adopted ? "Learned model" : "Original recipe"}</span><span class="s">${inUse}</span></div>
+      <div><span class="sub">Latest decision, ${fmtLong(M.updated || L.generated.slice(0, 10))}</span><span class="s" style="font-size:13px;color:var(--ink)">${esc(L.decision || "")}</span></div>
+      <div><span class="sub">Bar to clear</span><span class="v">t ≥ ${L.bar != null ? L.bar.toFixed(2) : "2"}</span><span class="s">after ${L.trialsEver || 0} kinds of challenger; rises with every new idea tried</span></div>
+    </div>
+    <h3>What the evidence says about each signal</h3>
+    <div class="tw"><table class="tt ev"><thead><tr><th>Signal</th><th>Next 6 months</th><th>t</th><th>Weight it earns</th><th>Next month, t</th><th>Months of data</th></tr></thead><tbody>
+    ${ev.map(e => `<tr class="${e.months < 24 ? "few" : ""}"><td><b>${esc(e.name)}</b><div class="sub">${esc(e.about)}</div></td><td class="${(e.coef6 || 0) >= 0 ? "pos" : "neg"}">${e.months ? (e.coef6 >= 0 ? "+" : "−") + Math.abs(e.coef6 || 0).toFixed(3) : "–"}</td><td>${e.months ? (e.t6 || 0).toFixed(2) : "–"}</td><td>${e.weight6 ? `<span class="tag on">${e.weight6.toFixed(3)}</span>` : `<span class="tag">none</span>`}</td><td>${e.months ? (e.t1 || 0).toFixed(2) : "–"}</td><td class="n">${e.months ? e.months : "not collected yet"}</td></tr>`).join("")}
+    </tbody></table></div>
+    <p>The first column is the average link between the signal and the stock's later rank within its sector (positive = higher signal, better result), with its t-statistic. News sentiment isn't listed: there are only weeks of history so far, so it keeps its original 20% until there's enough to test (one to two years).</p>
+    ${yrs.length ? `<h3>Out-of-sample record by year</h3><p>Average rank correlation between each month's prediction and the following six months' results (0 = no skill), using only weights learned from earlier months.</p>${bars}` : ""}
+    ${calHtml}
+    ${(M.changes || []).length ? `<h3>Changes to the model</h3><div class="tw"><table class="tt"><thead><tr><th>Date</th><th style="text-align:left">What changed</th></tr></thead><tbody>${M.changes.slice().reverse().map(c => `<tr><td>${fmtLong(c.date)}</td><td style="text-align:left">${esc(c.reason)}</td></tr>`).join("")}</tbody></table></div>` : ""}
+  </section>`;
+}
+function liveSection(V){
+  if (!V || !V.predictionDays) return "";
+  const hs = V.horizons || [];
+  return `<section class="card sec"><h2>Live record</h2>
+    <p>Every night's scores and probabilities are saved as they were made, starting ${fmtLong(V.since)}, and graded once the outcome is known. Unlike any backtest, nothing here can be adjusted afterwards. ${V.predictionDays} nights recorded so far.</p>
+    <div class="facts" style="grid-template-columns:repeat(2,minmax(0,1fr))">${hs.map(h => `<div><span class="sub">Top fifth minus bottom fifth, ${h.days === 21 ? "next month" : "next six months"}, against their sectors</span>${h.gradedDays ? `<span class="v ${h.spread >= 0 ? "pos" : "neg"}">${sgn(h.spread)}</span><span class="s">${h.gradedDays} nights graded; t ${h.t != null ? h.t.toFixed(2) : "–"}${h.probCalls ? `; probabilities right ${Math.round(h.probRight * 100)}% of the time` : ""}</span>` : `<span class="v">Not yet</span><span class="s">first results due around ${fmtLong(h.firstDue)}</span>`}</div>`).join("")}</div>
+  </section>`;
+}
+function eventSection(E){
+  if (!E || !E.types) return "";
+  const cell = h => !h || !h.n ? "–" : `<span class="${h.mean >= 0 ? "pos" : "neg"}">${sgn(h.mean)}</span>`;
+  return `<section class="card sec"><h2>What happened after events</h2>
+    <p>Average return against the stock's own sector after each kind of event, over the next one, three and six months, from the first close after the event and only while the stock was in its index. "Clear" needs a t-statistic of 2 or more, counted across months so that many events at once don't inflate it.</p>
+    <div class="tw"><table class="tt ev"><thead><tr><th>Event</th><th>Events</th><th>1 month</th><th>3 months</th><th>6 months</th><th>Beat sector, 3 months</th><th>Clear?</th></tr></thead><tbody>
+    ${E.types.map(t => { const h = t.horizons || [], n = h[1] ? h[1].n : 0, clear = h.some(x => x.t != null && Math.abs(x.t) >= 2 && x.months >= 12);
+      return `<tr class="${n < 50 ? "few" : ""}"><td><b>${esc(t.name)}</b>${t.market ? ` <span class="sub">${t.market}</span>` : ""}<div class="sub">${esc(t.about)}</div></td><td class="n">${t.events.toLocaleString("en-GB")}</td><td>${cell(h[0])}</td><td>${cell(h[1])}</td><td>${cell(h[2])}</td><td>${h[1] && h[1].hit != null ? Math.round(h[1].hit * 100) + "%" : "–"}</td><td>${n < 50 ? `<span class="pill no">Too few so far</span>` : clear ? `<span class="pill yes">Yes</span>` : `<span class="pill no">No</span>`}</td></tr>`; }).join("")}
+    </tbody></table></div>
+    <p>News events have only been collected since October 2026, so they stay greyed out until there are enough with known outcomes. US insider dealing and earnings surprises come from SEC filings back to 2015.</p>
+  </section>`;
+}
+const fmtLong = d => d ? new Date(d.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : "–";
 (async () => {
   let V;
   try { V = await (await fetch("data/validation.json", { cache: "no-cache" })).json(); }
@@ -141,17 +217,22 @@ function fundSection(F){
       <p>So treat the score as a quick way to sort a long list by trend and momentum, not as evidence that a stock will do well. We'll keep publishing this test every month, whatever it shows. Last updated ${new Date(V.generated).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}.</p>
     </section>
     <div class="grid2">${ms.map(marketSection).join("")}</div>
+    <div id="learn"></div>
     ${fundSection(V.fundamentals)}
     <section class="card sec"><h2>How the test works, and its limits</h2>
       <ol class="how">
         <li>At each month-end the score is rebuilt from prices up to that day only. Sentiment is left out because there isn't enough news history yet.</li>
         <li>Stocks are sorted into five equal groups by score within their own market, and each group's return over the next one, three and six months is compared with the average stock in that market.</li>
         <li>The 3- and 6-month results overlap from month to month, so their t-statistics use only non-overlapping periods.</li>
-        <li>The stock lists are today's index members. Companies that fell out of the index (often after falling sharply) are missing, which flatters every group, though not one more than another.</li>
+        <li>Each month counts only the stocks that were in their index at the time (point-in-time S&amp;P 500 lists), so companies that joined later after a big rise don't flatter the past. Companies that left the index and stopped trading have no free price history and are still missing.</li>
         <li>The score's weights were set before this test was run and have not been tuned to it. Past results don't predict future returns. Nothing here is investment advice.</li>
       </ol>
+      <p>Index membership comes from point-in-time S&amp;P 500 lists, so a company only counts in months when it was in the index; UK membership history isn't available for free, so UK stocks count throughout. Companies that left the index and stopped trading have no free price history and are still missing.</p>
       <p>The code and the full monthly report are on <a href="https://github.com/ptkwcxzd72-rgb/BullPulse/blob/main/reports/validation.md" target="_blank" rel="noopener">GitHub</a>.</p>
     </section>`;
+  const get = u => fetch(u, { cache: "no-cache" }).then(r => r.ok ? r.json() : null).catch(() => null);
+  const [L, Lv, E] = await Promise.all([get("data/learning.json"), get("data/live.json"), get("data/eventstudy.json")]);
+  $("learn").innerHTML = learningSection(L) + liveSection(Lv) + eventSection(E);
 })();
 </script>
 </body>

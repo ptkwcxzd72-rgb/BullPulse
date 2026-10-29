@@ -67,6 +67,9 @@ jobs:
         run: python scripts/score_news.py
         timeout-minutes: 30
         continue-on-error: true
+      - name: Keep the daily news record permanently
+        run: python scripts/news_daily.py
+        continue-on-error: true
       - name: Commit data
         if: ${{ !cancelled() }}
         run: |

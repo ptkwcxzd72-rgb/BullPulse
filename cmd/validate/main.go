@@ -23,6 +23,7 @@ import (
 
 	"github.com/cinar/indicator/v2/asset"
 	"github.com/ptkwcxzd72-rgb/BullPulse/internal/core"
+	"github.com/ptkwcxzd72-rgb/BullPulse/internal/member"
 )
 
 var horizons = []int{21, 63, 126}
@@ -85,6 +86,7 @@ func main() {
 	outMD := flag.String("report", "reports/validation.md", "markdown report path")
 	outJSON := flag.String("json", "site/data/validation.json", "JSON results path")
 	pitPath := flag.String("fund-pit", "data/fundamentals_pit.jsonl", "point-in-time fundamentals (scripts/fundamentals_history.py)")
+	memDir := flag.String("membership", "universe/history", "index membership history")
 	flag.Parse()
 
 	stocks, err := core.LoadUniverse(*universe)
@@ -97,6 +99,7 @@ func main() {
 	var results []marketResult
 	var fres *fundResult
 	pit := loadPIT(*pitPath)
+	mem := member.Load(*memDir)
 	for _, market := range []string{"US", "UK"} {
 		var ss []core.Stock
 		var xs []*core.Series
@@ -153,8 +156,8 @@ func main() {
 			var tr, mo []float64
 			for i, x := range xs {
 				j, ok := pos[i][d]
-				if !ok || j < core.MinBars {
-					continue
+				if !ok || j < core.MinBars || !mem.Member(ss[i].Market, ss[i].Ticker, d.Format("2006-01-02")) {
+					continue // not trading yet, or not in its index at the time
 				}
 				t, m := x.TrendRaw(j), x.Momentum(j)
 				if math.IsNaN(t) || math.IsNaN(m) {
@@ -275,7 +278,7 @@ func main() {
 	// report
 	var b strings.Builder
 	fmt.Fprintf(&b, "# BullPulse validation report\n\nGenerated %s. Price-only composite (50%% trend, 50%% momentum percentiles within each market); weights fixed in advance. Returns are forward excess returns over the equal-weight average of the same market.\n\n", time.Now().UTC().Format("2006-01-02"))
-	b.WriteString("**Caveats.** The universe is today's index members, so stocks that were delisted or dropped from the index are missing (survivorship bias flatters results). News sentiment has no history and is excluded. 3- and 6-month samples overlap; their t-statistics use non-overlapping months only.\n\n")
+	b.WriteString("**Caveats.** Each month counts only stocks in their index at the time (point-in-time S&P 500 membership; UK stocks count throughout, as no free history exists). Stocks that left the index and stopped trading have no free prices and are missing (survivorship bias flatters results). News sentiment has no history and is excluded. 3- and 6-month samples overlap; their t-statistics use non-overlapping months only.\n\n")
 	for _, r := range results {
 		fmt.Fprintf(&b, "## %s (%d stocks, %d month-ends, %s to %s)\n\n", r.Market, r.Stocks, r.Months, r.From, r.To)
 		b.WriteString("| Horizon | Q1 (lowest) | Q2 | Q3 | Q4 | Q5 (highest) | Q5 − Q1 | t-stat |\n|---|---|---|---|---|---|---|---|\n")
