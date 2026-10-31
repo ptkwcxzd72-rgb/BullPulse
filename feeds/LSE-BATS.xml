@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-BATS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: British American Tobacco (BATS)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+  <description>Alerts for British American Tobacco from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>British American Tobacco: Rank moved down 20 places to #169 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-28-LSE-BATS-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #169 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>British American Tobacco: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-28-LSE-BATS-cross</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>British American Tobacco: Rank moved down 27 places to #149 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-26-LSE-BATS-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #149 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>British American Tobacco: Rank moved down 103 places to #133 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-22-LSE-BATS-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 103 places to #133 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>British American Tobacco: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-21-LSE-BATS-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>British American Tobacco: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BATS</link>
+   <guid isPermaLink="false">2026-10-21-LSE-BATS-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

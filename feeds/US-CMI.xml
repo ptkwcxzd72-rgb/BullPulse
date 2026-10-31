@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CMI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Cummins (CMI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CMI</link>
+  <description>Alerts for Cummins from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Cummins: Rank moved down 22 places to #157 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMI</link>
+   <guid isPermaLink="false">2026-10-30-US-CMI-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #157 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cummins: Rank moved up 28 places to #117 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMI</link>
+   <guid isPermaLink="false">2026-10-21-US-CMI-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #117 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

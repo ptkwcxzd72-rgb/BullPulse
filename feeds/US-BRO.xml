@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BRO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Brown &amp; Brown (BRO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BRO</link>
+  <description>Alerts for Brown &amp; Brown from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Brown &amp; Brown: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRO</link>
+   <guid isPermaLink="false">2026-10-29-US-BRO-early</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brown &amp; Brown: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRO</link>
+   <guid isPermaLink="false">2026-10-29-US-BRO-trend</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brown &amp; Brown: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRO</link>
+   <guid isPermaLink="false">2026-10-28-US-BRO-trend</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brown &amp; Brown: New results filed: revenue +7.4% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRO</link>
+   <guid isPermaLink="false">2026-10-28-US-BRO-results</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +7.4% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brown &amp; Brown: Unusual burst of news coverage (30-day tone +0.27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRO</link>
+   <guid isPermaLink="false">2026-10-21-US-BRO-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

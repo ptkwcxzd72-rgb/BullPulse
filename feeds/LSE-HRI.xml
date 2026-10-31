@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-HRI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Herald Investment Trust (HRI)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-HRI</link>
+  <description>Alerts for Herald Investment Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Herald Investment Trust: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HRI</link>
+   <guid isPermaLink="false">2026-10-29-LSE-HRI-trend</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Herald Investment Trust: Rank moved down 55 places to #200 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HRI</link>
+   <guid isPermaLink="false">2026-10-29-LSE-HRI-rank</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 55 places to #200 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Herald Investment Trust: Rank moved up 58 places to #145 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HRI</link>
+   <guid isPermaLink="false">2026-10-28-LSE-HRI-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 58 places to #145 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Herald Investment Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HRI</link>
+   <guid isPermaLink="false">2026-10-28-LSE-HRI-trend</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Herald Investment Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HRI</link>
+   <guid isPermaLink="false">2026-10-28-LSE-HRI-early</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

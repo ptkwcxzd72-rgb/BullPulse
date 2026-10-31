@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-KLR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Keller Group (KLR)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-KLR</link>
+  <description>Alerts for Keller Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Keller Group: Rank moved up 29 places to #7 (score 84)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-KLR</link>
+   <guid isPermaLink="false">2026-10-23-LSE-KLR-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #7 (score 84). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Keller Group: Unusual burst of news coverage (30-day tone +0.10)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-KLR</link>
+   <guid isPermaLink="false">2026-10-23-LSE-KLR-news</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.10). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

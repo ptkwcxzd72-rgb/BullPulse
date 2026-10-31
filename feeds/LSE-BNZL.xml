@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-BNZL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Bunzl (BNZL)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-BNZL</link>
+  <description>Alerts for Bunzl from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Bunzl: Rank moved up 20 places to #137 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BNZL</link>
+   <guid isPermaLink="false">2026-10-30-LSE-BNZL-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #137 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bunzl: Rank moved down 21 places to #150 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BNZL</link>
+   <guid isPermaLink="false">2026-10-26-LSE-BNZL-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #150 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bunzl: Rank moved up 26 places to #129 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BNZL</link>
+   <guid isPermaLink="false">2026-10-23-LSE-BNZL-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #129 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bunzl: Rank moved down 114 places to #155 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BNZL</link>
+   <guid isPermaLink="false">2026-10-22-LSE-BNZL-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 114 places to #155 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

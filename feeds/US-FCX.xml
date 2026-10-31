@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FCX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Freeport-McMoRan (FCX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+  <description>Alerts for Freeport-McMoRan from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Freeport-McMoRan: Rank moved down 36 places to #76 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-30-US-FCX-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #76 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freeport-McMoRan: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-30-US-FCX-trend</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freeport-McMoRan: Rank moved up 23 places to #38 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-27-US-FCX-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #38 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freeport-McMoRan: Rank moved up 26 places to #67 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-23-US-FCX-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #67 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freeport-McMoRan: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-23-US-FCX-trend</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freeport-McMoRan: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FCX</link>
+   <guid isPermaLink="false">2026-10-23-US-FCX-early</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

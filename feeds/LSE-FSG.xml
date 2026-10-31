@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-FSG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Foresight Group (FSG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-FSG</link>
+  <description>Alerts for Foresight Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Foresight Group: Rank moved up 36 places to #124 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-FSG</link>
+   <guid isPermaLink="false">2026-10-30-LSE-FSG-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #124 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Foresight Group: Rank moved up 50 places to #162 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-FSG</link>
+   <guid isPermaLink="false">2026-10-26-LSE-FSG-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 50 places to #162 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

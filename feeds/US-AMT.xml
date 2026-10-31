@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: American Tower (AMT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+  <description>Alerts for American Tower from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>American Tower: Rank moved up 53 places to #92 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+   <guid isPermaLink="false">2026-10-28-US-AMT-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 53 places to #92 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American Tower: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+   <guid isPermaLink="false">2026-10-28-US-AMT-cross</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American Tower: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+   <guid isPermaLink="false">2026-10-28-US-AMT-early</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American Tower: New results filed: revenue -17.8% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+   <guid isPermaLink="false">2026-10-28-US-AMT-results</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue -17.8% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American Tower: Rank moved up 22 places to #135 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+   <guid isPermaLink="false">2026-10-27-US-AMT-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #135 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American Tower: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMT</link>
+   <guid isPermaLink="false">2026-10-26-US-AMT-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

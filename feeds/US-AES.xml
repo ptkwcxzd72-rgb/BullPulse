@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AES.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: AES Corporation (AES)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AES</link>
+  <description>Alerts for AES Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>AES Corporation: Rank moved down 27 places to #106 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AES</link>
+   <guid isPermaLink="false">2026-10-30-US-AES-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #106 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AES Corporation: Unusual burst of news coverage (30-day tone +0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AES</link>
+   <guid isPermaLink="false">2026-10-29-US-AES-news</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-GSCT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Global Smaller Companies Trust (GSCT)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-GSCT</link>
+  <description>Alerts for Global Smaller Companies Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Global Smaller Companies Trust: Rank moved down 53 places to #159 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GSCT</link>
+   <guid isPermaLink="false">2026-10-30-LSE-GSCT-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 53 places to #159 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Global Smaller Companies Trust: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GSCT</link>
+   <guid isPermaLink="false">2026-10-30-LSE-GSCT-trend</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Global Smaller Companies Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GSCT</link>
+   <guid isPermaLink="false">2026-10-29-LSE-GSCT-early</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Global Smaller Companies Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GSCT</link>
+   <guid isPermaLink="false">2026-10-29-LSE-GSCT-trend</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Global Smaller Companies Trust: Rank moved up 66 places to #106 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GSCT</link>
+   <guid isPermaLink="false">2026-10-29-LSE-GSCT-rank</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 66 places to #106 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

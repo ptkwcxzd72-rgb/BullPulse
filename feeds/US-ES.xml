@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ES.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Eversource Energy (ES)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ES</link>
+  <description>Alerts for Eversource Energy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Eversource Energy: Rank moved down 20 places to #173 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ES</link>
+   <guid isPermaLink="false">2026-10-28-US-ES-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #173 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eversource Energy: Unusual burst of news coverage (30-day tone -0.05)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ES</link>
+   <guid isPermaLink="false">2026-10-28-US-ES-news</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.05). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

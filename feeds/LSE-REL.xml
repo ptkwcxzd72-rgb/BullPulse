@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-REL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: RELX (REL)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-REL</link>
+  <description>Alerts for RELX from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>RELX: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-REL</link>
+   <guid isPermaLink="false">2026-10-30-LSE-REL-early</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RELX: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-REL</link>
+   <guid isPermaLink="false">2026-10-29-LSE-REL-cross</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RELX: Rank moved down 167 places to #242 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-REL</link>
+   <guid isPermaLink="false">2026-10-22-LSE-REL-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 167 places to #242 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

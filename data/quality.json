@@ -1,0 +1,14 @@
+{
+ "asof": "2026-10-30",
+ "checked": 548,
+ "excluded": [],
+ "flagged": [
+  {
+   "id": "US-ECHO",
+   "reason": "price moved +70% on 26 Aug 2025; history will be re-downloaded in case of an unadjusted split"
+  }
+ ],
+ "resync": [
+  "echo"
+ ]
+}

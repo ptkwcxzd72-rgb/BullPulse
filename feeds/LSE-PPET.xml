@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-PPET.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Patria Private Equity Trust (PPET)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+  <description>Alerts for Patria Private Equity Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Patria Private Equity Trust: Rank moved up 34 places to #266 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+   <guid isPermaLink="false">2026-10-28-LSE-PPET-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #266 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Patria Private Equity Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+   <guid isPermaLink="false">2026-10-28-LSE-PPET-trend</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Patria Private Equity Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+   <guid isPermaLink="false">2026-10-28-LSE-PPET-early</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Patria Private Equity Trust: Rank moved down 40 places to #295 (score 23)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+   <guid isPermaLink="false">2026-10-27-LSE-PPET-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 40 places to #295 (score 23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Patria Private Equity Trust: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+   <guid isPermaLink="false">2026-10-27-LSE-PPET-trend</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Patria Private Equity Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+   <guid isPermaLink="false">2026-10-26-LSE-PPET-trend</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Patria Private Equity Trust: Rank moved up 21 places to #255 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PPET</link>
+   <guid isPermaLink="false">2026-10-26-LSE-PPET-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #255 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

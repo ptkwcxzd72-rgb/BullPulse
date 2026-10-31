@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-INF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Informa (INF)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-INF</link>
+  <description>Alerts for Informa from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Informa: Rank moved down 28 places to #279 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-INF</link>
+   <guid isPermaLink="false">2026-10-28-LSE-INF-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #279 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Informa: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-INF</link>
+   <guid isPermaLink="false">2026-10-28-LSE-INF-trend</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Informa: Rank moved up 36 places to #245 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-INF</link>
+   <guid isPermaLink="false">2026-10-27-LSE-INF-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #245 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Informa: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-INF</link>
+   <guid isPermaLink="false">2026-10-27-LSE-INF-trend</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Informa: Rank moved down 193 places to #277 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-INF</link>
+   <guid isPermaLink="false">2026-10-22-LSE-INF-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 193 places to #277 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-HFEL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Henderson Far East Income (HFEL)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-HFEL</link>
+  <description>Alerts for Henderson Far East Income from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Henderson Far East Income: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HFEL</link>
+   <guid isPermaLink="false">2026-10-29-LSE-HFEL-trend</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Henderson Far East Income: Rank moved down 36 places to #249 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HFEL</link>
+   <guid isPermaLink="false">2026-10-29-LSE-HFEL-rank</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #249 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Henderson Far East Income: Rank moved up 44 places to #213 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HFEL</link>
+   <guid isPermaLink="false">2026-10-28-LSE-HFEL-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 44 places to #213 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Henderson Far East Income: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HFEL</link>
+   <guid isPermaLink="false">2026-10-28-LSE-HFEL-trend</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Henderson Far East Income: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-HFEL</link>
+   <guid isPermaLink="false">2026-10-28-LSE-HFEL-early</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

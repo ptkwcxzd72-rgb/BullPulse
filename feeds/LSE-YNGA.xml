@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-YNGA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Young&#39;s (YNGA)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-YNGA</link>
+  <description>Alerts for Young&#39;s from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Young&#39;s: Rank moved up 23 places to #62 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-YNGA</link>
+   <guid isPermaLink="false">2026-10-29-LSE-YNGA-rank</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #62 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-III.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: 3i (III)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-III</link>
+  <description>Alerts for 3i from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>3i: Rank moved down 241 places to #340 (score 13)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-III</link>
+   <guid isPermaLink="false">2026-10-22-LSE-III-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 241 places to #340 (score 13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-IPO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: IP Group (IPO)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-IPO</link>
+  <description>Alerts for IP Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>IP Group: Rank moved up 51 places to #44 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-IPO</link>
+   <guid isPermaLink="false">2026-10-23-LSE-IPO-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 51 places to #44 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

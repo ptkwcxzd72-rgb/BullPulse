@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-EXPN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Experian (EXPN)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-EXPN</link>
+  <description>Alerts for Experian from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Experian: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EXPN</link>
+   <guid isPermaLink="false">2026-10-29-LSE-EXPN-early</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Experian: Rank moved down 168 places to #241 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EXPN</link>
+   <guid isPermaLink="false">2026-10-22-LSE-EXPN-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 168 places to #241 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Experian: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EXPN</link>
+   <guid isPermaLink="false">2026-10-21-LSE-EXPN-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

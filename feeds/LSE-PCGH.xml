@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-PCGH.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Polar Capital Global Healthcare Trust (PCGH)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-PCGH</link>
+  <description>Alerts for Polar Capital Global Healthcare Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Polar Capital Global Healthcare Trust: Rank moved down 20 places to #89 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PCGH</link>
+   <guid isPermaLink="false">2026-10-29-LSE-PCGH-rank</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #89 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Polar Capital Global Healthcare Trust: Rank moved up 79 places to #69 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PCGH</link>
+   <guid isPermaLink="false">2026-10-28-LSE-PCGH-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 79 places to #69 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Polar Capital Global Healthcare Trust: Rank moved down 26 places to #147 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PCGH</link>
+   <guid isPermaLink="false">2026-10-26-LSE-PCGH-rank</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #147 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

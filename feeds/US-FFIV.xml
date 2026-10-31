@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FFIV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: F5, Inc. (FFIV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
+  <description>Alerts for F5, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>F5, Inc.: Rank moved down 24 places to #87 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
+   <guid isPermaLink="false">2026-10-30-US-FFIV-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #87 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>F5, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
+   <guid isPermaLink="false">2026-10-30-US-FFIV-trend</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>F5, Inc.: Rank moved down 22 places to #84 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
+   <guid isPermaLink="false">2026-10-27-US-FFIV-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #84 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>F5, Inc.: Rank moved down 21 places to #65 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FFIV</link>
+   <guid isPermaLink="false">2026-10-23-US-FFIV-rank</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #65 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

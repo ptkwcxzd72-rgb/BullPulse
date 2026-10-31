@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-COST.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Costain Group (COST)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-COST</link>
+  <description>Alerts for Costain Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Costain Group: Rank moved up 42 places to #5 (score 83)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-COST</link>
+   <guid isPermaLink="false">2026-10-27-LSE-COST-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #5 (score 83). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

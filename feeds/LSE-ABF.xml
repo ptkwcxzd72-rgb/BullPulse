@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-ABF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Associated British Foods (ABF)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+  <description>Alerts for Associated British Foods from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Associated British Foods: Rank moved up 39 places to #206 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-30-LSE-ABF-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 39 places to #206 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated British Foods: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-30-LSE-ABF-trend</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated British Foods: Rank moved down 37 places to #243 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-28-LSE-ABF-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #243 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated British Foods: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-28-LSE-ABF-trend</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated British Foods: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-23-LSE-ABF-early</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated British Foods: Rank moved down 140 places to #198 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-22-LSE-ABF-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 140 places to #198 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated British Foods: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ABF</link>
+   <guid isPermaLink="false">2026-10-21-LSE-ABF-early</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-MNG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: M&amp;G (MNG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-MNG</link>
+  <description>Alerts for M&amp;G from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>M&amp;G: Rank moved down 108 places to #164 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MNG</link>
+   <guid isPermaLink="false">2026-10-30-LSE-MNG-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 108 places to #164 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;G: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MNG</link>
+   <guid isPermaLink="false">2026-10-30-LSE-MNG-trend</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;G: Rank moved up 144 places to #41 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MNG</link>
+   <guid isPermaLink="false">2026-10-28-LSE-MNG-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 144 places to #41 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;G: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MNG</link>
+   <guid isPermaLink="false">2026-10-28-LSE-MNG-trend</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;G: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MNG</link>
+   <guid isPermaLink="false">2026-10-28-LSE-MNG-early</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;G: Rank moved down 127 places to #180 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MNG</link>
+   <guid isPermaLink="false">2026-10-22-LSE-MNG-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 127 places to #180 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

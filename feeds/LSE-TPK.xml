@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-TPK.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Travis Perkins (TPK)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-TPK</link>
+  <description>Alerts for Travis Perkins from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Travis Perkins: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-TPK</link>
+   <guid isPermaLink="false">2026-10-29-LSE-TPK-early</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Travis Perkins: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-TPK</link>
+   <guid isPermaLink="false">2026-10-26-LSE-TPK-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Travis Perkins: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-TPK</link>
+   <guid isPermaLink="false">2026-10-23-LSE-TPK-cross</guid>
+   <pubDate>Fri, 23 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

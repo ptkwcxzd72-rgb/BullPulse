@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-DOCS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Dr. Martens (DOCS)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-DOCS</link>
+  <description>Alerts for Dr. Martens from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Dr. Martens: Rank moved down 25 places to #330 (score 14)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-DOCS</link>
+   <guid isPermaLink="false">2026-10-28-LSE-DOCS-rank</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #330 (score 14). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>
