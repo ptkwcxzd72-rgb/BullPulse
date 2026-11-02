@@ -51,7 +51,7 @@
 <header class="masthead night">
   <div class="in mastbar">
     <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
-    <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html">Screener</a><a href="portfolio.html">Portfolio</a><a href="alerts.html" aria-current="page">Alerts</a></nav>
+    <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html">Screener</a><a href="portfolio.html">Portfolio</a><a href="lab.html">Lab</a><a href="investors.html">Investors</a><a href="alerts.html" aria-current="page">Alerts</a></nav>
   </div>
   <div class="in pagehead">
     <h1>Alerts</h1>
@@ -147,6 +147,8 @@ function render(){
 }
 $("opml").onclick = () => {
   const items = [...new Set([...watch, ...mine])].map(id => S[id] ? `    <outline type="rss" text="${esc(S[id].name)}" title="${esc(S[id].name)}" xmlUrl="${base}feeds/${id}.xml" htmlUrl="${base}app.html#${id}"/>` : "").filter(Boolean);
+  let inv = []; try { inv = JSON.parse(localStorage.getItem("bp-follow-inv") || "[]"); } catch (e) {}
+  inv.forEach(slug => items.push(`    <outline type="rss" text="${esc(slug)} (13F filings)" title="${esc(slug)} (13F filings)" xmlUrl="${base}feeds/investor-${slug}.xml" htmlUrl="${base}investors.html?i=${slug}"/>`));
   if (!items.length) { $("wtext").textContent = "Your watchlist is empty. Star companies in the screener first, then come back to download the file."; return; }
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n  <head><title>BullPulse watchlist</title></head>\n  <body>\n${items.join("\n")}\n  </body>\n</opml>\n`;
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([xml], { type: "text/x-opml" })); a.download = "bullpulse-watchlist.opml"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);

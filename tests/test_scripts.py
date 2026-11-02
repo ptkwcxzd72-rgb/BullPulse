@@ -239,3 +239,53 @@ class InsiderHistoryTest(unittest.TestCase):
         self.assertEqual((r["filed"], r["trade"], r["id"], r["code"], r["value"], r["role"]),
                          ("2024-03-05", "2024-03-01", "US-AAPL", "P", 17050, "OFFICER"))
         self.assertEqual(IH.quarters("2025q3", __import__("datetime").date(2026, 2, 1)), ["2025q3", "2025q4", "2026q1"])
+
+
+class DividendAdjustTest(unittest.TestCase):
+    def test_total_return_back_adjustment(self):
+        import sync_uk_prices as U
+        bars = [["2024-01-01", 100, 100, 100, 100, 1], ["2024-01-02", 100, 100, 100, 100, 1], ["2024-01-03", 95, 95, 95, 95, 1]]
+        out = U.add_dividends(bars, [["2024-01-03", 5.0]])
+        # the price fell by the dividend: a holder's total return is zero
+        self.assertAlmostEqual(out[2][4] / out[1][4], 1.0, places=6)
+        self.assertEqual(out[2][4], 95)
+        d = {"chart": {"result": [{"indicators": {"quote": [{"close": [100, 95]}], "adjclose": [{"adjclose": [100, 95]}]},
+                                   "events": {"dividends": {"1": {"amount": 5, "date": 1704240000}}}}]}}
+        self.assertTrue(U.dividends_missing(d))
+        d["chart"]["result"][0]["indicators"]["adjclose"][0]["adjclose"] = [95, 95]
+        self.assertFalse(U.dividends_missing(d))
+
+
+class ThirteenFTest(unittest.TestCase):
+    def test_parse_and_aggregate(self):
+        import fetch_13f as F
+        xml = b"""<?xml version="1.0"?><informationTable xmlns="http://www.sec.gov/edgar/document/thirteenf/informationtable">
+        <infoTable><nameOfIssuer>APPLE INC</nameOfIssuer><titleOfClass>COM</titleOfClass><cusip>037833100</cusip><value>1000</value>
+        <shrsOrPrnAmt><sshPrnamt>10</sshPrnamt><sshPrnamtType>SH</sshPrnamtType></shrsOrPrnAmt></infoTable>
+        <infoTable><nameOfIssuer>APPLE INC</nameOfIssuer><titleOfClass>COM</titleOfClass><cusip>037833100</cusip><value>500</value>
+        <shrsOrPrnAmt><sshPrnamt>5</sshPrnamt><sshPrnamtType>SH</sshPrnamtType></shrsOrPrnAmt></infoTable>
+        <infoTable><nameOfIssuer>APPLE INC</nameOfIssuer><titleOfClass>CALL</titleOfClass><cusip>037833100</cusip><value>99</value><putCall>Call</putCall>
+        <shrsOrPrnAmt><sshPrnamt>1</sshPrnamt><sshPrnamtType>SH</sshPrnamtType></shrsOrPrnAmt></infoTable></informationTable>"""
+        rows = F.parse_table(xml)
+        self.assertEqual(len(rows), 2)
+        agg = F.aggregate(rows, "2022-05-01")
+        self.assertEqual((agg[0]["value"], agg[0]["shares"]), (1500000.0, 15.0))   # thousands before 2023
+        self.assertEqual(F.aggregate(rows, "2024-05-01")[0]["value"], 1500.0)
+        self.assertEqual(F.norm("COCA COLA CO"), "COCA COLA")
+
+    def test_changes_and_copy_record(self):
+        import investors as I
+        prev = [{"cusip": "A", "name": "A", "value": 50, "shares": 10}, {"cusip": "B", "name": "B", "value": 50, "shares": 10}]
+        cur = [{"cusip": "A", "name": "A", "value": 80, "shares": 20}, {"cusip": "C", "name": "C", "value": 20, "shares": 5}]
+        c = I.changes(prev, cur)
+        self.assertEqual([h["cusip"] for h in c["new"]], ["C"])
+        self.assertEqual([h["cusip"] for h in c["added"]], ["A"])
+        self.assertEqual([h["cusip"] for h in c["sold"]], ["B"])
+        days = ["2024-01-02", "2024-01-03", "2024-01-31", "2024-02-01", "2024-02-29", "2024-03-01"]
+        px = {"AAA": (days, [10, 10, 11, 11, 12, 12])}
+        bench = (days, [100, 100, 100, 100, 100, 100])
+        doc = {"filings": [{"filed": "2024-01-02", "holdings": [{"ticker": "AAA", "value": 1, "cusip": "X"}, {"ticker": "", "value": 1, "cusip": "Y"}]}]}
+        r = I.copy_record(doc, px, bench)
+        self.assertAlmostEqual(r["total"], 0.2, places=6)   # 10 -> 12, bought on the first close after filing
+        self.assertAlmostEqual(r["coverage"], 0.5)
+        self.assertEqual(I.month_ends("2024-01-03", "2024-03-01"), ["2024-01-31", "2024-02-29"])

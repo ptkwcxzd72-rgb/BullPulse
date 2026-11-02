@@ -318,6 +318,7 @@ func main() {
 	os.MkdirAll(filepath.Join(*out, "stocks"), 0o755)
 	var rows []*Row
 	var asof time.Time
+	seriesByID := map[string]*core.Series{}
 	for _, s := range stocks {
 		x, err := core.Load(repo, s)
 		if err != nil || len(x.Close) < core.MinBars+20 {
@@ -329,6 +330,7 @@ func main() {
 			asof = x.Dates[j]
 		}
 		id := s.ID()
+		seriesByID[id] = x
 		row := &Row{Idx: s.Index, Trust: s.Trust, T: s.Ticker, Ex: core.Exchange(s.Market), Name: s.Name, Sector: s.Sector, Ccy: core.Currency(s.Market), ID: id,
 			Price: x.Close[j], Chg1d: x.Close[j]/x.Close[j-1] - 1, Ret1y: x.Close[j]/x.Close[j-252] - 1,
 			Mom: x.Momentum(j), TrRaw: x.TrendRaw(j), Above200: x.Close[j] > x.SMA200[j],
@@ -631,6 +633,15 @@ func main() {
 	}
 	if err := writeBenchJSON(filepath.Join(*out, "bench.json"), benches); err != nil {
 		log.Error("bench", "error", err)
+	}
+	mp := newMonthly(asof)
+	for _, r := range rows {
+		if x := seriesByID[r.ID]; x != nil {
+			mp.add(r.ID, x)
+		}
+	}
+	if err := mp.write(filepath.Join(*out, "monthly.json"), asof); err != nil {
+		log.Error("monthly prices", "error", err)
 	}
 	if err := writeFXJSON(filepath.Join(filepath.Dir(*fxPath), "fx_history.csv"), filepath.Join(*out, "fx_history.json")); err != nil && !os.IsNotExist(err) {
 		log.Error("fx history", "error", err)

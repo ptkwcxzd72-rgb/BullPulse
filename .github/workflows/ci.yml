@@ -26,3 +26,5 @@ jobs:
         run: go vet ./... && go test ./...
       - name: Python tests (no network, no model)
         run: python -m unittest discover tests -v
+      - name: Strategy Lab engine tests
+        run: node tests/js/lab_test.js

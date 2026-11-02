@@ -157,6 +157,10 @@ jobs:
       - name: Rank stocks (with data-quality checks and score history)
         run: go run ./cmd/screener
 
+      - name: Investor pages and feeds (from the 13F history)
+        run: python scripts/investors.py
+        continue-on-error: true
+
       - name: Commit data
         # saved even if ranking failed, so downloaded prices and filings are never lost
         if: ${{ !cancelled() }}

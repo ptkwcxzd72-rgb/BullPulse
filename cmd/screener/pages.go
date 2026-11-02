@@ -61,7 +61,7 @@ main{display:grid;gap:22px;padding-block:24px 40px;max-width:1100px}
 <header class="masthead night">
   <div class="in mastbar">
     <a href="../../" class="home" aria-label="BullPulse home"><img src="../../brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
-    <nav class="nav" aria-label="Site"><a href="../../">Home</a><a href="../../app.html">Screener</a><a href="../../portfolio.html">Portfolio</a><a href="../../alerts.html">Alerts</a></nav>
+    <nav class="nav" aria-label="Site"><a href="../../">Home</a><a href="../../app.html">Screener</a><a href="../../portfolio.html">Portfolio</a><a href="../../lab.html">Lab</a><a href="../../investors.html">Investors</a><a href="../../alerts.html">Alerts</a></nav>
   </div>
   <div class="in pagehead">
     <h1>{{.R.Name}} <span style="color:var(--night-muted);font-weight:600">{{.R.T}}</span></h1>
@@ -278,7 +278,7 @@ func writePages(siteDir, base string, rows []*Row, asof time.Time) error {
 	var sm strings.Builder
 	sm.WriteString(`<?xml version="1.0" encoding="UTF-8"?>` + "\n" + `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` + "\n")
 	day := asof.Format("2006-01-02")
-	for _, p := range []string{"", "app.html", "portfolio.html", "alerts.html", "score.html"} {
+	for _, p := range []string{"", "app.html", "portfolio.html", "lab.html", "investors.html", "alerts.html", "score.html"} {
 		fmt.Fprintf(&sm, "  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>\n", base, p, day)
 	}
 	ids := make([]string, 0, len(keep))

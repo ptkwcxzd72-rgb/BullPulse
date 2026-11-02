@@ -61,6 +61,12 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 - **Visitor counts (optional).** Set `GOATCOUNTER` in `site/common.js` to a [GoatCounter](https://www.goatcounter.com) site code to count visits without cookies. Feedback comes in through the GitHub issue form linked in every page's footer.
 - [`site/`](site) is a static site with no server.
 
+## Strategy Lab, forward tracking and investors
+
+- **Strategy Lab** (`site/lab.html`, engine in `site/lab-engine.js`): pick stocks or follow a rule (conditions, a ranking blend, top N with a holding buffer), weight them (equal, by score, lower risk or your own), rebalance monthly, quarterly, yearly, on drift or never, optionally sell below the 200-day average, add money monthly, measure in pounds or dollars, ISA/SIPP or a general account (capital gains tax), with commission, spread, currency fees and stamp duty. It runs on the month-end history panel, so every month uses only what was known then and stocks count only while in their index. Results: value against S&P 500 and FTSE 100 funds and the average stock with the same money, risk measures, a bootstrapped range of outcomes, earlier/later halves, and the last 24 months hidden until the strategy is locked. Up to three strategies can be compared, and any can be shared as a link.
+- **Forward tracking:** "Start tracking from today" freezes a strategy with tonight's picks and prices and follows it with real month-end prices (`site/data/monthly.json`, written nightly). Kept in the browser and shareable as a link.
+- **Investors** (`site/investors.html`): 15 well-known investors' quarterly SEC Form 13F filings since 2015 (`scripts/fetch_13f.py`, CUSIPs mapped to tickers with OpenFIGI), with latest holdings, quarter-by-quarter changes, and the record of copying each filing from the first close after it was published (`scripts/investors.py`). Follow any investor to get an RSS feed of new filings. Built from public filings; not affiliated with or endorsed by the investors.
+
 ## How the score learns
 
 `cmd/learn` runs monthly (in `validate.yml`) after the history panel is rebuilt:

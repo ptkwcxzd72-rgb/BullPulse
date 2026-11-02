@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BullPulse Strategy Lab</title>
+<meta name="description" content="Build a portfolio strategy from UK and US stocks, test it on ten years of point-in-time data with real costs, tax and currency, see the range of outcomes, then track it forward from today. Free, no account.">
+<link rel="canonical" href="https://bullpulse.co.uk/lab.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="bp.css">
+<style>
+.pagehead{padding-block:6px 26px}
+.pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:76ch}
+main{padding-block:22px 40px}
+.pl{display:grid;grid-template-columns:minmax(0,410px) minmax(0,1fr);gap:22px;align-items:start}
+.build{display:grid;overflow:hidden}
+.sec{padding:16px 18px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.sec:last-child{border-bottom:0}
+.sec h2{margin:0;font:650 16px var(--f-display);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.sec h2 .n{font:600 11px var(--f-body);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 7px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-weight:600;font-size:12.5px;cursor:pointer;color:var(--muted)}
+.tabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.adder{display:flex;gap:6px}
+.adder input,.inp{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:7px 10px;font-size:13px;color:var(--ink)}
+.list{display:grid;gap:2px;max-height:260px;overflow:auto}
+.li{display:grid;grid-template-columns:minmax(0,1fr) auto 26px;gap:8px;align-items:center;padding:5px 4px;border-bottom:1px solid var(--grid);font-size:13px}
+.li b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.li small{color:var(--muted)}
+.li input{width:58px;border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:12.5px;text-align:right;background:var(--surface);color:var(--ink)}
+.x{border:0;background:transparent;color:var(--muted);font-size:17px;cursor:pointer;border-radius:6px;line-height:1}
+.x:hover{color:var(--down);background:var(--surface-2)}
+.set{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px 12px;align-items:center;font-size:13px}
+.set label{color:var(--muted)}
+.set input,.set select,.rule select,.rule input{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 8px;font-size:13px;width:100%;min-width:0;color:var(--ink)}
+.set .two{display:flex;gap:6px;align-items:center}
+.chk{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--ink)}
+.rules{display:grid;gap:6px}
+.rule{display:grid;grid-template-columns:minmax(0,1.5fr) 92px minmax(0,.7fr) 26px;gap:6px;align-items:center}
+.wts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;font-size:11.5px;color:var(--muted);text-align:center}
+.wts input{width:100%;border:1px solid var(--line);border-radius:6px;padding:4px;text-align:center;font-size:12.5px;background:var(--surface);color:var(--ink)}
+.methods{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.methods button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:7px 10px;text-align:left;cursor:pointer;font-size:12px;color:var(--muted)}
+.methods button b{display:block;color:var(--ink);font-size:13px}
+.methods button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.methods button:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;gap:6px;flex-wrap:wrap}
+.bbtn{border:0;border-radius:8px;padding:7px 12px;font-weight:600;font-size:13px;cursor:pointer;background:var(--accent);color:#fff}
+.bbtn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.bbtn.dark{background:var(--midnight);color:#fff}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+.res{display:grid;gap:20px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.stats div{background:var(--surface);padding:13px 15px;display:grid;gap:2px}
+.stats .v{font:650 22px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.stats .s{font-size:12px;color:var(--muted)}
+.cc{padding:16px 18px;display:grid;gap:10px}
+.cc h3{margin:0;font:650 16px var(--f-display);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.cc svg{width:100%;height:auto;display:block}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.leg i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.tt{width:100%;border-collapse:collapse;font-size:13px}
+.tt th,.tt td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+.tt th:first-child,.tt td:first-child{text-align:left}
+.tt th{font-size:11.5px;color:var(--muted);font-weight:600}
+.banner{padding:12px 16px;border-radius:12px;background:var(--warn-soft);color:var(--warn);font-size:13px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.banner.ok{background:var(--accent-soft);color:var(--accent)}
+.range{position:relative;height:34px;margin:8px 0 2px}
+.range .ax{position:absolute;left:0;right:0;top:16px;height:2px;background:var(--line)}
+.range .w{position:absolute;top:10px;height:14px;background:color-mix(in srgb,var(--accent) 25%,transparent);border-radius:3px}
+.range .b{position:absolute;top:6px;height:22px;background:color-mix(in srgb,var(--accent) 55%,transparent);border-radius:3px}
+.range .m{position:absolute;top:2px;width:3px;height:30px;background:var(--ink);border-radius:2px}
+.range .z{position:absolute;top:0;width:1px;height:34px;background:var(--down)}
+.rlab{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted)}
+.years{display:flex;gap:6px;flex-wrap:wrap}
+.years span{font-size:12.5px;border:1px solid var(--line);border-radius:8px;padding:3px 8px;font-variant-numeric:tabular-nums}
+.slots{display:flex;gap:6px;flex-wrap:wrap}
+.slot{border:1px solid var(--line);border-radius:999px;padding:4px 6px 4px 12px;font-size:12.5px;display:flex;gap:6px;align-items:center}
+.slot i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.tr{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:9px 4px;border-bottom:1px solid var(--grid);font-size:13px}
+.tr b{font-weight:600}
+.emptyp{padding:40px 24px;text-align:center;color:var(--muted)}
+@media (max-width:1000px){.pl{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<script src="common.js" defer></script>
+</head>
+<body>
+<header class="masthead night">
+  <div class="in mastbar">
+    <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+    <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html">Screener</a><a href="portfolio.html">Portfolio</a><a href="lab.html" aria-current="page">Lab</a><a href="investors.html">Investors</a><a href="alerts.html">Alerts</a></nav>
+  </div>
+  <div class="in pagehead">
+    <h1>Strategy Lab</h1>
+    <p>Build a strategy, test it on up to ten years of month-ends using only what was known at each date, with dealing costs, stamp duty, currency and tax, then track it forward from today. Everything runs in your browser.</p>
+  </div>
+</header>
+
+<main class="in">
+  <div class="pl">
+    <aside class="card build" aria-label="Strategy">
+      <section class="sec">
+        <h2>1. What to hold <span class="n" id="srcn"></span></h2>
+        <div class="tabs" role="group" aria-label="Source"><button data-src="list" aria-pressed="true">Pick stocks</button><button data-src="rule" aria-pressed="false">Follow a rule</button></div>
+        <div id="src-list">
+          <div class="adder"><input id="add" list="stocklist" placeholder="Add a company by name or ticker" aria-label="Add a company"><button class="bbtn" id="addb">Add</button></div>
+          <datalist id="stocklist"></datalist>
+          <div class="list" id="lst"></div>
+          <div class="actions" style="margin-top:6px"><button class="bbtn ghost" id="imp-model">From my model portfolio</button><button class="bbtn ghost" id="imp-hold">From my holdings</button><button class="bbtn ghost" id="imp-inv">From an investor</button></div>
+          <p class="note" id="hindsight">Picking stocks today and testing them on the past flatters the result: you already know which ones did well. A rule avoids that.</p>
+        </div>
+        <div id="src-rule" hidden>
+          <div class="set">
+            <label for="r-mkt">Market</label><select id="r-mkt"><option value="ALL">UK and US</option><option value="LSE">UK</option><option value="US">US</option></select>
+            <label for="r-idx">Index</label><select id="r-idx"><option value="">Any</option><option>FTSE 100</option><option>FTSE 250</option><option>S&amp;P 500</option></select>
+            <label for="r-sec">Sector</label><select id="r-sec"><option value="">Any</option></select>
+          </div>
+          <label class="chk"><input type="checkbox" id="r-notr" checked> Leave out investment trusts</label>
+          <div><b style="font-size:13px">Only stocks where</b></div>
+          <div class="rules" id="rules"></div>
+          <div class="actions"><button class="bbtn ghost" id="addrule">Add a condition</button><select id="preset" class="inp" style="flex:0 1 220px" aria-label="Start from a preset"><option value="">Start from a preset…</option></select></div>
+          <div><b style="font-size:13px">Rank them by</b> <span class="note">(relative weights)</span></div>
+          <div class="wts"><label>Trend<input id="w-T" type="number" min="0" value="50"></label><label>Momentum<input id="w-M" type="number" min="0" value="50"></label><label>Growth<input id="w-G" type="number" min="0" value="0"></label><label>Fundamentals<input id="w-F" type="number" min="0" value="0"></label><label>Value<input id="w-V" type="number" min="0" value="0"></label></div>
+          <div class="set">
+            <label for="r-top">Hold the top</label><div class="two"><input id="r-top" type="number" min="1" max="100" value="20"><span class="note">stocks</span></div>
+            <label for="r-keep">Keep a holding while it's in the top</label><div class="two"><input id="r-keep" type="number" min="0" max="200" value="40"><span class="note">(0 = no buffer)</span></div>
+          </div>
+          <div class="actions"><button class="bbtn ghost" id="imp-screen">Use my screener screen</button></div>
+        </div>
+      </section>
+      <section class="sec">
+        <h2>2. Weighting and trading</h2>
+        <div class="methods" id="wm">
+          <button data-w="equal" aria-pressed="true"><b>Equal</b>Same amount in each</button>
+          <button data-w="score" aria-pressed="false"><b>By score</b>More in higher scores</button>
+          <button data-w="invvol" aria-pressed="false"><b>Lower risk</b>More in steadier shares</button>
+          <button data-w="custom" aria-pressed="false"><b>Your own</b>Your percentages</button>
+        </div>
+        <div class="set">
+          <label for="cap">Most in one stock</label><div class="two"><input id="cap" type="number" min="1" max="100" value="20"><span class="note">%</span></div>
+          <label for="reb">Rebalance</label><select id="reb"><option value="M">Every month</option><option value="Q" selected>Every quarter</option><option value="Y">Every year</option><option value="drift">When a holding drifts</option><option value="never">Never (buy and hold)</option></select>
+          <label for="drift" id="driftl" hidden>Drift allowed</label><div class="two" id="driftd" hidden><input id="drift" type="number" min="1" max="50" value="5"><span class="note">percentage points</span></div>
+        </div>
+        <label class="chk"><input type="checkbox" id="ex200"> Sell a stock when it falls below its 200-day average</label>
+        <div class="set" id="exto" hidden><label for="exw">Then</label><select id="exw"><option value="spread">Spread the money over the rest</option><option value="cash">Hold the money as cash</option></select></div>
+      </section>
+      <section class="sec">
+        <h2>3. Money</h2>
+        <div class="set">
+          <label for="amt">Start with</label><input id="amt" type="number" min="0" step="100" value="10000">
+          <label for="mon">Add each month</label><input id="mon" type="number" min="0" step="10" value="0">
+          <label for="ccy">Measure in</label><select id="ccy"><option value="GBP">Pounds (US returns converted)</option><option value="USD">Dollars (UK returns converted)</option></select>
+          <label for="from">Start in</label><select id="from"></select>
+          <label for="acct">Account</label><select id="acct"><option value="isa">ISA or SIPP (no tax)</option><option value="gia">General account (capital gains tax)</option></select>
+        </div>
+      </section>
+      <section class="sec">
+        <h2>4. Costs</h2>
+        <div class="set">
+          <label for="c-com">Commission</label><div class="two"><input id="c-com" type="number" min="0" step="0.05" value="0.1"><span class="note">% a trade</span></div>
+          <label for="c-spr">Spread</label><div class="two"><input id="c-spr" type="number" min="0" step="0.05" value="0.1"><span class="note">% a trade</span></div>
+          <label for="c-fx">Currency fee</label><div class="two"><input id="c-fx" type="number" min="0" step="0.05" value="0.5"><span class="note">% on foreign trades</span></div>
+        </div>
+        <label class="chk"><input type="checkbox" id="c-stamp" checked> 0.5% stamp duty on UK purchases</label>
+      </section>
+      <section class="sec">
+        <div class="set"><label for="name">Name</label><input id="name" placeholder="My strategy"></div>
+        <div class="actions"><button class="bbtn" id="track">Start tracking from today</button><button class="bbtn ghost" id="share">Copy link</button></div>
+        <div class="actions"><span class="note" style="align-self:center">Compare:</span><button class="bbtn ghost" data-slot="0">Save as A</button><button class="bbtn ghost" data-slot="1">Save as B</button><button class="bbtn ghost" data-slot="2">Save as C</button></div>
+        <p class="note" id="msg"></p>
+      </section>
+    </aside>
+    <section class="res" id="res" aria-live="polite"><div class="card emptyp">Loading ten years of month-end data…</div></section>
+  </div>
+  <section class="card cc" id="tracked" style="margin-top:22px" hidden></section>
+  <p class="note" style="margin-top:18px;max-width:110ch">Backtests are hypothetical. Each month uses only figures published by then, and stocks count only while they were in their index (S&amp;P 500 history; UK stocks count throughout). Companies that left the index and stopped trading are missing, which flatters results. Returns include dividends reinvested. Tax uses today's capital gains rules (24% above £3,000 a year) for every year and ignores dividend tax. Not investment advice.</p>
+</main>
+
+<script src="lab-engine.js"></script>
+<script src="lab.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BullPulse Investors</title>
+<meta name="description" content="What well-known investors hold, from their quarterly SEC 13F filings: latest holdings, what they bought and sold, and how following each filing would have done. Follow any investor for alerts. Free, no account.">
+<link rel="canonical" href="https://bullpulse.co.uk/investors.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="bp.css">
+<style>
+.pagehead{padding-block:6px 26px}
+.pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:78ch}
+main{padding-block:22px 40px;display:grid;gap:20px}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.tabs{display:flex;gap:4px}
+.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-weight:600;font-size:13px;cursor:pointer;color:var(--muted)}
+.tabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.inv{padding:16px 18px;display:grid;gap:10px;align-content:start}
+.inv h2{margin:0;font:650 18px var(--f-display)}
+.inv .firm{color:var(--muted);font-size:13px}
+.inv p{margin:0;font-size:13.5px;color:var(--muted)}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.chip.new{border-color:var(--up);color:var(--up)}.chip.sold{border-color:var(--down);color:var(--down)}
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;font-size:12px;color:var(--muted)}
+.kv b{display:block;font:650 16px var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.bbtn{border:0;border-radius:8px;padding:7px 12px;font-weight:600;font-size:13px;cursor:pointer;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.bbtn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.bbtn.on{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
+.card.sec{padding:16px 18px;display:grid;gap:12px}
+.sec h3{margin:0;font:650 16px var(--f-display);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.tt{width:100%;border-collapse:collapse;font-size:13px}
+.tt th,.tt td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+.tt th:first-child,.tt td:first-child{text-align:left}
+.tt th{font-size:11.5px;color:var(--muted);font-weight:600}
+.tt a{color:var(--ink);font-weight:600;text-decoration:none}.tt a:hover{text-decoration:underline}
+.tag{font-size:11px;font-weight:600;border-radius:999px;padding:1px 7px}
+.tag.new{background:var(--up-soft);color:var(--up)}.tag.added{background:var(--accent-soft);color:var(--accent)}.tag.reduced{background:var(--warn-soft);color:var(--warn)}
+.det{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
+.q{border-bottom:1px solid var(--line);padding:10px 0;display:grid;gap:6px;font-size:13px}
+.q:last-child{border-bottom:0}
+.q b{font-weight:600}
+.lbl{color:var(--muted);font-size:12px;min-width:76px;display:inline-block}
+.note{font-size:12.5px;color:var(--muted);margin:0;max-width:110ch}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+@media (max-width:980px){.det{grid-template-columns:minmax(0,1fr)}}
+</style>
+<script src="common.js" defer></script>
+</head>
+<body>
+<header class="masthead night">
+  <div class="in mastbar">
+    <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+    <nav class="nav" aria-label="Site"><a href="./">Home</a><a href="app.html">Screener</a><a href="portfolio.html">Portfolio</a><a href="lab.html">Lab</a><a href="investors.html" aria-current="page">Investors</a><a href="alerts.html">Alerts</a></nav>
+  </div>
+  <div class="in pagehead">
+    <h1 id="h1">Investors</h1>
+    <p id="lede">What well-known investors hold, from the holdings they must report to the SEC each quarter (Form 13F): their latest portfolio, what they bought and sold, and how following each filing as it was published would have done. Follow any of them to get their new filings in your feed reader.</p>
+  </div>
+</header>
+<main class="in" id="main"><div class="card empty">Loading…</div></main>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+const esc = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const pc = (v, d = 1) => v == null ? "–" : (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(d) + "%";
+const pl = (v, d = 1) => v == null ? "–" : (v * 100).toFixed(d) + "%";
+const cls = v => v > 0 ? "pos" : v < 0 ? "neg" : "flat";
+const fmtD = d => d ? new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : "–";
+const qtr = d => { if (!d) return "–"; const m = +d.slice(5, 7); return `Q${Math.ceil(m / 3)} ${d.slice(0, 4)}`; };
+const bn = v => v >= 1e9 ? "$" + (v / 1e9).toFixed(1) + "bn" : "$" + Math.round(v / 1e6).toLocaleString("en-GB") + "m";
+const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+let follow = new Set(store.get("bp-follow-inv", []));
+const base = location.origin + location.pathname.replace(/[^/]*$/, "");
+const DISC = `Built from public SEC Form 13F filings. BullPulse is not affiliated with, or endorsed by, any investor shown, and nothing here is a recommendation. 13F lists long positions in US-listed shares only (no short positions, bonds, cash or non-US shares), at the end of each quarter, published up to 45 days later. Weights are by reported value. Not investment advice.`;
+function followBtn(slug) { const on = follow.has(slug); return `<button class="bbtn ${on ? "on" : "ghost"}" data-follow="${slug}" aria-pressed="${on}">${on ? "✓ Following" : "Follow"}</button>`; }
+function bindFollow(rerender) {
+  document.querySelectorAll("[data-follow]").forEach(b => b.onclick = () => {
+    const s = b.dataset.follow; follow.has(s) ? follow.delete(s) : follow.add(s); store.set("bp-follow-inv", [...follow]); rerender();
+  });
+}
+const stockLink = h => h.id ? `<a href="app.html#${encodeURIComponent(h.id)}">${esc(h.name)}</a>` : esc(h.name);
+
+async function list(index) {
+  let view = store.get("bp-inv-view", "all");
+  const draw = () => {
+    const items = index.investors.filter(x => view === "all" || follow.has(x.slug));
+    const recent = index.investors.filter(x => follow.has(x.slug)).sort((a, b) => b.filed.localeCompare(a.filed));
+    $("main").innerHTML = `
+      <div class="bar"><div class="tabs" role="group" aria-label="Show"><button data-v="all" aria-pressed="${view === "all"}">All investors</button><button data-v="mine" aria-pressed="${view === "mine"}">Following (${follow.size})</button></div>
+        <span class="row">${follow.size ? `<button class="bbtn ghost" id="opml">Download feeds for those you follow (OPML)</button>` : ""}</span></div>
+      ${view === "mine" && recent.length ? `<section class="card sec"><h3>Latest filings from investors you follow</h3>${recent.map(x => `<div class="q"><span><b><a href="?i=${x.slug}" style="color:var(--ink)">${esc(x.manager)}</a></b> <span class="sub">holdings at ${qtr(x.period)}, filed ${fmtD(x.filed)}</span></span>${x.latest ? `<span class="sub">${x.latest.new} new, ${x.latest.added} added to, ${x.latest.reduced} reduced, ${x.latest.sold} sold out</span>` : ""}</div>`).join("")}</section>` : ""}
+      ${items.length ? `<div class="grid">${items.map(card).join("")}</div>` : `<div class="card empty">You're not following anyone yet. Choose Follow on any investor to keep up with their filings.</div>`}
+      <p class="note">${DISC}</p>`;
+    document.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { view = b.dataset.v; store.set("bp-inv-view", view); draw(); });
+    bindFollow(draw);
+    if ($("opml")) $("opml").onclick = () => opml(index);
+  };
+  draw();
+}
+function card(x) {
+  const r = x.record;
+  return `<article class="card inv"><div class="row" style="justify-content:space-between;align-items:start"><div><h2>${esc(x.manager)}</h2><div class="firm">${esc(x.firm)}</div></div>${followBtn(x.slug)}</div>
+    <p>${esc(x.about)}</p>
+    <div class="chips">${(x.top || []).map(h => h.id ? `<a class="chip" href="app.html#${encodeURIComponent(h.id)}">${esc(h.ticker || h.name)} ${pl(h.w, 0)}</a>` : `<span class="chip">${esc(h.ticker || h.name)} ${pl(h.w, 0)}</span>`).join("")}</div>
+    <div class="kv"><span>Latest holdings<b>${qtr(x.period)}</b>filed ${fmtD(x.filed)}</span><span>Copying each filing${r ? `<b class="${cls(r.cagr)}">${pc(r.cagr)}</b>a year since ${r.since.slice(0, 4)}` : "<b>–</b>"}</span><span>S&amp;P 500, same dates${r ? `<b class="${cls(r.benchCagr)}">${pc(r.benchCagr)}</b>a year` : "<b>–</b>"}</span></div>
+    <div class="row" style="justify-content:space-between"><span class="sub">${x.positions} positions, ${bn(x.value)}; ${Math.round(x.covered * 100)}% priced here</span><a class="bbtn ghost" href="?i=${x.slug}">See holdings</a></div>
+  </article>`;
+}
+function opml(index) {
+  const items = index.investors.filter(x => follow.has(x.slug)).map(x => `    <outline type="rss" text="${esc(x.manager)} (13F)" title="${esc(x.manager)} (13F)" xmlUrl="${base}feeds/investor-${x.slug}.xml" htmlUrl="${base}investors.html?i=${x.slug}"/>`);
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n  <head><title>BullPulse: investors I follow</title></head>\n  <body>\n${items.join("\n")}\n  </body>\n</opml>\n`;
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([xml], { type: "text/x-opml" })); a.download = "bullpulse-investors.opml"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+function chart(points) {
+  const W = 760, H = 220, padL = 40, padB = 20;
+  const vals = points.flatMap(p => [p[1], p[2]]).filter(v => v > 0), lo = Math.min(...vals), hi = Math.max(...vals), L = Math.log;
+  const X = k => padL + k / (points.length - 1) * (W - padL - 46), Y = v => H - padB - (L(v) - L(lo)) / ((L(hi) - L(lo)) || 1) * (H - padB - 10);
+  const path = j => points.map((p, k) => (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(p[j]).toFixed(1)).join("");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Growth of 100 following each filing, against the S&P 500" style="width:100%;height:auto">`;
+  [50, 75, 100, 150, 200, 300, 400, 600].filter(v => v / 100 >= lo * .97 && v / 100 <= hi * 1.03).forEach(v => s += `<line x1="${padL}" x2="${W - 46}" y1="${Y(v / 100)}" y2="${Y(v / 100)}" stroke="var(--grid)"/><text x="${padL - 6}" y="${Y(v / 100) + 4}" font-size="11" text-anchor="end" fill="var(--muted)">${v}</text>`);
+  [...new Set(points.map(p => p[0].slice(0, 4)))].forEach(y => { const k = points.findIndex(p => p[0].slice(0, 4) === y); if (k > 0) s += `<text x="${X(k)}" y="${H - 3}" font-size="11" text-anchor="middle" fill="var(--muted)">${y}</text>`; });
+  s += `<path d="${path(2)}" fill="none" stroke="var(--us)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/><path d="${path(1)}" fill="none" stroke="var(--accent)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>`;
+  const last = points[points.length - 1];
+  s += `<text x="${W - 42}" y="${Y(last[1]) + 4}" font-size="11.5" fill="var(--accent)" font-weight="600">${Math.round(last[1] * 100)}</text><text x="${W - 42}" y="${Y(last[2]) + 4}" font-size="11.5" fill="var(--us)" font-weight="600">${Math.round(last[2] * 100)}</text>`;
+  return s + "</svg>";
+}
+async function detail(slug) {
+  let x;
+  try { x = await (await fetch(`data/investors/${encodeURIComponent(slug)}.json`, { cache: "no-cache" })).json(); }
+  catch (e) { $("main").innerHTML = `<div class="card empty">That investor couldn't be found. <a href="investors.html">See all investors</a>.</div>`; return; }
+  document.title = `${x.manager}: holdings from 13F filings | BullPulse`;
+  $("h1").textContent = x.manager;
+  $("lede").textContent = `${x.firm}. ${x.about}`;
+  const draw = () => {
+    const r = x.record, h0 = x.history[0];
+    const mv = (k, lab) => h0 && h0[k].length ? `<div><span class="lbl">${lab}</span> <span class="chips" style="display:inline-flex">${h0[k].slice(0, 12).map(h => `<a class="chip ${k === "new" ? "new" : k === "sold" ? "sold" : ""}" ${h.id ? `href="app.html#${encodeURIComponent(h.id)}"` : ""}>${esc(h.ticker || h.name)}${h.chg != null ? " " + pc(h.chg, 0) : ""}</a>`).join("")}${h0[k].length > 12 ? `<span class="sub">+${h0[k].length - 12} more</span>` : ""}</span></div>` : "";
+    $("main").innerHTML = `
+      <div class="bar"><a class="bbtn ghost" href="investors.html">← All investors</a><span class="row">${followBtn(x.slug)}<a class="bbtn ghost" href="feeds/investor-${x.slug}.xml">RSS feed</a><a class="bbtn" href="lab.html#inv=${encodeURIComponent(x.slug)}">Test in the Strategy Lab</a></span></div>
+      <section class="card sec"><h3>Latest filing <span class="sub">holdings at ${fmtD(x.period)} (${qtr(x.period)}), filed ${fmtD(x.filed)}; ${x.positions} positions, ${bn(x.value)}</span></h3>
+        ${h0 ? `<div class="q" style="border:0">${mv("new", "New")}${mv("added", "Added to")}${mv("reduced", "Reduced")}${mv("sold", "Sold out")}${!["new", "added", "reduced", "sold"].some(k => h0[k].length) ? `<span class="sub">No significant changes from the quarter before.</span>` : ""}</div>` : `<p class="note">This is the first filing on record.</p>`}
+      </section>
+      <div class="det">
+        <section class="card sec"><h3>Holdings <span class="sub">by reported value; ${Math.round(x.covered * 100)}% has prices here</span></h3>
+          <div class="tw"><table class="tt"><thead><tr><th>Company</th><th>Weight</th><th>Value</th><th>Change in shares</th></tr></thead><tbody>
+          ${x.holdings.map(h => `<tr><td>${stockLink(h)} <span class="sub">${esc(h.ticker)}</span></td><td>${pl(h.w)}</td><td>${bn(h.value)}</td><td>${h.change === "new" ? `<span class="tag new">New</span>` : h.chg != null && Math.abs(h.chg) >= 0.001 ? `<span class="tag ${h.change || ""}">${pc(h.chg, 0)}</span>` : `<span class="sub">–</span>`}</td></tr>`).join("")}
+          </tbody></table></div>
+        </section>
+        <section class="card sec"><h3>Following each filing</h3>
+          ${r ? `${chart(r.points)}
+            <div class="legend"><span><i style="background:var(--accent)"></i>Copy of each filing</span><span><i style="background:var(--us)"></i>S&amp;P 500 fund</span><span>Growth of 100 since ${fmtD(r.since)}, log scale</span></div>
+            <div class="tw"><table class="tt"><tbody>
+              <tr><td>Return a year</td><td class="${cls(r.cagr)}"><b>${pc(r.cagr)}</b><div class="sub">S&amp;P 500 ${pc(r.benchCagr)}</div></td></tr>
+              <tr><td>Total since ${r.since.slice(0, 4)}</td><td class="${cls(r.total)}">${pc(r.total, 0)}<div class="sub">S&amp;P 500 ${pc(r.bench, 0)}</div></td></tr>
+              <tr><td>Worst fall from a high</td><td class="neg">${pc(r.maxDD)}</td></tr>
+              <tr><td>Share of the portfolio priced here, on average</td><td>${pl(r.coverage, 0)}</td></tr>
+            </tbody></table></div>
+            <p class="note">Buys each filing's holdings on the first close after it was published (not at the quarter end, which nobody could know in time), weighted by reported value, and holds them until the next filing. Holdings without a price here are left out. US dollars, dividends included, before costs. This is not the fund's own return.</p>` : `<p class="note">Not enough priced filings to show a record yet.</p>`}
+        </section>
+      </div>
+      <section class="card sec"><h3>Quarter by quarter</h3>
+        ${x.history.map(q => `<div class="q"><b>${qtr(q.period)} <span class="sub">filed ${fmtD(q.filed)}</span></b>${["new", "added", "reduced", "sold"].map(k => q[k].length ? `<div><span class="lbl">${{ new: "New", added: "Added to", reduced: "Reduced", sold: "Sold out" }[k]}</span> ${q[k].slice(0, 15).map(h => esc(h.ticker || h.name)).join(", ")}${q[k].length > 15 ? "…" : ""}</div>` : "").join("") || `<span class="sub">No significant changes.</span>`}</div>`).join("") || `<p class="note">Only one filing on record so far.</p>`}
+      </section>
+      <p class="note">${DISC}</p>`;
+    bindFollow(draw);
+  };
+  draw();
+}
+(async () => {
+  const slug = new URLSearchParams(location.search).get("i");
+  if (slug) return detail(slug);
+  let index;
+  try { index = await (await fetch("data/investors/index.json", { cache: "no-cache" })).json(); }
+  catch (e) { $("main").innerHTML = `<div class="card empty">The investor data isn't available yet. It's gathered from SEC filings by the evening job; please check back tomorrow.</div>`; return; }
+  list(index);
+})();
+})();
+</script>
+</body>
+</html>

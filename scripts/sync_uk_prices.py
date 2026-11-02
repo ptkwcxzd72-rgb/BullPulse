@@ -106,6 +106,44 @@ def parse_chart(d: dict, scale_override: float | None = None) -> tuple[str, list
     return ccy, out
 
 
+def dividends_missing(d: dict) -> bool:
+    """True when the chart's adjusted closes ignore dividends (Yahoo does this for many London
+    listings: adjusted only for splits), so returns would leave out the income."""
+    try:
+        r = d["chart"]["result"][0]
+        close = r["indicators"]["quote"][0]["close"]
+        adj = (r["indicators"].get("adjclose") or [{}])[0].get("adjclose") or []
+        divs = (r.get("events") or {}).get("dividends") or {}
+    except (KeyError, IndexError, TypeError):
+        return False
+    if not divs or not adj:
+        return False
+    ratios = [a / c for a, c in zip(adj, close) if a and c]
+    return bool(ratios) and max(abs(x - 1) for x in ratios) < 0.005
+
+
+def add_dividends(bars: list[list], divs: list[list]) -> list[list]:
+    """Back-adjust prices for dividends, as total-return series are: on each ex-date every earlier
+    price is scaled by (1 - dividend / previous close), so a holder's return includes the income."""
+    if not bars or not divs:
+        return bars
+    days = [b[0] for b in bars]
+    out = [list(b) for b in bars]
+    import bisect
+    for ex, amt in sorted(divs, reverse=True):
+        k = bisect.bisect_left(days, ex)
+        if k <= 0 or k >= len(out):
+            continue
+        prev = out[k - 1][4]
+        if not prev or not 0 < amt < prev * 0.5:
+            continue
+        f = 1 - amt / prev
+        for j in range(k):
+            for c in (1, 2, 3, 4):
+                out[j][c] = round(out[j][c] * f, 4)
+    return out
+
+
 def looks_sane(rows: list[list], old_path: str) -> str:
     """Empty string if fine, otherwise the reason to keep the old file."""
     if len(rows) < 260:
@@ -144,13 +182,16 @@ def write_bars(path: str, bars: list[list]) -> None:
     os.replace(tmp, path)
 
 
-# index proxies with dividends reinvested (adjusted closes), comparable with the adjusted stock prices
+# index proxies with dividends reinvested, comparable with the total-return stock prices
 BENCHMARKS = {"bench-ftse100": "ISF.L", "bench-sp500": "SPY"}
 
 
 def sync_benchmarks(out_dir: str) -> None:
     for name, sym in BENCHMARKS.items():
-        _, bars = parse_chart(get_json(CHART.format(sym=sym, rng="10y")), scale_override=1.0)
+        d = get_json(CHART.format(sym=sym, rng="10y"))
+        _, bars = parse_chart(d, scale_override=1.0)
+        if bars and dividends_missing(d):
+            bars = add_dividends(bars, parse_dividends(d, 1.0))
         if len(bars) > 260:
             write_bars(os.path.join(out_dir, name + ".csv"), bars)
         else:
@@ -221,6 +262,8 @@ def main():
         ccy, bars = parse_chart(d)
         if bars:
             scale = {"GBp": 1.0, "GBX": 1.0, "GBP": 100.0}.get(ccy) or FX.get(ccy, 0) * 100
+            if dividends_missing(d):   # total return, like the US prices
+                bars = add_dividends(bars, parse_dividends(d, scale))
             dv = [x for x in parse_dividends(d, scale) if x[0] >= (dt.date.today() - dt.timedelta(days=5 * 366)).isoformat()]
             if dv:
                 divs["LSE-" + r["ticker"].replace(".", "")] = dv

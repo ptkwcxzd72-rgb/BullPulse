@@ -53,7 +53,7 @@
     const nav = document.querySelector("footer nav");
     if (nav) { if (!nav.querySelector('a[href$="score.html"]')) nav.insertAdjacentHTML("beforeend", links); return; }
     const f = document.createElement("footer"); f.className = "sitefoot";
-    f.innerHTML = `<div class="in"><nav aria-label="Footer"><a href="${root}./">Home</a><a href="${root}app.html">Screener</a><a href="${root}portfolio.html">Portfolio</a><a href="${root}alerts.html">Alerts</a>${links}</nav><p>BullPulse is a free research tool, not investment advice. US prices from Tiingo; UK prices from Yahoo Finance.</p></div>`;
+    f.innerHTML = `<div class="in"><nav aria-label="Footer"><a href="${root}./">Home</a><a href="${root}app.html">Screener</a><a href="${root}portfolio.html">Portfolio</a><a href="${root}lab.html">Strategy Lab</a><a href="${root}investors.html">Investors</a><a href="${root}alerts.html">Alerts</a>${links}</nav><p>BullPulse is a free research tool, not investment advice. US prices from Tiingo; UK prices from Yahoo Finance.</p></div>`;
     document.body.appendChild(f);
   }
   const start = () => {
