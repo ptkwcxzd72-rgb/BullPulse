@@ -138,9 +138,21 @@ def parse_table(raw: bytes) -> list[dict]:
     return rows
 
 
+def unit(rows: list[dict]) -> float:
+    """Dollars per reported value unit. The SEC switched 13F values from thousands to dollars in
+    2023, but some managers kept reporting thousands, so the date is not enough: the implied price
+    per share (value / shares) decides. Real share prices are dollars to thousands of dollars, so a
+    median implied price below $2 means the values are in thousands."""
+    px = sorted(r["value"] / r["shares"] for r in rows if r.get("shares") and r["value"] > 0 and r.get("type", "SH") in ("SH", ""))
+    if not px:
+        return 1.0
+    med = px[len(px) // 2]
+    return 1000.0 if med < 2 else (0.001 if med > 20000 else 1.0)
+
+
 def aggregate(rows: list[dict], filed: str) -> list[dict]:
-    """One line per security; values in dollars (before 2023 filings reported thousands)."""
-    mult = 1000 if filed < "2023-01-03" else 1
+    """One line per security; values in dollars."""
+    mult = unit(rows)
     agg: dict[str, dict] = {}
     for r in rows:
         a = agg.setdefault(r["cusip"], {"cusip": r["cusip"], "name": r["name"], "class": r["class"], "value": 0.0, "shares": 0.0})
@@ -215,6 +227,11 @@ def main() -> int:
             doc["filings"] = [x for x in doc["filings"] if not (f["form"] == "13F-HR/A" and x["period"] == f["period"])]
             doc["filings"].append(f)
             new_total += 1
+        for x in doc["filings"]:
+            m = unit(x.get("holdings", []))
+            if m != 1.0:
+                for h in x["holdings"]:
+                    h["value"] *= m
         doc["filings"].sort(key=lambda x: (x["period"], x["filed"]))
         # one filing per quarter: the latest (a restatement replaces the original)
         byq = {}

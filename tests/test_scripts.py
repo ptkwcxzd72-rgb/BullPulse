@@ -268,9 +268,10 @@ class ThirteenFTest(unittest.TestCase):
         <shrsOrPrnAmt><sshPrnamt>1</sshPrnamt><sshPrnamtType>SH</sshPrnamtType></shrsOrPrnAmt></infoTable></informationTable>"""
         rows = F.parse_table(xml)
         self.assertEqual(len(rows), 2)
-        agg = F.aggregate(rows, "2022-05-01")
-        self.assertEqual((agg[0]["value"], agg[0]["shares"]), (1500000.0, 15.0))   # thousands before 2023
-        self.assertEqual(F.aggregate(rows, "2024-05-01")[0]["value"], 1500.0)
+        agg = F.aggregate(rows, "2024-05-01")   # $100 a share: values are dollars
+        self.assertEqual((agg[0]["value"], agg[0]["shares"]), (1500.0, 15.0))
+        thou = [dict(r, shares=r["shares"] * 1000) for r in rows]   # $0.10 a share: values are thousands
+        self.assertEqual(F.aggregate(thou, "2024-05-01")[0]["value"], 1500000.0)
         self.assertEqual(F.norm("COCA COLA CO"), "COCA COLA")
 
     def test_changes_and_copy_record(self):
