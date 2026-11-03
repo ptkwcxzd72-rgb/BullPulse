@@ -16,6 +16,7 @@ import bisect
 import csv
 import datetime as dt
 import glob
+import html
 import json
 import math
 import os
@@ -341,6 +342,7 @@ def stake_summary(stakes: list[dict], by_cik: dict, ids: dict, names: dict) -> l
     owned then, and how many filings there have been since the first one we have."""
     out: dict[int, dict] = {}
     for st in sorted(stakes, key=lambda x: (x["filed"], x["acc"])):
+        st = {**st, "subject": html.unescape(st["subject"])}
         t = by_cik.get(st["subjectCik"], "")
         o = out.setdefault(st["subjectCik"], {"name": names.get(t) or st["subject"].title(), "ticker": t, "id": ids.get(t),
                                               "first": st["filed"], "n": 0, "pctFirst": st.get("pct")})
@@ -589,9 +591,10 @@ def main() -> None:
         calls = None
         if rec:
             cb = rec.pop("contrib", {})
+            filed_name = {(h.get("ticker") or "").upper(): h["name"].title() for x in fs for h in x["holdings"] if h.get("ticker")}
             merged: dict[str, dict] = {}
             for t, v in cb.items():
-                c = company(names.get(t, t))
+                c = company(names.get(t) or filed_name.get(t, t))
                 m = merged.get(c)
                 row = {"name": c, "ticker": t, "id": ids.get(t), "pts": v["pts"] * 100, "ret": round(v["growth"] - 1, 3),
                        "from": v["from"], "to": v["to"], "avgW": round(v["wsum"] / v["n"], 4)}
@@ -652,7 +655,7 @@ def main() -> None:
                     parts.append(f"{lab}: " + ", ".join(x["name"] for x in hst[k][:8]) + ("…" if hst["counts"][k] > 8 else ""))
             items.append({"filed": hst["filed"], "acc": hst["acc"], "title": f"{doc['manager']}: holdings at {hst['period']}",
                           "text": "; ".join(parts) or "No significant changes."})
-        for st in doc.get("stakes", [])[:15]:
+        for st in ({**x, "subject": html.unescape(x["subject"])} for x in doc.get("stakes", [])[:15]):
             kind = "active stake (Schedule 13D)" if "13D" in st["form"] else "passive stake (Schedule 13G)"
             pct = f" at {st['pct']:g}%" if st.get("pct") is not None else ""
             items.append({"filed": st["filed"], "acc": st["acc"], "title": f"{doc['manager']}: {company(st['subject']).title()}{pct}",

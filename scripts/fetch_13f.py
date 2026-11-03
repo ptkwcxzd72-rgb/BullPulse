@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import csv
 import glob
+import html
 import json
 import os
 import re
@@ -172,7 +173,7 @@ def stake_detail(cik: int, acc: str) -> dict | None:
     sc = re.search(rb"CENTRAL INDEX KEY:\s*(\d+)", block)
     if not name or not sc:
         return None
-    out = {"subject": name.group(1).decode("latin-1").strip(), "subjectCik": int(sc.group(1)), "pct": None}
+    out = {"subject": html.unescape(name.group(1).decode("latin-1")).strip(), "subjectCik": int(sc.group(1)), "pct": None}
     idx = get(base + "index.json")
     if idx:
         items = [i["name"] for i in json.loads(idx).get("directory", {}).get("item", [])]
