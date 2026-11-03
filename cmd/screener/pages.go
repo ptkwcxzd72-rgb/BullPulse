@@ -53,7 +53,8 @@ main{display:grid;gap:22px;padding-block:24px 40px;max-width:1100px}
 .tt{width:100%;border-collapse:collapse;font-size:13.5px}.tt th,.tt td{padding:8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
 .tt th:first-child,.tt td:first-child{text-align:left}.tt th{font-size:12px;color:var(--muted);font-weight:600}
 .cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;border-radius:10px;padding:10px 16px;font-weight:600;justify-self:start}
-@media (max-width:760px){.kv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+main > *{min-width:0}.sec{overflow-x:auto}
+@media (max-width:760px){.kv{grid-template-columns:repeat(2,minmax(0,1fr))}.tt{font-size:13px}.tt td:first-child{overflow-wrap:anywhere}}
 </style>
 <script src="../../common.js" data-root="../../" defer></script>
 </head>
@@ -278,7 +279,7 @@ func writePages(siteDir, base string, rows []*Row, asof time.Time) error {
 	var sm strings.Builder
 	sm.WriteString(`<?xml version="1.0" encoding="UTF-8"?>` + "\n" + `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` + "\n")
 	day := asof.Format("2006-01-02")
-	for _, p := range []string{"", "app.html", "portfolio.html", "lab.html", "investors.html", "alerts.html", "score.html"} {
+	for _, p := range []string{"", "app.html", "portfolio.html", "lab.html", "investors.html", "news.html", "alerts.html", "score.html"} {
 		fmt.Fprintf(&sm, "  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>\n", base, p, day)
 	}
 	ids := make([]string, 0, len(keep))

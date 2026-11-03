@@ -37,7 +37,8 @@
       </div>
     </div>
   </div>
-  <section class="in tonight" aria-label="Tonight's market pulse">
+  <div class="in pulsebar"><button type="button" class="pulsebtn" id="pulsebtn" aria-expanded="false" aria-controls="tonight">Market summary and how the score works <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
+  <section class="in tonight" id="tonight" aria-label="Tonight's market pulse">
     <div class="pm" id="b-LSE"></div>
     <div class="pm" id="b-US"></div>
     <div class="recipe">
@@ -53,6 +54,24 @@
   <div class="in notice" id="banner"><span class="tag" id="banner-tag">Live</span><span id="banner-text">Loading…</span></div>
 </header>
 
+<style>
+.pulsebar{display:none}
+@media (max-width:760px){
+  .pulsebar{display:block;padding-bottom:12px}
+  .pulsebtn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--night-2);border:1px solid var(--night-line);color:var(--night-ink);border-radius:10px;padding:10px 14px;font:600 14px var(--f-body);cursor:pointer}
+  .pulsebtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .2s}
+  .pulsebtn[aria-expanded="true"] svg{transform:rotate(180deg)}
+  #tonight:not(.open),header .notice:not(.open){display:none}
+}
+</style>
+<script>
+document.getElementById("pulsebtn").addEventListener("click", e => {
+  const b = e.currentTarget, open = b.getAttribute("aria-expanded") !== "true";
+  b.setAttribute("aria-expanded", String(open));
+  document.getElementById("tonight").classList.toggle("open", open);
+  document.getElementById("banner").classList.toggle("open", open);
+});
+</script>
 <main class="in">
   <section class="work">
     <div class="card rankcard">
@@ -1046,7 +1065,7 @@ async function select(s){
   // news
   const arts = (X.arts || []).slice(0, 7);
   $("d-ncount").textContent = `${(X.arts || []).length} articles in 12 months`;
-  $("d-news").innerHTML = (arts.length ? "" : `<p class="note" style="margin:0">No scored articles in the last 12 months.</p>`) + arts.map(a => `<button class="art" data-d="${a.d}"><span class="d">${shortDate(a.d)}</span><span class="h">${a.h}</span><span class="lab ${a.lab}">${a.lab} ${Math.round(a.conf * 100)}%</span><span class="sub">${a.ev} · ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${a.src}</a>` : a.src} · relevance ${a.rel.toFixed(2)}</span></button>`).join("");
+  $("d-news").innerHTML = `<p class="note" style="margin:0 0 8px"><a href="news.html?t=${encodeURIComponent(s.id)}">See its news in the News feed</a>, alongside other companies' headlines.</p>` + (arts.length ? "" : `<p class="note" style="margin:0">No scored articles in the last 12 months.</p>`) + arts.map(a => `<button class="art" data-d="${a.d}"><span class="d">${shortDate(a.d)}</span><span class="h">${a.h}</span><span class="lab ${a.lab}">${a.lab} ${Math.round(a.conf * 100)}%</span><span class="sub">${a.ev} · ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${a.src}</a>` : a.src} · relevance ${a.rel.toFixed(2)}</span></button>`).join("");
   document.querySelectorAll(".art").forEach(b => b.onclick = () => focusDate(b.dataset.d));
   document.querySelectorAll("#tb tr").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === s.id));
   glossify($("dos"));

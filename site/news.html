@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BullPulse News</title>
+<meta name="description" content="Headlines about the UK and US companies BullPulse ranks, each read and scored as positive, negative or neutral. Filter by market, topic, your watchlist and holdings, or the investors you follow. Free, no account.">
+<link rel="canonical" href="https://bullpulse.co.uk/news.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="bp.css">
+<style>
+.pagehead{padding-block:6px 24px}
+.pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:72ch}
+#main{padding-block:0 48px;display:block}
+.nfilters{position:sticky;top:0;z-index:20;background:var(--paper);padding:14px 0 12px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.frow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 260px;min-width:0;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font:inherit;font-size:14px;color:var(--ink)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;padding:8px 12px;font:600 13px var(--f-body);color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.pill{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font:600 12.5px var(--f-body);color:var(--muted);cursor:pointer;white-space:nowrap}
+.pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.pill .n{opacity:.6;font-weight:500;margin-left:4px}
+.topics{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;padding-bottom:2px}
+.topics::-webkit-scrollbar{display:none}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:start;padding-top:4px}
+.side{position:sticky;top:120px;display:grid;gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;display:grid;gap:10px}
+.box h2{margin:0;font:650 15px var(--f-display)}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+.day{margin:0 0 6px}
+.dayhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;padding:18px 0 10px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.dayhead h2{margin:0;font:700 20px var(--f-display);letter-spacing:-.01em}
+.dayhead .sub{font-size:12.5px}
+.mood{display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--surface-2);width:160px}
+.mood i{display:block;height:100%}
+.story{display:grid;grid-template-columns:4px minmax(0,1fr);gap:14px;padding:13px 4px 13px 0;border-bottom:1px solid var(--line)}
+.story .tone{border-radius:2px;align-self:stretch}
+.story h3{margin:0;font:600 15.5px/1.38 var(--f-body);color:var(--ink)}
+.story h3 a{color:inherit;text-decoration:none}
+.story h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.story .meta{display:flex;gap:6px 10px;flex-wrap:wrap;align-items:center;margin-top:7px;font-size:12.5px;color:var(--muted)}
+.nco{display:inline-flex;gap:6px;align-items:center;line-height:1.3;border:1px solid var(--line);border-radius:999px;padding:2px 9px 2px 4px;color:var(--ink);text-decoration:none;font-weight:600;background:var(--surface)}
+.nco:hover{border-color:var(--ink)}
+.nco .nsc{font:600 11px var(--f-body);border-radius:999px;padding:1px 6px;background:var(--surface-2);color:var(--ink)}
+.nco .nmv{font-weight:500}
+.nco.also{font-weight:500;color:var(--muted)}
+.ev{font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;background:var(--surface-2);color:var(--muted)}
+.tw{font-weight:600}
+.pos{color:var(--up)}.neg{color:var(--down)}
+.mk{font-size:10.5px;font-weight:700;border-radius:5px;padding:1px 5px}
+.mk.UK{background:var(--uk-soft);color:var(--uk)}.mk.US{background:var(--us-soft);color:var(--us)}
+.toplist{display:grid;gap:2px}
+.toplist button{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;text-align:left;background:none;border:0;border-radius:8px;padding:7px 8px;font:500 13.5px var(--f-body);color:var(--ink);cursor:pointer}
+.toplist button:hover{background:var(--surface-2)}
+.toplist button[aria-pressed="true"]{background:var(--accent-soft)}
+.toplist .n{color:var(--muted);font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%}
+.empty{padding:40px 10px;text-align:center;color:var(--muted)}
+.active{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);margin-top:14px}
+.active button{border:0;background:none;color:var(--accent);font:600 13px var(--f-body);cursor:pointer;padding:0}
+.sentinel{height:1px}
+.loading{padding:20px;text-align:center;color:var(--muted);font-size:13px}
+.topstrip{display:none}
+@media (max-width:1000px){.layout{grid-template-columns:minmax(0,1fr)}.side{display:none}.topstrip{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:12px 0 2px;align-items:center}.topstrip::-webkit-scrollbar{display:none}.topstrip .lab{font-size:12.5px;color:var(--muted);white-space:nowrap}}
+@media (max-width:620px){.story h3{font-size:15px}.nfilters{padding-top:10px}.dayhead h2{font-size:18px}.mood{width:120px}}
+</style>
+<script src="common.js" defer></script>
+</head>
+<body>
+<header class="masthead night">
+  <div class="in mastbar">
+    <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+    <nav class="nav" aria-label="Site"></nav>
+  </div>
+  <div class="in pagehead">
+    <h1>News</h1>
+    <p>Headlines about the companies we rank, gathered every evening and each read by a language model trained on financial news (FinBERT), which marks it positive, negative or neutral. The coloured edge shows that tone at a glance.</p>
+  </div>
+</header>
+<main class="in" id="main">
+  <div class="nfilters" id="filters">
+    <div class="frow">
+      <input class="search" id="q" type="search" placeholder="Search headlines, companies or tickers" aria-label="Search headlines">
+      <div class="seg" role="group" aria-label="Market"><button data-m="" aria-pressed="true">All</button><button data-m="UK" aria-pressed="false">UK</button><button data-m="US" aria-pressed="false">US</button></div>
+      <div class="seg" role="group" aria-label="Tone"><button data-t="" aria-pressed="true">Any tone</button><button data-t="Positive" aria-pressed="false">Positive</button><button data-t="Negative" aria-pressed="false">Negative</button></div>
+    </div>
+    <div class="frow topics" id="topics" role="group" aria-label="Topic and lists"></div>
+  </div>
+  <div class="topstrip" id="topstrip"></div>
+  <div id="activef"></div>
+  <div class="layout">
+    <div><div id="feed" aria-live="polite"><div class="loading">Loading headlines…</div></div><div class="sentinel" id="sentinel"></div></div>
+    <aside class="side" id="side"></aside>
+  </div>
+</main>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+const esc = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } } };
+const fmtDay = d => { const x = new Date(d + "T12:00:00Z"), t = new Date(), y = new Date(Date.now() - 864e5); const iso = z => z.toISOString().slice(0, 10); return iso(x) === iso(t) ? "Today" : iso(x) === iso(y) ? "Yesterday" : x.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" }); };
+const TOPICS = [["Earnings", "Results"], ["Guidance", "Outlook"], ["M&A", "Deals"], ["Management", "Management"], ["Capital", "Dividends and buybacks"], ["Legal / regulatory", "Legal and regulation"]];
+const qp = new URLSearchParams(location.search);
+const st = { q: qp.get("q") || "", m: qp.get("m") || "", t: "", topic: "", list: "", stock: qp.get("t") || "" };
+let folN = 0, IDX = null, S = {}, dayCache = {}, dayPos = 0, itemPos = 0, shown = 0, busy = false, done = false, mine = new Set(), followed = new Set();
+
+// the tone edge: green for positive, red for negative, stronger the clearer the tone
+const toneColor = v => v > 0.15 ? `color-mix(in srgb, var(--up) ${Math.round(35 + 65 * Math.min(1, v))}%, transparent)` : v < -0.15 ? `color-mix(in srgb, var(--down) ${Math.round(35 + 65 * Math.min(1, -v))}%, transparent)` : "var(--line)";
+const pct = v => v == null ? "" : (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(1) + "%";
+function co(id, also) {
+  const s = S[id]; if (!s) return "";
+  return `<a class="nco${also ? " also" : ""}" href="app.html#${encodeURIComponent(id)}" title="${esc(s.n)}: BullPulse score ${s.sc ?? "–"}${s.d != null ? `, ${pct(s.d)} on the day` : ""}"><span class="nsc">${s.sc ?? "–"}</span>${esc(also ? s.t : s.n)}${!also && s.d != null ? ` <span class="nmv ${s.d > 0 ? "pos" : s.d < 0 ? "neg" : ""}">${pct(s.d)}</span>` : ""}</a>`;
+}
+function story(it) {
+  const tone = it.lab === "Positive" ? `<span class="tw pos">Positive</span>` : it.lab === "Negative" ? `<span class="tw neg">Negative</span>` : `<span>Neutral</span>`;
+  const topic = TOPICS.find(t => t[0] === it.ev);
+  return `<article class="story"><span class="tone" style="background:${toneColor(it.tone)}" aria-hidden="true"></span><div>
+    <h3><a href="${esc(it.u)}" target="_blank" rel="noopener nofollow">${esc(it.h)}</a></h3>
+    <div class="meta">${it.about.map(id => co(id)).join("")}${it.also.length ? it.also.slice(0, 3).map(id => co(id, true)).join("") : ""}<span class="mk ${it.m}">${it.m}</span>${esc(it.s)}${topic ? `<span class="ev">${topic[1]}</span>` : ""}${tone}</div>
+  </div></article>`;
+}
+function match(it) {
+  if (st.m && it.m !== st.m) return false;
+  if (st.t && it.lab !== st.t) return false;
+  if (st.topic && it.ev !== st.topic) return false;
+  if (st.stock && !it.about.includes(st.stock) && !it.also.includes(st.stock)) return false;
+  if (st.list === "mine" && !it.about.some(id => mine.has(id)) && !it.also.some(id => mine.has(id))) return false;
+  if (st.list === "inv" && !it.about.some(id => followed.has(id))) return false;
+  if (st.q) {
+    const q = st.q.toLowerCase();
+    const names = [...it.about, ...it.also].map(id => S[id] ? (S[id].n + " " + S[id].t) : "").join(" ").toLowerCase();
+    if (!it.h.toLowerCase().includes(q) && !names.includes(q)) return false;
+  }
+  return true;
+}
+async function getDay(d) {
+  if (!dayCache[d]) dayCache[d] = fetch(`data/news/${d}.json`).then(r => r.json()).then(x => x.items).catch(() => []);
+  return dayCache[d];
+}
+function dayHeadHtml(day) {
+  const n = day.n || 1, p = day.pos / n, q = day.neg / n;
+  return `<div class="dayhead"><h2>${fmtDay(day.date)}</h2><span class="sub" style="display:flex;gap:10px;align-items:center">${day.n.toLocaleString("en-GB")} headlines · ${Math.round(p * 100)}% positive, ${Math.round(q * 100)}% negative <span class="mood" title="Share of positive (green) and negative (red) headlines"><i style="width:${p * 100}%;background:var(--up)"></i><i style="width:${(1 - p - q) * 100}%;background:transparent"></i><i style="width:${q * 100}%;background:var(--down)"></i></span></span></div>`;
+}
+// load stories into the feed until about a screen's worth more is shown (or the days run out)
+async function more() {
+  if (busy || done) return; busy = true;
+  const feed = $("feed"); let added = 0;
+  while (added < 25 && dayPos < IDX.days.length) {
+    const day = IDX.days[dayPos], items = await getDay(day.date);
+    if (itemPos === 0) { feed.insertAdjacentHTML("beforeend", `<section class="day" data-day="${day.date}">${dayHeadHtml(day)}<div class="stories"></div></section>`); }
+    const box = feed.querySelector(`[data-day="${day.date}"] .stories`);
+    let html = "";
+    while (itemPos < items.length && added < 25) { const it = items[itemPos++]; if (match(it)) { html += story(it); added++; shown++; } }
+    if (html) box.insertAdjacentHTML("beforeend", html);
+    if (itemPos >= items.length) {
+      if (!box.children.length) box.parentElement.remove();   // nothing on that day for these filters
+      dayPos++; itemPos = 0;
+    }
+  }
+  if (dayPos >= IDX.days.length) {
+    done = true;
+    feed.insertAdjacentHTML("beforeend", shown ? `<p class="empty">That's every headline from the last ${IDX.days.length} days${filtered() ? " for these filters" : ""}.</p>` : `<p class="empty">${emptyText()}</p>`);
+  }
+  busy = false;
+}
+const filtered = () => !!(st.q || st.m || st.t || st.topic || st.stock || st.list);
+function emptyText() {
+  if (st.list === "mine" && !mine.size) return `Your watchlist and holdings are empty. Star companies in the <a href="app.html">screener</a> or add holdings on the <a href="portfolio.html">Portfolio page</a> to see their news here.`;
+  if (st.list === "inv" && !followed.size) return `You're not following any investors yet. Choose Follow on the <a href="investors.html">Investors page</a> to see news about what they own.`;
+  return "No headlines match these filters in the last three weeks. Try removing one.";
+}
+function reset() {
+  dayPos = 0; itemPos = 0; shown = 0; done = false; busy = false;
+  $("feed").innerHTML = "";
+  const u = new URL(location.href);
+  ["q", "m", "t"].forEach(k => u.searchParams.delete(k));
+  if (st.q) u.searchParams.set("q", st.q); if (st.m) u.searchParams.set("m", st.m); if (st.stock) u.searchParams.set("t", st.stock);
+  history.replaceState(null, "", u);
+  drawActive(); drawTopics(); drawSide();
+  more().then(fill);
+}
+// keep loading while the sentinel would still be on screen (sparse filters)
+async function fill() { for (let i = 0; i < 30 && !done && document.documentElement.scrollHeight <= innerHeight * 1.6; i++) await more(); }
+function drawActive() {
+  const bits = [];
+  if (st.stock && S[st.stock]) bits.push(`News about <b>${esc(S[st.stock].n)}</b> <button data-clear="stock">Show all companies</button>`);
+  $("activef").innerHTML = bits.length ? `<div class="active">${bits.join(" ")}</div>` : "";
+  document.querySelectorAll("[data-clear]").forEach(b => b.onclick = () => { st[b.dataset.clear] = ""; reset(); });
+}
+function drawTopics() {
+  const d0 = IDX.days[0] || { events: {} };
+  $("topics").innerHTML = `<button class="pill" data-topic="" aria-pressed="${!st.topic && !st.list}">Everything</button>` +
+    `<button class="pill" data-list="mine" aria-pressed="${st.list === "mine"}">My stocks<span class="n">${mine.size}</span></button>` +
+    `<button class="pill" data-list="inv" aria-pressed="${st.list === "inv"}">Investors I follow<span class="n">${folN}</span></button>` +
+    TOPICS.map(([k, lab]) => `<button class="pill" data-topic="${k}" aria-pressed="${st.topic === k}">${lab}${d0.events[k] ? `<span class="n">${d0.events[k]}</span>` : ""}</button>`).join("");
+  document.querySelectorAll("[data-topic]").forEach(b => b.onclick = () => { st.topic = b.dataset.topic; if (!b.dataset.topic) st.list = ""; reset(); });
+  document.querySelectorAll("[data-list]").forEach(b => b.onclick = () => { st.list = st.list === b.dataset.list ? "" : b.dataset.list; reset(); });
+}
+function drawSide() {
+  const d = IDX.days[0]; if (!d) return;
+  const n = d.n || 1;
+  $("side").innerHTML = `
+    <section class="box"><h2>${fmtDay(d.date)}'s mood</h2>
+      <div class="mood" style="width:100%;height:10px"><i style="width:${d.pos / n * 100}%;background:var(--up)"></i><i style="width:${(n - d.pos - d.neg) / n * 100}%;background:var(--surface-2)"></i><i style="width:${d.neg / n * 100}%;background:var(--down)"></i></div>
+      <p class="note">${d.pos.toLocaleString("en-GB")} positive, ${d.neg.toLocaleString("en-GB")} negative and ${(n - d.pos - d.neg).toLocaleString("en-GB")} neutral headlines${IDX.days[1] ? `; ${(d.pos - d.neg) / n > (IDX.days[1].pos - IDX.days[1].neg) / (IDX.days[1].n || 1) ? "more upbeat" : "gloomier"} than the day before` : ""}.</p></section>
+    <section class="box"><h2>Most in the news</h2>
+      <div class="toplist">${d.top.filter(t => S[t.id]).map(t => `<button data-stock="${t.id}" aria-pressed="${st.stock === t.id}"><span>${esc(S[t.id].n)} <span class="mk ${S[t.id].m}">${S[t.id].m}</span></span><span class="n">${t.n} stories</span><span class="dot" title="Average tone ${t.tone > 0 ? "+" : ""}${t.tone}" style="background:${toneColor(t.tone)}"></span></button>`).join("")}</div>
+      <p class="note">Choose a company to see only its news.</p></section>
+    <section class="box hidem"><h2>About these headlines</h2>
+      <p class="note">Headlines link to the original publisher; we don't copy articles. Tone is judged from the headline alone by FinBERT, so read the story before acting on it. Free news sources cover London-listed companies much less than US ones, so UK headlines are fewer. This feeds the sentiment part of each stock's score.</p></section>`;
+  $("topstrip").innerHTML = `<span class="lab">Most in the news:</span>` + d.top.filter(t => S[t.id]).map(t => `<button class="pill" data-stock="${t.id}" aria-pressed="${st.stock === t.id}"><span class="dot" style="display:inline-block;margin-right:5px;background:${toneColor(t.tone)}"></span>${esc(S[t.id].n)}<span class="n">${t.n}</span></button>`).join("");
+  document.querySelectorAll("[data-stock]").forEach(b => b.onclick = () => { st.stock = st.stock === b.dataset.stock ? "" : b.dataset.stock; reset(); scrollTo({ top: 0 }); });
+}
+(async () => {
+  try { IDX = await (await fetch("data/news/index.json", { cache: "no-cache" })).json(); }
+  catch (e) { $("feed").innerHTML = `<p class="empty">The news isn't available yet. It's gathered every evening; please check back after tonight's update.</p>`; return; }
+  S = IDX.stocks || {};
+  const hold = store.get("bp-holdings", {}); (hold.lots || []).forEach(l => mine.add(l.id));
+  store.get("bp-watch", []).forEach(id => mine.add(id));
+  const fol = store.get("bp-follow-inv", []); folN = fol.length;
+  if (fol.length) { try { const own = await (await fetch("data/investors/owners.json")).json(); for (const [id, rows] of Object.entries(own)) if (rows.some(r => fol.includes(r[0]))) followed.add(id); } catch (e) {} }
+  $("q").value = st.q;
+  document.querySelectorAll("[data-m]").forEach(b => { b.setAttribute("aria-pressed", String(b.dataset.m === st.m)); b.onclick = () => { st.m = b.dataset.m; document.querySelectorAll("[data-m]").forEach(x => x.setAttribute("aria-pressed", String(x === b))); reset(); }; });
+  document.querySelectorAll("[data-t]").forEach(b => b.onclick = () => { st.t = b.dataset.t; document.querySelectorAll("[data-t]").forEach(x => x.setAttribute("aria-pressed", String(x === b))); reset(); });
+  let tm; $("q").oninput = e => { clearTimeout(tm); tm = setTimeout(() => { st.q = e.target.value.trim(); reset(); }, 250); };
+  new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) more(); }, { rootMargin: "800px" }).observe($("sentinel"));
+  reset();
+})();
+})();
+</script>
+</body>
+</html>

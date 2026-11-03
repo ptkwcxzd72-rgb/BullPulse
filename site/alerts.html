@@ -33,6 +33,7 @@
 .al b{font-weight:600}
 .al p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
 .al .mkt{margin-top:3px}
+@media (max-width:620px){.al{grid-template-columns:minmax(0,1fr) auto;gap:4px 10px}.al .k{grid-column:1/-1}.al .mkt{grid-row:2;grid-column:2}}
 .side{display:grid;gap:22px}
 .side .card{padding:18px;display:grid;gap:12px}
 .side h2{margin:0;font:650 18px var(--f-display)}
@@ -101,7 +102,7 @@ try { watch = new Set(JSON.parse(localStorage.getItem("bp-watch") || "[]")); } c
 let mine = new Set();
 try { mine = new Set(((JSON.parse(localStorage.getItem("bp-holdings")) || {}).lots || []).map(l => l.id)); } catch (e) {}
 const qp = new URLSearchParams(location.search);
-const state = { kind: qp.get("kind") || "", stock: qp.get("stock") || "", onlyWatch: qp.get("watch") === "1", onlyMine: qp.get("mine") === "1" };
+const state = { kind: qp.get("kind") || "", stock: qp.get("stock") || "", onlyWatch: qp.get("watch") === "1", onlyMine: qp.get("mine") === "1", limit: 60 };
 const fmtDay = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" });
 const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -130,20 +131,25 @@ function render(){
   $("chips").innerHTML = `<button class="chip" data-k="" aria-pressed="${!state.kind}">All<span class="n">${pool.length}</span></button>` +
     Object.keys(KINDS).filter(k => counts[k]).map(k => `<button class="chip" data-k="${k}" aria-pressed="${state.kind === k}">${KINDS[k]}<span class="n">${counts[k]}</span></button>`).join("") +
     (state.stock ? "" : `<label class="onlyw"><input type="checkbox" id="ow" ${state.onlyWatch ? "checked" : ""}> Only my watchlist (${watch.size})</label><label class="onlyw" style="margin-left:0"><input type="checkbox" id="om" ${state.onlyMine ? "checked" : ""}> Only my holdings (${mine.size})</label>`);
-  document.querySelectorAll(".chip").forEach(b => b.onclick = () => { state.kind = b.dataset.k; render(); });
-  if ($("ow")) $("ow").onchange = e => { state.onlyWatch = e.target.checked; render(); };
-  if ($("om")) $("om").onchange = e => { state.onlyMine = e.target.checked; render(); };
+  document.querySelectorAll(".chip").forEach(b => b.onclick = () => { state.kind = b.dataset.k; state.limit = 60; render(); });
+  if ($("ow")) $("ow").onchange = e => { state.onlyWatch = e.target.checked; state.limit = 60; render(); };
+  if ($("om")) $("om").onchange = e => { state.onlyMine = e.target.checked; state.limit = 60; render(); };
   const rows = pool.filter(e => !state.kind || e.kind === state.kind);
   if (!rows.length) {
     $("list").innerHTML = `<p class="empty">${state.onlyMine && !mine.size ? `You haven't added any holdings. Add them on the <a href="portfolio.html#mine">Portfolio page</a> to see alerts for what you own.` : state.onlyWatch && !watch.size ? "Your watchlist is empty. Star companies in the screener to follow them here." : state.stock ? "No alerts for this company in the last 90 days. Alerts appear when its rank moves sharply, its trend turns, it files results, insiders buy or news spikes." : "No alerts match this filter."}</p>`;
     return;
   }
+  // show a page at a time: long lists are hard to scan and slow on phones
+  const shown = rows.slice(0, state.limit);
   const byDay = {};
-  rows.forEach(e => (byDay[e.date] = byDay[e.date] || []).push(e));
-  $("list").innerHTML = Object.keys(byDay).sort().reverse().map(d => `<div class="day"><h3>${fmtDay(d)}</h3>${byDay[d].map(e => {
+  shown.forEach(e => (byDay[e.date] = byDay[e.date] || []).push(e));
+  const dayN = {};
+  rows.forEach(e => dayN[e.date] = (dayN[e.date] || 0) + 1);
+  $("list").innerHTML = Object.keys(byDay).sort().reverse().map(d => `<div class="day"><h3>${fmtDay(d)} <span class="sub" style="font-weight:500">${dayN[d]} alert${dayN[d] > 1 ? "s" : ""}</span></h3>${byDay[d].map(e => {
     const s = S[e.id];
     return `<a class="al" href="app.html#${encodeURIComponent(e.id)}"><span class="k ${e.kind}">${KINDS[e.kind] || e.kind}</span><span><b>${esc(e.name)}</b><p>${esc(e.text)}</p></span>${s ? `<span class="mkt ${s.ex}">${MKT[s.ex]}</span>` : ""}</a>`;
-  }).join("")}</div>`).join("");
+  }).join("")}</div>`).join("") + (rows.length > shown.length ? `<div style="padding:14px 0;text-align:center"><button class="btn ghost" id="alertmore">Show ${Math.min(60, rows.length - shown.length)} more <span class="sub">(${rows.length - shown.length} older)</span></button></div>` : "");
+  if ($("alertmore")) $("alertmore").onclick = () => { state.limit += 60; render(); };
 }
 $("opml").onclick = () => {
   const items = [...new Set([...watch, ...mine])].map(id => S[id] ? `    <outline type="rss" text="${esc(S[id].name)}" title="${esc(S[id].name)}" xmlUrl="${base}feeds/${id}.xml" htmlUrl="${base}app.html#${id}"/>` : "").filter(Boolean);

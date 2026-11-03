@@ -61,6 +61,10 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 - **Visitor counts (optional).** Set `GOATCOUNTER` in `site/common.js` to a [GoatCounter](https://www.goatcounter.com) site code to count visits without cookies. Feedback comes in through the GitHub issue form linked in every page's footer.
 - [`site/`](site) is a static site with no server.
 
+## News
+
+`site/news.html` shows the last three weeks of headlines about the ranked companies, each with its FinBERT tone (positive, negative or neutral), event type and the companies it is about, with their score and day's move. Filter by market, tone, topic, search, your watchlist and holdings, or the investors you follow; scroll for older days. Built nightly by `scripts/news_feed.py` from `data/news/articles.jsonl` (duplicates merged; headlines link to the publisher, no article text is copied).
+
 ## Strategy Lab, forward tracking and investors
 
 - **Strategy Lab** (`site/lab.html`, engine in `site/lab-engine.js`): pick stocks or follow a rule (conditions, a ranking blend, top N with a holding buffer), weight them (equal, by score, lower risk or your own), rebalance monthly, quarterly, yearly, on drift or never, optionally sell below the 200-day average, add money monthly, measure in pounds or dollars, ISA/SIPP or a general account (capital gains tax), with commission, spread, currency fees and stamp duty. It runs on the month-end history panel, so every month uses only what was known then and stocks count only while in their index. Results: value against S&P 500 and FTSE 100 funds and the average stock with the same money, risk measures, a bootstrapped range of outcomes, earlier/later halves, and the last 24 months hidden until the strategy is locked. Up to three strategies can be compared, and any can be shared as a link.

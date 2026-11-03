@@ -290,6 +290,23 @@ class ThirteenFTest(unittest.TestCase):
         self.assertAlmostEqual(r["total"], 0.2, places=6)   # 10 -> 12, bought on the first close after filing
         self.assertAlmostEqual(r["coverage"], 0.5)
         self.assertEqual(I.month_ends("2024-01-03", "2024-03-01"), ["2024-01-31", "2024-02-29"])
+    def test_news_feed(self):
+        import news_feed as N
+        ids = {("US", "AAA"): "US-AAA", ("US", "BBB"): "US-BBB"}
+        rows = [
+            {"date": "2026-11-02", "ticker": "AAA", "market": "US", "headline": "Big news for AAA and BBB", "source": "X", "url": "u1", "rel": 1.0, "score": 0.9, "label": "Positive", "event": "Earnings"},
+            {"date": "2026-11-02", "ticker": "BBB", "market": "US", "headline": "Big news for AAA and BBB!", "source": "X", "url": "u1", "rel": 0.3, "score": 0.9, "label": "Positive", "event": "Other"},
+            {"date": "2026-11-02", "ticker": "AAA", "market": "US", "headline": "AAA again", "source": "Y", "url": "u2", "rel": 1.0, "score": -0.5, "label": "Negative", "event": "Earnings"},
+            {"date": "2026-11-02", "ticker": "BBB", "market": "US", "headline": "BBB story", "source": "Y", "url": "u3", "rel": 1.0, "score": 0.1, "label": "Neutral", "event": "Other"},
+            {"date": "2026-11-02", "ticker": "CCC", "market": "US", "headline": "Unscored", "source": "Y", "url": "u4", "rel": 1.0, "score": None}]
+        d = N.build(rows, ids)["2026-11-02"]
+        self.assertEqual(len(d), 3)                                   # the same story once; unscored left out
+        first = d[0]
+        self.assertEqual((first["about"], first["also"], first["ev"]), (["US-AAA"], ["US-BBB"], "Earnings"))
+        self.assertEqual(d[1]["about"], ["US-BBB"])                   # another company before AAA's second story
+        s = N.summary("2026-11-02", d, {})
+        self.assertEqual((s["n"], s["pos"], s["neg"], s["top"][0]["id"]), (3, 1, 1, "US-AAA"))
+
     def test_stakes(self):
         import fetch_13f as F
         import investors as I
