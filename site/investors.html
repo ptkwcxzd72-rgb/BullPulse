@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BullPulse Investors</title>
-<meta name="description" content="What well-known investors hold, from their quarterly SEC 13F filings: latest holdings, what they bought and sold, and how following each filing would have done. Follow any investor for alerts. Free, no account.">
+<meta name="description" content="What 46 well-known investors hold, from their quarterly SEC 13F filings: background and strategy, latest holdings, what they bought and sold, their patterns over ten years, and how copying each filing would have done. Follow any investor. Free, no account.">
 <link rel="canonical" href="https://bullpulse.co.uk/investors.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
@@ -15,45 +15,90 @@
 <style>
 .pagehead{padding-block:6px 26px}
 .pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
-.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:78ch}
-main{padding-block:22px 40px;display:grid;gap:20px}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:80ch}
+.pagehead .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pagehead .meta span{font-size:12.5px;border:1px solid var(--night-line);border-radius:999px;padding:3px 10px;color:var(--night-ink)}
+main{padding-block:22px 48px;display:grid;gap:20px}
 .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
-.tabs{display:flex;gap:4px}
-.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-weight:600;font-size:13px;cursor:pointer;color:var(--muted)}
-.tabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
-.inv{padding:16px 18px;display:grid;gap:10px;align-content:start}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button,.pill{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 13px;font-weight:600;font-size:13px;cursor:pointer;color:var(--muted)}
+.tabs button[aria-pressed="true"],.pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.pill{padding:4px 11px;font-size:12.5px}
+.tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.search{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font:inherit;font-size:14px;color:var(--ink)}
+select.sel{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 10px;font:inherit;font-size:13.5px;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.inv{padding:16px 18px;display:grid;gap:11px;align-content:start}
 .inv h2{margin:0;font:650 18px var(--f-display)}
 .inv .firm{color:var(--muted);font-size:13px}
 .inv p{margin:0;font-size:13.5px;color:var(--muted)}
 .chips{display:flex;gap:5px;flex-wrap:wrap}
-.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--ink);text-decoration:none;white-space:nowrap;background:var(--surface)}
+a.chip:hover{border-color:var(--ink)}
 .chip.new{border-color:var(--up);color:var(--up)}.chip.sold{border-color:var(--down);color:var(--down)}
-.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;font-size:12px;color:var(--muted)}
-.kv b{display:block;font:650 16px var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
-.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tagc{font-size:11px;font-weight:600;letter-spacing:.02em;border-radius:6px;padding:2px 7px;background:var(--surface-2);color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;font-size:11.5px;color:var(--muted)}
+.stats b{display:block;font:650 15px var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.rec{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;font-size:12px;color:var(--muted)}
+.rec b{font:650 15px var(--f-display);font-variant-numeric:tabular-nums}
 .bbtn{border:0;border-radius:8px;padding:7px 12px;font-weight:600;font-size:13px;cursor:pointer;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
 .bbtn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
 .bbtn.on{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
-.card.sec{padding:16px 18px;display:grid;gap:12px}
+.card.sec{padding:16px 18px;display:grid;gap:12px;align-content:start}
 .sec h3{margin:0;font:650 16px var(--f-display);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.sec h4{margin:4px 0 0;font:650 14px var(--f-display)}
 .tt{width:100%;border-collapse:collapse;font-size:13px}
-.tt th,.tt td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+.tt th,.tt td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;vertical-align:middle}
 .tt th:first-child,.tt td:first-child{text-align:left}
 .tt th{font-size:11.5px;color:var(--muted);font-weight:600}
 .tt a{color:var(--ink);font-weight:600;text-decoration:none}.tt a:hover{text-decoration:underline}
-.tag{font-size:11px;font-weight:600;border-radius:999px;padding:1px 7px}
+.tag{font-size:11px;font-weight:600;border-radius:999px;padding:1px 7px;white-space:nowrap}
+.tag{background:var(--surface-2);color:var(--muted)}
 .tag.new{background:var(--up-soft);color:var(--up)}.tag.added{background:var(--accent-soft);color:var(--accent)}.tag.reduced{background:var(--warn-soft);color:var(--warn)}
-.det{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
+.wbar{display:inline-block;height:6px;border-radius:3px;background:var(--accent);vertical-align:middle;margin-left:6px;opacity:.8}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .q{border-bottom:1px solid var(--line);padding:10px 0;display:grid;gap:6px;font-size:13px}
 .q:last-child{border-bottom:0}
-.q b{font-weight:600}
 .lbl{color:var(--muted);font-size:12px;min-width:76px;display:inline-block}
 .note{font-size:12.5px;color:var(--muted);margin:0;max-width:110ch}
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:9px 12px;border-radius:6px;font-size:13px}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
 .legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
 .empty{padding:30px;text-align:center;color:var(--muted)}
-@media (max-width:980px){.det{grid-template-columns:minmax(0,1fr)}}
+.prose p{margin:0 0 8px;font-size:14px;line-height:1.55;max-width:80ch}
+.prose ul{margin:4px 0 0;padding-left:18px;font-size:13.5px;line-height:1.55}
+.prose li{margin-bottom:4px}
+.glance{margin:0;padding-left:18px;font-size:14px;line-height:1.6}
+.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.tile{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:11.5px;color:var(--muted)}
+.tile b{display:block;font:650 18px var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums;margin-top:2px}
+.secnav{position:sticky;top:0;z-index:5;background:var(--paper);padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
+.secnav a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:5px 11px;border-radius:999px;white-space:nowrap}
+.secnav a:hover{background:var(--surface-2);color:var(--ink)}
+.anchor{scroll-margin-top:56px}
+.pbar{position:relative;height:8px;border-radius:4px;background:var(--surface-2)}
+.pbar i{position:absolute;top:-3px;width:3px;height:14px;border-radius:2px;background:var(--accent)}
+.pbar s{position:absolute;left:50%;top:-2px;width:1px;height:12px;background:var(--muted);opacity:.5}
+.srow{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;gap:12px;align-items:center;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
+.srow:last-child{border-bottom:0}
+.srow .v{text-align:right;color:var(--muted);font-size:12px}
+.secbar{display:grid;grid-template-columns:170px minmax(0,1fr) 48px;gap:10px;align-items:center;font-size:12.5px;padding:3px 0}
+.secbar .b{height:7px;border-radius:3px}
+.cons{display:grid;gap:7px}
+.cons .it{display:flex;justify-content:space-between;gap:8px;font-size:13px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.cons .it:last-child{border-bottom:0}
+.cons .it a{color:var(--ink);font-weight:600;text-decoration:none}
+details.how summary{cursor:pointer;font-weight:600;font-size:14px}
+details.how[open] summary{margin-bottom:10px}
+.howgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;font-size:13.5px;color:var(--muted)}
+.howgrid b{display:block;color:var(--ink);margin-bottom:4px}
+.yt td.win{color:var(--up);font-weight:600}
+.hit{font-size:13px;padding:10px 12px;border-radius:10px;background:var(--accent-soft)}
+@media (max-width:1100px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:980px){.two,.three,.howgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){.hm{display:none}.grid{grid-template-columns:minmax(0,1fr)}.tools{grid-template-columns:minmax(0,1fr)}.srow{grid-template-columns:110px minmax(0,1fr)}.srow .v{grid-column:1/-1;text-align:left}.secbar{grid-template-columns:120px minmax(0,1fr) 44px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 <script src="common.js" defer></script>
 </head>
@@ -65,7 +110,8 @@ main{padding-block:22px 40px;display:grid;gap:20px}
   </div>
   <div class="in pagehead">
     <h1 id="h1">Investors</h1>
-    <p id="lede">What well-known investors hold, from the holdings they must report to the SEC each quarter (Form 13F): their latest portfolio, what they bought and sold, and how following each filing as it was published would have done. Follow any of them to get their new filings in your feed reader.</p>
+    <p id="lede">What well-known investors own, from the holdings US rules make them report every quarter (SEC Form 13F). For each one: who they are and how they invest, what they hold now, what they bought and sold, the patterns in ten years of filings, and how copying each filing as soon as it was published would have done. Follow any of them to keep up with new filings.</p>
+    <div class="meta" id="meta"></div>
   </div>
 </header>
 <main class="in" id="main"><div class="card empty">Loading…</div></main>
@@ -78,11 +124,13 @@ const pl = (v, d = 1) => v == null ? "–" : (v * 100).toFixed(d) + "%";
 const cls = v => v > 0 ? "pos" : v < 0 ? "neg" : "flat";
 const fmtD = d => d ? new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : "–";
 const qtr = d => { if (!d) return "–"; const m = +d.slice(5, 7); return `Q${Math.ceil(m / 3)} ${d.slice(0, 4)}`; };
-const bn = v => v >= 1e9 ? "$" + (v / 1e9).toFixed(1) + "bn" : "$" + Math.round(v / 1e6).toLocaleString("en-GB") + "m";
+const bn = v => v >= 1e9 ? "$" + (v / 1e9).toFixed(v >= 1e10 ? 0 : 1) + "bn" : "$" + Math.round(v / 1e6).toLocaleString("en-GB") + "m";
+const yrs = v => v == null ? "–" : v.toFixed(1) + " yrs";
 const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
 let follow = new Set(store.get("bp-follow-inv", []));
 const base = location.origin + location.pathname.replace(/[^/]*$/, "");
-const DISC = `Built from public SEC Form 13F filings. BullPulse is not affiliated with, or endorsed by, any investor shown, and nothing here is a recommendation. 13F lists long positions in US-listed shares only (no short positions, bonds, cash or non-US shares), at the end of each quarter, published up to 45 days later. Weights are by reported value. Not investment advice.`;
+const DISC = `Built from public SEC Form 13F filings and the public sources linked on each profile. BullPulse is not affiliated with, or endorsed by, any investor shown, and nothing here is a recommendation to buy or sell anything. 13F lists long positions in US-listed shares only (no short positions, bonds, cash, private companies or non-US shares) as they stood at the end of each quarter, published up to 45 days later. Weights are by reported value. Not investment advice.`;
+const TAGS = ["Value", "Quality", "Growth", "Technology", "Activist", "Macro", "Contrarian", "Long-term", "Concentrated", "Systematic", "Event-driven", "Credit", "UK-based", "Outside US"];
 function followBtn(slug) { const on = follow.has(slug); return `<button class="bbtn ${on ? "on" : "ghost"}" data-follow="${slug}" aria-pressed="${on}">${on ? "✓ Following" : "Follow"}</button>`; }
 function bindFollow(rerender) {
   document.querySelectorAll("[data-follow]").forEach(b => b.onclick = () => {
@@ -90,19 +138,112 @@ function bindFollow(rerender) {
   });
 }
 const stockLink = h => h.id ? `<a href="app.html#${encodeURIComponent(h.id)}">${esc(h.name)}</a>` : esc(h.name);
+const chipFor = (h, extra = "", cl = "") => h.id ? `<a class="chip ${cl}" href="app.html#${encodeURIComponent(h.id)}" title="${esc(h.name)}">${esc(h.ticker || h.name)}${extra}</a>` : `<span class="chip ${cl}" title="${esc(h.name)}">${esc(h.ticker || h.name)}${extra}</span>`;
 
+// ---------- small charts ----------
+function spark(vals, w = 300, h = 46) {
+  if (!vals || vals.length < 2) return "";
+  const lo = Math.min(...vals), hi = Math.max(...vals), L = Math.log;
+  const X = k => k / (vals.length - 1) * w, Y = v => h - 4 - (L(v) - L(lo)) / ((L(hi) - L(lo)) || 1) * (h - 8);
+  const d = vals.map((v, k) => (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(v).toFixed(1)).join("");
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" style="width:100%;height:${h}px" aria-hidden="true"><line x1="0" x2="${w}" y1="${Y(1)}" y2="${Y(1)}" stroke="var(--grid)" stroke-dasharray="3 3"/><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`;
+}
+function chart(points) {
+  const W = 760, H = 230, padL = 40, padB = 20;
+  const vals = points.flatMap(p => [p[1], p[2]]).filter(v => v > 0), lo = Math.min(...vals), hi = Math.max(...vals), L = Math.log;
+  const X = k => padL + k / (points.length - 1) * (W - padL - 46), Y = v => H - padB - (L(v) - L(lo)) / ((L(hi) - L(lo)) || 1) * (H - padB - 10);
+  const path = j => points.map((p, k) => (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(p[j]).toFixed(1)).join("");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Growth of 100 copying each filing, against the S&P 500" style="width:100%;height:auto">`;
+  [25, 50, 75, 100, 150, 200, 300, 400, 600, 800, 1200].filter(v => v / 100 >= lo * .97 && v / 100 <= hi * 1.03).forEach(v => s += `<line x1="${padL}" x2="${W - 46}" y1="${Y(v / 100)}" y2="${Y(v / 100)}" stroke="var(--grid)"/><text x="${padL - 6}" y="${Y(v / 100) + 4}" font-size="11" text-anchor="end" fill="var(--muted)">${v}</text>`);
+  [...new Set(points.map(p => p[0].slice(0, 4)))].forEach(y => { const k = points.findIndex(p => p[0].slice(0, 4) === y); if (k > 0) s += `<text x="${X(k)}" y="${H - 3}" font-size="11" text-anchor="middle" fill="var(--muted)">${y}</text>`; });
+  s += `<path d="${path(2)}" fill="none" stroke="var(--us)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/><path d="${path(1)}" fill="none" stroke="var(--accent)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>`;
+  const last = points[points.length - 1];
+  s += `<text x="${W - 42}" y="${Y(last[1]) + 4}" font-size="11.5" fill="var(--accent)" font-weight="600">${Math.round(last[1] * 100)}</text><text x="${W - 42}" y="${Y(last[2]) + 4}" font-size="11.5" fill="var(--us)" font-weight="600">${Math.round(last[2] * 100)}</text>`;
+  return s + "</svg>";
+}
+// a simple line over time (periods on x), for concentration
+function mini(series, key, fmt, color = "var(--accent)", label = "") {
+  if (!series || series.length < 2) return `<p class="note">Not enough filings yet.</p>`;
+  const W = 360, H = 120, padL = 38, padB = 18;
+  const vals = series.map(p => p[key]), lo = Math.min(0, ...vals), hi = Math.max(...vals) * 1.08 || 1;
+  const X = k => padL + k / (series.length - 1) * (W - padL - 8), Y = v => H - padB - (v - lo) / ((hi - lo) || 1) * (H - padB - 8);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" style="width:100%;height:auto">`;
+  [lo, (lo + hi) / 2, hi].forEach(v => s += `<line x1="${padL}" x2="${W - 8}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--grid)"/><text x="${padL - 5}" y="${Y(v) + 4}" font-size="10" text-anchor="end" fill="var(--muted)">${fmt(v)}</text>`);
+  const yrsL = [...new Set(series.map(p => p.period.slice(0, 4)))];
+  const step = Math.ceil(yrsL.length / 6);
+  yrsL.forEach((y, i) => { if (i % step) return; const k = series.findIndex(p => p.period.startsWith(y)); s += `<text x="${X(k)}" y="${H - 3}" font-size="10" text-anchor="middle" fill="var(--muted)">${y}</text>`; });
+  s += `<path d="${series.map((p, k) => (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(p[key]).toFixed(1)).join("")}" fill="none" stroke="${color}" stroke-width="2" vector-effect="non-scaling-stroke"/>`;
+  return s + "</svg>";
+}
+function bars(series, fmt) {
+  if (!series || series.length < 2) return `<p class="note">Not enough filings yet.</p>`;
+  const W = 360, H = 120, padL = 38, padB = 18, hi = Math.max(...series.map(p => p.v), 0.05);
+  const bw = (W - padL - 8) / series.length;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Share of the portfolio changed each quarter" style="width:100%;height:auto;max-height:200px">`;
+  [0, hi / 2, hi].forEach(v => { const y = H - padB - v / hi * (H - padB - 8); s += `<line x1="${padL}" x2="${W - 8}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${padL - 5}" y="${y + 4}" font-size="10" text-anchor="end" fill="var(--muted)">${fmt(v)}</text>`; });
+  series.forEach((p, k) => { const h = p.v / hi * (H - padB - 8); s += `<rect x="${(padL + k * bw + 0.5).toFixed(1)}" y="${(H - padB - h).toFixed(1)}" width="${Math.max(bw - 1, 1).toFixed(1)}" height="${h.toFixed(1)}" fill="var(--accent)" opacity=".75"><title>${qtr(p.period)}: ${fmt(p.v)}</title></rect>`; });
+  const yrsL = [...new Set(series.map(p => p.period.slice(0, 4)))], step = Math.ceil(yrsL.length / 6);
+  yrsL.forEach((y, i) => { if (i % step) return; const k = series.findIndex(p => p.period.startsWith(y)); s += `<text x="${padL + k * bw + bw / 2}" y="${H - 3}" font-size="10" text-anchor="middle" fill="var(--muted)">${y}</text>`; });
+  return s + "</svg>";
+}
+
+// ---------- list ----------
 async function list(index) {
-  let view = store.get("bp-inv-view", "all");
+  let view = store.get("bp-inv-view", "all"), tag = store.get("bp-inv-tag", ""), sort = store.get("bp-inv-sort", "value"), q = "";
+  let owners = null;
+  const invs = index.investors, bySlug = Object.fromEntries(invs.map(x => [x.slug, x]));
+  const name = s => bySlug[s] ? bySlug[s].manager : s;
+  $("meta").innerHTML = `<span>${invs.length} investors</span><span>${invs.reduce((a, x) => a + x.quarters, 0).toLocaleString("en-GB")} quarterly filings</span><span>Latest filing ${fmtD(invs.map(x => x.filed).sort().pop())}</span>`;
+  const tagsUsed = TAGS.filter(t => invs.some(x => (x.tags || []).includes(t)));
+  const c = index.consensus || {};
+  const consList = (rows, key, verb) => rows && rows.length ? rows.slice(0, 8).map(r => `<div class="it"><span>${r.id ? `<a href="app.html#${encodeURIComponent(r.id)}">${esc(r.name)}</a>` : `<b>${esc(r.name)}</b>`} <span class="sub">${esc(r.ticker)}</span></span><span class="sub" title="${esc(r[key].map(name).join(", "))}">${r[key].length} ${verb}</span></div>`).join("") : `<p class="note">Nothing yet.</p>`;
+  const sorts = { value: ["Largest portfolio", (a, b) => b.value - a.value], record: ["Best copy record vs S&P 500", (a, b) => ((b.record ? b.record.cagr - b.record.benchCagr : -9) - (a.record ? a.record.cagr - a.record.benchCagr : -9))], recent: ["Most recent filing", (a, b) => b.filed.localeCompare(a.filed)], turnover: ["Trades least", (a, b) => (a.turnover ?? 9) - (b.turnover ?? 9)], held: ["Holds longest", (a, b) => (b.holdYears ?? 0) - (a.holdYears ?? 0)], az: ["A–Z", (a, b) => a.manager.localeCompare(b.manager)] };
   const draw = () => {
-    const items = index.investors.filter(x => view === "all" || follow.has(x.slug));
-    const recent = index.investors.filter(x => follow.has(x.slug)).sort((a, b) => b.filed.localeCompare(a.filed));
+    const ql = q.trim().toLowerCase();
+    let items = invs.filter(x => (view === "all" || follow.has(x.slug)) && (!tag || (x.tags || []).includes(tag)));
+    let hit = "";
+    if (ql) {
+      const tk = ql.replace(/[^a-z.]/g, "").toUpperCase(), oid = "US-" + tk.replace(/\./g, "");
+      const own = owners && owners[oid];
+      const textMatch = x => (x.manager + " " + x.firm + " " + (x.tags || []).join(" ") + " " + (x.top || []).map(h => h.name + " " + h.ticker).join(" ")).toLowerCase().includes(ql);
+      if (own && own.length) {
+        const ownSet = new Set(own.map(o => o[0]));
+        hit = `<div class="hit"><b>${esc(tk)}</b> is held by ${own.length} of these investors: ${own.sort((a, b) => b[1] - a[1]).map(o => `<a href="?i=${o[0]}" style="color:var(--ink);font-weight:600">${esc(name(o[0]))}</a> ${pl(o[1])}${o[2] === "new" ? " (new)" : o[2] ? ` (${o[2]})` : ""}`).join(", ")}.</div>`;
+        items = items.filter(x => ownSet.has(x.slug) || textMatch(x));
+      } else items = items.filter(textMatch);
+    }
+    items.sort(sorts[sort][1]);
+    const recent = invs.filter(x => follow.has(x.slug)).sort((a, b) => b.filed.localeCompare(a.filed));
     $("main").innerHTML = `
-      <div class="bar"><div class="tabs" role="group" aria-label="Show"><button data-v="all" aria-pressed="${view === "all"}">All investors</button><button data-v="mine" aria-pressed="${view === "mine"}">Following (${follow.size})</button></div>
-        <span class="row">${follow.size ? `<button class="bbtn ghost" id="opml">Download feeds for those you follow (OPML)</button>` : ""}</span></div>
+      <details class="card sec how" ${store.get("bp-inv-how", true) ? "open" : ""}><summary>How this page works</summary>
+        <div class="howgrid">
+          <div><b>Where the data comes from</b>Every fund manager with over $100m in US shares must file a list of its holdings with the SEC within 45 days of each quarter end (Form 13F). We read every filing since 2015 for these investors.</div>
+          <div><b>What “copying each filing” means</b>We buy each filing's holdings at the first closing price after it was published, weighted as reported, and hold them until the next filing. It shows what a follower could really have got, not the fund's own return.</div>
+          <div><b>What it doesn't show</b>Short positions, bonds, cash, private companies and non-US shares are missing, and the holdings are up to four and a half months old. Several of these managers invest mainly in things 13F doesn't cover; their profiles say so.</div>
+        </div></details>
+      ${c.owned ? `<section class="three">
+        <div class="card sec"><h3>Most widely owned <span class="sub">by ${c.investors} investors</span></h3><div class="cons">${consList(c.owned, "holders", "own it")}</div></div>
+        <div class="card sec"><h3>Most bought last quarter</h3><div class="cons">${consList(c.bought, "buyers", "bought")}</div></div>
+        <div class="card sec"><h3>Most sold last quarter</h3><div class="cons">${consList(c.sold, "sellers", "sold")}</div></div>
+      </section>` : ""}
+      <div class="tools"><input class="search" id="q" type="search" placeholder="Search investors, firms or a ticker (e.g. AAPL) to see who owns it" value="${esc(q)}" aria-label="Search investors or a ticker">
+        <select class="sel" id="sort" aria-label="Sort">${Object.entries(sorts).map(([k, v]) => `<option value="${k}" ${k === sort ? "selected" : ""}>${v[0]}</option>`).join("")}</select></div>
+      <div class="bar"><div class="tabs" role="group" aria-label="Style"><button class="pill" data-tag="" aria-pressed="${!tag}">All styles</button>${tagsUsed.map(t => `<button class="pill" data-tag="${t}" aria-pressed="${tag === t}">${t}</button>`).join("")}</div>
+        <div class="tabs" role="group" aria-label="Show"><button data-v="all" aria-pressed="${view === "all"}">All</button><button data-v="mine" aria-pressed="${view === "mine"}">Following (${follow.size})</button>${follow.size ? `<button id="opml" title="For feed readers">Download feeds (OPML)</button>` : ""}</div></div>
+      ${hit}
       ${view === "mine" && recent.length ? `<section class="card sec"><h3>Latest filings from investors you follow</h3>${recent.map(x => `<div class="q"><span><b><a href="?i=${x.slug}" style="color:var(--ink)">${esc(x.manager)}</a></b> <span class="sub">holdings at ${qtr(x.period)}, filed ${fmtD(x.filed)}</span></span>${x.latest ? `<span class="sub">${x.latest.new} new, ${x.latest.added} added to, ${x.latest.reduced} reduced, ${x.latest.sold} sold out</span>` : ""}</div>`).join("")}</section>` : ""}
-      ${items.length ? `<div class="grid">${items.map(card).join("")}</div>` : `<div class="card empty">You're not following anyone yet. Choose Follow on any investor to keep up with their filings.</div>`}
+      ${items.length ? `<div class="grid">${items.map(card).join("")}</div>` : `<div class="card empty">${view === "mine" && !follow.size ? "You're not following anyone yet. Choose Follow on any investor to keep up with their filings." : "No investors match. Try another search or style."}</div>`}
       <p class="note">${DISC}</p>`;
     document.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { view = b.dataset.v; store.set("bp-inv-view", view); draw(); });
+    document.querySelectorAll("[data-tag]").forEach(b => b.onclick = () => { tag = b.dataset.tag; store.set("bp-inv-tag", tag); draw(); });
+    $("sort").onchange = e => { sort = e.target.value; store.set("bp-inv-sort", sort); draw(); };
+    const qi = $("q");
+    qi.oninput = async e => {
+      q = e.target.value;
+      if (!owners && q.trim()) { try { owners = await (await fetch("data/investors/owners.json", { cache: "no-cache" })).json(); } catch (err) { owners = {}; } }
+      const pos = qi.selectionStart; draw(); const n = $("q"); n.focus(); n.setSelectionRange(pos, pos);
+    };
+    document.querySelector("details.how").ontoggle = e => store.set("bp-inv-how", e.target.open);
     bindFollow(draw);
     if ($("opml")) $("opml").onclick = () => opml(index);
   };
@@ -110,11 +251,13 @@ async function list(index) {
 }
 function card(x) {
   const r = x.record;
-  return `<article class="card inv"><div class="row" style="justify-content:space-between;align-items:start"><div><h2>${esc(x.manager)}</h2><div class="firm">${esc(x.firm)}</div></div>${followBtn(x.slug)}</div>
+  return `<article class="card inv"><div class="row" style="justify-content:space-between;align-items:start;flex-wrap:nowrap"><div><h2><a href="?i=${x.slug}" style="color:inherit;text-decoration:none">${esc(x.manager)}</a></h2><div class="firm">${esc(x.firm)}${x.based ? ` · ${esc(x.based)}` : ""}</div></div>${followBtn(x.slug)}</div>
+    ${x.tags && x.tags.length ? `<div class="chips">${x.tags.map(t => `<span class="tagc">${esc(t)}</span>`).join("")}</div>` : ""}
     <p>${esc(x.about)}</p>
-    <div class="chips">${(x.top || []).map(h => h.id ? `<a class="chip" href="app.html#${encodeURIComponent(h.id)}">${esc(h.ticker || h.name)} ${pl(h.w, 0)}</a>` : `<span class="chip">${esc(h.ticker || h.name)} ${pl(h.w, 0)}</span>`).join("")}</div>
-    <div class="kv"><span>Latest holdings<b>${qtr(x.period)}</b>filed ${fmtD(x.filed)}</span><span>Copying each filing${r ? `<b class="${cls(r.cagr)}">${pc(r.cagr)}</b>a year since ${r.since.slice(0, 4)}` : "<b>–</b>"}</span><span>S&amp;P 500, same dates${r ? `<b class="${cls(r.benchCagr)}">${pc(r.benchCagr)}</b>a year` : "<b>–</b>"}</span></div>
-    <div class="row" style="justify-content:space-between"><span class="sub">${x.positions} positions, ${bn(x.value)}; ${Math.round(x.covered * 100)}% priced here</span><a class="bbtn ghost" href="?i=${x.slug}">See holdings</a></div>
+    ${r ? `<div class="rec"><div>${spark(x.spark)}</div><div style="text-align:right">Copying each filing<br><b class="${cls(r.cagr - r.benchCagr)}">${pc(r.cagr)}</b> a year<br><span class="sub">S&amp;P 500 ${pc(r.benchCagr)} · since ${r.since.slice(0, 4)}</span>${r.coverage != null && r.coverage < 0.5 ? `<br><span class="sub" style="color:var(--warn)" title="Holdings without a price here are left out of the copy record">only ${pl(r.coverage, 0)} of holdings priced</span>` : ""}</div></div>` : ""}
+    <div class="stats"><span>Holdings<b>${x.positions}</b></span><span>Top 10<b>${pl(x.top10, 0)}</b></span><span>Changes a year<b>${x.turnover == null ? "–" : pl(Math.min(x.turnover, 9.99), 0)}</b></span><span>Avg. held<b>${yrs(x.holdYears)}</b></span></div>
+    <div class="chips">${(x.top || []).map(h => chipFor(h, " " + pl(h.w, 0))).join("")}</div>
+    <div class="row" style="justify-content:space-between"><span class="sub">${qtr(x.period)} filed ${fmtD(x.filed)}${x.latest ? ` · ${x.latest.new} new, ${x.latest.sold} sold` : ""}</span><a class="bbtn ghost" href="?i=${x.slug}">Profile &amp; holdings →</a></div>
   </article>`;
 }
 function opml(index) {
@@ -122,57 +265,130 @@ function opml(index) {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n  <head><title>BullPulse: investors I follow</title></head>\n  <body>\n${items.join("\n")}\n  </body>\n</opml>\n`;
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([xml], { type: "text/x-opml" })); a.download = "bullpulse-investors.opml"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
-function chart(points) {
-  const W = 760, H = 220, padL = 40, padB = 20;
-  const vals = points.flatMap(p => [p[1], p[2]]).filter(v => v > 0), lo = Math.min(...vals), hi = Math.max(...vals), L = Math.log;
-  const X = k => padL + k / (points.length - 1) * (W - padL - 46), Y = v => H - padB - (L(v) - L(lo)) / ((L(hi) - L(lo)) || 1) * (H - padB - 10);
-  const path = j => points.map((p, k) => (k ? "L" : "M") + X(k).toFixed(1) + " " + Y(p[j]).toFixed(1)).join("");
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Growth of 100 following each filing, against the S&P 500" style="width:100%;height:auto">`;
-  [50, 75, 100, 150, 200, 300, 400, 600].filter(v => v / 100 >= lo * .97 && v / 100 <= hi * 1.03).forEach(v => s += `<line x1="${padL}" x2="${W - 46}" y1="${Y(v / 100)}" y2="${Y(v / 100)}" stroke="var(--grid)"/><text x="${padL - 6}" y="${Y(v / 100) + 4}" font-size="11" text-anchor="end" fill="var(--muted)">${v}</text>`);
-  [...new Set(points.map(p => p[0].slice(0, 4)))].forEach(y => { const k = points.findIndex(p => p[0].slice(0, 4) === y); if (k > 0) s += `<text x="${X(k)}" y="${H - 3}" font-size="11" text-anchor="middle" fill="var(--muted)">${y}</text>`; });
-  s += `<path d="${path(2)}" fill="none" stroke="var(--us)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/><path d="${path(1)}" fill="none" stroke="var(--accent)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>`;
-  const last = points[points.length - 1];
-  s += `<text x="${W - 42}" y="${Y(last[1]) + 4}" font-size="11.5" fill="var(--accent)" font-weight="600">${Math.round(last[1] * 100)}</text><text x="${W - 42}" y="${Y(last[2]) + 4}" font-size="11.5" fill="var(--us)" font-weight="600">${Math.round(last[2] * 100)}</text>`;
-  return s + "</svg>";
-}
+
+// ---------- detail ----------
+const STYLEFMT = { pe: v => v.toFixed(1) + "×", roe: v => pl(v, 0), revGrowth: v => pc(v, 0), divY: v => pl(v, 1), mcapBn: v => v >= 1000 ? "$" + (v / 1000).toFixed(1) + "tn" : "$" + Math.round(v) + "bn", mom: v => pc(v, 0), score: v => Math.round(v) };
+const STYLEWORD = { pe: p => p <= 40 ? "Cheaper than most" : p >= 60 ? "Pricier than most" : "Typically priced", roe: p => p >= 60 ? "More profitable" : p <= 40 ? "Less profitable" : "Typical", revGrowth: p => p >= 60 ? "Faster growing" : p <= 40 ? "Slower growing" : "Typical", divY: p => p >= 60 ? "Higher yield" : p <= 40 ? "Lower yield" : "Typical", mcapBn: p => p >= 75 ? "Mostly giants" : p <= 40 ? "Smaller firms" : "Large", mom: p => p >= 60 ? "Recent winners" : p <= 40 ? "Recent laggards" : "Typical", score: p => p >= 60 ? "Higher scores" : p <= 40 ? "Lower scores" : "Typical" };
 async function detail(slug) {
   let x;
   try { x = await (await fetch(`data/investors/${encodeURIComponent(slug)}.json`, { cache: "no-cache" })).json(); }
   catch (e) { $("main").innerHTML = `<div class="card empty">That investor couldn't be found. <a href="investors.html">See all investors</a>.</div>`; return; }
-  document.title = `${x.manager}: holdings from 13F filings | BullPulse`;
+  const pr = x.profile || {}, pt = x.pattern || {}, r = x.record;
+  document.title = `${x.manager}: strategy, holdings and record | BullPulse`;
   $("h1").textContent = x.manager;
   $("lede").textContent = `${x.firm}. ${x.about}`;
+  $("meta").innerHTML = [...(pr.tags || []).map(t => `<span>${esc(t)}</span>`), pr.based ? `<span>${esc(pr.based)}</span>` : "", pr.founded ? `<span>Since ${pr.founded}</span>` : "", `<span>${x.quarters} filings since ${qtr(x.first)}</span>`].join("");
+  let showAll = false, hq = "";
   const draw = () => {
-    const r = x.record, h0 = x.history[0];
-    const mv = (k, lab) => h0 && h0[k].length ? `<div><span class="lbl">${lab}</span> <span class="chips" style="display:inline-flex">${h0[k].slice(0, 12).map(h => `<a class="chip ${k === "new" ? "new" : k === "sold" ? "sold" : ""}" ${h.id ? `href="app.html#${encodeURIComponent(h.id)}"` : ""}>${esc(h.ticker || h.name)}${h.chg != null ? " " + pc(h.chg, 0) : ""}</a>`).join("")}${h0[k].length > 12 ? `<span class="sub">+${h0[k].length - 12} more</span>` : ""}</span></div>` : "";
+    const h0 = x.history[0];
+    const mv = (k, lab) => h0 && h0[k].length ? `<div><span class="lbl">${lab}</span> <span class="chips" style="display:inline-flex">${h0[k].slice(0, 14).map(h => chipFor(h, h.chg != null ? " " + pc(h.chg, 0) : "", k === "new" ? "new" : k === "sold" ? "sold" : "")).join("")}${h0.counts[k] > 14 ? `<span class="sub">+${h0.counts[k] - 14} more</span>` : ""}</span></div>` : "";
+    const hl = x.holdings.filter(h => !hq || (h.name + " " + h.ticker + " " + h.sector).toLowerCase().includes(hq.toLowerCase()));
+    const shown = showAll || hq ? hl : hl.slice(0, 40);
+    const maxW = Math.max(...x.holdings.map(h => h.w), 0.01);
+    const sty = x.style || {};
+    const secs = (() => { const now = pt.sectors || [], then = pt.sectorsThen || [], keys = [...new Set([...now, ...then].map(s => s.sector))]; const g = k => (now.find(s => s.sector === k) || {}).w || 0, t = k => (then.find(s => s.sector === k) || {}).w || 0; return keys.map(k => ({ k, now: g(k), then: t(k) })).sort((a, b) => b.now - a.now || b.then - a.then).slice(0, 10); })();
+    const secMax = Math.max(...secs.flatMap(s => [s.now, s.then]), 0.01);
     $("main").innerHTML = `
       <div class="bar"><a class="bbtn ghost" href="investors.html">← All investors</a><span class="row">${followBtn(x.slug)}<a class="bbtn ghost" href="feeds/investor-${x.slug}.xml">RSS feed</a><a class="bbtn" href="lab.html#inv=${encodeURIComponent(x.slug)}">Test in the Strategy Lab</a></span></div>
-      <section class="card sec"><h3>Latest filing <span class="sub">holdings at ${fmtD(x.period)} (${qtr(x.period)}), filed ${fmtD(x.filed)}; ${x.positions} positions, ${bn(x.value)}</span></h3>
-        ${h0 ? `<div class="q" style="border:0">${mv("new", "New")}${mv("added", "Added to")}${mv("reduced", "Reduced")}${mv("sold", "Sold out")}${!["new", "added", "reduced", "sold"].some(k => h0[k].length) ? `<span class="sub">No significant changes from the quarter before.</span>` : ""}</div>` : `<p class="note">This is the first filing on record.</p>`}
+      <nav class="secnav" aria-label="Sections"><a href="#overview">Overview</a><a href="#holdings">Holdings</a><a href="#moves">Buying &amp; selling</a><a href="#pattern">Pattern</a><a href="#record">Record</a><a href="#data">About the data</a></nav>
+
+      <section class="card sec anchor" id="overview"><h3>At a glance</h3>
+        <div class="tiles">
+          <div class="tile">US shares reported<b>${bn(x.value)}</b>${qtr(x.period)}</div>
+          <div class="tile">Holdings<b>${x.positions}</b>top 10 = ${pl(pt.top10, 0)}</div>
+          <div class="tile">Changed in a year<b>${pt.turnoverYear == null ? "–" : pl(Math.min(pt.turnoverYear, 9.99), 0)}</b>${pt.turnoverAvg != null ? `usually ${pl(Math.min(pt.turnoverAvg, 9.99), 0)}` : "of the portfolio"}</div>
+          <div class="tile">Average holding owned<b>${pt.holdCapped ? "≥ " : ""}${yrs(pt.holdYears)}</b>by value</div>
+          <div class="tile">Copying each filing<b class="${r ? cls(r.cagr - r.benchCagr) : ""}">${r ? pc(r.cagr) : "–"}</b>a year${r ? ` since ${r.since.slice(0, 4)}` : ""}</div>
+          <div class="tile">S&amp;P 500, same dates<b>${r ? pc(r.benchCagr) : "–"}</b>a year</div>
+        </div>
+        ${x.summary && x.summary.length ? `<ul class="glance">${x.summary.map(s => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
       </section>
-      <div class="det">
-        <section class="card sec"><h3>Holdings <span class="sub">by reported value; ${Math.round(x.covered * 100)}% has prices here</span></h3>
-          <div class="tw"><table class="tt"><thead><tr><th>Company</th><th>Weight</th><th>Value</th><th>Change in shares</th></tr></thead><tbody>
-          ${x.holdings.map(h => `<tr><td>${stockLink(h)} <span class="sub">${esc(h.ticker)}</span></td><td>${pl(h.w)}</td><td>${bn(h.value)}</td><td>${h.change === "new" ? `<span class="tag new">New</span>` : h.chg != null && Math.abs(h.chg) >= 0.001 ? `<span class="tag ${h.change || ""}">${pc(h.chg, 0)}</span>` : `<span class="sub">–</span>`}</td></tr>`).join("")}
-          </tbody></table></div>
+
+      ${pr.background ? `<section class="card sec"><h3>Who they are and how they invest</h3>
+        <div class="two"><div class="prose"><h4>Background</h4><p>${esc(pr.background)}</p><h4>Approach</h4><p>${esc(pr.approach)}</p></div>
+        <div class="prose">${pr.known && pr.known.length ? `<h4>Known for</h4><ul>${pr.known.map(k => `<li>${esc(k)}</li>`).join("")}</ul>` : ""}
+          ${pr.note ? `<div class="callout" style="margin-top:10px">${esc(pr.note)}</div>` : ""}
+          ${pr.sources && pr.sources.length ? `<p class="note" style="margin-top:10px">Sources: ${pr.sources.map(s => `<a href="${esc(s.url)}" rel="noopener" target="_blank">${esc(s.title)}</a>`).join(" · ")}. Written by BullPulse from these public sources; figures are as those sources report them, not checked by the investor.</p>` : ""}</div></div>
+      </section>` : ""}
+
+      <section class="card sec anchor" id="moves"><h3>Latest filing <span class="sub">holdings at ${fmtD(x.period)} (${qtr(x.period)}), filed ${fmtD(x.filed)}</span></h3>
+        ${h0 ? `<div class="q" style="border:0;padding-top:0">${mv("new", "New")}${mv("added", "Added to")}${mv("reduced", "Reduced")}${mv("sold", "Sold out")}${!["new", "added", "reduced", "sold"].some(k => h0[k].length) ? `<span class="sub">No significant changes from the quarter before.</span>` : ""}</div>` : `<p class="note">This is the first filing on record.</p>`}
+        <p class="note">“Added to” and “Reduced” mean the number of shares changed by at least 10%, allowing for stock splits.</p>
+      </section>
+
+      <section class="card sec anchor" id="holdings"><h3>Holdings <span class="sub">by reported value; ${Math.round(x.covered * 100)}% of the portfolio has prices here</span></h3>
+        ${x.holdings.length > 12 ? `<input class="search" id="hq" type="search" placeholder="Filter holdings by name, ticker or sector" value="${esc(hq)}" aria-label="Filter holdings">` : ""}
+        <div class="tw"><table class="tt"><thead><tr><th>Company</th><th class="hm">Sector</th><th>Weight</th><th class="hm">Value</th><th class="hm">Owned since</th><th>Change</th></tr></thead><tbody>
+        ${shown.map(h => `<tr><td>${stockLink(h)} <span class="sub">${esc(h.ticker)}</span></td><td class="sub hm" style="text-align:left">${esc(h.sector || "–")}</td><td style="white-space:nowrap">${pl(h.w)}<span class="wbar" style="width:${Math.max(2, Math.round(h.w / maxW * 60))}px"></span></td><td class="hm">${bn(h.value)}</td><td class="sub hm">${h.sinceStart ? "≤ " : ""}${qtr(h.since)}</td><td>${h.change === "new" ? `<span class="tag new">New</span>` : h.chg != null && Math.abs(h.chg) >= 0.001 ? `<span class="tag ${h.change || ""}">${pc(h.chg, 0)}</span>` : `<span class="sub">–</span>`}</td></tr>`).join("")}
+        </tbody></table></div>
+        ${!showAll && !hq && hl.length > 40 ? `<button class="bbtn ghost" id="more">Show all ${hl.length} holdings</button>` : ""}
+        <p class="note">“Owned since” is the start of the current unbroken run of quarters holding it; “≤” means it was already held in the first filing we have (${qtr(x.first)}). Sectors are shown for S&amp;P 500 companies.</p>
+      </section>
+
+      <div class="anchor" id="pattern"></div>
+      <div class="two">
+        <section class="card sec"><h3>Biggest bets, year by year <span class="sub">top three at each year end</span></h3>
+          <div class="tw"><table class="tt"><tbody>${(pt.bets || []).slice().reverse().map(b => `<tr><td><b>${b.year}</b>${b.period.slice(5) !== "12-31" ? ` <span class="sub">${qtr(b.period)}</span>` : ""}</td><td style="text-align:left"><span class="chips">${b.top.map(h => chipFor(h, " " + pl(h.w, 0))).join("")}</span></td></tr>`).join("")}</tbody></table></div>
         </section>
-        <section class="card sec"><h3>Following each filing</h3>
-          ${r ? `${chart(r.points)}
-            <div class="legend"><span><i style="background:var(--accent)"></i>Copy of each filing</span><span><i style="background:var(--us)"></i>S&amp;P 500 fund</span><span>Growth of 100 since ${fmtD(r.since)}, log scale</span></div>
-            <div class="tw"><table class="tt"><tbody>
-              <tr><td>Return a year</td><td class="${cls(r.cagr)}"><b>${pc(r.cagr)}</b><div class="sub">S&amp;P 500 ${pc(r.benchCagr)}</div></td></tr>
-              <tr><td>Total since ${r.since.slice(0, 4)}</td><td class="${cls(r.total)}">${pc(r.total, 0)}<div class="sub">S&amp;P 500 ${pc(r.bench, 0)}</div></td></tr>
-              <tr><td>Worst fall from a high</td><td class="neg">${pc(r.maxDD)}</td></tr>
-              <tr><td>Share of the portfolio priced here, on average</td><td>${pl(r.coverage, 0)}</td></tr>
-            </tbody></table></div>
-            <p class="note">Buys each filing's holdings on the first close after it was published (not at the quarter end, which nobody could know in time), weighted by reported value, and holds them until the next filing. Holdings without a price here are left out. US dollars, dividends included, before costs. This is not the fund's own return.</p>` : `<p class="note">Not enough priced filings to show a record yet.</p>`}
+        <section class="card sec"><h3>How the holdings compare <span class="sub">with S&amp;P 500 companies</span></h3>
+          ${Object.keys(sty).length ? Object.entries(sty).map(([k, s]) => `<div class="srow"><span>${esc(s.label)}<div class="sub">${STYLEWORD[k] ? STYLEWORD[k](s.pct) : ""}</div></span><div class="pbar" title="Percentile ${s.pct}"><s></s><i style="left:calc(${Math.min(99, Math.max(0, s.pct))}% - 1px)"></i></div><span class="v">${STYLEFMT[k] ? STYLEFMT[k](s.median) : s.median} vs ${STYLEFMT[k] ? STYLEFMT[k](s.market) : s.market} typical</span></div>`).join("") + `<p class="note">Each marker is the holding-weighted average position among S&amp;P 500 companies (the middle line is the typical company), using the ${pl(Math.max(...Object.values(sty).map(s => s.cover)), 0)} of the portfolio we have figures for. Values are weighted medians.</p>` : `<p class="note">Not enough of this portfolio is in the S&amp;P 500 to compare.</p>`}
         </section>
       </div>
-      <section class="card sec"><h3>Quarter by quarter</h3>
-        ${x.history.map(q => `<div class="q"><b>${qtr(q.period)} <span class="sub">filed ${fmtD(q.filed)}</span></b>${["new", "added", "reduced", "sold"].map(k => q[k].length ? `<div><span class="lbl">${{ new: "New", added: "Added to", reduced: "Reduced", sold: "Sold out" }[k]}</span> ${q[k].slice(0, 15).map(h => esc(h.ticker || h.name)).join(", ")}${q[k].length > 15 ? "…" : ""}</div>` : "").join("") || `<span class="sub">No significant changes.</span>`}</div>`).join("") || `<p class="note">Only one filing on record so far.</p>`}
+      <div class="two">
+        <section class="card sec"><h3>Concentration over time</h3>
+          <div class="two" style="gap:12px"><div><h4 class="sub">Number of holdings</h4>${mini(pt.concentration, "n", v => Math.round(v), "var(--us)", "Number of holdings")}</div><div><h4 class="sub">Share in the top 10</h4>${mini(pt.concentration, "top10", v => pl(v, 0), "var(--accent)", "Share of the portfolio in the ten largest holdings")}</div></div>
+        </section>
+        <section class="card sec"><h3>Trading each quarter <span class="sub">share of the portfolio changed</span></h3>
+          ${bars(pt.turnover, v => pl(v, 0))}
+          <p class="note">Measured from the change in weights after allowing for price moves, so money flowing in or out of the fund and stock splits don't count as trading.${pt.closedMedianYears != null ? ` Positions it has sold lasted ${yrs(pt.closedMedianYears)} (median).` : ""}</p>
+        </section>
+      </div>
+      <div class="two">
+        <section class="card sec"><h3>Sectors <span class="sub">now and at ${qtr(pt.sectorsThenPeriod)}</span></h3>
+          ${secs.map(s => `<div class="secbar"><span>${esc(s.k)}</span><span style="display:grid;gap:2px"><span class="b" style="width:${(s.then / secMax * 100).toFixed(1)}%;background:var(--muted);opacity:.45"></span><span class="b" style="width:${(s.now / secMax * 100).toFixed(1)}%;background:var(--accent)"></span></span><span style="text-align:right;font-variant-numeric:tabular-nums">${pl(s.now, 0)}</span></div>`).join("")}
+          <div class="legend"><span><i style="background:var(--accent)"></i>Now</span><span><i style="background:var(--muted);opacity:.45"></i>${qtr(pt.sectorsThenPeriod)}</span></div>
+        </section>
+        <section class="card sec"><h3>Held the longest</h3>
+          <div class="tw"><table class="tt"><thead><tr><th>Company</th><th>Owned for</th><th>Weight now</th></tr></thead><tbody>${(pt.longest || []).map(h => `<tr><td>${stockLink(h)} <span class="sub">${esc(h.ticker)}</span></td><td>${h.sinceStart ? "≥ " : ""}${yrs(h.years)}</td><td>${pl(h.w)}</td></tr>`).join("")}</tbody></table></div>
+        </section>
+      </div>
+      ${x.calls ? `<section class="card sec"><h3>Best and worst calls for a follower <span class="sub">points added to a copy portfolio that started at 100</span></h3>
+        <div class="two">
+          <div><h4>Helped most</h4><div class="tw"><table class="tt"><tbody>${x.calls.best.map(c => `<tr><td>${stockLink(c)} <span class="sub">${esc(c.ticker)}</span><div class="sub">${c.from.slice(0, 4)}–${c.to.slice(0, 4)}, ${pc(c.ret, 0)} while held</div></td><td class="pos"><b>+${c.pts}</b></td></tr>`).join("") || `<tr><td class="sub">None yet.</td></tr>`}</tbody></table></div></div>
+          <div><h4>Hurt most</h4><div class="tw"><table class="tt"><tbody>${x.calls.worst.map(c => `<tr><td>${stockLink(c)} <span class="sub">${esc(c.ticker)}</span><div class="sub">${c.from.slice(0, 4)}–${c.to.slice(0, 4)}, ${pc(c.ret, 0)} while held</div></td><td class="neg"><b>${c.pts}</b></td></tr>`).join("") || `<tr><td class="sub">None.</td></tr>`}</tbody></table></div></div>
+        </div>
+        <p class="note">From buying each filing at the first close after publication; only holdings with prices here. Points add up to the copy portfolio's total gain.</p>
+      </section>` : ""}
+      ${x.similar && x.similar.length ? `<section class="card sec"><h3>Investors with similar portfolios <span class="sub">share of holdings in common, by weight</span></h3>
+        <div class="chips">${x.similar.map(s => `<a class="chip" href="?i=${s.slug}">${esc(s.manager)} · ${pl(s.overlap, 0)} <span class="sub">(${s.shared.map(esc).join(", ")})</span></a>`).join("")}</div></section>` : ""}
+
+      <section class="card sec anchor" id="record"><h3>Copying each filing <span class="sub">growth of 100, log scale</span></h3>
+        ${r ? `${chart(r.points)}
+          <div class="legend"><span><i style="background:var(--accent)"></i>Copy of each filing</span><span><i style="background:var(--us)"></i>S&amp;P 500 fund, same dates</span><span>Since ${fmtD(r.since)}</span></div>
+          <div class="two">
+            <div class="tw"><table class="tt"><thead><tr><th>Period</th><th>Copy a year</th><th>S&amp;P 500</th></tr></thead><tbody>
+              ${(r.windows || []).map(w => `<tr><td>Last ${w.years} year${w.years > 1 ? "s" : ""}</td><td class="${cls(w.ret - w.bench)}"><b>${pc(w.ret)}</b></td><td>${pc(w.bench)}</td></tr>`).join("")}
+              <tr><td>Since ${r.since.slice(0, 4)}</td><td class="${cls(r.cagr - r.benchCagr)}"><b>${pc(r.cagr)}</b></td><td>${pc(r.benchCagr)}</td></tr>
+              <tr><td>Worst fall from a high</td><td class="neg">${pc(r.maxDD)}</td><td></td></tr>
+              <tr><td>Share of the portfolio priced here</td><td>${pl(r.coverage, 0)}</td><td></td></tr>
+            </tbody></table></div>
+            <div class="tw"><table class="tt yt"><thead><tr><th>Year</th><th>Copy</th><th>S&amp;P 500</th><th>Difference</th></tr></thead><tbody>
+              ${(r.years || []).slice().reverse().map(y => `<tr><td>${y.year}${y.partial ? ` <span class="sub">part</span>` : ""}</td><td class="${cls(y.ret)}">${pc(y.ret)}</td><td>${pc(y.bench)}</td><td class="${y.ret > y.bench ? "win" : "neg"}">${pc(y.ret - y.bench)}</td></tr>`).join("")}
+            </tbody></table></div>
+          </div>
+          <p class="note">Buys each filing's holdings on the first close after it was published (not at the quarter end, which nobody could know in time), weighted by reported value, and holds them until the next filing. Holdings without a price here are left out. US dollars, dividends included, before costs and tax. This is not the fund's own return, which also reflects things 13F doesn't show.</p>` : `<p class="note">Not enough priced filings to show a record yet.</p>`}
       </section>
-      <p class="note">${DISC}</p>`;
+
+      <section class="card sec"><h3>Quarter by quarter <span class="sub">last ${x.history.length} quarters</span></h3>
+        ${x.history.map(q => `<details class="q"><summary><b>${qtr(q.period)}</b> <span class="sub">filed ${fmtD(q.filed)} · ${q.counts.new} new, ${q.counts.added} added to, ${q.counts.reduced} reduced, ${q.counts.sold} sold${q.turnover != null ? ` · ${pl(q.turnover, 0)} of the portfolio changed` : ""}</span></summary>${["new", "added", "reduced", "sold"].map(k => q[k].length ? `<div><span class="lbl">${{ new: "New", added: "Added to", reduced: "Reduced", sold: "Sold out" }[k]}</span> ${q[k].map(h => esc(h.ticker || h.name)).join(", ")}${q.counts[k] > q[k].length ? `, +${q.counts[k] - q[k].length} more` : ""}</div>` : "").join("") || `<span class="sub">No significant changes.</span>`}</details>`).join("") || `<p class="note">Only one filing on record so far.</p>`}
+      </section>
+
+      <section class="card sec anchor" id="data"><h3>About the data</h3>
+        <p class="note">${DISC} Profiles were written by BullPulse from the public sources linked above. SEC filer: <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${x.cik}&type=13F&dateb=&owner=include&count=40" rel="noopener" target="_blank">CIK ${x.cik}</a>.</p>
+      </section>`;
     bindFollow(draw);
+    if ($("more")) $("more").onclick = () => { showAll = true; draw(); document.getElementById("holdings").scrollIntoView(); };
+    if ($("hq")) $("hq").oninput = e => { hq = e.target.value; const pos = e.target.selectionStart; draw(); const n = $("hq"); n.focus(); n.setSelectionRange(pos, pos); };
   };
   draw();
 }

@@ -1,0 +1,992 @@
+{
+ "buffett": {
+  "tags": [
+   "Value",
+   "Quality",
+   "Long-term"
+  ],
+  "based": "Omaha, Nebraska",
+  "founded": 1965,
+  "background": "Took control of Berkshire Hathaway, then a struggling textile company, in 1965 and turned it into a holding company that owns businesses outright and large stakes in listed companies. He stepped down as chief executive at the end of 2025 and remains chairman; Greg Abel, who has run Berkshire's non-insurance businesses since 2018, became chief executive in 2026.",
+  "approach": "Buys large, durable businesses with lasting competitive advantages and able management, at sensible prices, and holds them for many years.",
+  "known": [
+   "Berkshire's share price compounded at 19.9% a year from 1965 to 2024, against 10.4% for the S&P 500 with dividends (Berkshire's 2024 shareholder letter, as reported).",
+   "The 13F covers only Berkshire's US-listed shares, not the companies it owns outright or its cash."
+  ],
+  "note": "From 2026 these decisions are Berkshire's under Greg Abel, not Buffett's alone.",
+  "sources": [
+   {
+    "title": "Greg Abel succession (CNBC)",
+    "url": "https://www.cnbc.com/amp/2021/05/03/who-is-greg-abel-warren-buffetts-successor-at-berkshire-hathaway.html"
+   },
+   {
+    "title": "Buffett to retire as CEO at the end of 2025 (KTVU/AP)",
+    "url": "https://www.ktvu.com/news/warren-buffett-berkshire-hathaway-retiring-ceo"
+   },
+   {
+    "title": "Berkshire's 60-year record (NBC/CNBC)",
+    "url": "https://www.nbcdfw.com/news/business/money-report/warren-buffetts-return-tally-after-60-years-5502284/3832965/"
+   }
+  ]
+ },
+ "ackman": {
+  "tags": [
+   "Quality",
+   "Activist",
+   "Concentrated"
+  ],
+  "based": "New York",
+  "founded": 2004,
+  "background": "Born in 1966; Harvard College and Harvard Business School. Co-founded Gotham Partners in 1992 and founded Pershing Square in 2004.",
+  "approach": "Holds a handful of large, simple, predictable, high-quality companies, and sometimes campaigns for change from the outside or the board.",
+  "known": [
+   "Canadian Pacific (2011–12): won a proxy contest with about 90% of votes and replaced much of the leadership.",
+   "Herbalife: a $1 billion short announced in 2012, exited at a loss in 2018. Valeant: sold in 2017 at a substantial loss.",
+   "March 2020: $27 million of credit protection bought before the crash returned $2.6 billion in under a month.",
+   "Chipotle was a top holding from 2017 to 2024; Universal Music Group stake bought in 2021."
+  ],
+  "note": "Pershing Square also runs a London-listed fund, Pershing Square Holdings.",
+  "sources": [
+   {
+    "title": "Bill Ackman (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Bill_Ackman"
+   }
+  ]
+ },
+ "terry-smith": {
+  "tags": [
+   "Quality",
+   "Long-term",
+   "UK-based"
+  ],
+  "based": "London",
+  "founded": 2010,
+  "background": "Born in 1953. A top-rated bank analyst in the 1980s, author of Accounting for Growth (1992), then chief executive of Collins Stewart and Tullett Prebon before founding Fundsmith in London in 2010.",
+  "approach": "In Fundsmith's own words: buy good companies, don't overpay, then do nothing. That means high returns on capital, little debt, and very low trading.",
+  "known": [
+   "Accounting for Growth exposed accounting tricks and became a bestseller.",
+   "Fundsmith managed over £35bn by December 2022."
+  ],
+  "note": "The 13F shows only the US-listed part of Fundsmith's portfolio; its European and other holdings are not included.",
+  "sources": [
+   {
+    "title": "Terry Smith (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Terry_Smith_(businessman)"
+   },
+   {
+    "title": "Fundsmith (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Fundsmith"
+   }
+  ]
+ },
+ "nick-train": {
+  "tags": [
+   "Quality",
+   "Long-term",
+   "Concentrated",
+   "UK-based"
+  ],
+  "based": "London",
+  "founded": 2000,
+  "background": "Co-founded Lindsell Train in 2000 with Michael Lindsell, whom he met at GT Management.",
+  "approach": "Buy and hold: a small number of established companies with loyal customers, held for very long periods with little trading.",
+  "known": [
+   "Known for long-held stakes in brands such as Diageo, Burberry and Nintendo.",
+   "The UK Equity fund lost 6.1% in 2022; clients withdrew £2.6bn in 2024 after a spell of weak returns."
+  ],
+  "note": "The 13F shows only Lindsell Train's US-listed holdings; most of its UK and Japanese holdings are not included.",
+  "sources": [
+   {
+    "title": "Lindsell Train (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Lindsell_Train"
+   }
+  ]
+ },
+ "klarman": {
+  "tags": [
+   "Value",
+   "Contrarian"
+  ],
+  "based": "Boston, Massachusetts",
+  "founded": 1982,
+  "background": "Born in 1957; Cornell and Harvard Business School. Worked at the Mutual Shares fund, then founded Baupost in 1982 with $27 million. Wrote Margin of Safety (1991).",
+  "approach": "Benjamin Graham-style value investing: buys unpopular assets well below their value, including distressed debt, and often holds a lot of cash.",
+  "known": [
+   "Bought CIT Group bonds at 65 cents on the dollar in 2009; the fund finished 2009 up 27%.",
+   "Often holds 30–50% in cash, so the 13F shows only part of the picture."
+  ],
+  "note": "Much of Baupost's money is in bonds, private deals and cash, which the 13F does not show.",
+  "sources": [
+   {
+    "title": "Seth Klarman (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Seth_Klarman"
+   }
+  ]
+ },
+ "akre": {
+  "tags": [
+   "Quality",
+   "Long-term",
+   "Concentrated"
+  ],
+  "based": "Middleburg, Virginia",
+  "founded": 1989,
+  "background": "Entered the securities business in 1968 and founded Akre Capital Management in 1989; the firm has been based in Middleburg, Virginia since the early 2000s.",
+  "approach": "The 'three-legged stool': a strong business model with high returns, talented and honest managers, and ways to reinvest profits at high rates, bought at a fair price.",
+  "known": [
+   "Long-held positions have included American Tower, O'Reilly Automotive, Mastercard and Markel.",
+   "The Akre Focus Fund returned more than 15% a year from its 2009 launch to July 2022, against 13.7% for the S&P 500."
+  ],
+  "note": "John Neff and Chris Cerrone manage the Akre Focus Fund.",
+  "sources": [
+   {
+    "title": "Charles T. Akre (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Charles_T._Akre"
+   },
+   {
+    "title": "MarketScreener (2022)",
+    "url": "https://uk.marketscreener.com/news/latest/Legendary-investor-Charles-T-Akre-42619657/"
+   }
+  ]
+ },
+ "tepper": {
+  "tags": [
+   "Value",
+   "Contrarian"
+  ],
+  "based": "Miami Beach, Florida",
+  "founded": null,
+  "background": "Born in 1957 in Pittsburgh; University of Pittsburgh and Carnegie Mellon (the Tepper School of Business is named after him). Founded Appaloosa Management. Owns the Carolina Panthers.",
+  "approach": "Opportunistic: buys what others are selling in a panic, from distressed debt to out-of-favour shares, and changes positions often.",
+  "known": [
+   "Earned $2.2 billion in the 2012 tax year, the most of any hedge fund manager that year (Institutional Investor's Alpha).",
+   "Has said he plans eventually to turn Appaloosa into a family office."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "David Tepper (Wikiwand)",
+    "url": "https://wikiwand.com/en/David_Tepper"
+   }
+  ]
+ },
+ "druckenmiller": {
+  "tags": [
+   "Macro",
+   "Concentrated"
+  ],
+  "based": "New York",
+  "founded": 1981,
+  "background": "Born in 1953. Founded Duquesne Capital in 1981 and also managed George Soros's Quantum Fund from 1988 to 2000. Closed Duquesne to outside money in 2010 and now invests his own family's money.",
+  "approach": "Top-down: forms a view of the economy and markets, then makes large, concentrated bets that can change quickly, across stocks, bonds and currencies.",
+  "known": [
+   "With Soros, bet against the British pound in 1992 (Black Wednesday), reputedly making over $1 billion.",
+   "Duquesne is reported to have averaged about 30% a year without a losing year."
+  ],
+  "note": "A family office: the 13F shows only US shares, not his bond, currency or futures positions.",
+  "sources": [
+   {
+    "title": "Stanley Druckenmiller (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Stanley_Druckenmiller"
+   }
+  ]
+ },
+ "li-lu": {
+  "tags": [
+   "Value",
+   "Long-term",
+   "Concentrated"
+  ],
+  "based": "Seattle, Washington",
+  "founded": 1997,
+  "background": "Born in 1966 in Tangshan, China; a student leader in the 1989 Tiananmen Square protests. Earned a BA, MBA and law degree from Columbia at the same time in 1996 and founded Himalaya Capital in 1997. Met Charlie Munger in 2003, who invested with him.",
+  "approach": "Very concentrated, long-term value investing in companies that can compound for decades, with an emphasis on accurate and complete information.",
+  "known": [
+   "Owns about 2.5% of the Chinese car and battery maker BYD through his partnership."
+  ],
+  "note": "The 13F shows only US-listed holdings; his Asian holdings such as BYD are not included.",
+  "sources": [
+   {
+    "title": "Li Lu (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Li_Lu"
+   },
+   {
+    "title": "Himalaya Capital (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Himalaya_Capital"
+   }
+  ]
+ },
+ "hohn": {
+  "tags": [
+   "Quality",
+   "Activist",
+   "Concentrated",
+   "UK-based"
+  ],
+  "based": "London",
+  "founded": 2003,
+  "background": "Born in 1966 in Surrey; University of Southampton and Harvard Business School. Worked at Apax Partners and Perry Capital before founding TCI (The Children's Investment Fund Management) in 2003. The Children's Investment Fund Foundation is one of the largest charities in the UK.",
+  "approach": "A few dominant, high-margin businesses held for years, with public pressure on management where it sees waste; also campaigns for companies to put climate plans to shareholder votes.",
+  "known": [
+   "Wrote to Alphabet in 2022 and 2023 urging cost and headcount cuts."
+  ],
+  "note": "The 13F shows only TCI's US-listed holdings; its large European holdings are not included.",
+  "sources": [
+   {
+    "title": "Chris Hohn (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Chris_Hohn"
+   }
+  ]
+ },
+ "russo": {
+  "tags": [
+   "Quality",
+   "Long-term"
+  ],
+  "based": "Lancaster, Pennsylvania",
+  "founded": 1989,
+  "background": "Born in 1955; Dartmouth, then law and business degrees from Stanford. Worked on the Sequoia Fund at Ruane, Cunniff & Goldfarb, and joined Gardner Investments (now Gardner Russo & Quinn) in 1989, where he runs the Semper Vic partnership.",
+  "approach": "Global food, drink, tobacco and media brands, often family-controlled, run by managers willing to accept short-term costs for long-term growth.",
+  "known": [
+   "Semper Vic returned more than 12% a year from 1990 to 2016, against about 9% for the S&P 500.",
+   "Bought Weetabix in 1989 at under £6 a share; it was sold to private equity in 2003 for £54."
+  ],
+  "note": "Much of the portfolio is in non-US shares, which the 13F does not include.",
+  "sources": [
+   {
+    "title": "Thomas Russo (MoneyWeek)",
+    "url": "https://moneyweek.com/464373/thomas-russo-the-worlds-greatest-investors"
+   }
+  ]
+ },
+ "kantesaria": {
+  "tags": [
+   "Quality",
+   "Concentrated",
+   "Long-term"
+  ],
+  "based": "Pennsylvania",
+  "founded": 2007,
+  "background": "Graduated from Harvard Medical School, then worked as a management consultant at McKinsey and in biotech venture capital before founding Valley Forge Capital Management in 2007 with $126,000.",
+  "approach": "Eight to twelve companies at a time, mostly monopolies or oligopolies with predictable earnings and strong organic growth; avoids cheap but poor businesses.",
+  "known": [
+   "Holdings have included Fair Isaac (FICO), Moody's, Visa and Mastercard.",
+   "Grew from $126,000 in 2007 to over $500 million by 2019."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Business Insider (2019)",
+    "url": "https://www.businessinsider.in/a-hedge-fund-manager-who-turned-126000-into-500-million-explains-his-warren-buffett-esque-investment-process-and-why-hes-not-concerned-with-todays-stock-market-valuation/amp_articleshow/71339622.cms"
+   },
+   {
+    "title": "Hedge Fund Alpha interview",
+    "url": "https://hedgefundalpha.com/profiles/interview-with-dev-kantesaria-valley-forge-capital-management/"
+   }
+  ]
+ },
+ "dorsey": {
+  "tags": [
+   "Quality",
+   "Concentrated"
+  ],
+  "based": "Chicago, Illinois",
+  "founded": null,
+  "background": "Joined Morningstar in 1998 and became its director of equity research, leading over 100 analysts and helping create its 'economic moat' ratings. Author of The Five Rules for Successful Stock Investing and The Little Book That Builds Wealth. Later founded Dorsey Asset Management.",
+  "approach": "A concentrated portfolio of companies with wide economic moats (lasting competitive advantages), with close attention to how they reinvest the cash those moats produce.",
+  "known": [],
+  "note": "",
+  "sources": [
+   {
+    "title": "CFA Institute (2017)",
+    "url": "https://rpc.cfainstitute.org/en/research/multimedia/2017/buying-companies-with-economic-moats-with-pat-dorsey"
+   },
+   {
+    "title": "Captiva-Sanibel news (2011)",
+    "url": "https://www.captivasanibel.com/news/business/2011/03/dorsey-joins-sanibel-captiva-trust-company/"
+   }
+  ]
+ },
+ "gayner": {
+  "tags": [
+   "Quality",
+   "Long-term",
+   "Value"
+  ],
+  "based": "Virginia",
+  "founded": null,
+  "background": "University of Virginia graduate and former PricewaterhouseCoopers accountant. Joined Markel in 1990, became its chief investment officer, was co-chief executive for over six years and has been sole chief executive since January 2023. Also a director of Coca-Cola and Graham Holdings.",
+  "approach": "Invests Markel's insurance money in profitable businesses with good returns and modest debt, run by honest and talented managers, with room to reinvest, at fair prices, and holds them for decades.",
+  "known": [],
+  "note": "This is the investment portfolio of Markel Group, an insurance and holding company.",
+  "sources": [
+   {
+    "title": "Virginia Business (2023)",
+    "url": "https://virginiabusiness.com/article/finance-insurance-banking-financial-planning-investments-venture-capital-2023-thomas-s-gayner/"
+   },
+   {
+    "title": "Markel-Eagle",
+    "url": "https://www.markel-eagle.com/tom-gayner"
+   }
+  ]
+ },
+ "burry": {
+  "tags": [
+   "Contrarian",
+   "Value",
+   "Concentrated"
+  ],
+  "based": "California",
+  "founded": 2013,
+  "background": "Born in 1971; a medical doctor (Vanderbilt) who began writing about value investing online in 1996. Founded Scion Capital in 2000, closed it in 2008, and reopened as Scion Asset Management in 2013.",
+  "approach": "Deep-value and contrarian: large bets against the crowd, including via options, and frequent changes of position.",
+  "known": [
+   "Bet against US subprime mortgages from 2005 with credit default swaps, making about $100 million for himself and over $700 million for investors; told in The Big Short.",
+   "Disclosed put options on Nvidia and Palantir in 2025, then withdrew Scion from SEC registration in November 2025, effectively closing the fund."
+  ],
+  "note": "No new 13F filings are expected after Scion's 2025 deregistration; the last one covers September 2025.",
+  "sources": [
+   {
+    "title": "Michael Burry (Wikipedia mirror, 2026)",
+    "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/Michael_Burry"
+   },
+   {
+    "title": "Burry deregisters Scion (Business Standard)",
+    "url": "https://www.business-standard.com/amp/world-news/michael-burry-of-big-short-fame-deregisters-scion-asset-management-125111301638_1.html"
+   }
+  ]
+ },
+ "nygren": {
+  "tags": [
+   "Value",
+   "Contrarian"
+  ],
+  "based": "Chicago, Illinois",
+  "founded": null,
+  "background": "Studied accounting at the University of Minnesota and finance at Wisconsin, then joined Harris Associates, the firm behind the Oakmark Funds, after a spell at Northwestern Mutual. Director of research, then manager of Oakmark Select from 1996, the Oakmark Fund from 2000 and Oakmark Global Select from 2006.",
+  "approach": "Buys companies trading well below their intrinsic value, often where a short-term problem hides a strong long-term business.",
+  "known": [
+   "Oakmark Select returned 12.8% a year from 1996 to 2017, against 8.1% for the S&P 500 (MoneyWeek, 2017)."
+  ],
+  "note": "Harris Associates runs several funds and managers; the 13F combines them all.",
+  "sources": [
+   {
+    "title": "Bill Nygren (MoneyWeek)",
+    "url": "https://moneyweek.com/467537/the-worlds-greatest-investors-bill-nygren"
+   },
+   {
+    "title": "Oakmark",
+    "url": "https://oakmark.com/who-we-are/our-team/bill-nygren"
+   }
+  ]
+ },
+ "laffont": {
+  "tags": [
+   "Growth",
+   "Technology"
+  ],
+  "based": "New York",
+  "founded": 1999,
+  "background": "Born in Belgium in 1967; computer science at MIT, then McKinsey and Tiger Management (from 1996), where he covered telecoms and technology. Founded Coatue in 1999, one of the 'Tiger Cubs' who learned under Julian Robertson.",
+  "approach": "Technology, media and telecoms, in both listed shares and private companies.",
+  "known": [
+   "Has backed listed companies such as Amazon, Meta, Microsoft, Nvidia and TSMC, and private ones such as ByteDance, DoorDash and OpenAI."
+  ],
+  "note": "Coatue's private investments are not in the 13F.",
+  "sources": [
+   {
+    "title": "Philippe Laffont (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Philippe_Laffont"
+   }
+  ]
+ },
+ "greenblatt": {
+  "tags": [
+   "Value",
+   "Systematic"
+  ],
+  "based": "New York",
+  "founded": 1985,
+  "background": "Born in 1957; Wharton. Founded Gotham Capital in 1985 with about $7 million, returned all outside money in 1995, and taught value investing at Columbia Business School for over 20 years. Wrote You Can Be a Stock Market Genius (1997) and The Little Book That Beats the Market (2005).",
+  "approach": "The 'magic formula': rank companies on how cheap they are (earnings yield) and how good they are (return on capital), and own many of the best-ranked. Gotham Asset Management applies this systematically across long and short funds.",
+  "known": [
+   "Gotham Capital returned 50% a year before fees (30% after) from 1985 to 1994."
+  ],
+  "note": "Gotham holds well over a thousand stocks and also sells short, which the 13F does not show; read the holdings as a rules-based basket, not a list of conviction picks.",
+  "sources": [
+   {
+    "title": "Joel Greenblatt (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Joel_Greenblatt"
+   }
+  ]
+ },
+ "halvorsen": {
+  "tags": [
+   "Growth",
+   "Quality"
+  ],
+  "based": "Greenwich, Connecticut",
+  "founded": 1999,
+  "background": "Born in Norway in 1961; led a Norwegian navy special forces unit, then studied at Williams College and Stanford. Director of equities at Tiger Management, then co-founded Viking Global in 1999 with David Ott and Brian Olson.",
+  "approach": "Fundamental stock-picking across sectors, long and short.",
+  "known": [],
+  "note": "The 13F shows Viking's long positions only, not its short positions.",
+  "sources": [
+   {
+    "title": "Ole Andreas Halvorsen (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Ole_Andreas_Halvorsen"
+   }
+  ]
+ },
+ "sundheim": {
+  "tags": [
+   "Growth",
+   "Concentrated"
+  ],
+  "based": "New York",
+  "founded": 2018,
+  "background": "Chief investment officer of Viking Global before founding D1 Capital Partners in July 2018 with more than $500 million of his own money.",
+  "approach": "Long and short stock-picking with medium- to long-term horizons, plus late-stage private companies.",
+  "known": [
+   "Returned 60% in 2020, then lost about $4 billion (20% of capital) in the January 2021 GameStop short squeeze; recovered most of it by April.",
+   "Private investments have included Robinhood and Instacart."
+  ],
+  "note": "The 13F shows long positions only, not short positions or private holdings.",
+  "sources": [
+   {
+    "title": "D1 Capital Partners (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/D1_Capital_Partners"
+   }
+  ]
+ },
+ "dalio": {
+  "tags": [
+   "Macro",
+   "Systematic"
+  ],
+  "based": "Westport, Connecticut",
+  "founded": null,
+  "background": "Founded Bridgewater Associates, one of the world's largest hedge funds. Stepped down as chief executive in 2017, handed control to the next generation in 2022, and in 2025 sold his remaining stake and left the board.",
+  "approach": "Macro investing: positions across bonds, currencies, commodities and shares based on how economies work, often through systematic rules.",
+  "known": [],
+  "note": "These holdings are Bridgewater's, not Dalio's: he has no role there since 2025. The 13F shows only a small part of its strategy (US shares).",
+  "sources": [
+   {
+    "title": "Dalio exits Bridgewater (Hedgeweek)",
+    "url": "https://hedgeweek.com/news/bridgewater-founder-dalio-fully-exits-hedge-fund-giant"
+   }
+  ]
+ },
+ "coleman": {
+  "tags": [
+   "Growth",
+   "Technology"
+  ],
+  "based": "New York",
+  "founded": 2001,
+  "background": "Born in 1975; Williams College. Joined Julian Robertson's Tiger Management in 1997 and was given over $25 million to manage when it closed in 2000, starting Tiger Global.",
+  "approach": "Technology and internet companies in the US and China, in listed shares and early private stakes.",
+  "known": [
+   "The hedge fund rose 48% in 2020, then fell 34% in the first three months of 2022 as technology shares slumped."
+  ],
+  "note": "Tiger Global's private investments are not in the 13F.",
+  "sources": [
+   {
+    "title": "Chase Coleman III (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Chase_Coleman_III"
+   },
+   {
+    "title": "BNN Bloomberg (2022)",
+    "url": "https://www.bnnbloomberg.ca/tiger-global-s-34-tumble-brings-coleman-s-firm-back-to-earth-1.1746665"
+   }
+  ]
+ },
+ "mandel": {
+  "tags": [
+   "Growth",
+   "Quality"
+  ],
+  "based": "Greenwich, Connecticut",
+  "founded": 1997,
+  "background": "Born in 1956; Dartmouth and Harvard. A consumer analyst at Goldman Sachs, then at Tiger Management, before founding Lone Pine Capital in 1997.",
+  "approach": "Fundamental, research-heavy stock-picking.",
+  "known": [],
+  "note": "Mandel stopped managing Lone Pine's investments in 2019; the holdings are chosen by the firm's other partners.",
+  "sources": [
+   {
+    "title": "Stephen Mandel (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Stephen_Mandel_(hedge_fund_manager)"
+   }
+  ]
+ },
+ "icahn": {
+  "tags": [
+   "Activist",
+   "Concentrated",
+   "Contrarian"
+  ],
+  "based": "Sunny Isles Beach, Florida",
+  "founded": 1968,
+  "background": "Born in 1936; Princeton. Founded Icahn & Co. in 1968. Became known as a corporate raider after taking over TWA in 1985. Has not managed outside money since 2011; invests through Icahn Enterprises.",
+  "approach": "Takes large stakes in companies he thinks are badly run and pushes for board seats, sales, buybacks or break-ups.",
+  "known": [
+   "Texaco (1989): about $700 million profit. Apple (2013) and Netflix (2012–13) stakes.",
+   "In May 2023 a Hindenburg Research report on Icahn Enterprises sent its shares down 20% in a day."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Carl Icahn (Wikiwand)",
+    "url": "https://wikiwand.com/en/Carl_Icahn"
+   }
+  ]
+ },
+ "soros": {
+  "tags": [
+   "Macro"
+  ],
+  "based": "New York",
+  "founded": 1970,
+  "background": "George Soros founded Soros Fund Management in 1970 and the Quantum Fund with Jim Rogers in 1973. Stanley Druckenmiller managed Quantum from 1988 to 2000. Since 2011 it has been a family office; Dawn Fitzpatrick has been chief investment officer since 2017.",
+  "approach": "Macro investing across currencies, bonds and shares, plus investments with outside managers.",
+  "known": [
+   "Made about $1.8 billion betting against the British pound in September 1992.",
+   "Reported to have averaged about 20% a year from 1973 to 2010."
+  ],
+  "note": "These are the family office's holdings, chosen by its investment team rather than by George Soros himself. The 13F shows only US shares.",
+  "sources": [
+   {
+    "title": "Soros Fund Management (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Soros_Fund_Management"
+   }
+  ]
+ },
+ "sequoia": {
+  "tags": [
+   "Quality",
+   "Long-term",
+   "Concentrated"
+  ],
+  "based": "New York",
+  "founded": 1969,
+  "background": "Ruane, Cunniff & Goldfarb was founded in 1969. Bill Ruane and Rick Cunniff launched the Sequoia Fund in 1970 to take Warren Buffett's former partnership investors when Buffett closed it. A four-person committee has run the fund since 2018.",
+  "approach": "Concentrated holdings in high-quality businesses bought at reasonable prices, held for a long time.",
+  "known": [
+   "Returned 14.65% a year from 1970 to 2015, against 10.93% for the S&P 500.",
+   "Valeant grew to over 30% of the fund by 2015; its collapse cut Sequoia 22% and led to leadership changes."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Ruane, Cunniff & Goldfarb (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb"
+   }
+  ]
+ },
+ "marks": {
+  "tags": [
+   "Value",
+   "Credit",
+   "Contrarian"
+  ],
+  "based": "Los Angeles, California",
+  "founded": 1995,
+  "background": "Born in 1946; Wharton and Chicago. Ran high-yield and distressed-debt funds at Citicorp and TCW, then co-founded Oaktree in 1995. Brookfield bought 62% of Oaktree in 2019. Known for his memos to clients and books The Most Important Thing (2011) and Mastering the Market Cycle (2018).",
+  "approach": "Mostly credit: high-yield bonds, distressed debt and private equity, bought when others are forced to sell.",
+  "known": [
+   "Raised $10.9 billion for distressed investments during the 2008 financial crisis, then the largest distressed debt fund."
+  ],
+  "note": "Oaktree is mainly a bond and private-credit investor; the 13F shows only the small part of its money held in US shares.",
+  "sources": [
+   {
+    "title": "Howard Marks (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Howard_Marks_(investor)"
+   }
+  ]
+ },
+ "valueact": {
+  "tags": [
+   "Activist",
+   "Concentrated",
+   "Quality"
+  ],
+  "based": "San Francisco, California",
+  "founded": 2000,
+  "background": "ValueAct was founded by Jeffrey Ubben in 2000. Mason Morfit became chief executive in 2020 and served on Microsoft's board from 2014 to 2017.",
+  "approach": "Large stakes in a few companies, usually working privately with boards rather than in public fights.",
+  "known": [
+   "Microsoft (2013–14): a roughly $2 billion stake and a board seat. Salesforce (2023): Morfit joined the board."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "ValueAct Capital (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/ValueAct_Capital"
+   }
+  ]
+ },
+ "abrams": {
+  "tags": [
+   "Value",
+   "Concentrated",
+   "Long-term"
+  ],
+  "based": "Boston, Massachusetts",
+  "founded": 1999,
+  "background": "University of Pennsylvania (history). Joined Seth Klarman's Baupost Group in 1988, then founded Abrams Capital in Boston in 1999.",
+  "approach": "Concentrated value investing without borrowing, often with a large cash reserve.",
+  "known": [
+   "Reported to have averaged 19% a year after fees (Investopedia, 2015)."
+  ],
+  "note": "Abrams also invests in bonds and private deals and holds a lot of cash, none of which the 13F shows.",
+  "sources": [
+   {
+    "title": "GuruFocus",
+    "url": "https://www.gurufocus.com/news/618134"
+   }
+  ]
+ },
+ "loeb": {
+  "tags": [
+   "Activist",
+   "Event-driven"
+  ],
+  "based": "New York",
+  "founded": 1995,
+  "background": "Born in 1961; Columbia. Worked in private equity, risk arbitrage and distressed debt before founding Third Point in 1995 with $3.3 million.",
+  "approach": "Event-driven and value-oriented, often buying into troubled companies and writing pointed public letters to their boards.",
+  "known": [
+   "Yahoo (2012): joined the board after challenging the chief executive's CV. Sony (2013) and Nestlé (2017) campaigns.",
+   "Returned about 16% a year from December 1996 to December 2015."
+  ],
+  "note": "The 13F shows long US share positions only, not Third Point's credit or short positions.",
+  "sources": [
+   {
+    "title": "Daniel S. Loeb (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Daniel_S._Loeb"
+   }
+  ]
+ },
+ "greenberg": {
+  "tags": [
+   "Value",
+   "Concentrated"
+  ],
+  "based": "New York",
+  "founded": 2009,
+  "background": "Born in 1947, son of the baseball player Hank Greenberg. Co-founded Chieftain Capital in 1984 with John Shapiro and started Brave Warrior Advisors after they split in 2009.",
+  "approach": "Concentrated value: rarely more than ten companies, each at least 5% of the portfolio, demanding a high return on the price paid.",
+  "known": [
+   "Chieftain returned about 18% a year from 1984 to 2009 against the market's 12% (before fees).",
+   "Was hurt by the collapse of Valeant in 2015–16."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Glenn Greenberg (MoneyWeek)",
+    "url": "https://moneyweek.com/457887/glenn-greenberg-the-worlds-greatest-investors"
+   }
+  ]
+ },
+ "starboard": {
+  "tags": [
+   "Activist"
+  ],
+  "based": "New York",
+  "founded": 2002,
+  "background": "Starboard Value was founded in 2002 by Jeff Smith and Mark Mitchell inside Ramius Capital, and became independent in 2011.",
+  "approach": "Buys stakes in underperforming companies and pushes for better margins, sales of businesses, or new management, sometimes replacing whole boards.",
+  "known": [
+   "Darden Restaurants (2014): replaced the entire board with a stake below 10%; the shares rose almost 60% afterwards.",
+   "Returned 15.5% a year from 2002 to 2014, with 84% of campaigns profitable."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Starboard Value (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Starboard_Value"
+   }
+  ]
+ },
+ "peltz": {
+  "tags": [
+   "Activist",
+   "Concentrated"
+  ],
+  "based": "New York",
+  "founded": 2005,
+  "background": "Born in 1942. Built businesses from his family's food wholesaler, then co-founded Trian in 2005 with Peter May and Ed Garden.",
+  "approach": "Takes large stakes in big consumer and industrial companies and seeks board seats to push for operational changes.",
+  "known": [
+   "Board seats at companies including Mondelēz, Ingersoll Rand and Unilever; lost a 2024 bid for a Disney board seat.",
+   "Holds about 16% of Wendy's."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Nelson Peltz (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Nelson_Peltz"
+   }
+  ]
+ },
+ "einhorn": {
+  "tags": [
+   "Value",
+   "Contrarian"
+  ],
+  "based": "New York",
+  "founded": 1996,
+  "background": "Born in 1968; Cornell. Founded Greenlight Capital in May 1996 with $900,000. Since 2024 Greenlight's holdings are reported under DME Capital Management.",
+  "approach": "Value-oriented long positions, combined with short selling of companies he believes are overvalued or misreporting.",
+  "known": [
+   "Publicly shorted Allied Capital (2002) and Lehman Brothers (2008, before its collapse).",
+   "Averaged 26% a year in its first decade, but lost money from 2014 to 2018."
+  ],
+  "note": "His short positions, an important part of his approach, are not in the 13F.",
+  "sources": [
+   {
+    "title": "David Einhorn (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/David_Einhorn_(hedge_fund_manager)"
+   }
+  ]
+ },
+ "mclemore": {
+  "tags": [
+   "Value",
+   "Contrarian",
+   "Long-term"
+  ],
+  "based": "Baltimore, Maryland",
+  "founded": 2020,
+  "background": "Worked for years alongside Bill Miller and founded Patient Capital Management in 2020 within Miller Value Partners; it took over the business they had run together when Miller retired.",
+  "approach": "Contrarian value with a long horizon: willing to own controversial companies and to hold winners for a long time.",
+  "known": [],
+  "note": "",
+  "sources": [
+   {
+    "title": "Hedge Fund Alpha (2025)",
+    "url": "https://hedgefundalpha.com/value-invest-new-york-2025-samantha-mclemore"
+   }
+  ]
+ },
+ "rochon": {
+  "tags": [
+   "Quality",
+   "Long-term",
+   "Outside US"
+  ],
+  "based": "Montreal, Canada",
+  "founded": 1998,
+  "background": "An engineer who began managing money as an analyst in 1996, then founded Giverny Capital in Montreal in 1998.",
+  "approach": "A small number of high-quality, market-leading companies with owner-managers, bought at about half their expected value in five years and held for about seven years on average.",
+  "known": [
+   "Reported to have returned about 14.5% a year since 1998."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Quartr (2023, updated 2025)",
+    "url": "https://quartr.com/insights/investment-strategy/francois-rochon-and-the-art-of-investing"
+   }
+  ]
+ },
+ "watsa": {
+  "tags": [
+   "Value",
+   "Contrarian",
+   "Outside US"
+  ],
+  "based": "Toronto, Canada",
+  "founded": 1985,
+  "background": "Born in 1950 in Hyderabad, India; IIT Madras and the Ivey Business School. In 1985 took over a small Canadian insurer and renamed it Fairfax Financial Holdings. Often called the 'Canadian Warren Buffett'.",
+  "approach": "Value investing of an insurance group's money, sometimes with large hedges against market falls.",
+  "known": [
+   "Agreed in 2013 to a $4.7 billion offer to buy BlackBerry (it did not go ahead)."
+  ],
+  "note": "This is Fairfax's portfolio; much of it is in bonds and non-US companies, which the 13F does not show.",
+  "sources": [
+   {
+    "title": "Prem Watsa (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Prem_Watsa"
+   }
+  ]
+ },
+ "berkowitz": {
+  "tags": [
+   "Value",
+   "Concentrated",
+   "Contrarian"
+  ],
+  "based": "Miami, Florida",
+  "founded": 1997,
+  "background": "University of Massachusetts Amherst. Worked at Merrill Lynch, Lehman Brothers and Smith Barney before founding Fairholme in 1997.",
+  "approach": "Extremely concentrated contrarian value, at times with most of the fund in a single company.",
+  "known": [
+   "Named Morningstar's Domestic-Stock Fund Manager of the Decade in 2009.",
+   "Joined the board of St. Joe Company, a long-time large holding, in 2010."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Bruce Berkowitz (Wikipedia mirror)",
+    "url": "https://wiki.neonvagabond.xyz/content/wikipedia_en_all_maxi_2024-01/A/Bruce_Berkowitz"
+   }
+  ]
+ },
+ "weitz": {
+  "tags": [
+   "Value",
+   "Quality"
+  ],
+  "based": "Omaha, Nebraska",
+  "founded": 1983,
+  "background": "Carleton College (1970). After a decade as an analyst and portfolio manager in Omaha, founded Wallace R. Weitz & Company there in 1983. A Berkshire Hathaway shareholder for more than 35 years.",
+  "approach": "Values a business like an owner, as the present value of its future cash, and favours good management and capital allocation; increasingly willing to pay more for higher-quality businesses.",
+  "known": [
+   "Reported to have returned about 14% a year over three decades, against 11% for the S&P 500."
+  ],
+  "note": "",
+  "sources": [
+   {
+    "title": "Hedge Fund Alpha",
+    "url": "https://hedgefundalpha.com/wally-weitz/"
+   }
+  ]
+ },
+ "tweedy": {
+  "tags": [
+   "Value"
+  ],
+  "based": "Stamford, Connecticut",
+  "founded": 1920,
+  "background": "Founded in 1920 by Bill Tweedy, who shared an office building with Benjamin Graham. Warren Buffett used the firm as his broker in the 1950s and 1960s and bought his first Berkshire shares through it. Affiliated Managers Group bought 70% of the firm in 1997.",
+  "approach": "Classic Graham-style value: low price to book value and earnings, insider buying, sharp price falls, smaller companies.",
+  "known": [
+   "Buffett wrote that the firm beat the Dow and S&P 500 by wide margins from 1966 to 1982."
+  ],
+  "note": "Much of Tweedy, Browne's money is in non-US shares, which the 13F does not include.",
+  "sources": [
+   {
+    "title": "Tweedy, Browne (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Tweedy,_Browne"
+   }
+  ]
+ },
+ "bloomstran": {
+  "tags": [
+   "Value",
+   "Quality",
+   "Concentrated"
+  ],
+  "based": null,
+  "founded": null,
+  "background": "University of Colorado. A portfolio manager at UMB Investment Advisors before becoming president and chief investment officer of Semper Augustus Investments Group in 1998. Known for long annual letters, including detailed analysis of Berkshire Hathaway.",
+  "approach": "Concentrated holdings in quality businesses bought at prices that leave a margin of safety.",
+  "known": [],
+  "note": "",
+  "sources": [
+   {
+    "title": "The Wall Street Transcript",
+    "url": "https://www.twst.com/bio/christopher-p-bloomstran/"
+   }
+  ]
+ },
+ "miller": {
+  "tags": [
+   "Value",
+   "Contrarian",
+   "Growth"
+  ],
+  "based": "Baltimore, Maryland",
+  "founded": null,
+  "background": "Born in 1950; Washington and Lee University; served in the US Army. Ran the Legg Mason Value Trust, which beat the S&P 500 for 15 years in a row (1991–2005), then lost heavily in 2008. Left Legg Mason in 2016 and ran Miller Value Partners.",
+  "approach": "Value investing that also buys out-of-favour growth companies others think are too expensive.",
+  "known": [
+   "An early and large investor in Amazon, and later in Bitcoin."
+  ],
+  "note": "Miller has retired from managing money day to day; Samantha McLemore runs Patient Capital, the successor business.",
+  "sources": [
+   {
+    "title": "Bill Miller (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Bill_Miller_(investor)"
+   }
+  ]
+ },
+ "vinall": {
+  "tags": [
+   "Quality",
+   "Long-term",
+   "Concentrated",
+   "Outside US"
+  ],
+  "based": "Switzerland",
+  "founded": 2008,
+  "background": "A former telecoms analyst at DZ Bank in Frankfurt who launched the Business Owner Fund in 2008 (its tenth anniversary was in October 2018).",
+  "approach": "A few businesses run by managers he trusts, held for the long term; he sees management as the main driver of outcomes.",
+  "known": [],
+  "note": "",
+  "sources": [
+   {
+    "title": "RV Capital 10-year letter (2018)",
+    "url": "https://acquirersmultiple.com/2018/10/robert-vinall-rv-capital-10-year-anniversary-letter"
+   }
+  ]
+ },
+ "pabrai": {
+  "tags": [
+   "Value",
+   "Concentrated"
+  ],
+  "based": "Irvine, California",
+  "founded": 1999,
+  "background": "Born in 1964 in Mumbai; Clemson University. Founded the IT firm TransTech in 1991 and sold it in 2000, then started Pabrai Investment Funds in 1999. Wrote The Dhandho Investor. With Guy Spier, bid $650,100 for a charity lunch with Warren Buffett in 2007.",
+  "approach": "Openly 'clones' the ideas of other value investors and makes a few large, low-downside bets.",
+  "known": [],
+  "note": "Much of his money has been in non-US shares, which the 13F does not include.",
+  "sources": [
+   {
+    "title": "Mohnish Pabrai (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Mohnish_Pabrai"
+   }
+  ]
+ },
+ "chou": {
+  "tags": [
+   "Value",
+   "Contrarian",
+   "Outside US"
+  ],
+  "based": "Toronto, Canada",
+  "founded": null,
+  "background": "Left school after Grade 12 and worked as a telephone technician; started an investment club in 1981 that became the Chou Associates Fund. Named Canada's fund manager of the decade in 2004.",
+  "approach": "Looks for bargains and keeps discipline; if there are no bargains, stays in cash.",
+  "known": [],
+  "note": "",
+  "sources": [
+   {
+    "title": "Ivey Business School",
+    "url": "https://ivey.uwo.ca/bengrahaminvesting/resources/interviews-notes/francis-chou"
+   }
+  ]
+ },
+ "spier": {
+  "tags": [
+   "Value",
+   "Quality",
+   "Long-term",
+   "Outside US"
+  ],
+  "based": "Zurich, Switzerland",
+  "founded": null,
+  "background": "Born in 1966 in South Africa; Oxford (PPE) and Harvard Business School. Founded the Aquamarine Fund and later moved to Zurich. Wrote The Education of a Value Investor (2014).",
+  "approach": "A small, rarely changed portfolio of high-quality companies, in the Buffett tradition.",
+  "known": [],
+  "note": "",
+  "sources": [
+   {
+    "title": "Guy Spier (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Guy_Spier"
+   }
+  ]
+ }
+}

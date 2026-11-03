@@ -290,3 +290,31 @@ class ThirteenFTest(unittest.TestCase):
         self.assertAlmostEqual(r["total"], 0.2, places=6)   # 10 -> 12, bought on the first close after filing
         self.assertAlmostEqual(r["coverage"], 0.5)
         self.assertEqual(I.month_ends("2024-01-03", "2024-03-01"), ["2024-01-31", "2024-02-29"])
+    def test_patterns(self):
+        import investors as I
+        # a 10-for-1 split is not a purchase
+        a, b = {"shares": 100, "value": 10000}, {"shares": 1000, "value": 11000}
+        self.assertEqual(I.split_factor(a, b), 10)
+        self.assertAlmostEqual(I.share_change(a, b), 0.0)
+        self.assertAlmostEqual(I.share_change({"shares": 100, "value": 100}, {"shares": 150, "value": 160}), 0.5)
+        # money leaving the fund (every holding cut alike) is not trading; switching is
+        prev = {"A": {"shares": 100, "value": 500}, "B": {"shares": 100, "value": 500}}
+        out = {"A": {"shares": 50, "value": 250}, "B": {"shares": 50, "value": 250}}
+        self.assertAlmostEqual(I.turnover(prev, out), 0.0)
+        swap = {"A": {"shares": 100, "value": 500}, "C": {"shares": 10, "value": 500}}
+        self.assertAlmostEqual(I.turnover(prev, swap), 0.5)
+        # share classes are one company
+        self.assertEqual(I.company("Alphabet Inc. (Class A)"), I.company("Alphabet Inc. (Class C)"))
+        # calendar-year returns from month-end points
+        pts = [["2020-11-30", 1.0, 1.0], ["2020-12-31", 1.1, 1.0], ["2021-12-31", 1.21, 1.1], ["2022-03-31", 1.21, 1.0]]
+        ys = I.yearly(pts)
+        self.assertEqual([y["year"] for y in ys], [2020, 2021, 2022])
+        self.assertAlmostEqual(ys[1]["ret"], 0.1, places=4)
+        self.assertTrue(ys[0]["partial"] and ys[2]["partial"] and not ys[1]["partial"])
+        # a holding with no price on the buying day is left out and the rest re-weighted
+        days = ["2024-01-02", "2024-01-03", "2024-01-31", "2024-02-29"]
+        px = {"AAA": (days, [10, 10, 10.5, 11]), "NEW": (["2024-01-31", "2024-02-29"], [5, 5])}
+        doc = {"filings": [{"filed": "2024-01-02", "holdings": [{"ticker": "AAA", "value": 1, "cusip": "X"}, {"ticker": "NEW", "value": 99, "cusip": "Y"}]}]}
+        r = I.copy_record(doc, px, (days, [100, 100, 100, 100]))
+        self.assertAlmostEqual(r["total"], 0.1, places=6)
+
