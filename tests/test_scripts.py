@@ -290,6 +290,55 @@ class ThirteenFTest(unittest.TestCase):
         self.assertAlmostEqual(r["total"], 0.2, places=6)   # 10 -> 12, bought on the first close after filing
         self.assertAlmostEqual(r["coverage"], 0.5)
         self.assertEqual(I.month_ends("2024-01-03", "2024-03-01"), ["2024-01-31", "2024-02-29"])
+    def test_stakes(self):
+        import fetch_13f as F
+        import investors as I
+        hdr = b"""<html><pre>&lt;SEC-HEADER&gt;\nSUBJECT COMPANY:\n\n\tCOMPANY DATA:\t\n\t\tCOMPANY CONFORMED NAME:\t\t\tWENDY'S CO\n\t\tCENTRAL INDEX KEY:\t\t\t0000030697\n\nFILED BY:\n\n\tCOMPANY DATA:\n\t\tCOMPANY CONFORMED NAME:\t\t\tTrian Fund Management, L.P.\n\t\tCENTRAL INDEX KEY:\t\t\t0001345471\n</pre></html>"""
+        pages = {"index-headers": hdr,
+                 "index.json": b'{"directory":{"item":[{"name":"primary_doc.xml"},{"name":"0001-index.htm"}]}}',
+                 "primary_doc.xml": b"<edgarSubmission><coverPageHeaderReportingPersonDetails><percentOfClass>16.4</percentOfClass></coverPageHeaderReportingPersonDetails></edgarSubmission>"}
+        real = F.get
+        F.get = lambda url, **kw: next((v for k, v in pages.items() if url.endswith(k) or (k == "index-headers" and "index-headers" in url)), None)
+        try:
+            d = F.stake_detail(1345471, "0000000000-26-000001")
+        finally:
+            F.get = real
+        self.assertEqual((d["subject"], d["subjectCik"], d["pct"]), ("WENDY'S CO", 30697, 16.4))
+        old = b"(11) PERCENT OF CLASS REPRESENTED BY AMOUNT IN ROW (9)\n\n      9.8%\n"
+        self.assertEqual(float(F.PCT[1].search(old).group(1)), 9.8)
+        rows = I.stake_summary([
+            {"acc": "a1", "form": "SC 13D", "filed": "2024-01-02", "subject": "WENDY'S CO", "subjectCik": 30697, "pct": 12.0, "cik": 1},
+            {"acc": "a2", "form": "SC 13D/A", "filed": "2025-03-01", "subject": "WENDY'S CO", "subjectCik": 30697, "pct": 4.2, "cik": 1},
+            {"acc": "b1", "form": "SC 13G", "filed": "2024-06-01", "subject": "OTHER INC", "subjectCik": 5, "pct": None, "cik": 1}], {30697: "WEN"}, {"WEN": "US-WEN"}, {"WEN": "Wendy's"})
+        self.assertEqual([r["ticker"] for r in rows], ["WEN", ""])
+        self.assertEqual((rows[0]["n"], rows[0]["pctFirst"], rows[0]["pct"], rows[0]["below5"], rows[0]["active"]), (2, 12.0, 4.2, True, True))
+
+    def test_13f_prices(self):
+        import datetime as dt
+        import fetch_13f_prices as P
+        ts = lambda d: int(dt.datetime.fromisoformat(d).replace(tzinfo=dt.timezone.utc).timestamp())
+        days = ["2024-03-28", "2024-04-01", "2024-04-30", "2024-05-15", "2024-05-31"]
+        chart = {"chart": {"result": [{"meta": {"currency": "USD"}, "timestamp": [ts(d) for d in days],
+                 "indicators": {"quote": [{"close": [10, 11, 12, 13, 14]}], "adjclose": [{"adjclose": [9.5, 10.5, 11.5, 12.5, 14]}]}}]}}
+        d, tr, cl = P.parse(chart)
+        self.assertEqual(d, days)
+        self.assertEqual(tr[0], 9.5)       # total-return (dividend-adjusted) closes for returns
+        self.assertEqual(cl[0], 10)        # split-adjusted closes for checking against filings
+        # filed $10 at the quarter end matches; filed $40 matches after a later 4-for-1 split; $25 doesn't
+        self.assertEqual(P.verified({"2024-03-31": 10.2}, d, cl), ["2024-03-31"])
+        self.assertEqual(P.verified({"2024-03-31": 40.0}, d, cl), ["2024-03-31"])
+        self.assertEqual(P.verified({"2024-03-31": 25.0}, d, cl), [])
+        self.assertEqual(P.yahoo("BRK.B"), "BRK-B")
+        cal = ["2024-02-14", "2024-02-15", "2024-02-29", "2024-03-28", "2024-05-15", "2024-05-16", "2024-05-31"]
+        docs = [{"filings": [
+            {"period": "2023-12-31", "filed": "2024-02-14", "holdings": [{"ticker": "XYZ", "value": 50, "shares": 5}, {"ticker": "SPX1", "value": 50, "shares": 1}]},
+            {"period": "2024-03-31", "filed": "2024-05-15", "holdings": [{"ticker": "XYZ", "value": 100, "shares": 10}]}]}]
+        n = P.needs(docs, cal, {"SPX1"})
+        self.assertEqual(set(n), {"XYZ"})
+        self.assertTrue({"2024-02-15", "2024-02-29", "2024-05-16"} <= n["XYZ"]["days"])
+        self.assertEqual(n["XYZ"]["checks"]["2024-03-31"], 10)
+        self.assertEqual(n["XYZ"]["latestw"], 1.0)
+
     def test_patterns(self):
         import investors as I
         # a 10-for-1 split is not a purchase

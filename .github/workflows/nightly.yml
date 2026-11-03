@@ -161,6 +161,23 @@ jobs:
         run: python scripts/investors.py
         continue-on-error: true
 
+      - name: Report investor data checks in a GitHub issue (GitHub emails you about new issues)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          f=site/data/investors/checks.md
+          n=$(gh issue list --state open --label data-check --json number --jq '.[0].number')
+          if [ -s "$f" ]; then
+            body="$(printf 'The nightly checks of the investor filings found these to look at (updated %s):\n\n' "$(date -u +%F)"; cat "$f"; printf '\nDetails are on each investor page under About the data. This issue closes itself when the checks pass.')"
+            if [ -n "$n" ]; then gh issue edit "$n" --body "$body"; else
+              gh label create data-check --color FBCA04 --description "Automatic data checks" 2>/dev/null || true
+              gh issue create --title "Investor data checks" --label data-check --body "$body"; fi
+          elif [ -n "$n" ]; then
+            gh issue close "$n" --comment "All investor data checks pass as of $(date -u +%F)."
+          fi
+
       - name: Commit data
         # saved even if ranking failed, so downloaded prices and filings are never lost
         if: ${{ !cancelled() }}

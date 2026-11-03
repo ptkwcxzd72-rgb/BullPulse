@@ -188,7 +188,15 @@ function bars(series, fmt) {
 }
 
 // ---------- list ----------
+let checksHtml = "";
 async function list(index) {
+  try {
+    const ch = await (await fetch("data/investors/checks.json", { cache: "no-cache" })).json();
+    const w = ch.checks.filter(c => c.level === "warn");
+    checksHtml = `<details class="card sec how"><summary>Data checks: ${w.length ? `${w.length} to look at` : "nothing unusual"} <span class="sub">run every night</span></summary>
+      <p class="note">Each night we check every investor for overdue filings, holdings we couldn't match to a ticker, sudden jumps in reported size, and tickers whose price didn't match the filing.</p>
+      <div class="cons">${ch.checks.map(c => `<div class="it" style="justify-content:flex-start"><span class="tag ${c.level === "warn" ? "reduced" : ""}">${c.level === "warn" ? "Check" : "Note"}</span><span>${c.slug ? `<a href="?i=${c.slug}">${esc(c.manager)}</a>` : `<b>${esc(c.manager)}</b>`}: ${esc(c.msg)}</span></div>`).join("") || `<p class="note">Nothing to report.</p>`}</div></details>`;
+  } catch (e) { checksHtml = ""; }
   let view = store.get("bp-inv-view", "all"), tag = store.get("bp-inv-tag", ""), sort = store.get("bp-inv-sort", "value"), q = "";
   let owners = null;
   const invs = index.investors, bySlug = Object.fromEntries(invs.map(x => [x.slug, x]));
@@ -233,6 +241,7 @@ async function list(index) {
       ${hit}
       ${view === "mine" && recent.length ? `<section class="card sec"><h3>Latest filings from investors you follow</h3>${recent.map(x => `<div class="q"><span><b><a href="?i=${x.slug}" style="color:var(--ink)">${esc(x.manager)}</a></b> <span class="sub">holdings at ${qtr(x.period)}, filed ${fmtD(x.filed)}</span></span>${x.latest ? `<span class="sub">${x.latest.new} new, ${x.latest.added} added to, ${x.latest.reduced} reduced, ${x.latest.sold} sold out</span>` : ""}</div>`).join("")}</section>` : ""}
       ${items.length ? `<div class="grid">${items.map(card).join("")}</div>` : `<div class="card empty">${view === "mine" && !follow.size ? "You're not following anyone yet. Choose Follow on any investor to keep up with their filings." : "No investors match. Try another search or style."}</div>`}
+      ${checksHtml}
       <p class="note">${DISC}</p>`;
     document.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { view = b.dataset.v; store.set("bp-inv-view", view); draw(); });
     document.querySelectorAll("[data-tag]").forEach(b => b.onclick = () => { tag = b.dataset.tag; store.set("bp-inv-tag", tag); draw(); });
@@ -278,7 +287,7 @@ async function detail(slug) {
   $("h1").textContent = x.manager;
   $("lede").textContent = `${x.firm}. ${x.about}`;
   $("meta").innerHTML = [...(pr.tags || []).map(t => `<span>${esc(t)}</span>`), pr.based ? `<span>${esc(pr.based)}</span>` : "", pr.founded ? `<span>Since ${pr.founded}</span>` : "", `<span>${x.quarters} filings since ${qtr(x.first)}</span>`].join("");
-  let showAll = false, hq = "";
+  let showAll = false, hq = "", stakeAll = false;
   const draw = () => {
     const h0 = x.history[0];
     const mv = (k, lab) => h0 && h0[k].length ? `<div><span class="lbl">${lab}</span> <span class="chips" style="display:inline-flex">${h0[k].slice(0, 14).map(h => chipFor(h, h.chg != null ? " " + pc(h.chg, 0) : "", k === "new" ? "new" : k === "sold" ? "sold" : "")).join("")}${h0.counts[k] > 14 ? `<span class="sub">+${h0.counts[k] - 14} more</span>` : ""}</span></div>` : "";
@@ -315,6 +324,14 @@ async function detail(slug) {
         ${h0 ? `<div class="q" style="border:0;padding-top:0">${mv("new", "New")}${mv("added", "Added to")}${mv("reduced", "Reduced")}${mv("sold", "Sold out")}${!["new", "added", "reduced", "sold"].some(k => h0[k].length) ? `<span class="sub">No significant changes from the quarter before.</span>` : ""}</div>` : `<p class="note">This is the first filing on record.</p>`}
         <p class="note">“Added to” and “Reduced” mean the number of shares changed by at least 10%, allowing for stock splits.</p>
       </section>
+
+      ${x.stakes && x.stakes.length ? `<section class="card sec"><h3>Stakes of 5% or more <span class="sub">reported within days, not after the quarter</span></h3>
+        <div class="tw"><table class="tt"><thead><tr><th>Company</th><th>Type</th><th>Share of the company</th><th class="hm">First filed</th><th>Latest filing</th></tr></thead><tbody>
+        ${x.stakes.slice(0, stakeAll ? 40 : 10).map(o => `<tr><td>${stockLink(o)} <span class="sub">${esc(o.ticker)}</span></td><td style="text-align:left"><span class="tag ${o.active ? "added" : ""}" title="${o.active ? "Schedule 13D: the investor may seek to influence the company" : "Schedule 13G: a passive holding"}">${o.active ? "Active" : "Passive"}</span></td><td>${o.pct != null ? o.pct.toFixed(1) + "%" : "–"}${o.below5 ? ` <span class="sub">now below 5%</span>` : o.pctFirst != null && o.pct != null && Math.abs(o.pct - o.pctFirst) >= 0.1 ? ` <span class="sub">from ${o.pctFirst.toFixed(1)}%</span>` : ""}</td><td class="sub hm">${fmtD(o.first)}</td><td><a href="https://www.sec.gov/Archives/edgar/data/${o.cik}/${o.acc.replace(/-/g, "")}/" rel="noopener" target="_blank" title="Open the filing at the SEC">${fmtD(o.filed)}</a>${o.n > 1 ? ` <span class="sub">${o.n} filings</span>` : ""}</td></tr>`).join("")}
+        </tbody></table></div>
+        ${!stakeAll && x.stakes.length > 10 ? `<button class="bbtn ghost" id="stakemore">Show all ${x.stakes.length}</button>` : ""}
+        <p class="note">Anyone who owns more than 5% of a US company must disclose it on Schedule 13D (if they may try to influence the company) or 13G (passive), usually within 5–10 business days, and update it as the stake changes. These are filings since 2023 by ${esc(x.firm)}; percentages are as stated in each filing.</p>
+      </section>` : ""}
 
       <section class="card sec anchor" id="holdings"><h3>Holdings <span class="sub">by reported value; ${Math.round(x.covered * 100)}% of the portfolio has prices here</span></h3>
         ${x.holdings.length > 12 ? `<input class="search" id="hq" type="search" placeholder="Filter holdings by name, ticker or sector" value="${esc(hq)}" aria-label="Filter holdings">` : ""}
@@ -385,9 +402,11 @@ async function detail(slug) {
       </section>
 
       <section class="card sec anchor" id="data"><h3>About the data</h3>
+        ${x.checks && x.checks.length ? `<div class="cons">${x.checks.map(c => `<div class="it" style="justify-content:flex-start"><span class="tag ${c.level === "warn" ? "reduced" : ""}">${c.level === "warn" ? "Check" : "Note"}</span><span>${esc(c.msg)}</span></div>`).join("")}</div>` : `<p class="note">Automatic checks found nothing unusual in this investor's latest filings.</p>`}
         <p class="note">${DISC} Profiles were written by BullPulse from the public sources linked above. SEC filer: <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${x.cik}&type=13F&dateb=&owner=include&count=40" rel="noopener" target="_blank">CIK ${x.cik}</a>.</p>
       </section>`;
     bindFollow(draw);
+    if ($("stakemore")) $("stakemore").onclick = () => { stakeAll = true; draw(); };
     if ($("more")) $("more").onclick = () => { showAll = true; draw(); document.getElementById("holdings").scrollIntoView(); };
     if ($("hq")) $("hq").oninput = e => { hq = e.target.value; const pos = e.target.selectionStart; draw(); const n = $("hq"); n.focus(); n.setSelectionRange(pos, pos); };
   };

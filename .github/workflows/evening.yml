@@ -59,6 +59,10 @@ jobs:
         run: python scripts/fetch_13f.py --budget 32
         timeout-minutes: 40
         continue-on-error: true
+      - name: Prices for investors' holdings outside the S&P 500 (Yahoo; the largest are refreshed each run)
+        run: python scripts/fetch_13f_prices.py --budget 15
+        timeout-minutes: 20
+        continue-on-error: true
       - name: US results dates
         run: python scripts/fetch_earnings_dates.py
         timeout-minutes: 5

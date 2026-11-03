@@ -110,7 +110,7 @@ def changes(prev: list[dict], cur: list[dict]) -> dict[str, list[dict]]:
     return out
 
 
-def copy_record(doc: dict, px: dict, bench) -> dict | None:
+def copy_record(doc: dict, px: dict, bench, ok: dict[str, set] | None = None) -> dict | None:
     """Follow each filing from the first close after it was published until the first close after
     the next one; month-end values. Holdings without a price here are left out (coverage reported)."""
     fs = [f for f in doc["filings"] if f.get("holdings")]
@@ -132,6 +132,8 @@ def copy_record(doc: dict, px: dict, bench) -> dict | None:
         held = []                        # holdings with a price on the day we would buy them
         for h in f["holdings"]:
             t = (h.get("ticker") or "").upper()
+            if ok is not None and t in ok and f.get("period") not in ok[t]:
+                continue                 # the ticker didn't match the filed price for this quarter
             if t in px:
                 d0, p0 = price_on_or_before(px[t], start)
                 if p0 and d0 and (dt.date.fromisoformat(start) - dt.date.fromisoformat(d0)).days <= 10:
@@ -227,7 +229,7 @@ def positions(f: dict) -> dict[str, dict]:
     out: dict[str, dict] = {}
     for h in f.get("holdings", []):
         k = (h.get("ticker") or "").upper() or h["cusip"]
-        a = out.setdefault(k, {"key": k, "ticker": (h.get("ticker") or "").upper(), "name": h["name"], "value": 0.0, "shares": 0.0, "cusip": h["cusip"]})
+        a = out.setdefault(k, {"key": k, "ticker": (h.get("ticker") or "").upper(), "name": h["name"], "value": 0.0, "shares": 0.0, "cusip": h["cusip"], "bond": is_bond(h)})
         a["value"] += h["value"]
         a["shares"] += h.get("shares") or 0
     return out
@@ -334,6 +336,71 @@ def style(hold: list[dict], snap: dict[str, dict]) -> dict | None:
     return out or None
 
 
+def stake_summary(stakes: list[dict], by_cik: dict, ids: dict, names: dict) -> list[dict]:
+    """One line per company from the Schedule 13D/13G filings: the latest filing, the percentage
+    owned then, and how many filings there have been since the first one we have."""
+    out: dict[int, dict] = {}
+    for st in sorted(stakes, key=lambda x: (x["filed"], x["acc"])):
+        t = by_cik.get(st["subjectCik"], "")
+        o = out.setdefault(st["subjectCik"], {"name": names.get(t) or st["subject"].title(), "ticker": t, "id": ids.get(t),
+                                              "first": st["filed"], "n": 0, "pctFirst": st.get("pct")})
+        o.update({"form": st["form"], "filed": st["filed"], "pct": st.get("pct"), "acc": st["acc"], "cik": st["cik"],
+                  "active": "13D" in st["form"]})
+        o["n"] += 1
+        if o["pctFirst"] is None:
+            o["pctFirst"] = st.get("pct")
+    rows = sorted(out.values(), key=lambda o: o["filed"], reverse=True)
+    for o in rows:
+        o["below5"] = o["pct"] is not None and o["pct"] < 5
+    return rows[:40]
+
+
+BOND = re.compile(r"\b(BOND|BONDS|NOTE|NOTES|DEBT|DBCV|SDCV|DEBENTURE)S?\b", re.I)
+
+
+def is_bond(h: dict) -> bool:
+    return bool(h.get("prn")) or bool(BOND.search(h.get("class") or ""))
+
+
+def deadline_period(today: dt.date) -> str:
+    """The latest quarter end whose 13F deadline (45 days later) has passed."""
+    y, q = today.year, (today.month - 1) // 3   # quarters fully ended this year
+    for _ in range(8):
+        if q == 0:
+            y, q = y - 1, 4
+        end = dt.date(y, q * 3, 31 if q in (1, 4) else 30)
+        if end + dt.timedelta(days=45) < today:
+            return end.isoformat()
+        q -= 1
+    return ""
+
+
+def checks(doc: dict, fs: list[dict], prof: dict, latest_cover: float, rec_cover: float | None, bad_tickers: list[str],
+           today: dt.date) -> list[dict]:
+    """Things that may be wrong with an investor's data, for the page and the nightly report."""
+    out = []
+    due = deadline_period(today)
+    last = fs[-1]
+    if prof.get("closed"):
+        out.append({"level": "info", "msg": f"The fund closed in {prof['closed']}; no new filings are expected."})
+    elif due and last["period"] < due:
+        out.append({"level": "warn", "msg": f"No filing yet for the quarter to {due}; the deadline has passed (latest is {last['period']}). The manager may have stopped filing or changed the entity it files under."})
+    tot = sum(h["value"] for h in last["holdings"]) or 1
+    unmatched = sum(h["value"] for h in last["holdings"] if not h.get("ticker") and not is_bond(h)) / tot
+    if unmatched > 0.15:
+        out.append({"level": "warn" if unmatched > 0.35 else "info", "msg": f"{round(unmatched * 100)}% of the latest portfolio couldn't be matched to a ticker, so it is shown by filed name only."})
+    if len(fs) > 1:
+        prev = sum(h["value"] for h in fs[-2]["holdings"]) or 1
+        r = tot / prev
+        if r > 10 or r < 0.1:
+            out.append({"level": "warn", "msg": f"The reported portfolio changed from ${prev / 1e9:.2f}bn to ${tot / 1e9:.2f}bn in one quarter; check the filing's units."})
+    if rec_cover is not None and rec_cover < 0.4:
+        out.append({"level": "info", "msg": f"Only {round(rec_cover * 100)}% of the portfolio, on average, has prices here, so the copy record {'is not shown' if rec_cover < MIN_COVER else 'covers part of it'}."})
+    if bad_tickers:
+        out.append({"level": "info", "msg": f"{len(bad_tickers)} holding(s) left out of the copy record because the ticker's price didn't match the price filed (often an old ticker now used by another company): {', '.join(bad_tickers[:6])}{'…' if len(bad_tickers) > 6 else ''}."})
+    return out
+
+
 def describe(pat: dict, sty: dict | None, rec: dict | None) -> list[str]:
     """Plain-English summary of the pattern, from the numbers only."""
     out = []
@@ -389,16 +456,30 @@ def main() -> None:
     ap.add_argument("--base", default="https://bullpulse.co.uk/")
     ap.add_argument("--src", default=SRC)
     ap.add_argument("--profiles", default="data/investor_profiles.json")
+    ap.add_argument("--extra", default="data/history/13f_prices.jsonl")
     args = ap.parse_args()
     files = sorted(glob.glob(os.path.join(args.src, "*.json")))
     if not files:
         print("no 13F history yet")
         return
     px, ids, names = load_prices(args.prices)
-    sector_of = {}
+    ok13 = {}                            # extra prices for holdings outside the S&P 500 (fetch_13f_prices.py)
+    asof13 = ""
+    if os.path.exists(args.extra):
+        for line in open(args.extra):
+            if not line.strip():
+                continue
+            x = json.loads(line)
+            asof13 = max(asof13, x.get("asof", ""))
+            if x.get("p") and x["t"] not in px:
+                px[x["t"]] = (x["d"], x["p"])
+                ok13[x["t"]] = set(x.get("ok", []))
+    sector_of, by_cik = {}, {}
     for f in glob.glob("universe/us*.csv"):
         for r in csv.DictReader(open(f, newline="")):
             sector_of[r["ticker"].upper()] = r.get("sector") or ""
+            if (r.get("cik") or "").strip().isdigit():
+                by_cik[int(r["cik"])] = r["ticker"].upper()
     snap = {}
     try:
         for x in json.load(open(os.path.join(args.site, "data", "snapshot.json")))["stocks"]:
@@ -418,7 +499,8 @@ def main() -> None:
     os.makedirs(out_dir, exist_ok=True)
     os.makedirs(os.path.join(args.site, "feeds"), exist_ok=True)
     nm = lambda t, fallback: names.get(t, fallback.title())
-    index, latest_maps, owners = [], {}, {}
+    index, latest_maps, owners, all_checks = [], {}, {}, []
+    today_d = dt.date.fromisoformat(bench[0][-1]) if bench else dt.date.today()
     for f in files:
         doc = json.load(open(f))
         fs = [x for x in doc.get("filings", []) if x.get("holdings")]
@@ -439,10 +521,10 @@ def main() -> None:
             since_idx = rn[k][-1][0]
             hold.append({"name": nm(t, h["name"]), "filedName": h["name"], "ticker": t, "id": ids.get(t), "w": round(h["value"] / tot, 5),
                          "value": round(h["value"]), "shares": round(h["shares"]), "change": ch, "chg": round(chg, 3) if chg is not None else None,
-                         "since": fs[since_idx]["period"], "sinceStart": since_idx == 0, "sector": sector_of.get(t) or "", "_k": k})
+                         "since": fs[since_idx]["period"], "sinceStart": since_idx == 0, "sector": "Convertible bond" if h.get("bond") else sector_of.get(t) or "", "_k": k})
         hold.sort(key=lambda h: -h["w"])
         keys = [h.pop("_k") for h in hold]
-        covered = sum(h["w"] for h in hold if h["id"])
+        covered = sum(h["w"] for h in hold if h["ticker"] in px and (h["ticker"] not in ok13 or last["period"] in ok13[h["ticker"]]))
         # quarter by quarter: what changed (the 20 most recent quarters; long lists trimmed)
         hist = []
         for k in range(len(fs) - 1, 0, -1):
@@ -499,7 +581,7 @@ def main() -> None:
         sec_now = sectors(cur)
         five = next((m for x, m in zip(fs, maps) if qnum(x["period"]) >= qnum(last["period"]) - 20), maps[0])
         five_period = fs[maps.index(five)]["period"]
-        rec = copy_record(doc, px, bench)
+        rec = copy_record(doc, px, bench, ok13)
         rec_note = None
         if rec and (rec["coverage"] or 0) < MIN_COVER:   # too little of the portfolio priced to be fair
             rec_note = {"coverage": rec["coverage"]}
@@ -532,10 +614,16 @@ def main() -> None:
                "holdYears": round(hold_years, 1), "holdCapped": capped, "closedMedianYears": round(closed[len(closed) // 2], 1) if closed else None,
                "sectors": sec_now, "sectorsThen": sectors(five), "sectorsThenPeriod": five_period, "longest": longest, "bets": bets,
                "concentration": conc, "turnover": [{"period": fs[k]["period"], "v": round(v, 4)} for k, v in ((k, turnover(maps[k - 1], maps[k])) for k in range(1, len(maps))) if v is not None]}
+        stakes = stake_summary(doc.get("stakes", []), by_cik, ids, names)
         prof = profiles.get(slug, {})
+        held_t = {(h.get("ticker") or "").upper() for x in fs for h in x["holdings"]} - {""}
+        bad = sorted(t for t in held_t if t in ok13 and not ok13[t])
+        chk = checks(doc, fs, prof, covered, (rec or rec_note or {}).get("coverage"), bad, today_d)
+        for c in chk:
+            all_checks.append({"slug": slug, "manager": doc["manager"], **c})
         inv = {"slug": slug, "manager": doc["manager"], "firm": doc["firm"], "cik": doc["cik"], "about": doc.get("about", ""),
                "period": last["period"], "filed": last["filed"], "first": fs[0]["period"], "quarters": len(fs), "value": round(tot), "positions": len(hold),
-               "covered": round(covered, 3), "holdings": hold, "history": hist, "record": rec, "recordNote": rec_note, "calls": calls, "pattern": pat, "style": sty,
+               "covered": round(covered, 3), "holdings": hold, "history": hist, "record": rec, "recordNote": rec_note, "calls": calls, "stakes": stakes, "checks": chk, "pattern": pat, "style": sty,
                "summary": describe(pat, sty, rec), "profile": prof, "name": doc["manager"]}
         byco: dict[str, dict] = {}
         for h in hold:
@@ -564,6 +652,12 @@ def main() -> None:
                     parts.append(f"{lab}: " + ", ".join(x["name"] for x in hst[k][:8]) + ("…" if hst["counts"][k] > 8 else ""))
             items.append({"filed": hst["filed"], "acc": hst["acc"], "title": f"{doc['manager']}: holdings at {hst['period']}",
                           "text": "; ".join(parts) or "No significant changes."})
+        for st in doc.get("stakes", [])[:15]:
+            kind = "active stake (Schedule 13D)" if "13D" in st["form"] else "passive stake (Schedule 13G)"
+            pct = f" at {st['pct']:g}%" if st.get("pct") is not None else ""
+            items.append({"filed": st["filed"], "acc": st["acc"], "title": f"{doc['manager']}: {company(st['subject']).title()}{pct}",
+                          "text": f"{'Amended ' if st['form'].endswith('/A') else ''}{kind} in {st['subject'].title()}{pct}, filed {st['filed']}."})
+        items.sort(key=lambda it: it["filed"], reverse=True)
         rss(os.path.join(args.site, "feeds", f"investor-{slug}.xml"), args.base, inv, items)
         inv_path = os.path.join(out_dir, slug + ".json")
         json.dump(inv, open(inv_path, "w"), separators=(",", ":"))
@@ -608,6 +702,15 @@ def main() -> None:
     json.dump({"generated": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "investors": index, "consensus": consensus},
               open(os.path.join(out_dir, "index.json"), "w"), separators=(",", ":"))
     json.dump(owners, open(os.path.join(out_dir, "owners.json"), "w"), separators=(",", ":"))
+    if asof13 and (today_d - dt.date.fromisoformat(asof13)).days > 7:
+        all_checks.append({"slug": "", "manager": "All investors", "level": "warn", "msg": f"Prices for holdings outside the S&P 500 were last updated {asof13}."})
+    json.dump({"generated": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "checks": all_checks},
+              open(os.path.join(out_dir, "checks.json"), "w"), separators=(",", ":"))
+    warns = [c for c in all_checks if c["level"] == "warn"]
+    for c in warns:
+        print(f"::warning::{c['manager']}: {c['msg']}")
+    with open(os.path.join(out_dir, "checks.md"), "w") as f:   # for the nightly's GitHub issue
+        f.write("".join(f"- **{c['manager']}**: {c['msg']}\n" for c in warns))
     print(f"::notice::Investor pages: {len(index)}")
 
 

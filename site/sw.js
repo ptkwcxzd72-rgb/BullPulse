@@ -1,7 +1,7 @@
 // BullPulse service worker: makes the site installable and usable offline.
 // Pages and data are fetched from the network first (they change every night) and fall back to
 // the last copy seen; static assets are served from the cache first.
-const CACHE = "bullpulse-v6";
+const CACHE = "bullpulse-v7";
 const SHELL = ["./", "index.html", "app.html", "portfolio.html", "alerts.html", "score.html", "lab.html", "investors.html", "bp.css", "common.js", "lab-engine.js", "lab.js", "favicon.svg", "manifest.webmanifest", "brand/icon-192.png"];
 
 self.addEventListener("install", e => {

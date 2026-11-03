@@ -33,7 +33,7 @@ MAP = "data/history/cusip_map.json"
 # superinvestor list and the SEC's filer records.
 INVESTORS = [
     ("buffett", "Warren Buffett", "Berkshire Hathaway", 1067983, "Long-term value investing in large, durable businesses."),
-    ("ackman", "Bill Ackman", "Pershing Square Capital Management", 1336528, "A handful of large, simple, high-quality companies, sometimes as an activist."),
+    ("ackman", "Bill Ackman", "Pershing Square", [(1336528, "", "2026-03-31"), (2026053, "2026-04-01", "9999")], "A handful of large, simple, high-quality companies, sometimes as an activist."),
     ("terry-smith", "Terry Smith", "Fundsmith", 1569205, "Buy good companies, don't overpay, do nothing. US holdings of the UK fund manager."),
     ("nick-train", "Nick Train", "Lindsell Train", 1484150, "Very long holding periods in a few quality brands. US holdings of the UK fund manager."),
     ("klarman", "Seth Klarman", "Baupost Group", 1061768, "Deep value with a margin of safety."),
@@ -142,6 +142,57 @@ def filings(cik: int, since: str) -> list[dict]:
     return sorted(out, key=lambda f: (f["filed"], f["acc"]))
 
 
+STAKE_FORMS = {"SC 13D", "SC 13D/A", "SC 13G", "SC 13G/A", "SCHEDULE 13D", "SCHEDULE 13D/A", "SCHEDULE 13G", "SCHEDULE 13G/A"}
+PCT = [re.compile(rb"<[A-Za-z:]*[Pp]ercent[A-Za-z]*>\s*([0-9]+(?:\.[0-9]+)?)\s*%?\s*<"),
+       re.compile(rb"PERCENT\s+OF\s+CLASS\s+REPRESENTED\s+BY\s+AMOUNT\s+IN\s+ROW\s*\(?\s*(?:9|11)\s*\)?(?:.|\n){0,400}?([0-9]+(?:\.[0-9]+)?)\s*%", re.I)]
+
+
+def stake_filings(cik: int, since: str) -> list[dict]:
+    """Schedule 13D/13G filings (stakes of 5% or more) where this filer is a reporting person."""
+    raw = get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json")
+    if not raw:
+        return []
+    t = json.loads(raw).get("filings", {}).get("recent", {})
+    out = []
+    for k, form in enumerate(t.get("form", [])):
+        if form in STAKE_FORMS and t["filingDate"][k] >= since:
+            out.append({"acc": t["accessionNumber"][k], "form": form, "filed": t["filingDate"][k], "cik": cik})
+    return out
+
+
+def stake_detail(cik: int, acc: str) -> dict | None:
+    """The subject company (from the filing header) and the percentage owned, where stated."""
+    base = f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc.replace('-', '')}/"
+    hdr = get(base + acc + "-index-headers.html")
+    if not hdr:
+        return None
+    m = re.search(rb"SUBJECT COMPANY:(.*?)(?:FILED BY:|</SUBJECT-COMPANY>|$)", hdr, re.S)
+    block = m.group(1) if m else b""
+    name = re.search(rb"COMPANY CONFORMED NAME:\s*([^\n<]+)", block)
+    sc = re.search(rb"CENTRAL INDEX KEY:\s*(\d+)", block)
+    if not name or not sc:
+        return None
+    out = {"subject": name.group(1).decode("latin-1").strip(), "subjectCik": int(sc.group(1)), "pct": None}
+    idx = get(base + "index.json")
+    if idx:
+        items = [i["name"] for i in json.loads(idx).get("directory", {}).get("item", [])]
+        doc = next((n for n in items if n.lower() == "primary_doc.xml"), None) or \
+            next((n for n in items if n.lower().endswith((".htm", ".html", ".txt")) and "index" not in n.lower()), None)
+        if doc:
+            body = get(base + doc) or b""
+            for rx in PCT:
+                mm = rx.search(body)
+                if mm:
+                    try:
+                        v = float(mm.group(1))
+                        if 0 < v <= 100:
+                            out["pct"] = v
+                            break
+                    except ValueError:
+                        pass
+    return out
+
+
 def strip_ns(tag: str) -> str:
     return tag.split("}", 1)[-1]
 
@@ -199,23 +250,35 @@ def unit(rows: list[dict]) -> float:
     return 1000.0 if med < 2 else (0.001 if med > 20000 else 1.0)
 
 
+BOND = re.compile(r"\b(BOND|BONDS|NOTE|NOTES|DEBT|DBCV|SDCV|DEBENTURE)S?\b", re.I)
+
+
+def is_bond(h: dict) -> bool:
+    """Convertible bonds and notes, which 13F lists by principal amount rather than shares."""
+    return bool(h.get("prn")) or bool(BOND.search(h.get("class") or ""))
+
+
 def aggregate(rows: list[dict], filed: str) -> list[dict]:
     """One line per security; values in dollars."""
     mult = unit(rows)
     agg: dict[str, dict] = {}
     for r in rows:
         a = agg.setdefault(r["cusip"], {"cusip": r["cusip"], "name": r["name"], "class": r["class"], "value": 0.0, "shares": 0.0})
+        if r["type"] == "PRN":
+            a["prn"] = True
         a["value"] += r["value"] * mult
         a["shares"] += r["shares"] if r["type"] in ("SH", "") else 0
     return sorted(agg.values(), key=lambda a: -a["value"])
 
 
 def figi(cusips: list[str], cache: dict) -> None:
-    """Fill cache[cusip] = ticker via OpenFIGI (free, no key: 25 requests a minute, 10 ids each)."""
-    todo = [c for c in cusips if c and c not in cache]
+    """Fill cache[cusip] = ticker via OpenFIGI (free, no key: 25 requests a minute, 10 ids each).
+    Companies registered outside the US have CINS codes (starting with a letter), which OpenFIGI
+    looks up as ID_CINS; earlier misses for those are retried once ("?" marks a second miss)."""
+    todo = [c for c in cusips if c and (c not in cache or (cache[c] == "" and c[0].isalpha()))]
     for k in range(0, len(todo), 10):
         batch = todo[k:k + 10]
-        body = json.dumps([{"idType": "ID_CUSIP", "idValue": c, "exchCode": "US"} for c in batch]).encode()
+        body = json.dumps([{"idType": "ID_CINS" if c[0].isalpha() else "ID_CUSIP", "idValue": c, "exchCode": "US"} for c in batch]).encode()
         raw = get("https://api.openfigi.com/v3/mapping", data=body, headers={"Content-Type": "application/json"}, tries=2)
         if raw is None:
             break
@@ -226,7 +289,8 @@ def figi(cusips: list[str], cache: dict) -> None:
         for c, r in zip(batch, res):
             data = r.get("data") or []
             eq = [x for x in data if x.get("marketSector") == "Equity"] or data
-            cache[c] = (eq[0].get("ticker") or "") if eq else ""
+            t = (eq[0].get("ticker") or "") if eq else ""
+            cache[c] = t or ("?" if c[0].isalpha() and c in cache else "")
         time.sleep(2.6)
 
 
@@ -243,6 +307,7 @@ def main() -> int:
     ap.add_argument("--since", default="2015-01-01")
     ap.add_argument("--only", default="", help="comma-separated slugs (testing)")
     ap.add_argument("--budget", type=float, default=75, help="minutes; stop starting new investors after this")
+    ap.add_argument("--stakes-since", default="2023-01-01", help="first date for Schedule 13D/13G filings")
     args = ap.parse_args()
     if not os.environ.get("SEC_CONTACT_EMAIL"):
         print("::warning::13F filings skipped: SEC_CONTACT_EMAIL is not set.")
@@ -293,11 +358,34 @@ def main() -> int:
         for x in doc["filings"]:
             byq[x["period"]] = x
         doc["filings"] = [byq[k] for k in sorted(byq)]
+        # stakes of 5% or more (Schedule 13D/13G), filed within days rather than 45 days after the quarter
+        own = {c for c, _, _ in ranges(cik)}
+        st_have = {x["acc"] for x in doc.get("stakes", [])} | set(doc.get("stakesSkipped", []))
+        skipped = list(doc.get("stakesSkipped", []))
+        stakes = list(doc.get("stakes", []))
+        for c, lo, hi in ranges(cik):
+            if hi < args.stakes_since:
+                continue
+            for sf in stake_filings(c, args.stakes_since):
+                if sf["acc"] in st_have or time.time() - T0 > args.budget * 60:
+                    continue
+                det = stake_detail(c, sf["acc"])
+                time.sleep(0.25)
+                st_have.add(sf["acc"])
+                if det and det["subjectCik"] in own:
+                    skipped.append(sf["acc"])   # a filing about the investor's own company, not a stake it holds
+                    continue
+                if not det:
+                    st_have.discard(sf["acc"])  # try again next run
+                    continue
+                stakes.append({**sf, **det})
+        doc["stakes"] = sorted(stakes, key=lambda x: (x["filed"], x["acc"]), reverse=True)
+        doc["stakesSkipped"] = sorted(set(skipped))
         cus = sorted({h["cusip"] for x in doc["filings"] for h in x.get("holdings", [])})
         figi(cus, cache)
         for x in doc["filings"]:
             for h in x.get("holdings", []):
-                t = cache.get(h["cusip"]) or names.get(norm(h["name"]), "")
+                t = cache.get(h["cusip"], "").strip("?") or ("" if is_bond(h) else names.get(norm(h["name"]), ""))
                 h["ticker"] = t.replace("/", ".")
         json.dump(doc, open(path, "w"), separators=(",", ":"))
         json.dump(cache, open(MAP, "w"), separators=(",", ":"), sort_keys=True)   # keep progress if the step is stopped
