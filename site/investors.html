@@ -254,7 +254,7 @@ function card(x) {
   return `<article class="card inv"><div class="row" style="justify-content:space-between;align-items:start;flex-wrap:nowrap"><div><h2><a href="?i=${x.slug}" style="color:inherit;text-decoration:none">${esc(x.manager)}</a></h2><div class="firm">${esc(x.firm)}${x.based ? ` · ${esc(x.based)}` : ""}</div></div>${followBtn(x.slug)}</div>
     ${x.tags && x.tags.length ? `<div class="chips">${x.tags.map(t => `<span class="tagc">${esc(t)}</span>`).join("")}</div>` : ""}
     <p>${esc(x.about)}</p>
-    ${r ? `<div class="rec"><div>${spark(x.spark)}</div><div style="text-align:right">Copying each filing<br><b class="${cls(r.cagr - r.benchCagr)}">${pc(r.cagr)}</b> a year<br><span class="sub">S&amp;P 500 ${pc(r.benchCagr)} · since ${r.since.slice(0, 4)}</span>${r.coverage != null && r.coverage < 0.5 ? `<br><span class="sub" style="color:var(--warn)" title="Holdings without a price here are left out of the copy record">only ${pl(r.coverage, 0)} of holdings priced</span>` : ""}</div></div>` : ""}
+    ${r ? `<div class="rec"><div>${spark(x.spark)}</div><div style="text-align:right">Copying each filing<br><b class="${cls(r.cagr - r.benchCagr)}">${pc(r.cagr)}</b> a year<br><span class="sub">S&amp;P 500 ${pc(r.benchCagr)} · since ${r.since.slice(0, 4)}</span>${r.coverage != null && r.coverage < 0.4 ? `<br><span class="sub" style="color:var(--warn)" title="Holdings without a price here are left out of the copy record">only ${pl(r.coverage, 0)} of holdings priced</span>` : ""}</div></div>` : x.recordNote ? `<p class="sub" style="margin:0">No copy record: most of this portfolio is outside the S&amp;P 500 shares we have prices for.</p>` : ""}
     <div class="stats"><span>Holdings<b>${x.positions}</b></span><span>Top 10<b>${pl(x.top10, 0)}</b></span><span>Changes a year<b>${x.turnover == null ? "–" : pl(Math.min(x.turnover, 9.99), 0)}</b></span><span>Avg. held<b>${yrs(x.holdYears)}</b></span></div>
     <div class="chips">${(x.top || []).map(h => chipFor(h, " " + pl(h.w, 0))).join("")}</div>
     <div class="row" style="justify-content:space-between"><span class="sub">${qtr(x.period)} filed ${fmtD(x.filed)}${x.latest ? ` · ${x.latest.new} new, ${x.latest.sold} sold` : ""}</span><a class="bbtn ghost" href="?i=${x.slug}">Profile &amp; holdings →</a></div>
@@ -298,8 +298,8 @@ async function detail(slug) {
           <div class="tile">Holdings<b>${x.positions}</b>top 10 = ${pl(pt.top10, 0)}</div>
           <div class="tile">Changed in a year<b>${pt.turnoverYear == null ? "–" : pl(Math.min(pt.turnoverYear, 9.99), 0)}</b>${pt.turnoverAvg != null ? `usually ${pl(Math.min(pt.turnoverAvg, 9.99), 0)}` : "of the portfolio"}</div>
           <div class="tile">Average holding owned<b>${pt.holdCapped ? "≥ " : ""}${yrs(pt.holdYears)}</b>by value</div>
-          <div class="tile">Copying each filing<b class="${r ? cls(r.cagr - r.benchCagr) : ""}">${r ? pc(r.cagr) : "–"}</b>a year${r ? ` since ${r.since.slice(0, 4)}` : ""}</div>
-          <div class="tile">S&amp;P 500, same dates<b>${r ? pc(r.benchCagr) : "–"}</b>a year</div>
+          <div class="tile">Copying each filing<b class="${r ? cls(r.cagr - r.benchCagr) : ""}">${r ? pc(r.cagr) : "–"}</b>${r ? `a year since ${r.since.slice(0, 4)}` : x.recordNote ? "too little priced" : "not enough data"}</div>
+          <div class="tile">S&amp;P 500, same dates<b>${r ? pc(r.benchCagr) : "–"}</b>${r ? "a year" : "see Record"}</div>
         </div>
         ${x.summary && x.summary.length ? `<ul class="glance">${x.summary.map(s => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
       </section>
@@ -376,7 +376,8 @@ async function detail(slug) {
               ${(r.years || []).slice().reverse().map(y => `<tr><td>${y.year}${y.partial ? ` <span class="sub">part</span>` : ""}</td><td class="${cls(y.ret)}">${pc(y.ret)}</td><td>${pc(y.bench)}</td><td class="${y.ret > y.bench ? "win" : "neg"}">${pc(y.ret - y.bench)}</td></tr>`).join("")}
             </tbody></table></div>
           </div>
-          <p class="note">Buys each filing's holdings on the first close after it was published (not at the quarter end, which nobody could know in time), weighted by reported value, and holds them until the next filing. Holdings without a price here are left out. US dollars, dividends included, before costs and tax. This is not the fund's own return, which also reflects things 13F doesn't show.</p>` : `<p class="note">Not enough priced filings to show a record yet.</p>`}
+          ${r.coverage < 0.4 ? `<div class="callout">Only ${pl(r.coverage, 0)} of this portfolio, on average, is in companies we have prices for (S&amp;P 500 shares), so this record reflects part of what was held. Read it with care.</div>` : ""}
+          <p class="note">Buys each filing's holdings on the first close after it was published (not at the quarter end, which nobody could know in time), weighted by reported value, and holds them until the next filing. Holdings without a price here are left out. US dollars, dividends included, before costs and tax. This is not the fund's own return, which also reflects things 13F doesn't show.</p>` : `${x.recordNote ? `<p class="note">Not shown: on average only ${pl(x.recordNote.coverage, 0)} of this portfolio is in companies we have prices for (we price S&amp;P 500 shares), so a copy record would mostly reflect what was left out.</p>` : `<p class="note">Not enough priced filings to show a record yet.</p>`}`}
       </section>
 
       <section class="card sec"><h3>Quarter by quarter <span class="sub">last ${x.history.length} quarters</span></h3>

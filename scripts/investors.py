@@ -295,6 +295,7 @@ def window(points: list[list], years: float) -> dict | None:
 
 
 UNCLASSIFIED = "Outside the S&P 500"
+MIN_COVER = 0.2      # show a copy record only when at least this share of the portfolio has prices here
 STYLE = [  # field, label, higher-is ... (for the sentence), True when a low value ranks high
     ("pe", "Price to earnings", True), ("roe", "Return on equity", False), ("revGrowth", "Revenue growth", False),
     ("divY", "Dividend yield", False), ("mcapBn", "Company size", False), ("mom", "Price momentum", False), ("score", "BullPulse score", False)]
@@ -499,6 +500,10 @@ def main() -> None:
         five = next((m for x, m in zip(fs, maps) if qnum(x["period"]) >= qnum(last["period"]) - 20), maps[0])
         five_period = fs[maps.index(five)]["period"]
         rec = copy_record(doc, px, bench)
+        rec_note = None
+        if rec and (rec["coverage"] or 0) < MIN_COVER:   # too little of the portfolio priced to be fair
+            rec_note = {"coverage": rec["coverage"]}
+            rec = None
         calls = None
         if rec:
             cb = rec.pop("contrib", {})
@@ -530,7 +535,7 @@ def main() -> None:
         prof = profiles.get(slug, {})
         inv = {"slug": slug, "manager": doc["manager"], "firm": doc["firm"], "cik": doc["cik"], "about": doc.get("about", ""),
                "period": last["period"], "filed": last["filed"], "first": fs[0]["period"], "quarters": len(fs), "value": round(tot), "positions": len(hold),
-               "covered": round(covered, 3), "holdings": hold, "history": hist, "record": rec, "calls": calls, "pattern": pat, "style": sty,
+               "covered": round(covered, 3), "holdings": hold, "history": hist, "record": rec, "recordNote": rec_note, "calls": calls, "pattern": pat, "style": sty,
                "summary": describe(pat, sty, rec), "profile": prof, "name": doc["manager"]}
         byco: dict[str, dict] = {}
         for h in hold:
@@ -549,7 +554,7 @@ def main() -> None:
                       "top": [{"name": h["name"], "ticker": h["ticker"], "id": h["id"], "w": h["w"]} for h in hold[:5]],
                       "record": {k: rec[k] for k in ("since", "total", "bench", "cagr", "benchCagr", "maxDD", "coverage")} if rec else None,
                       "spark": [p[1] for p in rec["points"][::max(1, len(rec["points"]) // 40)]] + [rec["points"][-1][1]] if rec else None,
-                      "turnover": to_year, "holdYears": pat["holdYears"], "top10": pat["top10"],
+                      "turnover": to_year, "holdYears": pat["holdYears"], "top10": pat["top10"], "recordNote": rec_note,
                       "latest": hist[0]["counts"] if hist else None})
         items = []
         for hst in hist:
