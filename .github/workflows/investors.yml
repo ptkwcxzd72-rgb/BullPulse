@@ -1,0 +1,38 @@
+name: Investor filings backfill
+
+# Downloads every 13F filing since 2015 for investors that are new or incomplete (the evening job
+# only has time for new filings). Run it by hand after adding investors to scripts/fetch_13f.py.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: evening
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Holdings of well-known investors (SEC Form 13F)
+        run: python scripts/fetch_13f.py --budget 130
+        timeout-minutes: 140
+        continue-on-error: true
+      - name: Commit data
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/history/13f data/history/cusip_map.json
+          git diff --cached --quiet || git commit -m "Investor filings backfill $(date -u +%F)"
+          git pull --rebase origin main
+          git push

@@ -56,7 +56,7 @@ jobs:
         timeout-minutes: 40
         continue-on-error: true
       - name: Holdings of well-known investors (SEC Form 13F; only new filings are downloaded)
-        run: python scripts/fetch_13f.py
+        run: python scripts/fetch_13f.py --budget 32
         timeout-minutes: 40
         continue-on-error: true
       - name: US results dates

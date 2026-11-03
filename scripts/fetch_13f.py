@@ -28,7 +28,9 @@ import xml.etree.ElementTree as ET
 OUT = "data/history/13f"
 MAP = "data/history/cusip_map.json"
 
-# slug, manager, firm as filed, SEC CIK, a line about the investor
+# slug, manager, firm, SEC CIK (or [(cik, first period, last period), ...] when the firm changed
+# the entity it files under), a line about the investor. CIKs checked against Equibles' curated
+# superinvestor list and the SEC's filer records.
 INVESTORS = [
     ("buffett", "Warren Buffett", "Berkshire Hathaway", 1067983, "Long-term value investing in large, durable businesses."),
     ("ackman", "Bill Ackman", "Pershing Square Capital Management", 1336528, "A handful of large, simple, high-quality companies, sometimes as an activist."),
@@ -36,7 +38,7 @@ INVESTORS = [
     ("nick-train", "Nick Train", "Lindsell Train", 1484150, "Very long holding periods in a few quality brands. US holdings of the UK fund manager."),
     ("klarman", "Seth Klarman", "Baupost Group", 1061768, "Deep value with a margin of safety."),
     ("akre", "Chuck Akre", "Akre Capital Management", 1112520, "Compounders: good businesses, good managers, good reinvestment."),
-    ("tepper", "David Tepper", "Appaloosa", 1656456, "Opportunistic, often buying what others are selling."),
+    ("tepper", "David Tepper", "Appaloosa", [(1006438, "", "2015-12-31"), (1656456, "2016-01-01", "9999")], "Opportunistic, often buying what others are selling."),
     ("druckenmiller", "Stanley Druckenmiller", "Duquesne Family Office", 1536411, "Macro-driven, concentrated bets that change quickly."),
     ("li-lu", "Li Lu", "Himalaya Capital Management", 1709323, "Very concentrated long-term value investing."),
     ("hohn", "Chris Hohn", "TCI Fund Management", 1647251, "A few dominant, high-margin businesses held for years. UK-based."),
@@ -45,6 +47,38 @@ INVESTORS = [
     ("dorsey", "Pat Dorsey", "Dorsey Asset Management", 1671657, "Companies with durable competitive advantages (economic moats)."),
     ("gayner", "Thomas Gayner", "Markel Group", 1096343, "Profitable businesses with good management at fair prices, held for decades."),
     ("burry", "Michael Burry", "Scion Asset Management", 1649339, "Contrarian and concentrated; changes positions often."),
+    # added November 2026
+    ("nygren", "Bill Nygren", "Harris Associates (Oakmark Funds)", 813917, "Value investing in businesses priced well below their worth, held patiently."),
+    ("laffont", "Philippe Laffont", "Coatue Management", 1135730, "Technology and growth companies, from a 'Tiger cub' hedge fund."),
+    ("greenblatt", "Joel Greenblatt", "Gotham Asset Management", 1510387, "Systematic value: good businesses at cheap prices, held in very many names."),
+    ("halvorsen", "Andreas Halvorsen", "Viking Global Investors", 1103804, "Fundamental stock-picking across sectors, from a 'Tiger cub' hedge fund."),
+    ("sundheim", "Dan Sundheim", "D1 Capital Partners", 1747057, "Concentrated growth and quality stock-picking."),
+    ("dalio", "Ray Dalio", "Bridgewater Associates", 1350694, "Macro investing; the 13F shows only its US share holdings."),
+    ("coleman", "Chase Coleman", "Tiger Global Management", 1167483, "Technology and internet growth companies."),
+    ("mandel", "Stephen Mandel", "Lone Pine Capital", 1061165, "Growth and quality stock-picking, from a 'Tiger cub' hedge fund."),
+    ("icahn", "Carl Icahn", "Icahn Capital", 921669, "Activist: large stakes in companies he pushes to change."),
+    ("soros", "George Soros", "Soros Fund Management", 1029160, "Macro investing; the 13F shows only its US share holdings."),
+    ("sequoia", "Ruane, Cunniff & Goldfarb", "Sequoia Fund", [(728014, "", "2017-12-31"), (1720792, "2018-01-01", "9999")], "Concentrated quality investing; the firm behind the Sequoia Fund."),
+    ("marks", "Howard Marks", "Oaktree Capital Management", 949509, "Credit and distressed investing; the 13F shows only its US shares."),
+    ("valueact", "Mason Morfit", "ValueAct Capital", 1418814, "Constructive activism: large stakes and board seats in a few companies."),
+    ("abrams", "David Abrams", "Abrams Capital Management", 1358706, "Patient, concentrated value investing."),
+    ("loeb", "Dan Loeb", "Third Point", 1040273, "Event-driven and activist investing."),
+    ("greenberg", "Glenn Greenberg", "Brave Warrior Advisors", 1553733, "Concentrated, research-heavy value investing."),
+    ("starboard", "Jeff Smith", "Starboard Value", 1517137, "Activist: pushes under-performing companies to improve."),
+    ("peltz", "Nelson Peltz", "Trian Fund Management", 1345471, "Activist: a few large consumer and industrial companies."),
+    ("einhorn", "David Einhorn", "Greenlight Capital", [(1079114, "", "2023-12-31"), (1489933, "2024-01-01", "9999")], "Value investing long, with well-known short positions (not shown in 13F)."),
+    ("mclemore", "Samantha McLemore", "Patient Capital Management", 1854794, "Contrarian value with a long horizon."),
+    ("rochon", "François Rochon", "Giverny Capital", 1641864, "Quality companies held for many years. Canada-based."),
+    ("watsa", "Prem Watsa", "Fairfax Financial Holdings", 915191, "Value investing through an insurance group. Canada-based."),
+    ("berkowitz", "Bruce Berkowitz", "Fairholme Capital Management", 1056831, "Extremely concentrated, contrarian value."),
+    ("weitz", "Wally Weitz", "Weitz Investment Management", 883965, "Value investing in quality businesses."),
+    ("tweedy", "Tweedy, Browne", "Tweedy, Browne Company", 732905, "Classic Graham-style value investing."),
+    ("bloomstran", "Chris Bloomstran", "Semper Augustus Investments", 1115373, "Concentrated quality value."),
+    ("miller", "Bill Miller", "Miller Value Partners", 1135778, "Contrarian value that also buys out-of-favour growth."),
+    ("vinall", "Robert Vinall", "RV Capital", 1766596, "A few owner-led businesses held for the long term. Switzerland-based."),
+    ("pabrai", "Mohnish Pabrai", "Dalal Street (Pabrai Funds)", 1549575, "A few deep-value bets: 'heads I win, tails I don't lose much'."),
+    ("chou", "Francis Chou", "Chou Associates", 1389403, "Deep value and special situations. Canada-based."),
+    ("spier", "Guy Spier", "Aquamarine Capital", [(1404599, "", "2022-06-30"), (1953324, "2022-07-01", "9999")], "A small, rarely changed portfolio of quality companies."),
 ]
 
 ERRORS: list[str] = []
@@ -70,6 +104,21 @@ def get(url: str, data: bytes | None = None, headers: dict | None = None, tries:
             time.sleep(3 * (i + 1))
     ERRORS.append(url)
     return None
+
+
+def ranges(cik) -> list[tuple[int, str, str]]:
+    return cik if isinstance(cik, list) else [(cik, "", "9999")]
+
+
+def all_filings(cik, since: str) -> list[dict]:
+    """Filings from every entity the investor has filed under, each within its period range."""
+    out = []
+    for c, lo, hi in ranges(cik):
+        for f in filings(c, since):
+            if lo <= (f["period"] or f["filed"]) <= hi:
+                out.append(dict(f, cik=c))
+        time.sleep(0.2)
+    return sorted(out, key=lambda f: (f["filed"], f["acc"]))
 
 
 def filings(cik: int, since: str) -> list[dict]:
@@ -193,11 +242,13 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", default="2015-01-01")
     ap.add_argument("--only", default="", help="comma-separated slugs (testing)")
+    ap.add_argument("--budget", type=float, default=75, help="minutes; stop starting new investors after this")
     args = ap.parse_args()
     if not os.environ.get("SEC_CONTACT_EMAIL"):
         print("::warning::13F filings skipped: SEC_CONTACT_EMAIL is not set.")
         return 0
     os.makedirs(OUT, exist_ok=True)
+    T0 = time.time()
     cache = json.load(open(MAP)) if os.path.exists(MAP) else {}
     # issuer names in the universe, for when OpenFIGI has no answer
     names = {}
@@ -209,13 +260,17 @@ def main() -> int:
         if args.only and slug not in args.only.split(","):
             continue
         path = os.path.join(OUT, slug + ".json")
-        doc = json.load(open(path)) if os.path.exists(path) else {"slug": slug, "manager": manager, "firm": firm, "cik": cik, "filings": []}
-        doc.update({"manager": manager, "firm": firm, "cik": cik, "about": about})
+        if time.time() - T0 > args.budget * 60:
+            print(f"::warning::13F: time budget reached; {slug} and later investors wait for the next run")
+            break
+        doc = json.load(open(path)) if os.path.exists(path) else {"slug": slug, "manager": manager, "firm": firm, "filings": []}
+        main_cik = ranges(cik)[-1][0]
+        doc.update({"manager": manager, "firm": firm, "cik": main_cik, "ciks": [c for c, _, _ in ranges(cik)], "about": about})
         have = {f["acc"] for f in doc["filings"]}
-        for f in filings(cik, args.since):
+        for f in all_filings(cik, args.since):
             if f["acc"] in have:
                 continue
-            got = info_table(cik, f["acc"])
+            got = info_table(f["cik"], f["acc"])
             time.sleep(0.3)
             if not got:
                 continue
@@ -245,6 +300,7 @@ def main() -> int:
                 t = cache.get(h["cusip"]) or names.get(norm(h["name"]), "")
                 h["ticker"] = t.replace("/", ".")
         json.dump(doc, open(path, "w"), separators=(",", ":"))
+        json.dump(cache, open(MAP, "w"), separators=(",", ":"), sort_keys=True)   # keep progress if the step is stopped
         print(f"  {slug}: {len(doc['filings'])} quarters", flush=True)
     json.dump(cache, open(MAP, "w"), separators=(",", ":"), sort_keys=True)
     print(f"::notice::13F: {new_total} new filings")
