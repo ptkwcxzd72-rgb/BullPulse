@@ -194,7 +194,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
           git diff --cached --quiet || git commit -m "Nightly data $(date -u +%F)"
-          git pull --rebase origin main
+          # if another run saved the same generated files meanwhile, keep this run's (newer) versions
+          git pull --rebase -X theirs origin main
           git push
           scripts/site_data.sh push
 
