@@ -298,6 +298,13 @@ def figi(cusips: list[str], cache: dict) -> None:
 NORM = re.compile(r"\b(INC|CORP|CORPORATION|CO|COMPANY|LTD|PLC|HLDGS?|HOLDINGS?|GROUP|CL [A-Z]|NEW|DEL|THE|COM|SHS|ORD|NV|SA|AG|LP|LLC)\b\.?")
 
 
+# Holdings that OpenFIGI and the SEC's current list can't identify because the company has since
+# been taken private or delisted, checked by hand: CUSIP -> the ticker it traded under.
+OVERRIDES = {
+    "G4474Y214": "JHG",   # Janus Henderson Group plc: taken private by Trian, General Catalyst and QIA, June 2026
+}
+
+
 def sec_names() -> dict[str, str]:
     """Normalised company name -> ticker for every US-listed company, from the SEC's own list.
     Where a company has several listings (share classes, preferreds), the SEC lists the main one
@@ -424,7 +431,7 @@ def main() -> int:
         figi(cus, cache)
         for x in doc["filings"]:
             for h in x.get("holdings", []):
-                t = cache.get(h["cusip"], "").strip("?") or ("" if is_bond(h) else match_name(h["name"], names, secn))
+                t = OVERRIDES.get(h["cusip"]) or cache.get(h["cusip"], "").strip("?") or ("" if is_bond(h) else match_name(h["name"], names, secn))
                 h["ticker"] = t.replace("/", ".")
         json.dump(doc, open(path, "w"), separators=(",", ":"))
         json.dump(cache, open(MAP, "w"), separators=(",", ":"), sort_keys=True)   # keep progress if the step is stopped
