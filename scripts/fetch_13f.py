@@ -298,6 +298,43 @@ def figi(cusips: list[str], cache: dict) -> None:
 NORM = re.compile(r"\b(INC|CORP|CORPORATION|CO|COMPANY|LTD|PLC|HLDGS?|HOLDINGS?|GROUP|CL [A-Z]|NEW|DEL|THE|COM|SHS|ORD|NV|SA|AG|LP|LLC)\b\.?")
 
 
+def sec_names() -> dict[str, str]:
+    """Normalised company name -> ticker for every US-listed company, from the SEC's own list.
+    Where a company has several listings (share classes, preferreds), the SEC lists the main one
+    first, so that one is kept."""
+    raw = get("https://www.sec.gov/files/company_tickers.json", tries=2)
+    out: dict[str, str] = {}
+    if not raw:
+        return out
+    try:
+        rows = json.loads(raw).values()
+    except (ValueError, AttributeError):
+        return out
+    for r in rows:
+        n, t = norm(r.get("title", "")), (r.get("ticker") or "").upper().replace("-", ".")
+        if n and t and n not in out:
+            out[n] = t
+    return out
+
+
+def match_name(name: str, *tables: dict[str, str]) -> str:
+    """Ticker for a filed issuer name: an exact match on the normalised name in the first table
+    that has one; failing that, the only company whose name starts with it (FERGUSON matching
+    FERGUSON ENTERPRISES). Ambiguous prefixes match nothing. Matches still have to pass the price
+    check (fetch_13f_prices.py) before a copy record uses them."""
+    n = norm(name)
+    if len(n) < 4:
+        return ""
+    for tb in tables:
+        if n in tb:
+            return tb[n]
+    for tb in tables:
+        hits = {t for k, t in tb.items() if k.startswith(n + " ")}
+        if len(hits) == 1:
+            return hits.pop()
+    return ""
+
+
 def norm(name: str) -> str:
     n = re.sub(r"[^A-Z0-9 ]", " ", name.upper())
     return re.sub(r"\s+", " ", NORM.sub(" ", n)).strip()
@@ -321,6 +358,7 @@ def main() -> int:
     for f in glob.glob("universe/us*.csv"):
         for r in csv.DictReader(open(f, newline="")):
             names[norm(r["name"])] = r["ticker"]
+    secn = sec_names()   # every US-listed company, for holdings OpenFIGI couldn't identify
     new_total = 0
     for slug, manager, firm, cik, about in INVESTORS:
         if args.only and slug not in args.only.split(","):
@@ -386,7 +424,7 @@ def main() -> int:
         figi(cus, cache)
         for x in doc["filings"]:
             for h in x.get("holdings", []):
-                t = cache.get(h["cusip"], "").strip("?") or ("" if is_bond(h) else names.get(norm(h["name"]), ""))
+                t = cache.get(h["cusip"], "").strip("?") or ("" if is_bond(h) else match_name(h["name"], names, secn))
                 h["ticker"] = t.replace("/", ".")
         json.dump(doc, open(path, "w"), separators=(",", ":"))
         json.dump(cache, open(MAP, "w"), separators=(",", ":"), sort_keys=True)   # keep progress if the step is stopped

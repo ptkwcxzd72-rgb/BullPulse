@@ -290,6 +290,15 @@ class ThirteenFTest(unittest.TestCase):
         self.assertAlmostEqual(r["total"], 0.2, places=6)   # 10 -> 12, bought on the first close after filing
         self.assertAlmostEqual(r["coverage"], 0.5)
         self.assertEqual(I.month_ends("2024-01-03", "2024-03-01"), ["2024-01-31", "2024-02-29"])
+    def test_name_match(self):
+        import fetch_13f as F
+        sec = {F.norm("Janus Henderson Group plc"): "JHG", F.norm("Ferguson Enterprises Inc."): "FERG",
+               F.norm("Bank of America Corp"): "BAC", F.norm("Bank of Hawaii Corp"): "BOH"}
+        self.assertEqual(F.match_name("Janus Henderson Group plc", {}, sec), "JHG")    # exact, after dropping 'Group plc'
+        self.assertEqual(F.match_name("Ferguson Plc New", {}, sec), "FERG")            # the only name it begins
+        self.assertEqual(F.match_name("BANK OF", {}, sec), "")                         # ambiguous: no match
+        self.assertEqual(F.match_name("Janus Henderson Group plc", {F.norm("Janus Henderson"): "XYZ"}, sec), "XYZ")  # universe first
+
     def test_news_feed(self):
         import news_feed as N
         ids = {("US", "AAA"): "US-AAA", ("US", "BBB"): "US-BBB"}
