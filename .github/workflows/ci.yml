@@ -27,4 +27,4 @@ jobs:
       - name: Python tests (no network, no model)
         run: python -m unittest discover tests -v
       - name: Strategy Lab engine tests
-        run: node tests/js/lab_test.js
+        run: node tests/js/lab_test.js && node tests/js/models_test.js

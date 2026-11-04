@@ -165,6 +165,10 @@ jobs:
         run: python scripts/news_feed.py
         continue-on-error: true
 
+      - name: Model portfolios (backtests, market conditions, tonight's picks, monthly record)
+        run: node scripts/models.js
+        continue-on-error: true
+
       - name: Report investor data checks in a GitHub issue (GitHub emails you about new issues)
         if: ${{ !cancelled() }}
         continue-on-error: true

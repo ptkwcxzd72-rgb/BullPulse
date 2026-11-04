@@ -61,6 +61,10 @@ GDELT / Tiingo news ─► fetch_news.py ─► score_news.py ──────
 - **Visitor counts (optional).** Set `GOATCOUNTER` in `site/common.js` to a [GoatCounter](https://www.goatcounter.com) site code to count visits without cookies. Feedback comes in through the GitHub issue form linked in every page's footer.
 - [`site/`](site) is a static site with no server.
 
+## Model portfolios
+
+`site/models.html`: seven rule-based strategies (`site/models-core.js`: BullPulse score leaders, momentum, quality, value, growth, steady compounders, all-rounder) with rules fixed in advance. `scripts/models.js` (nightly, node) runs each through the Strategy Lab engine in three markets with dealing costs, stamp duty and currency, trading only on the scheduled date (quarterly, and yearly for comparison), from December 2017 when every measure has a year of history. It reports the whole period, the last two years separately, a resampled range of outcomes, the market's worst falls, how often to trade, and how each strategy did in the 24 past months most like today (index trend, volatility, breadth, dispersion). Tonight's portfolios are picked by the same code with reasons and news context; "this month's" and "this year's" picks are what most strategies agree on, weighted by record and fit. Each month's portfolios are stored in `data/history/models/` and followed forward, never edited. A builder runs the engine in the browser. Limits shown on the page: news has no history to test, and companies that left the indexes are missing (survivorship). Model output for everyone, not personal advice.
+
 ## News
 
 `site/news.html` shows the last three weeks of headlines about the ranked companies, each with its FinBERT tone (positive, negative or neutral), event type and the companies it is about, with their score and day's move. Filter by market, tone, topic, search, your watchlist and holdings, or the investors you follow; scroll for older days. Built nightly by `scripts/news_feed.py` from `data/news/articles.jsonl` (duplicates merged; headlines link to the publisher, no article text is copied).

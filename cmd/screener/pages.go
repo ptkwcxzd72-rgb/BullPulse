@@ -279,7 +279,7 @@ func writePages(siteDir, base string, rows []*Row, asof time.Time) error {
 	var sm strings.Builder
 	sm.WriteString(`<?xml version="1.0" encoding="UTF-8"?>` + "\n" + `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` + "\n")
 	day := asof.Format("2006-01-02")
-	for _, p := range []string{"", "app.html", "portfolio.html", "lab.html", "investors.html", "news.html", "alerts.html", "score.html"} {
+	for _, p := range []string{"", "app.html", "portfolio.html", "lab.html", "models.html", "investors.html", "news.html", "alerts.html", "score.html"} {
 		fmt.Fprintf(&sm, "  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>\n", base, p, day)
 	}
 	ids := make([]string, 0, len(keep))

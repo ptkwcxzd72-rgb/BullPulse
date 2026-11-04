@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BullPulse Model Portfolios</title>
+<meta name="description" content="Rule-based model portfolios for UK and US shares: this month's and this year's picks, seven strategies each tested on nine years of data with costs, how they did in markets like today's, a portfolio builder and a forward track record. Model output, not personal advice.">
+<link rel="canonical" href="https://bullpulse.co.uk/models.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="bp.css">
+<style>
+.pagehead{padding-block:6px 24px}
+.pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:74ch}
+.pagehead .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pagehead .meta span{font-size:12.5px;border:1px solid var(--night-line);border-radius:999px;padding:3px 10px;color:var(--night-ink)}
+#main{padding-block:0 48px;display:block}
+.secnav{position:sticky;top:0;z-index:20;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.secnav::-webkit-scrollbar{display:none}
+.secnav a{font-size:13.5px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.secnav a:hover{background:var(--surface-2);color:var(--ink)}
+.secnav .sp{flex:1}
+.mseg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);flex:none}
+.mseg button{border:0;background:none;padding:7px 11px;font:600 13px var(--f-body);color:var(--muted);cursor:pointer;white-space:nowrap}
+.mseg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+section.blk{padding-top:30px;scroll-margin-top:60px}
+.blk > h2{margin:0 0 4px;font:700 22px var(--f-display);letter-spacing:-.01em}
+.blk > p.lead{margin:0 0 16px;color:var(--muted);max-width:80ch;font-size:14.5px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg)}
+.pad{padding:16px 18px}
+.verdict{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:16px 18px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);margin-top:22px}
+.verdict .big{font:700 30px/1 var(--f-display);color:var(--ink)}
+.verdict p{margin:0;font-size:14.5px;max-width:90ch}
+.picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.pick{padding:14px 16px;display:grid;gap:8px;align-content:start}
+.pick .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.pick h3{margin:0;font:650 16px var(--f-display)}
+.pick h3 a{color:inherit;text-decoration:none}
+.pick ul{margin:0;padding-left:16px;font-size:13px;color:var(--ink);line-height:1.5}
+.n1{font:700 13px var(--f-display);color:var(--muted);margin-right:6px}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);background:var(--surface)}
+.mflag{font-size:12.5px;padding:5px 9px;border-radius:8px}
+.mflag.neg{background:var(--down-soft);color:var(--down)}.mflag.pos{background:var(--up-soft);color:var(--up)}.mflag.info{background:var(--surface-2);color:var(--muted)}
+.pkv{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.pkv b{color:var(--ink);font-weight:650}
+.mk{font-size:10.5px;font-weight:700;border-radius:5px;padding:1px 5px}
+.mk.LSE{background:var(--uk-soft);color:var(--uk)}.mk.US{background:var(--us-soft);color:var(--us)}
+.mkts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ind{padding:14px 16px;display:grid;gap:6px}
+.ind .lab{font-size:12.5px;color:var(--muted)}
+.ind .v{font:700 22px var(--f-display)}
+.ind .w{font-size:13px;font-weight:600}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.strat{padding:16px 18px;display:grid;gap:10px;align-content:start}
+.strat h3{margin:0;font:650 17px var(--f-display)}
+.strat p{margin:0;font-size:13.5px;color:var(--muted)}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;font-size:11.5px;color:var(--muted)}
+.nums b{display:block;font:650 16px var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.mbadge{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.mbadge.better{background:var(--up-soft);color:var(--up)}.mbadge.worse{background:var(--down-soft);color:var(--down)}.mbadge.unclear{background:var(--surface-2);color:var(--muted)}
+.mbadge.pass{background:var(--up-soft);color:var(--up)}.mbadge.fail{background:var(--down-soft);color:var(--down)}
+.bbtn{border:0;border-radius:8px;padding:8px 13px;font-weight:600;font-size:13px;cursor:pointer;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.bbtn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{min-width:0}
+.form input,.form select{min-width:0;width:100%}
+.tt{width:100%;border-collapse:collapse;font-size:13px}
+.tt th,.tt td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;vertical-align:top}
+.tt th:first-child,.tt td:first-child{text-align:left}
+.tt th{font-size:11.5px;color:var(--muted);font-weight:600}
+.tt a{color:var(--ink);font-weight:600;text-decoration:none}
+.tw{overflow-x:auto}
+.pos{color:var(--up)}.neg{color:var(--down)}.flat{color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted);margin:0;max-width:100ch}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.detail{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:16px}
+.detail > *{min-width:0}
+.detail h4{margin:0 0 6px;font:650 15px var(--f-display)}
+.range{position:relative;height:30px;margin:6px 0 2px}
+.range .bar{position:absolute;top:11px;height:8px;border-radius:4px;background:var(--accent-soft)}
+.range .mid{position:absolute;top:6px;width:3px;height:18px;border-radius:2px;background:var(--accent)}
+.range .zero{position:absolute;top:2px;width:1px;height:26px;background:var(--muted);opacity:.5}
+.form{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px 16px}
+.form label{display:grid;gap:5px;font-size:12.5px;color:var(--muted);font-weight:600}
+.form select,.form input{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 10px;font:inherit;font-size:14px;color:var(--ink)}
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:10px 13px;border-radius:6px;font-size:13.5px}
+.calib{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;align-items:end;height:130px;padding-top:8px}
+.calib div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;font-size:11px;color:var(--muted);height:100%}
+.calib i{display:block;width:100%;background:var(--accent);border-radius:4px 4px 0 0;opacity:.8}
+.empty{padding:26px;text-align:center;color:var(--muted)}
+@media (max-width:980px){.two,.three{grid-template-columns:minmax(0,1fr)}.mkts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.verdict{grid-template-columns:minmax(0,1fr)}.picks,.shelf{grid-template-columns:minmax(0,1fr)}.hm{display:none}}
+</style>
+<script src="common.js" defer></script>
+</head>
+<body>
+<header class="masthead night">
+  <div class="in mastbar">
+    <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+    <nav class="nav" aria-label="Site"></nav>
+  </div>
+  <div class="in pagehead">
+    <h1>Model portfolios</h1>
+    <p>Portfolios picked by fixed, published rules, each tested on nearly nine years of UK and US data, from December 2017, with dealing costs, stamp duty and currency, using only what was known at each date. See what they hold now and why, how they did, how they did in markets like today's, and their record since publication. Model output for everyone, not advice for you.</p>
+    <div class="meta" id="meta"></div>
+  </div>
+</header>
+<main class="in" id="main">
+  <nav class="secnav" aria-label="Sections">
+    <a href="#picks">Picks</a><a href="#strategies">Strategies</a><a href="#market">Market now</a><a href="#build">Build your own</a><a href="#record">Track record</a><a href="#method">How it works</a>
+    <span class="sp"></span>
+    <div class="mseg" role="group" aria-label="Market" id="mkt"><button data-m="ALL" aria-pressed="true">UK + US</button><button data-m="LSE" aria-pressed="false">UK</button><button data-m="US" aria-pressed="false">US</button></div>
+  </nav>
+  <div id="verdict"></div>
+  <section class="blk" id="picks"></section>
+  <section class="blk" id="strategies"></section>
+  <section class="blk" id="market"></section>
+  <section class="blk" id="build"></section>
+  <section class="blk" id="record"></section>
+  <section class="blk" id="method"></section>
+  <p class="note" style="margin-top:30px">Model portfolios are produced by the same fixed rules for every reader. They don't take account of anyone's circumstances, aims or attitude to risk, and they are not a recommendation to buy or sell any investment. Backtests show how rules would have done in the past, with assumptions about costs; they are not a promise of future returns, and real results can be worse. The value of shares can fall as well as rise and you may get back less than you invest. BullPulse is a free research tool, not a regulated adviser.</p>
+</main>
+<script src="lab-engine.js"></script>
+<script src="models-core.js"></script>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+const E = window.LabEngine, MC = window.ModelsCore;
+const esc = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const pc = (v, d = 1) => v == null ? "–" : (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(d) + "%";
+const pl = (v, d = 0) => v == null ? "–" : (v * 100).toFixed(d) + "%";
+const cls = v => v > 0 ? "pos" : v < 0 ? "neg" : "flat";
+const fmtD = d => d ? new Date(d.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : "–";
+const monD = d => d ? new Date(d.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }) : "–";
+const money = (v, ccy) => ccy === "GBX" ? (v >= 100 ? "£" + (v / 100).toFixed(2) : v.toFixed(1) + "p") : (ccy === "USD" ? "$" : "") + v.toFixed(2);
+const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+const enc = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const NAME = {}; MC.STRATEGIES.forEach(s => NAME[s.id] = s.name);
+let SINCE = "", X = null, mk = store.get("bp-models-mkt", "ALL"), horizon = "month", open = new URLSearchParams(location.search).get("s") || "", sortBy = "fit";
+
+function growthChart(dates, a, b, labelA, labelB) {
+  const pts = [[dates[0], 1, 1]]; let g = 1, h = 1;
+  a.forEach((x, k) => { g *= 1 + (x || 0); h *= 1 + (b[k] || 0); pts.push([dates[k], g, h]); });
+  const W = 760, H = 230, padL = 40, padB = 20, vals = pts.flatMap(p => [p[1], p[2]]), lo = Math.min(...vals), hi = Math.max(...vals), L = Math.log;
+  const X_ = k => padL + k / (pts.length - 1) * (W - padL - 46), Y = v => H - padB - (L(v) - L(lo)) / ((L(hi) - L(lo)) || 1) * (H - padB - 10);
+  const path = j => pts.map((p, k) => (k ? "L" : "M") + X_(k).toFixed(1) + " " + Y(p[j]).toFixed(1)).join("");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Growth of 100: ${esc(labelA)} against ${esc(labelB)}" style="width:100%;height:auto">`;
+  [50, 75, 100, 150, 200, 300, 400].filter(v => v / 100 >= lo * .97 && v / 100 <= hi * 1.03).forEach(v => s += `<line x1="${padL}" x2="${W - 46}" y1="${Y(v / 100)}" y2="${Y(v / 100)}" stroke="var(--grid)"/><text x="${padL - 6}" y="${Y(v / 100) + 4}" font-size="11" text-anchor="end" fill="var(--muted)">${v}</text>`);
+  [...new Set(pts.map(p => p[0].slice(0, 4)))].forEach((y, i) => { const k = pts.findIndex(p => p[0].slice(0, 4) === y); if (k > 0 && i % 2 === 0) s += `<text x="${X_(k)}" y="${H - 3}" font-size="11" text-anchor="middle" fill="var(--muted)">${y}</text>`; });
+  s += `<path d="${path(2)}" fill="none" stroke="var(--us)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/><path d="${path(1)}" fill="none" stroke="var(--accent)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>`;
+  const last = pts[pts.length - 1];
+  s += `<text x="${W - 42}" y="${Y(last[1]) + 4}" font-size="11.5" fill="var(--accent)" font-weight="600">${Math.round(last[1] * 100)}</text><text x="${W - 42}" y="${Y(last[2]) + 4}" font-size="11.5" fill="var(--us)" font-weight="600">${Math.round(last[2] * 100)}</text>`;
+  return s + "</svg>";
+}
+function spark(series) {
+  const vs = series.map(p => p[1]).filter(v => v != null); if (vs.length < 2) return "";
+  const lo = Math.min(...vs), hi = Math.max(...vs), W = 220, H = 36;
+  const d = series.map((p, k) => (k ? "L" : "M") + (k / (series.length - 1) * W).toFixed(1) + " " + (H - 3 - (p[1] - lo) / ((hi - lo) || 1) * (H - 6)).toFixed(1)).join("");
+  const lx = W, ly = H - 3 - (vs[vs.length - 1] - lo) / ((hi - lo) || 1) * (H - 6);
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:${H}px" aria-hidden="true"><path d="${d}" fill="none" stroke="var(--muted)" stroke-width="1.3" vector-effect="non-scaling-stroke"/><circle cx="${lx - 2}" cy="${ly}" r="3" fill="var(--accent)"/></svg>`;
+}
+const M_ = s => s.markets[mk];
+
+// ---------- the honest verdict at the top
+function drawVerdict() {
+  const ss = X.strategies.map(s => ({ s, a: M_(s).quarterly, y: M_(s).yearly }));
+  const beat = ss.filter(o => o.a.all && o.a.indexAll && o.a.all.cagr > o.a.indexAll.cagr);
+  const sure = ss.filter(o => o.a.excess && o.a.excess.t >= 2);
+  const best = ss.slice().sort((p, q) => q.a.all.cagr - p.a.all.cagr)[0];
+  const ix = ss[0].a.indexAll;
+  $("verdict").innerHTML = `<div class="verdict"><div class="big">${beat.length} of ${ss.length}</div><p><b>strategies beat the index after costs since ${SINCE}</b> (${esc(ss[0].a.index)}: ${pc(ix.cagr)} a year). The best, ${esc(best.s.name)}, made ${pc(best.a.all.cagr)} a year. ${sure.length ? `${sure.length} did so by enough to be fairly sure it wasn't luck.` : "None did so by enough to rule out luck: over this many years, edges this size could appear by chance."} The tests are also somewhat flattered because companies that left the indexes are missing (see How it works). A low-cost index fund remains a strong default; these portfolios show what the evidence says about doing better, honestly.</p></div>`;
+}
+
+// ---------- picks for this month and this year
+function drawPicks() {
+  const list = X.picks[horizon] || [];
+  const cal = X.model.calibration || [];
+  const lo = cal.length ? cal[0].prob : null, hi = cal.length ? cal[cal.length - 1].prob : null;
+  $("picks").innerHTML = `<h2>${horizon === "month" ? "This month's picks" : "This year's picks"}</h2>
+    <p class="lead">${horizon === "month" ? "The stocks most of the seven strategies agree on today, with the strategies that have the better long-term record (rebalanced each quarter) and the better fit with today's market counting more." : "The same idea for a twelve-month hold: strategies with the better record when rebalanced once a year count more."} Every reason comes from tonight's figures. News is shown, but it isn't part of the rules because there isn't enough news history to test it.</p>
+    <div class="row" style="margin-bottom:14px"><div class="mseg" role="group" aria-label="Horizon"><button data-h="month" aria-pressed="${horizon === "month"}">This month</button><button data-h="year" aria-pressed="${horizon === "year"}">This year</button></div>
+      <span class="note">UK + US. Prices to ${fmtD(X.asof)}.</span></div>
+    <div class="picks">${list.map((p, k) => `<article class="card pick">
+      <div class="top"><h3><span class="n1">${k + 1}</span><a href="app.html#${encodeURIComponent(p.id)}">${esc(p.name)}</a></h3><span><span class="mk ${p.ex}">${p.ex === "LSE" ? "UK" : "US"}</span></span></div>
+      <div class="pkv"><span>Score <b>${p.score}</b></span><span>Past year <b class="${cls(p.ret1y)}">${pc(p.ret1y, 0)}</b></span><span title="The learning model's estimate that it beats its sector over the next six months">Model <b>${p.prob6 != null ? pl(p.prob6) : "–"}</b></span><span>${esc(p.sector)}</span></div>
+      <div class="chips" title="Strategies that hold it">${p.strategies.map(id => `<span class="chip">${esc(NAME[id])}</span>`).join("")}</div>
+      <ul>${p.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>
+      ${p.flags.map(f => `<div class="mflag ${f.kind}">${esc(f.text)}</div>`).join("")}
+    </article>`).join("")}</div>
+    <p class="note" style="margin-top:12px">“Model” is the learning model's estimate that the stock beats its sector over the next six months. Tested on past data, its estimates ranged only from ${pl(lo)} to ${pl(hi)}: it separates stocks a little, not a lot, so treat it as a tie-breaker. These picks follow from the strategies below; check their record before relying on them.</p>`;
+  document.querySelectorAll("[data-h]").forEach(b => b.onclick = () => { horizon = b.dataset.h; drawPicks(); });
+}
+
+// ---------- the strategy shelf and one strategy in detail
+function card(s) {
+  const m = M_(s), a = m.quarterly, f = m.fit;
+  const passed = a.hidden && a.indexHidden ? a.hidden.cagr >= a.indexHidden.cagr : null;
+  return `<article class="card strat"><div class="row" style="justify-content:space-between;align-items:start;flex-wrap:nowrap"><div><h3>${esc(s.name)}</h3><p>${esc(s.short)}</p></div>${f ? `<span class="mbadge ${f.verdict}" title="How it did in past months that looked like today">${f.verdict === "better" ? "Suits today" : f.verdict === "worse" ? "Struggles today" : "No clear fit"}</span>` : ""}</div>
+    <div class="nums"><span>Since ${SINCE.slice(-4)}, a year<b class="${cls(a.all.cagr - a.indexAll.cagr)}">${pc(a.all.cagr)}</b>index ${pc(a.indexAll.cagr)}</span><span>Last 2 years<b class="${passed ? "pos" : "neg"}">${a.hidden ? pc(a.hidden.cagr) : "–"}</b>index ${a.indexHidden ? pc(a.indexHidden.cagr) : "–"}</span><span>Worst fall<b class="neg">${pc(a.all.maxDD, 0)}</b>index ${pc(a.indexAll.maxDD, 0)}</span></div>
+    <div class="chips">${m.picks.slice(0, 6).map(p => `<span class="chip">${esc(p.t)}</span>`).join("")}${m.picks.length > 6 ? `<span class="chip">+${m.picks.length - 6}</span>` : ""}</div>
+    <div class="row" style="justify-content:space-between"><span class="note">${m.picks.length} stocks, rebalanced each quarter</span><a class="bbtn ghost" href="?s=${s.id}#strategies" data-open="${s.id}">See strategy</a></div></article>`;
+}
+function rangeBar(r) {
+  if (!r) return "";
+  const lo = Math.min(r.p5, 0) - 0.02, hi = Math.max(r.p95, 0) + 0.02, X_ = v => ((v - lo) / (hi - lo) * 100).toFixed(1) + "%";
+  return `<div class="range"><div class="zero" style="left:${X_(0)}"></div><div class="bar" style="left:${X_(r.p5)};width:calc(${X_(r.p95)} - ${X_(r.p5)})"></div><div class="mid" style="left:${X_(r.p50)}"></div></div>
+    <div class="legend"><span>Bad case ${pc(r.p5)} a year</span><span>Middle ${pc(r.p50)}</span><span>Good case ${pc(r.p95)}</span>${r.lossAfter5 != null ? `<span>Chance of a loss after 5 years: ${pl(r.lossAfter5)}</span>` : ""}</div>`;
+}
+function detail(s) {
+  const m = M_(s), a = m.quarterly, y = m.yearly, f = m.fit;
+  const sure = a.excess ? (a.excess.t >= 2 ? "fairly sure it isn't luck" : a.excess.t >= 1 ? "a hint, but it could be luck" : "no better than luck") : "–";
+  const lab = Object.assign({}, m.lab, { name: s.name });
+  return `<div class="card pad detail" id="sd">
+    <div class="row" style="justify-content:space-between"><h3 style="margin:0;font:700 20px var(--f-display)">${esc(s.name)}</h3><span class="row"><a class="bbtn ghost" href="lab.html#s=${enc(lab)}">Open in Strategy Lab</a><button class="bbtn" data-build="${s.id}">Build it with my amount</button><a class="bbtn ghost" href="models.html#strategies" data-close="1">Close</a></span></div>
+    <div class="two"><div><h4>The idea</h4><p style="margin:0 0 10px">${esc(s.idea)}</p><h4>Why it can work, and when it doesn't</h4><p style="margin:0">${esc(s.why)}</p></div>
+      <div><h4>The rules</h4><p class="note" style="font-size:13.5px;color:var(--ink)">${s.rules.length ? "Only stocks with " + s.rules.map(r => `${({ M: "momentum percentile", T: "trend percentile", G: "growth percentile", FP: "fundamental checks passed", Vp: "cheapness percentile", vol1y: "volatility (%)" })[r[0]] || r[0]} ${r[1] === ">=" ? "of at least" : "of at most"} ${r[2]}`).join(" and ") + "; " : ""}ranked on ${Object.entries(s.w).map(([k, v]) => `${({ T: "trend", M: "momentum", G: "growth", F: "fundamentals", V: "value" })[k]} ${v}%`).join(", ")}. The top ${s.top} are held${s.weighting === "invvol" ? ", more in the steadier ones" : " in equal amounts"}, at most 10% in one stock. Trades only once a quarter; a holding stays while it ranks in the top ${s.top * 2}. UK investment trusts are left out.</p></div></div>
+    <div><h4>Since ${SINCE}, with costs <span class="note" style="font-weight:500">rebalanced each quarter; growth of 100, log scale</span></h4>${growthChart(a.dates, a.rets, a.indexRets, s.name, a.index)}
+      <div class="legend"><span><i style="background:var(--accent)"></i>${esc(s.name)}</span><span><i style="background:var(--us)"></i>${esc(a.index)}</span><span>Dealing costs, stamp duty and currency included; in pounds</span></div></div>
+    <div class="two">
+      <div class="tw"><table class="tt"><thead><tr><th></th><th>Strategy</th><th>Index</th></tr></thead><tbody>
+        <tr><td>Return a year since ${SINCE}</td><td class="${cls(a.all.cagr - a.indexAll.cagr)}"><b>${pc(a.all.cagr)}</b></td><td>${pc(a.indexAll.cagr)}</td></tr>
+        <tr><td>Before the last two years</td><td>${a.dev ? pc(a.dev.cagr) : "–"}</td><td>${a.indexDev ? pc(a.indexDev.cagr) : "–"}</td></tr>
+        <tr><td>Last two years, from ${monD(a.hiddenFrom)}</td><td class="${cls((a.hidden?.cagr ?? 0) - (a.indexHidden?.cagr ?? 0))}">${a.hidden ? pc(a.hidden.cagr) : "–"}</td><td>${a.indexHidden ? pc(a.indexHidden.cagr) : "–"}</td></tr>
+        <tr><td>Rebalanced once a year instead</td><td>${y.all ? pc(y.all.cagr) : "–"}</td><td>${y.indexAll ? pc(y.indexAll.cagr) : "–"}</td></tr>
+        <tr><td>Worst fall from a high</td><td class="neg">${pc(a.all.maxDD)}</td><td class="neg">${pc(a.indexAll.maxDD)}</td></tr>
+        <tr><td>Ups and downs (volatility)</td><td>${pl(a.all.vol)}</td><td>${pl(a.indexAll.vol)}</td></tr>
+        <tr><td>Worst calendar year</td><td class="neg">${pc(a.all.worstYear)}</td><td class="neg">${pc(a.indexAll.worstYear)}</td></tr>
+        <tr><td>Months it beat the index</td><td>${a.excess ? pl(a.excess.beat) : "–"}</td><td></td></tr>
+        <tr><td>Trading a year (bought + sold)</td><td>${pl(a.turnoverYr)}</td><td></td></tr>
+      </tbody></table></div>
+      <div style="display:grid;gap:14px">
+        <div><h4>How sure can we be?</h4><p style="margin:0;font-size:14px">Ahead of the index by ${pc(a.excess?.perYear)} a year on average; statistically, <b>${sure}</b> (t = ${a.excess?.t ?? "–"}; around 2 or more is the usual bar).</p></div>
+        <div><h4>A range of outcomes</h4><p class="note">The period replayed 1,000 times by reshuffling whole years of the strategy's own history.</p>${rangeBar(a.range)}</div>
+        <div><h4>In markets like today's</h4>${f ? `<p style="margin:0;font-size:14px">In the ${f.n} past months most like today (trend, volatility, breadth and dispersion), it ${f.avg6 >= 0 ? "beat" : "trailed"} the index by ${pc(Math.abs(f.avg6))} over the next six months on average, against ${pc(f.usual6)} usually, and was ahead ${pl(f.beat)} of the time. <span class="mbadge ${f.verdict}">${f.verdict === "better" ? "Tends to suit markets like this" : f.verdict === "worse" ? "Tends to struggle in markets like this" : "No clear evidence either way"}</span></p>` : `<p class="note">Not enough history.</p>`}</div>
+      </div>
+    </div>
+    <div class="two">
+      <div><h4>In the market's worst falls</h4><div class="tw"><table class="tt"><thead><tr><th>Three months</th><th>Strategy</th><th>Index</th></tr></thead><tbody>${X.falls.map((fl, k) => `<tr><td>${monD(fl.from)} to ${monD(fl.to)}</td><td class="${cls(m.stress[k])}">${pc(m.stress[k])}</td><td class="${cls(m.stressIndex[k])}">${pc(m.stressIndex[k])}</td></tr>`).join("")}</tbody></table></div><p class="note">The four worst three-month spells for ${esc(X.strategies[0].markets.ALL.quarterly.index)} in the period, found automatically.</p></div>
+      <div><h4>How often to trade</h4><div class="tw"><table class="tt"><thead><tr><th>Trading</th><th>Return a year</th><th>Bought + sold a year</th></tr></thead><tbody>${m.trading.map(t => `<tr><td>Every ${t.every.toLowerCase()}</td><td>${pc(t.cagr)}</td><td>${pl(t.turnoverYr)}</td></tr>`).join("")}</tbody></table></div><p class="note">The same rules traded more or less often. Costs grow with trading; we use quarterly rebalancing for every strategy.</p></div>
+    </div>
+    <div><h4>What it holds now <span class="note" style="font-weight:500">if formed with tonight's figures; ${m.picks.length} stocks</span></h4>
+      <div class="tw"><table class="tt"><thead><tr><th>Company</th><th class="hm">Sector</th><th>Weight</th><th>Score</th><th class="hm">Past year</th><th>Model</th></tr></thead><tbody>
+      ${m.picks.map(p => `<tr><td><a href="app.html#${encodeURIComponent(p.id)}">${esc(p.name)}</a> <span class="mk ${p.ex}">${p.ex === "LSE" ? "UK" : "US"}</span>${p.status === "new" ? ` <span class="mbadge better">New</span>` : ""}<div class="note">${esc(p.reasons[0] || "")}</div>${p.flags.filter(f => f.kind !== "info").map(f => `<div class="note ${f.kind}">${esc(f.text)}</div>`).join("")}</td><td class="hm note" style="text-align:left">${esc(p.sector)}</td><td>${pl(p.w, 1)}</td><td>${p.score}</td><td class="hm ${cls(p.ret1y)}">${pc(p.ret1y, 0)}</td><td>${p.prob6 != null ? pl(p.prob6) : "–"}</td></tr>`).join("")}
+      </tbody></table></div>
+      ${m.out.length ? `<p class="note">Left since last month: ${m.out.map(o => esc(o.name)).join(", ")}.</p>` : ""}
+      <p class="note">Sectors: ${m.sectors.slice(0, 6).map(([k, v]) => `${esc(k)} ${pl(v)}`).join(", ")}.</p></div>
+  </div>`;
+}
+function drawStrategies() {
+  const order = { fit: (p, q) => ((M_(q).fit?.t ?? -9) - (M_(p).fit?.t ?? -9)), record: (p, q) => M_(q).quarterly.all.cagr - M_(p).quarterly.all.cagr, falls: (p, q) => M_(q).quarterly.all.maxDD - M_(p).quarterly.all.maxDD };
+  const list = X.strategies.slice().sort(order[sortBy]);
+  const s = X.strategies.find(x => x.id === open);
+  $("strategies").innerHTML = `<h2>Strategies</h2>
+    <p class="lead">Seven strategies built from well-known ideas, with rules fixed in advance rather than fitted to our data. Each has a full backtest; the last two years are shown separately so you can see whether it held up after the years it was judged on.</p>
+    <div class="row" style="margin-bottom:12px"><span class="note">Order by</span><div class="mseg" role="group" aria-label="Order"><button data-o="fit" aria-pressed="${sortBy === "fit"}">Fit with today</button><button data-o="record" aria-pressed="${sortBy === "record"}">Long-term return</button><button data-o="falls" aria-pressed="${sortBy === "falls"}">Smallest falls</button></div></div>
+    <div class="shelf">${list.map(card).join("")}</div>${s ? detail(s) : ""}`;
+  document.querySelectorAll("[data-o]").forEach(b => b.onclick = () => { sortBy = b.dataset.o; drawStrategies(); });
+  document.querySelectorAll("[data-open]").forEach(a => a.onclick = e => { e.preventDefault(); open = a.dataset.open; history.replaceState(null, "", `?s=${open}#strategies`); drawStrategies(); $("sd").scrollIntoView({ behavior: "smooth", block: "start" }); });
+  document.querySelectorAll("[data-close]").forEach(a => a.onclick = e => { e.preventDefault(); open = ""; history.replaceState(null, "", "models.html#strategies"); drawStrategies(); });
+  document.querySelectorAll("[data-build]").forEach(b => b.onclick = () => { B.strategy = b.dataset.build; drawBuild(); $("build").scrollIntoView({ behavior: "smooth" }); });
+}
+
+// ---------- market now
+function drawMarket() {
+  const ranked = X.strategies.filter(s => M_(s).fit).sort((p, q) => M_(q).fit.t - M_(p).fit.t);
+  const nw = X.news;
+  $("market").innerHTML = `<h2>The market now</h2>
+    <p class="lead">Four measures of today's market (to ${fmtD(X.marketAsOf)}), how unusual each is against the past decade, and which strategies did better or worse in the ${X.similar.length} past months that looked most like it.</p>
+    <div class="mkts">${X.market.map(f => `<div class="card ind"><span class="lab">${esc(f.label)}</span><span class="v">${esc(f.text)}</span><span class="w">${esc(f.word[0].toUpperCase() + f.word.slice(1))}</span>${spark(f.series)}<span class="note">${esc(f.about)}; higher than ${f.pct}% of past months.</span></div>`).join("")}</div>
+    <div class="two" style="margin-top:14px">
+      <div class="card pad"><h4 style="margin:0 0 8px;font:650 15px var(--f-display)">Strategies in markets like this</h4>
+        <div class="tw"><table class="tt"><thead><tr><th>Strategy</th><th>Next 6 months vs index</th><th>Usually</th><th></th></tr></thead><tbody>${ranked.map(s => { const f = M_(s).fit; return `<tr><td><a href="?s=${s.id}#strategies" data-open2="${s.id}">${esc(s.name)}</a></td><td class="${cls(f.avg6)}">${pc(f.avg6)}</td><td>${pc(f.usual6)}</td><td><span class="mbadge ${f.verdict}">${f.verdict === "better" ? "Suits" : f.verdict === "worse" ? "Struggles" : "Unclear"}</span></td></tr>`; }).join("")}</tbody></table></div>
+        <p class="note">Similar months: ${X.similar.map(monD).join(", ")}. These months overlap, so the evidence is thinner than the count suggests; “Suits” needs a clear, consistent difference.</p></div>
+      <div class="card pad"><h4 style="margin:0 0 8px;font:650 15px var(--f-display)">News mood</h4>
+        ${nw ? `<p style="margin:0;font-size:14px">${nw.n.toLocaleString("en-GB")} headlines on ${fmtD(nw.date)}: ${pl(nw.pos / nw.n)} positive, ${pl(nw.neg / nw.n)} negative, ${(nw.pos - nw.neg) / nw.n > nw.avg ? "more upbeat" : "gloomier"} than the past three weeks' average.</p><p class="note" style="margin-top:8px">We collect news every evening but have only a few weeks of history, too little to test whether news mood helps strategies, so it is context here, not a rule. <a href="news.html">Read the headlines</a>.</p>` : `<p class="note">No news yet.</p>`}</div>
+    </div>`;
+  document.querySelectorAll("[data-open2]").forEach(a => a.onclick = e => { e.preventDefault(); open = a.dataset.open2; history.replaceState(null, "", `?s=${open}#strategies`); drawStrategies(); $("sd").scrollIntoView({ behavior: "smooth" }); });
+}
+
+// ---------- build your own: runs the backtest engine in the browser
+const B = store.get("bp-models-build", { strategy: "growth", market: "ALL", n: 20, cap: 10, reb: "Q", amount: 10000, exit200: false });
+let PANEL = null, SNAP = null, FX = null, busy = false;
+async function loadData() {
+  if (PANEL) return;
+  const get = u => fetch(u).then(r => r.json());
+  [PANEL, SNAP, FX] = await Promise.all([get("data/panel.json"), get("data/snapshot.json"), get("data/fx_history.json").then(x => x.usdPerGbp).catch(() => [])]);
+  E.augment(PANEL);
+}
+function drawBuild(result) {
+  const def = MC.STRATEGIES.find(s => s.id === B.strategy) || MC.STRATEGIES[0];
+  $("build").innerHTML = `<h2>Build your own</h2>
+    <p class="lead">Start from any strategy, choose the market, how many stocks, the most in any one and how often to rebalance, and see its test since ${SINCE} and what it would buy today with your amount. Everything runs in your browser; nothing is sent anywhere.</p>
+    <div class="card pad"><div class="form">
+      <label>Strategy<select id="b-s">${MC.STRATEGIES.map(s => `<option value="${s.id}" ${s.id === B.strategy ? "selected" : ""}>${esc(s.name)}</option>`).join("")}</select></label>
+      <label>Market<select id="b-m"><option value="ALL">UK and US</option><option value="LSE">UK only</option><option value="US">US only</option></select></label>
+      <label>Number of stocks<select id="b-n">${[10, 15, 20, 25, 30].map(n => `<option ${n === B.n ? "selected" : ""}>${n}</option>`).join("")}</select></label>
+      <label>Most in one stock<select id="b-c">${[5, 10, 15, 20].map(n => `<option value="${n}" ${n === B.cap ? "selected" : ""}>${n}%</option>`).join("")}</select></label>
+      <label>Rebalance<select id="b-r"><option value="Q">Every quarter</option><option value="Y">Every year</option></select></label>
+      <label>Amount to invest (£)<input id="b-a" type="number" min="500" step="500" value="${B.amount}"></label>
+    </div>
+    <label class="row" style="margin-top:12px;font-size:13.5px"><input type="checkbox" id="b-x" ${B.exit200 ? "checked" : ""}> Sell a stock when it falls below its long-term average (tested with the monthly 10-month average)</label>
+    <div class="row" style="margin-top:14px"><button class="bbtn" id="b-go">${busy ? "Testing…" : "Build and test"}</button><span class="note">${esc(def.short)}. The first run downloads about 9 MB of history.</span></div></div>
+    <div id="b-out">${result || ""}</div>`;
+  $("b-m").value = B.market; $("b-r").value = B.reb;
+  const save = () => { B.strategy = $("b-s").value; B.market = $("b-m").value; B.n = +$("b-n").value; B.cap = +$("b-c").value; B.reb = $("b-r").value; B.amount = Math.max(0, +$("b-a").value || 0); B.exit200 = $("b-x").checked; store.set("bp-models-build", B); };
+  ["b-s", "b-m", "b-n", "b-c", "b-r", "b-a", "b-x"].forEach(id => $(id).onchange = save);
+  $("b-go").onclick = async () => {
+    save(); busy = true; drawBuild(`<p class="empty">Loading the history and testing…</p>`);
+    let out;
+    try { await loadData(); out = build(); } catch (e) { out = `<p class="empty">The history couldn't be loaded. Check your connection and try again.</p>`; }
+    busy = false; drawBuild(out);
+  };
+}
+function build() {
+  const def = Object.assign({}, MC.STRATEGIES.find(s => s.id === B.strategy), { top: B.n });
+  const S = MC.strategy(def, B.market, B.reb, { cap: B.cap, exit200: B.exit200, exitTo: "spread", start: 10000, name: def.name + " (my version)" });
+  const r0 = E.run(PANEL, FX, S, { lastDate: SNAP.asof });
+  const first = Math.max(0, r0.held.findIndex(h => h > 0)), cut0 = a => a.slice(first);
+  const r = Object.assign({}, r0, { rets: cut0(r0.rets), dates: cut0(r0.dates), invested: cut0(r0.invested), bench: { ftse100: cut0(r0.bench.ftse100), sp500: cut0(r0.bench.sp500) } });
+  const uk = E.benchRets(r.bench.ftse100, r.invested), us = E.benchRets(r.bench.sp500, r.invested);
+  const ix = uk.map((x, k) => B.market === "LSE" ? x : B.market === "US" ? us[k] : (x + us[k]) / 2);
+  const st = E.stats(r.rets, r.dates), si = E.stats(ix, r.dates), cut = r.rets.length - 24;
+  const sh = E.stats(r.rets.slice(cut), r.dates.slice(cut)), sih = E.stats(ix.slice(cut), r.dates.slice(cut));
+  const P0 = E.snapshotPanel(SNAP), V0 = E.makeView(P0);
+  const tw = [...E.targets(V0, S, 0, new Set()).entries()].sort((a, b) => b[1] - a[1]);
+  const by = Object.fromEntries(SNAP.stocks.map(s => [s.id, s]));
+  const usdPerGbp = E.fxAt(FX, SNAP.asof) || 1.3;
+  const rows = tw.map(([i, w]) => { const s = by[P0.ids[i]]; const gbp = B.amount * w; const pxGbp = s.ccy === "GBX" ? s.price / 100 : s.ccy === "USD" ? s.price / usdPerGbp : s.price; return { s, w, gbp, shares: pxGbp > 0 ? Math.floor(gbp / pxGbp) : 0 }; });
+  const csv = "Company,Ticker,Market,Weight,Amount (GBP),Shares (about),Price\n" + rows.map(o => [JSON.stringify(o.s.name), o.s.t, o.s.ex === "LSE" ? "UK" : "US", (o.w * 100).toFixed(1) + "%", o.gbp.toFixed(0), o.shares, o.s.price].join(",")).join("\n");
+  const lab = enc(S);
+  return `<div class="detail card pad">
+    <div class="row" style="justify-content:space-between"><h3 style="margin:0;font:700 18px var(--f-display)">${esc(def.name)}, your version</h3><span class="row"><a class="bbtn" href="lab.html#s=${lab}">Track it from today in the Lab</a><a class="bbtn ghost" download="bullpulse-portfolio.csv" href="data:text/csv;charset=utf-8,${encodeURIComponent(csv)}">Download as CSV</a></span></div>
+    ${growthChart(r.dates, r.rets, ix, def.name, "the index")}
+    <div class="legend"><span><i style="background:var(--accent)"></i>Your version</span><span><i style="background:var(--us)"></i>${B.market === "LSE" ? "FTSE 100" : B.market === "US" ? "S&P 500" : "Half FTSE 100, half S&P 500"}</span></div>
+    <div class="three">
+      <div><h4>Return a year</h4><p style="margin:0;font-size:14px"><b class="${cls(st.cagr - si.cagr)}">${pc(st.cagr)}</b> against ${pc(si.cagr)} for the index over ${(r.rets.length / 12).toFixed(1)} years from ${monD(r.dates[0])}; last two years ${pc(sh.cagr)} against ${pc(sih.cagr)}.</p></div>
+      <div><h4>Worst fall</h4><p style="margin:0;font-size:14px"><b class="neg">${pc(st.maxDD, 0)}</b> against ${pc(si.maxDD, 0)}. Worst calendar year ${pc(st.worstYear, 0)}.</p></div>
+      <div><h4>Costs</h4><p style="margin:0;font-size:14px">Trading ${pl(r.turnoverYr)} of the portfolio a year; costs of £${Math.round(r.costs).toLocaleString("en-GB")} on £10,000 over the period.</p></div>
+    </div>
+    <div><h4>What it would buy today with £${B.amount.toLocaleString("en-GB")}</h4><div class="tw"><table class="tt"><thead><tr><th>Company</th><th>Weight</th><th>Amount</th><th>Shares, about</th><th class="hm">Price</th></tr></thead><tbody>
+      ${rows.map(o => `<tr><td><a href="app.html#${encodeURIComponent(o.s.id)}">${esc(o.s.name)}</a> <span class="mk ${o.s.ex === "LSE" ? "LSE" : "US"}">${o.s.ex === "LSE" ? "UK" : "US"}</span></td><td>${pl(o.w, 1)}</td><td>£${Math.round(o.gbp).toLocaleString("en-GB")}</td><td>${o.shares}</td><td class="hm">${money(o.s.price, o.s.ccy)}</td></tr>`).join("") || `<tr><td colspan="5" class="note">No stocks pass these rules today.</td></tr>`}
+    </tbody></table></div><p class="note">Share counts are rough (prices to ${fmtD(SNAP.asof)}, dollars at ${usdPerGbp.toFixed(2)} to the pound) and ignore dealing costs. UK purchases carry 0.5% stamp duty; an ISA keeps gains and dividends free of tax.</p></div>
+  </div>`;
+}
+
+// ---------- track record and the model's calibration
+function drawRecord() {
+  const rec = X.record || [];
+  const cal = X.model.calibration || [];
+  const maxP = Math.max(...cal.map(c => c.prob), 0.55);
+  const minP = Math.min(...cal.map(c => c.prob), 0.45);
+  $("record").innerHTML = `<h2>Track record</h2>
+    <p class="lead">Each month's portfolios and picks are stored as they were published and followed from then on, never edited. This record starts in ${rec.length ? monD(rec[0].asof) : "the first month of publication"}; it will mean more as months pass.</p>
+    <div class="two">
+      <div class="card pad"><h4 style="margin:0 0 8px;font:650 15px var(--f-display)">Since publication <span class="note" style="font-weight:500">UK + US, in pounds, before costs</span></h4>
+        ${rec.length ? `<div class="tw"><table class="tt"><thead><tr><th>Published</th>${X.strategies.map(s => `<th title="${esc(s.name)}">${esc(s.name.split(" ")[0])}</th>`).join("")}<th>Month picks</th><th>Index</th></tr></thead><tbody>
+          ${rec.slice().reverse().map(r => `<tr><td>${monD(r.asof)}</td>${X.strategies.map(s => `<td class="${cls(r.strategies[s.id])}">${pc(r.strategies[s.id])}</td>`).join("")}<td class="${cls(r.picks && r.picks.month)}">${r.picks ? pc(r.picks.month) : "–"}</td><td class="${cls(r.index)}">${pc(r.index)}</td></tr>`).join("")}
+        </tbody></table></div>` : `<p class="note">The first portfolios are published this month.</p>`}</div>
+      <div class="card pad"><h4 style="margin:0 0 8px;font:650 15px var(--f-display)">How good is the model's estimate?</h4>
+        ${cal.length ? `<div class="calib">${cal.map(c => `<div title="${c.n.toLocaleString("en-GB")} stock-months"><span>${pl(c.prob)}</span><i style="height:${Math.round((c.prob - minP) / ((maxP - minP) || 1) * 70 + 12)}px"></i><span>${c.decile}</span></div>`).join("")}</div>
+        <p class="note" style="margin-top:8px">Stocks grouped from the model's lowest-rated tenth (1) to its highest (10), and how often each group beat its sector over the next six months in tests on past data. Higher groups did a little better, from ${pl(cal[0].prob)} to ${pl(cal[cal.length - 1].prob)}: real, but small. ${X.model.decision ? esc(X.model.decision) : ""} Live checks of tonight's estimates start reporting from ${fmtD((X.model.live || [])[0]?.firstDue)}.</p>` : `<p class="note">No model results yet.</p>`}</div>
+    </div>`;
+}
+function drawMethod() {
+  $("method").innerHTML = `<h2>How it works</h2>
+    <div class="three">
+      <div class="card pad"><h4 style="margin:0 0 6px;font:650 15px var(--f-display)">Only what was known at the time</h4><p class="note" style="font-size:13.5px">Each month-end the rules see only that month's figures (from December 2017, when a year of history allows every measure): trend, momentum, revenue growth, fundamentals and valuation as published then. Returns include dividends. One bias remains: the stocks are today's FTSE 350 and the largest 209 S&amp;P 500 companies, each used only while it was in its index, so companies that have since dropped out (often after falling) are missing. That flatters these backtests somewhat against the real index.</p></div>
+      <div class="card pad"><h4 style="margin:0 0 6px;font:650 15px var(--f-display)">Real-world costs</h4><p class="note" style="font-size:13.5px">0.1% commission and 0.1% spread on every trade, 0.5% stamp duty on UK purchases and 0.5% currency fee on US trades, in pounds. Tested monthly trading cost more than it gained, so every strategy trades once a quarter (or once a year) and keeps a holding while it stays in the top half of the list. We chose that after seeing the cost of monthly trading, and it applies to all strategies alike.</p></div>
+      <div class="card pad"><h4 style="margin:0 0 6px;font:650 15px var(--f-display)">What isn't tested</h4><p class="note" style="font-size:13.5px">News sentiment has only a few weeks of history here, so it appears as context, not a rule. Nine years is about one market cycle, with a strong US bull run; results could differ in other decades. Seven strategies were tried, so one doing well partly by chance is likely; that's why we show “how sure” and the last two years separately.</p></div>
+    </div>
+    <p class="note" style="margin-top:12px">The same rules and engine run in the <a href="lab.html">Strategy Lab</a>, where you can change any of them. Data and code are open source.</p>`;
+}
+function drawAll() { drawVerdict(); drawPicks(); drawStrategies(); drawMarket(); drawBuild(); drawRecord(); drawMethod(); }
+(async () => {
+  try { X = await (await fetch("data/models.json", { cache: "no-cache" })).json(); }
+  catch (e) { $("picks").innerHTML = `<p class="empty">The model portfolios aren't available yet. They're built every night; please check back tomorrow.</p>`; return; }
+  SINCE = monD(X.strategies[0].markets.ALL.quarterly.dates[0]);
+  const next = (() => { const d = new Date(X.asof + "T12:00:00Z"); let mth = d.getUTCMonth() + 1; while (mth % 3) mth++; return new Date(Date.UTC(d.getUTCFullYear(), mth, 0)).toISOString().slice(0, 10); })();
+  $("meta").innerHTML = `<span>Prices to ${fmtD(X.asof)}</span><span>Tested ${SINCE} to ${monD(X.panelTo)}</span><span>Next quarterly rebalance ${fmtD(next)}</span>`;
+  document.querySelectorAll("[data-m]").forEach(b => { b.setAttribute("aria-pressed", String(b.dataset.m === mk)); b.onclick = () => { mk = b.dataset.m; store.set("bp-models-mkt", mk); document.querySelectorAll("[data-m]").forEach(x => x.setAttribute("aria-pressed", String(x === b))); drawVerdict(); drawStrategies(); drawMarket(); }; });
+  drawAll();
+  if (open && $("sd")) setTimeout(() => $("sd").scrollIntoView({ block: "start" }), 50);
+})();
+})();
+</script>
+</body>
+</html>

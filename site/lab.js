@@ -41,7 +41,7 @@ const seen = new Set(); // strategy versions run this visit
 function strategy(u = UI) {
   const src = u.mode === "list" ? { type: "list", ids: u.ids.slice(), w: Object.assign({}, u.cw) }
     : { type: "rule", market: u.rule.market, idx: u.rule.idx, sector: u.rule.sector, noTrusts: u.rule.noTrusts, rules: u.rule.rules.map(r => r.slice()), w: Object.assign({}, u.rule.w), top: +u.rule.top || 20, keep: +u.rule.keep || 0 };
-  return { name: u.name || "", source: src, weighting: u.weighting, cap: +u.cap || 0, rebalance: u.rebalance, drift: +u.drift || 5, exit200: !!u.exit200, exitTo: u.exitTo,
+  return { name: u.name || "", source: src, weighting: u.weighting, cap: +u.cap || 0, rebalance: u.rebalance, drift: +u.drift || 5, exit200: !!u.exit200, exitTo: u.exitTo, ...(u.swaps === false ? { swaps: false } : {}),
     start: +u.start || 0, monthly: +u.monthly || 0, ccy: u.ccy, from: u.from, account: u.account, costs: Object.assign({}, u.costs) };
 }
 function fromStrategy(S) {
@@ -49,7 +49,8 @@ function fromStrategy(S) {
   const s = S.source || {};
   if (s.type === "list") { u.mode = "list"; u.ids = s.ids || []; u.cw = s.w || {}; }
   else { u.mode = "rule"; Object.assign(u.rule, { market: s.market || "ALL", idx: s.idx || "", sector: s.sector || "", noTrusts: s.noTrusts !== false, rules: s.rules || [], w: s.w || { T: 50, M: 50 }, top: s.top || 20, keep: s.keep || 0 }); }
-  for (const k of ["weighting", "cap", "rebalance", "drift", "exit200", "exitTo", "start", "monthly", "ccy", "from", "account", "name"]) if (S[k] !== undefined) u[k] = S[k];
+  for (const k of ["weighting", "cap", "rebalance", "drift", "exit200", "exitTo", "start", "monthly", "ccy", "from", "account", "name", "swaps"]) if (S[k] !== undefined) u[k] = S[k];
+  if (S.swaps === undefined) delete u.swaps;
   if (S.costs) u.costs = Object.assign({}, u.costs, S.costs);
   return u;
 }
@@ -78,6 +79,7 @@ function drawBuilder() {
   document.querySelectorAll("#wm button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.w === UI.weighting); b.disabled = b.dataset.w === "custom" && UI.mode !== "list"; });
   $("cap").value = UI.cap; $("reb").value = UI.rebalance; $("drift").value = UI.drift;
   $("driftl").hidden = $("driftd").hidden = UI.rebalance !== "drift";
+  $("swaps").checked = UI.swaps === false; $("swapl").hidden = UI.mode === "list";
   $("ex200").checked = UI.exit200; $("exto").hidden = !UI.exit200; $("exw").value = UI.exitTo;
   $("amt").value = UI.start; $("mon").value = UI.monthly; $("ccy").value = UI.ccy; $("from").value = UI.from; $("acct").value = UI.account;
   $("c-com").value = UI.costs.commission; $("c-spr").value = UI.costs.spread; $("c-fx").value = UI.costs.fxFee; $("c-stamp").checked = UI.costs.stamp;
@@ -114,6 +116,7 @@ function bindBuilder() {
   $("reb").onchange = e => { UI.rebalance = e.target.value; changed(true); };
   $("drift").oninput = e => { UI.drift = +e.target.value || 5; changed(); };
   $("ex200").onchange = e => { UI.exit200 = e.target.checked; changed(true); };
+  $("swaps").onchange = e => { if (e.target.checked) UI.swaps = false; else delete UI.swaps; changed(true); };
   $("exw").onchange = e => { UI.exitTo = e.target.value; changed(); };
   $("amt").oninput = e => { UI.start = +e.target.value || 0; changed(); };
   $("mon").oninput = e => { UI.monthly = +e.target.value || 0; changed(); };
@@ -306,26 +309,7 @@ function drawCompare(cur) {
 
 // ---------- forward tracking ----------
 // tonight's values for each stock, in the panel's units, so the same rules pick today's stocks
-function snapshotPanel() {
-  const st = D.stocks, ids = st.map(s => s.id);
-  const f = (fn) => [st.map(fn)];
-  const cheap = {};
-  for (const ex of ["LSE", "US"]) {
-    const xs = st.filter(s => s.ex === ex && s.fairVs != null).map(s => s.fairVs).sort((a, b) => b - a);
-    st.filter(s => s.ex === ex && s.fairVs != null).forEach(s => { cheap[s.id] = xs.length > 1 ? xs.indexOf(s.fairVs) / (xs.length - 1) * 100 : 50; });
-  }
-  return {
-    months: [D.asof], ids, ex: st.map(s => s.ex), sector: st.map(s => s.sector), idx: st.map(s => s.idx || ""), trust: st.map(s => s.trust ? 1 : 0), scale: {},
-    fields: {
-      score: f(s => (s.T + s.M) / 2), T: f(s => s.T), M: f(s => s.M), G: f(s => s.G ?? null), FP: f(s => s.FP ?? null), Vp: f(s => cheap[s.id] ?? null),
-      d200: f(s => s.sma200 ? s.price / s.sma200 - 1 : null), ret1y: f(s => s.ret1y), mom: f(s => s.mom), hi52: f(s => s.hi52 ? s.price / s.hi52 - 1 : null),
-      vol1y: f(s => s.vol1y), rsi: f(s => s.rsi), revGrowth: f(s => s.revGrowth ?? null), epsGrowth: f(s => s.epsGrowth ?? null), pe: f(s => s.pe ?? null),
-      divY: f(s => s.div ? s.div.yld : s.divY ?? null), fcfY: f(s => s.fcfY ?? null), roe: f(s => s.roe ?? null), de: f(s => s.de ?? null), fairVs: f(s => s.fairVs ?? null),
-      mcapBn: f(s => s.mcapBn ?? null), insB: f(s => s.ex === "US" ? (s.ins ? s.ins.buyers : 0) : null), sue: f(s => s.sue ?? null), rev1m: f(() => null),
-    },
-    fwd: [st.map(() => null)], bench: {},
-  };
-}
+function snapshotPanel() { return E.snapshotPanel(D); }
 function startTracking() {
   const S = strategy();
   if (S.source.type === "list" && !S.source.ids.length) { $("msg").textContent = "Add some stocks first."; return; }
@@ -423,6 +407,7 @@ async function drawTracked() {
   const get = u => fetch(u, { cache: "no-cache" }).then(r => { if (!r.ok) throw new Error(u); return r.json(); });
   try {
     [P, D] = await Promise.all([get("data/panel.json"), get("data/snapshot.json")]);
+    E.augment(P);   // 12-month return, momentum, volatility and trend history from the panel's returns
     FX = (await get("data/fx_history.json").catch(() => ({ usdPerGbp: [] }))).usdPerGbp;
   } catch (e) { $("res").innerHTML = `<div class="card emptyp">The history file couldn't be loaded. Check your connection and refresh the page.</div>`; return; }
   D.stocks.forEach(s => BY[s.id] = s);

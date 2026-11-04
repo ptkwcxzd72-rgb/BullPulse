@@ -192,7 +192,8 @@
       const setNow = [...T.keys()].sort().join(",");
       // between scheduled rebalances a rule strategy still swaps names that leave the list for
       // names that join it, without resetting everything else
-      const swap = !reb && S.source && S.source.type !== "list" && prevSet !== null && setNow !== prevSet;
+      // (S.swaps === false: trade only on scheduled rebalances, as a slow model portfolio would)
+      const swap = !reb && S.swaps !== false && S.source && S.source.type !== "list" && prevSet !== null && setNow !== prevSet;
       if (!reb && S.rebalance === "drift" && total > 0) {
         for (const [i, w] of T) if (Math.abs((pos.get(i)?.v || 0) / total - w) > (S.drift || 5) / 100) reb = true;
         for (const i of pos.keys()) if (!T.has(i)) reb = true;
@@ -368,6 +369,66 @@
     return { p5: q(0.05), p25: q(0.25), p50: q(0.5), p75: q(0.75), p95: q(0.95), lossAfter5: n >= 60 ? loss5 / out.length : null };
   }
 
+  // History for measures the month-end panel doesn't store, rebuilt from its own monthly total
+  // returns using only what was known at each date: 12-month return, momentum (12 months leaving
+  // out the last), volatility (12 months) and price against its 10-month average (the usual
+  // monthly stand-in for the 200-day average). Fields the panel already has are left alone.
+  function augment(P) {
+    if (!P || !P.fwd || P._augmented) return P;
+    const nM = P.months.length, n = P.ids.length;
+    const want = ["ret1y", "mom", "vol1y", "d200"].filter(k => !(P.fields && P.fields[k]));
+    if (!want.length) { P._augmented = true; return P; }
+    const F = {}; want.forEach(k => F[k] = Array.from({ length: nM }, () => new Array(n).fill(null)));
+    for (let i = 0; i < n; i++) {
+      const px = [1], r = [];
+      for (let m = 0; m < nM; m++) {
+        const x = P.fwd[m] && P.fwd[m][i] != null ? P.fwd[m][i] / 1e4 : null;
+        r.push(x);
+        px.push(x == null || px[m] == null ? null : px[m] * (1 + x));
+      }
+      for (let m = 12; m < nM; m++) {
+        const p0 = px[m - 12], p1 = px[m - 1], p = px[m];
+        if (F.ret1y && p != null && p0) F.ret1y[m][i] = p / p0 - 1;
+        if (F.mom && p1 != null && p0) F.mom[m][i] = p1 / p0 - 1;
+        if (F.vol1y) {
+          const w = r.slice(m - 12, m);
+          if (w.every(v => v != null)) { const mu = w.reduce((a, b) => a + b, 0) / 12; F.vol1y[m][i] = Math.sqrt(w.reduce((a, b) => a + (b - mu) ** 2, 0) / 11 * 12); }
+        }
+        if (F.d200 && p != null) {
+          const w = px.slice(m - 9, m + 1);
+          if (w.every(v => v != null)) F.d200[m][i] = p / (w.reduce((a, b) => a + b, 0) / 10) - 1;
+        }
+      }
+    }
+    P.fields = Object.assign({}, P.fields, F);
+    P.scale = Object.assign({}, P.scale); want.forEach(k => P.scale[k] = 1);
+    P._augmented = true;
+    return P;
+  }
+
+  // Tonight's figures as a one-month panel, so live portfolios are picked by the same code as the
+  // backtests (targets(makeView(snapshotPanel(D)), S, 0, held)).
+  function snapshotPanel(D) {
+    const st = D.stocks, ids = st.map(s => s.id);
+    const f = fn => [st.map(fn)];
+    const cheap = {};
+    for (const ex of ["LSE", "US"]) {
+      const xs = st.filter(s => s.ex === ex && s.fairVs != null).map(s => s.fairVs).sort((a, b) => b - a);
+      st.filter(s => s.ex === ex && s.fairVs != null).forEach(s => { cheap[s.id] = xs.length > 1 ? xs.indexOf(s.fairVs) / (xs.length - 1) * 100 : 50; });
+    }
+    return {
+      months: [D.asof], ids, ex: st.map(s => s.ex === "LSE" ? "LSE" : "US"), sector: st.map(s => s.sector), idx: st.map(s => s.idx || ""), trust: st.map(s => s.trust ? 1 : 0), scale: {},
+      fields: {
+        score: f(s => (s.T + s.M) / 2), T: f(s => s.T), M: f(s => s.M), G: f(s => s.G ?? null), FP: f(s => s.FP ?? null), Vp: f(s => cheap[s.id] ?? null),
+        d200: f(s => s.sma200 ? s.price / s.sma200 - 1 : null), ret1y: f(s => s.ret1y), mom: f(s => s.mom), hi52: f(s => s.hi52 ? s.price / s.hi52 - 1 : null),
+        vol1y: f(s => s.vol1y), rsi: f(s => s.rsi), revGrowth: f(s => s.revGrowth ?? null), epsGrowth: f(s => s.epsGrowth ?? null), pe: f(s => s.pe ?? null),
+        divY: f(s => s.div ? s.div.yld : s.divY ?? null), fcfY: f(s => s.fcfY ?? null), roe: f(s => s.roe ?? null), de: f(s => s.de ?? null), fairVs: f(s => s.fairVs ?? null),
+        mcapBn: f(s => s.mcapBn ?? null), insB: f(s => s.ex === "US" ? (s.ins ? s.ins.buyers : 0) : null), sue: f(s => s.sue ?? null), rev1m: f(() => null),
+      },
+      fwd: [st.map(() => null)], bench: {},
+    };
+  }
+
   // a stable key for a strategy (for the hidden final period and version counting)
   function key(S) {
     const c = JSON.parse(JSON.stringify(S));
@@ -375,6 +436,6 @@
     return JSON.stringify(c);
   }
 
-  const api = { run, stats, bootstrap, targets, makeView, benchRets, key, fxAt, PCT };
+  const api = { run, stats, bootstrap, targets, makeView, benchRets, key, fxAt, PCT, augment, snapshotPanel };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.LabEngine = api;
 })(typeof window !== "undefined" ? window : globalThis);

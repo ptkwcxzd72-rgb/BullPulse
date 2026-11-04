@@ -78,9 +78,10 @@
     news: '<rect x="3" y="4" width="15" height="16" rx="2"/><path d="M18 8h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2"/><path d="M7 8h7M7 12h7M7 16h4"/>',
     investors: '<circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6-.3 4.5 1.4 5 4.3"/>',
     portfolio: '<path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/>',
+    models: '<path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>',
     more: '<circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/>'
   };
-  const MAIN = [["app.html", "Screener"], ["news.html", "News"], ["investors.html", "Investors"], ["portfolio.html", "Portfolio"], ["lab.html", "Lab"], ["alerts.html", "Alerts"]];
+  const MAIN = [["app.html", "Screener"], ["models.html", "Models"], ["news.html", "News"], ["investors.html", "Investors"], ["portfolio.html", "Portfolio"], ["lab.html", "Lab"], ["alerts.html", "Alerts"]];
   function nav(){
     // one navigation for every page: the page's own markup is replaced so new sections appear everywhere
     document.querySelectorAll("nav.nav").forEach(n => {
@@ -92,11 +93,11 @@
       document.body.insertAdjacentHTML("afterbegin", `<a class="skip" href="#${main.id}">Skip to content</a>`);
     }
     const tab = (h, t, ic) => `<a href="${root}${h}"${here === h ? ' aria-current="page"' : ""}><svg viewBox="0 0 24 24" aria-hidden="true">${IC[ic]}</svg>${t}</a>`;
-    const more = [["lab.html", "Strategy Lab", "Test a strategy on ten years of data"], ["alerts.html", "Alerts", "What changed overnight"], ["score.html", "Does the score work?", "The evidence, updated monthly"], ["./", "Home", "About BullPulse"]];
+    const more = [["portfolio.html", "Portfolio", "Your holdings and a model portfolio"], ["lab.html", "Strategy Lab", "Test a strategy on ten years of data"], ["alerts.html", "Alerts", "What changed overnight"], ["score.html", "Does the score work?", "The evidence, updated monthly"], ["./", "Home", "About BullPulse"]];
     const inMore = more.some(([h]) => h === here);
     const bar = document.createElement("nav");
     bar.className = "tabbar"; bar.setAttribute("aria-label", "Sections");
-    bar.innerHTML = tab("app.html", "Screener", "screener") + tab("news.html", "News", "news") + tab("investors.html", "Investors", "investors") + tab("portfolio.html", "Portfolio", "portfolio") +
+    bar.innerHTML = tab("app.html", "Screener", "screener") + tab("models.html", "Models", "models") + tab("news.html", "News", "news") + tab("investors.html", "Investors", "investors") +
       `<button type="button" aria-expanded="false" aria-controls="moresheet"${inMore ? ' style="color:#3dbcab"' : ""}><svg viewBox="0 0 24 24" aria-hidden="true">${IC.more}</svg>More</button>`;
     const sheet = document.createElement("div");
     sheet.className = "moresheet"; sheet.id = "moresheet";
@@ -124,7 +125,7 @@
     const nav = document.querySelector("footer nav");
     if (nav) { if (!nav.querySelector('a[href$="score.html"]')) nav.insertAdjacentHTML("beforeend", links); return; }
     const f = document.createElement("footer"); f.className = "sitefoot";
-    f.innerHTML = `<div class="in"><nav aria-label="Footer"><a href="${root}./">Home</a><a href="${root}app.html">Screener</a><a href="${root}news.html">News</a><a href="${root}portfolio.html">Portfolio</a><a href="${root}lab.html">Strategy Lab</a><a href="${root}investors.html">Investors</a><a href="${root}alerts.html">Alerts</a>${links}</nav><p>BullPulse is a free research tool, not investment advice. US prices from Tiingo; UK prices, and investors’ holdings outside the S&amp;P 500, from Yahoo Finance; investor holdings from SEC filings.</p></div>`;
+    f.innerHTML = `<div class="in"><nav aria-label="Footer"><a href="${root}./">Home</a><a href="${root}app.html">Screener</a><a href="${root}models.html">Model portfolios</a><a href="${root}news.html">News</a><a href="${root}portfolio.html">Portfolio</a><a href="${root}lab.html">Strategy Lab</a><a href="${root}investors.html">Investors</a><a href="${root}alerts.html">Alerts</a>${links}</nav><p>BullPulse is a free research tool, not investment advice. US prices from Tiingo; UK prices, and investors’ holdings outside the S&amp;P 500, from Yahoo Finance; investor holdings from SEC filings.</p></div>`;
     document.body.appendChild(f);
   }
   const start = () => {

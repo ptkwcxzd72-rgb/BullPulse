@@ -146,6 +146,7 @@ main{padding-block:22px 40px}
           <label for="reb">Rebalance</label><select id="reb"><option value="M">Every month</option><option value="Q" selected>Every quarter</option><option value="Y">Every year</option><option value="drift">When a holding drifts</option><option value="never">Never (buy and hold)</option></select>
           <label for="drift" id="driftl" hidden>Drift allowed</label><div class="two" id="driftd" hidden><input id="drift" type="number" min="1" max="50" value="5"><span class="note">percentage points</span></div>
         </div>
+        <label class="chk" id="swapl"><input type="checkbox" id="swaps"> Only trade on the rebalance date (rule strategies otherwise swap stocks that drop out each month)</label>
         <label class="chk"><input type="checkbox" id="ex200"> Sell a stock when it falls below its 200-day average</label>
         <div class="set" id="exto" hidden><label for="exw">Then</label><select id="exw"><option value="spread">Spread the money over the rest</option><option value="cash">Hold the money as cash</option></select></div>
       </section>
