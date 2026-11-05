@@ -297,7 +297,7 @@ async function loadData() {
 function drawBuild(result) {
   const def = MC.STRATEGIES.find(s => s.id === B.strategy) || MC.STRATEGIES[0];
   $("build").innerHTML = `<h2>Build your own</h2>
-    <p class="lead">Start from any strategy, choose the market, how many stocks, the most in any one and how often to rebalance, and see its test since ${SINCE} and what it would buy today with your amount. Everything runs in your browser; nothing is sent anywhere.</p>
+    <p class="lead">Start from any strategy, choose the market, how many stocks, the most in any one and how often to rebalance, and see its test since ${SINCE} and what it would buy today with your amount. Everything runs in your browser; nothing is sent anywhere. For more control (aims such as income or steadier shares, sector limits, exclusions, whole shares for your amount) use the <a href="generator.html">portfolio generator</a>.</p>
     <div class="card pad"><div class="form">
       <label>Strategy<select id="b-s">${MC.STRATEGIES.map(s => `<option value="${s.id}" ${s.id === B.strategy ? "selected" : ""}>${esc(s.name)}</option>`).join("")}</select></label>
       <label>Market<select id="b-m"><option value="ALL">UK and US</option><option value="LSE">UK only</option><option value="US">US only</option></select></label>

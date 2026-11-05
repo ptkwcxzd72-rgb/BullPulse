@@ -169,6 +169,10 @@ jobs:
         run: node scripts/models.js
         continue-on-error: true
 
+      - name: Portfolio generator (backtest each aim in each market, tonight's ready-made portfolios)
+        run: node scripts/generator.js
+        continue-on-error: true
+
       - name: Report investor data checks in a GitHub issue (GitHub emails you about new issues)
         if: ${{ !cancelled() }}
         continue-on-error: true

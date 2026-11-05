@@ -93,6 +93,7 @@
     <h1>Portfolio</h1>
     <div class="ptabs" role="tablist" aria-label="Portfolio views"><button role="tab" data-v="model" aria-selected="true">Model portfolio</button><button role="tab" data-v="mine" aria-selected="false">My holdings</button></div>
     <p id="ptext">Pick stocks, choose how to weight them and set limits for any single holding or sector. You'll see the allocation, the sector and market mix, an estimate of risk and how this mix would have done over the past year. Everything stays in your browser.</p>
+    <p style="margin-top:6px;font-size:14px">Rather have one chosen for you? The <a href="generator.html" style="color:#3dbcab">portfolio generator</a> picks stocks to an aim and your limits, with whole shares and a backtest.</p>
   </div>
 </header>
 
@@ -482,7 +483,7 @@ function setView(v){
 }
 
 // ---------- Backup, restore and restore links (all in the browser; the link keeps data after "#", which is never sent to a server) ----------
-const BKEYS = ["bp-holdings", "bp-watch", "bp-screens", "bp-portfolios", "bp-portfolio"];
+const BKEYS = ["bp-holdings", "bp-watch", "bp-screens", "bp-portfolios", "bp-portfolio", "bp-gen", "bp-gen-last"];
 function backupData(){
   const d = { app: "BullPulse", v: 1, saved: new Date().toISOString(), data: {} };
   BKEYS.forEach(k => { try { const v = localStorage.getItem(k); if (v != null) d.data[k] = JSON.parse(v); } catch (e) {} });

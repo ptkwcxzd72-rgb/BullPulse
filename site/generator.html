@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BullPulse Portfolio Generator</title>
+<meta name="description" content="Choose an aim and your limits; the generator picks UK and US shares from tonight's figures, explains every choice, works out whole shares for your amount and shows how the same rules did since 2017. Free, in your browser.">
+<link rel="canonical" href="https://bullpulse.co.uk/generator.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E1828">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="bp.css">
+<style>
+.pagehead{padding-block:6px 24px}
+.pagehead h1{margin:0;font:700 clamp(26px,3.4vw,36px)/1.1 var(--f-display);letter-spacing:-.02em}
+.pagehead p{margin:8px 0 0;color:var(--night-muted);max-width:74ch}
+#main{padding-block:22px 48px;display:block}
+.step{margin-bottom:22px}
+.step > h2{margin:0 0 4px;font:700 20px var(--f-display);display:flex;gap:10px;align-items:baseline}
+.step > h2 .num{font:700 13px var(--f-display);color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;width:24px;height:24px;display:inline-grid;place-items:center;flex:none}
+.step > p{margin:0 0 12px;color:var(--muted);font-size:14px;max-width:80ch}
+.aims{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.aim{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-lg);padding:14px 16px;display:grid;gap:7px;align-content:start}
+.aim:hover{border-color:var(--muted)}
+.aim[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.aim:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.aim h3{margin:0;font:650 17px var(--f-display)}
+.aim .s{font-size:13px;color:var(--muted)}
+.aim .ev{font-size:12.5px;line-height:1.45}
+.vb{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;justify-self:start}
+.vb.beat{background:var(--up-soft);color:var(--up)}.vb.mixed{background:var(--warn-soft);color:var(--warn)}.vb.lagged{background:var(--down-soft);color:var(--down)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px}
+.form{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px 16px}
+.form label{display:grid;gap:5px;font-size:12.5px;color:var(--muted);font-weight:600}
+.form select,.form input{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 10px;font:inherit;font-size:14px;color:var(--ink);min-width:0;width:100%}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.tog{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font:600 12.5px var(--f-body);color:var(--muted);cursor:pointer}
+.tog[aria-pressed="true"]{background:var(--down-soft);border-color:var(--down);color:var(--down)}
+.chk{display:flex;gap:8px;align-items:center;font-size:13.5px;margin-top:10px}
+.go{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.bbtn{border:0;border-radius:9px;padding:10px 16px;font-weight:600;font-size:14px;cursor:pointer;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.bbtn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink);padding:8px 13px;font-size:13px}
+.bbtn[disabled]{opacity:.6;cursor:wait}
+.note{font-size:12.5px;color:var(--muted);margin:0;max-width:100ch}
+.sum{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.tile{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:11.5px;color:var(--muted);background:var(--surface)}
+.tile b{display:block;font:650 18px var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums;margin-top:2px}
+.tt{width:100%;border-collapse:collapse;font-size:13px;min-width:0}
+.tt th,.tt td{padding:8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;vertical-align:top}
+.tt th:first-child,.tt td:first-child{text-align:left}
+.tt th{font-size:11.5px;color:var(--muted);font-weight:600}
+.tt a{color:var(--ink);font-weight:600;text-decoration:none}
+.tw{overflow-x:auto}
+.why{font-size:12.5px;color:var(--muted);margin-top:3px;max-width:60ch}
+.warn{font-size:12px;margin-top:3px}
+.warn.neg{color:var(--down)}.warn.pos{color:var(--up)}.warn.info{color:var(--muted)}
+.mk{font-size:10.5px;font-weight:700;border-radius:5px;padding:1px 5px}
+.mk.LSE{background:var(--uk-soft);color:var(--uk)}.mk.US{background:var(--us-soft);color:var(--us)}
+.wbar{display:inline-block;height:6px;border-radius:3px;background:var(--accent);opacity:.8;vertical-align:middle;margin-left:6px}
+.pos{color:var(--up)}.neg{color:var(--down)}.flat{color:var(--muted)}
+.two{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,1fr);gap:22px;align-items:start}
+
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.msg{font-size:13px;color:var(--up);min-height:18px}
+.diff{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.diff h4{margin:0 0 4px;font:650 14px var(--f-display)}
+.diff ul{margin:0;padding-left:16px;font-size:13px}
+.verdict{border-left:3px solid var(--line);padding:4px 0 4px 12px;font-size:14px;margin:0 0 10px}
+.verdict.beat{border-color:var(--up)}.verdict.mixed{border-color:var(--warn)}.verdict.lagged{border-color:var(--down)}
+.empty{padding:26px;text-align:center;color:var(--muted)}
+.res > * + *{margin-top:16px}
+@media (max-width:1000px){.aims{grid-template-columns:repeat(2,minmax(0,1fr))}.sum{grid-template-columns:repeat(3,minmax(0,1fr))}.two{grid-template-columns:minmax(0,1fr)}.diff{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){.wbar{display:none}.why{max-width:none}
+  .hold thead{display:none}.hold tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line);padding:10px 0}
+  .hold td{border:0;padding:2px 0;text-align:left}.hold td:first-child{grid-column:1/-1;padding-bottom:6px}.hold td.hm{display:none}
+  .hold td[data-l]::before{content:attr(data-l);display:block;font-size:11px;color:var(--muted)}.aims{grid-template-columns:minmax(0,1fr)}.sum{grid-template-columns:repeat(2,minmax(0,1fr))}.hm{display:none}}
+</style>
+<script src="common.js" defer></script>
+</head>
+<body>
+<header class="masthead night">
+  <div class="in mastbar">
+    <a href="./" class="home" aria-label="BullPulse home"><img src="brand/bullpulse-logo-on-dark.svg" alt="BullPulse" width="148" height="28"></a>
+    <nav class="nav" aria-label="Site"></nav>
+  </div>
+  <div class="in pagehead">
+    <h1>Portfolio generator</h1>
+    <p>Choose an aim and your limits. The generator picks UK and US shares from tonight's figures, keeps to your limits, explains every choice, works out whole shares for your amount and shows how the same rules did since 2017. It runs in your browser; your settings and holdings stay on this device.</p>
+  </div>
+</header>
+<main class="in" id="main">
+  <section class="step"><h2><span class="num">1</span>What do you want the portfolio to do?</h2><p>Each aim is a published recipe of the signals BullPulse calculates. The badge says how that recipe did against an index fund since 2017, after costs.</p><div class="aims" id="aims" role="group" aria-label="Aim"></div></section>
+  <section class="step"><h2><span class="num">2</span>Your limits</h2><p>These are rules for the portfolio, not questions about you; the generator doesn't judge whether investing suits your circumstances.</p><div class="panel" id="settings"></div></section>
+  <section class="step" id="out"></section>
+  <p class="note" style="margin-top:28px">The generator applies the same published rules for everyone who chooses the same settings. It doesn't take account of your circumstances, aims or attitude to risk, and its output isn't a recommendation to buy or sell anything. Backtests show how rules would have done in the past, with assumptions about costs; they don't promise future returns. Shares can fall as well as rise and you may get back less than you invest. BullPulse is a free research tool, not a regulated adviser.</p>
+</main>
+<script src="lab-engine.js"></script>
+<script src="models-core.js"></script>
+<script src="generator-core.js"></script>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+const E = window.LabEngine, G = window.GeneratorCore, MC = window.ModelsCore;
+const esc = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const pc = (v, d = 1) => v == null ? "–" : (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(d) + "%";
+const pl = (v, d = 0) => v == null ? "–" : (v * 100).toFixed(d) + "%";
+const cls = v => v > 0 ? "pos" : v < 0 ? "neg" : "flat";
+const gbp = v => "£" + Math.round(v).toLocaleString("en-GB");
+const fmtD = d => d ? new Date(d.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : "–";
+const monD = d => d ? new Date(d.slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }) : "–";
+const money = (v, ccy) => ccy === "GBX" ? (v >= 100 ? "£" + (v / 100).toFixed(2) : v.toFixed(1) + "p") : (ccy === "USD" ? "$" : "£") + v.toFixed(2);
+const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+const enc = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const dec = t => { try { return JSON.parse(decodeURIComponent(escape(atob(t.replace(/-/g, "+").replace(/_/g, "/"))))); } catch (e) { return null; } };
+const MKT = { ALL: "UK and US", LSE: "UK only", US: "US only" };
+
+let X = null, D = null, PANEL = null, FX = null, OWN = null;
+let O = Object.assign({}, G.DEFAULTS, store.get("bp-gen", {}));
+if (location.hash.startsWith("#g=")) { const g = dec(location.hash.slice(3)); if (g) O = Object.assign({}, G.DEFAULTS, g); }
+let result = null;
+const owned = () => { const h = store.get("bp-holdings", {}); return [...new Set((h.lots || []).map(l => l.id))]; };
+const isDefault = () => ["market", "n", "cap", "sectorCap", "reb", "weighting", "maxCorr", "trusts"].every(k => JSON.stringify(O[k]) === JSON.stringify(G.DEFAULTS[k])) && !O.avoidSectors.length && !O.avoidIds.length && !O.avoidOwned;
+
+function growthChart(dates, a, b) {
+  const pts = [[dates[0], 1, 1]]; let g = 1, h = 1;
+  a.forEach((x, k) => { g *= 1 + (x || 0); h *= 1 + (b[k] || 0); pts.push([dates[k], g, h]); });
+  const W = 640, H = 210, padL = 38, padB = 20, vals = pts.flatMap(p => [p[1], p[2]]), lo = Math.min(...vals), hi = Math.max(...vals), L = Math.log;
+  const X_ = k => padL + k / (pts.length - 1) * (W - padL - 44), Y = v => H - padB - (L(v) - L(lo)) / ((L(hi) - L(lo)) || 1) * (H - padB - 10);
+  const path = j => pts.map((p, k) => (k ? "L" : "M") + X_(k).toFixed(1) + " " + Y(p[j]).toFixed(1)).join("");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Growth of 100 against an index fund" style="width:100%;height:auto">`;
+  [50, 75, 100, 150, 200, 300, 400].filter(v => v / 100 >= lo * .97 && v / 100 <= hi * 1.03).forEach(v => s += `<line x1="${padL}" x2="${W - 44}" y1="${Y(v / 100)}" y2="${Y(v / 100)}" stroke="var(--grid)"/><text x="${padL - 6}" y="${Y(v / 100) + 4}" font-size="11" text-anchor="end" fill="var(--muted)">${v}</text>`);
+  [...new Set(pts.map(p => p[0].slice(0, 4)))].forEach((y, i) => { const k = pts.findIndex(p => p[0].slice(0, 4) === y); if (k > 0 && i % 2 === 0) s += `<text x="${X_(k)}" y="${H - 3}" font-size="11" text-anchor="middle" fill="var(--muted)">${y}</text>`; });
+  s += `<path d="${path(2)}" fill="none" stroke="var(--us)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/><path d="${path(1)}" fill="none" stroke="var(--accent)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>`;
+  const last = pts[pts.length - 1];
+  let ya = Y(last[1]) + 4, yb = Y(last[2]) + 4;
+  if (Math.abs(ya - yb) < 13) { const mid = (ya + yb) / 2, up = last[1] >= last[2]; ya = mid + (up ? -7 : 7); yb = mid + (up ? 7 : -7); }
+  s += `<text x="${W - 40}" y="${ya}" font-size="11.5" fill="var(--accent)" font-weight="600">${Math.round(last[1] * 100)}</text><text x="${W - 40}" y="${yb}" font-size="11.5" fill="var(--us)" font-weight="600">${Math.round(last[2] * 100)}</text>`;
+  return s + "</svg>";
+}
+
+function drawAims() {
+  $("aims").innerHTML = Object.entries(G.AIMS).map(([id, a]) => {
+    const q = X && X.aims[id] && X.aims[id].markets[O.market] && X.aims[id].markets[O.market].quarterly;
+    return `<button class="aim" data-aim="${id}" aria-pressed="${O.aim === id}"><h3>${esc(a.name)}</h3><span class="s">${esc(a.short)}</span>
+      ${q ? `<span class="vb ${q.verdict}">${q.verdict === "beat" ? "Beat an index fund" : q.verdict === "mixed" ? "Beat it some of the time" : "Lagged an index fund"}</span><span class="ev">${pc(q.all.cagr)} a year since ${monD(q.dates[0])}, index ${pc(q.index.cagr)}; worst fall ${pc(q.all.maxDD, 0)}.</span>` : ""}</button>`;
+  }).join("");
+  document.querySelectorAll("[data-aim]").forEach(b => b.onclick = () => { O.aim = b.dataset.aim; save(); drawAims(); generate(); });
+}
+function drawSettings() {
+  const own = owned();
+  const sectors = X ? X.sectors : [];
+  $("settings").innerHTML = `<div class="form">
+      <label>Market<select id="s-m">${Object.entries(MKT).map(([k, v]) => `<option value="${k}" ${O.market === k ? "selected" : ""}>${v}</option>`).join("")}</select></label>
+      <label>Number of stocks<select id="s-n">${[8, 10, 12, 15, 20, 25, 30, 40].map(n => `<option ${n === O.n ? "selected" : ""}>${n}</option>`).join("")}</select></label>
+      <label>Amount to invest (£)<input id="s-a" type="number" min="100" step="100" value="${O.amount}"></label>
+      <label>Most in one stock<select id="s-c">${[5, 8, 10, 15, 20].map(n => `<option value="${n}" ${n === O.cap ? "selected" : ""}>${n}%</option>`).join("")}</select></label>
+      <label>Most in one sector<select id="s-sc">${[15, 20, 25, 30, 40, 100].map(n => `<option value="${n}" ${n === O.sectorCap ? "selected" : ""}>${n === 100 ? "No limit" : n + "%"}</option>`).join("")}</select></label>
+      <label>Rebalance<select id="s-r"><option value="Q" ${O.reb === "Q" ? "selected" : ""}>Every quarter</option><option value="Y" ${O.reb === "Y" ? "selected" : ""}>Every year</option></select></label>
+      <label>How to split the money<select id="s-w"><option value="aim" ${O.weighting === "aim" ? "selected" : ""}>As the aim suggests</option><option value="equal" ${O.weighting === "equal" ? "selected" : ""}>Equal amounts</option><option value="score" ${O.weighting === "score" ? "selected" : ""}>More in higher-ranked</option><option value="invvol" ${O.weighting === "invvol" ? "selected" : ""}>More in steadier</option></select></label>
+    </div>
+    <div style="margin-top:14px"><span class="note" style="font-weight:600;color:var(--ink)">Leave out sectors</span><div class="chips" style="margin-top:6px">${sectors.map(s => `<button class="tog" data-sec="${esc(s)}" aria-pressed="${O.avoidSectors.includes(s)}">${esc(s)}</button>`).join("")}</div></div>
+    <div style="margin-top:12px" class="form"><label>Leave out a company<input id="s-x" list="stocklist" placeholder="Type a name or ticker"></label></div>
+    <datalist id="stocklist">${D ? D.stocks.map(s => `<option value="${esc(s.name)} (${esc(s.t)})"></option>`).join("") : ""}</datalist>
+    ${O.avoidIds.length ? `<div class="chips" style="margin-top:8px">${O.avoidIds.map(id => `<button class="tog" aria-pressed="true" data-unavoid="${esc(id)}" title="Remove">${esc(D && D.stocks.find(s => s.id === id)?.name || id)} ×</button>`).join("")}</div>` : ""}
+    <label class="chk"><input type="checkbox" id="s-o" ${O.avoidOwned ? "checked" : ""} ${own.length ? "" : "disabled"}> Leave out companies I already hold ${own.length ? `(${own.length} in My holdings)` : "(none in My holdings yet)"}</label>
+    <label class="chk"><input type="checkbox" id="s-t" ${O.trusts ? "checked" : ""}> Include UK investment trusts</label>
+    <div class="go"><button class="bbtn" id="go">Generate portfolio</button>${isDefault() ? "" : `<button class="bbtn ghost" id="reset">Back to the standard limits</button>`}<span class="note" id="gonote">${isDefault() ? "The standard limits use tonight's ready-made portfolio." : "Your own limits are tested in your browser; the first time downloads about 9 MB of history."}</span></div>`;
+  const rd = () => { O.market = $("s-m").value; O.n = +$("s-n").value; O.amount = Math.max(100, +$("s-a").value || 0); O.cap = +$("s-c").value; O.sectorCap = +$("s-sc").value; O.reb = $("s-r").value; O.weighting = $("s-w").value; O.avoidOwned = $("s-o").checked; O.trusts = $("s-t").checked; save(); };
+  ["s-m", "s-n", "s-a", "s-c", "s-sc", "s-r", "s-w", "s-o", "s-t"].forEach(id => $(id).onchange = () => { rd(); drawAims(); drawSettings(); });
+  document.querySelectorAll("[data-sec]").forEach(b => b.onclick = () => { const s = b.dataset.sec; O.avoidSectors = O.avoidSectors.includes(s) ? O.avoidSectors.filter(x => x !== s) : O.avoidSectors.concat(s); save(); drawSettings(); });
+  document.querySelectorAll("[data-unavoid]").forEach(b => b.onclick = () => { O.avoidIds = O.avoidIds.filter(x => x !== b.dataset.unavoid); save(); drawSettings(); });
+  $("s-x").onchange = e => { const v = e.target.value; const m = v.match(/\(([^)]+)\)\s*$/); const s = D && D.stocks.find(x => (m && x.t === m[1]) || x.name.toLowerCase() === v.toLowerCase() || x.t.toLowerCase() === v.toLowerCase()); if (s && !O.avoidIds.includes(s.id)) { O.avoidIds = O.avoidIds.concat(s.id); save(); drawSettings(); } };
+  $("go").onclick = () => generate(true);
+  if ($("reset")) $("reset").onclick = () => { O = Object.assign({}, G.DEFAULTS, { aim: O.aim, amount: O.amount }); save(); drawAims(); drawSettings(); generate(); };
+}
+const save = () => store.set("bp-gen", O);
+
+async function loadHistory() {
+  if (PANEL) return;
+  const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); });
+  [PANEL, FX] = await Promise.all([get("data/panel.json"), get("data/fx_history.json").then(x => x.usdPerGbp).catch(() => [])]);
+  E.augment(PANEL);
+}
+// the same backtest as scripts/generator.js, run here for your own limits
+function backtest(opt) {
+  const r0 = E.run(PANEL, FX, G.strategy(opt), { lastDate: D.asof });
+  const f = Math.max(0, r0.held.findIndex(h => h > 0)), c = a => a.slice(f);
+  const inv = c(r0.invested), rets = c(r0.rets), dates = c(r0.dates);
+  const uk = E.benchRets(c(r0.bench.ftse100), inv), us = E.benchRets(c(r0.bench.sp500), inv);
+  const ix = uk.map((x, k) => opt.market === "LSE" ? x : opt.market === "US" ? us[k] : (x + us[k]) / 2);
+  const cut = rets.length - 24;
+  const st = (a, d) => E.stats(a, d);
+  const all = st(rets, dates), index = st(ix, dates), dev = st(rets.slice(0, cut), dates.slice(0, cut)), indexDev = st(ix.slice(0, cut), dates.slice(0, cut)), hidden = st(rets.slice(cut), dates.slice(cut)), indexHidden = st(ix.slice(cut), dates.slice(cut));
+  const bd = dev.cagr > indexDev.cagr, bh = hidden.cagr > indexHidden.cagr;
+  const verdict = bd && bh ? "beat" : bd || bh ? "mixed" : "lagged";
+  const summary = verdict === "beat" ? `Beat an index fund both before and during the last two years (${pc(all.cagr)} a year against ${pc(index.cagr)}), though not by enough to rule out luck.` : verdict === "mixed" ? `Beat an index fund in ${bd ? "the earlier years but not the last two" : "the last two years but not the earlier ones"}; over the whole period ${pc(all.cagr)} a year against ${pc(index.cagr)}.` : `Has not beaten an index fund: ${pc(all.cagr)} a year against ${pc(index.cagr)}${all.maxDD > index.maxDD + 0.02 ? ", though with smaller falls" : ""}.`;
+  return { all, index, dev, indexDev, hidden, indexHidden, verdict, summary, range: E.bootstrap(rets, 1000, 11), turnoverYr: r0.turnoverYr, hiddenFrom: dates[cut], dates, rets, indexRets: ix };
+}
+function livePicks(opt) {
+  const S0 = E.snapshotPanel(D), V0 = E.makeView(S0), H = E.makeView(PANEL);
+  const names = Object.fromEntries(D.stocks.map(s => [s.id, s.name]));
+  const extra = Object.fromEntries(D.stocks.map(s => [s.id, { prob6: s.prob6, tone30: s.tone30 }]));
+  const res = G.choose(V0, 0, opt, { hist: H, hm: PANEL.months.length, names, extra });
+  const by = Object.fromEntries(D.stocks.map(s => [s.id, s]));
+  return { picks: res.picks.map(p => { const s = by[S0.ids[p.i]]; return { id: s.id, name: s.name, t: s.t, ex: s.ex, sector: s.sector, ccy: s.ccy, price: s.price, w: p.w, score: s.score, prob6: s.prob6 ?? null, divY: s.div ? s.div.yld : s.divY, vol1y: s.vol1y, ret1y: s.ret1y,
+    reasons: G.why(s, opt.aim), flags: MC.flags(s) }; }),
+    left: res.left.map(l => ({ id: S0.ids[l.i], name: names[S0.ids[l.i]], reason: l.reason })), eligible: res.eligible };
+}
+async function generate(scroll) {
+  const opt = Object.assign({}, O, { avoidIds: O.avoidIds.concat(O.avoidOwned ? owned() : []) });
+  let live, evidence;
+  if (isDefault() && X) {
+    const a = X.aims[O.aim].markets[O.market];
+    live = a.live; evidence = Object.assign({}, a.quarterly, O.reb === "Y" ? { ...a.yearly, dates: a.quarterly.dates, rets: null } : {});
+    if (O.reb === "Y") evidence = null;   // the ready-made chart is quarterly; a yearly test runs below
+  }
+  if (!live || !evidence) {
+    $("out").innerHTML = `<div class="panel empty">Choosing stocks and testing your limits since 2017…</div>`;
+    if ($("go")) $("go").disabled = true;
+    try { await loadHistory(); live = livePicks(opt); evidence = backtest(opt); }
+    catch (e) { $("out").innerHTML = `<div class="panel empty">The history couldn't be loaded, so your own limits can't be tested right now. Check your connection and try again, or use the standard limits.</div>`; if ($("go")) $("go").disabled = false; return; }
+    if ($("go")) $("go").disabled = false;
+  }
+  result = { opt, live, evidence, at: D.asof };
+  drawResult();
+  if (scroll) $("out").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function drawResult() {
+  const { opt, live, evidence: ev } = result;
+  const usd = E.fxAt(FX || [], D.asof) || (D.fx && D.fx.USD ? 1 / D.fx.USD : 1.3);
+  const sh = G.shares(live.picks, opt.amount, usd, null, opt.cap / 100);
+  const realW = r => (r.cost + r.fee) / opt.amount;
+  const n = live.picks.length;
+  const uk = live.picks.filter(p => p.ex === "LSE").reduce((a, p) => a + p.w, 0);
+  const yld = live.picks.reduce((a, p) => a + p.w * (p.divY || 0), 0);
+  const vol = live.picks.reduce((a, p) => a + p.w * (p.vol1y || 0), 0);
+  const sec = {}; live.picks.forEach(p => sec[p.sector] = (sec[p.sector] || 0) + p.w);
+  const topSec = Object.entries(sec).sort((a, b) => b[1] - a[1])[0] || ["–", 0];
+  const fol = new Set(store.get("bp-follow-inv", []));
+  const inv = id => (OWN && OWN[id] ? OWN[id].filter(r => fol.has(r[0])).length : 0);
+  const maxW = Math.max(...live.picks.map(p => p.w), 0.01);
+  const last = store.get("bp-gen-last", null);
+  const diff = last && last.aim === opt.aim ? (() => { const now = new Set(live.picks.map(p => p.id)), was = new Set(last.ids); return { buy: live.picks.filter(p => !was.has(p.id)), sell: last.ids.filter(id => !now.has(id)), keep: live.picks.filter(p => was.has(p.id)) }; })() : null;
+  const next = (() => { const d = new Date(D.asof + "T12:00:00Z"); let m = d.getUTCMonth() + 1; if (opt.reb === "Y") return `${d.getUTCFullYear()}-12-31`; while (m % 3) m++; return new Date(Date.UTC(d.getUTCFullYear(), m, 0)).toISOString().slice(0, 10); })();
+  $("out").innerHTML = `<h2 style="margin:0 0 4px;font:700 20px var(--f-display);display:flex;gap:10px;align-items:baseline"><span class="num" style="font:700 13px var(--f-display);color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;width:24px;height:24px;display:inline-grid;place-items:center">3</span>Your ${esc(G.AIMS[opt.aim].name.toLowerCase())} portfolio</h2>
+    <p class="note" style="margin-bottom:12px">${n} stocks chosen from ${live.eligible} that passed the aim's filters, with prices to ${fmtD(D.asof)}. ${esc(G.AIMS[opt.aim].about)}</p>
+    <div class="res">
+    <div class="sum">
+      <div class="tile">Stocks<b>${n}</b>${pl(uk)} UK, ${pl(1 - uk)} US</div>
+      <div class="tile">Invested<b>${gbp(sh.spent)}</b>${gbp(sh.fees)} costs, ${gbp(sh.cash)} left over</div>
+      <div class="tile">Dividend yield<b>${pl(yld, 1)}</b>about ${gbp(sh.spent * yld)} a year</div>
+      <div class="tile">Typical swing<b>${pl(vol)}</b>average volatility a year</div>
+      <div class="tile">Biggest sector<b>${pl(topSec[1])}</b>${esc(topSec[0])}</div>
+    </div>
+    ${n < opt.n ? `<div class="panel note" style="color:var(--warn)">Only ${n} stocks met the aim's filters within your limits; the rest stays as cash. Relax a limit or choose a wider market for a fuller portfolio.</div>` : ""}
+    ${diff ? `<div class="panel"><h4 style="margin:0 0 8px;font:650 15px var(--f-display)">Since you last generated this aim (${fmtD(last.at)})</h4><div class="diff">
+      <div><h4 class="pos">Buy (${diff.buy.length})</h4><ul>${diff.buy.map(p => `<li>${esc(p.name)}</li>`).join("") || "<li class='note'>Nothing new</li>"}</ul></div>
+      <div><h4 class="neg">Sell (${diff.sell.length})</h4><ul>${diff.sell.map(id => `<li>${esc((D.stocks.find(s => s.id === id) || {}).name || id)}</li>`).join("") || "<li class='note'>Nothing to sell</li>"}</ul></div>
+      <div><h4>Keep (${diff.keep.length})</h4><p class="note">Adjust these to the new amounts below.</p></div></div></div>` : ""}
+    <div class="panel"><div class="tw"><table class="tt hold"><thead><tr><th>Company</th><th class="hm">Sector</th><th>Weight</th><th>Amount</th><th>Shares</th><th class="hm">Price</th></tr></thead><tbody>
+      ${sh.rows.map(o => `<tr><td><a href="app.html#${encodeURIComponent(o.id)}">${esc(o.name)}</a> <span class="mk ${o.ex === "LSE" ? "LSE" : "US"}">${o.ex === "LSE" ? "UK" : "US"}</span>
+        <div class="why">${esc(o.reasons.slice(0, 2).join(" "))}</div>${o.flags.map(f => `<div class="warn ${f.kind}">${esc(f.text)}</div>`).join("")}${inv(o.id) ? `<div class="warn info">Held by ${inv(o.id)} investor${inv(o.id) > 1 ? "s" : ""} you follow.</div>` : ""}</td>
+        <td class="hm note" style="text-align:left">${esc(o.sector)}</td><td data-l="Weight" style="white-space:nowrap">${pl(realW(o), 1)}<span class="wbar" style="width:${Math.max(3, Math.round(realW(o) / maxW * 46))}px"></span></td><td data-l="Amount">${gbp(o.cost + o.fee)}</td><td data-l="Shares">${o.shares}</td><td class="hm">${money(o.price, o.ccy)}</td></tr>`).join("") || `<tr><td colspan="6" class="note">No stocks meet these settings. Try a wider market, fewer exclusions or a looser sector limit.</td></tr>`}
+    </tbody></table></div>
+    <p class="note" style="margin-top:8px">Whole shares only, so the weights shown are what the money actually buys: rounding is spread across the holdings without going over the most in one stock. Amounts include estimated costs: 0.1% commission and 0.1% spread, plus 0.5% stamp duty on UK shares and a 0.5% currency fee on US shares; dollars at ${usd.toFixed(2)} to the pound. Warnings and investor ownership are shown for information; they didn't choose the stocks.</p></div>
+    ${live.left.length ? `<div class="panel"><h4 style="margin:0 0 6px;font:650 15px var(--f-display)">Considered but left out</h4><ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.6">${live.left.slice(0, 8).map(l => `<li><a href="app.html#${encodeURIComponent(l.id)}" style="color:var(--ink);font-weight:600;text-decoration:none">${esc(l.name)}</a>: ${esc(l.reason)}</li>`).join("")}</ul></div>` : ""}
+    ${ev ? `<div class="panel two"><div><h4 style="margin:0 0 6px;font:650 15px var(--f-display)">How these rules did since ${monD(ev.dates[0])}</h4>${growthChart(ev.dates, ev.rets, ev.indexRets)}
+        <div class="legend"><span><i style="background:var(--accent)"></i>Your settings, ${opt.reb === "Y" ? "rebalanced yearly" : "rebalanced each quarter"}</span><span><i style="background:var(--us)"></i>${opt.market === "LSE" ? "FTSE 100" : opt.market === "US" ? "S&P 500" : "Half FTSE 100, half S&P 500"}</span></div></div>
+      <div><p class="verdict ${ev.verdict}">${esc(ev.summary)}</p><div class="tw"><table class="tt"><thead><tr><th></th><th>These rules</th><th>Index fund</th></tr></thead><tbody>
+        <tr><td>Return a year</td><td class="${cls(ev.all.cagr - ev.index.cagr)}"><b>${pc(ev.all.cagr)}</b></td><td>${pc(ev.index.cagr)}</td></tr>
+        <tr><td>Before the last two years</td><td>${pc(ev.dev?.cagr)}</td><td>${pc(ev.indexDev?.cagr)}</td></tr>
+        <tr><td>Last two years</td><td>${pc(ev.hidden?.cagr)}</td><td>${pc(ev.indexHidden?.cagr)}</td></tr>
+        <tr><td>Worst fall</td><td class="neg">${pc(ev.all.maxDD, 0)}</td><td class="neg">${pc(ev.index.maxDD, 0)}</td></tr>
+        <tr><td>Worst calendar year</td><td class="neg">${pc(ev.all.worstYear, 0)}</td><td class="neg">${pc(ev.index.worstYear, 0)}</td></tr>
+      </tbody></table></div><p class="note" style="margin-top:8px">${ev.dates[0] > "2018-01" ? `The test starts in ${monD(ev.dates[0])} because the figures these rules need (such as dividend yields) only go back that far for this market, so it covers fewer years and less is known. ` : ""}${ev.range ? `Resampling the monthly returns gives a range of ${pc(ev.range.p5)} to ${pc(ev.range.p95)} a year in bad and good cases, which shows how much of the result could be luck. ` : ""}The generator's own rules run at every month-end using only what was known then, with the costs above; companies that have left the indexes are missing, which flatters the test a little. News and investor data aren't in the test.</p></div></div>` : ""}
+    <div class="panel"><h4 style="margin:0 0 8px;font:650 15px var(--f-display)">Use it</h4>
+      <div class="actions">
+        <button class="bbtn" id="a-save">Add to My holdings</button>
+        <a class="bbtn ghost" href="lab.html#s=${enc({ name: G.AIMS[opt.aim].name + " portfolio " + D.asof, source: { type: "list", ids: live.picks.map(p => p.id), w: Object.fromEntries(live.picks.map(p => [p.id, Math.round(p.w * 1000) / 10])) }, weighting: "custom", cap: 100, rebalance: opt.reb, start: opt.amount, monthly: 0, ccy: "GBP", account: "isa", costs: { commission: 0.1, spread: 0.1, fxFee: 0.5, stamp: true } })}">Track it in the Strategy Lab</a>
+        <button class="bbtn ghost" id="a-csv">Download as CSV</button>
+        <button class="bbtn ghost" id="a-ics">Add a rebalance reminder (${fmtD(next)})</button>
+        <button class="bbtn ghost" id="a-link">Copy a link to these settings</button>
+      </div><p class="msg" id="a-msg" role="status"></p>
+      <p class="note">Saving remembers this portfolio on this device, so next time the generator shows exactly what to buy and sell.</p></div>
+    </div>`;
+  const remember = () => store.set("bp-gen-last", { aim: opt.aim, at: D.asof, ids: live.picks.map(p => p.id) });
+  $("a-save").onclick = () => {
+    const h = Object.assign({ lots: [], c: "GBP", target: "" }, store.get("bp-holdings", {}));
+    let added = 0;
+    sh.rows.forEach(o => { if (o.shares > 0) { h.lots.push({ id: o.id, sh: o.shares, px: o.price, d: D.asof, acct: "Generator: " + G.AIMS[opt.aim].name, est: true }); added++; } });
+    store.set("bp-holdings", h); remember();
+    $("a-msg").innerHTML = `Added ${added} holdings at tonight's prices. <a href="portfolio.html#mine">Open My holdings</a> to change the prices to what you actually paid.`;
+  };
+  $("a-csv").onclick = () => {
+    const csv = "Company,Ticker,Market,Sector,Weight,Shares,Price,Amount incl. costs (GBP)\n" + sh.rows.map(o => [JSON.stringify(o.name), o.t, o.ex === "LSE" ? "UK" : "US", JSON.stringify(o.sector), (o.w * 100).toFixed(1) + "%", o.shares, o.price, (o.cost + o.fee).toFixed(2)].join(",")).join("\n") + "\n";
+    dl("bullpulse-" + opt.aim + "-portfolio.csv", csv, "text/csv"); remember();
+  };
+  $("a-ics").onclick = () => {
+    const d = next.replace(/-/g, "");
+    const ics = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//BullPulse//Generator//EN\r\nBEGIN:VEVENT\r\nUID:bullpulse-${opt.aim}-${d}@bullpulse.co.uk\r\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").slice(0, 15)}Z\r\nDTSTART;VALUE=DATE:${d}\r\nSUMMARY:Rebalance my BullPulse ${G.AIMS[opt.aim].name.toLowerCase()} portfolio\r\nDESCRIPTION:Open ${location.origin + location.pathname}#g=${enc(O)} to see what to buy and sell.\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n`;
+    dl("bullpulse-rebalance.ics", ics, "text/calendar"); remember();
+    $("a-msg").textContent = "Calendar file downloaded: open it to add the reminder.";
+  };
+  $("a-link").onclick = async () => {
+    const url = location.origin + location.pathname + "#g=" + enc(O);
+    try { await navigator.clipboard.writeText(url); $("a-msg").textContent = "Link copied. Anyone opening it sees these settings with that day's figures."; }
+    catch (e) { $("a-msg").innerHTML = `Copy this link: <code style="word-break:break-all">${esc(url)}</code>`; }
+  };
+}
+function dl(name, text, type) { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); }
+
+(async () => {
+  try {
+    [X, D] = await Promise.all([fetch("data/generator.json", { cache: "no-cache" }).then(r => r.json()), fetch("data/snapshot.json").then(r => r.json())]);
+  } catch (e) { $("out").innerHTML = `<div class="panel empty">The generator's data isn't available yet. It's built every night; please check back tomorrow.</div>`; return; }
+  fetch("data/investors/owners.json").then(r => r.json()).then(o => { OWN = o; if (result) drawResult(); }).catch(() => {});
+  drawAims(); drawSettings(); generate();
+})();
+})();
+</script>
+</body>
+</html>

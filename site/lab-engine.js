@@ -59,6 +59,8 @@
 
   // stocks and target weights at month-end m (sum <= 1; the rest is cash)
   function targets(V, S, m, held) {
+    // a strategy can bring its own stock-picker (the portfolio generator does): Map(i -> weight)
+    if (typeof S.select === "function") return S.select(V, m, held);
     let ids = [];
     const src = S.source || {};
     if (src.type === "list") {
