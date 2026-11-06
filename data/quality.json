@@ -1,6 +1,6 @@
 {
- "asof": "2026-11-05",
- "checked": 556,
+ "asof": "2026-11-06",
+ "checked": 845,
  "excluded": [],
  "flagged": [
   {
@@ -34,6 +34,10 @@
   {
    "id": "LSE-TATE",
    "reason": "price moved +45% on 14 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-MRNA",
+   "reason": "price moved +177% on 19 Aug 2026; history will be re-downloaded in case of an unadjusted split"
   }
  ],
  "resync": [
@@ -44,6 +48,7 @@
   "uk-rose",
   "uk-ror",
   "uk-spi",
-  "uk-tate"
+  "uk-tate",
+  "mrna"
  ]
 }
