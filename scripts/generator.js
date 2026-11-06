@@ -82,7 +82,7 @@ function review(P, FX, asof) {
       const r0 = E.run(P, FX, G.randomStrategy(o, 7919 * (j + 1)), { lastDate: asof });
       const f = Math.max(0, r0.held.findIndex(h => h > 0)), cs = a => a.slice(f);
       const inv = cs(r0.invested), rets = cs(r0.rets), dates = cs(r0.dates);
-      const uk = E.benchRets(cs(r0.bench.ftse100), inv), us = E.benchRets(cs(r0.bench.sp500), inv);
+      const uk = cs(E.benchRets(r0.bench.ftse100, r0.invested)), us = cs(E.benchRets(r0.bench.sp500, r0.invested));
       const ix = uk.map((x, k) => mk === "LSE" ? x : mk === "US" ? us[k] : (x == null || us[k] == null ? null : (x + us[k]) / 2));
       rnd.push(E.stats(rets, dates).cagr - E.stats(ix, dates).cagr);
     }

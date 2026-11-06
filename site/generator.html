@@ -235,7 +235,7 @@ function ingredients(opt) {
 function drawReview() {
   const R = X && X.review;
   if (!R) { $("research").innerHTML = ""; return; }
-  const S = R.summary, DEC = { std: "Adopted", index: "Offered as an option", erc: "Offered as an option" };
+  const S = R.summary, DEC = { std: "Adopted", index: "Offered as an option: better on average, but not in most aims and markets in the earlier years", erc: "Offered as an option" };
   const row = v => { const x = S[v.id]; return `<tr${v.id === "std" ? ' style="font-weight:600"' : ""}><td>${esc(v.label)}${DEC[v.id] ? `<div class="note" style="font-weight:400">${DEC[v.id]}</div>` : ""}</td>
     <td data-l="Earlier years, against the index" class="${cls(x.devEx)}">${pc(x.devEx)}</td><td data-l="Earlier years, information ratio">${x.devIR.toFixed(2)}${v.id === "std" ? "" : `<div class="note">better in ${x.devWins} of ${x.cells}</div>`}</td>
     <td data-l="Last two years, against the index" class="${cls(x.hidEx)}">${pc(x.hidEx)}</td><td data-l="Last two years, information ratio">${x.hidIR.toFixed(2)}${v.id === "std" ? "" : `<div class="note">better in ${x.hidWins} of ${x.cells}</div>`}</td>
@@ -249,7 +249,7 @@ function drawReview() {
     <div class="panel"><h4 style="margin:0 0 4px;font:650 15px var(--f-display)">Does the selection add anything? (${esc(MKT[O.market])})</h4>
       <p class="note" style="margin-bottom:10px">Each aim's picks against ${R.cells[Object.keys(R.cells)[0]].random.n} portfolios of the same size drawn at random from the same eligible stocks, since 2017. Beating 90% or more of them would suggest real skill; around half means the ranking hasn't mattered so far, and the result came from which kind of stocks were eligible.</p>
       <div class="tw"><table class="tt hold"><thead><tr><th>Aim</th><th>Against the index</th><th>Random portfolios</th><th style="text-align:left">The picks beat</th></tr></thead><tbody>${rnd}</tbody></table></div></div>
-    <p class="note">With this many tests some results will look good by chance, so a change was adopted only if it helped in most aims and markets in the earlier years and held up afterwards. The full method and data fixes are described in the README.</p>`;
+    <p class="note">With this many tests some results will look good by chance, so a change was adopted only if it helped in at least 8 of the 12 aims and markets in the earlier years without deepening the worst fall, decided before the last two years were looked at. UK company accounts in this data start in 2024, so in the earlier years the UK growth, income and balanced portfolios held only a handful of stocks and their numbers say little; the UK steady aim, built from prices, is tested over the whole period. The full method and data fixes are described in the README.</p>`;
 }
 
 // the risk check: how the portfolio will behave against the index, and where its risk comes from
@@ -290,7 +290,9 @@ function drawResult() {
   const funds = core ? G.FUNDS[opt.market].map(([name, f]) => ({ name, amt: opt.amount * core * f })) : [];
   const fundAmt = funds.reduce((a, f) => a + f.amt, 0);
   const realW = r => (r.cost + r.fee) / opt.amount;
-  const n = live.picks.length;
+  // picks whose single share costs more than the most allowed in one stock at this amount
+  const bought = sh.rows.filter(o => o.shares > 0), unaffordable = sh.rows.filter(o => !(o.shares > 0));
+  const n = bought.length;
   const uk = live.picks.filter(p => p.ex === "LSE").reduce((a, p) => a + p.w, 0);
   const yld = live.picks.reduce((a, p) => a + p.w * (p.divY || 0), 0);
   const vol = live.picks.reduce((a, p) => a + p.w * (p.vol1y || 0), 0);
@@ -303,7 +305,7 @@ function drawResult() {
   const diff = last && last.aim === opt.aim ? (() => { const now = new Set(live.picks.map(p => p.id)), was = new Set(last.ids); return { buy: live.picks.filter(p => !was.has(p.id)), sell: last.ids.filter(id => !now.has(id)), keep: live.picks.filter(p => was.has(p.id)) }; })() : null;
   const next = (() => { const d = new Date(D.asof + "T12:00:00Z"); let m = d.getUTCMonth() + 1; if (opt.reb === "Y") return `${d.getUTCFullYear()}-12-31`; while (m % 3) m++; return new Date(Date.UTC(d.getUTCFullYear(), m, 0)).toISOString().slice(0, 10); })();
   $("out").innerHTML = `<h2 style="margin:0 0 4px;font:700 20px var(--f-display);display:flex;gap:10px;align-items:baseline"><span class="num" style="font:700 13px var(--f-display);color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;width:24px;height:24px;display:inline-grid;place-items:center">3</span>Your ${esc(G.AIMS[opt.aim].name.toLowerCase())} portfolio</h2>
-    <p class="note" style="margin-bottom:12px">${n} stocks chosen from ${live.eligible} that passed the aim's filters, with prices to ${fmtD(D.asof)}. ${esc(G.AIMS[opt.aim].about)}</p>
+    <p class="note" style="margin-bottom:12px">${live.picks.length} stocks chosen from ${live.eligible} that passed the aim's filters, with prices to ${fmtD(D.asof)}. ${esc(G.AIMS[opt.aim].about)}</p>
     <div class="res">
     <div class="sum">
       <div class="tile">Holdings<b>${n} stocks${core ? " + fund" : ""}</b>${core ? `${pl(core)} in an index fund; stocks ` : ""}${pl(uk)} UK, ${pl(1 - uk)} US</div>
@@ -312,14 +314,15 @@ function drawResult() {
       <div class="tile">Stocks' typical swing<b>${pl(vol)}</b>average volatility a year</div>
       <div class="tile">Biggest sector<b>${pl(topSec[1] * (1 - core))}</b>${esc(topSec[0])}, of all the money</div>
     </div>
-    ${n < opt.n ? `<div class="panel note" style="color:var(--warn)">Only ${n} stocks met the aim's filters within your limits; the rest stays as cash. Relax a limit or choose a wider market for a fuller portfolio.</div>` : ""}
+    ${unaffordable.length ? `<div class="panel note">Not bought with ${gbp(stockAmt)} in stocks: ${unaffordable.map(o => `${esc(o.name)} (one share costs ${gbp(o.pxGbp)})`).join(", ")}. Each stock's share of the money is about ${gbp(stockAmt / live.picks.length)}, so one of these shares would make it far heavier than planned; the money went to the other holdings instead. A larger amount, or a broker that sells fractions of shares, would include ${unaffordable.length > 1 ? "them" : "it"}.</div>` : ""}
+    ${live.picks.length < opt.n ? `<div class="panel note" style="color:var(--warn)">Only ${live.picks.length} stocks met the aim's filters within your limits; the rest stays as cash. Relax a limit or choose a wider market for a fuller portfolio.</div>` : ""}
     ${diff ? `<div class="panel"><h4 style="margin:0 0 8px;font:650 15px var(--f-display)">Since you last generated this aim (${fmtD(last.at)})</h4><div class="diff">
       <div><h4 class="pos">Buy (${diff.buy.length})</h4><ul>${diff.buy.map(p => `<li>${esc(p.name)}</li>`).join("") || "<li class='note'>Nothing new</li>"}</ul></div>
       <div><h4 class="neg">Sell (${diff.sell.length})</h4><ul>${diff.sell.map(id => `<li>${esc((D.stocks.find(s => s.id === id) || {}).name || id)}</li>`).join("") || "<li class='note'>Nothing to sell</li>"}</ul></div>
       <div><h4>Keep (${diff.keep.length})</h4><p class="note">Adjust these to the new amounts below.</p></div></div></div>` : ""}
     <div class="panel"><div class="tw"><table class="tt hold"><thead><tr><th>Company</th><th class="hm">Sector</th><th>Weight</th><th>Amount</th><th>Shares</th><th class="hm">Price</th></tr></thead><tbody>
       ${funds.map(f => `<tr><td><b>${esc(f.name)}</b> <span class="mk" style="background:var(--accent-soft);color:var(--accent)">Fund</span><div class="why">The core: a low-cost fund that tracks the whole index. Any provider's tracker will do; look for low yearly charges (around 0.1%).</div></td><td class="hm note" style="text-align:left">Whole market</td><td data-l="Weight">${pl(f.amt / opt.amount, 1)}</td><td data-l="Amount">${gbp(f.amt)}</td><td data-l="Shares">–</td><td class="hm">–</td></tr>`).join("")}
-      ${sh.rows.map(o => `<tr><td><a href="app.html#${encodeURIComponent(o.id)}">${esc(o.name)}</a> <span class="mk ${o.ex === "LSE" ? "LSE" : "US"}">${o.ex === "LSE" ? "UK" : "US"}</span>
+      ${bought.map(o => `<tr><td><a href="app.html#${encodeURIComponent(o.id)}">${esc(o.name)}</a> <span class="mk ${o.ex === "LSE" ? "LSE" : "US"}">${o.ex === "LSE" ? "UK" : "US"}</span>
         <div class="why">${esc(o.reasons.slice(0, 2).join(" "))}</div>${o.flags.map(f => `<div class="warn ${f.kind}">${esc(f.text)}</div>`).join("")}${inv(o.id) ? `<div class="warn info">Held by ${inv(o.id)} investor${inv(o.id) > 1 ? "s" : ""} you follow.</div>` : ""}</td>
         <td class="hm note" style="text-align:left">${esc(o.sector)}</td><td data-l="Weight" style="white-space:nowrap">${pl(realW(o), 1)}<span class="wbar" style="width:${Math.max(3, Math.round(realW(o) / maxW * 46))}px"></span></td><td data-l="Amount">${gbp(o.cost + o.fee)}</td><td data-l="Shares">${o.shares}</td><td class="hm">${money(o.price, o.ccy)}</td></tr>`).join("") || `<tr><td colspan="6" class="note">No stocks meet these settings. Try a wider market, fewer exclusions or a looser sector limit.</td></tr>`}
     </tbody></table></div>

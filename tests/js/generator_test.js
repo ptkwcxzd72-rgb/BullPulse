@@ -113,6 +113,17 @@ assert.deepStrictEqual(pick({ aim: "balanced" }), pick({ aim: "balanced" }), "de
   assert(half.stocks && half.all && half.index && ["beat", "mixed", "lagged"].includes(half.verdict), "backtest reports the mix, the stocks and the index");
 }
 
+// 9b. the index's returns when the stocks can only be bought part-way through the history (as with
+// UK company accounts, which start in 2024): each month is the index's own month, and the first one
+// doesn't absorb the index's growth before the first purchase
+{
+  const late = Object.assign({}, P, { fields: {}, bench: { sp500: months.map(() => 100), ftse100: months.map(() => 100) } });
+  for (const [k, v] of Object.entries(P.fields)) late.fields[k] = v.map((row, m) => m < 12 ? row.map(() => null) : row);
+  const bt = G.backtest(E, late, [], Object.assign({}, G.DEFAULTS, { market: "US", maxCorr: 1 }), months[NM - 1], 6);
+  assert(bt.dates[0] > months[11], "nothing is held before the data starts");
+  assert(bt.indexRets.every(x => x == null || Math.abs(x - 0.01) < 1e-9), "every index month is 1%, the first included");
+}
+
 // 10. risk parity gives each holding the same share of the risk; minimum variance keeps to its cap
 {
   const C = [[0.04, 0.006, 0.002], [0.006, 0.01, 0.001], [0.002, 0.001, 0.0225]];

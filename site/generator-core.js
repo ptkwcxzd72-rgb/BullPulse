@@ -159,7 +159,9 @@
     const r0 = E.run(P, FX, strategy(o), { lastDate });
     const f = Math.max(0, r0.held.findIndex(h => h > 0)), c = a => a.slice(f);
     const inv = c(r0.invested), stock = c(r0.rets), dates = c(r0.dates);
-    const uk = E.benchRets(c(r0.bench.ftse100), inv), us = E.benchRets(c(r0.bench.sp500), inv);
+    // index returns from the start of the run, then cut: computed on the cut series, the first
+    // month would absorb all the index's growth before the first purchase
+    const uk = c(E.benchRets(r0.bench.ftse100, r0.invested)), us = c(E.benchRets(r0.bench.sp500, r0.invested));
     const ix = uk.map((x, k) => o.market === "LSE" ? x : o.market === "US" ? us[k] : (x == null || us[k] == null ? null : (x + us[k]) / 2));
     const rets = blend(stock, ix, o.core);
     const cut = Math.max(0, rets.length - H);
@@ -375,13 +377,15 @@
       picks.forEach((p, j) => { if (Rk[k].has(p.i)) { a += w[j] * Rk[k].get(p.i); b += w[j]; } });
       exposures[k] = b > 0.5 ? a / b : null;
     }
-    // active share against a market-value-weighted version of the same market(s)
+    // active share against the index the portfolio is measured against (FTSE 100, S&P 500, or half
+    // each), weighted by market value; holdings outside the index count as wholly different
     let active = null;
     const capOf = i => { const c = V.val("mcapBn", m, i); return c > 0 ? c : null; };
-    const withCap = pool.filter(i => capOf(i) != null);
-    if (withCap.length > pool.length * 0.8) {
-      const exs = Object.keys(mk), bw = new Map();
-      for (const e of exs) { const g = withCap.filter(i => P.ex[i] === e), t = g.reduce((a, i) => a + capOf(i), 0); g.forEach(i => bw.set(i, capOf(i) / t / exs.length)); }
+    const IX = { LSE: "FTSE 100", US: "S&P 500" }, exs = Object.keys(mk);
+    const members = e => pool.filter(i => P.ex[i] === e && (!P.idx || P.idx[i] === IX[e]));
+    if (exs.every(e => { const g = members(e); return g.length && g.filter(i => capOf(i) != null).length >= g.length * 0.8; })) {
+      const bw = new Map();
+      for (const e of exs) { const g = members(e).filter(i => capOf(i) != null), t = g.reduce((a, i) => a + capOf(i), 0); g.forEach(i => bw.set(i, capOf(i) / t / exs.length)); }
       const pw = new Map(picks.map((p, k) => [p.i, w[k]]));
       let d = 0; for (const i of new Set([...bw.keys(), ...pw.keys()])) d += Math.abs((pw.get(i) || 0) - (bw.get(i) || 0));
       active = d / 2;
@@ -511,8 +515,9 @@
       for (const r of rows) {
         const one = r.pxGbp * (1 + r.rate), now = r.cost + r.fee;
         if (!(r.pxGbp > 0) || one > cash + 1e-9 || now + one > lim + 1e-9) continue;
+        // a first share for a pick that has none comes before topping up the others
         const rel = (now + one) / Math.max(r.budget, 1e-9);
-        if (best == null || rel < room) { room = rel; best = r; }
+        if (best == null || (!r.shares && best.shares) || (!r.shares === !best.shares && rel < room)) { room = rel; best = r; }
       }
       if (!best) break;
       best.shares++; best.cost += best.pxGbp; best.fee += best.pxGbp * best.rate; spent += best.pxGbp; fees += best.pxGbp * best.rate;
