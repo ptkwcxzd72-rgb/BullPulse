@@ -255,6 +255,24 @@ class DividendAdjustTest(unittest.TestCase):
         d["chart"]["result"][0]["indicators"]["adjclose"][0]["adjclose"] = [95, 95]
         self.assertFalse(U.dividends_missing(d))
 
+    def test_partial_adjustment_is_missing(self):
+        # Legal & General's case: Yahoo adjusted for one small event but not the regular dividends,
+        # so adjusted closes differ from closes, yet most of the income is missing
+        import sync_uk_prices as U
+        n = 40
+        ts = [1700000000 + 86400 * k for k in range(n)]
+        close = [100.0] * n
+        adj = [99.0] * 10 + [100.0] * 30           # a 1% adjustment early on only
+        divs = {str(k): {"amount": 6.0, "date": ts[k]} for k in (10, 20, 30)}   # 3 x 6%: about 17%
+        d = {"chart": {"result": [{"timestamp": ts, "indicators": {"quote": [{"close": close, "open": close, "high": close, "low": close, "volume": [1] * n}], "adjclose": [{"adjclose": adj}]},
+                                   "events": {"dividends": divs}, "meta": {"currency": "GBp"}}]}}
+        self.assertTrue(U.dividends_missing(d))
+        _, bars = U.parse_chart(d, raw=True)
+        self.assertEqual(bars[0][4], 100.0)         # raw closes, so the partial adjustment isn't counted twice
+        # properly adjusted: the earliest close is scaled by the dividends (0.94^3)
+        d["chart"]["result"][0]["indicators"]["adjclose"][0]["adjclose"] = [100 * 0.94 ** sum(1 for j in (10, 20, 30) if j > k) for k in range(n)]
+        self.assertFalse(U.dividends_missing(d))
+
 
 class ThirteenFTest(unittest.TestCase):
     def test_parse_and_aggregate(self):

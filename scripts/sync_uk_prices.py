@@ -14,7 +14,9 @@ report in US dollars or euros while their shares trade in pence.
 from __future__ import annotations
 
 import argparse
+import bisect
 import csv
+import math
 import datetime as dt
 import json
 import os
@@ -74,8 +76,9 @@ def parse_dividends(d: dict, scale: float) -> list[list]:
     return sorted(out)
 
 
-def parse_chart(d: dict, scale_override: float | None = None) -> tuple[str, list[list]]:
-    """(currency, rows of [date, open, high, low, close, volume]) adjusted for splits and dividends."""
+def parse_chart(d: dict, scale_override: float | None = None, raw: bool = False) -> tuple[str, list[list]]:
+    """(currency, rows of [date, open, high, low, close, volume]) adjusted for splits and dividends
+    (raw: the closes as quoted, which Yahoo already adjusts for splits, for adding dividends to)."""
     res = (d or {}).get("chart", {}).get("result") or []
     if not res:
         return "", []
@@ -101,16 +104,19 @@ def parse_chart(d: dict, scale_override: float | None = None) -> tuple[str, list
         if day in seen:          # Yahoo sometimes repeats the live day
             continue
         seen.add(day)
-        f = (adj[i] / c) if adj[i] else 1.0
+        f = (adj[i] / c) if adj[i] and not raw else 1.0
         out.append([day, round(o * f * scale, 4), round(h * f * scale, 4), round(lo * f * scale, 4), round(c * f * scale, 4), int(v or 0)])
     return ccy, out
 
 
 def dividends_missing(d: dict) -> bool:
-    """True when the chart's adjusted closes ignore dividends (Yahoo does this for many London
-    listings: adjusted only for splits), so returns would leave out the income."""
+    """True when the chart's adjusted closes leave out most of the dividends the chart itself lists,
+    so returns would miss the income. Yahoo adjusts many London listings only for splits, and some
+    only for an odd event or two, so the test compares the adjustment that was made with the one the
+    dividends imply (each ex-date scales earlier prices by 1 - dividend / the close before it)."""
     try:
         r = d["chart"]["result"][0]
+        ts = r.get("timestamp") or []
         close = r["indicators"]["quote"][0]["close"]
         adj = (r["indicators"].get("adjclose") or [{}])[0].get("adjclose") or []
         divs = (r.get("events") or {}).get("dividends") or {}
@@ -118,8 +124,28 @@ def dividends_missing(d: dict) -> bool:
         return False
     if not divs or not adj:
         return False
-    ratios = [a / c for a, c in zip(adj, close) if a and c]
-    return bool(ratios) and max(abs(x - 1) for x in ratios) < 0.005
+    pairs = [(a, c) for a, c in zip(adj, close) if a and c]
+    if not pairs:
+        return False
+    if max(abs(a / c - 1) for a, c in pairs) < 0.005:
+        return True
+    if not ts or len(ts) != len(close):
+        return False
+    # the adjustment the dividends imply over the chart, against the one in the adjusted closes
+    implied = 0.0
+    for e in divs.values():
+        amt, when = e.get("amount"), e.get("date")
+        if not amt or not when:
+            continue
+        k = bisect.bisect_left(ts, when) - 1   # the last close before the ex-date
+        while k >= 0 and not close[k]:
+            k -= 1
+        if k < 0 or not 0 < amt < close[k] * 0.5:
+            continue
+        implied += math.log(1 - amt / close[k])
+    (a0, c0), (a1, c1) = pairs[0], pairs[-1]
+    observed = math.log((a0 / c0) / (a1 / c1))
+    return implied < math.log(0.98) and observed > implied / 2
 
 
 def add_dividends(bars: list[list], divs: list[list]) -> list[list]:
@@ -189,8 +215,9 @@ BENCHMARKS = {"bench-ftse100": "ISF.L", "bench-sp500": "SPY"}
 def sync_benchmarks(out_dir: str) -> None:
     for name, sym in BENCHMARKS.items():
         d = get_json(CHART.format(sym=sym, rng="10y"))
-        _, bars = parse_chart(d, scale_override=1.0)
-        if bars and dividends_missing(d):
+        missing = dividends_missing(d)
+        _, bars = parse_chart(d, scale_override=1.0, raw=missing)
+        if bars and missing:
             bars = add_dividends(bars, parse_dividends(d, 1.0))
         if len(bars) > 260:
             write_bars(os.path.join(out_dir, name + ".csv"), bars)
@@ -259,10 +286,11 @@ def main():
             continue
         path = os.path.join(args.out, name + ".csv")
         d = get_json(CHART.format(sym=yahoo_symbol(r["ticker"]), rng="10y"))
-        ccy, bars = parse_chart(d)
+        missing = dividends_missing(d)
+        ccy, bars = parse_chart(d, raw=missing)
         if bars:
             scale = {"GBp": 1.0, "GBX": 1.0, "GBP": 100.0}.get(ccy) or FX.get(ccy, 0) * 100
-            if dividends_missing(d):   # total return, like the US prices
+            if missing:   # total return, like the US prices
                 bars = add_dividends(bars, parse_dividends(d, scale))
             dv = [x for x in parse_dividends(d, scale) if x[0] >= (dt.date.today() - dt.timedelta(days=5 * 366)).isoformat()]
             if dv:
