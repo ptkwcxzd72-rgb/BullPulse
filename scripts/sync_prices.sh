@@ -36,8 +36,10 @@ mkdir -p data/prices
 # of requests as a normal night (one per stock).
 MONTH="$(date -u +%Y-%m)"
 if [[ ! -f "data/prices/.refreshed-$MONTH" ]]; then
-  echo "Monthly full refresh: re-downloading all price history"
-  find data/prices -name '*.csv' -delete
+  echo "Monthly full refresh: re-downloading the Tiingo stocks' price history"
+  # only the files this script downloads: UK prices, the benchmarks and the US stocks filled from
+  # Yahoo (scripts/sync_us_yahoo.py) are kept by their own jobs
+  for t in "${TICKERS[@]}"; do rm -f "data/prices/$t.csv"; done
   rm -f data/prices/.refreshed-*
   touch "data/prices/.refreshed-$MONTH"
 elif [[ -f data/quality.json ]]; then

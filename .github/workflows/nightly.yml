@@ -99,6 +99,11 @@ jobs:
         timeout-minutes: 268
         continue-on-error: true
 
+      - name: US prices from Yahoo for the S&P 500 stocks beyond Tiingo's free tier (Microsoft, Nvidia, ...)
+        run: python scripts/sync_us_yahoo.py --budget-min 25
+        timeout-minutes: 30
+        continue-on-error: true
+
       - name: UK end-of-day prices (FTSE 350), index benchmarks, exchange rates and dividends
         run: python scripts/sync_uk_prices.py
         # done by the evening job; run here only for a same-day re-rank

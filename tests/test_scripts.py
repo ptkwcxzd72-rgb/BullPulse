@@ -1,6 +1,7 @@
 """Unit tests for the Python data scripts (no network, no FinBERT). Run: python -m unittest discover tests"""
 import os
 import sys
+import csv
 import unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
@@ -272,6 +273,32 @@ class DividendAdjustTest(unittest.TestCase):
         # properly adjusted: the earliest close is scaled by the dividends (0.94^3)
         d["chart"]["result"][0]["indicators"]["adjclose"][0]["adjclose"] = [100 * 0.94 ** sum(1 for j in (10, 20, 30) if j > k) for k in range(n)]
         self.assertFalse(U.dividends_missing(d))
+
+
+class USYahooTest(unittest.TestCase):
+    def test_coverage_and_unfinished_day(self):
+        import datetime as dt
+        from zoneinfo import ZoneInfo
+        import sync_us_yahoo as Y
+        t = Y.tiingo_tickers()
+        self.assertEqual(len(t), 210)                      # what sync_prices.sh downloads on the free tier
+        rows = list(csv.DictReader(open("universe/us.csv", newline="")))
+        rest = {r["provider_ticker"] for r in rows} - t
+        self.assertIn("msft", rest)                       # the rest of the index comes from Yahoo
+        self.assertEqual(len(rest) + len(t & {r["provider_ticker"] for r in rows}), len({r["provider_ticker"] for r in rows}))
+        ny = ZoneInfo("America/New_York")
+        self.assertEqual(Y.ny_unfinished_day(dt.datetime(2026, 11, 6, 15, 0, tzinfo=ny)), "2026-11-06")
+        self.assertEqual(Y.ny_unfinished_day(dt.datetime(2026, 11, 6, 17, 0, tzinfo=ny)), "")
+        self.assertEqual(Y.yahoo_symbol("BRK.B"), "BRK-B")
+
+
+class SplitRatioTest(unittest.TestCase):
+    def test_reverse_splits(self):
+        import fundamentals_history as F
+        self.assertEqual(F.split_ratio(8.7e9, 8.7e9 / 8 * 1.02), 1 / 8)   # GE, 2021
+        self.assertEqual(F.split_ratio(1e9, 2e9), 2)
+        self.assertEqual(F.split_ratio(1e9, 1.05e9), 1.0)                 # issuance, not a split
+        self.assertEqual(F.split_ratio(1e9, 0.9e9), 1.0)                  # buyback, not a split
 
 
 class ThirteenFTest(unittest.TestCase):
