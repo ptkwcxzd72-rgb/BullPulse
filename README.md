@@ -98,7 +98,7 @@ All of it is shown on the [Does the score work?](https://bullpulse.co.uk/score.h
 | --- | --- | --- |
 | Nightly jobs | GitHub Actions (public repository) | Free |
 | Website | GitHub Pages | Free |
-| Prices | Tiingo free tier | Free, with limits (see below) |
+| Prices | Tiingo free tier, the rest of the S&P 500 from Yahoo Finance | Free, with limits (see below) |
 | News | GDELT DOC API (no key); Tiingo news if your plan includes it | Free |
 | Sentiment | FinBERT (`ProsusAI/finbert`), run on CPU inside the nightly job | Free |
 | Growth data | SEC EDGAR company facts (official, no key) | Free |
@@ -123,9 +123,11 @@ All of it is shown on the [Does the score work?](https://bullpulse.co.uk/score.h
 
 ### Data limits to know about
 
-- **Tiingo free tier.** It allows about 50 requests an hour, 1,000 a day and 500 unique symbols a month. The nightly job therefore syncs 210 US stocks, about 4.4 hours at 75 seconds per request, to stay inside GitHub's 6-hour job limit. For the full S&P 500, use Tiingo's paid tier and set `TIINGO_TIER=power`.
+- **Tiingo free tier.** It allows about 50 requests an hour, 1,000 a day and 500 unique symbols a month. The nightly job therefore syncs the first 210 US stocks from Tiingo, about 4.4 hours at 75 seconds per request, and `scripts/sync_us_yahoo.py` fills the rest of the S&P 500 from Yahoo's public chart endpoint after the New York close (total return, the same file format). Until November 2026 the rest was simply missing, so the US universe was 209 stocks, mostly names from A to F, without Microsoft, Nvidia, Meta, JPMorgan and most of the index; every US screen, backtest and model portfolio before then was drawn from that partial list. With Tiingo's paid tier (`TIINGO_TIER=power`) Tiingo covers everything and the Yahoo fill does nothing.
 - **UK prices.** UK prices come from Yahoo Finance's public chart endpoint. It needs no key but is not an official API and could change or stop without notice; the script keeps each stock's previous file whenever a download looks wrong, and a failure never stops the US run. A paid source (for example EODHD) can replace it by writing the same CSV files.
 - **UK fundamentals.** UK reports are annual (half-year results are not filed in iXBRL), so UK growth is year on year. Debt uses the IFRS borrowing tags; companies that tag debt with their own extensions show "–" for those checks.
+- **Total return.** Prices include reinvested dividends so that returns compare fairly with the index funds. Yahoo adjusts many London listings only for splits, and some for an odd event but not their regular dividends; `dividends_missing()` compares the adjustment made with the one the listed dividends imply and adds them when most are missing. Until November 2026 the check missed partly adjusted listings (Legal & General, British American Tobacco and others) and the history panel built on 1 November held the FTSE 100 without dividends, which understated UK income and the FTSE by several points a year.
+- **Market values in the history** come from reported share counts on today's split-adjusted prices, with later splits detected from jumps in the share count; reverse splits such as GE's 1-for-8 were missing until November 2026.
 - **Survivorship bias.** The universe uses today's index members, so backtests leave out companies that were later removed from the index. Validation results are flattered by this.
 
 ## Universe
