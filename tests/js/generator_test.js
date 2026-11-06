@@ -102,17 +102,117 @@ assert.deepStrictEqual(pick({ aim: "balanced" }), pick({ aim: "balanced" }), "de
   assert(r.held.some(h => h > 0), "engine holds stocks");
 }
 
+// 9. the index-fund core: blending arithmetic, and 100% in the fund follows the index less its charges
+{
+  const b = G.blend([0.1, -0.05, null], [0.02, 0.01, 0.03], 50);
+  assert(Math.abs(b[0] - (0.5 * (0.02 - 0.001 / 12) + 0.05)) < 1e-12, "half and half");
+  assert(Math.abs(b[2] - 0.5 * (0.03 - 0.001 / 12)) < 1e-12, "a month without a stock return counts the fund part");
+  const bt = G.backtest(E, P, [], Object.assign({}, G.DEFAULTS, { core: 100, maxCorr: 1 }), months[NM - 1], 6);
+  assert(Math.abs(bt.all.cagr - bt.index.cagr) < 0.002, "all in the fund matches the index less 0.1% a year");
+  const half = G.backtest(E, P, [], Object.assign({}, G.DEFAULTS, { core: 50, maxCorr: 1 }), months[NM - 1], 6);
+  assert(half.stocks && half.all && half.index && ["beat", "mixed", "lagged"].includes(half.verdict), "backtest reports the mix, the stocks and the index");
+}
+
+// 9b. the index's returns when the stocks can only be bought part-way through the history (as with
+// UK company accounts, which start in 2024): each month is the index's own month, and the first one
+// doesn't absorb the index's growth before the first purchase
+{
+  const late = Object.assign({}, P, { fields: {}, bench: { sp500: months.map(() => 100), ftse100: months.map(() => 100) } });
+  for (const [k, v] of Object.entries(P.fields)) late.fields[k] = v.map((row, m) => m < 12 ? row.map(() => null) : row);
+  const bt = G.backtest(E, late, [], Object.assign({}, G.DEFAULTS, { market: "US", maxCorr: 1 }), months[NM - 1], 6);
+  assert(bt.dates[0] > months[11], "nothing is held before the data starts");
+  assert(bt.indexRets.every(x => x == null || Math.abs(x - 0.01) < 1e-9), "every index month is 1%, the first included");
+}
+
+// 10. risk parity gives each holding the same share of the risk; minimum variance keeps to its cap
+{
+  const C = [[0.04, 0.006, 0.002], [0.006, 0.01, 0.001], [0.002, 0.001, 0.0225]];
+  const w = G.riskParity(C), mv = C.map(r => r.reduce((s, x, b) => s + x * w[b], 0)), rc = w.map((x, a) => x * mv[a]);
+  assert(Math.abs(sum(w) - 1) < 1e-9, "risk parity weights add to 1");
+  assert(Math.max(...rc) / Math.min(...rc) < 1.01, "equal risk contributions " + rc.map(x => x.toFixed(5)));
+  const m = G.minVariance(C, 0.5);
+  assert(Math.abs(sum(m) - 1) < 1e-6 && m.every(x => x >= -1e-9 && x <= 0.5 + 1e-9), "min variance: long only, within the cap");
+  const r = pick({ aim: "balanced", weighting: "erc", n: 12, maxCorr: 1 });
+  assert(Math.abs(sum(r.picks.map(p => p.w)) - 1) < 1e-6, "risk parity through choose() invests everything");
+}
+
+// 11. the signal record: a signal that ranks next month's returns perfectly scores far above 2
+{
+  const Q = JSON.parse(JSON.stringify(P));
+  Q.fields.T = Q.fwd.map(row => row.map(x => x));   // trend = next month's return (look-ahead, test only)
+  const r = G.signalRecord(E.makeView(Q), "trend", "US", 0, NM, 10);
+  assert(r && r.ic > 0.95 && r.t > 10 && r.hit === 1, "perfect signal detected");
+  const z = G.signalRecord(V, "value", "US", 0, NM, 10);
+  assert(z && Math.abs(z.t) < 6, "an unrelated signal shows no strong link");
+}
+
+// 12. the market trend filter halves the stock weights when the index is below its 10-month average
+{
+  const Q = JSON.parse(JSON.stringify(P));
+  Q.bench.sp500 = months.map((_, k) => k < 20 ? 200 : -800);  // rises, then falls hard
+  Q.bench.ftse100 = Q.bench.sp500;
+  const QV = E.makeView(Q);
+  const on = G.choose(QV, NM - 1, Object.assign({}, G.DEFAULTS, { trend: true, maxCorr: 1 }), {});
+  assert(on.trendDown && Math.abs(sum(on.picks.map(p => p.w)) - 0.5) < 1e-6, "half in cash in a falling market");
+  const up = G.choose(QV, 15, Object.assign({}, G.DEFAULTS, { trend: true, maxCorr: 1 }), {});
+  assert(!up.trendDown, "fully invested while rising");
+}
+
+// 14. index-aware construction holds the largest eligible companies, weighted by size and tilted to the score
+{
+  const Q = JSON.parse(JSON.stringify(P));
+  Q.fields.mcapBn = months.map(() => ids.map((_, i) => (i + 1) * 10));   // stock 39 largest
+  const QV = E.makeView(Q);
+  const r = G.choose(QV, NM - 1, Object.assign({}, G.DEFAULTS, { build: "index", n: 10, cap: 100, sectorCap: 100, maxCorr: 1 }), {});
+  const got = r.picks.map(p => p.i).sort((a, b) => a - b);
+  assert.deepStrictEqual(got, [29, 30, 31, 32, 33, 34, 35, 36, 37, 38], "the ten largest eligible (39 is a trust)");
+  const w = Object.fromEntries(r.picks.map(p => [p.i, p.w]));
+  assert(w[38] > w[29], "bigger companies get more");
+  const flat = G.choose(QV, NM - 1, Object.assign({}, G.DEFAULTS, { build: "index", tilt: 0, n: 10, cap: 100, sectorCap: 100, maxCorr: 1 }), {});
+  const fw = Object.fromEntries(flat.picks.map(p => [p.i, p.w]));
+  assert(Math.abs(fw[38] / fw[29] - 390 / 300) < 1e-9, "without a tilt, weights are in proportion to market value");
+}
+
+// 15. the random baseline: right size, equal weights, reproducible, and different from the picks
+{
+  const st = G.randomStrategy(Object.assign({}, G.DEFAULTS, { n: 10, maxCorr: 1 }), 42);
+  const a = st.select(V, M), b = G.randomStrategy(Object.assign({}, G.DEFAULTS, { n: 10, maxCorr: 1 }), 42).select(V, M);
+  assert.strictEqual(a.size, 10); assert.deepStrictEqual([...a.keys()], [...b.keys()], "same seed, same draw");
+  assert([...a.values()].every(x => Math.abs(x - 0.1) < 1e-12), "equal weights");
+  const c = G.randomStrategy(Object.assign({}, G.DEFAULTS, { n: 10, maxCorr: 1 }), 43).select(V, M);
+  assert.notDeepStrictEqual([...a.keys()].sort(), [...c.keys()].sort(), "another seed, another draw");
+}
+
+// 16. the risk report: weights of risk add to 1; a portfolio of the index itself has beta 1 and no gap
+{
+  const Q = JSON.parse(JSON.stringify(P));
+  Q.bench.sp500 = Q.fwd.map(r => Math.round(r.filter((_, i) => ex[i] === "US").reduce((a, b) => a + b, 0) / 20));  // the US stocks' average
+  const QV = E.makeView(Q), us = ids.map((_, i) => i).filter(i => ex[i] === "US");
+  const ctx = G.riskContext(QV, [], "US");
+  const rr = G.riskReport(QV, NM - 1, us.map(i => ({ i, w: 1 / us.length })), QV, NM - 1, i => i, ctx.conv, ctx.ix);
+  assert(Math.abs(rr.contrib.reduce((a, c) => a + c.risk, 0) - 1) < 1e-9, "risk shares add to 1");
+  assert(Math.abs(rr.beta - 1) < 0.02 && rr.te < 0.01, "the index's own stocks: beta 1, tracking error ~0 (" + rr.beta.toFixed(3) + ", " + rr.te.toFixed(4) + ")");
+  const one = G.riskReport(QV, NM - 1, [{ i: us[0], w: 1 }], QV, NM - 1, i => i, ctx.conv, ctx.ix);
+  assert(one.diversified < 1.01 && one.te > rr.te, "one stock: no diversification, more tracking error");
+}
+
+// 13. the standard settings follow the November 2026 review
+assert.strictEqual(G.DEFAULTS.n, 30); assert.strictEqual(G.DEFAULTS.reb, "Y"); assert.strictEqual(G.DEFAULTS.core, 50);
+
 // 8. the nightly file, when present, keeps its promises
 const fs = require("fs");
 if (fs.existsSync("site/data/generator.json")) {
+  // (also checks the ingredient report card is there)
   const X = JSON.parse(fs.readFileSync("site/data/generator.json", "utf8"));
   for (const [id, a] of Object.entries(X.aims)) for (const [mk, m] of Object.entries(a.markets)) {
     const p = m.live.picks;
     assert(p.length > 0 && p.length <= G.DEFAULTS.n, `${id}/${mk} size`);
     assert(sum(p.map(x => x.w)) <= 1.001, `${id}/${mk} weights`);
     if (mk !== "ALL") assert(p.every(x => (mk === "LSE") === (x.ex === "LSE")), `${id}/${mk} market`);
-    assert(["beat", "mixed", "lagged"].includes(m.quarterly.verdict), `${id}/${mk} verdict`);
+    assert(["beat", "mixed", "lagged"].includes(m.evidence.verdict), `${id}/${mk} verdict`);
+    assert(m.evidence.stocks && m.stocksOnly && m.quarterly, `${id}/${mk} comparisons`);
   }
+  assert(X.signals && X.signals.US && X.signals.LSE, "signal report card");
   console.log("generator.json checked");
 }
 console.log("generator tests passed");
