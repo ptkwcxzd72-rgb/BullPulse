@@ -28,10 +28,10 @@ from sync_uk_prices import CHART, add_dividends, dividends_missing, get_json, lo
 
 def tiingo_tickers(pattern: str = "universe/*.csv") -> set[str]:
     """The provider tickers scripts/sync_prices.sh downloads from Tiingo (same order and cap)."""
-    if os.environ.get("TIINGO_TIER", "free") == "power":
-        cap = int(os.environ.get("MAX_TICKERS", "10000"))
-    else:
-        cap = int(os.environ.get("MAX_TICKERS", "210"))
+    # the workflow passes unset repository variables as empty strings, as sync_prices.sh's
+    # ${MAX_TICKERS:-210} allows for
+    power = (os.environ.get("TIINGO_TIER") or "free") == "power"
+    cap = int(os.environ.get("MAX_TICKERS") or ("10000" if power else "210"))
     out = []
     for f in sorted(glob.glob(pattern)):
         for r in csv.DictReader(open(f, newline="")):

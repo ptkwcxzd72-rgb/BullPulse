@@ -150,25 +150,32 @@ def dividends_missing(d: dict) -> bool:
 
 def add_dividends(bars: list[list], divs: list[list]) -> list[list]:
     """Back-adjust prices for dividends, as total-return series are: on each ex-date every earlier
-    price is scaled by (1 - dividend / previous close), so a holder's return includes the income."""
+    price is scaled by (1 - dividend / the close before the ex-date). The ratio uses the close as
+    quoted, not one already scaled for later dividends (doing that overstated older dividends, more
+    the further back they were: about three times by 2017 for Legal & General)."""
     if not bars or not divs:
         return bars
-    days = [b[0] for b in bars]
-    out = [list(b) for b in bars]
     import bisect
-    for ex, amt in sorted(divs, reverse=True):
+    days = [b[0] for b in bars]
+    raw = [b[4] for b in bars]
+    step = [1.0] * len(bars)      # step[k]: factor applied to every price before day k
+    for ex, amt in divs:
         k = bisect.bisect_left(days, ex)
-        if k <= 0 or k >= len(out):
+        if k <= 0 or k >= len(bars):
             continue
-        prev = out[k - 1][4]
+        prev = raw[k - 1]
         if not prev or not 0 < amt < prev * 0.5:
             continue
-        f = 1 - amt / prev
-        for j in range(k):
+        step[k] *= 1 - amt / prev
+    out = [list(b) for b in bars]
+    f = 1.0
+    for j in range(len(bars) - 1, -1, -1):   # cumulative product of the later steps
+        if j + 1 < len(bars):
+            f *= step[j + 1]
+        if f != 1.0:
             for c in (1, 2, 3, 4):
-                out[j][c] = round(out[j][c] * f, 4)
+                out[j][c] = round(bars[j][c] * f, 4)
     return out
-
 
 def looks_sane(rows: list[list], old_path: str) -> str:
     """Empty string if fine, otherwise the reason to keep the old file."""
