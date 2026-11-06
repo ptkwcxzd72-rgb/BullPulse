@@ -256,6 +256,19 @@ class DividendAdjustTest(unittest.TestCase):
         d["chart"]["result"][0]["indicators"]["adjclose"][0]["adjclose"] = [95, 95]
         self.assertFalse(U.dividends_missing(d))
 
+    def test_several_dividends_use_quoted_closes(self):
+        # two 10p dividends on a 100p share that doesn't move otherwise: each ex-date scales earlier
+        # prices by 0.9, so the first price is 81, not less (older dividends must not be overstated)
+        import sync_uk_prices as U
+        bars = [["2024-01-0%d" % (k + 1), 100, 100, 100, p, 1] for k, p in enumerate([100, 90, 100, 90])]
+        out = U.add_dividends(bars, [["2024-01-02", 10.0], ["2024-01-04", 10.0]])
+        self.assertAlmostEqual(out[3][4], 90)
+        self.assertAlmostEqual(out[2][4], 90)          # 100 x 0.9
+        self.assertAlmostEqual(out[1][4], 90 * 0.9)    # 90 x 0.9
+        self.assertAlmostEqual(out[0][4], 100 * 0.81)  # 100 x 0.9 x 0.9
+        # returns: flat on both ex-dates for a holder who reinvests
+        self.assertAlmostEqual(out[1][4] / out[0][4], 0.9 / 0.9 * 0.9 / 0.9 * 1.0, places=6)
+
     def test_partial_adjustment_is_missing(self):
         # Legal & General's case: Yahoo adjusted for one small event but not the regular dividends,
         # so adjusted closes differ from closes, yet most of the income is missing
@@ -282,6 +295,15 @@ class USYahooTest(unittest.TestCase):
         import sync_us_yahoo as Y
         t = Y.tiingo_tickers()
         self.assertEqual(len(t), 210)                      # what sync_prices.sh downloads on the free tier
+        old = {k: os.environ.get(k) for k in ("MAX_TICKERS", "TIINGO_TIER")}
+        try:
+            os.environ["MAX_TICKERS"], os.environ["TIINGO_TIER"] = "", "free"   # as the workflow passes unset variables
+            self.assertEqual(len(Y.tiingo_tickers()), 210)
+        finally:
+            for k, v in old.items():
+                os.environ.pop(k, None)
+                if v is not None:
+                    os.environ[k] = v
         rows = list(csv.DictReader(open("universe/us.csv", newline="")))
         rest = {r["provider_ticker"] for r in rows} - t
         self.assertIn("msft", rest)                       # the rest of the index comes from Yahoo

@@ -1437,3 +1437,282 @@
 {"date":"2026-11-05","id":"LSE-AAL","name":"Anglo American plc","kind":"rank","text":"Rank moved down 74 places to #208 (score 46)."}
 {"date":"2026-11-05","id":"LSE-AAF","name":"Airtel Africa","kind":"rank","text":"Rank moved up 23 places to #254 (score 33)."}
 {"date":"2026-11-05","id":"LSE-ADM","name":"Admiral Group","kind":"rank","text":"Rank moved down 57 places to #150 (score 56)."}
+{"date":"2026-11-06","id":"US-GE","name":"GE Aerospace","kind":"rank","text":"Rank moved down 234 places to #415 (score 27)."}
+{"date":"2026-11-06","id":"US-IT","name":"Gartner","kind":"rank","text":"Rank moved down 211 places to #363 (score 36)."}
+{"date":"2026-11-06","id":"US-GRMN","name":"Garmin","kind":"rank","text":"Rank moved down 61 places to #104 (score 70)."}
+{"date":"2026-11-06","id":"US-FCX","name":"Freeport-McMoRan","kind":"rank","text":"Rank moved down 95 places to #169 (score 61)."}
+{"date":"2026-11-06","id":"US-FOX","name":"Fox Corporation (Class B)","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-FOX","name":"Fox Corporation (Class B)","kind":"rank","text":"Rank moved down 131 places to #240 (score 53)."}
+{"date":"2026-11-06","id":"US-FOXA","name":"Fox Corporation (Class A)","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-FOXA","name":"Fox Corporation (Class A)","kind":"rank","text":"Rank moved down 116 places to #216 (score 55)."}
+{"date":"2026-11-06","id":"US-FTV","name":"Fortive","kind":"rank","text":"Rank moved down 104 places to #177 (score 60)."}
+{"date":"2026-11-06","id":"US-FTNT","name":"Fortinet","kind":"rank","text":"Rank moved down 120 places to #227 (score 54)."}
+{"date":"2026-11-06","id":"US-F","name":"Ford Motor Company","kind":"rank","text":"Rank moved down 239 places to #423 (score 26)."}
+{"date":"2026-11-06","id":"US-FLEX","name":"Flex Ltd.","kind":"rank","text":"Rank moved down 127 places to #226 (score 54)."}
+{"date":"2026-11-06","id":"US-FISV","name":"Fiserv","kind":"rank","text":"Rank moved down 220 places to #376 (score 34)."}
+{"date":"2026-11-06","id":"US-FE","name":"FirstEnergy","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-FE","name":"FirstEnergy","kind":"rank","text":"Rank moved down 133 places to #239 (score 53)."}
+{"date":"2026-11-06","id":"US-FSLR","name":"First Solar","kind":"rank","text":"Rank moved down 271 places to #472 (score 13)."}
+{"date":"2026-11-06","id":"US-FIS","name":"Fidelity National Information Services","kind":"rank","text":"Rank moved down 288 places to #496 (score 4)."}
+{"date":"2026-11-06","id":"US-FERG","name":"Ferguson Enterprises","kind":"rank","text":"Rank moved down 253 places to #441 (score 22)."}
+{"date":"2026-11-06","id":"US-FDX","name":"FedEx","kind":"rank","text":"Rank moved down 71 places to #113 (score 69)."}
+{"date":"2026-11-06","id":"US-FRT","name":"Federal Realty Investment Trust","kind":"rank","text":"Rank moved down 95 places to #160 (score 62)."}
+{"date":"2026-11-06","id":"US-FICO","name":"Fair Isaac","kind":"rank","text":"Rank moved down 288 places to #495 (score 5)."}
+{"date":"2026-11-06","id":"US-FDS","name":"FactSet","kind":"rank","text":"Rank moved down 86 places to #143 (score 64)."}
+{"date":"2026-11-06","id":"US-FFIV","name":"F5, Inc.","kind":"rank","text":"Rank moved down 122 places to #213 (score 56)."}
+{"date":"2026-11-06","id":"US-XOM","name":"ExxonMobil","kind":"rank","text":"Rank moved down 48 places to #82 (score 73)."}
+{"date":"2026-11-06","id":"US-EXR","name":"Extra Space Storage","kind":"rank","text":"Rank moved down 135 places to #225 (score 54)."}
+{"date":"2026-11-06","id":"US-EXPD","name":"Expeditors International","kind":"rank","text":"Rank moved down 32 places to #52 (score 77)."}
+{"date":"2026-11-06","id":"US-EXPE","name":"Expedia Group","kind":"results","text":"New results filed: revenue +11.9% year on year."}
+{"date":"2026-11-06","id":"US-EXPE","name":"Expedia Group","kind":"rank","text":"Rank moved down 114 places to #212 (score 56)."}
+{"date":"2026-11-06","id":"US-EXE","name":"Expand Energy","kind":"rank","text":"Rank moved down 244 places to #422 (score 26)."}
+{"date":"2026-11-06","id":"US-EXC","name":"Exelon","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-EXC","name":"Exelon","kind":"rank","text":"Rank moved down 178 places to #309 (score 43)."}
+{"date":"2026-11-06","id":"US-ES","name":"Eversource Energy","kind":"rank","text":"Rank moved down 206 places to #375 (score 34)."}
+{"date":"2026-11-06","id":"US-P","name":"Everpure","kind":"rank","text":"Rank moved down 65 places to #119 (score 68)."}
+{"date":"2026-11-06","id":"US-EVRG","name":"Evergy","kind":"rank","text":"Rank moved down 67 places to #103 (score 70)."}
+{"date":"2026-11-06","id":"US-EG","name":"Everest Group","kind":"rank","text":"Rank moved down 40 places to #66 (score 75)."}
+{"date":"2026-11-06","id":"US-EL","name":"Estée Lauder Companies (The)","kind":"rank","text":"Rank moved down 98 places to #176 (score 60)."}
+{"date":"2026-11-06","id":"US-ESS","name":"Essex Property Trust","kind":"rank","text":"Rank moved down 134 places to #256 (score 51)."}
+{"date":"2026-11-06","id":"US-ERIE","name":"Erie Indemnity","kind":"rank","text":"Rank moved down 199 places to #354 (score 37)."}
+{"date":"2026-11-06","id":"US-EQIX","name":"Equinix","kind":"rank","text":"Rank moved down 84 places to #148 (score 63)."}
+{"date":"2026-11-06","id":"US-EFX","name":"Equifax","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-EFX","name":"Equifax","kind":"rank","text":"Rank moved down 227 places to #399 (score 30)."}
+{"date":"2026-11-06","id":"US-EQT","name":"EQT Corporation","kind":"rank","text":"Rank moved down 238 places to #421 (score 26)."}
+{"date":"2026-11-06","id":"US-EOG","name":"EOG Resources","kind":"results","text":"New results filed: revenue +46.2% year on year."}
+{"date":"2026-11-06","id":"US-EOG","name":"EOG Resources","kind":"rank","text":"Rank moved down 44 places to #75 (score 74)."}
+{"date":"2026-11-06","id":"US-ETR","name":"Entergy","kind":"rank","text":"Rank moved down 107 places to #184 (score 59)."}
+{"date":"2026-11-06","id":"US-EMR","name":"Emerson Electric","kind":"rank","text":"Rank moved down 44 places to #74 (score 74)."}
+{"date":"2026-11-06","id":"US-EME","name":"Emcor","kind":"rank","text":"Rank moved down 156 places to #281 (score 47)."}
+{"date":"2026-11-06","id":"US-EW","name":"Edwards Lifesciences","kind":"rank","text":"Rank moved down 65 places to #112 (score 69)."}
+{"date":"2026-11-06","id":"US-EIX","name":"Edison International","kind":"rank","text":"Rank moved down 223 places to #391 (score 32)."}
+{"date":"2026-11-06","id":"US-ECL","name":"Ecolab","kind":"rank","text":"Rank moved down 77 places to #118 (score 68)."}
+{"date":"2026-11-06","id":"US-ECHO","name":"EchoStar","kind":"rank","text":"Rank moved down 166 places to #308 (score 43)."}
+{"date":"2026-11-06","id":"US-EBAY","name":"eBay Inc.","kind":"rank","text":"Rank moved down 32 places to #65 (score 75)."}
+{"date":"2026-11-06","id":"US-ETN","name":"Eaton Corporation","kind":"rank","text":"Rank moved down 156 places to #277 (score 48)."}
+{"date":"2026-11-06","id":"US-DD","name":"DuPont","kind":"rank","text":"Rank moved down 89 places to #147 (score 63)."}
+{"date":"2026-11-06","id":"US-DUK","name":"Duke Energy","kind":"rank","text":"Rank moved down 160 places to #286 (score 46)."}
+{"date":"2026-11-06","id":"US-DTE","name":"DTE Energy","kind":"rank","text":"Rank moved down 215 places to #382 (score 33)."}
+{"date":"2026-11-06","id":"US-DHI","name":"D. R. Horton","kind":"rank","text":"Rank moved down 233 places to #410 (score 28)."}
+{"date":"2026-11-06","id":"US-DOW","name":"Dow Inc.","kind":"rank","text":"Rank moved down 135 places to #255 (score 51)."}
+{"date":"2026-11-06","id":"US-DOV","name":"Dover Corporation","kind":"rank","text":"Rank moved down 189 places to #323 (score 41)."}
+{"date":"2026-11-06","id":"US-DASH","name":"DoorDash","kind":"rank","text":"Rank moved down 232 places to #406 (score 29)."}
+{"date":"2026-11-06","id":"US-DPZ","name":"Domino's","kind":"rank","text":"Rank moved down 228 places to #390 (score 32)."}
+{"date":"2026-11-06","id":"US-D","name":"Dominion Energy","kind":"rank","text":"Rank moved down 145 places to #264 (score 50)."}
+{"date":"2026-11-06","id":"US-DLTR","name":"Dollar Tree","kind":"rank","text":"Rank moved down 124 places to #238 (score 53)."}
+{"date":"2026-11-06","id":"US-DG","name":"Dollar General","kind":"rank","text":"Rank moved down 110 places to #215 (score 55)."}
+{"date":"2026-11-06","id":"US-DLR","name":"Digital Realty","kind":"rank","text":"Rank moved down 164 places to #292 (score 45)."}
+{"date":"2026-11-06","id":"US-FANG","name":"Diamondback Energy","kind":"rank","text":"Rank moved down 96 places to #159 (score 62)."}
+{"date":"2026-11-06","id":"US-DVN","name":"Devon Energy","kind":"results","text":"New results filed: revenue +82.9% year on year."}
+{"date":"2026-11-06","id":"US-DVN","name":"Devon Energy","kind":"rank","text":"Rank moved down 101 places to #183 (score 59)."}
+{"date":"2026-11-06","id":"US-DAL","name":"Delta Air Lines","kind":"rank","text":"Rank moved down 23 places to #44 (score 78)."}
+{"date":"2026-11-06","id":"US-DELL","name":"Dell Technologies","kind":"rank","text":"Rank moved down 107 places to #203 (score 57)."}
+{"date":"2026-11-06","id":"US-DE","name":"Deere \u0026 Company","kind":"rank","text":"Rank moved down 44 places to #81 (score 73)."}
+{"date":"2026-11-06","id":"US-DECK","name":"Deckers Brands","kind":"rank","text":"Rank moved down 249 places to #436 (score 24)."}
+{"date":"2026-11-06","id":"US-DVA","name":"DaVita","kind":"rank","text":"Rank moved down 44 places to #73 (score 74)."}
+{"date":"2026-11-06","id":"US-DDOG","name":"Datadog","kind":"rank","text":"Rank moved down 110 places to #214 (score 55)."}
+{"date":"2026-11-06","id":"US-DRI","name":"Darden Restaurants","kind":"rank","text":"Rank moved down 82 places to #158 (score 62)."}
+{"date":"2026-11-06","id":"US-DHR","name":"Danaher Corporation","kind":"rank","text":"Rank moved down 96 places to #168 (score 61)."}
+{"date":"2026-11-06","id":"US-CVS","name":"CVS Health","kind":"rank","text":"Rank moved down 170 places to #300 (score 44)."}
+{"date":"2026-11-06","id":"US-CMI","name":"Cummins","kind":"results","text":"New results filed: revenue +13.5% year on year."}
+{"date":"2026-11-06","id":"US-CMI","name":"Cummins","kind":"rank","text":"Rank moved down 215 places to #381 (score 33)."}
+{"date":"2026-11-06","id":"US-CCI","name":"Crown Castle","kind":"rank","text":"Rank moved down 208 places to #362 (score 36)."}
+{"date":"2026-11-06","id":"US-CRWD","name":"CrowdStrike","kind":"rank","text":"Rank moved down 56 places to #102 (score 70)."}
+{"date":"2026-11-06","id":"US-CRH","name":"CRH plc","kind":"rank","text":"Rank moved down 278 places to #482 (score 11)."}
+{"date":"2026-11-06","id":"US-COST","name":"Costco","kind":"rank","text":"Rank moved down 158 places to #299 (score 44)."}
+{"date":"2026-11-06","id":"US-CSGP","name":"CoStar Group","kind":"rank","text":"Rank moved down 281 places to #484 (score 10)."}
+{"date":"2026-11-06","id":"US-CPAY","name":"Corpay","kind":"results","text":"New results filed: revenue +17.9% year on year."}
+{"date":"2026-11-06","id":"US-GLW","name":"Corning Inc.","kind":"rank","text":"Rank moved down 121 places to #202 (score 57)."}
+{"date":"2026-11-06","id":"US-CPRT","name":"Copart","kind":"rank","text":"Rank moved down 249 places to #435 (score 24)."}
+{"date":"2026-11-06","id":"US-COO","name":"Cooper Companies (The)","kind":"rank","text":"Rank moved down 271 places to #471 (score 13)."}
+{"date":"2026-11-06","id":"US-CEG","name":"Constellation Energy","kind":"rank","text":"Rank moved down 266 places to #459 (score 17)."}
+{"date":"2026-11-06","id":"US-STZ","name":"Constellation Brands","kind":"rank","text":"Rank moved down 202 places to #353 (score 37)."}
+{"date":"2026-11-06","id":"US-ED","name":"Consolidated Edison","kind":"results","text":"New results filed: revenue +6.5% year on year."}
+{"date":"2026-11-06","id":"US-ED","name":"Consolidated Edison","kind":"rank","text":"Rank moved down 71 places to #111 (score 69)."}
+{"date":"2026-11-06","id":"US-COP","name":"ConocoPhillips","kind":"results","text":"New results filed: revenue +29.0% year on year."}
+{"date":"2026-11-06","id":"US-COP","name":"ConocoPhillips","kind":"rank","text":"Rank moved down 44 places to #72 (score 74)."}
+{"date":"2026-11-06","id":"US-FIX","name":"Comfort Systems USA","kind":"rank","text":"Rank moved down 144 places to #268 (score 49)."}
+{"date":"2026-11-06","id":"US-CMCSA","name":"Comcast","kind":"rank","text":"Rank moved down 260 places to #458 (score 17)."}
+{"date":"2026-11-06","id":"US-CL","name":"Colgate-Palmolive","kind":"rank","text":"Rank moved down 71 places to #110 (score 69)."}
+{"date":"2026-11-06","id":"US-COIN","name":"Coinbase","kind":"rank","text":"Rank moved down 271 places to #470 (score 13)."}
+{"date":"2026-11-06","id":"US-COHR","name":"Coherent Corp.","kind":"rank","text":"Rank moved down 134 places to #237 (score 53)."}
+{"date":"2026-11-06","id":"US-CTSH","name":"Cognizant","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-CTSH","name":"Cognizant","kind":"rank","text":"Rank moved down 204 places to #352 (score 37)."}
+{"date":"2026-11-06","id":"US-KO","name":"Coca-Cola Company (The)","kind":"rank","text":"Rank moved down 24 places to #43 (score 78)."}
+{"date":"2026-11-06","id":"US-CMS","name":"CMS Energy","kind":"rank","text":"Rank moved down 228 places to #389 (score 32)."}
+{"date":"2026-11-06","id":"US-CME","name":"CME Group","kind":"rank","text":"Rank moved down 86 places to #142 (score 64)."}
+{"date":"2026-11-06","id":"US-CLX","name":"Clorox","kind":"rank","text":"Rank moved down 223 places to #380 (score 33)."}
+{"date":"2026-11-06","id":"US-CFG","name":"Citizens Financial Group","kind":"rank","text":"Rank moved down 84 places to #146 (score 63)."}
+{"date":"2026-11-06","id":"US-C","name":"Citigroup","kind":"rank","text":"Rank moved down 136 places to #254 (score 51)."}
+{"date":"2026-11-06","id":"US-CSCO","name":"Cisco","kind":"rank","text":"Rank moved down 87 places to #157 (score 62)."}
+{"date":"2026-11-06","id":"US-CTAS","name":"Cintas","kind":"rank","text":"Rank moved down 135 places to #248 (score 52)."}
+{"date":"2026-11-06","id":"US-CINF","name":"Cincinnati Financial","kind":"rank","text":"Rank moved down 87 places to #156 (score 62)."}
+{"date":"2026-11-06","id":"US-CI","name":"Cigna","kind":"results","text":"New results filed: revenue +5.6% year on year."}
+{"date":"2026-11-06","id":"US-CI","name":"Cigna","kind":"rank","text":"Rank moved down 71 places to #121 (score 67)."}
+{"date":"2026-11-06","id":"US-CIEN","name":"Ciena","kind":"rank","text":"Rank moved down 136 places to #253 (score 51)."}
+{"date":"2026-11-06","id":"US-CHD","name":"Church \u0026 Dwight","kind":"rank","text":"Rank moved down 39 places to #64 (score 75)."}
+{"date":"2026-11-06","id":"US-CB","name":"Chubb Limited","kind":"rank","text":"Rank moved down 41 places to #59 (score 76)."}
+{"date":"2026-11-06","id":"US-CMG","name":"Chipotle Mexican Grill","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-CMG","name":"Chipotle Mexican Grill","kind":"rank","text":"Rank moved down 198 places to #351 (score 37)."}
+{"date":"2026-11-06","id":"US-CVX","name":"Chevron Corporation","kind":"results","text":"New results filed: revenue +35.4% year on year."}
+{"date":"2026-11-06","id":"US-CVX","name":"Chevron Corporation","kind":"rank","text":"Rank moved down 56 places to #91 (score 72)."}
+{"date":"2026-11-06","id":"US-CHTR","name":"Charter Communications","kind":"results","text":"New results filed: revenue +9.1% year on year."}
+{"date":"2026-11-06","id":"US-CHTR","name":"Charter Communications","kind":"rank","text":"Rank moved down 279 places to #481 (score 11)."}
+{"date":"2026-11-06","id":"US-SCHW","name":"Charles Schwab Corporation","kind":"rank","text":"Rank moved down 193 places to #339 (score 39)."}
+{"date":"2026-11-06","id":"US-CRL","name":"Charles River Laboratories","kind":"rank","text":"Rank moved down 28 places to #42 (score 78)."}
+{"date":"2026-11-06","id":"US-CF","name":"CF Industries","kind":"results","text":"New results filed: revenue +12.1% year on year."}
+{"date":"2026-11-06","id":"US-CF","name":"CF Industries","kind":"rank","text":"Rank moved down 74 places to #145 (score 63)."}
+{"date":"2026-11-06","id":"US-CNP","name":"CenterPoint Energy","kind":"rank","text":"Rank moved down 187 places to #331 (score 40)."}
+{"date":"2026-11-06","id":"US-COR","name":"Cencora","kind":"rank","text":"Rank moved down 134 places to #236 (score 53)."}
+{"date":"2026-11-06","id":"US-CDW","name":"CDW Corporation","kind":"rank","text":"Rank moved down 94 places to #155 (score 62)."}
+{"date":"2026-11-06","id":"US-CBRE","name":"CBRE Group","kind":"rank","text":"Rank moved down 256 places to #445 (score 21)."}
+{"date":"2026-11-06","id":"US-CBOE","name":"Cboe Global Markets","kind":"rank","text":"Rank moved down 34 places to #58 (score 76)."}
+{"date":"2026-11-06","id":"US-CAT","name":"Caterpillar Inc.","kind":"rank","text":"Rank moved down 174 places to #307 (score 43)."}
+{"date":"2026-11-06","id":"US-CASY","name":"Casey's","kind":"rank","text":"Rank moved down 178 places to #318 (score 42)."}
+{"date":"2026-11-06","id":"US-CVNA","name":"Carvana","kind":"rank","text":"Rank moved down 174 places to #317 (score 42)."}
+{"date":"2026-11-06","id":"US-CARR","name":"Carrier Global","kind":"rank","text":"Rank moved down 230 places to #405 (score 29)."}
+{"date":"2026-11-06","id":"US-CCL","name":"Carnival Corporation","kind":"rank","text":"Rank moved down 177 places to #316 (score 42)."}
+{"date":"2026-11-06","id":"US-CAH","name":"Cardinal Health","kind":"results","text":"New results filed: revenue +5.5% year on year."}
+{"date":"2026-11-06","id":"US-CAH","name":"Cardinal Health","kind":"rank","text":"Rank moved down 44 places to #71 (score 74)."}
+{"date":"2026-11-06","id":"US-COF","name":"Capital One","kind":"rank","text":"Rank moved down 153 places to #276 (score 48)."}
+{"date":"2026-11-06","id":"US-CPT","name":"Camden Property Trust","kind":"results","text":"New results filed: revenue +70.6% year on year."}
+{"date":"2026-11-06","id":"US-CPT","name":"Camden Property Trust","kind":"rank","text":"Rank moved down 223 places to #388 (score 32)."}
+{"date":"2026-11-06","id":"US-CDNS","name":"Cadence Design Systems","kind":"rank","text":"Rank moved down 177 places to #306 (score 43)."}
+{"date":"2026-11-06","id":"US-CHRW","name":"C.H. Robinson","kind":"rank","text":"Rank moved down 262 places to #454 (score 18)."}
+{"date":"2026-11-06","id":"US-BXP","name":"BXP, Inc.","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-BXP","name":"BXP, Inc.","kind":"rank","text":"Rank moved down 147 places to #263 (score 50)."}
+{"date":"2026-11-06","id":"US-BG","name":"Bunge Global","kind":"rank","text":"Rank moved down 184 places to #322 (score 41)."}
+{"date":"2026-11-06","id":"US-BFB","name":"Brown–Forman","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-BFB","name":"Brown–Forman","kind":"rank","text":"Rank moved down 120 places to #235 (score 53)."}
+{"date":"2026-11-06","id":"US-BRO","name":"Brown \u0026 Brown","kind":"rank","text":"Rank moved down 210 places to #374 (score 34)."}
+{"date":"2026-11-06","id":"US-BR","name":"Broadridge Financial Solutions","kind":"rank","text":"Rank moved down 193 places to #338 (score 39)."}
+{"date":"2026-11-06","id":"US-AVGO","name":"Broadcom","kind":"rank","text":"Rank moved down 235 places to #414 (score 27)."}
+{"date":"2026-11-06","id":"US-BMY","name":"Bristol Myers Squibb","kind":"rank","text":"Rank moved down 28 places to #41 (score 78)."}
+{"date":"2026-11-06","id":"US-BSX","name":"Boston Scientific","kind":"rank","text":"Rank moved down 289 places to #498 (score 3)."}
+{"date":"2026-11-06","id":"US-BKNG","name":"Booking Holdings","kind":"rank","text":"Rank moved down 260 places to #457 (score 17)."}
+{"date":"2026-11-06","id":"US-BA","name":"Boeing","kind":"rank","text":"Rank moved down 262 places to #456 (score 17)."}
+{"date":"2026-11-06","id":"US-BNY","name":"BNY Mellon","kind":"rank","text":"Rank moved down 34 places to #57 (score 76)."}
+{"date":"2026-11-06","id":"US-BE","name":"Bloom Energy","kind":"rank","text":"Rank moved down 107 places to #196 (score 58)."}
+{"date":"2026-11-06","id":"US-XYZ","name":"Block, Inc.","kind":"rank","text":"Rank moved down 81 places to #134 (score 65)."}
+{"date":"2026-11-06","id":"US-BX","name":"Blackstone Inc.","kind":"rank","text":"Rank moved down 268 places to #464 (score 16)."}
+{"date":"2026-11-06","id":"US-BLK","name":"BlackRock","kind":"rank","text":"Rank moved down 94 places to #182 (score 59)."}
+{"date":"2026-11-06","id":"US-TECH","name":"Bio-Techne","kind":"rank","text":"Rank moved down 79 places to #154 (score 62)."}
+{"date":"2026-11-06","id":"US-BBY","name":"Best Buy","kind":"rank","text":"Rank moved down 71 places to #109 (score 69)."}
+{"date":"2026-11-06","id":"US-BRKB","name":"Berkshire Hathaway","kind":"rank","text":"Rank moved down 116 places to #211 (score 56)."}
+{"date":"2026-11-06","id":"US-BDX","name":"Becton Dickinson","kind":"rank","text":"Rank moved down 31 places to #63 (score 75)."}
+{"date":"2026-11-06","id":"US-BAX","name":"Baxter International","kind":"rank","text":"Rank moved down 52 places to #101 (score 70)."}
+{"date":"2026-11-06","id":"US-BAC","name":"Bank of America","kind":"rank","text":"Rank moved down 216 places to #387 (score 32)."}
+{"date":"2026-11-06","id":"US-BALL","name":"Ball Corporation","kind":"rank","text":"Rank moved down 63 places to #108 (score 69)."}
+{"date":"2026-11-06","id":"US-BKR","name":"Baker Hughes","kind":"rank","text":"Rank moved down 178 places to #315 (score 42)."}
+{"date":"2026-11-06","id":"US-AXON","name":"Axon Enterprise","kind":"results","text":"New results filed: revenue +27.9% year on year."}
+{"date":"2026-11-06","id":"US-AXON","name":"Axon Enterprise","kind":"rank","text":"Rank moved down 288 places to #494 (score 5)."}
+{"date":"2026-11-06","id":"US-AVY","name":"Avery Dennison","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-AVY","name":"Avery Dennison","kind":"rank","text":"Rank moved down 153 places to #280 (score 47)."}
+{"date":"2026-11-06","id":"US-AZO","name":"AutoZone","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-AZO","name":"AutoZone","kind":"rank","text":"Rank moved down 233 places to #413 (score 27)."}
+{"date":"2026-11-06","id":"US-ADP","name":"Automatic Data Processing","kind":"rank","text":"Rank moved down 84 places to #144 (score 63)."}
+{"date":"2026-11-06","id":"US-ADSK","name":"Autodesk","kind":"rank","text":"Rank moved down 226 places to #396 (score 31)."}
+{"date":"2026-11-06","id":"US-ATO","name":"Atmos Energy","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-ATO","name":"Atmos Energy","kind":"rank","text":"Rank moved down 178 places to #314 (score 42)."}
+{"date":"2026-11-06","id":"US-T","name":"AT\u0026T","kind":"rank","text":"Rank moved down 249 places to #434 (score 24)."}
+{"date":"2026-11-06","id":"US-AIZ","name":"Assurant","kind":"results","text":"New results filed: revenue +9.2% year on year."}
+{"date":"2026-11-06","id":"US-AJG","name":"Arthur J. Gallagher \u0026 Co.","kind":"results","text":"New results filed: revenue +18.2% year on year."}
+{"date":"2026-11-06","id":"US-AJG","name":"Arthur J. Gallagher \u0026 Co.","kind":"rank","text":"Rank moved down 135 places to #247 (score 52)."}
+{"date":"2026-11-06","id":"US-ANET","name":"Arista Networks","kind":"rank","text":"Rank moved down 94 places to #153 (score 62)."}
+{"date":"2026-11-06","id":"US-ARES","name":"Ares Management","kind":"rank","text":"Rank moved down 195 places to #345 (score 38)."}
+{"date":"2026-11-06","id":"US-ADM","name":"Archer Daniels Midland","kind":"rank","text":"Rank moved down 116 places to #210 (score 56)."}
+{"date":"2026-11-06","id":"US-ACGL","name":"Arch Capital Group","kind":"rank","text":"Rank moved down 78 places to #133 (score 65)."}
+{"date":"2026-11-06","id":"US-APTV","name":"Aptiv","kind":"rank","text":"Rank moved down 282 places to #487 (score 9)."}
+{"date":"2026-11-06","id":"US-APP","name":"AppLovin","kind":"rank","text":"Rank moved down 271 places to #466 (score 15)."}
+{"date":"2026-11-06","id":"US-AMAT","name":"Applied Materials","kind":"rank","text":"Rank moved down 108 places to #195 (score 58)."}
+{"date":"2026-11-06","id":"US-AAPL","name":"Apple Inc.","kind":"rank","text":"Rank moved down 101 places to #194 (score 58)."}
+{"date":"2026-11-06","id":"US-APO","name":"Apollo Global Management","kind":"results","text":"New results filed: revenue -51.8% year on year."}
+{"date":"2026-11-06","id":"US-APO","name":"Apollo Global Management","kind":"rank","text":"Rank moved down 247 places to #429 (score 25)."}
+{"date":"2026-11-06","id":"US-APA","name":"APA Corporation","kind":"rank","text":"Rank moved down 40 places to #62 (score 75)."}
+{"date":"2026-11-06","id":"US-AON","name":"Aon plc","kind":"rank","text":"Rank moved down 218 places to #367 (score 35)."}
+{"date":"2026-11-06","id":"US-ADI","name":"Analog Devices","kind":"rank","text":"Rank moved down 79 places to #131 (score 66)."}
+{"date":"2026-11-06","id":"US-APH","name":"Amphenol","kind":"rank","text":"Rank moved down 99 places to #167 (score 61)."}
+{"date":"2026-11-06","id":"US-AME","name":"Ametek","kind":"rank","text":"Rank moved down 115 places to #201 (score 57)."}
+{"date":"2026-11-06","id":"US-AMP","name":"Ameriprise Financial","kind":"rank","text":"Rank moved down 96 places to #181 (score 59)."}
+{"date":"2026-11-06","id":"US-AWK","name":"American Water Works","kind":"rank","text":"Rank moved down 85 places to #152 (score 62)."}
+{"date":"2026-11-06","id":"US-AMT","name":"American Tower","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-AMT","name":"American Tower","kind":"rank","text":"Rank moved down 112 places to #209 (score 56)."}
+{"date":"2026-11-06","id":"US-AIG","name":"American International Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-AIG","name":"American International Group","kind":"rank","text":"Rank moved down 109 places to #193 (score 58)."}
+{"date":"2026-11-06","id":"US-AXP","name":"American Express","kind":"rank","text":"Rank moved down 228 places to #404 (score 29)."}
+{"date":"2026-11-06","id":"US-AEP","name":"American Electric Power","kind":"rank","text":"Rank moved down 195 places to #330 (score 40)."}
+{"date":"2026-11-06","id":"US-AEE","name":"Ameren","kind":"rank","text":"Rank moved down 144 places to #252 (score 51)."}
+{"date":"2026-11-06","id":"US-AMCR","name":"Amcor","kind":"results","text":"New results filed: revenue +6.7% year on year."}
+{"date":"2026-11-06","id":"US-AMCR","name":"Amcor","kind":"rank","text":"Rank moved down 123 places to #224 (score 54)."}
+{"date":"2026-11-06","id":"US-AMZN","name":"Amazon","kind":"rank","text":"Rank moved down 116 places to #208 (score 56)."}
+{"date":"2026-11-06","id":"US-MO","name":"Altria","kind":"rank","text":"Rank moved down 28 places to #40 (score 78)."}
+{"date":"2026-11-06","id":"US-GOOG","name":"Alphabet Inc. (Class C)","kind":"rank","text":"Rank moved down 210 places to #373 (score 34)."}
+{"date":"2026-11-06","id":"US-GOOGL","name":"Alphabet Inc. (Class A)","kind":"rank","text":"Rank moved down 212 places to #372 (score 34)."}
+{"date":"2026-11-06","id":"US-ALL","name":"Allstate","kind":"rank","text":"Rank moved down 66 places to #117 (score 68)."}
+{"date":"2026-11-06","id":"US-LNT","name":"Alliant Energy","kind":"rank","text":"Rank moved down 140 places to #251 (score 51)."}
+{"date":"2026-11-06","id":"US-ALLE","name":"Allegion","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-ALLE","name":"Allegion","kind":"rank","text":"Rank moved down 100 places to #166 (score 61)."}
+{"date":"2026-11-06","id":"US-ALGN","name":"Align Technology","kind":"rank","text":"Rank moved down 221 places to #379 (score 33)."}
+{"date":"2026-11-06","id":"US-ARE","name":"Alexandria Real Estate Equities","kind":"rank","text":"Rank moved down 259 places to #450 (score 19)."}
+{"date":"2026-11-06","id":"US-ALB","name":"Albemarle Corporation","kind":"rank","text":"Rank moved down 219 places to #378 (score 33)."}
+{"date":"2026-11-06","id":"US-AKAM","name":"Akamai Technologies","kind":"rank","text":"Rank moved down 136 places to #246 (score 52)."}
+{"date":"2026-11-06","id":"US-ABNB","name":"Airbnb","kind":"results","text":"New results filed: revenue +18.9% year on year."}
+{"date":"2026-11-06","id":"US-APD","name":"Air Products","kind":"rank","text":"Rank moved down 56 places to #100 (score 70)."}
+{"date":"2026-11-06","id":"US-A","name":"Agilent Technologies","kind":"rank","text":"Rank moved down 34 places to #51 (score 77)."}
+{"date":"2026-11-06","id":"US-AFL","name":"Aflac","kind":"results","text":"New results filed: revenue -31.0% year on year."}
+{"date":"2026-11-06","id":"US-AFL","name":"Aflac","kind":"rank","text":"Rank moved down 95 places to #175 (score 60)."}
+{"date":"2026-11-06","id":"US-AES","name":"AES Corporation","kind":"rank","text":"Rank moved down 109 places to #192 (score 58)."}
+{"date":"2026-11-06","id":"US-AMD","name":"Advanced Micro Devices","kind":"rank","text":"Rank moved down 95 places to #174 (score 60)."}
+{"date":"2026-11-06","id":"US-ADBE","name":"Adobe Inc.","kind":"rank","text":"Rank moved down 259 places to #449 (score 19)."}
+{"date":"2026-11-06","id":"US-ACN","name":"Accenture","kind":"rank","text":"Rank moved down 173 places to #305 (score 43)."}
+{"date":"2026-11-06","id":"US-ABT","name":"Abbott Laboratories","kind":"rank","text":"Rank moved down 182 places to #329 (score 40)."}
+{"date":"2026-11-06","id":"US-AOS","name":"A. O. Smith","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"US-AOS","name":"A. O. Smith","kind":"rank","text":"Rank moved down 222 places to #395 (score 31)."}
+{"date":"2026-11-06","id":"US-MMM","name":"3M","kind":"rank","text":"Rank moved down 68 places to #116 (score 68)."}
+{"date":"2026-11-06","id":"LSE-FAN","name":"Volution Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-VSVS","name":"Vesuvius","kind":"rank","text":"Rank moved up 117 places to #47 (score 72)."}
+{"date":"2026-11-06","id":"LSE-SRE","name":"Sirius Real Estate","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-11-06","id":"LSE-SRP","name":"Serco","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-RSW","name":"Renishaw","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-RSW","name":"Renishaw","kind":"rank","text":"Rank moved down 75 places to #138 (score 59)."}
+{"date":"2026-11-06","id":"LSE-OXIG","name":"Oxford Instruments","kind":"rank","text":"Rank moved down 38 places to #181 (score 53)."}
+{"date":"2026-11-06","id":"LSE-NAS","name":"North Atlantic Smaller Companies Investment Trust","kind":"rank","text":"Rank moved down 94 places to #170 (score 54)."}
+{"date":"2026-11-06","id":"LSE-JEDT","name":"JPMorgan European Discovery","kind":"rank","text":"Rank moved down 25 places to #253 (score 36)."}
+{"date":"2026-11-06","id":"LSE-ITV","name":"ITV","kind":"rank","text":"Rank moved down 20 places to #311 (score 21)."}
+{"date":"2026-11-06","id":"LSE-IWG","name":"International Workplace Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-ICGT","name":"ICG Enterprise Trust","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-HIK","name":"Hikma Pharmaceuticals","kind":"rank","text":"Rank moved down 36 places to #137 (score 59)."}
+{"date":"2026-11-06","id":"LSE-HGT","name":"Hg Capital Trust","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-HGT","name":"Hg Capital Trust","kind":"rank","text":"Rank moved down 61 places to #321 (score 18)."}
+{"date":"2026-11-06","id":"LSE-HBR","name":"Harbour Energy","kind":"rank","text":"Rank moved up 23 places to #136 (score 59)."}
+{"date":"2026-11-06","id":"LSE-GNC","name":"Greencore","kind":"rank","text":"Rank moved up 23 places to #103 (score 63)."}
+{"date":"2026-11-06","id":"LSE-FGT","name":"Finsbury Growth \u0026 Income Trust","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-ESCT","name":"European Smaller Companies Trust","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-ESCT","name":"European Smaller Companies Trust","kind":"rank","text":"Rank moved down 45 places to #236 (score 40)."}
+{"date":"2026-11-06","id":"LSE-DRX","name":"Drax Group","kind":"rank","text":"Rank moved up 37 places to #192 (score 51)."}
+{"date":"2026-11-06","id":"LSE-CWK","name":"Cranswick","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-CKN","name":"Clarkson","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-CKN","name":"Clarkson","kind":"rank","text":"Rank moved down 70 places to #150 (score 57)."}
+{"date":"2026-11-06","id":"LSE-CHG","name":"Chemring Group","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-CHG","name":"Chemring Group","kind":"rank","text":"Rank moved down 88 places to #281 (score 29)."}
+{"date":"2026-11-06","id":"LSE-BREE","name":"Breedon Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-BWY","name":"Bellway","kind":"rank","text":"Rank moved up 33 places to #260 (score 34)."}
+{"date":"2026-11-06","id":"LSE-ALFA","name":"Alfa Financial Software","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-ALFA","name":"Alfa Financial Software","kind":"rank","text":"Rank moved down 33 places to #325 (score 17)."}
+{"date":"2026-11-06","id":"LSE-TSCO","name":"Tesco","kind":"rank","text":"Rank moved up 32 places to #124 (score 60)."}
+{"date":"2026-11-06","id":"LSE-SPX","name":"Spirax Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-SMIN","name":"Smiths Group","kind":"rank","text":"Rank moved down 89 places to #197 (score 50)."}
+{"date":"2026-11-06","id":"LSE-REL","name":"RELX","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-IAG","name":"International Airlines Group","kind":"rank","text":"Rank moved up 96 places to #144 (score 57)."}
+{"date":"2026-11-06","id":"LSE-INF","name":"Informa","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-IMB","name":"Imperial Brands","kind":"cross","text":"Golden cross: the 50-day average moved above the 200-day."}
+{"date":"2026-11-06","id":"LSE-IHG","name":"IHG Hotels \u0026 Resorts","kind":"rank","text":"Rank moved down 20 places to #67 (score 68)."}
+{"date":"2026-11-06","id":"LSE-HWDN","name":"Howdens Joinery","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-FRES","name":"Fresnillo plc","kind":"rank","text":"Rank moved up 21 places to #258 (score 34)."}
+{"date":"2026-11-06","id":"LSE-FCIT","name":"F \u0026 C Investment Trust","kind":"trend","text":"Closed below its 200-day average."}
+{"date":"2026-11-06","id":"LSE-FCIT","name":"F \u0026 C Investment Trust","kind":"rank","text":"Rank moved down 69 places to #175 (score 53)."}
+{"date":"2026-11-06","id":"LSE-BTA","name":"BT Group","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-BLND","name":"British Land","kind":"rank","text":"Rank moved down 20 places to #158 (score 55)."}
+{"date":"2026-11-06","id":"LSE-BATS","name":"British American Tobacco","kind":"early","text":"Joined the early trend changes screen."}
+{"date":"2026-11-06","id":"LSE-ABF","name":"Associated British Foods","kind":"rank","text":"Rank moved down 22 places to #241 (score 38)."}
+{"date":"2026-11-06","id":"LSE-ANTO","name":"Antofagasta plc","kind":"rank","text":"Rank moved down 37 places to #261 (score 33)."}
