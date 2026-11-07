@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-ELM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Elementis (ELM)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-ELM</link>
+  <description>Alerts for Elementis from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Elementis: Rank moved up 27 places to #88 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ELM</link>
+   <guid isPermaLink="false">2026-11-03-LSE-ELM-rank</guid>
+   <pubDate>Tue, 03 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #88 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elementis: Rank moved down 24 places to #124 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ELM</link>
+   <guid isPermaLink="false">2026-10-27-LSE-ELM-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #124 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

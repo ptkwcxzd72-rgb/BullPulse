@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-THG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: THG (THG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-THG</link>
+  <description>Alerts for THG from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>THG: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-THG</link>
+   <guid isPermaLink="false">2026-11-04-LSE-THG-cross</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

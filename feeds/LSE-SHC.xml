@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-SHC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Shaftesbury Capital (SHC)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-SHC</link>
+  <description>Alerts for Shaftesbury Capital from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Shaftesbury Capital: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SHC</link>
+   <guid isPermaLink="false">2026-11-04-LSE-SHC-early</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shaftesbury Capital: Rank moved up 57 places to #158 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SHC</link>
+   <guid isPermaLink="false">2026-11-02-LSE-SHC-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 57 places to #158 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shaftesbury Capital: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SHC</link>
+   <guid isPermaLink="false">2026-11-02-LSE-SHC-early</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shaftesbury Capital: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SHC</link>
+   <guid isPermaLink="false">2026-10-29-LSE-SHC-early</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

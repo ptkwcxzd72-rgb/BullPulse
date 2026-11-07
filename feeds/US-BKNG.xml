@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BKNG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Booking Holdings (BKNG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BKNG</link>
+  <description>Alerts for Booking Holdings from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Booking Holdings: Rank moved down 260 places to #457 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BKNG</link>
+   <guid isPermaLink="false">2026-11-06-US-BKNG-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 260 places to #457 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Booking Holdings: New results filed: revenue -1.3% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-BKNG</link>
+   <guid isPermaLink="false">2026-11-04-US-BKNG-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue -1.3% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

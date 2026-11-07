@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-VMC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Vulcan Materials Company (VMC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-VMC</link>
+  <description>Alerts for Vulcan Materials Company from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

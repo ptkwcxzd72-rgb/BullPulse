@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-ALFA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Alfa Financial Software (ALFA)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-ALFA</link>
+  <description>Alerts for Alfa Financial Software from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Alfa Financial Software: Rank moved down 33 places to #325 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ALFA</link>
+   <guid isPermaLink="false">2026-11-06-LSE-ALFA-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 33 places to #325 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Alfa Financial Software: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ALFA</link>
+   <guid isPermaLink="false">2026-11-06-LSE-ALFA-trend</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Alfa Financial Software: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ALFA</link>
+   <guid isPermaLink="false">2026-11-03-LSE-ALFA-early</guid>
+   <pubDate>Tue, 03 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Alfa Financial Software: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ALFA</link>
+   <guid isPermaLink="false">2026-11-02-LSE-ALFA-early</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

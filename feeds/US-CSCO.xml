@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CSCO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Cisco (CSCO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CSCO</link>
+  <description>Alerts for Cisco from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Cisco: Rank moved down 87 places to #157 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CSCO</link>
+   <guid isPermaLink="false">2026-11-06-US-CSCO-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 87 places to #157 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cisco: Rank moved down 27 places to #58 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CSCO</link>
+   <guid isPermaLink="false">2026-11-05-US-CSCO-rank</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #58 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cisco: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CSCO</link>
+   <guid isPermaLink="false">2026-11-05-US-CSCO-trend</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

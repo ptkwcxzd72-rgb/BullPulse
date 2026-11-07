@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-APP.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: AppLovin (APP)</title>
+  <link>https://bullpulse.co.uk/app.html#US-APP</link>
+  <description>Alerts for AppLovin from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>AppLovin: Rank moved down 271 places to #466 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APP</link>
+   <guid isPermaLink="false">2026-11-06-US-APP-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 271 places to #466 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppLovin: New results filed: revenue +55.5% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-APP</link>
+   <guid isPermaLink="false">2026-11-04-US-APP-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +55.5% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

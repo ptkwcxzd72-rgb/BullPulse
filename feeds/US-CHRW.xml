@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CHRW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: C.H. Robinson (CHRW)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CHRW</link>
+  <description>Alerts for C.H. Robinson from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>C.H. Robinson: Rank moved down 262 places to #454 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHRW</link>
+   <guid isPermaLink="false">2026-11-06-US-CHRW-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 262 places to #454 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>C.H. Robinson: New results filed: revenue +29.5% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHRW</link>
+   <guid isPermaLink="false">2026-11-04-US-CHRW-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +29.5% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>C.H. Robinson: Rank moved down 21 places to #174 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHRW</link>
+   <guid isPermaLink="false">2026-11-02-US-CHRW-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #174 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

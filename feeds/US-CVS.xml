@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CVS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: CVS Health (CVS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CVS</link>
+  <description>Alerts for CVS Health from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>CVS Health: Rank moved down 170 places to #300 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CVS</link>
+   <guid isPermaLink="false">2026-11-06-US-CVS-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 170 places to #300 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CVS Health: Rank moved down 49 places to #144 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CVS</link>
+   <guid isPermaLink="false">2026-11-04-US-CVS-rank</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 49 places to #144 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CVS Health: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CVS</link>
+   <guid isPermaLink="false">2026-11-04-US-CVS-trend</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CVS Health: New results filed: revenue +5.4% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-CVS</link>
+   <guid isPermaLink="false">2026-11-04-US-CVS-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +5.4% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CVS Health: Rank moved down 24 places to #81 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CVS</link>
+   <guid isPermaLink="false">2026-11-02-US-CVS-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #81 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

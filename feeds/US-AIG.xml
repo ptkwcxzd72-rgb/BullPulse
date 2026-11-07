@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AIG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: American International Group (AIG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AIG</link>
+  <description>Alerts for American International Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>American International Group: Rank moved down 109 places to #193 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIG</link>
+   <guid isPermaLink="false">2026-11-06-US-AIG-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 109 places to #193 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American International Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIG</link>
+   <guid isPermaLink="false">2026-11-06-US-AIG-early</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American International Group: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIG</link>
+   <guid isPermaLink="false">2026-11-04-US-AIG-growth</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American International Group: New results filed: revenue +17.2% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIG</link>
+   <guid isPermaLink="false">2026-11-04-US-AIG-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +17.2% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>American International Group: Rank moved down 38 places to #147 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIG</link>
+   <guid isPermaLink="false">2026-10-27-US-AIG-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #147 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

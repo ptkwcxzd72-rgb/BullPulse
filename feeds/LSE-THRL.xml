@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-THRL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Target Healthcare REIT (THRL)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-THRL</link>
+  <description>Alerts for Target Healthcare REIT from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Target Healthcare REIT: Rank moved up 24 places to #118 (score 61)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-THRL</link>
+   <guid isPermaLink="false">2026-10-30-LSE-THRL-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #118 (score 61). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

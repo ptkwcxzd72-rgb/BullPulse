@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-NAS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: North Atlantic Smaller Companies Investment Trust (NAS)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-NAS</link>
+  <description>Alerts for North Atlantic Smaller Companies Investment Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>North Atlantic Smaller Companies Investment Trust: Rank moved down 94 places to #170 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-NAS</link>
+   <guid isPermaLink="false">2026-11-06-LSE-NAS-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 94 places to #170 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

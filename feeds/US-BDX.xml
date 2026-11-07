@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BDX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Becton Dickinson (BDX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BDX</link>
+  <description>Alerts for Becton Dickinson from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Becton Dickinson: Rank moved down 31 places to #63 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BDX</link>
+   <guid isPermaLink="false">2026-11-06-US-BDX-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #63 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

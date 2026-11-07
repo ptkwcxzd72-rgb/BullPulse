@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SPGI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: S&amp;P Global (SPGI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SPGI</link>
+  <description>Alerts for S&amp;P Global from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

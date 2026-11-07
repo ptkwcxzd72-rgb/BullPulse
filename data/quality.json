@@ -1,0 +1,14 @@
+{
+ "asof": "2026-11-06",
+ "checked": 837,
+ "excluded": [],
+ "flagged": [
+  {
+   "id": "US-MRNA",
+   "reason": "price moved +177% on 19 Aug 2026; history will be re-downloaded in case of an unadjusted split"
+  }
+ ],
+ "resync": [
+  "mrna"
+ ]
+}

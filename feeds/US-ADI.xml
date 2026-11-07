@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ADI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Analog Devices (ADI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ADI</link>
+  <description>Alerts for Analog Devices from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Analog Devices: Rank moved down 79 places to #131 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADI</link>
+   <guid isPermaLink="false">2026-11-06-US-ADI-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 79 places to #131 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Analog Devices: Rank moved down 46 places to #49 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADI</link>
+   <guid isPermaLink="false">2026-11-05-US-ADI-rank</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 46 places to #49 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Analog Devices: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADI</link>
+   <guid isPermaLink="false">2026-11-05-US-ADI-trend</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Analog Devices: Rank moved up 26 places to #2 (score 88)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADI</link>
+   <guid isPermaLink="false">2026-10-29-US-ADI-rank</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #2 (score 88). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

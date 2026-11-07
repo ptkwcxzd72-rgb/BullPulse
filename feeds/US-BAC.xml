@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BAC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Bank of America (BAC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BAC</link>
+  <description>Alerts for Bank of America from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Bank of America: Rank moved down 216 places to #387 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BAC</link>
+   <guid isPermaLink="false">2026-11-06-US-BAC-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 216 places to #387 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bank of America: New results filed: revenue +3.2% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-BAC</link>
+   <guid isPermaLink="false">2026-11-04-US-BAC-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +3.2% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bank of America: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-BAC</link>
+   <guid isPermaLink="false">2026-11-02-US-BAC-cross</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

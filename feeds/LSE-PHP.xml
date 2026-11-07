@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-PHP.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Primary Health Properties (PHP)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-PHP</link>
+  <description>Alerts for Primary Health Properties from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Primary Health Properties: Rank moved up 27 places to #269 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-PHP</link>
+   <guid isPermaLink="false">2026-10-27-LSE-PHP-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #269 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ANET.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Arista Networks (ANET)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ANET</link>
+  <description>Alerts for Arista Networks from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Arista Networks: Rank moved down 94 places to #153 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ANET</link>
+   <guid isPermaLink="false">2026-11-06-US-ANET-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 94 places to #153 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arista Networks: Rank moved down 28 places to #62 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ANET</link>
+   <guid isPermaLink="false">2026-11-05-US-ANET-rank</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #62 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arista Networks: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ANET</link>
+   <guid isPermaLink="false">2026-11-05-US-ANET-trend</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arista Networks: New results filed: revenue +58.5% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-ANET</link>
+   <guid isPermaLink="false">2026-11-04-US-ANET-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +58.5% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arista Networks: Rank moved down 42 places to #95 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ANET</link>
+   <guid isPermaLink="false">2026-11-02-US-ANET-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 42 places to #95 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arista Networks: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ANET</link>
+   <guid isPermaLink="false">2026-11-02-US-ANET-trend</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

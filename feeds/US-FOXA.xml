@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FOXA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Fox Corporation (Class A) (FOXA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FOXA</link>
+  <description>Alerts for Fox Corporation (Class A) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Fox Corporation (Class A): Rank moved down 116 places to #216 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOXA</link>
+   <guid isPermaLink="false">2026-11-06-US-FOXA-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 116 places to #216 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class A): Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOXA</link>
+   <guid isPermaLink="false">2026-11-06-US-FOXA-early</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class A): Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOXA</link>
+   <guid isPermaLink="false">2026-11-04-US-FOXA-growth</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class A): New results filed: revenue +22.3% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOXA</link>
+   <guid isPermaLink="false">2026-11-04-US-FOXA-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +22.3% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>
