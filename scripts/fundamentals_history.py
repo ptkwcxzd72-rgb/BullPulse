@@ -23,6 +23,7 @@ import time
 
 from fetch_fundamentals import ERRORS, REVENUE as REV2, EPS as EPS2, analyse, contact, get
 import sec_financials as SF
+from pit_clean import clean_shares, load_closes, price_on
 
 OUT = "data/fundamentals_pit.jsonl"
 KEEP = set(SF.REVENUE + SF.NET_INCOME + SF.OP_INCOME + SF.EPS + SF.OCF + SF.CAPEX + SF.INTEREST + SF.DIV_PAID + SF.DPS +
@@ -80,7 +81,7 @@ def main():
     if args.limit:
         stocks = stocks[: args.limit]
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    n_rows = 0
+    n_rows, notes = 0, []
     with open(OUT, "w") as out:
         for i, s in enumerate(stocks):
             raw = get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{int(s['cik']):010d}.json")
@@ -105,12 +106,19 @@ def main():
                 rows[k]["split"] = factor
                 if k > 0:
                     factor *= split_ratio(rows[k - 1]["fin"]["shares"], rows[k]["fin"]["shares"])
+            # share counts filed in the wrong units (Edison's 2020 filing made it worth $24,000 trillion)
+            pd, pc = load_closes(os.path.join(args.prices, s["provider_ticker"] + ".csv"))
+            notes += clean_shares(rows, price=lambda d: price_on(pd, pc, d), market="US", index=s.get("index") or "S&P 500")
+            rows = [r for r in rows if r["fin"].get("shares")]
             for r in rows:
                 out.write(json.dumps(r, separators=(",", ":")) + "\n")
             n_rows += len(rows)
             if (i + 1) % 50 == 0:
                 print(f"  {i + 1}/{len(stocks)}", flush=True)
     print(f"::notice::Point-in-time fundamentals: {n_rows} filing snapshots for {len(stocks)} companies")
+    print(f"::notice::Share counts repaired or dropped in {len(notes)} filing snapshots (wrong units)")
+    for n in notes[:15]:
+        print("  " + n)
     for e in ERRORS[:5]:
         print(f"::warning::SEC request failed: {e}")
 

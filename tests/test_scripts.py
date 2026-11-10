@@ -460,3 +460,26 @@ class ThirteenFTest(unittest.TestCase):
         r = I.copy_record(doc, px, (days, [100, 100, 100, 100]))
         self.assertAlmostEqual(r["total"], 0.1, places=6)
 
+
+
+class UnitStepTest(unittest.TestCase):
+    def test_pounds_stretch_is_put_in_pence(self):
+        from sync_uk_prices import fix_unit_steps
+        # Baltic Classifieds: 16,809p then 169p the next day (the older stretch was 100x too high)
+        bars = [["2026-08-20", 16500, 16900, 16400, 16700, 1], ["2026-08-21", 16700, 16900, 16600, 16809, 1],
+                ["2026-08-24", 168, 171, 167, 169.1, 1], ["2026-08-25", 169, 172, 168, 170, 1]]
+        out, steps = fix_unit_steps(bars)
+        self.assertEqual(steps, 1)
+        self.assertEqual([b[4] for b in out], [167.0, 168.09, 169.1, 170])
+
+    def test_one_bad_day_cancels_out(self):
+        from sync_uk_prices import fix_unit_steps
+        bars = [["d1", 0, 0, 0, 200, 1], ["d2", 0, 0, 0, 2.01, 1], ["d3", 0, 0, 0, 202, 1]]
+        out, steps = fix_unit_steps(bars)
+        self.assertEqual([b[4] for b in out], [200, 201.0, 202])
+        self.assertEqual(steps, 2)
+
+    def test_real_moves_are_kept(self):
+        from sync_uk_prices import fix_unit_steps
+        bars = [["d1", 0, 0, 0, 100, 1], ["d2", 0, 0, 0, 40, 1], ["d3", 0, 0, 0, 90, 1]]
+        self.assertEqual(fix_unit_steps(bars), (bars, 0))

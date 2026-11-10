@@ -177,6 +177,29 @@ def add_dividends(bars: list[list], divs: list[list]) -> list[list]:
                 out[j][c] = round(bars[j][c] * f, 4)
     return out
 
+def fix_unit_steps(bars: list[list]) -> tuple[list[list], int]:
+    """Put stretches quoted in pounds (or pence x 100) on the pence basis of the newest price.
+
+    Yahoo's history for a few London shares jumps by a factor of 100 between two days (Baltic
+    Classifieds fell "99%" on 24 August 2026, Mears and Rose earlier in 2026), and re-downloading
+    returns the same history. No FTSE 350 share moves 100x in a day, so each such step is undone,
+    working back from today; a single bad day (a step there and back) cancels out. Returns the
+    bars and the number of steps undone."""
+    if len(bars) < 2:
+        return bars, 0
+    f, steps = 1.0, 0
+    out = [list(b) for b in bars]
+    for k in range(len(out) - 2, -1, -1):
+        r = bars[k][4] / bars[k + 1][4] if bars[k + 1][4] else 1.0
+        for unit in (100.0, 0.01):
+            if 0.75 * unit < r < 1.33 * unit:
+                f /= unit
+                steps += 1
+        if f != 1.0:
+            out[k][1:5] = [round(x * f, 4) for x in out[k][1:5]]
+    return out, steps
+
+
 def looks_sane(rows: list[list], old_path: str) -> str:
     """Empty string if fine, otherwise the reason to keep the old file."""
     if len(rows) < 260:
@@ -295,6 +318,9 @@ def main():
         d = get_json(CHART.format(sym=yahoo_symbol(r["ticker"]), rng="10y"))
         missing = dividends_missing(d)
         ccy, bars = parse_chart(d, raw=missing)
+        bars, steps = fix_unit_steps(bars)
+        if steps:
+            print(f"  {r['ticker']}: {steps} day-to-day jumps of 100x (pounds vs pence) undone")
         if bars:
             scale = {"GBp": 1.0, "GBX": 1.0, "GBP": 100.0}.get(ccy) or FX.get(ccy, 0) * 100
             if missing:   # total return, like the US prices

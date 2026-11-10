@@ -148,6 +148,15 @@ func Compute(f Fin, price float64) Metrics {
 	case f.DividendsPaidTTM != nil && m.MarketCap != nil && *m.MarketCap > 0:
 		m.DivYield = p(*f.DividendsPaidTTM / *m.MarketCap)
 	}
+	// yields beyond these are artefacts, not information: brokers' and asset managers' operating
+	// cash flow (Interactive Brokers, Ares above 100%), or a share count for one class only
+	// (Berkshire's history at 18,000%); left blank they can't top a value ranking
+	if m.FCFYield != nil && math.Abs(*m.FCFYield) > 1 {
+		m.FCFYield = nil
+	}
+	if m.DivYield != nil && *m.DivYield > 0.3 {
+		m.DivYield = nil
+	}
 	if f.DividendsPaidTTM != nil && f.NetIncomeTTM != nil && *f.NetIncomeTTM > 0 {
 		m.Payout = p(*f.DividendsPaidTTM / *f.NetIncomeTTM)
 	}
@@ -624,6 +633,43 @@ func (f Fin) PerShare(k float64) Fin {
 	if f.Shares != nil && k != 0 {
 		v := *f.Shares / k
 		f.Shares = &v
+	}
+	return f
+}
+
+// capBounds are the market values possible for a member of each index, in the index's currency
+// (dollars; pounds for the FTSE indexes). Generous: they catch share counts filed in the wrong
+// units or for one share class only, not small companies.
+var capBounds = map[string][2]float64{
+	"S&P 500":  {1e9, 8e12},
+	"FTSE 100": {1e9, 8e11},
+	"FTSE 250": {5e7, 2.5e10},
+}
+
+// PlausibleShares returns f without its share count when price x shares is impossible for a member
+// of index (price as quoted: pence for the FTSE indexes). Berkshire B (one class's count), Fox and
+// Erie were each given a market value near zero and free-cash-flow yields in the millions of
+// per cent; with no share count, market value and the yields built on it are left blank.
+// past=true is for backtests: index membership is today's, and a company may have been far
+// smaller before it joined, so the floor is lowered (a third, and no higher than the FTSE 250's).
+func PlausibleShares(f Fin, price float64, index string, past bool) Fin {
+	b, ok := capBounds[index]
+	if !ok || f.Shares == nil || price <= 0 {
+		return f
+	}
+	if past {
+		lo := b[0] / 3
+		if strings.HasPrefix(index, "FTSE") {
+			lo = math.Min(lo, capBounds["FTSE 250"][0])
+		}
+		b[0] = lo
+	}
+	mc := price * *f.Shares
+	if strings.HasPrefix(index, "FTSE") {
+		mc /= 100
+	}
+	if mc < b[0] || mc > b[1] {
+		f.Shares = nil
 	}
 	return f
 }

@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import glob
 import datetime as dt
 import json
 import os
@@ -31,6 +32,7 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(__file__))
 from sec_financials import financials, durations, annual, REVENUE, EPS  # noqa: E402
+from pit_clean import clean_shares, load_closes, price_on  # noqa: E402
 
 OUT = "data/fundamentals_uk.json"
 IDS = "data/uk_ids.json"
@@ -243,6 +245,43 @@ def growth(facts: dict) -> dict:
     return out
 
 
+def repair_shares(stocks: dict, uni: list[dict]) -> list[str]:
+    """Correct share counts filed in the wrong units (3i's last two reports gave 9.7m shares
+    instead of 970m, so the screener showed it worth \u00a30.33bn on a P/E of 0.05). Each company's
+    count is checked against the counts in its earlier cached reports and against its price,
+    as scripts/pit_clean.py does for the backtest. Changes stocks in place; returns notes."""
+    files: dict[str, list[dict]] = {}
+    for p in glob.glob(os.path.join(FACTS_DIR, "*.json")):
+        try:
+            d = json.load(open(p))
+        except Exception:
+            continue
+        files.setdefault(d["fxo_id"][:20], []).append(d)
+    by_key = {"LSE-" + r["ticker"].replace(".", ""): r for r in uni}
+    today = dt.date.today().isoformat()
+    notes = []
+    for key, e in stocks.items():
+        fin, r = e.get("fin") or {}, by_key.get(key)
+        if not fin.get("shares") or not r:
+            continue
+        hist = []
+        for d in sorted(files.get((e.get("lei") or "")[:20], []), key=lambda d: d.get("added") or d["period_end"]):
+            date = d.get("added") or d["period_end"]
+            f1, _ = to_companyfacts([(date, d["facts"])])
+            n1 = financials(f1).get("shares") if f1 else None
+            if n1:
+                hist.append({"id": key, "date": date, "fin": {"shares": n1}})
+        cur = {"id": key, "date": today, "fin": {"shares": fin["shares"]}}
+        pd, pc = load_closes(os.path.join("data/prices", (r.get("provider_ticker") or "") + ".csv"))
+        notes += [n for n in clean_shares(hist + [cur], price=lambda d: price_on(pd, pc, d), market="UK", per_unit=0.01,
+                                          index=r.get("index") or "") if n.startswith(key + " " + today)]
+        if cur["fin"].get("shares"):
+            fin["shares"] = cur["fin"]["shares"]
+        else:
+            fin.pop("shares", None)
+    return notes
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--universe", default="universe/uk*.csv", help="UK universe files (glob)")
@@ -252,7 +291,6 @@ def main():
     args = ap.parse_args()
     t0 = time.time()
 
-    import glob
     rows = [r for f in sorted(glob.glob(args.universe)) for r in csv.DictReader(open(f, newline="")) if (r.get("type") or "") != "trust"]  # trusts: asset-based, checks do not apply
     if os.path.exists(OUT) and args.max_age_days > 0:
         try:
@@ -261,6 +299,10 @@ def main():
             covered = len(set(old.get("stocks", {})) & {"LSE-" + r["ticker"].replace(".", "") for r in rows})
             if age < args.max_age_days and old.get("complete", True) and covered >= 0.7 * len(rows):
                 print(f"UK fundamentals are {age} days old; skipping (weekly refresh)")
+                notes = repair_shares(old.get("stocks", {}), rows)
+                if notes:
+                    json.dump(old, open(OUT, "w"), separators=(",", ":"))
+                    print(f"::notice::UK share counts repaired for {len(notes)} companies: " + "; ".join(notes[:10]))
                 return
         except Exception:
             pass
@@ -299,6 +341,9 @@ def main():
         entry = {**growth(facts), "fin": fin, "source": "ESEF annual report", "lei": lei}
         out["LSE-" + t.replace(".", "")] = entry
         time.sleep(0.3)
+    notes = repair_shares(out, rows)
+    if notes:
+        print(f"::notice::UK share counts repaired for {len(notes)} companies: " + "; ".join(notes[:10]))
     json.dump(ids, open(IDS, "w"), indent=1, sort_keys=True)
     json.dump({"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "complete": complete, "stocks": out}, open(OUT, "w"), separators=(",", ":"))
     print(f"::notice::UK annual-report figures for {len(out)} of {len(rows)} companies" + ("" if complete else " (time budget reached; the rest continues next run)"))

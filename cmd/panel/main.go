@@ -256,6 +256,7 @@ func main() {
 			if divs[i] != nil {
 				px = c / divs[i](d)
 			}
+			f = fund.PlausibleShares(f, px, ss[i].Index, true)
 			it := &fitem{i: i, f: f, row: r, m: fund.Compute(f, px)}
 			it.dc = fund.EstimateDCF(f, ss[i].Sector, px, r.RevGrowth)
 			byMkt[ss[i].Market] = append(byMkt[ss[i].Market], it)

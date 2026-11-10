@@ -20,13 +20,17 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from fetch_uk_fundamentals import FACTS_DIR, IDS, growth, to_companyfacts  # noqa: E402
 from sec_financials import financials  # noqa: E402
+from pit_clean import clean_shares, load_closes, price_on  # noqa: E402
 
 OUT = "data/fundamentals_pit_uk.jsonl"
 
 
 def main():
     ids = json.load(open(IDS)) if os.path.exists(IDS) else {}
-    tickers = [r["ticker"] for f in sorted(glob.glob("universe/uk*.csv")) for r in csv.DictReader(open(f, newline=""))]
+    uni = [r for f in sorted(glob.glob("universe/uk*.csv")) for r in csv.DictReader(open(f, newline=""))]
+    tickers = [r["ticker"] for r in uni]
+    prov = {r["ticker"]: r.get("provider_ticker") or "" for r in uni}
+    index = {r["ticker"]: r.get("index") or "" for r in uni}
     files: dict[str, list[dict]] = {}
     for p in glob.glob(os.path.join(FACTS_DIR, "*.json")):
         try:
@@ -34,11 +38,12 @@ def main():
         except Exception:
             continue
         files.setdefault(d["fxo_id"][:20], []).append(d)
-    n = 0
+    n, notes = 0, []
     with open(OUT, "w") as out:
         for t in tickers:
             lei = (ids.get(t) or {}).get("lei")
             fl = sorted(files.get(lei or "", []), key=lambda d: d.get("added") or d["period_end"])
+            rows = []
             for k in range(len(fl)):
                 avail = fl[: k + 1]
                 date = avail[-1].get("added") or avail[-1]["period_end"]
@@ -52,9 +57,18 @@ def main():
                 g = growth(facts)
                 row = {"id": "LSE-" + t.replace(".", ""), "date": date, "fin": fin, "split": 1,
                        **{k2: g[k2] for k2 in ("rev_growth", "rev_accel", "eps_growth") if k2 in g}}
-                out.write(json.dumps(row, separators=(",", ":")) + "\n")
-                n += 1
+                rows.append(row)
+            # share counts in the wrong units (3i, Admiral, Aviva and M&G were 100x out); prices are in pence
+            pd, pc = load_closes(os.path.join("data/prices", prov.get(t, "") + ".csv"))
+            notes += clean_shares(rows, price=lambda d: price_on(pd, pc, d), market="UK", per_unit=0.01, index=index.get(t, ""))
+            for row in rows:
+                if row["fin"].get("shares"):
+                    out.write(json.dumps(row, separators=(",", ":")) + "\n")
+                    n += 1
     print(f"::notice::UK point-in-time fundamentals: {n} filing snapshots")
+    print(f"::notice::UK share counts repaired or dropped in {len(notes)} filing snapshots (wrong units)")
+    for x in notes[:15]:
+        print("  " + x)
 
 
 if __name__ == "__main__":

@@ -137,6 +137,7 @@ func fundamentalsTest(ss []core.Stock, xs []*core.Series, ends []time.Time, pos 
 			r := rs[k]
 			f := r.Fin.PerShare(1 / r.Split)
 			px := x.Close[j] / divs[i](d)
+			f = fund.PlausibleShares(f, px, ss[i].Index, true)
 			it := item{i: i, f: f, row: r, m: fund.Compute(f, px)}
 			it.dc = fund.EstimateDCF(f, ss[i].Sector, px, r.RevGrowth)
 			for h, n := range horizons {

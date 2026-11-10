@@ -137,3 +137,38 @@ func TestMedian(t *testing.T) {
 		t.Fatal("median wrong")
 	}
 }
+
+func TestPlausibleShares(t *testing.T) {
+	n := func(v float64) *float64 { return &v }
+	// Fox: a share count near zero gave a free-cash-flow yield in the millions of per cent
+	f := PlausibleShares(Fin{Shares: n(1000), OCFTTM: n(3e9)}, 50, "S&P 500", false)
+	if f.Shares != nil || Compute(f, 50).FCFYield != nil {
+		t.Fatalf("an impossible market value should leave market value and yields blank")
+	}
+	if PlausibleShares(Fin{Shares: n(2e9)}, 50, "S&P 500", false).Shares == nil {
+		t.Fatalf("a $100bn company is plausible")
+	}
+	// UK prices are in pence: 970m shares at 2,525p is about GBP 24bn
+	if PlausibleShares(Fin{Shares: n(9.7e8)}, 2525, "FTSE 100", false).Shares == nil {
+		t.Fatalf("3i at GBP 24bn is plausible")
+	}
+	if PlausibleShares(Fin{Shares: n(9.7e6)}, 2525, "FTSE 100", false).Shares != nil {
+		t.Fatalf("3i at GBP 0.24bn is not a FTSE 100 company")
+	}
+	// in a backtest the floor is lower: today's member may have been small years ago
+	if PlausibleShares(Fin{Shares: n(4e8)}, 100, "S&P 500", true).Shares == nil {
+		t.Fatalf("a $400m company before it joined the S&P 500 is plausible in the past")
+	}
+}
+
+func TestImplausibleYieldsAreBlank(t *testing.T) {
+	n := func(v float64) *float64 { return &v }
+	m := Compute(Fin{Shares: n(1e8), OCFTTM: n(2e10), DividendsPaidTTM: n(5e9)}, 100) // $10bn company
+	if m.FCFYield != nil || m.DivYield != nil {
+		t.Fatalf("200%% free-cash-flow and 50%% dividend yields should be blank, got %v %v", m.FCFYield, m.DivYield)
+	}
+	m = Compute(Fin{Shares: n(1e8), OCFTTM: n(8e8), DividendsPaidTTM: n(3e8)}, 100)
+	if m.FCFYield == nil || m.DivYield == nil || *m.FCFYield != 0.08 || *m.DivYield != 0.03 {
+		t.Fatalf("ordinary yields kept, got %v %v", m.FCFYield, m.DivYield)
+	}
+}

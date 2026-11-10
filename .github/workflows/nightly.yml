@@ -159,6 +159,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main || echo "::warning::Could not update from main; ranking with the data checked out"
 
+      - name: Data-quality check of the prices (stops tonight's publish if many are missing or stale)
+        run: python scripts/data_quality.py prices
+
       - name: Rank stocks (with data-quality checks and score history)
         run: go run ./cmd/screener
 

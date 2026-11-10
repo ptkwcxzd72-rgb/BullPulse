@@ -745,7 +745,8 @@ func addFundamentals(rows []*Row, funds map[string]Fund, fx map[string]float64) 
 			r.detail["fund"] = map[string]any{"trust": true}
 			continue
 		}
-		it := &item{r: r, f: *f.Fin, m: fund.Compute(*f.Fin, r.Price)}
+		ff := fund.PlausibleShares(*f.Fin, r.Price, r.Idx, false) // share counts in the wrong units or for one class
+		it := &item{r: r, f: ff, m: fund.Compute(ff, r.Price)}
 		it.d = fund.EstimateDCF(it.f, r.Sector, r.Price, r.RevGrowth)
 		byEx[r.Ex] = append(byEx[r.Ex], it)
 	}
