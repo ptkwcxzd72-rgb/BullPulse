@@ -45,6 +45,9 @@ jobs:
         run: go run ./cmd/panel
       - name: Data-quality check of the history (benchmarks against their own members, market values, returns, yields; a failure stops the publish)
         run: python scripts/data_quality.py panel --panel site/data/panel.json --report reports/data_quality.md
+      - name: Signal study (each signal's rank correlation with later returns, sector- and size-neutral; reports/signal_study.md)
+        run: node scripts/signal_study.js site/data/panel.json --report reports/signal_study.md
+        continue-on-error: true
       - name: Learn (walk-forward weights, champion and challenger), event studies and the live record
         run: go run ./cmd/learn
       - name: Commit report
