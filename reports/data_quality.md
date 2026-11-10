@@ -7,4 +7,4 @@
 - OK: no market value jumps by a power of ten
 - Note: 21 market-value changes of 60% or more beyond the price, usually mergers or share issues: LSE-ABDN 2025-03-31, US-BE 2021-08-31, US-COF 2025-07-31, US-CVNA 2026-02-27, US-CVNA 2026-07-31, US-DVN 2021-02-26, US-DVN 2026-08-31, US-FANG 2019-02-28, US-FANG 2024-11-29, US-EXE 2024-10-31, US-FISV 2019-11-29, US-GDDY 2024-05-31, US-IFF 2021-02-26, US-INVH 2018-03-29, US-PCG 2020-07-31, US-RTX 2020-07-31, US-TKO 2026-08-31, US-TFC 2020-03-31, US-TWLO 2018-03-29, US-WAB 2019-05-31
 - Warning: monthly returns above +200% or below -90% (2 of 87934): US-APA 2020-03-31 +214%, LSE-BCG 2026-07-31 -99%
-- Warning: implausible yields for 1 stocks (2 stock-months): US-AON 2020-05-29 divY -203751%, US-AON 2020-06-30 divY -208822%
+- OK: no free-cash-flow yield above 100% or dividend yield above 30%
