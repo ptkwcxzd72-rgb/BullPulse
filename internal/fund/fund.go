@@ -158,7 +158,7 @@ func Compute(f Fin, price float64) Metrics {
 	if m.FCFYield != nil && math.Abs(*m.FCFYield) > 1 {
 		m.FCFYield = nil
 	}
-	if m.DivYield != nil && *m.DivYield > 0.3 {
+	if m.DivYield != nil && (*m.DivYield > 0.3 || *m.DivYield < 0) { // Aon's 2020 dividends were tagged negative
 		m.DivYield = nil
 	}
 	if f.DividendsPaidTTM != nil && f.NetIncomeTTM != nil && *f.NetIncomeTTM > 0 {
