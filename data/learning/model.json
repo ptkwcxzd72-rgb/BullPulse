@@ -10,60 +10,60 @@
  "calibration": [
   {
    "decile": 1,
-   "prob": 0.474,
-   "n": 4851
+   "prob": 0.475,
+   "n": 4849
   },
   {
    "decile": 2,
-   "prob": 0.483,
-   "n": 4787
+   "prob": 0.482,
+   "n": 4789
   },
   {
    "decile": 3,
-   "prob": 0.483,
-   "n": 4810
+   "prob": 0.482,
+   "n": 4806
   },
   {
    "decile": 4,
-   "prob": 0.483,
+   "prob": 0.482,
    "n": 4788
   },
   {
    "decile": 5,
-   "prob": 0.494,
-   "n": 4774
+   "prob": 0.493,
+   "n": 4787
   },
   {
    "decile": 6,
-   "prob": 0.494,
-   "n": 4829
+   "prob": 0.493,
+   "n": 4822
   },
   {
    "decile": 7,
-   "prob": 0.497,
+   "prob": 0.498,
    "n": 4805
   },
   {
    "decile": 8,
-   "prob": 0.497,
-   "n": 4779
+   "prob": 0.498,
+   "n": 4776
   },
   {
    "decile": 9,
    "prob": 0.502,
-   "n": 4795
+   "n": 4797
   },
   {
    "decile": 10,
    "prob": 0.523,
-   "n": 4874
+   "n": 4873
   }
  ],
  "tried": [
   "Learned weights",
   "Learned weights by market conditions"
  ],
- "updated": "2026-11-06",
+ "updated": "2026-11-10",
  "changes": [
   {
    "date": "2026-10-29",
