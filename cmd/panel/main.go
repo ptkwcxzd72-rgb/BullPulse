@@ -43,7 +43,18 @@ var fields = []struct {
 	// earnings surprise, officers and directors buying in the last 90 days, and whether the stock
 	// was in its index at the time (1) or not yet / no longer (0)
 	{"rev1m", 1000}, {"sue", 100}, {"insB", 1}, {"mem", 1},
+	// candidate signals with long published records, for the signal study (November 2026):
+	// gross profit / total assets (Novy-Marx 2013); accruals, (net income - operating cash flow) /
+	// total assets (Sloan 1996); asset growth over a year (Cooper, Gulen and Schill 2008); net share
+	// issuance, the log change in split-adjusted shares over a year (Pontiff and Woodgate 2008);
+	// industry momentum, the sector's average 12-1 month return (Moskowitz and Grinblatt 1999); and
+	// momentum per unit of volatility
+	{"gp", 1000}, {"accr", 1000}, {"agr", 1000}, {"iss", 1000}, {"imom", 1000}, {"mvol", 1000},
 }
+
+// research holds candidate signals: written to panel_research.json (same months and stocks)
+// rather than panel.json, which the website downloads, until the signal study adopts them
+var research = map[string]bool{"gp": true, "accr": true, "agr": true, "iss": true, "imom": true, "mvol": true}
 
 type fxRow struct {
 	date     string
@@ -227,6 +238,9 @@ func main() {
 				vals["insB"][i] = float64(insider.Buyers(ins[ss[i].ID()], d, 90))
 			}
 			vals["vol1y"][i] = x.RealisedVol(j)
+			if v := vals["vol1y"][i]; v > 0 && !math.IsNaN(vals["mom"][i]) {
+				vals["mvol"][i] = vals["mom"][i] / v
+			}
 			if mi+1 < len(ends) {
 				if k := at(x, ends[mi+1]); k > j && ends[mi+1].Sub(x.Dates[k]) <= 7*24*time.Hour {
 					fw[i] = x.Close[k]/c - 1
@@ -242,6 +256,19 @@ func main() {
 			}
 			r := rs[k]
 			f := r.Fin.PerShare(1 / r.Split)
+			// net share issuance: split-adjusted shares now against the latest filing 9 to 18 months back
+			yrAgo, oldest := d.AddDate(-1, 3, 0).Format("2006-01-02"), d.AddDate(-1, -6, 0).Format("2006-01-02")
+			for q := k - 1; q >= 0; q-- {
+				if rs[q].Date > yrAgo {
+					continue
+				}
+				if rs[q].Date >= oldest && rs[q].Fin.Shares != nil && r.Fin.Shares != nil && *rs[q].Fin.Shares > 0 {
+					if v := math.Log(*r.Fin.Shares * r.Split / (*rs[q].Fin.Shares * rs[q].Split)); math.Abs(v) < math.Log(5) {
+						vals["iss"][i] = v
+					}
+				}
+				break
+			}
 			if qe, err := time.Parse("2006-01-02", r.Fin.EPSQEnd); err == nil && d.Sub(qe) <= 135*24*time.Hour {
 				vals["sue"][i] = f.SUE() // only while that quarter is the latest one
 			}
@@ -262,6 +289,22 @@ func main() {
 			byMkt[ss[i].Market] = append(byMkt[ss[i].Market], it)
 			if r.RevGrowth != nil {
 				revG[i] = *r.RevGrowth
+			}
+		}
+		// industry momentum: the average 12-1 month return of the stock's sector in its market
+		{
+			sum, cnt := map[string]float64{}, map[string]int{}
+			for i := range ss {
+				if v := vals["mom"][i]; !math.IsNaN(v) {
+					k := ss[i].Market + "/" + ss[i].Sector
+					sum[k] += v
+					cnt[k]++
+				}
+			}
+			for i := range ss {
+				if k := ss[i].Market + "/" + ss[i].Sector; cnt[k] >= 5 && !math.IsNaN(vals["mom"][i]) {
+					vals["imom"][i] = sum[k] / float64(cnt[k])
+				}
 			}
 		}
 		// percentiles within each market
@@ -310,6 +353,17 @@ func main() {
 				set := func(k string, v *float64) {
 					if v != nil {
 						vals[k][i] = *v
+					}
+				}
+				if a := it.f.Assets; a != nil && *a > 0 {
+					if g := it.f.GrossProfitTTM; g != nil {
+						vals["gp"][i] = *g / *a
+					}
+					if it.f.NetIncomeTTM != nil && it.f.OCFTTM != nil {
+						vals["accr"][i] = (*it.f.NetIncomeTTM - *it.f.OCFTTM) / *a
+					}
+					if p := it.f.AssetsPrev; p != nil && *p > 0 {
+						vals["agr"][i] = *a / *p - 1
 					}
 				}
 				set("revGrowth", it.row.RevGrowth)
@@ -392,12 +446,27 @@ func main() {
 			trust[i] = 1
 		}
 	}
-	scale := map[string]float64{}
+	scale, rscale := map[string]float64{}, map[string]float64{}
+	pub, res := map[string][][]any{}, map[string][][]any{}
 	for _, f := range fields {
-		scale[f.Key] = f.Scale
+		if research[f.Key] {
+			rscale[f.Key], res[f.Key] = f.Scale, data[f.Key]
+		} else {
+			scale[f.Key], pub[f.Key] = f.Scale, data[f.Key]
+		}
+	}
+	rdoc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months, "ids": ids, "scale": rscale, "fields": res,
+		"note": "Candidate signals for the signal study; same months and stocks as panel.json."}
+	if rb, err := json.Marshal(rdoc); err == nil {
+		os.MkdirAll(filepath.Dir(*out), 0o755)
+		if err := os.WriteFile(filepath.Join(filepath.Dir(*out), "panel_research.json"), rb, 0o644); err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+		fmt.Printf("research panel: %d candidate signals, %.1f MB\n", len(res), float64(len(rb))/1e6)
 	}
 	doc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months, "ids": ids, "ex": ex, "sector": sec, "idx": idx, "trust": trust,
-		"scale": scale, "fields": data, "fwd": fwd, "bench": bench,
+		"scale": scale, "fields": pub, "fwd": fwd, "bench": bench,
 		"note": "Month-end values from information available at each date. Returns include dividends. Sentiment, news and insider data have no history."}
 	b, err := json.Marshal(doc)
 	if err != nil {

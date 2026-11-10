@@ -61,6 +61,9 @@ MAP: dict[str, list[str]] = {
     "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest": ["Equity"],
     "CashAndCashEquivalentsAtCarryingValue": ["CashAndCashEquivalents"],
     "AssetsCurrent": ["CurrentAssets"],
+    "Assets": ["Assets"],
+    "GrossProfit": ["GrossProfit"],
+    "CostOfRevenue": ["CostOfSales"],
     "LiabilitiesCurrent": ["CurrentLiabilities"],
     "LongTermDebtNoncurrent": ["NoncurrentPortionOfNoncurrentBorrowings", "LongtermBorrowings"],
     "LongTermDebt": ["Borrowings"],
@@ -164,17 +167,25 @@ def extract(xj: dict) -> list[dict]:
     return out
 
 
+# version of the extracted concept list: extracts made before total assets, gross profit and cost
+# of sales were wanted (version 1) are fetched again
+CACHE_V = 2
+
+
 def filing_facts(f: dict) -> list[dict]:
     """Cached extract of one filing."""
     os.makedirs(FACTS_DIR, exist_ok=True)
     path = os.path.join(FACTS_DIR, f["fxo_id"] + ".json")
+    old = None
     if os.path.exists(path):
-        return json.load(open(path))["facts"]
+        old = json.load(open(path))
+        if old.get("v", 1) >= CACHE_V:
+            return old["facts"]
     xj = get_json(XBRL + f["json_url"])
     if xj is None:
-        return []
+        return old["facts"] if old else []   # keep the older extract rather than nothing
     facts = extract(xj)
-    json.dump({"fxo_id": f["fxo_id"], "period_end": f["period_end"], "added": f.get("date_added", "")[:10], "facts": facts},
+    json.dump({"fxo_id": f["fxo_id"], "period_end": f["period_end"], "added": f.get("date_added", "")[:10], "v": CACHE_V, "facts": facts},
               open(path, "w"), separators=(",", ":"))
     return facts
 

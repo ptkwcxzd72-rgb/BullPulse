@@ -78,6 +78,18 @@ class Financials(unittest.TestCase):
         self.assertAlmostEqual(f["rev_cagr3"], (120 / 90) ** (1 / 3) - 1, places=4)
         self.assertGreater(f["net_margin_fy"], f["net_margin_prev_fy"])
 
+    def test_assets_and_gross_profit(self):
+        facts = self.facts()
+        g = facts["facts"]["us-gaap"]
+        g["Assets"] = {"units": {"USD": [{"end": "2025-06-30", "val": 400}, {"end": "2025-12-31", "val": 420},
+                                         {"end": "2026-06-30", "val": 460}]}}
+        g["CostOfRevenue"] = {"units": {"USD": [fact("2025-01-01", "2025-12-31", 70), fact("2025-01-01", "2025-06-30", 30),
+                                                fact("2026-01-01", "2026-06-30", 40)]}}
+        f = SF.financials(facts)
+        self.assertEqual(f["assets"], 460)
+        self.assertEqual(f["assets_prev"], 400)          # the balance sheet a year before the latest
+        self.assertEqual(f["gross_profit_ttm"], 135 - 80)  # revenue less cost of sales, both trailing twelve months
+
     def test_ttm_columns_in_quarterly_reports_are_not_fiscal_years(self):
         def r(st, en, v, form):
             return {"start": st, "end": en, "val": v, "filed": "2026-01-01", "form": form}

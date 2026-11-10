@@ -27,6 +27,11 @@ LIAB_CUR = ["LiabilitiesCurrent"]
 DEBT_LT = ["LongTermDebtNoncurrent", "LongTermDebt"]
 DEBT_ST = ["LongTermDebtCurrent", "DebtCurrent", "ShortTermBorrowings"]
 SHARES = ["WeightedAverageNumberOfDilutedSharesOutstanding"]
+# for gross profitability, accruals and asset growth (Novy-Marx 2013; Sloan 1996; Cooper, Gulen
+# and Schill 2008)
+ASSETS = ["Assets"]
+GROSS = ["GrossProfit"]
+COST = ["CostOfRevenue", "CostOfGoodsAndServicesSold", "CostOfGoodsSold"]
 SBC = ["ShareBasedCompensation", "AllocatedShareBasedCompensationExpense"]
 TAX_RATE = 0.21   # US federal rate, used to put interest back on an after-tax basis
 
@@ -239,6 +244,21 @@ def financials(facts: dict) -> dict:
     lt, st = latest(instants(facts, DEBT_LT)), latest(instants(facts, DEBT_ST))
     if lt or st:
         put("debt", (lt[1] if lt else 0) + (st[1] if st else 0), 0)
+    # total assets now and about a year before, and gross profit (or revenue less cost of sales)
+    at = instants(facts, ASSETS)
+    if at:
+        e, v = latest(at)
+        put("assets", v, 0)
+        target = _d(e).toordinal() - 365
+        prev = [(abs(_d(k).toordinal() - target), k) for k in at if abs(_d(k).toordinal() - target) <= 45]
+        if prev:
+            put("assets_prev", at[min(prev)[1]], 0)
+    g = ttm(durations(facts, GROSS))
+    if g is None:
+        r_, c_ = ttm(rev), ttm(durations(facts, COST))
+        g = (r_[0], r_[1] - c_[1]) if r_ and c_ and r_[0] == c_[0] else None
+    if g is not None:
+        put("gross_profit_ttm", g[1], 0)
     sh = latest(instants(facts, ["EntityCommonStockSharesOutstanding"], "shares", "dei"))
     if not sh:   # weighted-average diluted shares of the latest period (not summed: shares are not a flow)
         p = durations(facts, SHARES, "shares")

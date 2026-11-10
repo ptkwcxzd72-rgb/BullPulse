@@ -55,7 +55,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Validation report $(date -u +%F)"
           git pull --rebase origin main
           git push
-          scripts/site_data.sh push --only data/validation.json data/panel.json data/valhist.json data/learning.json data/eventstudy.json data/live.json
+          scripts/site_data.sh push --only data/validation.json data/panel.json data/panel_research.json data/valhist.json data/learning.json data/eventstudy.json data/live.json
       - name: Publish the website with the new files
         env:
           GH_TOKEN: ${{ github.token }}

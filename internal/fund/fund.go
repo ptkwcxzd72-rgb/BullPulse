@@ -41,6 +41,9 @@ type Fin struct {
 	LiabCur          *float64 `json:"liab_cur"`
 	Debt             *float64 `json:"debt"`
 	Shares           *float64 `json:"shares"`
+	Assets           *float64 `json:"assets"`
+	AssetsPrev       *float64 `json:"assets_prev"` // total assets about a year before
+	GrossProfitTTM   *float64 `json:"gross_profit_ttm"`
 	TTMEnd           string   `json:"ttm_end"`
 	Ccy              string   `json:"ccy"` // reporting currency when not USD (UK annual reports)
 	BalanceEnd       string   `json:"balance_end"`
@@ -66,7 +69,8 @@ func (f Fin) SUE() float64 {
 func (f Fin) Scale(k float64) Fin {
 	for _, x := range []**float64{&f.RevenueTTM, &f.NetIncomeTTM, &f.OpIncomeTTM, &f.OCFTTM, &f.CapexTTM, &f.InterestTTM,
 		&f.DividendsPaidTTM, &f.EPSTTM, &f.DPSTTM, &f.EPS5yAgo, &f.EPSFY, &f.DPS3yAgo, &f.DPSFY, &f.FCFAvg3, &f.FCFFAvg3,
-		&f.SBCAvg3, &f.Equity, &f.Cash, &f.AssetsCur, &f.LiabCur, &f.Debt, &f.EPSQDiff, &f.EPSQSD} {
+		&f.SBCAvg3, &f.Equity, &f.Cash, &f.AssetsCur, &f.LiabCur, &f.Debt, &f.EPSQDiff, &f.EPSQSD,
+		&f.Assets, &f.AssetsPrev, &f.GrossProfitTTM} {
 		if *x != nil {
 			v := **x * k
 			*x = &v
