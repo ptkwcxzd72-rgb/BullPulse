@@ -45,6 +45,7 @@ def symbol(r: dict) -> str:
 
 HOSTS = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"]
 STATUS: dict[str, int] = {}   # what Yahoo answered this run, for the notice
+SAMPLES: dict[str, str] = {}  # the text of Yahoo's 400 answers, a few printed
 
 
 def get_chart(sym: str) -> dict | None:
@@ -62,6 +63,17 @@ def get_chart(sym: str) -> dict | None:
             STATUS[str(e.code)] = STATUS.get(str(e.code), 0) + 1
             if e.code == 404:
                 return {}
+            if e.code == 400:
+                # Yahoo's answer when the window holds no data ("Data doesn't exist for startDate
+                # ...", a stock listed later) or the request is malformed; keep one example
+                try:
+                    body = e.read().decode("utf-8", "ignore")[:300]
+                except Exception:
+                    body = ""
+                SAMPLES.setdefault(sym, body)
+                if "doesn't exist" in body or "No data found" in body:
+                    return {}
+                return None
         except Exception as e:  # timeouts, resets
             STATUS[type(e).__name__] = STATUS.get(type(e).__name__, 0) + 1
     return None
@@ -134,6 +146,8 @@ def main() -> None:
           + (f"; {len(todo) - done - len(short)} left for the next run" if have < len(jobs) else ""))
     print("  Yahoo's answers this run: " + (", ".join(f"{k} x{v}" for k, v in sorted(STATUS.items())) or "none")
           + (" (stopped early: repeated refusals, so Yahoo is throttling; the next run carries on)" if halted else ""))
+    for s, body in list(SAMPLES.items())[:4]:
+        print(f"  {s}: {body}")
     if short:
         print(f"  no history before 2017 (listed later, or not on Yahoo under today's symbol): {', '.join(short[:40])}")
 
