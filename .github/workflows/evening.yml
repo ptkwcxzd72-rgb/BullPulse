@@ -43,6 +43,10 @@ jobs:
         run: python scripts/sync_uk_prices.py
         timeout-minutes: 30
         continue-on-error: true
+      - name: Older prices for the backtests, 2008 to 2017 (each stock downloaded once; nothing to do once the archive is complete)
+        run: python scripts/archive_prices.py --budget-min 20
+        timeout-minutes: 25
+        continue-on-error: true
       - name: SEC figures (weekly, or sooner when coverage is thin)
         run: python scripts/fetch_fundamentals.py
         timeout-minutes: 20

@@ -168,7 +168,72 @@ func Load(repo asset.Repository, s Stock) (*Series, error) {
 	if err != nil {
 		return nil, ErrNoData
 	}
-	snaps := helper.ChanToSlice(ch)
+	return build(helper.ChanToSlice(ch))
+}
+
+// LoadLong is Load with the older history in archiveDir (scripts/archive_prices.py: 2008 to early
+// 2017, written once) joined in front. The live files hold about ten years and are rewritten as
+// dividends re-base total-return prices, so the archive is put on the live file's basis by the
+// median price ratio over the days both cover; if those ratios disagree by more than 2% (a split
+// one source missed) the archive is not used.
+func LoadLong(repo asset.Repository, s Stock, archiveDir string) (*Series, error) {
+	if s.ProviderTicker == "" {
+		return nil, ErrNoData
+	}
+	ch, err := repo.Get(s.ProviderTicker)
+	if err != nil {
+		return nil, ErrNoData
+	}
+	live := helper.ChanToSlice(ch)
+	if archiveDir != "" {
+		if old, err := asset.NewFileSystemRepository(archiveDir).Get(s.ProviderTicker); err == nil {
+			live = Splice(helper.ChanToSlice(old), live)
+		}
+	}
+	return build(live)
+}
+
+// Splice puts the archive's bars before the live ones, scaled to the live basis (see LoadLong).
+func Splice(arch, live []*asset.Snapshot) []*asset.Snapshot {
+	if len(arch) == 0 || len(live) == 0 {
+		return live
+	}
+	at := map[string]float64{}
+	for _, p := range arch {
+		if p.Close > 0 {
+			at[p.Date.Format("2006-01-02")] = p.Close
+		}
+	}
+	var ratios []float64
+	for _, p := range live {
+		if a, ok := at[p.Date.Format("2006-01-02")]; ok && p.Close > 0 {
+			ratios = append(ratios, p.Close/a)
+		}
+		if len(ratios) == 40 {
+			break
+		}
+	}
+	if len(ratios) < 10 {
+		return live
+	}
+	sorted := append([]float64(nil), ratios...)
+	sort.Float64s(sorted)
+	f := sorted[len(sorted)/2]
+	if sorted[0] < f*0.98 || sorted[len(sorted)-1] > f*1.02 {
+		return live
+	}
+	first := live[0].Date
+	var out []*asset.Snapshot
+	for _, p := range arch {
+		if !p.Date.Before(first) {
+			break
+		}
+		out = append(out, &asset.Snapshot{Date: p.Date, Open: p.Open * f, High: p.High * f, Low: p.Low * f, Close: p.Close * f, Volume: p.Volume})
+	}
+	return append(out, live...)
+}
+
+func build(snaps []*asset.Snapshot) (*Series, error) {
 	n := len(snaps)
 	if n == 0 {
 		return nil, ErrNoData

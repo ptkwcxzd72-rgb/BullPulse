@@ -112,7 +112,9 @@ func main() {
 	pitUK := flag.String("pit-uk", "data/fundamentals_pit_uk.jsonl", "UK point-in-time fundamentals")
 	fxPath := flag.String("fx-history", "data/fx_history.csv", "daily dollars and euros per pound")
 	out := flag.String("out", "site/data/panel.json", "output")
-	years := flag.Int("years", 10, "history length")
+	years := flag.Int("years", 18, "history length (with the archive, from 2009)")
+	siteYears := flag.Int("site-years", 10, "history in panel.json, which the website downloads; panel_full.json has all of it")
+	archive := flag.String("archive", "data/prices_archive", "older price history joined in front of the live files (scripts/archive_prices.py)")
 	insDir := flag.String("insiders", "data/history/insiders", "insider-dealing history")
 	memDir := flag.String("membership", "universe/history", "index membership history")
 	flag.Parse()
@@ -134,7 +136,7 @@ func main() {
 	var ss []core.Stock
 	var xs []*core.Series
 	for _, s := range stocks {
-		x, err := core.Load(repo, s)
+		x, err := core.LoadLong(repo, s, *archive)
 		if err != nil || len(x.Close) < core.MinBars+21 {
 			continue
 		}
@@ -419,7 +421,7 @@ func main() {
 	// index proxies: monthly returns aligned to the month-ends
 	bench := map[string][]any{}
 	for name, file := range map[string]string{"ftse100": "bench-ftse100", "sp500": "bench-sp500"} {
-		x, err := core.Load(repo, core.Stock{ProviderTicker: file})
+		x, err := core.LoadLong(repo, core.Stock{ProviderTicker: file}, *archive)
 		if err != nil {
 			continue
 		}
@@ -455,7 +457,7 @@ func main() {
 			scale[f.Key], pub[f.Key] = f.Scale, data[f.Key]
 		}
 	}
-	rdoc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months, "ids": ids, "scale": rscale, "fields": res,
+	rdoc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months, "ids": ids, "scale": rscale, "fields": res, // matches panel_full.json
 		"note": "Candidate signals for the signal study; same months and stocks as panel.json."}
 	if rb, err := json.Marshal(rdoc); err == nil {
 		os.MkdirAll(filepath.Dir(*out), 0o755)
@@ -465,20 +467,37 @@ func main() {
 		}
 		fmt.Printf("research panel: %d candidate signals, %.1f MB\n", len(res), float64(len(rb))/1e6)
 	}
-	doc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months, "ids": ids, "ex": ex, "sector": sec, "idx": idx, "trust": trust,
-		"scale": scale, "fields": pub, "fwd": fwd, "bench": bench,
-		"note": "Month-end values from information available at each date. Returns include dividends. Sentiment, news and insider data have no history."}
-	b, err := json.Marshal(doc)
-	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+	note := "Month-end values from information available at each date. Returns include dividends. Sentiment, news and insider data have no history."
+	write := func(path string, from int) {
+		f := map[string][][]any{}
+		for k, v := range pub {
+			f[k] = v[from:]
+		}
+		bm := map[string][]any{}
+		for k, v := range bench {
+			bm[k] = v[from:]
+		}
+		doc := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "months": months[from:], "ids": ids, "ex": ex, "sector": sec, "idx": idx, "trust": trust,
+			"scale": scale, "fields": f, "fwd": fwd[from:], "bench": bm, "note": note}
+		b, err := json.Marshal(doc)
+		if err == nil {
+			os.MkdirAll(filepath.Dir(path), 0o755)
+			err = os.WriteFile(path, b, 0o644)
+		}
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+		fmt.Printf("%s: %d stocks, %d month-ends (%s to %s), %.1f MB\n", filepath.Base(path), n, len(months)-from, months[from], months[len(months)-1], float64(len(b))/1e6)
 	}
-	os.MkdirAll(filepath.Dir(*out), 0o755)
-	if err := os.WriteFile(*out, b, 0o644); err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+	// the full history for research and the nightly scripts; the last siteYears for the website
+	from := 0
+	cut := ends[len(ends)-1].AddDate(-*siteYears, 0, 0)
+	for from < len(ends)-1 && !ends[from].After(cut) {
+		from++
 	}
-	fmt.Printf("panel: %d stocks, %d month-ends (%s to %s), %.1f MB\n", n, len(ends), months[0], months[len(months)-1], float64(len(b))/1e6)
+	write(filepath.Join(filepath.Dir(*out), "panel_full.json"), 0)
+	write(*out, from)
 	if err := writeValHist(filepath.Join(filepath.Dir(*out), "valhist.json"), months, ids, data, scale, 60); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)

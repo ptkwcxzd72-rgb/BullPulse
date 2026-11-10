@@ -44,9 +44,9 @@ jobs:
       - name: Month-end history for "Test this screen"
         run: go run ./cmd/panel
       - name: Data-quality check of the history (benchmarks against their own members, market values, returns, yields; a failure stops the publish)
-        run: python scripts/data_quality.py panel --panel site/data/panel.json --report reports/data_quality.md
+        run: python scripts/data_quality.py panel --panel site/data/panel_full.json --report reports/data_quality.md
       - name: Signal study (each signal's rank correlation with later returns, sector- and size-neutral; reports/signal_study.md)
-        run: node scripts/signal_study.js site/data/panel.json --report reports/signal_study.md
+        run: node scripts/signal_study.js site/data/panel_full.json --report reports/signal_study.md
         continue-on-error: true
       - name: Learn (walk-forward weights, champion and challenger), event studies and the live record
         run: go run ./cmd/learn
@@ -58,7 +58,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Validation report $(date -u +%F)"
           git pull --rebase origin main
           git push
-          scripts/site_data.sh push --only data/validation.json data/panel.json data/panel_research.json data/valhist.json data/learning.json data/eventstudy.json data/live.json
+          scripts/site_data.sh push --only data/validation.json data/panel.json data/panel_full.json data/panel_research.json data/valhist.json data/learning.json data/eventstudy.json data/live.json
       - name: Publish the website with the new files
         env:
           GH_TOKEN: ${{ github.token }}

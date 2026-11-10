@@ -5,7 +5,9 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+	"time"
 
+	"github.com/cinar/indicator/v2/asset"
 	"github.com/cinar/indicator/v2/strategy"
 )
 
@@ -102,5 +104,25 @@ func TestPositionsWithMoreActionsThanBars(t *testing.T) {
 	got := positions(3, acts)
 	if len(got) != 3 || got[0] != 0 || got[2] != 1 {
 		t.Fatalf("got %v", got)
+	}
+}
+
+func TestSpliceArchive(t *testing.T) {
+	day := func(k int) time.Time { return time.Date(2016, 1, 1, 0, 0, 0, 0, time.UTC).AddDate(0, 0, k) }
+	var arch, live []*asset.Snapshot
+	for k := 0; k < 60; k++ { // archive: days 0-59 at half the live basis
+		arch = append(arch, &asset.Snapshot{Date: day(k), Open: 50, High: 50, Low: 50, Close: 50 + float64(k)/2, Volume: 1})
+	}
+	for k := 30; k < 90; k++ { // live: from day 30
+		live = append(live, &asset.Snapshot{Date: day(k), Open: 100, High: 100, Low: 100, Close: 100 + float64(k), Volume: 1})
+	}
+	out := Splice(arch, live)
+	if len(out) != 90 || !out[30].Date.Equal(day(30)) || out[0].Close != 100 || out[29].Close != 129 {
+		t.Fatalf("archive not joined on the live basis: len %d, first %v, day 29 %v", len(out), out[0].Close, out[29].Close)
+	}
+	// an archive that disagrees with the live prices over the overlap is not used
+	arch[40].Close *= 1.5
+	if len(Splice(arch, live)) != 60 {
+		t.Fatalf("a mismatched archive should be ignored")
 	}
 }

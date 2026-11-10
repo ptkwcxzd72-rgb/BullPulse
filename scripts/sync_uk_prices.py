@@ -260,7 +260,9 @@ def sync_fx_history(path: str = "data/fx_history.csv") -> None:
     """Daily dollars and euros per pound, for converting past costs and filings."""
     series = {}
     for ccy in ("USD", "EUR"):
-        d = get_json(CHART.format(sym=f"GBP{ccy}%3DX", rng="10y"))
+        # from 2008, for the backtests' older history (data/prices_archive); a small file
+        p1 = int(dt.datetime(2008, 1, 1, tzinfo=dt.timezone.utc).timestamp())
+        d = get_json(f"https://query1.finance.yahoo.com/v8/finance/chart/GBP{ccy}%3DX?period1={p1}&period2={int(time.time())}&interval=1d")
         try:
             r = d["chart"]["result"][0]
             for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]):
