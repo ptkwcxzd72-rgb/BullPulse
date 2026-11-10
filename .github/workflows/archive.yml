@@ -1,0 +1,40 @@
+name: Price archive
+
+# Fills data/prices_archive (daily prices from 2008 to early 2017, for the long backtests) faster
+# than the evening job's 20-minute share. Run by hand until the notice says every stock is done;
+# after that the evening job only picks up stocks new to the universe.
+on:
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "Minutes to spend downloading"
+        default: "150"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive
+  cancel-in-progress: false
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 175
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Older prices, 2008 to 2017
+        run: python scripts/archive_prices.py --budget-min "${{ inputs.budget }}"
+      - name: Commit the archive
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/prices_archive
+          git diff --cached --quiet || git commit -m "Price archive $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 20; done
