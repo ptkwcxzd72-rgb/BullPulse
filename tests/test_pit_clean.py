@@ -35,6 +35,26 @@ class CleanSharesTest(unittest.TestCase):
         self.assertEqual(clean_shares(r, price=lambda d: 40.0, market="US"), [])
         self.assertEqual([x["fin"]["shares"] for x in r], before)
 
+    def test_unit_error_years_ago_after_buybacks(self):
+        # Assurant: 118m shares in 2009 (one filing in thousands), 51m today; 2300x isn't a clean
+        # power of ten from today's level, but 1000x is from the neighbouring filings
+        r = rows(1.18e8, 1.18e11, 1.15e8, 8e7, 5.1e7)
+        clean_shares(r, price=lambda d: 150.0, market="US", index="S&P 500")
+        self.assertAlmostEqual(r[1]["fin"]["shares"], 1.18e8)
+        self.assertAlmostEqual(r[0]["fin"]["shares"], 1.18e8)
+
+    def test_years_of_filings_in_the_wrong_unit(self):
+        # CenterPoint: early filings 1000x too large, the count since then up 50%
+        r = rows(4.3e11, 4.3e11, 4.3e8, 5.5e8, 6.5e8)
+        clean_shares(r, price=lambda d: 30.0, market="US", index="S&P 500")
+        self.assertEqual([round(x["fin"]["shares"] / 1e8, 1) for x in r], [4.3, 4.3, 4.3, 5.5, 6.5])
+
+    def test_bad_filing_doesnt_mislead_the_next(self):
+        r = rows(1e9, 3.0, 1.02e9, 1.05e9)
+        clean_shares(r, price=lambda d: 50.0, market="US", index="S&P 500")
+        self.assertEqual(r[0]["fin"]["shares"], 1e9)
+        self.assertNotIn("shares", r[1]["fin"])
+
     def test_impossible_value_is_dropped(self):
         r = rows(1e9, 3.0)  # a share count that can't be rescaled to anything sensible
         clean_shares(r, price=lambda d: 50.0, market="US", index="S&P 500")

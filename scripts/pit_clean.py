@@ -102,11 +102,27 @@ def clean_shares(rows: list[dict], price=None, market: str = "US", per_unit: flo
         fits = [j for j in range(-9, 10) if abs(j) >= 2 and ilo <= c / 10 ** j <= ihi]
         if fits:
             level /= 10 ** min(fits, key=abs)
-    for r in have:
-        j = _power_of_ten(adj(r) / level)
+
+    def rescale(r, ref):
+        j = _power_of_ten(adj(r) / ref)
         if j:
             r["fin"]["shares"] = r["fin"]["shares"] / 10 ** j
             notes.append(f"{r.get('id', '')} {r['date']}: share count {'divided' if j > 0 else 'multiplied'} by {10 ** abs(j):,}")
+
+    # Each filing is compared with its neighbour on the anchor's side, not with the anchor itself:
+    # over fifteen years buybacks and issues move the count far enough (Assurant's fell from 118m
+    # to 51m) that a filing in thousands is no longer a clean power of ten from today's level,
+    # while neighbouring filings a quarter apart differ by a few per cent.
+    a = have.index(anchor)
+    rescale(anchor, level)
+    for seq in (range(a - 1, -1, -1), range(a + 1, len(have))):
+        ref = adj(anchor)
+        for k in seq:
+            rescale(have[k], ref)
+            # a filing still far from its neighbour (unrepairable, dropped below) isn't followed
+            if abs(math.log10(max(adj(have[k]), 1e-9) / ref)) < 1.3:
+                ref = adj(have[k])
+    for r in have:
         c = cap(r)
         if c is not None and not lo <= c <= hi:
             r["fin"].pop("shares", None)
