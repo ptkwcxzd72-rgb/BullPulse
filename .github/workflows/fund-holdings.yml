@@ -1,0 +1,39 @@
+name: Fund holdings
+
+# Quarterly holdings of the iShares S&P 400 and 600 funds from SEC Form N-PORT
+# (scripts/fund_holdings.py), the source of the mid and small-cap membership history.
+on:
+  schedule:
+    - cron: "10 7 3 * *" # 07:10 UTC on the 3rd of each month
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Filings to read"
+        default: "60"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: evening
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python scripts/fund_holdings.py --max "${{ inputs.max || 60 }}"
+      - name: Commit the holdings
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/history/fund_holdings
+          git diff --cached --quiet || git commit -m "Fund holdings $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 20; done
