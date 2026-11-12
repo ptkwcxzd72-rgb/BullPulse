@@ -7,21 +7,14 @@
 #   scripts/price_store.sh push [prices|prices_archive ...]   # upload them (default: prices)
 #
 # Each push also keeps the version it replaces as <name>.prev.tar.gz, so one bad night can be
-# undone. A push is refused when the folder has far fewer files than the universe (a failed
-# download must never replace the store). Needs GH_TOKEN (the workflow's token).
+# undone. A push is refused when the folder has far fewer files than the store had when the job
+# started (a failed download must never replace the store). Needs GH_TOKEN (the workflow's token).
 set -euo pipefail
 TAG=price-store
 REPO="${GITHUB_REPOSITORY:-ptkwcxzd72-rgb/BullPulse}"
 WORK="${RUNNER_TEMP:-/tmp}/price-store"
 mkdir -p "$WORK"
 
-universe_size() {
-  # stocks with a provider ticker, plus the two benchmarks
-  python3 - <<'E'
-import csv, glob
-print(sum(1 for f in glob.glob("universe/*.csv") for r in csv.DictReader(open(f)) if r.get("provider_ticker")) + 2)
-E
-}
 
 case "${1:-}" in
   pull)
@@ -30,7 +23,8 @@ case "${1:-}" in
         rm -rf "data/$a"
         mkdir -p data
         tar -xzf "$WORK/$a.tar.gz" -C data
-        echo "Price store: data/$a has $(ls "data/$a" | wc -l) files"
+        ls "data/$a" | wc -l > "$WORK/$a.count"
+        echo "Price store: data/$a has $(cat "$WORK/$a.count") files"
       elif [[ -d "data/$a" ]]; then
         echo "::warning::Price store: no $a.tar.gz in the release; using the files in the checkout"
       else
@@ -45,11 +39,12 @@ case "${1:-}" in
     gh release view "$TAG" -R "$REPO" >/dev/null 2>&1 ||
       gh release create "$TAG" -R "$REPO" --title "Price store" --latest=false \
         --notes "Daily price files for the nightly jobs (scripts/price_store.sh). Not a software release."
-    need=$(universe_size)
     for a in "$@"; do
       n=$(ls "data/$a" 2>/dev/null | wc -l)
-      if (( n * 10 < need * 9 )); then
-        echo "::error::Price store: data/$a has $n files for $need stocks; not uploaded"
+      # at least 90% of what the store held when this job started (new stocks only add files)
+      had=$(cat "$WORK/$a.count" 2>/dev/null || echo 100)
+      if (( n * 10 < had * 9 )); then
+        echo "::error::Price store: data/$a has $n files, the store had $had; not uploaded"
         exit 1
       fi
       tar -czf "$WORK/$a.new.tar.gz" -C data "$a"

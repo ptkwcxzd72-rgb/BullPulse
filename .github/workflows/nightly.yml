@@ -208,13 +208,15 @@ jobs:
         run: |
           git config user.name "bullpulse-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          GH_TOKEN=${{ github.token }} scripts/price_store.sh push prices
+          # prices go to the price store; a refused upload still lets the rest be committed, then fails the step
+          ps=0; GH_TOKEN=${{ github.token }} scripts/price_store.sh push prices || ps=1
           git add data
           git diff --cached --quiet || git commit -m "Nightly data $(date -u +%F)"
           # if another run saved the same generated files meanwhile, keep this run's (newer) versions
           git pull --rebase -X theirs origin main
           git push
           scripts/site_data.sh push
+          exit $ps
 
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5

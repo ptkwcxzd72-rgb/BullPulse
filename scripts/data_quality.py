@@ -68,6 +68,13 @@ def check_prices(universe: str, prices: str, rep: Report) -> None:
             tail = fh.read().decode("utf-8", "ignore").strip().splitlines()
         if tail and tail[-1][:4].isdigit():
             last[r["ticker"] + ":" + r.get("market", "")] = tail[-1][:10]
+    small = {"S&P 400", "S&P 600", "FTSE SmallCap"}
+    # mid and small caps (new in November 2026) are reported but can't stop the publish
+    smid = [r for r in rows if r.get("index") in small]
+    if smid:
+        have = sum(1 for r in smid if r["ticker"] + ":" + r.get("market", "") in last)
+        (rep.warn if have < 0.9 * len(smid) else rep.ok)(f"mid and small caps: {have} of {len(smid)} have a price file")
+    rows = [r for r in rows if r.get("index") not in small]
     for mkt in ("US", "UK"):
         uni = [r for r in rows if (r.get("market") or "US") == mkt]
         have = [k for k in last if k.endswith(":" + mkt)]
