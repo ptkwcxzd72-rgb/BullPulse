@@ -122,6 +122,45 @@
     return w;
   }
 
+  // The aim's past skill at month m: the average rank correlation between its score and the next
+  // month's return over the `len` months before m, among the eligible stocks (Grinold's IC). Only
+  // months whose outcome was known at m count.
+  function pastIC(V, m, o, len) {
+    const ics = [];
+    // each month's IC depends only on the settings that choose and score stocks, so it is kept
+    const key = JSON.stringify([o.aim, o.market, o.trusts, o.rankMode, o.avoidSectors, o.avoidIds]);
+    const memo = V._ic || (V._ic = new Map());
+    if (!memo.has(key)) memo.set(key, new Map());
+    const mk = memo.get(key);
+    for (let k = Math.max(0, m - (len || 36)); k < m; k++) {
+      if (!mk.has(k)) {
+        const { score } = aimScores(V, k, o), xs = [], ys = [];
+        for (const [i, sc] of score) { const y = V.fwd(k, i); if (y != null && Math.abs(y) < 2) { xs.push(sc); ys.push(y); } }
+        const rk = a => { const o2 = a.map((x, j) => [x, j]).sort((p, q) => p[0] - q[0]), r = new Array(a.length); o2.forEach(([, j], q) => r[j] = q); return r; };
+        mk.set(k, xs.length < 20 ? null : corr(rk(xs), rk(ys)));
+      }
+      if (mk.get(k) != null) ics.push(mk.get(k));
+    }
+    return ics.length >= 12 ? ics.reduce((a, b) => a + b, 0) / ics.length : 0;
+  }
+  // Mean-variance weights, long only, at most `cap` in any stock: maximise w'a - (lambda/2) w'Cw
+  // (projected gradient). Expected active returns follow Grinold's rule, a = IC x volatility x
+  // score (standardised), with the IC the aim has actually shown before; with no past skill
+  // (IC <= 0) every a is zero and this is the lowest-risk mix.
+  const RISK_AVERSION = 10;   // on monthly returns; a setting chosen in advance, not fitted to the backtest
+  function meanVariance(C, a, cap) {
+    const n = C.length;
+    let w = new Array(n).fill(1 / n);
+    const proj = v => {
+      let lo = -1, hi = 1;
+      for (let k = 0; k < 60; k++) { const s = (lo + hi) / 2, t = v.reduce((x, y) => x + Math.min(cap, Math.max(0, y - s)), 0); if (t > 1) lo = s; else hi = s; }
+      return v.map(x => Math.min(cap, Math.max(0, x - (lo + hi) / 2)));
+    };
+    const step = 1 / (RISK_AVERSION * Math.max(...C.map((r, k) => r[k])) * n);
+    for (let it = 0; it < 500; it++) { const g = mv(C, w); w = proj(w.map((x, k) => x + step * (a[k] - RISK_AVERSION * g[k]))); }
+    return w;
+  }
+
   // the index-fund core: `core` percent in an index fund (rebalanced each month, 0.1% a year in
   // charges), the rest in the chosen stocks. ix: the index's monthly returns.
   const FUND_FEE = 0.001;
@@ -197,14 +236,8 @@
     return L[L.length - 1] < avg;
   }
 
-  // Choose the portfolio at month m of view V. opt: settings (see DEFAULTS); ctx: { hist: a view
-  // with return history and hm, the month in it to look back from (defaults to V, m), names: id ->
-  // name, extra: id -> { prob6, tone30 } used only to break near-ties, held: Set of indexes already
-  // held (kept while they rank within twice the size) }. Returns { picks: [{ i, w, score, why }],
-  // left: [{ i, reason }] }.
-  function choose(V, m, opt, ctx) {
-    const o = Object.assign({}, DEFAULTS, opt || {});
-    ctx = ctx || {};
+  // the aim's score (0..1) for each eligible stock at month m: { ids, score: Map }
+  function aimScores(V, m, o) {
     const aim = AIMS[o.aim] || AIMS.balanced;
     const avoidS = new Set(o.avoidSectors || []), avoidI = new Set(o.avoidIds || []);
     const P = V.P;
@@ -243,6 +276,20 @@
       for (const k of keys) if (R[k].has(i)) { s += aim.recipe[k] * R[k].get(i); w += aim.recipe[k]; }
       if (w >= 0.6) score.set(i, s / w);   // needs most of the recipe's signals
     }
+    return { ids, score };
+  }
+
+  // Choose the portfolio at month m of view V. opt: settings (see DEFAULTS); ctx: { hist: a view
+  // with return history and hm, the month in it to look back from (defaults to V, m), names: id ->
+  // name, extra: id -> { prob6, tone30 } used only to break near-ties, held: Set of indexes already
+  // held (kept while they rank within twice the size) }. Returns { picks: [{ i, w, score, why }],
+  // left: [{ i, reason }] }.
+  function choose(V, m, opt, ctx) {
+    const o = Object.assign({}, DEFAULTS, opt || {});
+    ctx = ctx || {};
+    const aim = AIMS[o.aim] || AIMS.balanced;
+    const P = V.P;
+    const { ids, score } = aimScores(V, m, o);
     // near-ties (within 1 point on a 0..100 scale) broken by the untested signals, then by name
     const extra = ctx.extra || {};
     const tb = i => { const e = extra[P.ids[i]] || {}; return (e.prob6 ?? 0.5) + (e.tone30 ?? 0) * 0.05; };
@@ -299,9 +346,17 @@
     }
     let tot = raw.reduce((a, b) => a + b, 0) || 1;
     let w = raw.map(x => x / tot);
-    if ((mode === "erc" || mode === "minvar") && picks.length > 1) {
+    let skill = null;
+    if ((mode === "erc" || mode === "minvar" || mode === "opt") && picks.length > 1) {
       const C = covariance(picks.map(p => trailing(H, hm, hidx(p.i), 36)), picks.map(p => V.val("vol1y", m, p.i)));
-      w = mode === "erc" ? riskParity(C) : minVariance(C, Math.max(o.cap / 100, 1.5 / picks.length));
+      const capW = Math.max(o.cap / 100, 1.5 / picks.length);
+      if (mode === "opt") {
+        skill = ctx.ic != null ? ctx.ic : pastIC(V, m, o, 36);
+        const sc = [...score.values()], mu = sc.reduce((x, y) => x + y, 0) / sc.length;
+        const sd = Math.sqrt(sc.reduce((x, y) => x + (y - mu) ** 2, 0) / Math.max(1, sc.length - 1)) || 1;
+        const alpha = picks.map((p, k) => Math.max(0, skill) * Math.sqrt(C[k][k]) * (p.score - mu) / sd);
+        w = meanVariance(C, alpha, capW);
+      } else w = mode === "erc" ? riskParity(C) : minVariance(C, capW);
     }
     // both limits together: trim anything over the per-stock or sector limit and pass the excess to
     // stocks with room under both, in proportion; whatever can't be placed stays as cash
@@ -330,7 +385,7 @@
       trendDown = bk.reduce((n, k) => n + (belowAverage(hp.bench && hp.bench[k], hm, 10) ? 1 : 0), 0) * 2 > bk.length;
       if (trendDown) w = w.map(x => x * 0.5);
     }
-    return { trendDown, picks: picks.map((p, k) => ({ i: p.i, w: w[k], score: p.score })), left: left.slice(0, 12), eligible: ids.length, aim: o.aim };
+    return { trendDown, skill, picks: picks.map((p, k) => ({ i: p.i, w: w[k], score: p.score })), left: left.slice(0, 12), eligible: ids.length, aim: o.aim };
   }
 
   // Risk report for a portfolio, as a portfolio manager would check it before committing money.
@@ -526,6 +581,6 @@
     return { rows, spent, fees, cash: amount - spent - fees };
   }
 
-  const api = { AIMS, SIGNALS, DEFAULTS, FUNDS, riskReport, riskContext, livePortfolio, randomStrategy, blend, signalRecord, backtest, choose, strategy, shares, why, corr, company, covariance, riskParity, minVariance };
+  const api = { AIMS, SIGNALS, DEFAULTS, FUNDS, riskReport, riskContext, livePortfolio, randomStrategy, blend, signalRecord, backtest, choose, strategy, shares, why, corr, company, covariance, riskParity, minVariance, meanVariance };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.GeneratorCore = api;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -215,4 +215,16 @@ if (fs.existsSync("site/data/generator.json")) {
   assert(X.signals && X.signals.US && X.signals.LSE, "signal report card");
   console.log("generator.json checked");
 }
+
+// mean-variance: no expected returns gives the lowest-risk mix; an expected return tilts towards it
+{
+  const C = [[0.0064, 0.001, 0.001], [0.001, 0.0025, 0.001], [0.001, 0.001, 0.0049]];
+  const w0 = G.meanVariance(C, [0, 0, 0], 1), wmv = G.minVariance(C, 1);
+  w0.forEach((x, k) => assert(Math.abs(x - wmv[k]) < 0.02, "no alpha = minimum variance"));
+  const w1 = G.meanVariance(C, [0.01, 0, 0], 1);
+  assert(w1[0] > w0[0] + 0.05, "expected return raises the weight");
+  assert(Math.abs(w1.reduce((a, b) => a + b, 0) - 1) < 1e-6 && w1.every(x => x >= 0), "fully invested, long only");
+  const w2 = G.meanVariance(C, [0.05, 0, 0], 0.5);
+  assert(w2[0] <= 0.5 + 1e-9, "the stock limit holds");
+}
 console.log("generator tests passed");

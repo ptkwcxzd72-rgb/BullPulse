@@ -49,6 +49,7 @@ const REVIEW = [
   ["index", "Index-aware: the 50 largest eligible companies, tilted towards the score", { build: "index", n: 50 }],
   ["sector", "Rank within each sector (sector-neutral)", { rankMode: "sector", build: "" }],
   ["erc", "Equal risk from each stock (risk parity)", { weighting: "erc", build: "" }],
+  ["opt", "Mean-variance: expected returns from the aim's past skill (Grinold), shrunk covariance", { weighting: "opt", build: "" }],
   ["trend", "Half in cash when the index is below its 10-month average", { trend: true }],
   ["n50", "50 stocks, chosen by score", { n: 50, build: "" }],
 ];
