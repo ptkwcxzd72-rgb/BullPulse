@@ -25,3 +25,7 @@ site/sitemap.xml
 /screener
 /learn
 /validate
+
+# daily prices live in the price-store release (scripts/price_store.sh)
+/data/prices/
+/data/prices_archive/
