@@ -48,6 +48,9 @@ jobs:
       - name: Signal study (each signal's rank correlation with later returns, sector- and size-neutral; reports/signal_study.md)
         run: node scripts/signal_study.js site/data/panel_full.json --report reports/signal_study.md
         continue-on-error: true
+      - name: Fama-French factor returns for the Strategy Lab's factor check (Kenneth French's data library)
+        run: python scripts/fetch_factors.py
+        continue-on-error: true
       - name: Learn (walk-forward weights, champion and challenger), event studies and the live record
         run: go run ./cmd/learn -panel site/data/panel_full.json
       - name: Commit report
@@ -58,7 +61,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Validation report $(date -u +%F)"
           git pull --rebase origin main
           git push
-          scripts/site_data.sh push --only data/validation.json data/panel.json data/panel_full.json data/panel_research.json data/valhist.json data/learning.json data/eventstudy.json data/live.json
+          scripts/site_data.sh push --only data/factors.json data/validation.json data/panel.json data/panel_full.json data/panel_research.json data/valhist.json data/learning.json data/eventstudy.json data/live.json
       - name: Publish the website with the new files
         env:
           GH_TOKEN: ${{ github.token }}

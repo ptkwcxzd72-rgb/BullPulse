@@ -510,6 +510,67 @@
     return JSON.stringify(c);
   }
 
-  const api = { run, stats, bootstrap, targets, makeView, benchRets, key, fxAt, PCT, augment, snapshotPanel };
+  // Factor check: regress a portfolio's monthly returns above the risk-free rate on the Fama-French
+  // factors (F: one set from factors.json; months YYYY-MM). rets[k] is the return over the month
+  // ending dates[k]; usd(k) converts it to dollars, the factors' currency (identity if already).
+  // model "ff3": market, size, value; "ff5m": the five factors and momentum (Carhart). Returns
+  // alpha a year with its Newey-West t (3 lags) and 95% interval, the loadings, R-squared and
+  // months used; null with fewer than 36 matched months.
+  const FACTOR_NAMES = { mkt: "Market", smb: "Size (small minus big)", hml: "Value (high minus low book-to-market)", rmw: "Profitability (robust minus weak)", cma: "Investment (conservative minus aggressive)", mom: "Momentum" };
+  function factorRegression(rets, dates, F, model, usd) {
+    if (!F || !F.months) return null;
+    const keys = model === "ff3" ? ["mkt", "smb", "hml"] : ["mkt", "smb", "hml", "rmw", "cma", "mom"];
+    const at = new Map(F.months.map((m, k) => [m, k]));
+    const X = [], y = [], used = [];
+    rets.forEach((r, k) => {
+      const d = dates[k]; if (r == null || !d) return;
+      const j = at.get(d.slice(0, 7)); if (j == null) return;
+      // a return dated in the middle of a month is the partial last month: left out
+      if (k === rets.length - 1 && +d.slice(8, 10) < 25) return;
+      const ru = usd ? usd(k, r) : r;
+      if (ru == null || !isFinite(ru)) return;
+      X.push([1, ...keys.map(f => F[f][j])]); y.push(ru - F.rf[j]); used.push(d.slice(0, 7));
+    });
+    const n = y.length, p = keys.length + 1;
+    if (n < 36) return null;
+    // OLS by the normal equations
+    const XtX = Array.from({ length: p }, () => new Array(p).fill(0)), Xty = new Array(p).fill(0);
+    for (let k = 0; k < n; k++) for (let a = 0; a < p; a++) { Xty[a] += X[k][a] * y[k]; for (let b = 0; b < p; b++) XtX[a][b] += X[k][a] * X[k][b]; }
+    const inv = invert(XtX); if (!inv) return null;
+    const beta = inv.map(row => row.reduce((s, v, b) => s + v * Xty[b], 0));
+    const e = y.map((v, k) => v - X[k].reduce((s, x, a) => s + x * beta[a], 0));
+    const ym = y.reduce((a, b) => a + b, 0) / n, sst = y.reduce((a, v) => a + (v - ym) ** 2, 0), sse = e.reduce((a, v) => a + v * v, 0);
+    // Newey-West covariance of the coefficients, 3 lags
+    const L = 3, S = Array.from({ length: p }, () => new Array(p).fill(0));
+    for (let lag = 0; lag <= L; lag++) {
+      const w = lag === 0 ? 1 : 1 - lag / (L + 1);
+      for (let k = lag; k < n; k++) for (let a = 0; a < p; a++) for (let b = 0; b < p; b++) {
+        const v = w * e[k] * e[k - lag] * X[k][a] * X[k - lag][b];
+        S[a][b] += v; if (lag > 0) S[b][a] += v;
+      }
+    }
+    const mul = (A, B) => A.map(r => B[0].map((_, j) => r.reduce((s, v, k) => s + v * B[k][j], 0)));
+    const V = mul(mul(inv, S), inv).map(r => r.map(v => v * n / (n - p)));
+    const se = V.map((r, a) => Math.sqrt(Math.max(0, r[a])));
+    return {
+      model, months: n, from: used[0], to: used[n - 1],
+      alpha: beta[0] * 12, alphaT: se[0] > 0 ? beta[0] / se[0] : null, alphaLo: (beta[0] - 1.96 * se[0]) * 12, alphaHi: (beta[0] + 1.96 * se[0]) * 12,
+      loadings: keys.map((f, a) => ({ key: f, name: FACTOR_NAMES[f], beta: beta[a + 1], t: se[a + 1] > 0 ? beta[a + 1] / se[a + 1] : null })),
+      r2: sst > 0 ? 1 - sse / sst : null,
+    };
+  }
+  function invert(A) {
+    const n = A.length, M = A.map((r, i) => [...r, ...Array.from({ length: n }, (_, j) => (i === j ? 1 : 0))]);
+    for (let c = 0; c < n; c++) {
+      let piv = c; for (let r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[piv][c])) piv = r;
+      if (Math.abs(M[piv][c]) < 1e-14) return null;
+      [M[c], M[piv]] = [M[piv], M[c]];
+      const d = M[c][c]; for (let j = 0; j < 2 * n; j++) M[c][j] /= d;
+      for (let r = 0; r < n; r++) if (r !== c) { const f = M[r][c]; if (f) for (let j = 0; j < 2 * n; j++) M[r][j] -= f * M[c][j]; }
+    }
+    return M.map(r => r.slice(n));
+  }
+
+  const api = { run, stats, bootstrap, targets, makeView, benchRets, key, fxAt, PCT, augment, snapshotPanel, factorRegression };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.LabEngine = api;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -13,7 +13,7 @@
 # files, which are kept from the published copy (they are only rebuilt monthly).
 set -euo pipefail
 BRANCH=site-data
-KEEP=(data/panel.json data/validation.json data/valhist.json data/learning.json data/eventstudy.json data/live.json)
+KEEP=(data/factors.json data/panel.json data/validation.json data/valhist.json data/learning.json data/eventstudy.json data/live.json)
 
 fetch() { git fetch -q --depth=1 origin "$BRANCH" 2>/dev/null; }
 
@@ -30,7 +30,8 @@ push)
   if [[ "${1:-}" == "--only" ]]; then
     shift
     cp -a "$published/." "$tmp/"
-    for p in "$@"; do mkdir -p "$tmp/$(dirname "$p")"; rm -rf "${tmp:?}/$p"; cp -a "site/$p" "$tmp/$p"; done
+    # a file this run didn't produce keeps its published copy
+    for p in "$@"; do [[ -e "site/$p" ]] || continue; mkdir -p "$tmp/$(dirname "$p")"; rm -rf "${tmp:?}/$p"; cp -a "site/$p" "$tmp/$p"; done
   else
     for d in data feeds stock; do
       [[ -d "site/$d" ]] && { mkdir -p "$tmp/$d"; cp -a "site/$d/." "$tmp/$d/"; }

@@ -70,4 +70,23 @@ const gia = L.run(PD, FX, Object.assign({}, base, { start: 1000000, account: "gi
 assert(gia.taxDiv > 0 && gia.taxCGT === 0, "UK dividend tax on a general account");
 const giaUS = L.run(PD, FX, Object.assign({}, base, { start: 1000000, account: "gia", source: { type: "list", ids: ["US-A"] } }));
 assert(giaUS.taxDiv < gia.taxDiv, "tax withheld in the US counts against UK dividend tax");
+
+// 10. factor regression: a portfolio built as 0.5% a month + 1.2 x market + 0.4 x size gives those back
+{
+  let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647 - 0.5; };
+  const n = 120, F = { months: [], mkt: [], smb: [], hml: [], rmw: [], cma: [], mom: [], rf: [] }, rets = [], dates = [];
+  for (let k = 0; k < n; k++) {
+    const y = 2010 + Math.floor(k / 12), mo = String(k % 12 + 1).padStart(2, "0");
+    F.months.push(`${y}-${mo}`);
+    for (const f of ["mkt", "smb", "hml", "rmw", "cma", "mom"]) F[f].push(rnd() * 0.08);
+    F.rf.push(0.001);
+    rets.push(0.001 + 0.005 + 1.2 * F.mkt[k] + 0.4 * F.smb[k] + rnd() * 0.002);
+    dates.push(`${y}-${mo}-28`);
+  }
+  const fr = L.factorRegression(rets, dates, F, "ff5m");
+  assert(Math.abs(fr.alpha - 0.06) < 0.01 && fr.alphaT > 5, "alpha recovered");
+  assert(Math.abs(fr.loadings[0].beta - 1.2) < 0.02 && Math.abs(fr.loadings[1].beta - 0.4) < 0.02 && Math.abs(fr.loadings[2].beta) < 0.03, "loadings recovered");
+  assert(fr.r2 > 0.99 && fr.months === n, "fit");
+  assert(L.factorRegression(rets.slice(0, 30), dates.slice(0, 30), F, "ff3") === null, "too few months");
+}
 console.log("lab engine: all tests passed");

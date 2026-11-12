@@ -30,7 +30,7 @@ const PRESETS = {
 };
 const COLORS = ["var(--accent)", "var(--fm)", "var(--amber)", "var(--blue)"];
 
-let P, FX, D, BY = {}, MONTHLY = null, BENCH = null;
+let P, FX, D, BY = {}, MONTHLY = null, BENCH = null, FF = null;
 let UI = store.get("bp-lab", null) || {
   mode: "list", ids: [], cw: {}, rule: { market: "ALL", idx: "", sector: "", noTrusts: true, rules: [["score", ">=", 60]], w: { T: 50, M: 50, G: 0, F: 0, V: 0 }, top: 20, keep: 40 },
   weighting: "equal", cap: 20, rebalance: "Q", drift: 5, exit200: false, exitTo: "spread", start: 10000, monthly: 0, ccy: "GBP", from: "", account: "isa", taxBand: "higher",
@@ -253,6 +253,7 @@ function render() {
       ${chart(lines, dates, revealed && r.rets.length >= 60 ? cut + 1 : null)}
       <div class="leg"><span><i style="background:${COLORS[0]}"></i>${esc(S.name || "This strategy")}</span><span><i style="background:var(--us)"></i>S&amp;P 500 fund</span><span><i style="background:var(--uk)"></i>FTSE 100 fund</span><span><i style="background:var(--fm)"></i>Average stock${S.source.market && S.source.market !== "ALL" ? " in the market" : ""}</span><span>All in ${ccy === "USD" ? "dollars" : "pounds"}, dividends reinvested</span></div>
     </div>
+    ${factorCard(r, S, vis)}
     <div class="card cc"><h3>Compared with the alternatives</h3>
       <div class="tw"><table class="tt"><thead><tr><th></th><th>Strategy</th><th>S&amp;P 500</th><th>FTSE 100</th><th>Average stock</th></tr></thead><tbody>
       ${row("Return a year", s => s.cagr, pc)}${row("Yearly swing (volatility)", s => s.vol, pl)}${row("Return per unit of risk (Sharpe, before cash)", s => s.sharpe, v => v == null ? "–" : v.toFixed(2))}
@@ -410,6 +411,7 @@ async function drawTracked() {
     [P, D] = await Promise.all([get("data/panel.json"), get("data/snapshot.json")]);
     E.augment(P);   // 12-month return, momentum, volatility and trend history from the panel's returns
     FX = (await get("data/fx_history.json").catch(() => ({ usdPerGbp: [] }))).usdPerGbp;
+    FF = await get("data/factors.json").catch(() => null);
   } catch (e) { $("res").innerHTML = `<div class="card emptyp">The history file couldn't be loaded. Check your connection and refresh the page.</div>`; return; }
   D.stocks.forEach(s => BY[s.id] = s);
   $("stocklist").innerHTML = D.stocks.map(s => `<option value="${esc(s.name)} (${esc(s.t)})">`).join("");
@@ -439,3 +441,28 @@ async function drawTracked() {
   drawBuilder(); bindBuilder(); update(); drawTracked();
 })();
 })();
+
+// Does the strategy find returns the standard factors don't explain? Monthly returns above cash,
+// in dollars, regressed on the Fama-French factors (US set for US or mixed portfolios, the European
+// set for UK ones), over the months shown (hidden months stay hidden).
+function factorCard(r, S, vis) {
+  const mk = (S.source && S.source.market) || "ALL", set = mk === "LSE" ? "europe" : "us";
+  const F = FF && FF[set];
+  if (!F) return "";
+  const usd = S.ccy === "GBP" ? (k, x) => { const a = E.fxAt(FX, k ? r.dates[k - 1] : r.months[0]), b2 = E.fxAt(FX, r.dates[k]); return a && b2 ? (1 + x) * b2 / a - 1 : null; } : null;
+  const rets = r.rets.slice(0, vis), dates = r.dates.slice(0, vis);
+  const f5 = E.factorRegression(rets, dates, F, "ff5m", usd), f3 = E.factorRegression(rets, dates, F, "ff3", usd);
+  if (!f5) return `<div class="card cc"><h3>Against the Fama–French factors</h3><p class="note">Needs at least 36 months that the factor data covers (it runs to ${esc(F.months[F.months.length - 1])}).</p></div>`;
+  const t = v => v == null ? "–" : v.toFixed(1);
+  const verdict = f5.alphaT >= 2 ? "Return beyond what the factors explain, with t above 2: unlikely to be luck alone over these months." :
+    f5.alphaT <= -2 ? "Less than the factors explain, with t below −2." :
+    "Not reliably different from zero: the factors explain the result about as well as skill would.";
+  return `<div class="card cc"><h3>Against the Fama–French factors <span class="sub">${set === "us" ? "US" : "European"} factors, ${esc(f5.from)} to ${esc(f5.to)}, ${f5.months} months, in dollars</span></h3>
+    <div class="stats"><div><span class="sub">Alpha a year (five factors and momentum)</span><span class="v ${cls(f5.alpha)}">${pc(f5.alpha)}</span><span class="s">95% range ${pc(f5.alphaLo)} to ${pc(f5.alphaHi)}; t ${t(f5.alphaT)}</span></div>
+    <div><span class="sub">Alpha a year (three factors)</span><span class="v ${cls(f3.alpha)}">${pc(f3.alpha)}</span><span class="s">t ${t(f3.alphaT)}</span></div>
+    <div><span class="sub">Explained by the factors</span><span class="v">${Math.round(f5.r2 * 100)}%</span><span class="s">of the month-to-month variation</span></div></div>
+    <p class="note">${verdict}</p>
+    <div class="tw"><table class="tt"><thead><tr><th>Exposure</th><th>Loading</th><th>t</th></tr></thead><tbody>
+      ${f5.loadings.map(l => `<tr><td>${esc(l.name)}</td><td>${l.beta.toFixed(2)}</td><td>${t(l.t)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="note">A market loading above 1 means more swing than the market; positive size, value, profitability, investment or momentum loadings mean the result partly came from leaning that way, which a cheap factor fund could also provide. Factor returns from <a href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html" rel="noopener">Kenneth French's data library</a> (Fama and French 2015; Carhart 1997)${set === "europe" ? "; there is no UK-only set, so UK shares are measured against European factors" : ""}. Errors allow for three months of autocorrelation (Newey–West).</p></div>`;
+}
