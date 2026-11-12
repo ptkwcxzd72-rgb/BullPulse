@@ -158,6 +158,9 @@ Columns: `ticker,name,sector,market,provider_ticker`. `provider_ticker` is the s
 ## Run locally
 
 ```bash
+# the stored daily prices (kept in the price-store release, not in git)
+gh release download price-store --pattern 'prices*.tar.gz' --dir /tmp/ps && tar -xzf /tmp/ps/prices.tar.gz -C data && tar -xzf /tmp/ps/prices_archive.tar.gz -C data
+
 # prices (needs TIINGO_API_KEY in your environment)
 TIINGO_API_KEY=... TIINGO_TIER=free MAX_TICKERS=20 scripts/sync_prices.sh
 
