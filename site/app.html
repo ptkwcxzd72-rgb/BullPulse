@@ -81,7 +81,7 @@ document.getElementById("pulsebtn").addEventListener("click", e => {
       </div>
       <div class="filters">
         <input type="search" id="q" placeholder="Search by name or ticker" aria-label="Search by name or ticker">
-        <select id="idxf" aria-label="Index"><option value="">All indices</option><option>FTSE 100</option><option>FTSE 250</option><option>S&amp;P 500</option><option value="co">Companies only (no trusts)</option><option value="trust">Investment trusts only</option></select>
+        <select id="idxf" aria-label="Index"><option value="">All indices</option><option>FTSE 100</option><option>FTSE 250</option><option>S&amp;P 500</option><option>S&amp;P 400</option><option>S&amp;P 600</option><option value="co">Companies only (no trusts)</option><option value="trust">Investment trusts only</option></select>
         <select id="sector" aria-label="Sector"><option value="">All sectors</option></select>
         <label for="min">Minimum score <input type="range" id="min" min="0" max="90" step="10" value="0"><span class="num" id="minv">0</span></label>
       </div>
@@ -731,7 +731,7 @@ function keyDates(s){
     out.push(`<span>Paid in the last year <b>${(s.div.yld * 100).toFixed(1)}%</b> of the price</span>`);
   } else if (D.stocks.some(o => o.ex === s.ex && o.div)) out.push(`<span>No dividend in the last five years</span>`); // only when dividend data exists for this market
   if (s.vsIdx != null) out.push(`<span>1 year vs ${s.ex === "LSE" ? "FTSE 100" : "S&P 500"} <b class="${cls(s.vsIdx)}">${pct(s.vsIdx, 0)}</b></span>`);
-  if (s.idx) out.push(`<span>${s.idx}${s.trust ? ", investment trust" : ""}</span>`);
+  if (s.idx) out.push(`<span>${s.idx}${s.trust ? ", investment trust" : ""}${/^S&P [46]00$/.test(s.idx) ? ", scored and ranked against other mid and small caps; not yet in the backtests" : ""}</span>`);
   if (s.lei) out.push(`<span>Official announcements and director dealings: search the FCA's <a href="https://data.fca.org.uk/" target="_blank" rel="noopener">National Storage Mechanism</a> for <button class="copylei" data-lei="${esc(s.lei)}" title="Copy the company's LEI">LEI ${esc(s.lei)}</button></span>`);
   return out.join("");
 }
