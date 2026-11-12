@@ -89,7 +89,7 @@ func main() {
 	memDir := flag.String("membership", "universe/history", "index membership history")
 	flag.Parse()
 
-	stocks, err := core.LoadUniverse(*universe)
+	stocks, err := core.BacktestUniverse(*universe)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)

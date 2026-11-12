@@ -57,6 +57,26 @@ func Currency(market string) string {
 	return "USD"
 }
 
+// SmallerIndexes are the mid and small-cap indexes added in November 2026. Their membership
+// history isn't built yet, so they are scored nightly but left out of the backtests, the history
+// panel and the learning loop (a backtest on today's members would favour the survivors).
+var SmallerIndexes = map[string]bool{"S&P 400": true, "S&P 600": true, "FTSE SmallCap": true}
+
+// Backtested reports whether a stock belongs in the backtests and the history panel.
+func (s Stock) Backtested() bool { return !SmallerIndexes[s.Index] }
+
+// BacktestUniverse is LoadUniverse without the smaller indexes.
+func BacktestUniverse(dir string) ([]Stock, error) {
+	all, err := LoadUniverse(dir)
+	var out []Stock
+	for _, s := range all {
+		if s.Backtested() {
+			out = append(out, s)
+		}
+	}
+	return out, err
+}
+
 // LoadUniverse reads every *.csv file in dir. Columns are matched by header name:
 // ticker,name,sector,market,cik,provider_ticker (cik is optional).
 func LoadUniverse(dir string) ([]Stock, error) {

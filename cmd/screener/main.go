@@ -508,10 +508,12 @@ func main() {
 
 	// percentile scores and ranks within each market
 	breadth := map[string]map[string]any{}
-	for _, ex := range []string{"LSE", "US"} {
+	// mid and small caps are ranked among themselves, so adding them leaves the large-cap scores
+	// (the ones the backtests test) unchanged
+	for _, ex := range []string{"LSE", "US", "LSE-smid", "US-smid"} {
 		var m []*Row
 		for _, r := range rows {
-			if r.Ex == ex {
+			if r.Ex+map[bool]string{true: "-smid"}[core.SmallerIndexes[r.Idx]] == ex {
 				m = append(m, r)
 			}
 		}

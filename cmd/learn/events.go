@@ -30,7 +30,7 @@ func day(t time.Time) string { return t.Format("2006-01-02") }
 
 func loadDaily(universe, prices, memDir string) *daily {
 	d := &daily{pos: map[string]int{}, sector: map[string]map[string]float64{}, mem: member.Load(memDir)}
-	stocks, err := core.LoadUniverse(universe)
+	stocks, err := core.BacktestUniverse(universe)
 	if err != nil {
 		return d
 	}

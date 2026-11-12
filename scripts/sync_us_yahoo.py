@@ -67,14 +67,14 @@ def todo(rows: list[dict], out_dir: str, skip: set[str]) -> list[dict]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--universe", default="universe/us.csv")
+    ap.add_argument("--universe", default="universe/us*.csv", help="US universe files (glob)")
     ap.add_argument("--out", default="data/prices")
     ap.add_argument("--pause", type=float, default=0.8)
     ap.add_argument("--budget-min", type=float, default=25)
     ap.add_argument("--all", action="store_true", help="also re-fetch the Tiingo stocks from Yahoo")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
-    rows = [r for r in csv.DictReader(open(args.universe, newline="")) if r.get("market", "US") != "UK"]
+    rows = [r for f in sorted(glob.glob(args.universe)) for r in csv.DictReader(open(f, newline="")) if r.get("market", "US") != "UK"]
     skip = set() if args.all else tiingo_tickers()
     queue = todo(rows, args.out, skip)
     stop = time.time() + args.budget_min * 60

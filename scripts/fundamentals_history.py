@@ -77,6 +77,9 @@ def main():
     stocks = []
     for f in sorted(glob.glob(os.path.join(args.universe, "*.csv"))):
         for r in csv.DictReader(open(f, newline="")):
+            # mid and small caps are not in the backtests yet (no membership history)
+            if r.get("index") in ("S&P 400", "S&P 600"):
+                continue
             if r.get("market") != "UK" and r.get("cik") and os.path.exists(os.path.join(args.prices, (r.get("provider_ticker") or "") + ".csv")):
                 stocks.append(r)
     if args.limit:

@@ -1,0 +1,35 @@
+name: Mid and small-cap universe
+
+# Rebuilds universe/us400.csv and universe/us600.csv (S&P MidCap 400, S&P SmallCap 600) from
+# Wikipedia's constituent tables and the SEC ticker file, monthly and by hand.
+on:
+  schedule:
+    - cron: "40 6 2 * *" # 06:40 UTC on the 2nd of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: evening
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python scripts/build_smid_universe.py
+      - name: Commit the universe files
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add universe/us400.csv universe/us600.csv 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Mid and small-cap universe $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 20; done
