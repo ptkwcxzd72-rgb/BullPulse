@@ -68,6 +68,10 @@ jobs:
       MAX_TICKERS: ${{ vars.MAX_TICKERS }}
     steps:
       - uses: actions/checkout@v6
+      - name: Daily prices from the price store (a GitHub Release, not git)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/price_store.sh pull
 
       - name: Get the website data (site-data branch)
         run: scripts/site_data.sh pull
@@ -204,6 +208,7 @@ jobs:
         run: |
           git config user.name "bullpulse-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          GH_TOKEN=${{ github.token }} scripts/price_store.sh push prices
           git add data
           git diff --cached --quiet || git commit -m "Nightly data $(date -u +%F)"
           # if another run saved the same generated files meanwhile, keep this run's (newer) versions

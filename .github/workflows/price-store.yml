@@ -1,0 +1,25 @@
+name: Price store
+
+# Uploads data/prices and data/prices_archive to the "price-store" release (scripts/price_store.sh).
+# Used once to move the price files out of git; afterwards the evening and nightly jobs keep the
+# release up to date, and this only needs running to repair it.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: evening
+  cancel-in-progress: false
+
+jobs:
+  store:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v6
+      - run: scripts/price_store.sh pull
+      - run: scripts/price_store.sh push prices prices_archive

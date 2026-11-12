@@ -20,6 +20,10 @@ jobs:
       SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
     steps:
       - uses: actions/checkout@v6
+      - name: Daily prices from the price store (a GitHub Release, not git)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/price_store.sh pull
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
