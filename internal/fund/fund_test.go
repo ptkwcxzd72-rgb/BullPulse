@@ -186,3 +186,20 @@ func TestIssuanceIgnoresSplits(t *testing.T) {
 		t.Fatalf("quality %v %v %v", gp, accr, agr)
 	}
 }
+
+func TestAltmanZ(t *testing.T) {
+	p := func(v float64) *float64 { return &v }
+	f := Fin{Assets: p(1000), AssetsCur: p(400), LiabCur: p(200), RetainedEarnings: p(300), OpIncomeTTM: p(100), RevenueTTM: p(1200), Liabilities: p(500), Equity: p(500)}
+	z, m := f.AltmanZ(800, "Industrials")
+	want := 1.2*0.2 + 1.4*0.3 + 3.3*0.1 + 0.6*800/500 + 1.0*1.2
+	if m != "Z" || math.Abs(z-want) > 1e-9 || AltmanZone(z, m) != "safe" {
+		t.Fatalf("Z %v %v", z, m)
+	}
+	z, m = f.AltmanZ(800, "Information Technology")
+	if want := 6.56*0.2 + 3.26*0.3 + 6.72*0.1 + 1.05*1; m != "Z''" || math.Abs(z-want) > 1e-9 || AltmanZone(z, m) != "safe" {
+		t.Fatalf("Z'' %v %v", z, m)
+	}
+	if z, _ := f.AltmanZ(800, "Financials"); !math.IsNaN(z) {
+		t.Fatal("banks have no Z-score")
+	}
+}

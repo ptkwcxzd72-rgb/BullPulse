@@ -90,6 +90,29 @@ class Financials(unittest.TestCase):
         self.assertEqual(f["assets_prev"], 400)          # the balance sheet a year before the latest
         self.assertEqual(f["gross_profit_ttm"], 135 - 80)  # revenue less cost of sales, both trailing twelve months
 
+    def test_beneish_m_score(self):
+        y = lambda v1, v0: {"units": {"USD": [fact("2024-01-01", "2024-12-31", v0, "2025-02-01"), fact("2025-01-01", "2025-12-31", v1, "2026-02-01")]}}
+        i = lambda v1, v0: {"units": {"USD": [{"end": "2024-12-31", "val": v0, "filed": "2025-02-01"}, {"end": "2025-12-31", "val": v1, "filed": "2026-02-01"}]}}
+        g = {"Revenues": y(1200, 1000), "CostOfRevenue": y(720, 580), "NetIncomeLoss": y(100, 90),
+             "NetCashProvidedByUsedInOperatingActivities": y(60, 95), "DepreciationDepletionAndAmortization": y(50, 50),
+             "SellingGeneralAndAdministrativeExpense": y(180, 160), "AccountsReceivableNetCurrent": i(300, 200),
+             "PropertyPlantAndEquipmentNet": i(500, 500), "Assets": i(2000, 1800), "AssetsCurrent": i(800, 700),
+             "LiabilitiesCurrent": i(400, 350), "LongTermDebtNoncurrent": i(500, 400)}
+        b = SF.beneish({"facts": {"us-gaap": g}}, SF.durations({"facts": {"us-gaap": g}}, SF.REVENUE))
+        self.assertEqual(b["fy"], "2025-12-31")
+        self.assertAlmostEqual(b["dsri"], (300 / 1200) / (200 / 1000), places=4)
+        self.assertAlmostEqual(b["sgi"], 1.2, places=4)
+        self.assertAlmostEqual(b["tata"], (100 - 60) / 2000, places=4)
+        self.assertAlmostEqual(b["gmi"], (420 / 1000) / (480 / 1200), places=4)
+        ix = {k: b[k] for k in ("dsri", "gmi", "aqi", "sgi", "depi", "sgai", "tata", "lvgi")}
+        self.assertAlmostEqual(b["m"], -4.84 + sum(SF.BENEISH[k] * v for k, v in ix.items()), places=2)
+        self.assertEqual(b["missing"], [])
+
+    def test_beneish_needs_receivables(self):
+        y = lambda v1, v0: {"units": {"USD": [fact("2024-01-01", "2024-12-31", v0), fact("2025-01-01", "2025-12-31", v1)]}}
+        g = {"Revenues": y(1200, 1000), "NetIncomeLoss": y(100, 90), "NetCashProvidedByUsedInOperatingActivities": y(60, 95)}
+        self.assertIsNone(SF.beneish({"facts": {"us-gaap": g}}, SF.durations({"facts": {"us-gaap": g}}, SF.REVENUE)))
+
     def test_share_count_a_year_earlier(self):
         facts = self.facts()
         facts["facts"]["dei"] = {"EntityCommonStockSharesOutstanding": {"units": {"shares": [

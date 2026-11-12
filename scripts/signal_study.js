@@ -41,6 +41,7 @@ const SIGNALS = {
   iss: ["Net share issuance (low is good)", -1, 12, true], fcfY: ["Free-cash-flow yield", 1, 12, true],
   divY: ["Dividend yield", 1, 12, true], pe: ["P/E (low is good)", -1, 12, true], Vp: ["Value vs fair-value estimate", 1, 12, false],
   sue: ["Earnings surprise", 1, 3, true], revGrowth: ["Revenue growth", 1, 12, false], G: ["Revenue growth rank", 1, 12, false],
+  zscore: ["Altman Z-score (high is safer)", 1, 12, true], mscore: ["Beneish M-score (low is good)", -1, 12, true],
   insB: ["Insider buying", 1, 6, true], FP: ["Fundamentals checks", 1, 12, false], de: ["Debt / equity (low is good)", -1, 12, false],
 };
 

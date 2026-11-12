@@ -1133,6 +1133,25 @@ function impliedGrowth(i, px){
   return (lo + hi) / 2;
 }
 const money = (v, s) => { const gbx = s && s.ccy === "GBX"; if (gbx) v = v / 100; const a = Math.abs(v), c = gbx ? "£" : "$"; return (v < 0 ? "−" + c : c) + (a >= 1e12 ? (a / 1e12).toFixed(2) + "tn" : a >= 1e9 ? (a / 1e9).toFixed(1) + "bn" : a >= 1e7 ? (a / 1e6).toFixed(0) + "m" : a >= 1e6 ? (a / 1e6).toFixed(1) + "m" : a >= 1e3 ? (a / 1e3).toFixed(0) + "k" : a.toFixed(0)); };
+// Altman Z (distress risk) and Beneish M (an unusual pattern in the reported figures), from the
+// company's filings. Statistical screens of public figures, described as such: not findings.
+function acctScores(A, s){
+  if (!A || (!A.altman && !A.beneish)) return "";
+  const out = [];
+  if (A.altman) {
+    const z = A.altman, manu = z.model === "Z";
+    const zone = { distress: `in the distress zone (below ${manu ? "1.81" : "1.1"})`, grey: `in the grey zone (${manu ? "1.81 to 2.99" : "1.1 to 2.6"})`, safe: `in the safe zone (above ${manu ? "2.99" : "2.6"})` }[z.zone] || "";
+    out.push(`<div><b>Altman Z${manu ? "" : "″"}-score ${z.z.toFixed(2)}</b>, ${zone}. <span class="note">${manu ? "The original 1968 model for manufacturers, using the market value of the shares." : "The 1995 version for non-manufacturers, using book equity and leaving out sales."} It combines working capital, retained earnings, operating profit and the cushion of equity over debts, all against total assets. In Altman's samples, companies in the distress zone were more likely to fail within two years; most companies there don't.</span></div>`);
+  }
+  if (A.beneish) {
+    const b = A.beneish, flag = A.beneishFlag ?? -1.78, hi = b.m > flag;
+    const W = { dsri: [0.920, "receivables growing faster than sales"], gmi: [0.528, "gross margin falling"], aqi: [0.404, "more assets that aren't current assets or property"], sgi: [0.892, "fast sales growth"], depi: [0.115, "depreciation slowing"], sgai: [-0.172, "overheads rising against sales"], tata: [4.679, "profit not matched by cash from operations"], lvgi: [-0.327, "borrowing rising against assets"] };
+    const pushes = Object.entries(W).map(([k, [w, why]]) => [k === "tata" ? w * (b[k] ?? 0) : w * ((b[k] ?? 1) - 1), why]).filter(x => x[0] > 0.05).sort((a, c) => c[0] - a[0]).slice(0, 3).map(x => x[1]);
+    out.push(`<div><b>Beneish M-score ${b.m.toFixed(2)}</b>, ${hi ? `above ${flag}` : `below ${flag}`}, from the annual reports to ${fmtDate(b.fy)} and a year earlier. <span class="note">${hi ? `Beneish's 1999 model classes reports above ${flag} as having a pattern more often seen where earnings were manipulated${pushes.length ? `; here mainly ${pushes.join(", ")}` : ""}. Many companies above the line have done nothing wrong: fast-growing and acquisitive businesses often score high. It is a statistical screen of the published figures, not a finding or an allegation about ${esc(s.name)}.` : `The reported figures don't show the pattern Beneish's model associates with manipulated earnings.`}${b.missing && b.missing.length ? ` ${b.missing.length} of the eight measures couldn't be formed from the filings and count as unchanged.` : ""}</span></div>`);
+  }
+  return `<div class="panel" style="margin-top:12px"><h4 style="margin:0 0 6px">Accounting checks</h4>${out.join("")}<p class="note" style="margin-top:6px">From SEC filings. Not used in the score unless the monthly signal study finds that they predict returns.</p></div>`;
+}
+
 function fundamentals(s, F){
   const has = F && F.profile;
   if (s.trust) {
@@ -1155,6 +1174,7 @@ function fundamentals(s, F){
   const x1 = v => v == null ? "–" : v.toFixed(1) + "×", p1 = v => v == null ? "–" : (v * 100).toFixed(1) + "%";
   $("d-fund").innerHTML = `<div class="fpro">${radar(P.areas.map(a => a.score))}<div class="areas">${P.areas.map(a => `<details><summary><span>${a.name}</span><span class="pips">${Array.from({ length: 6 }, (_, i) => `<i class="${i < a.score ? "on" : ""}"></i>`).join("")}</span><b>${a.score}/6</b></summary><ul>${a.checks.map(c => { const [k, sym] = mark(c); return `<li><span class="k ${k}" aria-label="${k === "y" ? "pass" : k === "n" ? "fail" : "no data"}">${sym}</span><span>${c.n}<small>${c.d}</small></span></li>`; }).join("")}</ul></details>`).join("")}</div></div>
     <div class="kv">${[["Market cap", M.mcap == null ? "–" : money(M.mcap, s)], ["P/E", x1(M.pe)], ["Price / sales", x1(M.ps)], ["FCF yield", p1(M.fcfYield)], ["Return on equity", p1(M.roe)], ["Debt / equity", p1(M.debtToEquity)], ["Dividend yield", p1(M.divYield)], ["Net cash", M.netCash == null ? "–" : money(M.netCash, s)]].map(([l, v]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span></div>`).join("")}</div>`;
+  $("d-fund").insertAdjacentHTML("beforeend", acctScores(F.accounts, s));
   const D0 = F.dcf;
   if (!D0 || !D0.inputs){ $("d-dcf").innerHTML = `<p class="note" style="margin:0">${(D0 && D0.skipped) || "Not enough data for an estimate."}</p>`; return; }
   const inp = { ...D0.inputs };

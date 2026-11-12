@@ -622,6 +622,7 @@ var studyRule = map[string]struct {
 }{
 	"T": {3, false}, "M": {12, true}, "G": {12, false}, "FP": {12, false}, "Vp": {12, false}, "vol1y": {12, true},
 	"rev1m": {1, true}, "insB": {6, true}, "sue": {3, true}, "iss": {12, true}, "gp": {12, true}, "accr": {12, true}, "agr": {12, true},
+	"zscore": {12, true}, "mscore": {12, true},
 }
 
 // studyWeights applies the signal study's decision rule (fixed in November 2026) to the months

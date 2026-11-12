@@ -112,23 +112,27 @@ type Row struct {
 	DE      *float64 `json:"de,omitempty"`
 	Implied *float64 `json:"implied,omitempty"` // growth the price implies (reverse DCF)
 	McapBn  *float64 `json:"mcapBn,omitempty"`  // market cap, USD billions
-	Grower  bool     `json:"grower"`
-	Flags   []string `json:"flags,omitempty"` // data-quality warnings shown on the site
-	Ins     *Insider `json:"ins,omitempty"`   // open-market insider dealing, last 90 days (US)
-	Idx     string   `json:"idx,omitempty"`   // index membership
-	Trust   bool     `json:"trust,omitempty"` // investment trust: valued on its assets, so the company checks don't apply
-	VsIdx   *float64 `json:"vsIdx,omitempty"` // 1-year return minus its market index's (dividends included)
-	Div     *DivInfo `json:"div,omitempty"`
-	NextRes string   `json:"nextRes,omitempty"` // next results date
-	ResEst  bool     `json:"resEst,omitempty"`  // true when estimated from the financial year end
-	LEI     string   `json:"lei,omitempty"`     // legal entity identifier (UK), for finding official announcements
-	Prob6   *float64 `json:"prob6,omitempty"`   // calibrated chance of beating its sector over six months
-	SUE     *float64 `json:"sue,omitempty"`     // standardised earnings surprise, latest quarter (US)
+	// Altman Z-score and its zone (distress, grey, safe); Beneish M-score (US filings)
+	AltmanZ    *float64 `json:"az,omitempty"`
+	AltmanZone string   `json:"azZone,omitempty"`
+	BeneishM   *float64 `json:"bm,omitempty"`
+	Grower     bool     `json:"grower"`
+	Flags      []string `json:"flags,omitempty"` // data-quality warnings shown on the site
+	Ins        *Insider `json:"ins,omitempty"`   // open-market insider dealing, last 90 days (US)
+	Idx        string   `json:"idx,omitempty"`   // index membership
+	Trust      bool     `json:"trust,omitempty"` // investment trust: valued on its assets, so the company checks don't apply
+	VsIdx      *float64 `json:"vsIdx,omitempty"` // 1-year return minus its market index's (dividends included)
+	Div        *DivInfo `json:"div,omitempty"`
+	NextRes    string   `json:"nextRes,omitempty"` // next results date
+	ResEst     bool     `json:"resEst,omitempty"`  // true when estimated from the financial year end
+	LEI        string   `json:"lei,omitempty"`     // legal entity identifier (UK), for finding official announcements
+	Prob6      *float64 `json:"prob6,omitempty"`   // calibrated chance of beating its sector over six months
+	SUE        *float64 `json:"sue,omitempty"`     // standardised earnings surprise, latest quarter (US)
 
 	sentRaw   float64
 	ret1m     float64            // last month's return (short-term reversal signal)
 	modelPct  float64            // percentile of the learned model's part of the score
-	research  map[string]float64 // gp, accr, agr, iss: candidate signals for the learned model
+	research  map[string]float64 // gp, accr, agr, iss, zscore, mscore: candidate signals for the learned model
 	insRecent []map[string]any
 	lastDate  time.Time
 	provider  string
@@ -767,6 +771,23 @@ func addFundamentals(rows []*Row, funds map[string]Fund, fx map[string]float64) 
 			it.r.FairVs = it.d.VsPrice
 			gp, accr, agr := it.f.Quality()
 			it.r.research = map[string]float64{"gp": gp, "accr": accr, "agr": agr, "iss": it.f.Issuance()}
+			// Altman Z (distress risk) and Beneish M (accounting quality): US filings only
+			acct := map[string]any{}
+			if it.m.MarketCap != nil {
+				if z, model := it.f.AltmanZ(*it.m.MarketCap, it.r.Sector); !math.IsNaN(z) && math.Abs(z) < 50 {
+					zz := math.Round(z*100) / 100
+					it.r.AltmanZ, it.r.AltmanZone = &zz, fund.AltmanZone(z, model)
+					it.r.research["zscore"] = z
+					acct["altman"] = map[string]any{"z": zz, "model": model, "zone": it.r.AltmanZone}
+				}
+			}
+			if b := it.f.Beneish; b != nil && math.Abs(b.M) < 20 {
+				m := math.Round(b.M*100) / 100
+				it.r.BeneishM = &m
+				it.r.research["mscore"] = b.M
+				acct["beneish"] = b
+				acct["beneishFlag"] = fund.BeneishFlag
+			}
 			it.r.PE, it.r.DivY, it.r.FCFY, it.r.ROE, it.r.DE, it.r.Implied = it.m.PE, it.m.DivYield, it.m.FCFYield, it.m.ROE, it.m.DebtToEquity, it.d.Implied
 			if it.m.MarketCap != nil {
 				usd := *it.m.MarketCap / 1e9 // US: dollars
@@ -781,7 +802,7 @@ func addFundamentals(rows []*Row, funds map[string]Fund, fx map[string]float64) 
 					it.r.McapBn = &v
 				}
 			}
-			it.r.detail["fund"] = map[string]any{"profile": pr, "dcf": it.d, "metrics": it.m,
+			it.r.detail["fund"] = map[string]any{"profile": pr, "dcf": it.d, "metrics": it.m, "accounts": acct,
 				"fin": map[string]any{"revenue": it.f.RevenueTTM, "netIncome": it.f.NetIncomeTTM, "fcfAvg3": it.f.FCFAvg3,
 					"revCagr3": it.f.RevCAGR3, "cash": it.f.Cash, "debt": it.f.Debt, "equity": it.f.Equity, "shares": it.f.Shares, "ttmEnd": it.f.TTMEnd, "balanceEnd": it.f.BalanceEnd}}
 		}

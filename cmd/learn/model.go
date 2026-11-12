@@ -27,6 +27,8 @@ var Features = []Feature{
 	{"gp", "Gross profitability", 1, "gross profit against total assets"},
 	{"accr", "Low accruals", -1, "profit not backed by cash flow, against total assets"},
 	{"agr", "Low asset growth", -1, "growth in total assets over a year"},
+	{"zscore", "Low distress risk", 1, "Altman Z-score from the latest accounts (US)"},
+	{"mscore", "Accounting quality", -1, "Beneish M-score from the two latest annual reports (US)"},
 }
 
 // minCoverage: a feature counts in a month only if at least this share of stocks have it.

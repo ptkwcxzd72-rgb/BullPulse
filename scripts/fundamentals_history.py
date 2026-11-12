@@ -28,7 +28,7 @@ from pit_clean import clean_shares, load_closes, price_on
 OUT = "data/fundamentals_pit.jsonl"
 KEEP = set(SF.REVENUE + SF.NET_INCOME + SF.OP_INCOME + SF.EPS + SF.OCF + SF.CAPEX + SF.INTEREST + SF.DIV_PAID + SF.DPS +
            SF.EQUITY + SF.CASH + SF.ASSETS_CUR + SF.LIAB_CUR + SF.DEBT_LT + SF.DEBT_ST + SF.SHARES + SF.SBC + REV2 + EPS2 +
-           SF.ASSETS + SF.GROSS + SF.COST)
+           SF.ASSETS + SF.GROSS + SF.COST + SF.RECEIVABLES + SF.PPE + SF.DEPRECIATION + SF.SGA + SF.RETAINED + SF.LIABILITIES)
 # forward splits and reverse splits (GE's 1-for-8 in 2021 was missing, which left its earlier
 # market values eight times too high)
 SPLITS = [2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 25, 30, 40, 50, 1.5,

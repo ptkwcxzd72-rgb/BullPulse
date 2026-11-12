@@ -45,6 +45,9 @@ type Fin struct {
 	AssetsPrev       *float64 `json:"assets_prev"` // total assets about a year before
 	GrossProfitTTM   *float64 `json:"gross_profit_ttm"`
 	SharesPrev       *float64 `json:"shares_prev"` // cover-page share count about a year before (US)
+	RetainedEarnings *float64 `json:"retained_earnings"`
+	Liabilities      *float64 `json:"liabilities"`
+	Beneish          *Beneish `json:"beneish,omitempty"`
 	TTMEnd           string   `json:"ttm_end"`
 	Ccy              string   `json:"ccy"` // reporting currency when not USD (UK annual reports)
 	BalanceEnd       string   `json:"balance_end"`
@@ -63,6 +66,77 @@ func (f Fin) SUE() float64 {
 		return math.NaN()
 	}
 	return math.Max(-10, math.Min(10, *f.EPSQDiff / *f.EPSQSD))
+}
+
+// Beneish is the M-score of the two latest annual reports (scripts/sec_financials.py): the eight
+// indexes and the score. Missing lists the indexes that couldn't be formed and counted as 1.
+type Beneish struct {
+	FY      string   `json:"fy"`
+	M       float64  `json:"m"`
+	Missing []string `json:"missing"`
+	DSRI    float64  `json:"dsri"`
+	GMI     *float64 `json:"gmi,omitempty"`
+	AQI     *float64 `json:"aqi,omitempty"`
+	SGI     float64  `json:"sgi"`
+	DEPI    *float64 `json:"depi,omitempty"`
+	SGAI    *float64 `json:"sgai,omitempty"`
+	TATA    float64  `json:"tata"`
+	LVGI    *float64 `json:"lvgi,omitempty"`
+}
+
+// BeneishFlag is the threshold Beneish (1999) used to classify a likely earnings manipulator:
+// scores above -1.78. It flags many companies that have done nothing wrong (the model was fitted
+// on 74 known manipulators), so the site calls it an unusual accounting pattern, not a finding.
+const BeneishFlag = -1.78
+
+// AltmanZ is the Altman Z-score with its version: the original 1968 model for manufacturers
+// (Industrials, Materials), with market value of equity, and the Z” model (1995) for other
+// non-financial companies, which leaves out sales/assets and uses book equity. NaN for banks,
+// insurers and property companies, where the model doesn't apply, or when figures are missing.
+// Zones: Z below 1.81 distress, above 2.99 safe; Z” below 1.1 distress, above 2.6 safe.
+func (f Fin) AltmanZ(mcap float64, sector string) (z float64, model string) {
+	if sector == "Financials" || sector == "Real Estate" || f.Assets == nil || *f.Assets <= 0 || f.AssetsCur == nil || f.LiabCur == nil ||
+		f.RetainedEarnings == nil || f.OpIncomeTTM == nil {
+		return math.NaN(), ""
+	}
+	ta := *f.Assets
+	tl := math.NaN()
+	if f.Liabilities != nil && *f.Liabilities > 0 {
+		tl = *f.Liabilities
+	} else if f.Equity != nil {
+		tl = ta - *f.Equity
+	}
+	if !(tl > 0) {
+		return math.NaN(), ""
+	}
+	wc, re, ebit := (*f.AssetsCur-*f.LiabCur)/ta, *f.RetainedEarnings/ta, *f.OpIncomeTTM/ta
+	if sector == "Industrials" || sector == "Materials" {
+		if f.RevenueTTM == nil || !(mcap > 0) {
+			return math.NaN(), ""
+		}
+		return 1.2*wc + 1.4*re + 3.3*ebit + 0.6*mcap/tl + 1.0**f.RevenueTTM/ta, "Z"
+	}
+	if f.Equity == nil {
+		return math.NaN(), ""
+	}
+	return 6.56*wc + 3.26*re + 6.72*ebit + 1.05**f.Equity/tl, "Z''"
+}
+
+// AltmanZone is "distress", "grey" or "safe" for a score from AltmanZ.
+func AltmanZone(z float64, model string) string {
+	lo, hi := 1.81, 2.99
+	if model == "Z''" {
+		lo, hi = 1.1, 2.6
+	}
+	switch {
+	case math.IsNaN(z) || model == "":
+		return ""
+	case z < lo:
+		return "distress"
+	case z > hi:
+		return "safe"
+	}
+	return "grey"
 }
 
 // Quality returns gross profit / assets (Novy-Marx 2013), accruals / assets (Sloan 1996) and
@@ -112,7 +186,7 @@ func (f Fin) Scale(k float64) Fin {
 	for _, x := range []**float64{&f.RevenueTTM, &f.NetIncomeTTM, &f.OpIncomeTTM, &f.OCFTTM, &f.CapexTTM, &f.InterestTTM,
 		&f.DividendsPaidTTM, &f.EPSTTM, &f.DPSTTM, &f.EPS5yAgo, &f.EPSFY, &f.DPS3yAgo, &f.DPSFY, &f.FCFAvg3, &f.FCFFAvg3,
 		&f.SBCAvg3, &f.Equity, &f.Cash, &f.AssetsCur, &f.LiabCur, &f.Debt, &f.EPSQDiff, &f.EPSQSD,
-		&f.Assets, &f.AssetsPrev, &f.GrossProfitTTM} {
+		&f.Assets, &f.AssetsPrev, &f.GrossProfitTTM, &f.RetainedEarnings, &f.Liabilities} {
 		if *x != nil {
 			v := **x * k
 			*x = &v

@@ -107,11 +107,11 @@ func featureValue(r *Row, key string) float64 {
 		if r.SUE != nil {
 			return *r.SUE
 		}
-	case "gp":
+	case "gp", "zscore":
 		if v, ok := r.research[key]; ok {
 			return v
 		}
-	case "accr", "agr", "iss": // low is good
+	case "accr", "agr", "iss", "mscore": // low is good
 		if v, ok := r.research[key]; ok {
 			return -v
 		}

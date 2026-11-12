@@ -49,12 +49,12 @@ var fields = []struct {
 	// issuance, the log change in split-adjusted shares over a year (Pontiff and Woodgate 2008);
 	// industry momentum, the sector's average 12-1 month return (Moskowitz and Grinblatt 1999); and
 	// momentum per unit of volatility
-	{"gp", 1000}, {"accr", 1000}, {"agr", 1000}, {"iss", 1000}, {"imom", 1000}, {"mvol", 1000},
+	{"gp", 1000}, {"accr", 1000}, {"agr", 1000}, {"iss", 1000}, {"imom", 1000}, {"mvol", 1000}, {"zscore", 100}, {"mscore", 100},
 }
 
 // research holds candidate signals: written to panel_research.json (same months and stocks)
 // rather than panel.json, which the website downloads, until the signal study adopts them
-var research = map[string]bool{"gp": true, "accr": true, "agr": true, "iss": true, "imom": true, "mvol": true}
+var research = map[string]bool{"gp": true, "accr": true, "agr": true, "iss": true, "imom": true, "mvol": true, "zscore": true, "mscore": true}
 
 type fxRow struct {
 	date     string
@@ -367,6 +367,15 @@ func main() {
 					if p := it.f.AssetsPrev; p != nil && *p > 0 {
 						vals["agr"][i] = *a / *p - 1
 					}
+				}
+				// Altman Z (distress risk) and Beneish M (accounting quality), as published by then
+				if it.m.MarketCap != nil {
+					if z, _ := it.f.AltmanZ(*it.m.MarketCap, ss[i].Sector); !math.IsNaN(z) && math.Abs(z) < 50 {
+						vals["zscore"][i] = z
+					}
+				}
+				if b := it.f.Beneish; b != nil && math.Abs(b.M) < 20 {
+					vals["mscore"][i] = b.M
 				}
 				set("revGrowth", it.row.RevGrowth)
 				set("epsGrowth", it.row.EpsGrowth)

@@ -33,6 +33,15 @@ ASSETS = ["Assets"]
 GROSS = ["GrossProfit"]
 COST = ["CostOfRevenue", "CostOfGoodsAndServicesSold", "CostOfGoodsSold"]
 SBC = ["ShareBasedCompensation", "AllocatedShareBasedCompensationExpense"]
+# for the Altman Z and Beneish M scores
+RECEIVABLES = ["AccountsReceivableNetCurrent", "ReceivablesNetCurrent", "AccountsNotesAndLoansReceivableNetCurrent"]
+PPE = ["PropertyPlantAndEquipmentNet",
+       "PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmortization"]
+DEPRECIATION = ["DepreciationDepletionAndAmortization", "DepreciationAndAmortization", "Depreciation",
+                "DepreciationAmortizationAndAccretionNet"]
+SGA = ["SellingGeneralAndAdministrativeExpense"]
+RETAINED = ["RetainedEarningsAccumulatedDeficit"]
+LIABILITIES = ["Liabilities"]
 TAX_RATE = 0.21   # US federal rate, used to put interest back on an after-tax basis
 
 
@@ -276,4 +285,85 @@ def financials(facts: dict) -> dict:
         if y and eps_y[y] and ni_y[y] / eps_y[y] > 0:
             sh = (y, ni_y[y] / eps_y[y])
     put("shares", sh[1] if sh else None, 0)
+    # Altman Z inputs (balance sheet at the latest date)
+    for name, concepts in (("retained_earnings", RETAINED), ("liabilities", LIABILITIES)):
+        x = latest(instants(facts, concepts))
+        put(name, x[1] if x else None, 0)
+    b = beneish(facts, rev)
+    if b:
+        f["beneish"] = b
     return f
+
+
+# Beneish (1999) eight-variable model, on the two latest fiscal years
+BENEISH = {"const": -4.84, "dsri": 0.920, "gmi": 0.528, "aqi": 0.404, "sgi": 0.892, "depi": 0.115, "sgai": -0.172,
+           "tata": 4.679, "lvgi": -0.327}
+
+
+def beneish(facts: dict, rev) -> dict | None:
+    """The Beneish M-score from the latest annual report and the one before: its eight indexes
+    and the score. Indexes that can't be formed count as 1 (no change), the usual convention,
+    except the three the score leans on most (receivables, sales growth, accruals), which are
+    required; with more than two others missing there is no score."""
+    sales = annual(rev)
+    if len(sales) < 2:
+        return None
+    fy = max(sales)
+    prev = [e for e in sales if 340 <= (_d(fy) - _d(e)).days <= 390]
+    if not prev:
+        return None
+    fy0 = max(prev)
+
+    def at(series: dict[str, float], day: str):   # an instant on (or within ten days of) a year end
+        best = [(abs((_d(k) - _d(day)).days), v) for k, v in series.items() if abs((_d(k) - _d(day)).days) <= 10]
+        return min(best)[1] if best else None
+
+    def yr(concepts):
+        a = annual(durations(facts, concepts))
+        return a.get(fy), a.get(fy0)
+    S1, S0 = sales[fy], sales[fy0]
+    rec, ppe, ta = instants(facts, RECEIVABLES), instants(facts, PPE), instants(facts, ASSETS)
+    ca, cl, ltd = instants(facts, ASSETS_CUR), instants(facts, LIAB_CUR), instants(facts, DEBT_LT)
+    R1, R0, P1, P0, T1, T0 = at(rec, fy), at(rec, fy0), at(ppe, fy), at(ppe, fy0), at(ta, fy), at(ta, fy0)
+    CA1, CA0, CL1, CL0, L1, L0 = at(ca, fy), at(ca, fy0), at(cl, fy), at(cl, fy0), at(ltd, fy), at(ltd, fy0)
+    cost1, cost0 = yr(COST)
+    gp1, gp0 = yr(GROSS)
+    if gp1 is None and cost1 is not None:
+        gp1 = S1 - cost1
+    if gp0 is None and cost0 is not None:
+        gp0 = S0 - cost0
+    D1, D0 = yr(DEPRECIATION)
+    G1, G0 = yr(SGA)
+    NI1, _ = yr(NET_INCOME)
+    CF1, _ = yr(OCF)
+    if not (S1 and S0 and S1 > 0 and S0 > 0 and R1 is not None and R0 and T1 and T0 and NI1 is not None and CF1 is not None):
+        return None
+    ix: dict[str, float] = {}
+    ix["dsri"] = (R1 / S1) / (R0 / S0) if R0 > 0 else None
+    ix["sgi"] = S1 / S0
+    ix["tata"] = (NI1 - CF1) / T1
+    if ix["dsri"] is None:
+        return None
+    other = {}
+    if gp1 and gp0 and gp1 > 0 and gp0 > 0:
+        other["gmi"] = (gp0 / S0) / (gp1 / S1)
+    if None not in (CA1, CA0, P1, P0):
+        q1, q0 = 1 - (CA1 + P1) / T1, 1 - (CA0 + P0) / T0
+        if q0 > 0.01 and q1 >= 0:
+            other["aqi"] = q1 / q0
+    if None not in (D1, D0, P1, P0) and D1 > 0 and D0 > 0:
+        other["depi"] = (D0 / (D0 + P0)) / (D1 / (D1 + P1))
+    if G1 and G0 and G1 > 0 and G0 > 0:
+        other["sgai"] = (G1 / S1) / (G0 / S0)
+    if None not in (CL1, CL0):
+        l1, l0 = (CL1 + (L1 or 0)) / T1, (CL0 + (L0 or 0)) / T0
+        if l0 > 0:
+            other["lvgi"] = l1 / l0
+    missing = [k for k in ("gmi", "aqi", "depi", "sgai", "lvgi") if k not in other]
+    if len(missing) > 2:
+        return None
+    ix.update(other)
+    m = BENEISH["const"] + sum(BENEISH[k] * (ix.get(k, 1.0)) for k in BENEISH if k != "const")
+    out = {"fy": fy, "m": round(m, 3), "missing": missing}
+    out.update({k: round(v, 4) for k, v in ix.items()})
+    return out
