@@ -1,0 +1,401 @@
+ticker,name,sector,market,cik,provider_ticker,index
+AAON,AAON,Industrials,US,824142,aaon,S&P 400
+ANF,Abercrombie & Fitch,Consumer Discretionary,US,1018840,anf,S&P 400
+AYI,Acuity Brands,Industrials,US,1144215,ayi,S&P 400
+WMS,Advanced Drainage Systems,Industrials,US,1604028,wms,S&P 400
+AEIS,Advanced Energy,Information Technology,US,927003,aeis,S&P 400
+ACM,AECOM,Industrials,US,868857,acm,S&P 400
+AVAV,AeroVironment,Industrials,US,1368622,avav,S&P 400
+AMG,Affiliated Managers Group,Financials,US,1004434,amg,S&P 400
+AGCO,AGCO,Industrials,US,880266,agco,S&P 400
+AGNC,AGNC Investment,Financials,US,1423689,agnc,S&P 400
+ADC,Agree Realty,Real Estate,US,917251,adc,S&P 400
+ALK,Alaska Air Group,Industrials,US,766421,alk,S&P 400
+ACI,Albertsons,Consumer Staples,US,1646972,aci,S&P 400
+AA,Alcoa,Materials,US,1675149,aa,S&P 400
+ALGM,Allegro MicroSystems,Information Technology,US,866291,algm,S&P 400
+ALSN,Allison Transmission,Industrials,US,1411207,alsn,S&P 400
+ALLY,Ally Financial,Financials,US,40729,ally,S&P 400
+AAL,American Airlines Group,Industrials,US,6201,aal,S&P 400
+AFG,American Financial Group,Financials,US,1042046,afg,S&P 400
+AHR,American Healthcare REIT,Real Estate,US,1632970,ahr,S&P 400
+AMH,American Homes 4 Rent,Real Estate,US,1562401,amh,S&P 400
+AMKR,Amkor Technology,Information Technology,US,1047127,amkr,S&P 400
+NLY,Annaly Capital Management,Financials,US,1043219,nly,S&P 400
+AM,Antero Midstream,Energy,US,1623925,am,S&P 400
+AR,Antero Resources,Energy,US,1433270,ar,S&P 400
+APG,APi Group,Industrials,US,1796209,apg,S&P 400
+APPF,AppFolio,Information Technology,US,1433195,appf,S&P 400
+AIT,Applied Industrial Technologies,Industrials,US,109563,ait,S&P 400
+ATR,AptarGroup,Materials,US,896622,atr,S&P 400
+ARMK,Aramark,Consumer Discretionary,US,1584509,armk,S&P 400
+ARW,Arrow Electronics,Information Technology,US,7536,arw,S&P 400
+ARWR,Arrowhead Pharmaceuticals,Health Care,US,879407,arwr,S&P 400
+ASH,Ashland Global,Materials,US,1674862,ash,S&P 400
+ASB,Associated Bank,Financials,US,7789,asb,S&P 400
+ATI,ATI Inc.,Industrials,US,1018963,ati,S&P 400
+ALV,Autoliv,Consumer Discretionary,US,1034670,alv,S&P 400
+AN,AutoNation,Consumer Discretionary,US,350698,an,S&P 400
+AVTR,Avantor,Health Care,US,1722482,avtr,S&P 400
+AVNT,Avient,Materials,US,1122976,avnt,S&P 400
+CAR,Avis Budget Group,Industrials,US,723612,car,S&P 400
+AVT,Avnet,Information Technology,US,8858,avt,S&P 400
+AXTA,Axalta,Materials,US,1616862,axta,S&P 400
+OZK,Bank OZK,Financials,US,1569650,ozk,S&P 400
+BBWI,"Bath & Body Works, Inc.",Consumer Discretionary,US,701985,bbwi,S&P 400
+BDC,Belden Inc.,Information Technology,US,913142,bdc,S&P 400
+BSY,Bentley Systems,Information Technology,US,1031308,bsy,S&P 400
+BILL,Bill Holdings,Information Technology,US,1786352,bill,S&P 400
+BIO,Bio-Rad Laboratories,Health Care,US,12208,bio,S&P 400
+BMRN,BioMarin Pharmaceutical,Health Care,US,1048477,bmrn,S&P 400
+BJ,BJ's Wholesale Club,Consumer Staples,US,1531152,bj,S&P 400
+BKH,Black Hills Corporation,Utilities,US,1130464,bkh,S&P 400
+BAH,Booz Allen Hamilton,Industrials,US,1443646,bah,S&P 400
+BWA,BorgWarner,Consumer Discretionary,US,908255,bwa,S&P 400
+BYD,Boyd Gaming,Consumer Discretionary,US,906553,byd,S&P 400
+BHF,Brighthouse Financial,Financials,US,1685040,bhf,S&P 400
+BTSG,BrightSpring Health Services,Health Care,US,1865782,btsg,S&P 400
+BCO,Brink's,Industrials,US,78890,bco,S&P 400
+EAT,Brinker International,Consumer Discretionary,US,703351,eat,S&P 400
+BRX,Brixmor Property Group,Real Estate,US,1581068,brx,S&P 400
+BRKR,Bruker,Health Care,US,1109354,brkr,S&P 400
+BC,Brunswick,Consumer Discretionary,US,14930,bc,S&P 400
+BURL,Burlington Stores,Consumer Discretionary,US,1579298,burl,S&P 400
+BWXT,BWX Technologies,Industrials,US,1486957,bwxt,S&P 400
+CBT,Cabot Corp,Materials,US,16040,cbt,S&P 400
+CACI,CACI International,Industrials,US,16058,caci,S&P 400
+CTRE,CareTrust REIT,Real Estate,US,1590717,ctre,S&P 400
+CSL,Carlisle Companies,Industrials,US,790051,csl,S&P 400
+CG,Carlyle Group (The),Financials,US,1527166,cg,S&P 400
+CRS,Carpenter Technology,Industrials,US,17843,crs,S&P 400
+CAVA,Cava Group,Consumer Discretionary,US,1639438,cava,S&P 400
+CELH,Celsius Holdings,Consumer Staples,US,1341766,celh,S&P 400
+CHE,Chemed Corp.,Health Care,US,19584,che,S&P 400
+CHWY,Chewy,Consumer Discretionary,US,1766502,chwy,S&P 400
+CHH,Choice Hotels,Consumer Discretionary,US,1046311,chh,S&P 400
+CHRD,Chord Energy,Energy,US,1486159,chrd,S&P 400
+CHDN,Churchill Downs Inc.,Consumer Discretionary,US,20212,chdn,S&P 400
+CRUS,Cirrus Logic,Information Technology,US,772406,crus,S&P 400
+CLH,Clean Harbors,Industrials,US,822818,clh,S&P 400
+CLF,Cleveland-Cliffs,Materials,US,764065,clf,S&P 400
+CNH,CNH Industrial,Industrials,US,1567094,cnh,S&P 400
+CNO,CNO Financial Group,Financials,US,1224608,cno,S&P 400
+CNX,CNX Resources,Energy,US,1070412,cnx,S&P 400
+COKE,Coca-Cola Consolidated,Consumer Staples,US,317540,coke,S&P 400
+CDE,Coeur Mining,Materials,US,215466,cde,S&P 400
+CGNX,Cognex,Information Technology,US,851205,cgnx,S&P 400
+COLB,Columbia Banking System,Financials,US,887343,colb,S&P 400
+COLM,Columbia Sportswear,Consumer Discretionary,US,1050797,colm,S&P 400
+CBSH,Commerce Bancshares,Financials,US,22356,cbsh,S&P 400
+CMC,Commercial Metals,Materials,US,22444,cmc,S&P 400
+CVLT,CommVault Systems,Information Technology,US,1169561,cvlt,S&P 400
+CDP,COPT Defense Properties,Real Estate,US,860546,cdp,S&P 400
+CORT,Corcept Therapeutics,Health Care,US,1088856,cort,S&P 400
+CNM,Core & Main,Industrials,US,1856525,cnm,S&P 400
+CRBG,Corebridge Financial,Financials,US,1889539,crbg,S&P 400
+CTVA,Corteva,Materials,US,1755672,ctva,S&P 400
+CUZ,Cousins Properties,Real Estate,US,25232,cuz,S&P 400
+CR,Crane,Industrials,US,1944013,cr,S&P 400
+CXT,Crane NXT,Information Technology,US,25445,cxt,S&P 400
+CROX,Crocs,Consumer Discretionary,US,1334036,crox,S&P 400
+CCK,Crown Holdings,Materials,US,1219601,cck,S&P 400
+CUBE,CubeSmart,Real Estate,US,1298675,cube,S&P 400
+CW,Curtiss-Wright,Industrials,US,26324,cw,S&P 400
+CYTK,Cytokinetics,Health Care,US,1061983,cytk,S&P 400
+DAR,Darling Ingredients,Consumer Staples,US,916540,dar,S&P 400
+XRAY,Dentsply Sirona,Health Care,US,818479,xray,S&P 400
+DKS,Dick's Sporting Goods,Consumer Discretionary,US,1089063,dks,S&P 400
+DOCN,DigitalOcean,Information Technology,US,1582961,docn,S&P 400
+DOCU,Docusign,Information Technology,US,1261333,docu,S&P 400
+DLB,Dolby,Information Technology,US,1308547,dlb,S&P 400
+DCI,Donaldson Company,Industrials,US,29644,dci,S&P 400
+DOCS,Doximity,Health Care,US,1516513,docs,S&P 400
+DBX,Dropbox,Information Technology,US,1467623,dbx,S&P 400
+DTM,DT Midstream,Energy,US,1842022,dtm,S&P 400
+DUOL,Duolingo,Consumer Discretionary,US,1562088,duol,S&P 400
+BROS,Dutch Bros Inc.,Consumer Discretionary,US,1866581,bros,S&P 400
+DY,Dycom Industries,Industrials,US,67215,dy,S&P 400
+DT,Dynatrace,Information Technology,US,1773383,dt,S&P 400
+ELF,e.l.f. Beauty,Consumer Staples,US,1600033,elf,S&P 400
+EXP,Eagle Materials,Materials,US,918646,exp,S&P 400
+EWBC,East West Bancorp,Financials,US,1069157,ewbc,S&P 400
+EGP,EastGroup Properties,Real Estate,US,49600,egp,S&P 400
+ELAN,Elanco,Health Care,US,1739104,elan,S&P 400
+EHC,Encompass Health,Health Care,US,785161,ehc,S&P 400
+ENS,EnerSys,Industrials,US,1289308,ens,S&P 400
+ENSG,Ensign Group,Health Care,US,1125376,ensg,S&P 400
+ENTG,Entegris,Information Technology,US,1101302,entg,S&P 400
+NVST,Envista Holdings,Health Care,US,1757073,nvst,S&P 400
+EPR,EPR Properties,Real Estate,US,1045450,epr,S&P 400
+EQH,Equitable Holdings,Financials,US,1333986,eqh,S&P 400
+ELS,Equity Lifestyle Properties,Real Estate,US,895417,els,S&P 400
+ESAB,ESAB,Industrials,US,1877322,esab,S&P 400
+ESNT,Essent Group Ltd.,Financials,US,1448893,esnt,S&P 400
+WTRG,Essential Utilities,Utilities,US,78128,wtrg,S&P 400
+EEFT,Euronet Worldwide,Financials,US,1029199,eeft,S&P 400
+EVR,Evercore,Financials,US,1360901,evr,S&P 400
+EXEL,Exelixis,Health Care,US,939767,exel,S&P 400
+EXLS,EXL Service,Industrials,US,1297989,exls,S&P 400
+EXPO,"Exponent, Inc.",Industrials,US,851520,expo,S&P 400
+FN,Fabrinet,Information Technology,US,1408710,fn,S&P 400
+FHI,Federated Hermes,Financials,US,1056288,fhi,S&P 400
+FNF,Fidelity National Financial,Financials,US,1331875,fnf,S&P 400
+FAF,First American Financial Corporation,Financials,US,1472787,faf,S&P 400
+FFIN,First Financial Bankshares,Financials,US,36029,ffin,S&P 400
+FHN,First Horizon,Financials,US,36966,fhn,S&P 400
+FR,First Industrial Realty Trust,Real Estate,US,921825,fr,S&P 400
+FCFS,FirstCash,Financials,US,840489,fcfs,S&P 400
+FIVE,Five Below,Consumer Discretionary,US,1177609,five,S&P 400
+FLG,Flagstar Bank,Financials,US,910073,flg,S&P 400
+FND,Floor & Decor,Consumer Discretionary,US,1507079,fnd,S&P 400
+FLS,Flowserve,Industrials,US,30625,fls,S&P 400
+FLR,Fluor,Industrials,US,1124198,flr,S&P 400
+FNB,FNB Corporation,Financials,US,37808,fnb,S&P 400
+FORM,FormFactor,Information Technology,US,1039399,form,S&P 400
+FBIN,Fortune Brands Innovations,Industrials,US,1519751,fbin,S&P 400
+CFR,Frost Bank,Financials,US,39263,cfr,S&P 400
+FCN,FTI Consulting,Industrials,US,887936,fcn,S&P 400
+GME,GameStop,Consumer Discretionary,US,1326380,gme,S&P 400
+GLPI,Gaming and Leisure Properties,Real Estate,US,1575965,glpi,S&P 400
+GAP,Gap Inc.,Consumer Discretionary,US,39911,gap,S&P 400
+GATX,GATX,Industrials,US,40211,gatx,S&P 400
+G,Genpact,Industrials,US,1398659,g,S&P 400
+GNTX,Gentex,Consumer Discretionary,US,355811,gntx,S&P 400
+GBCI,Glacier Bancorp,Financials,US,868671,gbci,S&P 400
+GKOS,Glaukos,Health Care,US,1192448,gkos,S&P 400
+GMED,Globus Medical,Health Care,US,1237831,gmed,S&P 400
+GGG,Graco Inc.,Industrials,US,42888,ggg,S&P 400
+GHC,Graham Holdings,Consumer Discretionary,US,104889,ghc,S&P 400
+LOPE,Grand Canyon Education,Consumer Discretionary,US,1434588,lope,S&P 400
+GPK,Graphic Packaging,Materials,US,1408075,gpk,S&P 400
+GEF,"Greif, Inc.",Materials,US,43920,gef,S&P 400
+GWRE,Guidewire Software,Information Technology,US,1528396,gwre,S&P 400
+GXO,GXO Logistics,Industrials,US,1852244,gxo,S&P 400
+HRB,H&R Block,Consumer Discretionary,US,12659,hrb,S&P 400
+HAE,Haemonetics,Health Care,US,313143,hae,S&P 400
+HALO,Halozyme,Health Care,US,1159036,halo,S&P 400
+HLNE,Hamilton Lane,Financials,US,1433642,hlne,S&P 400
+HWC,Hancock Whitney,Financials,US,750577,hwc,S&P 400
+THG,Hanover Insurance,Financials,US,944695,thg,S&P 400
+HOG,Harley-Davidson,Consumer Discretionary,US,793952,hog,S&P 400
+HR,Healthcare Realty Trust,Real Estate,US,1360604,hr,S&P 400
+HQY,HealthEquity,Health Care,US,1428336,hqy,S&P 400
+HL,Hecla Mining,Materials,US,719413,hl,S&P 400
+HXL,Hexcel,Industrials,US,717605,hxl,S&P 400
+DINO,HF Sinclair,Energy,US,1915657,dino,S&P 400
+HGV,Hilton Grand Vacations,Consumer Discretionary,US,1674168,hgv,S&P 400
+HIMS,Hims & Hers Health,Health Care,US,1773751,hims,S&P 400
+HOMB,Home BancShares,Financials,US,1331520,homb,S&P 400
+HLI,Houlihan Lokey,Financials,US,1302215,hli,S&P 400
+HUBS,HubSpot,Information Technology,US,1404655,hubs,S&P 400
+H,Hyatt,Consumer Discretionary,US,1468174,h,S&P 400
+IDA,Idacorp,Utilities,US,1057877,ida,S&P 400
+IESC,IES Holdings,Industrials,US,1048268,iesc,S&P 400
+IRT,Independence Realty Trust,Real Estate,US,1466085,irt,S&P 400
+INGR,Ingredion,Consumer Staples,US,1046257,ingr,S&P 400
+IDCC,InterDigital,Information Technology,US,1405495,idcc,S&P 400
+IBOC,Intl Bancshares Corp,Financials,US,315709,iboc,S&P 400
+IPGP,IPG Photonics,Information Technology,US,1111928,ipgp,S&P 400
+ITT,ITT Inc.,Industrials,US,216228,itt,S&P 400
+JHX,James Hardie Industries,Materials,US,1159152,jhx,S&P 400
+JAZZ,Jazz Pharmaceuticals,Health Care,US,1232524,jazz,S&P 400
+JEF,Jefferies,Financials,US,96223,jef,S&P 400
+JLL,Jones Lang LaSalle,Real Estate,US,1037976,jll,S&P 400
+KBH,KB Home,Consumer Discretionary,US,795266,kbh,S&P 400
+KBR,"KBR, Inc.",Industrials,US,1357615,kbr,S&P 400
+KRC,Kilroy Realty Corp,Real Estate,US,1025996,krc,S&P 400
+KNSL,Kinsale Capital Group,Financials,US,1669162,knsl,S&P 400
+KEX,Kirby Corporation,Industrials,US,56047,kex,S&P 400
+KRG,Kite Realty Group Trust,Real Estate,US,1286043,krg,S&P 400
+KNF,Knife River Corporation,Materials,US,1955520,knf,S&P 400
+KNX,Knight-Swift,Industrials,US,1492691,knx,S&P 400
+KTOS,Kratos Defense & Security Solutions,Industrials,US,1069258,ktos,S&P 400
+KRYS,Krystal Biotech,Health Care,US,1711279,krys,S&P 400
+KD,Kyndryl,Information Technology,US,1867072,kd,S&P 400
+LAMR,Lamar Advertising Company,Real Estate,US,1090425,lamr,S&P 400
+LSTR,Landstar System,Industrials,US,853816,lstr,S&P 400
+LNTH,Lantheus Holdings,Health Care,US,1521036,lnth,S&P 400
+LSCC,Lattice Semiconductor,Information Technology,US,855658,lscc,S&P 400
+LEA,Lear,Consumer Discretionary,US,842162,lea,S&P 400
+LECO,Lincoln Electric,Industrials,US,59527,leco,S&P 400
+LAD,Lithia Motors,Consumer Discretionary,US,1023128,lad,S&P 400
+LFUS,Littelfuse,Information Technology,US,889331,lfus,S&P 400
+LIVN,LivaNova,Health Care,US,1639691,livn,S&P 400
+LPX,Louisiana-Pacific,Industrials,US,60519,lpx,S&P 400
+MTSI,MACOM Technology Solutions,Information Technology,US,1493594,mtsi,S&P 400
+M,Macy's,Consumer Discretionary,US,794367,m,S&P 400
+MANH,Manhattan Associates,Information Technology,US,1056696,manh,S&P 400
+CART,Maplebear Inc.,Consumer Staples,US,1579091,cart,S&P 400
+MTZ,MasTec,Industrials,US,15615,mtz,S&P 400
+MTDR,Matador Resources,Energy,US,1520006,mtdr,S&P 400
+MAT,Mattel,Consumer Discretionary,US,63276,mat,S&P 400
+MMS,Maximus Inc.,Industrials,US,1032220,mms,S&P 400
+MEDP,Medpace,Health Care,US,1668397,medp,S&P 400
+MTG,MGIC Investment Corporation,Financials,US,876437,mtg,S&P 400
+MIDD,Middleby,Industrials,US,769520,midd,S&P 400
+MKSI,MKS Instruments,Information Technology,US,1049502,mksi,S&P 400
+MOH,Molina Healthcare,Health Care,US,1179929,moh,S&P 400
+MOG.A,Moog Inc.,Industrials,US,67887,mog-a,S&P 400
+MORN,"Morningstar, Inc.",Financials,US,1289419,morn,S&P 400
+MP,MP Materials,Materials,US,1801368,mp,S&P 400
+MSA,MSA Safety,Industrials,US,66570,msa,S&P 400
+MSM,MSC Industrial Direct,Industrials,US,1003078,msm,S&P 400
+MLI,Mueller Industries,Industrials,US,89439,mli,S&P 400
+MUR,Murphy Oil,Energy,US,717423,mur,S&P 400
+MUSA,Murphy USA,Consumer Discretionary,US,1573516,musa,S&P 400
+NFG,National Fuel Gas,Utilities,US,70145,nfg,S&P 400
+NBIX,Neurocrine Biosciences,Health Care,US,914475,nbix,S&P 400
+NJR,New Jersey Resources,Utilities,US,356309,njr,S&P 400
+NYT,New York Times Company,Communication Services,US,71691,nyt,S&P 400
+NEU,NewMarket Corporation,Materials,US,1282637,neu,S&P 400
+NXST,Nexstar Media Group,Communication Services,US,1142417,nxst,S&P 400
+NXT,Nextpower,Industrials,US,1852131,nxt,S&P 400
+NNN,NNN Reit,Real Estate,US,751364,nnn,S&P 400
+NWE,NorthWestern Energy,Utilities,US,1993004,nwe,S&P 400
+NOV,NOV Inc.,Energy,US,1021860,nov,S&P 400
+NOVT,Novanta,Information Technology,US,1076930,novt,S&P 400
+NTNX,Nutanix,Information Technology,US,1618732,ntnx,S&P 400
+NVT,nVent Electric plc,Industrials,US,1720635,nvt,S&P 400
+OGE,OGE Energy,Utilities,US,1021635,oge,S&P 400
+ONB,Old National Bank,Financials,US,707179,onb,S&P 400
+ORI,Old Republic International,Financials,US,74260,ori,S&P 400
+OLLI,Ollie's Bargain Outlet,Consumer Discretionary,US,1639300,olli,S&P 400
+OHI,Omega Healthcare Investors,Real Estate,US,888491,ohi,S&P 400
+OGS,One Gas,Utilities,US,1587732,ogs,S&P 400
+ONTO,Onto Innovation,Information Technology,US,704532,onto,S&P 400
+OPCH,Option Care Health,Health Care,US,1014739,opch,S&P 400
+ORA,Ormat Technologies,Utilities,US,1296445,ora,S&P 400
+OSK,Oshkosh,Industrials,US,775158,osk,S&P 400
+OVV,Ovintiv,Energy,US,1792580,ovv,S&P 400
+OC,Owens Corning,Industrials,US,1370946,oc,S&P 400
+PK,Park Hotels & Resorts,Real Estate,US,1617406,pk,S&P 400
+PSN,Parsons Corporation,Industrials,US,275880,psn,S&P 400
+PCTY,Paylocity,Industrials,US,1591698,pcty,S&P 400
+PBF,PBF Energy,Energy,US,1534504,pbf,S&P 400
+PEGA,Pegasystems,Information Technology,US,1013857,pega,S&P 400
+PAG,Penske Automotive Group,Consumer Discretionary,US,1019849,pag,S&P 400
+PEN,"Penumbra, Inc.",Health Care,US,1321732,pen,S&P 400
+PFGC,Performance Food Group,Consumer Staples,US,1618673,pfgc,S&P 400
+PR,Permian Resources,Energy,US,1658566,pr,S&P 400
+PPC,Pilgrim's Pride,Consumer Staples,US,802481,ppc,S&P 400
+PNFP,Pinnacle Financial Partners,Financials,US,2082866,pnfp,S&P 400
+PINS,Pinterest,Communication Services,US,1506293,pins,S&P 400
+PLNT,Planet Fitness,Consumer Discretionary,US,1637207,plnt,S&P 400
+PII,Polaris,Consumer Discretionary,US,931015,pii,S&P 400
+POR,Portland General Electric,Utilities,US,784977,por,S&P 400
+POST,Post Holdings,Consumer Staples,US,1530950,post,S&P 400
+PRI,Primerica,Financials,US,1475922,pri,S&P 400
+PB,Prosperity Bancshares,Financials,US,1068851,pb,S&P 400
+PVH,PVH Corp.,Consumer Discretionary,US,78239,pvh,S&P 400
+QLYS,Qualys,Information Technology,US,1107843,qlys,S&P 400
+RMBS,Rambus,Information Technology,US,917273,rmbs,S&P 400
+RRC,Range Resources,Energy,US,315852,rrc,S&P 400
+RYN,Rayonier,Real Estate,US,52827,ryn,S&P 400
+RBA,RB Global,Industrials,US,1046102,rba,S&P 400
+RBC,RBC Bearings,Industrials,US,1324948,rbc,S&P 400
+RRX,Regal Rexnord,Industrials,US,82811,rrx,S&P 400
+RGA,Reinsurance Group of America,Financials,US,898174,rga,S&P 400
+RS,"Reliance, Inc.",Materials,US,861884,rs,S&P 400
+RNR,RenaissanceRe,Financials,US,913144,rnr,S&P 400
+RGEN,Repligen,Health Care,US,730272,rgen,S&P 400
+REXR,Rexford Industrial Realty,Real Estate,US,1571283,rexr,S&P 400
+RH,RH,Consumer Discretionary,US,1528849,rh,S&P 400
+RLI,RLI Corp.,Financials,US,84246,rli,S&P 400
+ROIV,Roivant Sciences,Health Care,US,1635088,roiv,S&P 400
+RGLD,Royal Gold,Materials,US,85535,rgld,S&P 400
+RPM,RPM International,Materials,US,110621,rpm,S&P 400
+RYAN,Ryan Specialty,Financials,US,1849253,ryan,S&P 400
+R,Ryder,Industrials,US,85961,r,S&P 400
+SBRA,Sabra Health Care REIT,Real Estate,US,1492298,sbra,S&P 400
+SAIA,Saia,Industrials,US,1177702,saia,S&P 400
+SANM,Sanmina Corporation,Information Technology,US,897723,sanm,S&P 400
+SAIC,Science Applications Intl Corp,Industrials,US,1571123,saic,S&P 400
+SMG,Scotts Miracle-Gro Company,Materials,US,825542,smg,S&P 400
+SEIC,SEI Investments Company,Financials,US,350894,seic,S&P 400
+SIGI,Selective Insurance Group,Financials,US,230557,sigi,S&P 400
+SMTC,Semtech,Information Technology,US,88941,smtc,S&P 400
+ST,Sensata Technologies,Industrials,US,1477294,st,S&P 400
+SCI,Service Corp Intl,Consumer Discretionary,US,89089,sci,S&P 400
+SN,SharkNinja,Consumer Discretionary,US,1957132,sn,S&P 400
+FOUR,Shift4,Financials,US,1794669,four,S&P 400
+SLGN,Silgan Holdings,Materials,US,849869,slgn,S&P 400
+SLAB,Silicon Labs,Information Technology,US,1038074,slab,S&P 400
+SSD,Simpson Manufacturing,Industrials,US,920371,ssd,S&P 400
+SIRI,SiriusXM,Communication Services,US,908937,siri,S&P 400
+SITM,SiTime,Information Technology,US,1451809,sitm,S&P 400
+SLM,SLM Corp,Financials,US,1032033,slm,S&P 400
+SOLS,Solstice Advanced Materials,Materials,US,2064953,sols,S&P 400
+SGI,Somnigroup International,Consumer Discretionary,US,1206264,sgi,S&P 400
+SON,Sonoco,Materials,US,91767,son,S&P 400
+SHC,Sotera Health,Health Care,US,1822479,shc,S&P 400
+SSB,South State Bank,Financials,US,764038,ssb,S&P 400
+SWX,Southwest Gas Corp,Utilities,US,1692115,swx,S&P 400
+SR,Spire,Utilities,US,1126956,sr,S&P 400
+SFM,Sprouts Farmers Market,Consumer Staples,US,1575515,sfm,S&P 400
+SPXC,SPX Technologies,Industrials,US,88205,spxc,S&P 400
+STAG,STAG Industrial,Real Estate,US,1479094,stag,S&P 400
+SARO,StandardAero,Industrials,US,2025410,saro,S&P 400
+STWD,Starwood Property Trust,Financials,US,1465128,stwd,S&P 400
+STRL,Sterling Infrastructure,Industrials,US,874238,strl,S&P 400
+SF,Stifel,Financials,US,720672,sf,S&P 400
+SUI,Sun Communities,Real Estate,US,912593,sui,S&P 400
+SYNA,Synaptics,Information Technology,US,817720,syna,S&P 400
+TLN,Talen Energy,Utilities,US,1622536,tln,S&P 400
+SNX,TD Synnex,Information Technology,US,1177394,snx,S&P 400
+FTI,TechnipFMC,Energy,US,1681459,fti,S&P 400
+THC,Tenet Health,Health Care,US,70318,thc,S&P 400
+TEX,Terex,Industrials,US,97216,tex,S&P 400
+TTEK,Tetra Tech,Industrials,US,831641,ttek,S&P 400
+TCBI,Texas Capital Bancshares,Financials,US,1077428,tcbi,S&P 400
+TXRH,Texas Roadhouse,Consumer Discretionary,US,1289460,txrh,S&P 400
+MZTI,The Marzetti Company,Consumer Staples,US,57515,mzti,S&P 400
+THO,Thor Industries,Consumer Discretionary,US,730263,tho,S&P 400
+TKR,Timken,Industrials,US,98362,tkr,S&P 400
+TOST,"Toast, Inc.",Financials,US,1650164,tost,S&P 400
+TOL,Toll Brothers,Consumer Discretionary,US,794170,tol,S&P 400
+TTC,Toro,Industrials,US,737758,ttc,S&P 400
+TRU,TransUnion,Industrials,US,1552033,tru,S&P 400
+TNL,Travel + Leisure Co.,Consumer Discretionary,US,1361658,tnl,S&P 400
+TREX,Trex,Industrials,US,1069878,trex,S&P 400
+TTMI,TTM Technologies,Information Technology,US,1116942,ttmi,S&P 400
+TXNM,TXNM Energy,Utilities,US,1108426,txnm,S&P 400
+UFPI,UFP Industries,Industrials,US,912767,ufpi,S&P 400
+UGI,UGI Corp,Utilities,US,884614,ugi,S&P 400
+PATH,UiPath,Information Technology,US,1734722,path,S&P 400
+ULS,UL Solutions,Industrials,US,1901440,uls,S&P 400
+UMBF,UMB Financial Corp.,Financials,US,101382,umbf,S&P 400
+UBSI,United Bankshares,Financials,US,729986,ubsi,S&P 400
+UTHR,United Therapeutics,Health Care,US,1082554,uthr,S&P 400
+OLED,Universal Display,Information Technology,US,1005284,oled,S&P 400
+UNM,Unum,Financials,US,5513,unm,S&P 400
+USFD,US Foods,Consumer Staples,US,1665918,usfd,S&P 400
+MTN,Vail Resorts,Consumer Discretionary,US,812011,mtn,S&P 400
+VAL,Valaris,Energy,US,314808,val,S&P 400
+VLY,Valley Bank,Financials,US,714310,vly,S&P 400
+VMI,Valmont Industries,Industrials,US,102729,vmi,S&P 400
+VVV,Valvoline,Consumer Discretionary,US,1674910,vvv,S&P 400
+VFC,VF Corporation,Consumer Discretionary,US,103379,vfc,S&P 400
+VIAV,Viavi Solutions,Information Technology,US,912093,viav,S&P 400
+VICR,Vicor Corporation,Industrials,US,751978,vicr,S&P 400
+VNOM,Viper Energy,Energy,US,2074176,vnom,S&P 400
+VC,Visteon,Consumer Discretionary,US,1111335,vc,S&P 400
+VNT,Vontier,Information Technology,US,1786842,vnt,S&P 400
+VNO,Vornado Realty Trust,Real Estate,US,899689,vno,S&P 400
+VOYA,Voya Financial,Financials,US,1535929,voya,S&P 400
+WPC,W. P. Carey,Real Estate,US,1025378,wpc,S&P 400
+WMG,Warner Music Group,Communication Services,US,1319161,wmg,S&P 400
+WSO,Watsco,Industrials,US,105016,wso,S&P 400
+WTS,Watts Water Technologies,Industrials,US,795403,wts,S&P 400
+WFRD,Weatherford International,Energy,US,1603923,wfrd,S&P 400
+WCC,WESCO International,Industrials,US,929008,wcc,S&P 400
+WAL,Western Alliance Bancorporation,Financials,US,1212545,wal,S&P 400
+WLK,Westlake Corporation,Materials,US,1262823,wlk,S&P 400
+WEX,WEX Inc.,Financials,US,1309108,wex,S&P 400
+WHR,Whirlpool Corporation,Consumer Discretionary,US,106640,whr,S&P 400
+WING,Wingstop,Consumer Discretionary,US,1636222,wing,S&P 400
+WTFC,Wintrust Financial,Financials,US,1015328,wtfc,S&P 400
+WWD,"Woodward, Inc.",Industrials,US,108312,wwd,S&P 400
+WH,Wyndham Hotels & Resorts,Consumer Discretionary,US,1722684,wh,S&P 400
+XPO,"XPO, Inc.",Industrials,US,1166003,xpo,S&P 400
+YETI,Yeti Holdings,Consumer Discretionary,US,1670592,yeti,S&P 400
+ZION,Zions Bancorporation,Financials,US,109380,zion,S&P 400
