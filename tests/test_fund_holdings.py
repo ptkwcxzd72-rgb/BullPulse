@@ -4,6 +4,7 @@ import unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 import fund_holdings as H  # noqa: E402
+import build_membership as BM  # noqa: E402
 
 XML = b"""<?xml version="1.0"?>
 <edgarSubmission xmlns="http://www.sec.gov/edgar/nport"><formData>
@@ -22,6 +23,11 @@ class FundHoldingsTest(unittest.TestCase):
         self.assertEqual(period, "2025-03-31")
         self.assertEqual(len(rows), 1)
         self.assertEqual((rows[0]["ticker"], rows[0]["isin"], rows[0]["value_usd"]), ("ACME", "US000000AA10", "50000"))
+
+
+    def test_intervals(self):
+        snaps = [("2020-03-31", {"A", "B"}), ("2020-06-30", {"A"}), ("2020-09-30", {"A", "B", "C"})]
+        self.assertEqual(BM.intervals(snaps), [("A", "2020-03-31", ""), ("B", "2020-03-31", "2020-06-30"), ("B", "2020-09-30", ""), ("C", "2020-09-30", "")])
 
 
 if __name__ == "__main__":

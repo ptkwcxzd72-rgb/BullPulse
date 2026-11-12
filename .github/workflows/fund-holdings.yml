@@ -30,10 +30,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/fund_holdings.py --max "${{ inputs.max || 60 }}"
+      - name: Membership intervals (CUSIPs without a ticker looked up on OpenFIGI)
+        run: python scripts/build_membership.py --figi
       - name: Commit the holdings
         run: |
           git config user.name "bullpulse-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/history/fund_holdings
+          git add data/history/fund_holdings data/history/cusip_map.json universe/history/sp400_membership.csv universe/history/sp600_membership.csv
           git diff --cached --quiet || git commit -m "Fund holdings $(date -u +%F)"
           for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 20; done
