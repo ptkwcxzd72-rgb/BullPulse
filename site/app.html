@@ -988,7 +988,7 @@ async function select(s){
   $("d-summary").textContent = summary(s, X);
   evidence(s);
   $("d-dates").innerHTML = keyDates(s);
-  fundamentals(s, X.fund);
+  fundamentals(s, X.fund && Object.assign({}, X.fund, { notes: X.notes }));
   context(s);
   insiders(s, X.insiders);
   if (typeof trayUpdate === "function" && D) { const on = compare.includes(s.id); $("d-cmp").setAttribute("aria-pressed", on); $("d-cmp").textContent = on ? "Comparing" : "Compare"; }
@@ -1133,6 +1133,15 @@ function impliedGrowth(i, px){
   return (lo + hi) / 2;
 }
 const money = (v, s) => { const gbx = s && s.ccy === "GBX"; if (gbx) v = v / 100; const a = Math.abs(v), c = gbx ? "£" : "$"; return (v < 0 ? "−" + c : c) + (a >= 1e12 ? (a / 1e12).toFixed(2) + "tn" : a >= 1e9 ? (a / 1e9).toFixed(1) + "bn" : a >= 1e7 ? (a / 1e6).toFixed(0) + "m" : a >= 1e6 ? (a / 1e6).toFixed(1) + "m" : a >= 1e3 ? (a / 1e3).toFixed(0) + "k" : a.toFixed(0)); };
+// Points from the notes of the latest report, written by a language model and kept only where its
+// quotation was found word for word in the filing. Shown with the quotation and the filing link.
+function notesPoints(N){
+  if (!N) return "";
+  const head = `<h4 style="margin:0 0 6px">From the notes to the latest ${esc(N.form)} <span class="note" style="font-weight:400">(period to ${fmtDate(N.period || N.filed)}, filed ${fmtDate(N.filed)})</span></h4>`;
+  const foot = `<p class="note" style="margin-top:6px">Written by Google's Gemini model from the notes to the financial statements and checked automatically: a point appears only if the sentence it quotes is in the filing word for word. It can still misread context, so check the <a href="${esc(N.url)}" rel="noopener">filing</a>. Information only, not advice.</p>`;
+  if (!N.points || !N.points.length) return `<div class="panel" style="margin-top:12px">${head}<p class="note" style="margin:0">No points passed the check for this report${N.offered ? "" : ": nothing notable was found in the notes"}.</p>${foot}</div>`;
+  return `<div class="panel" style="margin-top:12px">${head}<ul style="margin:0;padding-left:18px">${N.points.map(p => `<li style="margin-bottom:6px">${esc(p.point)}<div class="note">“${esc(p.quote)}”</div></li>`).join("")}</ul>${foot}</div>`;
+}
 // Altman Z (distress risk) and Beneish M (an unusual pattern in the reported figures), from the
 // company's filings. Statistical screens of public figures, described as such: not findings.
 function acctScores(A, s){
@@ -1174,7 +1183,7 @@ function fundamentals(s, F){
   const x1 = v => v == null ? "–" : v.toFixed(1) + "×", p1 = v => v == null ? "–" : (v * 100).toFixed(1) + "%";
   $("d-fund").innerHTML = `<div class="fpro">${radar(P.areas.map(a => a.score))}<div class="areas">${P.areas.map(a => `<details><summary><span>${a.name}</span><span class="pips">${Array.from({ length: 6 }, (_, i) => `<i class="${i < a.score ? "on" : ""}"></i>`).join("")}</span><b>${a.score}/6</b></summary><ul>${a.checks.map(c => { const [k, sym] = mark(c); return `<li><span class="k ${k}" aria-label="${k === "y" ? "pass" : k === "n" ? "fail" : "no data"}">${sym}</span><span>${c.n}<small>${c.d}</small></span></li>`; }).join("")}</ul></details>`).join("")}</div></div>
     <div class="kv">${[["Market cap", M.mcap == null ? "–" : money(M.mcap, s)], ["P/E", x1(M.pe)], ["Price / sales", x1(M.ps)], ["FCF yield", p1(M.fcfYield)], ["Return on equity", p1(M.roe)], ["Debt / equity", p1(M.debtToEquity)], ["Dividend yield", p1(M.divYield)], ["Net cash", M.netCash == null ? "–" : money(M.netCash, s)]].map(([l, v]) => `<div><span class="lbl">${l}</span><span class="v">${v}</span></div>`).join("")}</div>`;
-  $("d-fund").insertAdjacentHTML("beforeend", acctScores(F.accounts, s));
+  $("d-fund").insertAdjacentHTML("beforeend", acctScores(F.accounts, s) + notesPoints(F.notes));
   const D0 = F.dcf;
   if (!D0 || !D0.inputs){ $("d-dcf").innerHTML = `<p class="note" style="margin:0">${(D0 && D0.skipped) || "Not enough data for an estimate."}</p>`; return; }
   const inp = { ...D0.inputs };

@@ -55,6 +55,12 @@ jobs:
         run: python scripts/fetch_insiders.py --budget-min 20
         timeout-minutes: 25
         continue-on-error: true
+      - name: Notes alerts from new 10-K and 10-Q reports (Gemini free tier; skipped without the GEMINI_API_KEY secret)
+        run: python scripts/notes_alerts.py --days 4 --max 40
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        timeout-minutes: 30
+        continue-on-error: true
       - name: UK annual-report figures from ESEF filings
         run: python scripts/fetch_uk_fundamentals.py --budget-min 35
         timeout-minutes: 40

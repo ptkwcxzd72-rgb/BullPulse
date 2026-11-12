@@ -223,6 +223,7 @@ func main() {
 	feedDir := flag.String("feeds", "site/feeds", "RSS feeds directory")
 	siteURL := flag.String("site-url", "https://bullpulse.co.uk/", "public address used in feed links")
 	insPath := flag.String("insiders", "data/insiders.json", "insider dealing from SEC Form 4 filings")
+	notesPath := flag.String("notes", "data/notes_alerts.json", "points from the notes of new reports (scripts/notes_alerts.py)")
 	fxPath := flag.String("fx", "data/fx.json", "GBP exchange rates for UK companies reporting in other currencies")
 	histPath := flag.String("history", "data/history/scores.csv", "daily score history (appended)")
 	modelPath := flag.String("model", "data/learning/model.json", "learned model (cmd/learn)")
@@ -676,8 +677,22 @@ func main() {
 			evByID[e.ID] = append(evByID[e.ID], e)
 		}
 	}
+	// the latest report's notes points for each stock (newest first in the file)
+	var notes struct {
+		Alerts []map[string]any `json:"alerts"`
+	}
+	readJSON(*notesPath, &notes)
+	notesByID := map[string]map[string]any{}
+	for _, a := range notes.Alerts {
+		if id, _ := a["id"].(string); id != "" && notesByID[id] == nil {
+			notesByID[id] = a
+		}
+	}
 	for _, r := range rows {
 		r.detail["events"] = evByID[r.ID]
+		if a := notesByID[r.ID]; a != nil {
+			r.detail["notes"] = a
+		}
 		r.detail["hist"] = history.forStock(r.ID, 180)
 		b, _ := json.Marshal(r.detail)
 		if err := os.WriteFile(filepath.Join(*out, "stocks", r.ID+".json"), b, 0o644); err != nil {
