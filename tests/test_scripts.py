@@ -90,6 +90,14 @@ class Financials(unittest.TestCase):
         self.assertEqual(f["assets_prev"], 400)          # the balance sheet a year before the latest
         self.assertEqual(f["gross_profit_ttm"], 135 - 80)  # revenue less cost of sales, both trailing twelve months
 
+    def test_share_count_a_year_earlier(self):
+        facts = self.facts()
+        facts["facts"]["dei"] = {"EntityCommonStockSharesOutstanding": {"units": {"shares": [
+            {"end": "2025-02-01", "val": 1000}, {"end": "2025-08-01", "val": 990}, {"end": "2026-02-03", "val": 950}]}}}
+        f = SF.financials(facts)
+        self.assertEqual(f["shares"], 950)
+        self.assertEqual(f["shares_prev"], 1000)          # the cover-page count nearest a year before
+
     def test_ttm_columns_in_quarterly_reports_are_not_fiscal_years(self):
         def r(st, en, v, form):
             return {"start": st, "end": en, "val": v, "filed": "2026-01-01", "form": form}

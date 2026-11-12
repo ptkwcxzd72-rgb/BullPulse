@@ -49,7 +49,7 @@ jobs:
         run: node scripts/signal_study.js site/data/panel_full.json --report reports/signal_study.md
         continue-on-error: true
       - name: Learn (walk-forward weights, champion and challenger), event studies and the live record
-        run: go run ./cmd/learn
+        run: go run ./cmd/learn -panel site/data/panel_full.json
       - name: Commit report
         run: |
           git config user.name "bullpulse-bot"

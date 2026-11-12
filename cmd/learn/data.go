@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"math"
 	"os"
+	"path/filepath"
 	"sort"
 )
 
@@ -37,6 +38,23 @@ func loadPanel(path string) (*Panel, error) {
 	}
 	if err := json.Unmarshal(b, &raw); err != nil {
 		return nil, err
+	}
+	// candidate signals kept out of the website's panel (cmd/panel writes them beside it)
+	var res struct {
+		Months []string                `json:"months"`
+		IDs    []string                `json:"ids"`
+		Scale  map[string]float64      `json:"scale"`
+		Fields map[string][][]*float64 `json:"fields"`
+	}
+	if rb, err := os.ReadFile(filepath.Join(filepath.Dir(path), "panel_research.json")); err == nil && json.Unmarshal(rb, &res) == nil &&
+		len(res.Months) == len(raw.Months) && len(res.IDs) == len(raw.IDs) {
+		if raw.Scale == nil {
+			raw.Scale = map[string]float64{}
+		}
+		for k, v := range res.Fields {
+			raw.Fields[k] = v
+			raw.Scale[k] = res.Scale[k]
+		}
 	}
 	conv := func(rows [][]*float64, scale float64) [][]float64 {
 		out := make([][]float64, len(rows))

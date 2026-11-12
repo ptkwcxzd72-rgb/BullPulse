@@ -23,6 +23,10 @@ var Features = []Feature{
 	{"rev1m", "Short-term reversal", -1, "last month's losers tend to bounce, winners to give back"},
 	{"insB", "Insider buying", 1, "officers and directors buying in the last 90 days (US)"},
 	{"sue", "Earnings surprise", 1, "latest quarter against the same quarter a year earlier (US)"},
+	{"iss", "Low share issuance", -1, "share count against a year earlier: buybacks good, new shares bad"},
+	{"gp", "Gross profitability", 1, "gross profit against total assets"},
+	{"accr", "Low accruals", -1, "profit not backed by cash flow, against total assets"},
+	{"agr", "Low asset growth", -1, "growth in total assets over a year"},
 }
 
 // minCoverage: a feature counts in a month only if at least this share of stocks have it.

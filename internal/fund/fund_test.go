@@ -172,3 +172,17 @@ func TestImplausibleYieldsAreBlank(t *testing.T) {
 		t.Fatalf("ordinary yields kept, got %v %v", m.FCFYield, m.DivYield)
 	}
 }
+
+func TestIssuanceIgnoresSplits(t *testing.T) {
+	p := func(v float64) *float64 { return &v }
+	if v := (Fin{Shares: p(95), SharesPrev: p(100)}).Issuance(); math.Abs(v-math.Log(0.95)) > 1e-9 {
+		t.Fatalf("buyback: %v", v)
+	}
+	if v := (Fin{Shares: p(200), SharesPrev: p(100)}).Issuance(); !math.IsNaN(v) {
+		t.Fatalf("2-for-1 split counted as issuance: %v", v)
+	}
+	gp, accr, agr := (Fin{Assets: p(100), AssetsPrev: p(80), GrossProfitTTM: p(30), NetIncomeTTM: p(10), OCFTTM: p(15)}).Quality()
+	if gp != 0.3 || accr != -0.05 || agr != 0.25 {
+		t.Fatalf("quality %v %v %v", gp, accr, agr)
+	}
+}

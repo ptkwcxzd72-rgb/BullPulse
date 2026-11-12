@@ -92,3 +92,38 @@ func TestRelReturnsAndRanks(t *testing.T) {
 		t.Errorf("normInv(0.975) = %v", v)
 	}
 }
+
+func TestStudyWeights(t *testing.T) {
+	// a signal with a steady positive IC passes; one that flips sign between halves doesn't
+	nM := 120
+	uicH := map[int]map[string][][]float64{}
+	for _, h := range studyHorizons {
+		uicH[h] = map[string][][]float64{"US": make([][]float64, nM)}
+		for m := 0; m < nM; m++ {
+			c := make([]float64, len(Features))
+			for a := range c {
+				c[a] = math.NaN()
+			}
+			for a, f := range Features {
+				switch f.Key {
+				case "iss":
+					c[a] = 0.04 + 0.02*math.Sin(float64(m))
+				case "M":
+					c[a] = 0.05
+					if m >= nM/2 {
+						c[a] = -0.04
+					}
+				}
+			}
+			uicH[h]["US"][m] = c
+		}
+	}
+	w := toMap(studyWeights(uicH, "US", nM+12))
+	if w["iss"] <= 0 || w["M"] != 0 || len(w) != 1 {
+		t.Fatalf("weights %v", w)
+	}
+	// only months whose outcomes were known count
+	if w := toMap(studyWeights(uicH, "US", 20)); len(w) != 0 {
+		t.Fatalf("too few known months gave weights %v", w)
+	}
+}

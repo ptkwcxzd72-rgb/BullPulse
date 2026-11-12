@@ -126,8 +126,9 @@ type Row struct {
 	SUE     *float64 `json:"sue,omitempty"`     // standardised earnings surprise, latest quarter (US)
 
 	sentRaw   float64
-	ret1m     float64 // last month's return (short-term reversal signal)
-	modelPct  float64 // percentile of the learned model's part of the score
+	ret1m     float64            // last month's return (short-term reversal signal)
+	modelPct  float64            // percentile of the learned model's part of the score
+	research  map[string]float64 // gp, accr, agr, iss: candidate signals for the learned model
 	insRecent []map[string]any
 	lastDate  time.Time
 	provider  string
@@ -764,6 +765,8 @@ func addFundamentals(rows []*Row, funds map[string]Fund, fx map[string]float64) 
 				it.r.FA = append(it.r.FA, a.Score)
 			}
 			it.r.FairVs = it.d.VsPrice
+			gp, accr, agr := it.f.Quality()
+			it.r.research = map[string]float64{"gp": gp, "accr": accr, "agr": agr, "iss": it.f.Issuance()}
 			it.r.PE, it.r.DivY, it.r.FCFY, it.r.ROE, it.r.DE, it.r.Implied = it.m.PE, it.m.DivYield, it.m.FCFYield, it.m.ROE, it.m.DebtToEquity, it.d.Implied
 			if it.m.MarketCap != nil {
 				usd := *it.m.MarketCap / 1e9 // US: dollars

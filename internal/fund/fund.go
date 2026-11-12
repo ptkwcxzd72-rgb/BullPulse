@@ -44,6 +44,7 @@ type Fin struct {
 	Assets           *float64 `json:"assets"`
 	AssetsPrev       *float64 `json:"assets_prev"` // total assets about a year before
 	GrossProfitTTM   *float64 `json:"gross_profit_ttm"`
+	SharesPrev       *float64 `json:"shares_prev"` // cover-page share count about a year before (US)
 	TTMEnd           string   `json:"ttm_end"`
 	Ccy              string   `json:"ccy"` // reporting currency when not USD (UK annual reports)
 	BalanceEnd       string   `json:"balance_end"`
@@ -62,6 +63,47 @@ func (f Fin) SUE() float64 {
 		return math.NaN()
 	}
 	return math.Max(-10, math.Min(10, *f.EPSQDiff / *f.EPSQSD))
+}
+
+// Quality returns gross profit / assets (Novy-Marx 2013), accruals / assets (Sloan 1996) and
+// asset growth (Cooper, Gulen and Schill 2008); NaN where the figures are missing.
+func (f Fin) Quality() (gp, accr, agr float64) {
+	gp, accr, agr = math.NaN(), math.NaN(), math.NaN()
+	if f.Assets == nil || *f.Assets <= 0 {
+		return
+	}
+	a := *f.Assets
+	if f.GrossProfitTTM != nil {
+		gp = *f.GrossProfitTTM / a
+	}
+	if f.NetIncomeTTM != nil && f.OCFTTM != nil {
+		accr = (*f.NetIncomeTTM - *f.OCFTTM) / a
+	}
+	if f.AssetsPrev != nil && *f.AssetsPrev > 0 {
+		agr = a / *f.AssetsPrev - 1
+	}
+	return
+}
+
+// splitRatios are the share-count changes treated as splits rather than issuance.
+var splitRatios = []float64{2, 3, 4, 5, 6, 8, 10, 20, 1.5, 0.5, 1.0 / 3, 0.25, 0.2, 0.125, 0.1, 0.05}
+
+// Issuance is the log change in the share count over about a year (Pontiff and Woodgate 2008):
+// NaN without both counts, or when the change looks like a stock split or a change of units.
+func (f Fin) Issuance() float64 {
+	if f.Shares == nil || f.SharesPrev == nil || *f.Shares <= 0 || *f.SharesPrev <= 0 {
+		return math.NaN()
+	}
+	r := *f.Shares / *f.SharesPrev
+	for _, s := range splitRatios {
+		if math.Abs(r/s-1) < 0.08 && (r > 1.4 || r < 0.7) {
+			return math.NaN()
+		}
+	}
+	if v := math.Log(r); math.Abs(v) < math.Log(5) {
+		return v
+	}
+	return math.NaN()
 }
 
 // Scale multiplies every money amount by k (for example reporting currency -> pence),

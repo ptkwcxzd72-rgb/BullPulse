@@ -259,7 +259,13 @@ def financials(facts: dict) -> dict:
         g = (r_[0], r_[1] - c_[1]) if r_ and c_ and r_[0] == c_[0] else None
     if g is not None:
         put("gross_profit_ttm", g[1], 0)
-    sh = latest(instants(facts, ["EntityCommonStockSharesOutstanding"], "shares", "dei"))
+    dei_sh = instants(facts, ["EntityCommonStockSharesOutstanding"], "shares", "dei")
+    sh = latest(dei_sh)
+    if sh:   # the cover-page count about a year earlier, for net share issuance
+        target = _d(sh[0]).toordinal() - 365
+        prev = [(abs(_d(k).toordinal() - target), k) for k in dei_sh if abs(_d(k).toordinal() - target) <= 60]
+        if prev:
+            put("shares_prev", dei_sh[min(prev)[1]], 0)
     if not sh:   # weighted-average diluted shares of the latest period (not summed: shares are not a flow)
         p = durations(facts, SHARES, "shares")
         if p:

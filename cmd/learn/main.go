@@ -51,6 +51,7 @@ type Model struct {
 	Horizon     int                           `json:"horizonMonths"`
 	Weights     map[string]float64            `json:"weights"`
 	Regime      map[string]map[string]float64 `json:"regime,omitempty"`
+	ByMarket    map[string]map[string]float64 `json:"byMarket,omitempty"` // US, LSE: separate weights for each market
 	Sentiment   float64                       `json:"sentimentWeight"`
 	Calibration []CalBin                      `json:"calibration"`
 	Tried       []string                      `json:"tried"` // every distinct challenger ever tested
@@ -170,7 +171,7 @@ func main() {
 	if res.Adopt != nil {
 		model.Changes = append(model.Changes, Change{Date: today, Event: "adopted", Reason: res.Decision,
 			From: model.Weights, To: res.Adopt.Weights})
-		model.Adopted, model.Since, model.Weights, model.Regime = true, today, res.Adopt.Weights, res.Adopt.Regime
+		model.Adopted, model.Since, model.Weights, model.Regime, model.ByMarket = true, today, res.Adopt.Weights, res.Adopt.Regime, res.Adopt.ByMarket
 		model.Calibration = res.Adopt.Calibration
 	}
 	if err := writeJSON(*modelPath, model, true); err != nil {
@@ -211,6 +212,7 @@ type Trial struct {
 type candidate struct {
 	Weights     map[string]float64
 	Regime      map[string]map[string]float64
+	ByMarket    map[string]map[string]float64
 	Calibration []CalBin
 }
 
@@ -228,6 +230,11 @@ func learn(p *Panel, model *Model, today string) result {
 	mos := make([]month, nM)
 	cs := make([][]float64, nM)
 	known := make([]bool, nM)
+	csEx := map[string][][]float64{}
+	for _, ex := range markets {
+		csEx[ex] = make([][]float64, nM)
+	}
+	uicH := map[int]map[string][][]float64{}
 	for m := 0; m < nM; m++ {
 		mos[m] = buildMonth(p, m, horizon)
 		c := 0
@@ -239,9 +246,33 @@ func learn(p *Panel, model *Model, today string) result {
 		known[m] = c >= 50
 		if known[m] {
 			cs[m] = coefs(mos[m])
+			for _, ex := range markets {
+				csEx[ex][m] = coefs(only(p, mos[m], ex))
+			}
+		}
+	}
+	// each signal's monthly IC in each market at the horizons the signal study uses
+	for _, h := range studyHorizons {
+		for m := 0; m < nM; m++ {
+			mo := mos[m]
+			if h != horizon {
+				mo = buildMonth(p, m, h)
+			}
+			for _, ex := range markets {
+				if uicH[h] == nil {
+					uicH[h] = map[string][][]float64{}
+				}
+				if uicH[h][ex] == nil {
+					uicH[h][ex] = make([][]float64, nM)
+				}
+				uicH[h][ex][m] = signalICs(only(p, mo, ex))
+			}
 		}
 	}
 	champ := func(m int) []float64 {
+		if model.ByMarket != nil {
+			return nil // scored per market in champPred
+		}
 		if model.Regime != nil {
 			if w, ok := model.Regime[reg[m]]; ok {
 				return vec(w)
@@ -254,6 +285,10 @@ func learn(p *Panel, model *Model, today string) result {
 		champ, chal, rch float64
 		pChamp, pChal    []float64
 		pReg             []float64
+		mkt              float64
+		pMkt             []float64
+		study            float64
+		pStudy           []float64
 	}
 	var rows []oos
 	for m := 0; m < nM; m++ {
@@ -277,8 +312,40 @@ func learn(p *Panel, model *Model, today string) result {
 		if len(same) >= 24 {
 			wr = estimate(same, horizon).W
 		}
-		pc, pl, pr := score(mos[m], champ(m)), score(mos[m], wl), score(mos[m], wr)
-		rows = append(rows, oos{m, ic(p, mos[m], pc), ic(p, mos[m], pl), ic(p, mos[m], pr), pc, pl, pr})
+		// separate weights for each market, where it has enough months of its own
+		wm := map[string][]float64{}
+		for _, ex := range markets {
+			var tr [][]float64
+			for t := 0; t+horizon <= m; t++ {
+				if csEx[ex][t] != nil {
+					tr = append(tr, csEx[ex][t])
+				}
+			}
+			wm[ex] = wl
+			if len(tr) >= minTrain {
+				wm[ex] = estimate(tr, horizon).W
+			}
+		}
+		var pc []float64
+		if model.ByMarket != nil {
+			cw := map[string][]float64{}
+			for _, ex := range markets {
+				cw[ex] = vec(model.Weights)
+				if w, ok := model.ByMarket[ex]; ok {
+					cw[ex] = vec(w)
+				}
+			}
+			pc = scoreByMarket(p, mos[m], cw)
+		} else {
+			pc = score(mos[m], champ(m))
+		}
+		// the signal-study rule applied to the months known by then, each market on its own
+		ws := map[string][]float64{}
+		for _, ex := range markets {
+			ws[ex] = studyWeights(uicH, ex, m)
+		}
+		pl, pr, pm, ps := score(mos[m], wl), score(mos[m], wr), scoreByMarket(p, mos[m], wm), scoreByMarket(p, mos[m], ws)
+		rows = append(rows, oos{m, ic(p, mos[m], pc), ic(p, mos[m], pl), ic(p, mos[m], pr), pc, pl, pr, ic(p, mos[m], pm), pm, ic(p, mos[m], ps), ps})
 	}
 	out := map[string]any{"generated": time.Now().UTC().Format(time.RFC3339), "horizonMonths": horizon, "holdoutMonths": holdout,
 		"features": Features}
@@ -313,6 +380,21 @@ func learn(p *Panel, model *Model, today string) result {
 			"coef1": r4(one.Mean[k]), "t1": r4(one.T[k]), "months": int(cover[k]), "inModel": model.Weights[f.Key]})
 	}
 	out["evidence"] = ev
+	evm := map[string]any{}
+	for _, ex := range markets {
+		e := estimate(nonNil(csEx[ex]), horizon)
+		var rs []map[string]any
+		for k, f := range Features {
+			rs = append(rs, map[string]any{"key": f.Key, "coef6": r4(e.Mean[k]), "t6": r4(e.T[k]), "weight6": r4(e.W[k])})
+		}
+		evm[ex] = map[string]any{"months": e.Months, "features": rs}
+	}
+	out["evidenceByMarket"] = evm
+	sw := map[string]any{}
+	for _, ex := range markets {
+		sw[ex] = toMap(studyWeights(uicH, ex, nM+12))
+	}
+	out["studyWeights"] = sw
 	out["evidenceMonths"] = full.Months
 	if len(rows) < 12 {
 		d := fmt.Sprintf("Not enough history to learn from yet (%d out-of-sample months); the current model stays.", len(rows))
@@ -337,7 +419,7 @@ func learn(p *Panel, model *Model, today string) result {
 	for _, x := range model.Tried {
 		tried[x] = true
 	}
-	tried["Learned weights"], tried["Learned weights by market conditions"] = true, true
+	tried["Learned weights"], tried["Learned weights by market conditions"], tried["Learned weights for each market"], tried["Signals passing the study rule, each market"] = true, true, true, true
 	n := len(tried)
 	bar := math.Max(2, normInv(1-0.05/(2*float64(n))))
 	type cand struct {
@@ -348,6 +430,8 @@ func learn(p *Panel, model *Model, today string) result {
 	cands := []cand{
 		{"Learned weights", func(o oos) float64 { return o.chal }, func(o oos) []float64 { return o.pChal }},
 		{"Learned weights by market conditions", func(o oos) float64 { return o.rch }, func(o oos) []float64 { return o.pReg }},
+		{"Learned weights for each market", func(o oos) float64 { return o.mkt }, func(o oos) []float64 { return o.pMkt }},
+		{"Signals passing the study rule, each market", func(o oos) float64 { return o.study }, func(o oos) []float64 { return o.pStudy }},
 	}
 	var trials []Trial
 	best := -1
@@ -363,7 +447,7 @@ func learn(p *Panel, model *Model, today string) result {
 		}
 	}
 	// out-of-sample record by year, for the chart
-	type yr struct{ champ, chal, reg []float64 }
+	type yr struct{ champ, chal, reg, mkt, study []float64 }
 	years := map[string]*yr{}
 	for _, o := range rows {
 		y := p.Months[o.m][:4]
@@ -373,13 +457,17 @@ func learn(p *Panel, model *Model, today string) result {
 		years[y].champ = append(years[y].champ, o.champ)
 		years[y].chal = append(years[y].chal, o.chal)
 		years[y].reg = append(years[y].reg, o.rch)
+		years[y].mkt = append(years[y].mkt, o.mkt)
+		years[y].study = append(years[y].study, o.study)
 	}
 	var byYear []map[string]any
 	for _, y := range sortedKeysYr(years) {
 		a, _, _ := meanT(years[y].champ, 1)
 		b, _, _ := meanT(years[y].chal, 1)
 		c, _, _ := meanT(years[y].reg, 1)
-		byYear = append(byYear, map[string]any{"year": y, "champion": r4(a), "learned": r4(b), "regime": r4(c), "months": len(years[y].champ)})
+		d, _, _ := meanT(years[y].mkt, 1)
+		e, _, _ := meanT(years[y].study, 1)
+		byYear = append(byYear, map[string]any{"year": y, "champion": r4(a), "learned": r4(b), "regime": r4(c), "byMarket": r4(d), "study": r4(e), "months": len(years[y].champ)})
 	}
 	out["oosByYear"] = byYear
 	mc, tc, _ := meanT(func() []float64 {
@@ -414,6 +502,16 @@ func learn(p *Panel, model *Model, today string) result {
 			pr = append(pr, c.pr(o))
 		}
 		ad := &candidate{Weights: toMap(full.W), Calibration: calibrate(p, cm, pr)}
+		if best == 2 || best == 3 {
+			ad.ByMarket = map[string]map[string]float64{}
+			for _, ex := range markets {
+				if best == 2 {
+					ad.ByMarket[ex] = toMap(estimate(nonNil(csEx[ex]), horizon).W)
+				} else {
+					ad.ByMarket[ex] = toMap(studyWeights(uicH, ex, nM+12))
+				}
+			}
+		}
 		if best == 1 {
 			ad.Regime = map[string]map[string]float64{}
 			for _, r := range []string{"up", "down"} {
@@ -453,4 +551,138 @@ func sortedKeysYr[T any](m map[string]T) []string {
 		}
 	}
 	return ks
+}
+
+var markets = []string{"US", "LSE"}
+
+// only is the part of a month's cross-section in one market (feature ranks are already within it).
+func only(p *Panel, mo month, ex string) month {
+	var out month
+	for q, i := range mo.idx {
+		if p.Ex[i] == ex {
+			out.idx = append(out.idx, i)
+			out.z = append(out.z, mo.z[q])
+			out.y = append(out.y, mo.y[q])
+			out.rel = append(out.rel, mo.rel[q])
+		}
+	}
+	return out
+}
+
+// scoreByMarket scores each stock with its own market's weights.
+func scoreByMarket(p *Panel, mo month, w map[string][]float64) []float64 {
+	out := make([]float64, len(mo.idx))
+	for q, i := range mo.idx {
+		wx := w[p.Ex[i]]
+		for a, v := range mo.z[q] {
+			if a < len(wx) {
+				out[q] += wx[a] * v
+			}
+		}
+	}
+	return out
+}
+
+func nonNil(cs [][]float64) [][]float64 {
+	var out [][]float64
+	for _, c := range cs {
+		if c != nil {
+			out = append(out, c)
+		}
+	}
+	return out
+}
+
+// signalICs is each signal's rank correlation with the outcome in one market's month, over the
+// stocks that have it (a missing signal scores exactly 0); NaN with fewer than 40 stocks.
+func signalICs(mo month) []float64 {
+	out := make([]float64, len(Features))
+	for a := range Features {
+		var x, y []float64
+		for q := range mo.idx {
+			if mo.z[q][a] != 0 && !math.IsNaN(mo.y[q]) {
+				x, y = append(x, mo.z[q][a]), append(y, mo.y[q])
+			}
+		}
+		out[a] = math.NaN()
+		if len(x) >= 40 {
+			out[a] = spearman(x, y)
+		}
+	}
+	return out
+}
+
+var studyHorizons = []int{1, 3, 6, 12}
+
+// studyRule is each signal's natural horizon and whether it has a long published record, as in
+// scripts/signal_study.js (signals without one need t >= 3 rather than 2).
+var studyRule = map[string]struct {
+	h         int
+	published bool
+}{
+	"T": {3, false}, "M": {12, true}, "G": {12, false}, "FP": {12, false}, "Vp": {12, false}, "vol1y": {12, true},
+	"rev1m": {1, true}, "insB": {6, true}, "sue": {3, true}, "iss": {12, true}, "gp": {12, true}, "accr": {12, true}, "agr": {12, true},
+}
+
+// studyWeights applies the signal study's decision rule (fixed in November 2026) to the months
+// whose outcomes were known by month `upto`, in one market: a signal counts if its mean IC at its
+// natural horizon is positive (signals are already oriented) with a Newey-West t of at least 2
+// (3 without a published record) and positive in both halves of its months. Its weight is the
+// mean IC shrunk by the strength of the evidence (1 - 1/t^2); the others get none.
+func studyWeights(uicH map[int]map[string][][]float64, ex string, upto int) []float64 {
+	w := make([]float64, len(Features))
+	for a, f := range Features {
+		r, ok := studyRule[f.Key]
+		if !ok {
+			continue
+		}
+		var xs []float64
+		for t, c := range uicH[r.h][ex] {
+			if t+r.h <= upto && c != nil && !math.IsNaN(c[a]) {
+				xs = append(xs, c[a])
+			}
+		}
+		if len(xs) < 24 {
+			continue
+		}
+		mu, t := neweyWest(xs, r.h)
+		h := len(xs) / 2
+		m1, _ := neweyWest(xs[:h], r.h)
+		m2, _ := neweyWest(xs[h:], r.h)
+		bar := 2.0
+		if !r.published {
+			bar = 3
+		}
+		if math.IsNaN(t) || t < bar || mu <= 0 || m1 <= 0 || m2 <= 0 {
+			continue
+		}
+		w[a] = mu * (1 - 1/(t*t))
+	}
+	return w
+}
+
+// neweyWest is the mean of xs and its t-statistic with h-1 lags (Bartlett weights), for
+// overlapping h-month outcomes.
+func neweyWest(xs []float64, h int) (mean, t float64) {
+	n := float64(len(xs))
+	if n < 2 {
+		return math.NaN(), math.NaN()
+	}
+	for _, x := range xs {
+		mean += x
+	}
+	mean /= n
+	var v float64
+	for _, x := range xs {
+		v += (x - mean) * (x - mean)
+	}
+	v /= n
+	for L := 1; L < h && L < len(xs); L++ {
+		var c float64
+		for k := L; k < len(xs); k++ {
+			c += (xs[k] - mean) * (xs[k-L] - mean)
+		}
+		v += 2 * (1 - float64(L)/float64(h)) * c / n
+	}
+	return mean, mean / math.Sqrt(math.Max(v, 1e-12)/n)
 }

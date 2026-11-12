@@ -19,6 +19,7 @@ type learnedModel struct {
 	Since       string                        `json:"since"`
 	Weights     map[string]float64            `json:"weights"`
 	Regime      map[string]map[string]float64 `json:"regime"`
+	ByMarket    map[string]map[string]float64 `json:"byMarket"` // US, LSE: weights learned for each market
 	Sentiment   float64                       `json:"sentimentWeight"`
 	Calibration []struct {
 		Decile int     `json:"decile"`
@@ -106,6 +107,14 @@ func featureValue(r *Row, key string) float64 {
 		if r.SUE != nil {
 			return *r.SUE
 		}
+	case "gp":
+		if v, ok := r.research[key]; ok {
+			return v
+		}
+	case "accr", "agr", "iss": // low is good
+		if v, ok := r.research[key]; ok {
+			return -v
+		}
 	}
 	return nan
 }
@@ -117,7 +126,12 @@ func featureValue(r *Row, key string) float64 {
 // beating the stock's sector over six months.
 func applyModel(m []*Row, model *learnedModel, regime string) {
 	w := model.Weights
-	if model.Regime != nil {
+	if len(m) > 0 && model.ByMarket != nil {
+		if mw, ok := model.ByMarket[m[0].Ex]; ok {
+			w = mw
+		}
+	}
+	if model.Regime != nil && model.ByMarket == nil {
 		if rw, ok := model.Regime[regime]; ok {
 			w = rw
 		}
