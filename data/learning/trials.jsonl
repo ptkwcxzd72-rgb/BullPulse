@@ -12,3 +12,7 @@
 {"date":"2026-11-10","name":"Learned weights by market conditions","months":37,"meanDiffIC":0,"t":0,"bar":2.2414,"holdoutDiffIC":0,"passed":false,"weights":{}}
 {"date":"2026-11-10","name":"Learned weights","months":50,"meanDiffIC":0,"t":0,"bar":2.2414,"holdoutDiffIC":0,"passed":false,"weights":{}}
 {"date":"2026-11-10","name":"Learned weights by market conditions","months":50,"meanDiffIC":0,"t":0,"bar":2.2414,"holdoutDiffIC":0,"passed":false,"weights":{}}
+{"date":"2026-11-12","name":"Learned weights","months":143,"meanDiffIC":-0.0669,"t":-0.9176,"bar":2.4977,"holdoutDiffIC":0,"passed":false,"weights":{}}
+{"date":"2026-11-12","name":"Learned weights by market conditions","months":143,"meanDiffIC":-0.004,"t":-0.0857,"bar":2.4977,"holdoutDiffIC":-0.0345,"passed":false,"weights":{}}
+{"date":"2026-11-12","name":"Learned weights for each market","months":143,"meanDiffIC":-0.0446,"t":-0.4008,"bar":2.4977,"holdoutDiffIC":0,"passed":false,"weights":{}}
+{"date":"2026-11-12","name":"Signals passing the study rule, each market","months":143,"meanDiffIC":-0.017,"t":-0.5322,"bar":2.4977,"holdoutDiffIC":-0.0412,"passed":false,"weights":{}}

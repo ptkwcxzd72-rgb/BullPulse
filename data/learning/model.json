@@ -10,60 +10,62 @@
  "calibration": [
   {
    "decile": 1,
-   "prob": 0.492,
-   "n": 5805
+   "prob": 0.488,
+   "n": 11674
   },
   {
    "decile": 2,
-   "prob": 0.492,
-   "n": 5737
+   "prob": 0.491,
+   "n": 11527
   },
   {
    "decile": 3,
-   "prob": 0.492,
-   "n": 5758
+   "prob": 0.491,
+   "n": 11552
   },
   {
    "decile": 4,
-   "prob": 0.492,
-   "n": 5738
+   "prob": 0.491,
+   "n": 11515
   },
   {
    "decile": 5,
-   "prob": 0.492,
-   "n": 5726
+   "prob": 0.491,
+   "n": 11477
   },
   {
    "decile": 6,
-   "prob": 0.492,
-   "n": 5779
+   "prob": 0.491,
+   "n": 11616
   },
   {
    "decile": 7,
-   "prob": 0.492,
-   "n": 5748
+   "prob": 0.491,
+   "n": 11550
   },
   {
    "decile": 8,
-   "prob": 0.492,
-   "n": 5737
+   "prob": 0.491,
+   "n": 11510
   },
   {
    "decile": 9,
-   "prob": 0.492,
-   "n": 5741
+   "prob": 0.493,
+   "n": 11529
   },
   {
    "decile": 10,
-   "prob": 0.502,
-   "n": 5833
+   "prob": 0.501,
+   "n": 11733
   }
  ],
  "tried": [
   "Learned weights",
-  "Learned weights by market conditions"
+  "Learned weights by market conditions",
+  "Learned weights for each market",
+  "Signals passing the study rule, each market"
  ],
- "updated": "2026-11-10",
+ "updated": "2026-11-12",
  "changes": [
   {
    "date": "2026-10-29",
