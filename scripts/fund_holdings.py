@@ -3,8 +3,8 @@ with the SEC, for backtests free of survivorship bias.
 
 The iShares Core S&P Mid-Cap ETF (IJH) and Core S&P Small-Cap ETF (IJR) hold every member of
 their index. Since late 2019 each files its full holdings every quarter on Form N-PORT (public
-for the third month of each fiscal quarter), as structured XML. This finds those filings with
-EDGAR's full-text search, reads each one, and keeps the common-stock holdings: name, CUSIP,
+for the third month of each fiscal quarter), as structured XML. This finds those filings through
+the fund's SEC series (from the SEC's fund ticker file), reads each one, and keeps the common-stock holdings: name, CUSIP,
 ISIN, ticker where given, shares and dollar value at the quarter-end, in
 data/history/fund_holdings/<fund>/<report date>.csv. Each filing is read once.
 
@@ -28,11 +28,10 @@ import xml.etree.ElementTree as ET
 
 OUT = "data/history/fund_holdings"
 FUNDS = {
-    # fund: (index, names the series has had)
+    # fund ticker: (index, names the series has had)
     "ijh": ("S&P 400", ["iShares Core S&P Mid-Cap ETF", "iShares S&P MidCap 400 Index Fund", "iShares Core S&P Mid Cap ETF"]),
     "ijr": ("S&P 600", ["iShares Core S&P Small-Cap ETF", "iShares S&P SmallCap 600 Index Fund", "iShares Core S&P Small Cap ETF"]),
 }
-FTS = "https://efts.sec.gov/LATEST/search-index"
 
 
 def contact() -> str:
@@ -58,31 +57,41 @@ def get(url: str):
     return None
 
 
-def search(name: str, form: str = "NPORT-P") -> list[dict]:
-    """Every filing of a form whose text contains the exact series name: [{adsh, cik, date}]."""
+def series_ids(tickers: list[str]) -> dict[str, str]:
+    """Fund ticker -> SEC series ID, from the SEC's mutual-fund and ETF ticker file."""
+    raw = get("https://www.sec.gov/files/company_tickers_mf.json")
+    d = json.loads(raw or b"{}")
+    f = d.get("fields", [])
+    out = {}
+    for row in d.get("data", []):
+        r = dict(zip(f, row))
+        if str(r.get("symbol", "")).upper() in tickers:
+            out[r["symbol"].upper()] = r["seriesId"]
+    return out
+
+
+def filings(series: str, form: str = "NPORT-P") -> list[dict]:
+    """A series' filings of one form, from EDGAR's company browse feed: [{adsh, cik, date}]."""
     out, start = [], 0
     while True:
-        q = urllib.parse.urlencode({"q": f'"{name}"', "forms": form, "from": start})
-        raw = get(f"{FTS}?{q}")
+        q = urllib.parse.urlencode({"action": "getcompany", "CIK": series, "type": form, "dateb": "", "owner": "include",
+                                    "count": 100, "start": start, "output": "atom"})
+        raw = get(f"https://www.sec.gov/cgi-bin/browse-edgar?{q}")
         if not raw:
             break
-        d = json.loads(raw)
-        hits = d.get("hits", {}).get("hits", [])
-        for h in hits:
-            s = h.get("_source", {})
-            adsh = h.get("_id", "").split(":")[0]
-            ciks = s.get("ciks") or []
-            if adsh and ciks:
-                out.append({"adsh": adsh, "cik": str(int(ciks[0])), "date": s.get("file_date", ""), "period": s.get("period_ending", "")})
-        start += len(hits)
-        if not hits or start >= d.get("hits", {}).get("total", {}).get("value", 0):
+        txt = raw.decode("utf-8", "ignore")
+        entries = re.findall(r"<entry>(.*?)</entry>", txt, re.S)
+        for e in entries:
+            acc = re.search(r"<accession-number>([\d-]+)</accession-number>", e)
+            href = re.search(r"/Archives/edgar/data/(\d+)/", e)
+            date = re.search(r"<filing-date>([\d-]+)</filing-date>", e)
+            ftype = re.search(r"<filing-type>([^<]+)</filing-type>", e)
+            if acc and href and (not ftype or ftype.group(1).strip() == form):
+                out.append({"adsh": acc.group(1), "cik": href.group(1), "date": date.group(1) if date else ""})
+        if len(entries) < 100:
             break
-    seen, uniq = set(), []
-    for x in out:
-        if x["adsh"] not in seen:
-            seen.add(x["adsh"])
-            uniq.append(x)
-    return uniq
+        start += 100
+    return out
 
 
 def strip_ns(root: ET.Element) -> ET.Element:
@@ -129,14 +138,16 @@ def main() -> int:
     os.makedirs(OUT, exist_ok=True)
     done = json.load(open(done_path)) if os.path.exists(done_path) else {}
     read = 0
+    sid = series_ids([f.upper() for f in FUNDS])
+    print(f"  series: {sid}")
     for fund, (index, names) in FUNDS.items():
         os.makedirs(os.path.join(OUT, fund), exist_ok=True)
-        cands = {}
-        for nm in names:
-            for x in search(nm):
-                cands[x["adsh"]] = x
+        if fund.upper() not in sid:
+            print(f"::warning::{fund.upper()}: no SEC series ID found")
+            continue
+        cands = {x["adsh"]: x for x in filings(sid[fund.upper()])}
         new = [x for x in sorted(cands.values(), key=lambda x: x["date"]) if x["adsh"] not in done]
-        print(f"  {fund}: {len(cands)} N-PORT filings found, {len(new)} not read yet")
+        print(f"  {fund}: {len(cands)} N-PORT filings for series {sid[fund.upper()]}, {len(new)} not read yet")
         for x in new:
             if read >= a.max:
                 break
