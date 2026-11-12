@@ -33,7 +33,7 @@ const COLORS = ["var(--accent)", "var(--fm)", "var(--amber)", "var(--blue)"];
 let P, FX, D, BY = {}, MONTHLY = null, BENCH = null;
 let UI = store.get("bp-lab", null) || {
   mode: "list", ids: [], cw: {}, rule: { market: "ALL", idx: "", sector: "", noTrusts: true, rules: [["score", ">=", 60]], w: { T: 50, M: 50, G: 0, F: 0, V: 0 }, top: 20, keep: 40 },
-  weighting: "equal", cap: 20, rebalance: "Q", drift: 5, exit200: false, exitTo: "spread", start: 10000, monthly: 0, ccy: "GBP", from: "", account: "isa",
+  weighting: "equal", cap: 20, rebalance: "Q", drift: 5, exit200: false, exitTo: "spread", start: 10000, monthly: 0, ccy: "GBP", from: "", account: "isa", taxBand: "higher",
   costs: { commission: 0.1, spread: 0.1, fxFee: 0.5, stamp: true }, name: "",
 };
 const seen = new Set(); // strategy versions run this visit
@@ -42,7 +42,7 @@ function strategy(u = UI) {
   const src = u.mode === "list" ? { type: "list", ids: u.ids.slice(), w: Object.assign({}, u.cw) }
     : { type: "rule", market: u.rule.market, idx: u.rule.idx, sector: u.rule.sector, noTrusts: u.rule.noTrusts, rules: u.rule.rules.map(r => r.slice()), w: Object.assign({}, u.rule.w), top: +u.rule.top || 20, keep: +u.rule.keep || 0 };
   return { name: u.name || "", source: src, weighting: u.weighting, cap: +u.cap || 0, rebalance: u.rebalance, drift: +u.drift || 5, exit200: !!u.exit200, exitTo: u.exitTo, ...(u.swaps === false ? { swaps: false } : {}),
-    start: +u.start || 0, monthly: +u.monthly || 0, ccy: u.ccy, from: u.from, account: u.account, costs: Object.assign({}, u.costs) };
+    start: +u.start || 0, monthly: +u.monthly || 0, ccy: u.ccy, from: u.from, account: u.account, taxBand: u.taxBand || "higher", costs: Object.assign({}, u.costs) };
 }
 function fromStrategy(S) {
   const u = JSON.parse(JSON.stringify(UI));
@@ -81,7 +81,7 @@ function drawBuilder() {
   $("driftl").hidden = $("driftd").hidden = UI.rebalance !== "drift";
   $("swaps").checked = UI.swaps === false; $("swapl").hidden = UI.mode === "list";
   $("ex200").checked = UI.exit200; $("exto").hidden = !UI.exit200; $("exw").value = UI.exitTo;
-  $("amt").value = UI.start; $("mon").value = UI.monthly; $("ccy").value = UI.ccy; $("from").value = UI.from; $("acct").value = UI.account;
+  $("amt").value = UI.start; $("mon").value = UI.monthly; $("ccy").value = UI.ccy; $("from").value = UI.from; $("acct").value = UI.account; $("band").value = UI.taxBand || "higher";
   $("c-com").value = UI.costs.commission; $("c-spr").value = UI.costs.spread; $("c-fx").value = UI.costs.fxFee; $("c-stamp").checked = UI.costs.stamp;
   $("name").value = UI.name || "";
 }
@@ -123,6 +123,7 @@ function bindBuilder() {
   $("ccy").onchange = e => { UI.ccy = e.target.value; changed(); };
   $("from").onchange = e => { UI.from = e.target.value; changed(); };
   $("acct").onchange = e => { UI.account = e.target.value; changed(); };
+  $("band").onchange = e => { UI.taxBand = e.target.value; changed(); };
   $("c-com").oninput = e => { UI.costs.commission = +e.target.value || 0; changed(); };
   $("c-spr").oninput = e => { UI.costs.spread = +e.target.value || 0; changed(); };
   $("c-fx").oninput = e => { UI.costs.fxFee = +e.target.value || 0; changed(); };
@@ -246,7 +247,7 @@ function render() {
       <div><span class="sub">${money(inv, ccy)} paid in became</span><span class="v">${money(fin, ccy)}</span><span class="s">${r.dates[vis - 1] ? "by " + new Date(r.dates[vis - 1] + "T12:00:00Z").toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }) : ""}</span></div>
       <div><span class="sub">Return a year</span><span class="v ${cls(st.cagr)}">${pc(st.cagr)}</span><span class="s">S&amp;P 500 ${pc(b.sp500 && b.sp500.cagr)}, FTSE 100 ${pc(b.ftse100 && b.ftse100.cagr)}</span></div>
       <div><span class="sub">Worst fall from a high</span><span class="v neg">${pc(st.maxDD)}</span><span class="s">longest below a high: ${st.longestUnderwater} months</span></div>
-      <div><span class="sub">Costs${S.account === "gia" ? " and tax" : ""}</span><span class="v">${money(r.costs + r.tax, ccy)}</span><span class="s">traded ${(r.turnoverYr * 100).toFixed(0)}% of the portfolio a year</span></div>
+      <div><span class="sub">Costs and tax</span><span class="v">${money(r.costs + r.tax + (r.wht || 0), ccy)}</span><span class="s">dealing ${money(r.costs, ccy)}${S.account === "gia" ? `, capital gains tax ${money(r.taxCGT || 0, ccy)}, dividend tax ${money(r.taxDiv || 0, ccy)}` : ""}${r.wht ? `, US tax withheld on dividends ${money(r.wht, ccy)}` : ""}; traded ${(r.turnoverYr * 100).toFixed(0)}% of the portfolio a year${r.divCover != null && r.divCover < 0.9 && (S.account === "gia" || r.wht) ? `. Dividends for ${Math.round((1 - r.divCover) * 100)}% of holding-months use their market's median yield, as the company's own figures aren't in the data then` : ""}</span></div>
     </div>
     <div class="card cc"><h3>Growth of 100 <span class="sub">${r.months[0].slice(0, 7)} to ${(r.dates[vis - 1] || "").slice(0, 7)}, log scale, after costs${S.account === "gia" ? " and tax" : ""}</span></h3>
       ${chart(lines, dates, revealed && r.rets.length >= 60 ? cut + 1 : null)}

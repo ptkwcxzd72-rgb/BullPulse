@@ -29,7 +29,7 @@
     trend: "Trend", momentum: "Momentum", growth: "Revenue growth", quality: "Fundamentals", value: "Value", yield: "Dividend yield", steady: "Steadiness",
   };
   const DEFAULTS = { aim: "balanced", market: "ALL", n: 30, cap: 10, sectorCap: 30, reb: "Y", core: 50, amount: 10000, avoidSectors: [], avoidIds: [], avoidOwned: false,
-    weighting: "aim", maxCorr: 0.85, trusts: false, build: "" };
+    weighting: "aim", maxCorr: 0.85, trusts: false, build: "", account: "isa", taxBand: "higher" };
 
   const isNum = x => typeof x === "number" && isFinite(x);
   function rawSignal(V, k, m, i) {
@@ -508,7 +508,7 @@
     const o = Object.assign({}, DEFAULTS, opt || {});
     let held = new Set();
     return Object.assign({ name: (AIMS[o.aim] || AIMS.balanced).name + " portfolio", rebalance: o.reb, swaps: false, weighting: "equal", cap: o.cap,
-      start: 10000, monthly: 0, ccy: "GBP", account: "isa", costs: { commission: 0.1, spread: 0.1, fxFee: 0.5, stamp: true }, from: "",
+      start: o.amount || 10000, monthly: 0, ccy: "GBP", account: o.account || "isa", taxBand: o.taxBand || "higher", costs: { commission: 0.1, spread: 0.1, fxFee: 0.5, stamp: true }, from: "",
       source: { type: "rule", market: o.market, rules: [], top: o.n },
       select(V, m, heldNow) {
         const res = choose(V, m, o, { held: heldNow || held });

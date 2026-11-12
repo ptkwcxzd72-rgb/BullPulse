@@ -52,6 +52,22 @@ const bs = L.bootstrap(Array(60).fill(0.01), 200);
 assert(Math.abs(bs.p50 - (Math.pow(1.01, 12) - 1)) < 1e-9, "bootstrap of a constant return is that return");
 
 // 8. capital gains tax in a general account: gains above the allowance taxed in March
-r = L.run(P, FX, Object.assign({}, base, { start: 1000000, account: "gia", source: { type: "list", ids: ["US-A", "US-B"] } }));
-assert(r.tax > 0, "tax charged on realised gains");
+// (2019/20: allowance £12,000, 20% for a higher-rate taxpayer; about £30,000 of gains by March)
+r = L.run(P, FX, Object.assign({}, base, { start: 3000000, account: "gia", source: { type: "list", ids: ["US-A", "US-B"] } }));
+assert(r.taxCGT > 0 && r.tax >= r.taxCGT, "tax charged on realised gains");
+const small = L.run(P, FX, Object.assign({}, base, { start: 1000000, account: "gia", source: { type: "list", ids: ["US-A", "US-B"] } }));
+assert(small.taxCGT === 0, "gains within that year's £12,000 allowance are not taxed");
+const basic = L.run(P, FX, Object.assign({}, base, { start: 3000000, account: "gia", taxBand: "basic", source: { type: "list", ids: ["US-A", "US-B"] } }));
+assert(basic.taxCGT > 0 && basic.taxCGT < r.taxCGT, "basic-rate taxpayers pay the lower rate");
+
+// 9. dividends: US tax withheld at source even in an ISA; UK dividend tax only on a general account
+const PD = Object.assign({}, P, { scale: Object.assign({}, P.scale, { divY: 1000 }), fields: Object.assign({}, P.fields, { divY: months.map(() => [40, 40, 40]) }), fwd: months.map(() => [0, 0, 0]) });
+const isa = L.run(PD, FX, Object.assign({}, base, { start: 100000, account: "isa", source: { type: "list", ids: ["US-A"] } }));
+assert(Math.abs(isa.wht - 100000 * 0.04 * 0.15) < 100 && isa.tax === 0, "15% of US dividends withheld in an ISA, no UK tax");
+const ukIsa = L.run(PD, FX, Object.assign({}, base, { start: 100000, account: "isa", source: { type: "list", ids: ["LSE-C"] } }));
+assert(ukIsa.wht === 0 && Math.abs(ukIsa.final - 100000) < 1e-6, "UK dividends untaxed in an ISA");
+const gia = L.run(PD, FX, Object.assign({}, base, { start: 1000000, account: "gia", source: { type: "list", ids: ["LSE-C"] } }));
+assert(gia.taxDiv > 0 && gia.taxCGT === 0, "UK dividend tax on a general account");
+const giaUS = L.run(PD, FX, Object.assign({}, base, { start: 1000000, account: "gia", source: { type: "list", ids: ["US-A"] } }));
+assert(giaUS.taxDiv < gia.taxDiv, "tax withheld in the US counts against UK dividend tax");
 console.log("lab engine: all tests passed");

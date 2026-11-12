@@ -134,6 +134,36 @@
     }
   }
 
+  // UK tax on a general account, by tax year (the year starting 6 April; 2024 = 2024/25).
+  // Capital gains: annual exempt amount and the rate on shares by band (basic, higher; additional
+  // rate taxpayers pay the higher rate). 2010/11 uses the rates from 23 June 2010 for the whole
+  // year; 2024/25 changes on 30 October 2024 and is applied by the date of each sale.
+  const CGT_ALLOW = { 2008: 9600, 2009: 10100, 2010: 10100, 2011: 10600, 2012: 10600, 2013: 10900, 2014: 11000, 2015: 11100,
+    2016: 11100, 2017: 11300, 2018: 11700, 2019: 12000, 2020: 12300, 2021: 12300, 2022: 12300, 2023: 6000, 2024: 3000 };
+  function cgtRate(date, band) {
+    const hi = band !== "basic";
+    if (date < "2010-06-23") return 0.18;
+    if (date < "2016-04-06") return hi ? 0.28 : 0.18;
+    if (date < "2024-10-30") return hi ? 0.20 : 0.10;
+    return hi ? 0.24 : 0.18;
+  }
+  // Dividends: allowance and rates on the cash dividend. Before April 2016 the tax credit left
+  // basic-rate taxpayers nothing to pay and higher and additional rates 25% and 30.56% (36.11%
+  // in 2010/11 to 2012/13, when the additional rate was 50%) of the cash dividend.
+  const DIV_ALLOW = { 2016: 5000, 2017: 5000, 2018: 2000, 2019: 2000, 2020: 2000, 2021: 2000, 2022: 2000, 2023: 1000, 2024: 500 };
+  function divRate(y, band) {
+    const k = band === "basic" ? 0 : band === "additional" ? 2 : 1;
+    if (y < 2016) return [0, 0.25, y >= 2010 && y <= 2012 ? 0.3611 : y >= 2013 ? 0.3056 : 0.25][k];
+    if (y < 2022) return [0.075, 0.325, 0.381][k];
+    if (y < 2026) return [0.0875, 0.3375, 0.3935][k];
+    return [0.1075, 0.3575, 0.3935][k];
+  }
+  const taxYear = d => { const y = +d.slice(0, 4); return d.slice(5, 10) < "04-06" ? y - 1 : y; };
+  const fromTable = (t, y) => { const ks = Object.keys(t).map(Number).sort((a, b) => a - b); let v = t[ks[0]]; for (const k of ks) if (k <= y) v = t[k]; return v; };
+  // US dividends paid to a UK investor lose 15% at source (the treaty rate, with a W-8BEN form), in
+  // an ISA or SIPP as well; on a general account it counts against the UK tax on them.
+  const US_WHT = 0.15;
+
   // Run a strategy. Returns month-end values, time-weighted monthly returns, the benchmarks run
   // with the same money in, and a record of trades, costs and tax.
   function run(P, FX, S, opt) {
@@ -159,6 +189,11 @@
     const c = Object.assign({ commission: 0.1, spread: 0.1, stamp: true, fxFee: 0.5 }, S.costs || {});
     const pos = new Map(); // i -> { v: value, b: cost basis }
     let cash = 0, invested = 0, costs = 0, tax = 0, gains = 0, turnover = 0, missing = 0;
+    // tax state: gains weighted by the rate at the date of sale, losses carried forward, the tax
+    // year's dividends (and US tax already withheld), and how many holding-months had a known yield
+    const band = S.taxBand || "higher";
+    let gainsRated = 0, lossCarry = 0, divs = 0, divUS = 0, wht = 0, whtYear = 0, taxCGT = 0, taxDiv = 0, divKnown = 0, divAll = 0;
+    const realise = (g, date) => { gains += g; gainsRated += g * cgtRate(date, band); };
     const out = { dates: [], values: [], invested: [], rets: [], cash: [], held: [], trades: 0, months: [] };
     let prevSet = null, prevAfter = 0;
     const benches = { ftse100: { v: 0 }, sp500: { v: 0 }, avg: { v: 0 } };
@@ -214,7 +249,7 @@
           if (Math.abs(d) < total * 1e-6) continue;
           const cst = tradeCost(i, d, d > 0);
           spent += cst; turnover += Math.abs(d); out.trades++;
-          if (d < 0) { const f = -d / p.v; gains += f * (p.v - p.b); p.b *= 1 - f; } else p.b += d;
+          if (d < 0) { const f = -d / p.v; realise(f * (p.v - p.b), date); p.b *= 1 - f; } else p.b += d;
           p.v = target;
           if (p.v <= 1e-9) pos.delete(i); else pos.set(i, p);
         }
@@ -227,7 +262,7 @@
         for (const [i, p] of [...pos]) {
           if (T.has(i)) continue;
           const cst = tradeCost(i, -p.v, false);
-          gains += p.v - p.b; cash += p.v - cst; spent += cst; turnover += p.v; out.trades++;
+          realise(p.v - p.b, date); cash += p.v - cst; spent += cst; turnover += p.v; out.trades++;
           pos.delete(i);
         }
         const fresh = [...T].filter(([i]) => !pos.has(i));
@@ -257,10 +292,24 @@
       }
       costs += spent;
       prevSet = setNow;
-      // capital gains tax at the end of each UK tax year (March), on gains above the allowance
+      // tax at the end of each UK tax year (March): capital gains above the allowance (after any
+      // losses brought forward), and dividends above the dividend allowance
       if (S.account === "gia" && date.slice(5, 7) === "03") {
-        const allow = toBase(3000, m);
-        const due = Math.max(0, gains - allow) * 0.24;
+        const y = taxYear(date);
+        let due = 0;
+        if (gains < 0) lossCarry -= gains;
+        else {
+          const over = Math.max(0, gains - toBase(fromTable(CGT_ALLOW, y), m)), use = Math.min(lossCarry, over);
+          lossCarry -= use;
+          const cg = gains > 0 ? (over - use) * (gainsRated / gains) : 0;
+          taxCGT += cg; due += cg;
+        }
+        const allow = y >= 2016 ? toBase(fromTable(DIV_ALLOW, y), m) : 0, rate = divRate(y, band);
+        const taxable = Math.max(0, divs - allow);
+        // the UK tax on the US part, less what was withheld (never below nothing)
+        const onUS = taxable * (divs > 0 ? divUS / divs : 0) * rate;
+        const dt = Math.max(0, taxable * rate - Math.min(onUS, whtYear));
+        taxDiv += dt; due += dt;
         if (due > 0) {
           tax += due;
           const hv = [...pos.values()].reduce((a, p) => a + p.v, 0) + cash;
@@ -268,9 +317,30 @@
           for (const p of pos.values()) p.v *= k;
           cash *= k;
         }
-        gains = 0;
+        gains = 0; gainsRated = 0; divs = 0; divUS = 0; whtYear = 0;
       }
       out.held.push(pos.size);
+      // this month's dividends (prices include them, reinvested): a twelfth of the yield, from the
+      // company's figures, else the median of its market that month; US tax withheld at source
+      if (pos.size && (S.account === "gia" || P.ex.some(e => e === "US"))) {
+        const med = {};
+        for (const ex of ["US", "LSE"]) {
+          const ys = [];
+          for (let i = 0; i < V.n; i++) if (P.ex[i] === ex && V.member(m, i)) { const v = V.val("divY", m, i); if (v != null && v >= 0 && v < 0.3) ys.push(v); }
+          ys.sort((a, b) => a - b);
+          med[ex] = ys.length >= 20 ? ys[ys.length >> 1] : null;
+        }
+        for (const [i, p] of pos) {
+          let y = V.val("divY", m, i);
+          divAll++;
+          if (y != null && y >= 0 && y < 0.3) divKnown++;
+          else y = med[P.ex[i]];
+          if (y == null) continue;
+          const d = p.v * y / 12;
+          if (P.ex[i] === "US") { const w = d * US_WHT; p.v -= w; wht += w; whtYear += w; divUS += d; }
+          divs += d;
+        }
+      }
       // a month passes (the last row runs only to the latest close)
       for (const [i, p] of pos) {
         const r = V.fwd(m, i);
@@ -297,6 +367,8 @@
     }
     out.bench = bOut;
     out.costs = costs; out.tax = tax; out.missing = missing;
+    out.taxCGT = taxCGT; out.taxDiv = taxDiv; out.wht = wht; out.lossCarry = lossCarry;
+    out.divCover = divAll ? divKnown / divAll : null; // share of holding-months with the company's own yield
     const avgVal = out.values.reduce((a, b) => a + b, 0) / Math.max(1, out.values.length);
     out.turnoverYr = out.values.length ? turnover / avgVal / (out.values.length / 12) : 0;
     out.final = out.values[out.values.length - 1] || 0;
