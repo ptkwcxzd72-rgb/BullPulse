@@ -21,3 +21,7 @@ site/data/
 site/feeds/
 site/stock/
 site/sitemap.xml
+/panel
+/screener
+/learn
+/validate
