@@ -1,0 +1,3184 @@
+{
+"ids": {
+"00770F104": "AEGN",
+"009728106": "AKRXQ",
+"024835100": "ACC",
+"035290105": "AXE",
+"03755L104": "CHX",
+"03836W103": "WTRG",
+"06777U101": "BNED",
+"101119105": "BPFH",
+"109043109": "BGG",
+"124830100": "CBL",
+"12571T100": "CCMP",
+"12709P103": "CCMP",
+"128126109": "CAMP",
+"132011107": "CBM",
+"14067E506": "CMO",
+"141665109": "PRDO",
+"144577103": "CRZO",
+"148806102": "CTLT",
+"15677J108": "DAY",
+"165167107": "EXE",
+"171798101": "XEC",
+"216831107": "CTB",
+"21870Q105": "COR",
+"247916208": "TRUE",
+"253922108": "DCOM",
+"25456K101": "DPLO",
+"257559203": "TRUE",
+"257867200": "RRD",
+"26885G109": "VTOL",
+"278265103": "EV",
+"315405100": "FOE",
+"31660B101": "FRGI",
+"350392106": "FBM",
+"35352P104": "FSB",
+"35906A306": "FYBR",
+"36164Y101": "GCP",
+"371559105": "GWR",
+"37244C101": "GHDX",
+"377320106": "MAGN",
+"379890106": "GLUU",
+"402635304": "GPOR",
+"43114K108": "HPR",
+"431475102": "HRC",
+"46116V105": "SNEX",
+"46131B100": "IVR",
+"461730509": "CSR",
+"48253L106": "KLXE",
+"50077C106": "KRA",
+"52471Y106": "LTXB",
+"531172104": "LPT",
+"54142L109": "LOGM",
+"54911Q107": "LYLT",
+"55027E102": "LMNX",
+"553777103": "MTSC",
+"559079207": "MGLN",
+"60877T100": "MNTA",
+"62914B100": "EGOV",
+"630077105": "ONTO",
+"639050103": "NTUS",
+"63935N107": "NCI",
+"64704V106": "TDAY",
+"667655104": "NWN",
+"676220106": "ODP",
+"69354M108": "PRAH",
+"709102107": "PRET",
+"715347100": "PRSP",
+"73179P106": "AVNT",
+"743187106": "PGNX",
+"743815102": "MODVQ",
+"74733V100": "QEP",
+"749397105": "RCM",
+"754212108": "RAVN",
+"76131V202": "RPAI",
+"78440X804": "SLG",
+"784635104": "SPXC",
+"78469X107": "FLOW",
+"78470V108": "SRCI",
+"800013104": "SAFM",
+"81721M109": "DHC",
+"84763A108": "SPPI",
+"871237103": "SYKE",
+"873379101": "TRHC",
+"87403A107": "TLRD",
+"876664103": "TCO",
+"878155100": "TISI",
+"878237106": "TECD",
+"88870R102": "TVTY",
+"902104108": "COHR",
+"90333L201": "USCR",
+"913543104": "UFPI",
+"92827P102": "VRTU",
+"92886T201": "VG",
+"930059100": "WDR",
+"98212B103": "WPX",
+"98310W108": "TNL"
+},
+"status": {
+"001547108": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"00163U106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"002535300": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"00484M106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"00508X203": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"00738A106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"00770F104": {
+"cik": "353020",
+"ticker": "AEGN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"009728106": {
+"cik": "3116",
+"ticker": "AKRXQ",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"024835100": {
+"cik": "1283630",
+"ticker": "ACC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"035290105": {
+"cik": "52795",
+"ticker": "AXE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"03755L104": {
+"cik": "1723089",
+"ticker": "CHX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"03836W103": {
+"cik": "78128",
+"ok": true,
+"ticker": "WTRG",
+"why": "2 of 2 quarter-ends agree"
+},
+"04351G101": {
+"cik": "1498301",
+"tries": 1,
+"why": "no ticker found"
+},
+"045327103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"04545L107": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"054303102": {
+"cik": "8868",
+"tries": 1,
+"why": "no ticker found"
+},
+"05971J102": {
+"cik": "1299939",
+"tries": 1,
+"why": "no ticker found"
+},
+"06777U101": {
+"cik": "1634117",
+"ticker": "BNED",
+"tries": 1,
+"why": "0 of 11 quarter-ends agree"
+},
+"090672106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"097793400": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"101119105": {
+"cik": "821127",
+"ticker": "BPFH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"101388106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"109043109": {
+"cik": "14195",
+"ticker": "BGG",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"124830100": {
+"cik": "910612",
+"ticker": "CBL",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"12508E101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"125581801": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"12571T100": {
+"cik": "1102934",
+"ticker": "CCMP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"12674R100": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"12709P103": {
+"cik": "1102934",
+"ticker": "CCMP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"12739A100": {
+"cik": "1702694",
+"tries": 1,
+"why": "no ticker found"
+},
+"127686103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"128126109": {
+"cik": "730255",
+"ticker": "CAMP",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"13123X102": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"132011107": {
+"cik": "820081",
+"ticker": "CBM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"138098108": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"14067E506": {
+"cik": "766701",
+"ticker": "CMO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"141633107": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"141665109": {
+"cik": "1046568",
+"ok": true,
+"ticker": "PRDO",
+"why": "2 of 2 quarter-ends agree"
+},
+"144577103": {
+"cik": "1040593",
+"ticker": "CRZO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"148806102": {
+"cik": "1596783",
+"ticker": "CTLT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"150602209": {
+"cik": "761648",
+"tries": 1,
+"why": "no ticker found"
+},
+"15677J108": {
+"cik": "1725057",
+"ticker": "DAY",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"165167107": {
+"cik": "895126",
+"ticker": "EXE",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"171798101": {
+"cik": "1168054",
+"ticker": "XEC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"171871502": {
+"cik": "716133",
+"tries": 1,
+"why": "no ticker found"
+},
+"192479103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"194014106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"216831107": {
+"cik": "24491",
+"ticker": "CTB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"218681104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"21870Q105": {
+"cik": "1490892",
+"ticker": "COR",
+"tries": 1,
+"why": "2 of 9 quarter-ends agree"
+},
+"21871D103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"224399105": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"225447101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"229669106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"232806109": {
+"cik": "743669",
+"tries": 1,
+"why": "no ticker found"
+},
+"23283R100": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"232CNT014": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"23332B106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"242370203": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"247916208": {
+"cik": "945764",
+"ticker": "TRUE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"25271C102": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"253922108": {
+"cik": "1005409",
+"ticker": "DCOM",
+"tries": 1,
+"why": "3 of 6 quarter-ends agree"
+},
+"25456K101": {
+"cik": "1610092",
+"ticker": "DPLO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"257559203": {
+"cik": "1381531",
+"ticker": "TRUE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"257867200": {
+"cik": "29669",
+"ticker": "RRD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"265504100": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"26885G109": {
+"cik": "1525221",
+"ok": true,
+"ticker": "VTOL",
+"why": "3 of 3 quarter-ends agree"
+},
+"278265103": {
+"cik": "350797",
+"ticker": "EV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"27875T101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"283677854": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"28470R102": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"30219E103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"30227H106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"315405100": {
+"cik": "35214",
+"ticker": "FOE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"31660B101": {
+"cik": "1534992",
+"ticker": "FRGI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"320867104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"33767D105": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"350392106": {
+"cik": "1688941",
+"ticker": "FBM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"35352P104": {
+"cik": "1407067",
+"ticker": "FSB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"35906A306": {
+"cik": "20520",
+"ticker": "FYBR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"36164Y101": {
+"cik": "1644440",
+"ticker": "GCP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"36473H104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"371559105": {
+"cik": "1012620",
+"ticker": "GWR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"37244C101": {
+"cik": "1131324",
+"ticker": "GHDX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"377316104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"377320106": {
+"cik": "41719",
+"ticker": "MAGN",
+"tries": 1,
+"why": "0 of 7 quarter-ends agree"
+},
+"379890106": {
+"cik": "1366246",
+"ticker": "GLUU",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"391416104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"395259104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"400110102": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"402635304": {
+"cik": "874499",
+"ticker": "GPOR",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"40425J101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"421946104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"43114K108": {
+"cik": "1725526",
+"ticker": "HPR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"431475102": {
+"cik": "47518",
+"ticker": "HRC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"436106108": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"45774N108": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"460335201": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"46116V105": {
+"cik": "913760",
+"ok": true,
+"ticker": "SNEX",
+"why": "4 of 4 quarter-ends agree"
+},
+"461203101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"46131B100": {
+"cik": "1437071",
+"ok": true,
+"ticker": "IVR",
+"why": "11 of 11 quarter-ends agree"
+},
+"46146L101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"461730509": {
+"cik": "798359",
+"ok": true,
+"ticker": "CSR",
+"why": "3 of 3 quarter-ends agree"
+},
+"47009K107": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"48253L106": {
+"cik": "1738827",
+"ok": true,
+"ticker": "KLXE",
+"why": "3 of 3 quarter-ends agree"
+},
+"488360207": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"50077C106": {
+"cik": "1321646",
+"ticker": "KRA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"516012101": {
+"cik": "57725",
+"tries": 1,
+"why": "no ticker found"
+},
+"516806106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"52471Y106": {
+"cik": "1487052",
+"ticker": "LTXB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"524901105": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"531172104": {
+"cik": "921112",
+"ticker": "LPT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"54142L109": {
+"cik": "1420302",
+"ticker": "LOGM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"54911Q107": {
+"cik": "1870997",
+"ticker": "LYLT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"55027E102": {
+"cik": "1033905",
+"ticker": "LMNX",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"550819106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"552074700": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"553777103": {
+"cik": "68709",
+"ticker": "MTSC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"559079207": {
+"cik": "19411",
+"ticker": "MGLN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"564563104": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"580037703": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"584688105": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"58471A105": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"589433101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"59001K100": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"59408Q106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"60740F105": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"60877T100": {
+"cik": "1235010",
+"ticker": "MNTA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"61022P100": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"62914B100": {
+"cik": "1065332",
+"ticker": "EGOV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"630077105": {
+"cik": "704532",
+"ticker": "ONTO",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"639050103": {
+"cik": "878526",
+"ticker": "NTUS",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"63935N107": {
+"cik": "1019737",
+"ticker": "NCI",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"640079109": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"64704V106": {
+"cik": "1579684",
+"ticker": "TDAY",
+"tries": 1,
+"why": "only 1 quarter-ends to check"
+},
+"667655104": {
+"cik": "1733998",
+"ok": true,
+"ticker": "NWN",
+"why": "8 of 8 quarter-ends agree"
+},
+"674215108": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"676220106": {
+"cik": "800240",
+"ticker": "ODP",
+"tries": 1,
+"why": "no prices"
+},
+"684000102": {
+"cik": "1697463",
+"tries": 1,
+"why": "no ticker found"
+},
+"68633D103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"690768403": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"69354M108": {
+"cik": "1613859",
+"ticker": "PRAH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"69360J107": {
+"cik": "870576",
+"tries": 1,
+"why": "no ticker found"
+},
+"708160106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"709102107": {
+"cik": "77281",
+"ticker": "PRET",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"715347100": {
+"cik": "1724670",
+"ticker": "PRSP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"727493108": {
+"cik": "79035",
+"tries": 1,
+"why": "no ticker found"
+},
+"73179P106": {
+"cik": "1122976",
+"ok": true,
+"ticker": "AVNT",
+"why": "4 of 4 quarter-ends agree"
+},
+"743187106": {
+"cik": "835887",
+"ticker": "PGNX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"743815102": {
+"cik": "1220754",
+"ticker": "MODVQ",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"74733V100": {
+"cik": "1108827",
+"ticker": "QEP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"74838J101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"749397105": {
+"cik": "1472595",
+"ticker": "RCM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"754212108": {
+"cik": "82166",
+"ticker": "RAVN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"758932107": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"75972A301": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"76131V202": {
+"cik": "1222840",
+"ticker": "RPAI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"781270103": {
+"cik": "1094392",
+"tries": 1,
+"why": "no ticker found"
+},
+"78440X804": {
+"cik": "1040971",
+"ticker": "SLG",
+"tries": 1,
+"why": "0 of 4 quarter-ends agree"
+},
+"784635104": {
+"cik": "88205",
+"ok": true,
+"ticker": "SPXC",
+"why": "12 of 12 quarter-ends agree"
+},
+"78469X107": {
+"cik": "1641991",
+"ticker": "FLOW",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"78470V108": {
+"cik": "1413507",
+"ticker": "SRCI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"78781P105": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"800013104": {
+"cik": "812128",
+"ticker": "SAFM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"808CVR104": {
+"cik": "87565",
+"tries": 1,
+"why": "no ticker found"
+},
+"811904101": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"81721M109": {
+"cik": "1075415",
+"ok": true,
+"ticker": "DHC",
+"why": "2 of 2 quarter-ends agree"
+},
+"835898107": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"84763A108": {
+"cik": "831547",
+"ticker": "SPPI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"852857200": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"85917A100": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"871237103": {
+"cik": "1010612",
+"ticker": "SYKE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"872307103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"873379101": {
+"cik": "1651561",
+"ticker": "TRHC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"87403A107": {
+"cik": "884217",
+"ticker": "TLRD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"876664103": {
+"cik": "890319",
+"ticker": "TCO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"878155100": {
+"cik": "318833",
+"ok": true,
+"ticker": "TISI",
+"why": "8 of 8 quarter-ends agree"
+},
+"878237106": {
+"cik": "790703",
+"ticker": "TECD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"88677Q109": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"88870P106": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"88870R102": {
+"cik": "704415",
+"ticker": "TVTY",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"898349105": {
+"cik": "849261",
+"tries": 1,
+"why": "no ticker found"
+},
+"902104108": {
+"cik": "820318",
+"ok": true,
+"ticker": "COHR",
+"why": "12 of 12 quarter-ends agree"
+},
+"90333L201": {
+"cik": "1073429",
+"ticker": "USCR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"909218109": {
+"cik": "798949",
+"tries": 1,
+"why": "no ticker found"
+},
+"913543104": {
+"cik": "912767",
+"ok": true,
+"ticker": "UFPI",
+"why": "3 of 3 quarter-ends agree"
+},
+"91732J102": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"91734M103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"92532W103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"92827P102": {
+"cik": "1207074",
+"ticker": "VRTU",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"92849E101": {
+"cik": "1360530",
+"tries": 1,
+"why": "no ticker found"
+},
+"92886T201": {
+"cik": "1272830",
+"ticker": "VG",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"930059100": {
+"cik": "1052100",
+"ticker": "WDR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"93964W108": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"948741103": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"966387409": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"98212B103": {
+"cik": "1518832",
+"ticker": "WPX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"98310W108": {
+"cik": "1361658",
+"ok": true,
+"ticker": "TNL",
+"why": "6 of 6 quarter-ends agree"
+},
+"98421B100": {
+"cik": "",
+"tries": 1,
+"why": "no ticker found"
+},
+"AAN": {
+"ticker": "AAN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AAOI": {
+"ok": true,
+"ticker": "AAOI",
+"why": "9 of 9 quarter-ends agree"
+},
+"AAWW": {
+"ticker": "AAWW",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ABTX": {
+"ticker": "ABTX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ACA": {
+"ok": true,
+"ticker": "ACA",
+"why": "28 of 28 quarter-ends agree"
+},
+"ACIC": {
+"ok": true,
+"ticker": "ACIC",
+"why": "8 of 8 quarter-ends agree"
+},
+"ADTN": {
+"ok": true,
+"ticker": "ADTN",
+"why": "7 of 7 quarter-ends agree"
+},
+"AEL": {
+"ticker": "AEL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AGTI": {
+"ticker": "AGTI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AHH": {
+"ticker": "AHH",
+"tries": 1,
+"why": "no prices"
+},
+"AIRC": {
+"ticker": "AIRC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AJRD": {
+"ticker": "AJRD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AL": {
+"ticker": "AL",
+"tries": 1,
+"why": "no prices"
+},
+"ALE": {
+"ok": true,
+"ticker": "ALE",
+"why": "25 of 25 quarter-ends agree"
+},
+"ALEX": {
+"ok": true,
+"ticker": "ALEX",
+"why": "26 of 26 quarter-ends agree"
+},
+"ALTM": {
+"ticker": "ALTM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ALTR": {
+"ticker": "ALTR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AMBC": {
+"ticker": "AMBC",
+"tries": 1,
+"why": "no prices"
+},
+"AMCX": {
+"ok": true,
+"ticker": "AMCX",
+"why": "20 of 20 quarter-ends agree"
+},
+"AMED": {
+"ok": true,
+"ticker": "AMED",
+"why": "24 of 24 quarter-ends agree"
+},
+"AMEH": {
+"ticker": "AMEH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AMWD": {
+"ok": true,
+"ticker": "AMWD",
+"why": "27 of 27 quarter-ends agree"
+},
+"ANGI": {
+"ok": true,
+"ticker": "ANGI",
+"why": "3 of 3 quarter-ends agree"
+},
+"ANGO": {
+"ok": true,
+"ticker": "ANGO",
+"why": "16 of 16 quarter-ends agree"
+},
+"ANIK": {
+"ok": true,
+"ticker": "ANIK",
+"why": "16 of 16 quarter-ends agree"
+},
+"APEI": {
+"ok": true,
+"ticker": "APEI",
+"why": "12 of 12 quarter-ends agree"
+},
+"APLS": {
+"ticker": "APLS",
+"tries": 1,
+"why": "no prices"
+},
+"APPS": {
+"ok": true,
+"ticker": "APPS",
+"why": "10 of 10 quarter-ends agree"
+},
+"ARCH": {
+"ticker": "ARCH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ARI": {
+"ok": true,
+"ticker": "ARI",
+"why": "27 of 27 quarter-ends agree"
+},
+"ARNC": {
+"ticker": "ARNC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ASGN": {
+"ticker": "ASGN",
+"tries": 1,
+"why": "no prices"
+},
+"ASIX": {
+"ok": true,
+"ticker": "ASIX",
+"why": "25 of 25 quarter-ends agree"
+},
+"ATGE": {
+"ticker": "ATGE",
+"tries": 1,
+"why": "no prices"
+},
+"ATNI": {
+"ok": true,
+"ticker": "ATNI",
+"why": "19 of 19 quarter-ends agree"
+},
+"AVD": {
+"ok": true,
+"ticker": "AVD",
+"why": "17 of 17 quarter-ends agree"
+},
+"AVID": {
+"ticker": "AVID",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AVNS": {
+"ok": true,
+"ticker": "AVNS",
+"why": "28 of 28 quarter-ends agree"
+},
+"AVTA": {
+"ticker": "AVTA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AXL": {
+"ticker": "AXL",
+"tries": 1,
+"why": "no prices"
+},
+"AZPN": {
+"ticker": "AZPN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"B": {
+"ticker": "B",
+"tries": 1,
+"why": "4 of 22 quarter-ends agree"
+},
+"BBBY": {
+"ticker": "BBBY",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"BCOR": {
+"ticker": "BCOR",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"BDN": {
+"ok": true,
+"ticker": "BDN",
+"why": "23 of 23 quarter-ends agree"
+},
+"BELFB": {
+"ok": true,
+"ticker": "BELFB",
+"why": "8 of 8 quarter-ends agree"
+},
+"BERY": {
+"ticker": "BERY",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"BFS.N": {
+"ticker": "BFS.N",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"BGS": {
+"ok": true,
+"ticker": "BGS",
+"why": "24 of 24 quarter-ends agree"
+},
+"BHLB": {
+"ticker": "BHLB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"BIG": {
+"ticker": "BIG",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"BLD": {
+"ok": true,
+"ticker": "BLD",
+"why": "28 of 28 quarter-ends agree"
+},
+"BLDR": {
+"ok": true,
+"ticker": "BLDR",
+"why": "13 of 13 quarter-ends agree"
+},
+"BLFS": {
+"ticker": "BLFS",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"BLMN": {
+"ok": true,
+"ticker": "BLMN",
+"why": "26 of 26 quarter-ends agree"
+},
+"BOOM": {
+"ok": true,
+"ticker": "BOOM",
+"why": "15 of 15 quarter-ends agree"
+},
+"BRBR": {
+"ok": true,
+"ticker": "BRBR",
+"why": "17 of 17 quarter-ends agree"
+},
+"BRKL": {
+"ticker": "BRKL",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"BSIG": {
+"ticker": "BSIG",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CABO": {
+"ok": true,
+"ticker": "CABO",
+"why": "27 of 27 quarter-ends agree"
+},
+"CADE": {
+"ticker": "CADE",
+"tries": 1,
+"why": "no prices"
+},
+"CAL": {
+"ok": true,
+"ticker": "CAL",
+"why": "25 of 25 quarter-ends agree"
+},
+"CARA": {
+"ticker": "CARA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CARS": {
+"ok": true,
+"ticker": "CARS",
+"why": "17 of 17 quarter-ends agree"
+},
+"CATO": {
+"ok": true,
+"ticker": "CATO",
+"why": "13 of 13 quarter-ends agree"
+},
+"CCRN": {
+"ticker": "CCRN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CCSI": {
+"ok": true,
+"ticker": "CCSI",
+"why": "9 of 9 quarter-ends agree"
+},
+"CDMO": {
+"ticker": "CDMO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CEIX": {
+"ticker": "CEIX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CEVA": {
+"ok": true,
+"ticker": "CEVA",
+"why": "25 of 25 quarter-ends agree"
+},
+"CHCT": {
+"ok": true,
+"ticker": "CHCT",
+"why": "20 of 20 quarter-ends agree"
+},
+"CHK": {
+"ticker": "CHK",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CHRS": {
+"ok": true,
+"ticker": "CHRS",
+"why": "13 of 13 quarter-ends agree"
+},
+"CHS": {
+"ticker": "CHS",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CHUY": {
+"ticker": "CHUY",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CHX": {
+"ticker": "CHX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CIR": {
+"ticker": "CIR",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"CIVI": {
+"ticker": "CIVI",
+"tries": 1,
+"why": "no prices"
+},
+"CLB": {
+"ok": true,
+"ticker": "CLB",
+"why": "16 of 16 quarter-ends agree"
+},
+"CLDT": {
+"ok": true,
+"ticker": "CLDT",
+"why": "19 of 19 quarter-ends agree"
+},
+"CLFD": {
+"ok": true,
+"ticker": "CLFD",
+"why": "5 of 5 quarter-ends agree"
+},
+"CLW": {
+"ok": true,
+"ticker": "CLW",
+"why": "21 of 21 quarter-ends agree"
+},
+"CMA": {
+"ticker": "CMA",
+"tries": 1,
+"why": "no prices"
+},
+"CMP": {
+"ok": true,
+"ticker": "CMP",
+"why": "20 of 20 quarter-ends agree"
+},
+"CMTL": {
+"ok": true,
+"ticker": "CMTL",
+"why": "15 of 15 quarter-ends agree"
+},
+"CNSL": {
+"ticker": "CNSL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CONN": {
+"ticker": "CONN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"COOP": {
+"ticker": "COOP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CPE": {
+"ticker": "CPE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CPRI": {
+"ok": true,
+"ticker": "CPRI",
+"why": "16 of 16 quarter-ends agree"
+},
+"CPRX": {
+"ticker": "CPRX",
+"tries": 1,
+"why": "no prices"
+},
+"CPS": {
+"ok": true,
+"ticker": "CPS",
+"why": "10 of 10 quarter-ends agree"
+},
+"CPSI": {
+"ticker": "CPSI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CRMT": {
+"ok": true,
+"ticker": "CRMT",
+"why": "16 of 16 quarter-ends agree"
+},
+"CRNC": {
+"ok": true,
+"ticker": "CRNC",
+"why": "11 of 11 quarter-ends agree"
+},
+"CSGS": {
+"ok": true,
+"ticker": "CSGS",
+"why": "27 of 27 quarter-ends agree"
+},
+"CSII": {
+"ticker": "CSII",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CSWI": {
+"ticker": "CSWI",
+"tries": 1,
+"why": "no prices"
+},
+"CTKB": {
+"ok": true,
+"ticker": "CTKB",
+"why": "12 of 12 quarter-ends agree"
+},
+"CUTR": {
+"ticker": "CUTR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CVET": {
+"ticker": "CVET",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CVGW": {
+"ticker": "CVGW",
+"tries": 1,
+"why": "no prices"
+},
+"CWEN.A": {
+"ticker": "CWEN.A",
+"tries": 1,
+"why": "no prices"
+},
+"CYH": {
+"ok": true,
+"ticker": "CYH",
+"why": "17 of 17 quarter-ends agree"
+},
+"DAKT": {
+"ok": true,
+"ticker": "DAKT",
+"why": "9 of 9 quarter-ends agree"
+},
+"DBI": {
+"ok": true,
+"ticker": "DBI",
+"why": "20 of 20 quarter-ends agree"
+},
+"DDD": {
+"ok": true,
+"ticker": "DDD",
+"why": "20 of 20 quarter-ends agree"
+},
+"DDS": {
+"ok": true,
+"ticker": "DDS",
+"why": "3 of 3 quarter-ends agree"
+},
+"DHC": {
+"ok": true,
+"ticker": "DHC",
+"why": "11 of 11 quarter-ends agree"
+},
+"DIN": {
+"ok": true,
+"ticker": "DIN",
+"why": "20 of 20 quarter-ends agree"
+},
+"DISH": {
+"ticker": "DISH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"DOUG": {
+"ticker": "DOUG",
+"tries": 1,
+"why": "0 of 6 quarter-ends agree"
+},
+"DRQ": {
+"ticker": "DRQ",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"DVAX": {
+"ticker": "DVAX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"EBIX": {
+"ticker": "EBIX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"EBS": {
+"ok": true,
+"ticker": "EBS",
+"why": "16 of 16 quarter-ends agree"
+},
+"EGHT": {
+"ok": true,
+"ticker": "EGHT",
+"why": "16 of 16 quarter-ends agree"
+},
+"EGRX": {
+"ok": true,
+"ticker": "EGRX",
+"why": "15 of 15 quarter-ends agree"
+},
+"EHAB": {
+"ticker": "EHAB",
+"tries": 1,
+"why": "no prices"
+},
+"EHTH": {
+"ok": true,
+"ticker": "EHTH",
+"why": "12 of 12 quarter-ends agree"
+},
+"ELME": {
+"ticker": "ELME",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"EMBC": {
+"ok": true,
+"ticker": "EMBC",
+"why": "16 of 16 quarter-ends agree"
+},
+"ENTA": {
+"ok": true,
+"ticker": "ENTA",
+"why": "16 of 16 quarter-ends agree"
+},
+"ENV": {
+"ticker": "ENV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ETD": {
+"ok": true,
+"ticker": "ETD",
+"why": "27 of 27 quarter-ends agree"
+},
+"ETRN": {
+"ticker": "ETRN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"EXPI": {
+"ticker": "EXPI",
+"tries": 1,
+"why": "no prices"
+},
+"FARO": {
+"ticker": "FARO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"FBC": {
+"ticker": "FBC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"FDP": {
+"ticker": "FDP",
+"tries": 1,
+"why": "no prices"
+},
+"FF": {
+"ok": true,
+"ticker": "FF",
+"why": "16 of 16 quarter-ends agree"
+},
+"FL": {
+"ok": true,
+"ticker": "FL",
+"why": "24 of 24 quarter-ends agree"
+},
+"FLGT": {
+"ok": true,
+"ticker": "FLGT",
+"why": "18 of 18 quarter-ends agree"
+},
+"FORR": {
+"ok": true,
+"ticker": "FORR",
+"why": "18 of 18 quarter-ends agree"
+},
+"FOSL": {
+"ok": true,
+"ticker": "FOSL",
+"why": "12 of 12 quarter-ends agree"
+},
+"FSP": {
+"ok": true,
+"ticker": "FSP",
+"why": "14 of 14 quarter-ends agree"
+},
+"FWRD": {
+"ok": true,
+"ticker": "FWRD",
+"why": "27 of 27 quarter-ends agree"
+},
+"FYBR": {
+"ticker": "FYBR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"GCI": {
+"ticker": "GCI",
+"tries": 1,
+"why": "no prices"
+},
+"GCO": {
+"ok": true,
+"ticker": "GCO",
+"why": "15 of 15 quarter-ends agree"
+},
+"GDEN": {
+"ticker": "GDEN",
+"tries": 1,
+"why": "no prices"
+},
+"GDOT": {
+"ok": true,
+"ticker": "GDOT",
+"why": "22 of 22 quarter-ends agree"
+},
+"GDYN": {
+"ok": true,
+"ticker": "GDYN",
+"why": "5 of 5 quarter-ends agree"
+},
+"GEAR": {
+"ticker": "GEAR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"GEOS": {
+"ok": true,
+"ticker": "GEOS",
+"why": "5 of 5 quarter-ends agree"
+},
+"GES": {
+"ok": true,
+"ticker": "GES",
+"why": "26 of 26 quarter-ends agree"
+},
+"GIFI": {
+"ticker": "GIFI",
+"tries": 1,
+"why": "no prices"
+},
+"GMS": {
+"ok": true,
+"ticker": "GMS",
+"why": "24 of 24 quarter-ends agree"
+},
+"GOGO": {
+"ok": true,
+"ticker": "GOGO",
+"why": "16 of 16 quarter-ends agree"
+},
+"GPMT": {
+"ok": true,
+"ticker": "GPMT",
+"why": "14 of 14 quarter-ends agree"
+},
+"GPRE": {
+"ok": true,
+"ticker": "GPRE",
+"why": "22 of 22 quarter-ends agree"
+},
+"GPS": {
+"ticker": "GPS",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"GTLS": {
+"ok": true,
+"ticker": "GTLS",
+"why": "28 of 28 quarter-ends agree"
+},
+"GTX": {
+"ok": true,
+"ticker": "GTX",
+"why": "4 of 4 quarter-ends agree"
+},
+"HA": {
+"ticker": "HA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HAIN": {
+"ok": true,
+"ticker": "HAIN",
+"why": "22 of 22 quarter-ends agree"
+},
+"HAYN": {
+"ticker": "HAYN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HBI": {
+"ticker": "HBI",
+"tries": 1,
+"why": "no prices"
+},
+"HELE": {
+"ok": true,
+"ticker": "HELE",
+"why": "13 of 13 quarter-ends agree"
+},
+"HI": {
+"ok": true,
+"ticker": "HI",
+"why": "26 of 26 quarter-ends agree"
+},
+"HIBB": {
+"ticker": "HIBB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HLX": {
+"ok": true,
+"ticker": "HLX",
+"why": "28 of 28 quarter-ends agree"
+},
+"HMST": {
+"ticker": "HMST",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HNGR": {
+"ticker": "HNGR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HOUS": {
+"ticker": "HOUS",
+"tries": 1,
+"why": "no prices"
+},
+"HPP": {
+"ticker": "HPP",
+"tries": 1,
+"why": "0 of 18 quarter-ends agree"
+},
+"HSC": {
+"ticker": "HSC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HSII": {
+"ok": true,
+"ticker": "HSII",
+"why": "25 of 25 quarter-ends agree"
+},
+"HSKA": {
+"ticker": "HSKA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HT": {
+"ticker": "HT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HTZ": {
+"ok": true,
+"ticker": "HTZ",
+"why": "14 of 14 quarter-ends agree"
+},
+"HVT": {
+"ok": true,
+"ticker": "HVT",
+"why": "20 of 20 quarter-ends agree"
+},
+"IAA": {
+"ticker": "IAA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"IAC": {
+"ticker": "IAC",
+"tries": 1,
+"why": "no prices"
+},
+"IBTX": {
+"ticker": "IBTX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"IIIN": {
+"ok": true,
+"ticker": "IIIN",
+"why": "27 of 27 quarter-ends agree"
+},
+"ILPT": {
+"ok": true,
+"ticker": "ILPT",
+"why": "13 of 13 quarter-ends agree"
+},
+"INGN": {
+"ok": true,
+"ticker": "INGN",
+"why": "15 of 15 quarter-ends agree"
+},
+"INN": {
+"ok": true,
+"ticker": "INN",
+"why": "26 of 26 quarter-ends agree"
+},
+"INT": {
+"ticker": "INT",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"IRBT": {
+"ticker": "IRBT",
+"tries": 1,
+"why": "no prices"
+},
+"IRWD": {
+"ok": true,
+"ticker": "IRWD",
+"why": "11 of 11 quarter-ends agree"
+},
+"ITOS": {
+"ticker": "ITOS",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"IVR": {
+"ok": true,
+"ticker": "IVR",
+"why": "6 of 6 quarter-ends agree"
+},
+"JACK": {
+"ok": true,
+"ticker": "JACK",
+"why": "24 of 24 quarter-ends agree"
+},
+"JBT": {
+"ticker": "JBT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"JHG": {
+"ticker": "JHG",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"JRVR": {
+"ok": true,
+"ticker": "JRVR",
+"why": "5 of 5 quarter-ends agree"
+},
+"JWN": {
+"ticker": "JWN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"JYNT": {
+"ok": true,
+"ticker": "JYNT",
+"why": "7 of 7 quarter-ends agree"
+},
+"KAMN": {
+"ticker": "KAMN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"KAR": {
+"ticker": "KAR",
+"tries": 1,
+"why": "no prices"
+},
+"KELYA": {
+"ok": true,
+"ticker": "KELYA",
+"why": "21 of 21 quarter-ends agree"
+},
+"KLG": {
+"ticker": "KLG",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"KREF": {
+"ok": true,
+"ticker": "KREF",
+"why": "25 of 25 quarter-ends agree"
+},
+"KW": {
+"ticker": "KW",
+"tries": 1,
+"why": "no prices"
+},
+"LANC": {
+"ticker": "LANC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LEG": {
+"ticker": "LEG",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"LESL": {
+"ticker": "LESL",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"LHCG": {
+"ticker": "LHCG",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LL": {
+"ticker": "LL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LNW": {
+"ok": true,
+"ticker": "LNW",
+"why": "25 of 25 quarter-ends agree"
+},
+"LOCO": {
+"ok": true,
+"ticker": "LOCO",
+"why": "16 of 16 quarter-ends agree"
+},
+"LPI": {
+"ticker": "LPI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LPSN": {
+"ticker": "LPSN",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"LSI": {
+"ticker": "LSI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LTHM": {
+"ticker": "LTHM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LXU": {
+"ticker": "LXU",
+"tries": 1,
+"why": "0 of 3 quarter-ends agree"
+},
+"MASI": {
+"ok": true,
+"ticker": "MASI",
+"why": "27 of 27 quarter-ends agree"
+},
+"MATV": {
+"ok": true,
+"ticker": "MATV",
+"why": "22 of 22 quarter-ends agree"
+},
+"MCS": {
+"ok": true,
+"ticker": "MCS",
+"why": "19 of 19 quarter-ends agree"
+},
+"MCW": {
+"ticker": "MCW",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"MDC": {
+"ticker": "MDC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"MDRX": {
+"ok": true,
+"ticker": "MDRX",
+"why": "18 of 18 quarter-ends agree"
+},
+"MED": {
+"ok": true,
+"ticker": "MED",
+"why": "19 of 19 quarter-ends agree"
+},
+"MEI": {
+"ok": true,
+"ticker": "MEI",
+"why": "19 of 19 quarter-ends agree"
+},
+"MERC": {
+"ok": true,
+"ticker": "MERC",
+"why": "21 of 21 quarter-ends agree"
+},
+"MGPI": {
+"ticker": "MGPI",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"MLAB": {
+"ok": true,
+"ticker": "MLAB",
+"why": "24 of 24 quarter-ends agree"
+},
+"MNRO": {
+"ok": true,
+"ticker": "MNRO",
+"why": "27 of 27 quarter-ends agree"
+},
+"MODG": {
+"ticker": "MODG",
+"tries": 1,
+"why": "no prices"
+},
+"MODV": {
+"ticker": "MODV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"MOV": {
+"ok": true,
+"ticker": "MOV",
+"why": "21 of 21 quarter-ends agree"
+},
+"MPAA": {
+"ok": true,
+"ticker": "MPAA",
+"why": "14 of 14 quarter-ends agree"
+},
+"MPW": {
+"ticker": "MPW",
+"tries": 1,
+"why": "no prices"
+},
+"MSGS": {
+"ticker": "MSGS",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"MSTR": {
+"ok": true,
+"ticker": "MSTR",
+"why": "8 of 8 quarter-ends agree"
+},
+"MTRX": {
+"ok": true,
+"ticker": "MTRX",
+"why": "9 of 9 quarter-ends agree"
+},
+"MYE": {
+"ok": true,
+"ticker": "MYE",
+"why": "21 of 21 quarter-ends agree"
+},
+"MYGN": {
+"ok": true,
+"ticker": "MYGN",
+"why": "26 of 26 quarter-ends agree"
+},
+"NARI": {
+"ticker": "NARI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NATI": {
+"ticker": "NATI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NBR": {
+"ok": true,
+"ticker": "NBR",
+"why": "10 of 10 quarter-ends agree"
+},
+"NCR": {
+"ticker": "NCR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NEX": {
+"ticker": "NEX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NFBK": {
+"ticker": "NFBK",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"NKTR": {
+"ticker": "NKTR",
+"tries": 1,
+"why": "0 of 14 quarter-ends agree"
+},
+"NPKI": {
+"ok": true,
+"ticker": "NPKI",
+"why": "5 of 5 quarter-ends agree"
+},
+"NSA": {
+"ok": true,
+"ticker": "NSA",
+"why": "28 of 28 quarter-ends agree"
+},
+"NTGR": {
+"ok": true,
+"ticker": "NTGR",
+"why": "16 of 16 quarter-ends agree"
+},
+"NUS": {
+"ok": true,
+"ticker": "NUS",
+"why": "21 of 21 quarter-ends agree"
+},
+"NUVA": {
+"ticker": "NUVA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NVEE": {
+"ticker": "NVEE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NVRI": {
+"ok": true,
+"ticker": "NVRI",
+"why": "24 of 24 quarter-ends agree"
+},
+"NXGN": {
+"ticker": "NXGN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NYCB": {
+"ticker": "NYCB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"NYMT": {
+"ticker": "NYMT",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"OABI": {
+"ticker": "OABI",
+"tries": 1,
+"why": "0 of 15 quarter-ends agree"
+},
+"ODP": {
+"ticker": "ODP",
+"tries": 1,
+"why": "no prices"
+},
+"OFC": {
+"ticker": "OFC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"OFIX": {
+"ok": true,
+"ticker": "OFIX",
+"why": "17 of 17 quarter-ends agree"
+},
+"OIS": {
+"ok": true,
+"ticker": "OIS",
+"why": "18 of 18 quarter-ends agree"
+},
+"OKTA": {
+"ok": true,
+"ticker": "OKTA",
+"why": "5 of 5 quarter-ends agree"
+},
+"OLN": {
+"ok": true,
+"ticker": "OLN",
+"why": "28 of 28 quarter-ends agree"
+},
+"OMI": {
+"ticker": "OMI",
+"tries": 1,
+"why": "no prices"
+},
+"ONL": {
+"ok": true,
+"ticker": "ONL",
+"why": "7 of 7 quarter-ends agree"
+},
+"OPI": {
+"ticker": "OPI",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"OPRX": {
+"ok": true,
+"ticker": "OPRX",
+"why": "5 of 5 quarter-ends agree"
+},
+"ORGO": {
+"ok": true,
+"ticker": "ORGO",
+"why": "7 of 7 quarter-ends agree"
+},
+"OSPN": {
+"ok": true,
+"ticker": "OSPN",
+"why": "17 of 17 quarter-ends agree"
+},
+"OSUR": {
+"ok": true,
+"ticker": "OSUR",
+"why": "20 of 20 quarter-ends agree"
+},
+"OXM": {
+"ok": true,
+"ticker": "OXM",
+"why": "27 of 27 quarter-ends agree"
+},
+"PACW": {
+"ticker": "PACW",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PCH": {
+"ok": true,
+"ticker": "PCH",
+"why": "26 of 26 quarter-ends agree"
+},
+"PDCE": {
+"ticker": "PDCE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PDCO": {
+"ok": true,
+"ticker": "PDCO",
+"why": "23 of 23 quarter-ends agree"
+},
+"PGTI": {
+"ticker": "PGTI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PINC": {
+"ticker": "PINC",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"PKE": {
+"ok": true,
+"ticker": "PKE",
+"why": "14 of 14 quarter-ends agree"
+},
+"PLAY": {
+"ok": true,
+"ticker": "PLAY",
+"why": "26 of 26 quarter-ends agree"
+},
+"PLCE": {
+"ok": true,
+"ticker": "PLCE",
+"why": "15 of 15 quarter-ends agree"
+},
+"PNM": {
+"ticker": "PNM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PNTG": {
+"ok": true,
+"ticker": "PNTG",
+"why": "13 of 13 quarter-ends agree"
+},
+"PPBI": {
+"ok": true,
+"ticker": "PPBI",
+"why": "24 of 24 quarter-ends agree"
+},
+"PRA": {
+"ok": true,
+"ticker": "PRA",
+"why": "27 of 27 quarter-ends agree"
+},
+"PRAA": {
+"ok": true,
+"ticker": "PRAA",
+"why": "27 of 27 quarter-ends agree"
+},
+"PRFT": {
+"ticker": "PRFT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PSTG": {
+"ticker": "PSTG",
+"tries": 1,
+"why": "no prices"
+},
+"PUMP": {
+"ok": true,
+"ticker": "PUMP",
+"why": "24 of 24 quarter-ends agree"
+},
+"QRVO": {
+"ticker": "QRVO",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"QURE": {
+"ok": true,
+"ticker": "QURE",
+"why": "4 of 4 quarter-ends agree"
+},
+"RC": {
+"ok": true,
+"ticker": "RC",
+"why": "24 of 24 quarter-ends agree"
+},
+"RCII": {
+"ticker": "RCII",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"RCM": {
+"ticker": "RCM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"REI": {
+"ok": true,
+"ticker": "REI",
+"why": "4 of 4 quarter-ends agree"
+},
+"RGNX": {
+"ok": true,
+"ticker": "RGNX",
+"why": "21 of 21 quarter-ends agree"
+},
+"RGP": {
+"ok": true,
+"ticker": "RGP",
+"why": "20 of 20 quarter-ends agree"
+},
+"RGR": {
+"ok": true,
+"ticker": "RGR",
+"why": "25 of 25 quarter-ends agree"
+},
+"RILY": {
+"ok": true,
+"ticker": "RILY",
+"why": "13 of 13 quarter-ends agree"
+},
+"RMAX": {
+"ticker": "RMAX",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"ROCC": {
+"ticker": "ROCC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ROIC": {
+"ok": true,
+"ticker": "ROIC",
+"why": "22 of 22 quarter-ends agree"
+},
+"ROKU": {
+"ticker": "ROKU",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"RPT": {
+"ticker": "RPT",
+"tries": 1,
+"why": "1 of 18 quarter-ends agree"
+},
+"RRGB": {
+"ok": true,
+"ticker": "RRGB",
+"why": "11 of 11 quarter-ends agree"
+},
+"RUTH": {
+"ticker": "RUTH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"RWT": {
+"ok": true,
+"ticker": "RWT",
+"why": "28 of 28 quarter-ends agree"
+},
+"RYAM": {
+"ok": true,
+"ticker": "RYAM",
+"why": "15 of 15 quarter-ends agree"
+},
+"SAM": {
+"ok": true,
+"ticker": "SAM",
+"why": "28 of 28 quarter-ends agree"
+},
+"SATS": {
+"ticker": "SATS",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"SBNY": {
+"ticker": "SBNY",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"SCVL": {
+"ticker": "SCVL",
+"tries": 1,
+"why": "no prices"
+},
+"SEE": {
+"ticker": "SEE",
+"tries": 1,
+"why": "no prices"
+},
+"SEM": {
+"ok": true,
+"ticker": "SEM",
+"why": "28 of 28 quarter-ends agree"
+},
+"SENEA": {
+"ok": true,
+"ticker": "SENEA",
+"why": "16 of 16 quarter-ends agree"
+},
+"SGH": {
+"ticker": "SGH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SITC": {
+"ticker": "SITC",
+"tries": 1,
+"why": "4 of 21 quarter-ends agree"
+},
+"SIX": {
+"ticker": "SIX",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"SJI": {
+"ticker": "SJI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SJW": {
+"ticker": "SJW",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SKX": {
+"ok": true,
+"ticker": "SKX",
+"why": "24 of 24 quarter-ends agree"
+},
+"SLCA": {
+"ticker": "SLCA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SLP": {
+"ticker": "SLP",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"SLQT": {
+"ok": true,
+"ticker": "SLQT",
+"why": "6 of 6 quarter-ends agree"
+},
+"SNBR": {
+"ticker": "SNBR",
+"tries": 1,
+"why": "no prices"
+},
+"SNCY": {
+"ticker": "SNCY",
+"tries": 1,
+"why": "no prices"
+},
+"SNV": {
+"ok": true,
+"ticker": "SNV",
+"why": "26 of 26 quarter-ends agree"
+},
+"SPB": {
+"ticker": "SPB",
+"tries": 1,
+"why": "only 1 quarter-ends to check"
+},
+"SPOK": {
+"ok": true,
+"ticker": "SPOK",
+"why": "8 of 8 quarter-ends agree"
+},
+"SPTN": {
+"ok": true,
+"ticker": "SPTN",
+"why": "24 of 24 quarter-ends agree"
+},
+"SPWR": {
+"ticker": "SPWR",
+"tries": 1,
+"why": "3 of 6 quarter-ends agree"
+},
+"SRC": {
+"ticker": "SRC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SRCL": {
+"ok": true,
+"ticker": "SRCL",
+"why": "21 of 21 quarter-ends agree"
+},
+"SRDX": {
+"ticker": "SRDX",
+"tries": 1,
+"why": "no prices"
+},
+"SSP": {
+"ticker": "SSP",
+"tries": 1,
+"why": "0 of 19 quarter-ends agree"
+},
+"SSTK": {
+"ok": true,
+"ticker": "SSTK",
+"why": "27 of 27 quarter-ends agree"
+},
+"STAR": {
+"ticker": "STAR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"STEL": {
+"ticker": "STEL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"STHOV": {
+"ticker": "STHOV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"STOR": {
+"ticker": "STOR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SVC": {
+"ok": true,
+"ticker": "SVC",
+"why": "21 of 21 quarter-ends agree"
+},
+"SWAV": {
+"ticker": "SWAV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SWI": {
+"ticker": "SWI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SWN": {
+"ok": true,
+"ticker": "SWN",
+"why": "21 of 21 quarter-ends agree"
+},
+"SXC": {
+"ok": true,
+"ticker": "SXC",
+"why": "26 of 26 quarter-ends agree"
+},
+"SYNH": {
+"ticker": "SYNH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TBI": {
+"ok": true,
+"ticker": "TBI",
+"why": "18 of 18 quarter-ends agree"
+},
+"TBK": {
+"ticker": "TBK",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TCMD": {
+"ok": true,
+"ticker": "TCMD",
+"why": "11 of 11 quarter-ends agree"
+},
+"TG": {
+"ok": true,
+"ticker": "TG",
+"why": "15 of 15 quarter-ends agree"
+},
+"TGI": {
+"ok": true,
+"ticker": "TGI",
+"why": "24 of 24 quarter-ends agree"
+},
+"TGNA": {
+"ok": true,
+"ticker": "TGNA",
+"why": "26 of 26 quarter-ends agree"
+},
+"THRY": {
+"ok": true,
+"ticker": "THRY",
+"why": "16 of 16 quarter-ends agree"
+},
+"THS": {
+"ok": true,
+"ticker": "THS",
+"why": "26 of 26 quarter-ends agree"
+},
+"TMHC": {
+"ok": true,
+"ticker": "TMHC",
+"why": "26 of 26 quarter-ends agree"
+},
+"TMST": {
+"ticker": "TMST",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TPH": {
+"ok": true,
+"ticker": "TPH",
+"why": "27 of 27 quarter-ends agree"
+},
+"TPX": {
+"ticker": "TPX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TREE": {
+"ok": true,
+"ticker": "TREE",
+"why": "15 of 15 quarter-ends agree"
+},
+"TSE": {
+"ticker": "TSE",
+"tries": 1,
+"why": "no prices"
+},
+"TTEC": {
+"ok": true,
+"ticker": "TTEC",
+"why": "20 of 20 quarter-ends agree"
+},
+"TTGT": {
+"ok": true,
+"ticker": "TTGT",
+"why": "24 of 24 quarter-ends agree"
+},
+"TTI": {
+"ok": true,
+"ticker": "TTI",
+"why": "3 of 3 quarter-ends agree"
+},
+"TUP": {
+"ticker": "TUP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TWI": {
+"ok": true,
+"ticker": "TWI",
+"why": "27 of 27 quarter-ends agree"
+},
+"TWNK": {
+"ticker": "TWNK",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TWO": {
+"ticker": "TWO",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"UBA": {
+"ticker": "UBA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"UCBI": {
+"ticker": "UCBI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"UEIC": {
+"ok": true,
+"ticker": "UEIC",
+"why": "14 of 14 quarter-ends agree"
+},
+"UFI": {
+"ok": true,
+"ticker": "UFI",
+"why": "13 of 13 quarter-ends agree"
+},
+"UHT": {
+"ok": true,
+"ticker": "UHT",
+"why": "27 of 27 quarter-ends agree"
+},
+"UIS": {
+"ok": true,
+"ticker": "UIS",
+"why": "14 of 14 quarter-ends agree"
+},
+"UMPQ": {
+"ticker": "UMPQ",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"UNVR": {
+"ticker": "UNVR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"USNA": {
+"ok": true,
+"ticker": "USNA",
+"why": "25 of 25 quarter-ends agree"
+},
+"UVE": {
+"ok": true,
+"ticker": "UVE",
+"why": "16 of 16 quarter-ends agree"
+},
+"VBTX": {
+"ok": true,
+"ticker": "VBTX",
+"why": "25 of 25 quarter-ends agree"
+},
+"VGR": {
+"ticker": "VGR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"VITL": {
+"ok": true,
+"ticker": "VITL",
+"why": "2 of 2 quarter-ends agree"
+},
+"VIVO": {
+"ticker": "VIVO",
+"tries": 1,
+"why": "4 of 14 quarter-ends agree"
+},
+"VNDA": {
+"ok": true,
+"ticker": "VNDA",
+"why": "16 of 16 quarter-ends agree"
+},
+"VRA": {
+"ok": true,
+"ticker": "VRA",
+"why": "11 of 11 quarter-ends agree"
+},
+"VRE": {
+"ok": true,
+"ticker": "VRE",
+"why": "27 of 27 quarter-ends agree"
+},
+"VREX": {
+"ok": true,
+"ticker": "VREX",
+"why": "20 of 20 quarter-ends agree"
+},
+"VRTV": {
+"ticker": "VRTV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"VSCO": {
+"ticker": "VSCO",
+"tries": 1,
+"why": "no prices"
+},
+"VSTO": {
+"ticker": "VSTO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"VTLE": {
+"ticker": "VTLE",
+"tries": 1,
+"why": "no prices"
+},
+"VVI": {
+"ticker": "VVI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WBS": {
+"ok": true,
+"ticker": "WBS",
+"why": "28 of 28 quarter-ends agree"
+},
+"WETF": {
+"ticker": "WETF",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WIRE": {
+"ticker": "WIRE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WNC": {
+"ok": true,
+"ticker": "WNC",
+"why": "22 of 22 quarter-ends agree"
+},
+"WOLF": {
+"ticker": "WOLF",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"WRE": {
+"ticker": "WRE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WSR": {
+"ok": true,
+"ticker": "WSR",
+"why": "28 of 28 quarter-ends agree"
+},
+"WW": {
+"ticker": "WW",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"WWE": {
+"ticker": "WWE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"X": {
+"ok": true,
+"ticker": "X",
+"why": "23 of 23 quarter-ends agree"
+},
+"XPER": {
+"ok": true,
+"ticker": "XPER",
+"why": "6 of 6 quarter-ends agree"
+},
+"XRX": {
+"ok": true,
+"ticker": "XRX",
+"why": "18 of 18 quarter-ends agree"
+},
+"Y": {
+"ticker": "Y",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ZEUS": {
+"ticker": "ZEUS",
+"tries": 1,
+"why": "no prices"
+},
+"ZI": {
+"ticker": "ZI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ZIMV": {
+"ticker": "ZIMV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ZUMZ": {
+"ok": true,
+"ticker": "ZUMZ",
+"why": "15 of 15 quarter-ends agree"
+},
+"ZYXI": {
+"ticker": "ZYXI",
+"tries": 1,
+"why": "no prices"
+}
+},
+"tiingo": {
+"2026-11": 150
+}
+}
