@@ -30,6 +30,39 @@ def norm(t: str) -> str:
     return t if TICKER.match(t) else ""
 
 
+NAME_JUNK = re.compile(r"\b(INC|CORP|CORPORATION|CO|COMPANY|LTD|PLC|HOLDINGS?|HLDGS?|GROUP|THE|NEW|CLASS [A-Z]|CL [A-Z]|COM|LLC|LP|NV|SA|NVS)\b\.?")
+
+
+def simple(name: str) -> str:
+    """A company name reduced for matching: 'Healthcare Services Group, Inc.' = 'HEALTHCARE SERVICES GROUP INC'."""
+    n = re.sub(r"[^A-Z0-9 ]", " ", name.upper().replace("&", " AND "))
+    return re.sub(r"\s+", " ", NAME_JUNK.sub(" ", n)).strip()
+
+
+def name_tickers(files: list[str], cmap: dict[str, str]) -> dict[str, str]:
+    """Simplified name -> ticker from the filings that identify the holding (the older schedules
+    give names only), then from tickers found by scripts/departed.py (data/history/departed.json)."""
+    m: dict[str, str] = {}
+    for f in files:
+        for r in csv.DictReader(open(f, newline="")):
+            t = norm(r.get("ticker", "")) or cmap.get((r.get("cusip") or "")[:9], "")
+            if t:
+                m.setdefault(simple(r["name"]), t)
+    p = "data/history/departed.json"
+    if os.path.exists(p):
+        try:
+            for k, t in json.load(open(p)).get("ids", {}).items():
+                if k.startswith("name:") and norm(t):
+                    m.setdefault(k[5:], norm(t))
+        except Exception:
+            pass
+    return m
+
+
+def ticker_of(r: dict, cmap: dict[str, str], nmap: dict[str, str]) -> str:
+    return norm(r.get("ticker", "")) or cmap.get((r.get("cusip") or "")[:9], "") or nmap.get(simple(r.get("name", "")), "")
+
+
 def cusip_tickers(files: list[str]) -> dict[str, str]:
     """CUSIP -> ticker from the filings that give both (later N-PORTs do; earlier ones often
     don't), then from the 13F CUSIP map (data/history/cusip_map.json)."""
@@ -88,11 +121,12 @@ def main() -> None:
     for fund, path in OUT.items():
         files = sorted(glob.glob(os.path.join(SRC, fund, "*.csv")))
         cmap = cusip_tickers(files)
+        nmap = name_tickers(files, cmap)
         snaps, unmapped = [], 0
         for f in files:
             ts = set()
             for r in csv.DictReader(open(f, newline="")):
-                t = norm(r.get("ticker", "")) or cmap.get((r.get("cusip") or "")[:9], "")
+                t = ticker_of(r, cmap, nmap)
                 if t:
                     ts.add(t)
                 elif float(r.get("pct") or 0) > 0.01:

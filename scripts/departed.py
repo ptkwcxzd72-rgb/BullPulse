@@ -64,9 +64,7 @@ def sec_get(url: str, as_json: bool = True):
     return None
 
 
-def simple(name: str) -> str:
-    n = re.sub(r"[^A-Z0-9 ]", " ", name.upper().replace("&", " AND "))
-    return re.sub(r"\s+", " ", NAME_JUNK.sub(" ", n)).strip()
+simple = BM.simple
 
 
 def past_members(universe: set[str]) -> dict[str, dict]:
@@ -75,14 +73,16 @@ def past_members(universe: set[str]) -> dict[str, dict]:
     out: dict[str, dict] = {}
     files = sorted(glob.glob(os.path.join(HOLD, "*", "*.csv")))
     cmap = BM.cusip_tickers(files)
+    nmap = BM.name_tickers(files, cmap)
     for f in files:
         d = os.path.basename(f)[:10]
         for r in csv.DictReader(open(f, newline="")):
             c = (r.get("cusip") or "")[:9]
-            t = BM.norm(r.get("ticker", "")) or cmap.get(c, "")
+            t = BM.ticker_of(r, cmap, nmap)
             if t in universe:
                 continue
-            key = t or c
+            # older schedules give names only
+            key = t or c or ("name:" + BM.simple(r["name"]))
             if not key:
                 continue
             e = out.setdefault(key, {"name": r["name"], "cusip": c, "ticker": t, "prices": {}})
@@ -202,14 +202,15 @@ def main() -> int:
         st = state["status"].get(key, {})
         if st.get("ok") or st.get("tries", 0) >= 3:
             continue
-        t = e["ticker"] or state["ids"].get(e["cusip"], "")
+        idkey = e["cusip"] or key
+        t = e["ticker"] or state["ids"].get(idkey, "")
         if not t and os.environ.get("SEC_CONTACT_EMAIL") and "cik" not in st:
             names = names if names is not None else cik_by_name()
             ciks = names.get(simple(e["name"]), [])
             st["cik"] = ciks[0] if len(ciks) == 1 else ""
             t = cover_ticker(st["cik"]) if st["cik"] else ""
             if t:
-                state["ids"][e["cusip"]] = t
+                state["ids"][idkey] = t
         if not t:
             st.update(tries=st.get("tries", 0) + 1, why="no ticker found")
             state["status"][key] = st

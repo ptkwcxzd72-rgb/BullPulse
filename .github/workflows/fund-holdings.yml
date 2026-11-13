@@ -10,6 +10,9 @@ on:
       max:
         description: "Filings to read"
         default: "60"
+      old:
+        description: "Pre-2019 filings to read"
+        default: "25"
       budget:
         description: "Minutes for past members' prices"
         default: "40"
@@ -36,6 +39,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/fund_holdings.py --max "${{ inputs.max || 60 }}"
+      - name: Holdings before N-PORT (2009 to mid-2019, from N-Q and N-CSR schedules of investments)
+        run: python scripts/fund_holdings_old.py --max "${{ inputs.old || 25 }}"
+        timeout-minutes: 40
+        continue-on-error: true
       - name: Membership intervals (CUSIPs without a ticker looked up on OpenFIGI)
         run: python scripts/build_membership.py --figi
       - name: Daily prices for past members no longer in the universe (Yahoo, else Tiingo; checked against the filings)
