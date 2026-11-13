@@ -74,7 +74,7 @@ def fund_series(sym: str):
     return [b[0] for b in bars], [b[4] for b in bars]
 
 
-def check(index: str, prices_for, fund=None) -> dict | None:
+def check(index: str, prices_for, fund=None, since: str = "", until: str = "9999") -> dict | None:
     code, sym, mpath = FUNDS[index]
     spans = [r for r in csv.DictReader(open(mpath, newline=""))] if os.path.exists(mpath) else []
     files = sorted(glob.glob(os.path.join(BM.SRC, code, "*.csv")))
@@ -100,6 +100,8 @@ def check(index: str, prices_for, fund=None) -> dict | None:
     ends = month_ends(qs[0], fund[0][-1])
     rows = []
     for a, b in zip(ends, ends[1:]):
+        if not since <= a < until:
+            continue
         q = qs[bisect.bisect_right(qs, a) - 1]
         mem = [s["ticker"] for s in spans if s["start_date"] <= a and (not s["end_date"] or a < s["end_date"])]
         tot = cov = s = w = 0.0
@@ -149,12 +151,15 @@ def main() -> int:
     lines = [f"# Mid and small-cap index check, {dt.date.today().isoformat()}", "",
              "A market-value-weighted copy of each index, built from its members of each month and our prices, against the "
              "iShares fund that tracks it. Coverage is the share of the index's value with prices.", ""]
-    for index in FUNDS:
-        r = check(index, prices_for)
+    fund_cache = {}
+    for index, (since, until, label) in [(i, p) for i in FUNDS for p in (("", "2019-09-30", "before N-PORT"), ("2019-09-30", "9999", "N-PORT"))]:
+        if index not in fund_cache:
+            fund_cache[index] = fund_series(FUNDS[index][1])
+        r = check(index, prices_for, fund=fund_cache[index], since=since, until=until)
         if not r:
-            lines.append(f"- {index}: not enough data yet")
+            lines.append(f"- {index} ({label}): not enough data yet")
             continue
-        lines.append(f"- {index} against {r['fund']}, {r['from'][:7]} to {r['to'][:7]} ({r['months']} months): "
+        lines.append(f"- {index} ({label}) against {r['fund']}, {r['from'][:7]} to {r['to'][:7]} ({r['months']} months): "
                      f"{r['gap']:+.1%} a year, tracking error {r['te']:.1%}; coverage {r['coverage_mean']:.0%} on average, "
                      f"lowest {r['coverage_min']:.0%}; largest month {r['worst'][0][:7]} {r['worst'][1]:+.1%}")
         print(f"::notice::{lines[-1][2:]}")

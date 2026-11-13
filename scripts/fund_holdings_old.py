@@ -40,7 +40,7 @@ def documents(cik: str, adsh: str) -> list[tuple[str, int]]:
 
 HEADINGS = {"ijh": r"s&p mid-?cap etf", "ijr": r"s&p small-?cap etf"}
 FUND_LINE = re.compile(r"(?im)^[ \t]*(?:ishares[ \t]+)?(?:core[ \t]+)?([^|\n]{3,80}?(?:etf|fund))[ \t]*$")
-NUM = re.compile(r"^\$?\s*\(?[\d,]+(\.\d+)?\)?$")
+NUM = re.compile(r"^\$?\s*\(?\s*[\d,]+(\.\d+)?\)?$")
 HEAD_JUNK = re.compile(r"(?i)^(\(percentages.*|[a-z]+ \d{1,2}, \d{4}|schedule of investments.*|\(unaudited\)|\(continued\))$")
 STOP = re.compile(r"(?i)^(total common stocks|short-term|money market|total investments|other assets|net assets)")
 
@@ -95,7 +95,9 @@ def holdings(section: str) -> list[dict]:
             j = k + 1
             while j < len(toks) and len(nums) < 2 and (NUM.match(toks[j]) or toks[j] == "$"):
                 if toks[j] != "$":
-                    nums.append(float(toks[j].strip("$() ").replace(",", "")))
+                    # (1,234) is negative: a short position or a liability, not a holding
+                    v = float(re.sub(r"[^\d.]", "", toks[j]) or 0)
+                    nums.append(-v if "(" in toks[j] else v)
                 j += 1
             if len(nums) == 2 and nums[0] > 0 and nums[1] > 0:
                 # a name can wrap onto two lines; a page heading can share the cell
