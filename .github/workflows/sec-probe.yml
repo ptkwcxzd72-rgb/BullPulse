@@ -1,0 +1,22 @@
+name: SEC probe
+
+# Prints the structure of the funds' pre-2019 holdings filings (scripts/fund_holdings_old.py),
+# for building the parser. Temporary.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python scripts/fund_holdings_old.py --probe
