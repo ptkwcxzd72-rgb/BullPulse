@@ -183,7 +183,7 @@ def agrees(quoted: dict[str, float], filed: dict[str, float]) -> tuple[bool, str
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--budget-min", type=float, default=30)
-    ap.add_argument("--tiingo", type=int, default=150, help="most different tickers to ask Tiingo for this run")
+    ap.add_argument("--tiingo", type=int, default=250, help="most different tickers to ask Tiingo for this run")
     a = ap.parse_args()
     stop = time.time() + a.budget_min * 60
     universe = {r["ticker"] for f in glob.glob("universe/*.csv") for r in csv.DictReader(open(f, newline=""))}
