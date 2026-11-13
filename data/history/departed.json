@@ -1823,7 +1823,7 @@
 },
 "ABMD": {
 "ticker": "ABMD",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ABTX": {
@@ -1838,17 +1838,17 @@
 },
 "ACAT": {
 "ticker": "ACAT",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "ACC": {
 "ticker": "ACC",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ACET": {
 "ticker": "ACET",
-"tries": 1,
+"tries": 2,
 "why": "only 1 quarter-ends to check"
 },
 "ACIC": {
@@ -1858,13 +1858,18 @@
 },
 "ACORQ": {
 "ticker": "ACORQ",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ADTN": {
 "ok": true,
 "ticker": "ADTN",
 "why": "7 of 7 quarter-ends agree"
+},
+"AEGN": {
+"ticker": "AEGN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "AEL": {
 "ticker": "AEL",
@@ -1893,12 +1898,12 @@
 },
 "AKRXQ": {
 "ticker": "AKRXQ",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "AKS": {
 "ticker": "AKS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "AL": {
@@ -1918,7 +1923,7 @@
 },
 "ALOG": {
 "ticker": "ALOG",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ALTM": {
@@ -1929,6 +1934,11 @@
 "ALTR": {
 "ticker": "ALTR",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"AMAG": {
+"ticker": "AMAG",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "AMBC": {
@@ -1953,7 +1963,7 @@
 },
 "AMRI": {
 "ticker": "AMRI",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "AMWD": {
@@ -1978,12 +1988,12 @@
 },
 "ANN": {
 "ticker": "ANN",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ANSS": {
 "ticker": "ANSS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "APEI": {
@@ -2001,6 +2011,11 @@
 "ticker": "APPS",
 "why": "10 of 10 quarter-ends agree"
 },
+"ARB": {
+"ticker": "ARB",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
 "ARCH": {
 "ticker": "ARCH",
 "tries": 3,
@@ -2008,6 +2023,11 @@
 },
 "AREX": {
 "ticker": "AREX",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ARG": {
+"ticker": "ARG",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -2019,6 +2039,16 @@
 "ARNC": {
 "ticker": "ARNC",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ARQL": {
+"ticker": "ARQL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ARRS": {
+"ticker": "ARRS",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ASGN": {
@@ -2033,13 +2063,18 @@
 },
 "ASRT": {
 "ticker": "ASRT",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "ATGE": {
 "ticker": "ATGE",
 "tries": 3,
 "why": "no prices"
+},
+"ATMI": {
+"ticker": "ATMI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "ATNI": {
 "ok": true,
@@ -2048,7 +2083,7 @@
 },
 "ATW": {
 "ticker": "ATW",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "AVD": {
@@ -2063,7 +2098,7 @@
 },
 "AVIV": {
 "ticker": "AVIV",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "AVNS": {
@@ -2078,7 +2113,7 @@
 },
 "AXE": {
 "ticker": "AXE",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "AXL": {
@@ -2103,7 +2138,7 @@
 },
 "BBG": {
 "ticker": "BBG",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "BCOR": {
@@ -2111,10 +2146,20 @@
 "tries": 3,
 "why": "only 0 quarter-ends to check"
 },
+"BCSI": {
+"ticker": "BCSI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "BDN": {
 "ok": true,
 "ticker": "BDN",
 "why": "23 of 23 quarter-ends agree"
+},
+"BEAT": {
+"ticker": "BEAT",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
 },
 "BELFB": {
 "ok": true,
@@ -2133,18 +2178,23 @@
 },
 "BGFV": {
 "ticker": "BGFV",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "BGG": {
 "ticker": "BGG",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "BGS": {
 "ok": true,
 "ticker": "BGS",
 "why": "24 of 24 quarter-ends agree"
+},
+"BHC": {
+"ticker": "BHC",
+"tries": 1,
+"why": "0 of 5 quarter-ends agree"
 },
 "BHLB": {
 "ticker": "BHLB",
@@ -2158,12 +2208,12 @@
 },
 "BKMU": {
 "ticker": "BKMU",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "BKS": {
 "ticker": "BKS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "BLD": {
@@ -2186,9 +2236,19 @@
 "ticker": "BLMN",
 "why": "26 of 26 quarter-ends agree"
 },
+"BLUD": {
+"ticker": "BLUD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"BNED": {
+"ticker": "BNED",
+"tries": 1,
+"why": "0 of 22 quarter-ends agree"
+},
 "BNNY": {
 "ticker": "BNNY",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "BOOM": {
@@ -2198,7 +2258,7 @@
 },
 "BPFH": {
 "ticker": "BPFH",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "BRBR": {
@@ -2221,10 +2281,20 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"CAA": {
+"ticker": "CAA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "CABO": {
 "ok": true,
 "ticker": "CABO",
 "why": "27 of 27 quarter-ends agree"
+},
+"CACB": {
+"ticker": "CACB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "CADE": {
 "ticker": "CADE",
@@ -2235,6 +2305,11 @@
 "ok": true,
 "ticker": "CAL",
 "why": "25 of 25 quarter-ends agree"
+},
+"CAMP": {
+"ticker": "CAMP",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
 },
 "CARA": {
 "ticker": "CARA",
@@ -2253,17 +2328,22 @@
 },
 "CBKC": {
 "ticker": "CBKC",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
+},
+"CBL": {
+"ticker": "CBL",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
 },
 "CBM": {
 "ticker": "CBM",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CCMP": {
 "ticker": "CCMP",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CCRN": {
@@ -2278,7 +2358,7 @@
 },
 "CDK": {
 "ticker": "CDK",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CDMO": {
@@ -2288,12 +2368,17 @@
 },
 "CEB": {
 "ticker": "CEB",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CEIX": {
 "ticker": "CEIX",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CERN": {
+"ticker": "CERN",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CEVA": {
@@ -2303,13 +2388,18 @@
 },
 "CGI": {
 "ticker": "CGI",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CHCT": {
 "ok": true,
 "ticker": "CHCT",
 "why": "20 of 20 quarter-ends agree"
+},
+"CHHP": {
+"ticker": "CHHP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "CHK": {
 "ticker": "CHK",
@@ -2326,9 +2416,14 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"CHSI": {
+"ticker": "CHSI",
+"tries": 1,
+"why": "no prices"
+},
 "CHSP": {
 "ticker": "CHSP",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CHUY": {
@@ -2353,12 +2448,12 @@
 },
 "CJ": {
 "ticker": "CJ",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CKH": {
 "ticker": "CKH",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CLB": {
@@ -2378,7 +2473,7 @@
 },
 "CLGX": {
 "ticker": "CLGX",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CLW": {
@@ -2393,12 +2488,12 @@
 },
 "CMD": {
 "ticker": "CMD",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CMO": {
 "ticker": "CMO",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CMP": {
@@ -2418,6 +2513,11 @@
 },
 "CNW": {
 "ticker": "CNW",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CONE": {
+"ticker": "CONE",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -2431,9 +2531,19 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"CORE": {
+"ticker": "CORE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "CPE": {
 "ticker": "CPE",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CPLA": {
+"ticker": "CPLA",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CPRI": {
@@ -2456,6 +2566,11 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"CRAY": {
+"ticker": "CRAY",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "CRMT": {
 "ok": true,
 "ticker": "CRMT",
@@ -2468,7 +2583,7 @@
 },
 "CRZO": {
 "ticker": "CRZO",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CSGS": {
@@ -2488,6 +2603,16 @@
 },
 "CTAM": {
 "ticker": "CTAM",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CTB": {
+"ticker": "CTB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CTCT": {
+"ticker": "CTCT",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -2496,10 +2621,25 @@
 "ticker": "CTKB",
 "why": "12 of 12 quarter-ends agree"
 },
+"CTLT": {
+"ticker": "CTLT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"CUDA": {
+"ticker": "CUDA",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "CUTR": {
 "ticker": "CUTR",
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
+},
+"CVEO": {
+"ticker": "CVEO",
+"tries": 1,
+"why": "0 of 2 quarter-ends agree"
 },
 "CVET": {
 "ticker": "CVET",
@@ -2518,7 +2658,7 @@
 },
 "CYBX": {
 "ticker": "CYBX",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "CYH": {
@@ -2526,9 +2666,14 @@
 "ticker": "CYH",
 "why": "17 of 17 quarter-ends agree"
 },
+"CYMI": {
+"ticker": "CYMI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "CYNO": {
 "ticker": "CYNO",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "DAKT": {
@@ -2553,12 +2698,12 @@
 },
 "DEL": {
 "ticker": "DEL",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "DFODQ": {
 "ticker": "DFODQ",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "DHC": {
@@ -2583,6 +2728,21 @@
 },
 "DMND": {
 "ticker": "DMND",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"DNB": {
+"ticker": "DNB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"DNKN": {
+"ticker": "DNKN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"DO": {
+"ticker": "DO",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -2591,14 +2751,19 @@
 "tries": 3,
 "why": "0 of 6 quarter-ends agree"
 },
+"DPLO": {
+"ticker": "DPLO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "DRC": {
 "ticker": "DRC",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "DRE": {
 "ticker": "DRE",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "DRQ": {
@@ -2621,8 +2786,18 @@
 "ticker": "EBS",
 "why": "16 of 16 quarter-ends agree"
 },
+"ECOL": {
+"ticker": "ECOL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "EDR": {
 "ticker": "EDR",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"EFII": {
+"ticker": "EFII",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -2633,12 +2808,12 @@
 },
 "EGL": {
 "ticker": "EGL",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "EGOV": {
 "ticker": "EGOV",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "EGRX": {
@@ -2666,6 +2841,11 @@
 "ticker": "EMBC",
 "why": "16 of 16 quarter-ends agree"
 },
+"ENDP": {
+"ticker": "ENDP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "ENTA": {
 "ok": true,
 "ticker": "ENTA",
@@ -2673,7 +2853,7 @@
 },
 "ENTR": {
 "ticker": "ENTR",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ENV": {
@@ -2681,8 +2861,23 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"ENZB": {
+"ticker": "ENZB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "EPAY": {
 "ticker": "EPAY",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ESL": {
+"ticker": "ESL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ESND": {
+"ticker": "ESND",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -2696,9 +2891,19 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"EV": {
+"ticker": "EV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"EXAM": {
+"ticker": "EXAM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "EXAR": {
 "ticker": "EXAR",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "EXPI": {
@@ -2708,7 +2913,7 @@
 },
 "EXTN": {
 "ticker": "EXTN",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "FARO": {
@@ -2723,7 +2928,7 @@
 },
 "FCS": {
 "ticker": "FCS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "FDP": {
@@ -2746,9 +2951,24 @@
 "ticker": "FLGT",
 "why": "18 of 18 quarter-ends agree"
 },
+"FLOW": {
+"ticker": "FLOW",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"FMBI": {
+"ticker": "FMBI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"FNBC": {
+"ticker": "FNBC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "FNGN": {
 "ticker": "FNGN",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "FOR": {
@@ -2768,6 +2988,11 @@
 },
 "FRAN": {
 "ticker": "FRAN",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"FRGI": {
+"ticker": "FRGI",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -2828,13 +3053,23 @@
 },
 "GHL": {
 "ticker": "GHL",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "GIFI": {
 "ticker": "GIFI",
 "tries": 3,
 "why": "no prices"
+},
+"GIMO": {
+"ticker": "GIMO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"GK": {
+"ticker": "GK",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
 },
 "GLBR": {
 "ok": true,
@@ -2843,13 +3078,23 @@
 },
 "GLF": {
 "ticker": "GLF",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
+},
+"GLIBA": {
+"ticker": "GLIBA",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
 },
 "GMS": {
 "ok": true,
 "ticker": "GMS",
 "why": "24 of 24 quarter-ends agree"
+},
+"GNBC": {
+"ticker": "GNBC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "GOGO": {
 "ok": true,
@@ -2881,9 +3126,14 @@
 "ticker": "GTX",
 "why": "4 of 4 quarter-ends agree"
 },
+"GWB": {
+"ticker": "GWB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "GWR": {
 "ticker": "GWR",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "HA": {
@@ -2913,12 +3163,12 @@
 },
 "HF": {
 "ticker": "HF",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "HFC": {
 "ticker": "HFC",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "HHS": {
@@ -2936,6 +3186,11 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"HITK": {
+"ticker": "HITK",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "HLX": {
 "ok": true,
 "ticker": "HLX",
@@ -2948,7 +3203,7 @@
 },
 "HMSY": {
 "ticker": "HMSY",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "HNGR": {
@@ -2958,12 +3213,12 @@
 },
 "HOLX": {
 "ticker": "HOLX",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "HOS": {
 "ticker": "HOS",
-"tries": 1,
+"tries": 2,
 "why": "8 of 31 quarter-ends agree"
 },
 "HOUS": {
@@ -2976,14 +3231,24 @@
 "tries": 3,
 "why": "0 of 18 quarter-ends agree"
 },
+"HPR": {
+"ticker": "HPR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "HRC": {
 "ticker": "HRC",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "HSC": {
 "ticker": "HSC",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HSH": {
+"ticker": "HSH",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "HSII": {
@@ -2999,6 +3264,16 @@
 "HT": {
 "ticker": "HT",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HTCH": {
+"ticker": "HTCH",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"HTSI": {
+"ticker": "HTSI",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "HTZ": {
@@ -3028,12 +3303,12 @@
 },
 "ICON": {
 "ticker": "ICON",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "IGTE": {
 "ticker": "IGTE",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "IIIN": {
@@ -3046,14 +3321,19 @@
 "ticker": "ILPT",
 "why": "13 of 13 quarter-ends agree"
 },
+"IN": {
+"ticker": "IN",
+"tries": 1,
+"why": "no prices"
+},
 "INFA": {
 "ticker": "INFA",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "INGM": {
 "ticker": "INGM",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "INGN": {
@@ -3066,6 +3346,11 @@
 "ticker": "INN",
 "why": "26 of 26 quarter-ends agree"
 },
+"INSG": {
+"ok": true,
+"ticker": "INSG",
+"why": "15 of 15 quarter-ends agree"
+},
 "INT": {
 "ticker": "INT",
 "tries": 3,
@@ -3073,12 +3358,12 @@
 },
 "IO": {
 "ticker": "IO",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "IPHS": {
 "ticker": "IPHS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "IPI": {
@@ -3088,6 +3373,11 @@
 },
 "IPXL": {
 "ticker": "IPXL",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"IQNT": {
+"ticker": "IQNT",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -3103,17 +3393,22 @@
 },
 "ISCA": {
 "ticker": "ISCA",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ISIL": {
 "ticker": "ISIL",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ITOS": {
 "ticker": "ITOS",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"IVAC": {
+"ticker": "IVAC",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "IVR": {
@@ -3128,8 +3423,13 @@
 },
 "JAH": {
 "ticker": "JAH",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
+},
+"JAKK": {
+"ok": true,
+"ticker": "JAKK",
+"why": "20 of 20 quarter-ends agree"
 },
 "JBT": {
 "ticker": "JBT",
@@ -3139,6 +3439,11 @@
 "JHG": {
 "ticker": "JHG",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"JOAN": {
+"ticker": "JOAN",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "JRVR": {
@@ -3166,10 +3471,30 @@
 "tries": 3,
 "why": "no prices"
 },
+"KDN": {
+"ticker": "KDN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "KELYA": {
 "ok": true,
 "ticker": "KELYA",
 "why": "21 of 21 quarter-ends agree"
+},
+"KEM": {
+"ticker": "KEM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"KID": {
+"ticker": "KID",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"KKD": {
+"ticker": "KKD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "KLG": {
 "ticker": "KLG",
@@ -3178,8 +3503,13 @@
 },
 "KND": {
 "ticker": "KND",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
+},
+"KODK": {
+"ticker": "KODK",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
 },
 "KOPN": {
 "ok": true,
@@ -3188,7 +3518,7 @@
 },
 "KRA": {
 "ticker": "KRA",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "KREF": {
@@ -3201,6 +3531,11 @@
 "tries": 3,
 "why": "no prices"
 },
+"LABL": {
+"ticker": "LABL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "LANC": {
 "ticker": "LANC",
 "tries": 3,
@@ -3208,7 +3543,7 @@
 },
 "LDR": {
 "ticker": "LDR",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "LEG": {
@@ -3226,18 +3561,33 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"LINC": {
+"ok": true,
+"ticker": "LINC",
+"why": "9 of 9 quarter-ends agree"
+},
 "LL": {
 "ticker": "LL",
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"LM": {
+"ticker": "LM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "LMNX": {
 "ticker": "LMNX",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "LMOS": {
 "ticker": "LMOS",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LNCR": {
+"ticker": "LNCR",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -3253,12 +3603,17 @@
 },
 "LOGM": {
 "ticker": "LOGM",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "LPI": {
 "ticker": "LPI",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"LPNT": {
+"ticker": "LPNT",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "LPSN": {
@@ -3268,7 +3623,7 @@
 },
 "LPT": {
 "ticker": "LPT",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "LSI": {
@@ -3283,8 +3638,13 @@
 },
 "LTM": {
 "ticker": "LTM",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
+},
+"LTXB": {
+"ticker": "LTXB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "LXU": {
 "ticker": "LXU",
@@ -3293,7 +3653,7 @@
 },
 "MANT": {
 "ticker": "MANT",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MASI": {
@@ -3308,7 +3668,7 @@
 },
 "MCF": {
 "ticker": "MCF",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MCS": {
@@ -3323,7 +3683,7 @@
 },
 "MDAS": {
 "ticker": "MDAS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MDC": {
@@ -3333,7 +3693,7 @@
 },
 "MDP": {
 "ticker": "MDP",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MDRX": {
@@ -3341,9 +3701,14 @@
 "ticker": "MDRX",
 "why": "18 of 18 quarter-ends agree"
 },
+"MDXG": {
+"ok": true,
+"ticker": "MDXG",
+"why": "12 of 12 quarter-ends agree"
+},
 "MEAS": {
 "ticker": "MEAS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MED": {
@@ -3358,7 +3723,7 @@
 },
 "MENT": {
 "ticker": "MENT",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MERC": {
@@ -3366,15 +3731,35 @@
 "ticker": "MERC",
 "why": "21 of 21 quarter-ends agree"
 },
+"MFIC": {
+"ok": true,
+"ticker": "MFIC",
+"why": "18 of 18 quarter-ends agree"
+},
 "MGLN": {
 "ticker": "MGLN",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MGPI": {
 "ticker": "MGPI",
 "tries": 3,
 "why": "only 0 quarter-ends to check"
+},
+"MHLA": {
+"ticker": "MHLA",
+"tries": 1,
+"why": "1 of 7 quarter-ends agree"
+},
+"MIK": {
+"ticker": "MIK",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"MINI": {
+"ticker": "MINI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "MLAB": {
 "ok": true,
@@ -3388,7 +3773,7 @@
 },
 "MNTA": {
 "ticker": "MNTA",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MODG": {
@@ -3403,7 +3788,7 @@
 },
 "MODVQ": {
 "ticker": "MODVQ",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MOV": {
@@ -3423,7 +3808,7 @@
 },
 "MSCC": {
 "ticker": "MSCC",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MSGS": {
@@ -3436,6 +3821,11 @@
 "ticker": "MSTR",
 "why": "8 of 8 quarter-ends agree"
 },
+"MTEX": {
+"ok": true,
+"ticker": "MTEX",
+"why": "7 of 7 quarter-ends agree"
+},
 "MTRX": {
 "ok": true,
 "ticker": "MTRX",
@@ -3443,17 +3833,17 @@
 },
 "MTSC": {
 "ticker": "MTSC",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MWIV": {
 "ticker": "MWIV",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MWW": {
 "ticker": "MWW",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "MYE": {
@@ -3478,7 +3868,7 @@
 },
 "NAVG": {
 "ticker": "NAVG",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "NBR": {
@@ -3488,8 +3878,13 @@
 },
 "NCI": {
 "ticker": "NCI",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
+},
+"NCIT": {
+"ticker": "NCIT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "NCR": {
 "ticker": "NCR",
@@ -3506,6 +3901,11 @@
 "tries": 3,
 "why": "only 0 quarter-ends to check"
 },
+"NFP": {
+"ticker": "NFP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "NKTR": {
 "ticker": "NKTR",
 "tries": 3,
@@ -3513,7 +3913,7 @@
 },
 "NP": {
 "ticker": "NP",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "NPKI": {
@@ -3528,7 +3928,7 @@
 },
 "NSR": {
 "ticker": "NSR",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "NTGR": {
@@ -3538,17 +3938,17 @@
 },
 "NTLS": {
 "ticker": "NTLS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "NTRI": {
 "ticker": "NTRI",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "NTUS": {
 "ticker": "NTUS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "NUS": {
@@ -3591,6 +3991,11 @@
 "tries": 3,
 "why": "0 of 15 quarter-ends agree"
 },
+"OCLR": {
+"ticker": "OCLR",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "ODP": {
 "ticker": "ODP",
 "tries": 3,
@@ -3626,6 +4031,16 @@
 "tries": 3,
 "why": "no prices"
 },
+"OMX": {
+"ticker": "OMX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"ONE": {
+"ticker": "ONE",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "ONL": {
 "ok": true,
 "ticker": "ONL",
@@ -3648,8 +4063,18 @@
 },
 "ORIT": {
 "ticker": "ORIT",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
+},
+"ORN": {
+"ok": true,
+"ticker": "ORN",
+"why": "30 of 30 quarter-ends agree"
+},
+"OSG": {
+"ticker": "OSG",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
 },
 "OSPN": {
 "ok": true,
@@ -3663,7 +4088,7 @@
 },
 "OUTR": {
 "ticker": "OUTR",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "OXM": {
@@ -3678,7 +4103,7 @@
 },
 "PAY": {
 "ticker": "PAY",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "PCH": {
@@ -3696,8 +4121,18 @@
 "ticker": "PDCO",
 "why": "23 of 23 quarter-ends agree"
 },
+"PENX": {
+"ticker": "PENX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "PERY": {
 "ticker": "PERY",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PGNX": {
+"ticker": "PGNX",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -3726,6 +4161,16 @@
 "ticker": "PLCE",
 "why": "15 of 15 quarter-ends agree"
 },
+"PLCM": {
+"ticker": "PLCM",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PLKI": {
+"ticker": "PLKI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "PNM": {
 "ticker": "PNM",
 "tries": 3,
@@ -3743,7 +4188,7 @@
 },
 "PPS": {
 "ticker": "PPS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "PRA": {
@@ -3758,12 +4203,22 @@
 },
 "PRET": {
 "ticker": "PRET",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "PRFT": {
 "ticker": "PRFT",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"PSEC": {
+"ok": true,
+"ticker": "PSEC",
+"why": "11 of 11 quarter-ends agree"
+},
+"PSS": {
+"ticker": "PSS",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "PSTG": {
@@ -3776,25 +4231,60 @@
 "ticker": "PUMP",
 "why": "24 of 24 quarter-ends agree"
 },
+"PXP": {
+"ticker": "PXP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "PYYX": {
 "ticker": "PYYX",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
+},
+"QEP": {
+"ticker": "QEP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"QHCCQ": {
+"ticker": "QHCCQ",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"QLGC": {
+"ticker": "QLGC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "QRVO": {
 "ticker": "QRVO",
 "tries": 3,
 "why": "only 0 quarter-ends to check"
 },
+"QSFT": {
+"ticker": "QSFT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "QURE": {
 "ok": true,
 "ticker": "QURE",
 "why": "4 of 4 quarter-ends agree"
 },
+"RAVN": {
+"ticker": "RAVN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "RBCN": {
 "ok": true,
 "ticker": "RBCN",
 "why": "11 of 11 quarter-ends agree"
+},
+"RBN": {
+"ticker": "RBN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "RC": {
 "ok": true,
@@ -3816,6 +4306,11 @@
 "ticker": "REI",
 "why": "4 of 4 quarter-ends agree"
 },
+"REXX": {
+"ticker": "REXX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "RGNX": {
 "ok": true,
 "ticker": "RGNX",
@@ -3831,15 +4326,30 @@
 "ticker": "RGR",
 "why": "25 of 25 quarter-ends agree"
 },
+"RGS": {
+"ticker": "RGS",
+"tries": 1,
+"why": "0 of 44 quarter-ends agree"
+},
 "RILY": {
 "ok": true,
 "ticker": "RILY",
 "why": "13 of 13 quarter-ends agree"
 },
+"RJET": {
+"ticker": "RJET",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
 "RMAX": {
 "ticker": "RMAX",
 "tries": 3,
 "why": "only 0 quarter-ends to check"
+},
+"RMR": {
+"ok": true,
+"ticker": "RMR",
+"why": "2 of 2 quarter-ends agree"
 },
 "ROCC": {
 "ticker": "ROCC",
@@ -3861,6 +4371,11 @@
 "tries": 3,
 "why": "1 of 18 quarter-ends agree"
 },
+"RRD": {
+"ticker": "RRD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "RRGB": {
 "ok": true,
 "ticker": "RRGB",
@@ -3868,17 +4383,22 @@
 },
 "RSTI": {
 "ticker": "RSTI",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "RT": {
 "ticker": "RT",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "RUTH": {
 "ticker": "RUTH",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"RVBD": {
+"ticker": "RVBD",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "RWT": {
@@ -3893,7 +4413,7 @@
 },
 "SAFM": {
 "ticker": "SAFM",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SAM": {
@@ -3913,12 +4433,32 @@
 },
 "SBOW": {
 "ticker": "SBOW",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SCAI": {
+"ticker": "SCAI",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
+"SCLN": {
+"ticker": "SCLN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SCMP": {
+"ticker": "SCMP",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SCOO": {
+"ticker": "SCOO",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
 "SCOR": {
 "ticker": "SCOR",
-"tries": 1,
+"tries": 2,
 "why": "0 of 31 quarter-ends agree"
 },
 "SCVL": {
@@ -3941,8 +4481,18 @@
 "ticker": "SENEA",
 "why": "16 of 16 quarter-ends agree"
 },
+"SFD": {
+"ticker": "SFD",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
 "SFG": {
 "ticker": "SFG",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SFLY": {
+"ticker": "SFLY",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -3953,23 +4503,38 @@
 },
 "SGNT": {
 "ticker": "SGNT",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SGY": {
 "ticker": "SGY",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SHYF": {
+"ticker": "SHYF",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SIGM": {
+"ticker": "SIGM",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SIRO": {
 "ticker": "SIRO",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SITC": {
 "ticker": "SITC",
 "tries": 3,
 "why": "4 of 21 quarter-ends agree"
+},
+"SIVB": {
+"ticker": "SIVB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "SIX": {
 "ticker": "SIX",
@@ -4008,18 +4573,23 @@
 },
 "SLXP": {
 "ticker": "SLXP",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SMA": {
 "ticker": "SMA",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "SMRT": {
 "ticker": "SMRT",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
+},
+"SMSI": {
+"ticker": "SMSI",
+"tries": 1,
+"why": "0 of 11 quarter-ends agree"
 },
 "SNBR": {
 "ticker": "SNBR",
@@ -4028,18 +4598,23 @@
 },
 "SNBRQ": {
 "ticker": "SNBRQ",
-"tries": 1,
+"tries": 2,
 "why": "no prices"
 },
 "SNCR": {
 "ticker": "SNCR",
-"tries": 1,
+"tries": 2,
 "why": "no prices"
 },
 "SNCY": {
 "ticker": "SNCY",
 "tries": 3,
 "why": "no prices"
+},
+"SNTS": {
+"ticker": "SNTS",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "SNV": {
 "ok": true,
@@ -4059,7 +4634,7 @@
 },
 "SPPI": {
 "ticker": "SPPI",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SPTN": {
@@ -4079,7 +4654,7 @@
 },
 "SRCI": {
 "ticker": "SRCI",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SRCL": {
@@ -4092,9 +4667,14 @@
 "tries": 3,
 "why": "no prices"
 },
+"SRT": {
+"ticker": "SRT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "SSI": {
 "ticker": "SSI",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SSP": {
@@ -4106,6 +4686,11 @@
 "ok": true,
 "ticker": "SSTK",
 "why": "27 of 27 quarter-ends agree"
+},
+"SSYS": {
+"ok": true,
+"ticker": "SSYS",
+"why": "14 of 14 quarter-ends agree"
 },
 "STAR": {
 "ticker": "STAR",
@@ -4122,9 +4707,14 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"STL": {
+"ticker": "STL",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "STMP": {
 "ticker": "STMP",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "STOR": {
@@ -4134,17 +4724,32 @@
 },
 "SUNE": {
 "ticker": "SUNE",
+"tries": 2,
+"why": "0 of 16 quarter-ends agree"
+},
+"SUPX": {
+"ticker": "SUPX",
 "tries": 1,
-"why": "0 of 10 quarter-ends agree"
+"why": "only 0 quarter-ends to check"
+},
+"SUSQ": {
+"ticker": "SUSQ",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "SVC": {
 "ok": true,
 "ticker": "SVC",
 "why": "21 of 21 quarter-ends agree"
 },
+"SVNTQ": {
+"ticker": "SVNTQ",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "SVU": {
 "ticker": "SVU",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SWAV": {
@@ -4164,7 +4769,7 @@
 },
 "SWS": {
 "ticker": "SWS",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "SXC": {
@@ -4174,6 +4779,11 @@
 },
 "SYKE": {
 "ticker": "SYKE",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"SYMM": {
+"ticker": "SYMM",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -4182,9 +4792,14 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"SYPR": {
+"ok": true,
+"ticker": "SYPR",
+"why": "0 of 1 quarter-ends agree"
+},
 "TBHC": {
 "ticker": "TBHC",
-"tries": 1,
+"tries": 2,
 "why": "only 0 quarter-ends to check"
 },
 "TBI": {
@@ -4197,6 +4812,11 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"TCF": {
+"ticker": "TCF",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "TCMD": {
 "ok": true,
 "ticker": "TCMD",
@@ -4204,12 +4824,17 @@
 },
 "TCO": {
 "ticker": "TCO",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
+},
+"TDAY": {
+"ok": true,
+"ticker": "TDAY",
+"why": "7 of 7 quarter-ends agree"
 },
 "TECD": {
 "ticker": "TECD",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "TG": {
@@ -4227,6 +4852,11 @@
 "ticker": "TGNA",
 "why": "26 of 26 quarter-ends agree"
 },
+"TGX": {
+"ticker": "TGX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "THRY": {
 "ok": true,
 "ticker": "THRY",
@@ -4236,6 +4866,31 @@
 "ok": true,
 "ticker": "THS",
 "why": "26 of 26 quarter-ends agree"
+},
+"TISI": {
+"ok": true,
+"ticker": "TISI",
+"why": "16 of 16 quarter-ends agree"
+},
+"TIVO": {
+"ticker": "TIVO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TLAB": {
+"ticker": "TLAB",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TLEO": {
+"ticker": "TLEO",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TLRD": {
+"ticker": "TLRD",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "TMHC": {
 "ok": true,
@@ -4259,7 +4914,7 @@
 },
 "TQNT": {
 "ticker": "TQNT",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "TREE": {
@@ -4267,9 +4922,14 @@
 "ticker": "TREE",
 "why": "15 of 15 quarter-ends agree"
 },
+"TRHC": {
+"ticker": "TRHC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "TRUE": {
 "ticker": "TRUE",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "TSE": {
@@ -4279,7 +4939,7 @@
 },
 "TSRA": {
 "ticker": "TSRA",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "TTEC": {
@@ -4297,13 +4957,28 @@
 "ticker": "TTI",
 "why": "3 of 3 quarter-ends agree"
 },
+"TTSH": {
+"ok": true,
+"ticker": "TTSH",
+"why": "8 of 8 quarter-ends agree"
+},
 "TUP": {
 "ticker": "TUP",
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"TVPT": {
+"ticker": "TVPT",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "TVTY": {
 "ticker": "TVTY",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TWGP": {
+"ticker": "TWGP",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -4324,12 +4999,17 @@
 },
 "TWTC": {
 "ticker": "TWTC",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"TXI": {
+"ticker": "TXI",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "TYPE": {
 "ticker": "TYPE",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "UBA": {
@@ -4367,9 +5047,19 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"UNS": {
+"ticker": "UNS",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "UNVR": {
 "ticker": "UNVR",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"USCR": {
+"ticker": "USCR",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "USNA": {
@@ -4379,7 +5069,7 @@
 },
 "UTIW": {
 "ticker": "UTIW",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "UVE": {
@@ -4392,15 +5082,35 @@
 "ticker": "VBTX",
 "why": "25 of 25 quarter-ends agree"
 },
+"VCI": {
+"ticker": "VCI",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"VG": {
+"ticker": "VG",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
 "VGR": {
 "ticker": "VGR",
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"VISN": {
+"ticker": "VISN",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
 "VITL": {
 "ok": true,
 "ticker": "VITL",
 "why": "2 of 2 quarter-ends agree"
+},
+"VIVE": {
+"ok": true,
+"ticker": "VIVE",
+"why": "0 of 1 quarter-ends agree"
 },
 "VIVO": {
 "ticker": "VIVO",
@@ -4411,6 +5121,16 @@
 "ok": true,
 "ticker": "VNDA",
 "why": "16 of 16 quarter-ends agree"
+},
+"VOLT": {
+"ticker": "VOLT",
+"tries": 1,
+"why": "only 0 quarter-ends to check"
+},
+"VOXX": {
+"ticker": "VOXX",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
 },
 "VRA": {
 "ok": true,
@@ -4429,7 +5149,7 @@
 },
 "VRTU": {
 "ticker": "VRTU",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "VRTV": {
@@ -4447,6 +5167,11 @@
 "tries": 3,
 "why": "no prices from Yahoo or Tiingo"
 },
+"VTIV": {
+"ticker": "VTIV",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "VTLE": {
 "ticker": "VTLE",
 "tries": 3,
@@ -4459,6 +5184,11 @@
 },
 "WAGE": {
 "ticker": "WAGE",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WBMD": {
+"ticker": "WBMD",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -4467,8 +5197,28 @@
 "ticker": "WBS",
 "why": "28 of 28 quarter-ends agree"
 },
+"WBSN": {
+"ticker": "WBSN",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "WCG": {
 "ticker": "WCG",
+"tries": 2,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WCIC": {
+"ticker": "WCIC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WCN": {
+"ticker": "WCN",
+"tries": 1,
+"why": "21 of 27 quarter-ends agree"
+},
+"WDR": {
+"ticker": "WDR",
 "tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
@@ -4480,6 +5230,11 @@
 "WIRE": {
 "ticker": "WIRE",
 "tries": 3,
+"why": "no prices from Yahoo or Tiingo"
+},
+"WLH": {
+"ticker": "WLH",
+"tries": 1,
 "why": "no prices from Yahoo or Tiingo"
 },
 "WNC": {
@@ -4494,12 +5249,12 @@
 },
 "WPG": {
 "ticker": "WPG",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "WPX": {
 "ticker": "WPX",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "WRE": {
@@ -4519,7 +5274,7 @@
 },
 "WWAV": {
 "ticker": "WWAV",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "WWE": {
@@ -4532,9 +5287,19 @@
 "ticker": "X",
 "why": "23 of 23 quarter-ends agree"
 },
+"XEC": {
+"ticker": "XEC",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
+"XLS": {
+"ticker": "XLS",
+"tries": 1,
+"why": "no prices from Yahoo or Tiingo"
+},
 "XOXO": {
 "ticker": "XOXO",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "XPER": {
@@ -4569,7 +5334,7 @@
 },
 "ZQKSQ": {
 "ticker": "ZQKSQ",
-"tries": 1,
+"tries": 2,
 "why": "no prices from Yahoo or Tiingo"
 },
 "ZUMZ": {
@@ -4584,22 +5349,22 @@
 },
 "name:": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:3COM": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:3D SYSTEMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:99 CENTS ONLY STORES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:A M CASTLE AND": {
@@ -4610,17 +5375,17 @@
 },
 "name:A M CASTLE AND A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:A O SMITH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:A SCHULMAN": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:AARON RENTS": {
@@ -4631,7 +5396,7 @@
 },
 "name:ABAXIS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ABIOMED": {
@@ -4642,7 +5407,7 @@
 },
 "name:ABIOMED A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ACETO": {
@@ -4659,12 +5424,12 @@
 },
 "name:ACORDA THERAPEUTICS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ACTEL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ACTUANT": {
@@ -4681,37 +5446,37 @@
 },
 "name:ACXIOM A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADAPTEC": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADC TELECOMMUNICATIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADEPTUS HEALTH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADMINISTAFF": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADPT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADVANCED ENERGY INDUSTRIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADVANCED MICRO DEVICES": {
@@ -4722,12 +5487,12 @@
 },
 "name:ADVANCED MICRO DEVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ADVENT SOFTWARE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:AECOM TECHNOLOGY": {
@@ -4744,32 +5509,32 @@
 },
 "name:AEGION A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AEROPOSTALE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:AEROPOSTALE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AFFYMETRIX": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:AFFYMETRIX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AGILYSYS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AGL RESOURCES": {
@@ -4780,7 +5545,7 @@
 },
 "name:AIR METHODS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:AIRGAS": {
@@ -4791,7 +5556,7 @@
 },
 "name:AIRTRAN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AK STEEL": {
@@ -4802,7 +5567,7 @@
 },
 "name:AK STEEL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AKORN": {
@@ -4813,7 +5578,7 @@
 },
 "name:AKORN A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ALBANY MOLECULAR RESEARCH": {
@@ -4830,7 +5595,7 @@
 },
 "name:ALBERTO CULVER": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ALEXANDRIA REAL ESTATE EQUITIES": {
@@ -4847,7 +5612,7 @@
 },
 "name:ALIGN TECHNOLOGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ALLIANCE ONE INTERNATIONAL": {
@@ -4864,27 +5629,27 @@
 },
 "name:ALLIANT TECHSYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ALMOST FAMILY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ALPHA NATURAL RESOURCES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ALPHA NATURAL RESOURCES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AM CASTLE AND": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMAG PHARMACEUTICALS": {
@@ -4901,22 +5666,22 @@
 },
 "name:AMC NETWORKS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMCOL INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMEDISYS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMERICA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMERICAN CAMPUS COMMUNITIES": {
@@ -4933,32 +5698,32 @@
 },
 "name:AMERICAN MEDICAL SYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMERICAN PHYSICIANS CAPITAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMERICAN PUBLIC EDUCATION A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMERICAN SCIENCE AND ENGINEERING": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:AMERICREDIT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMERIGROUP": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AMETEK": {
@@ -4969,7 +5734,7 @@
 },
 "name:AMSURG": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ANALOGIC": {
@@ -4992,7 +5757,7 @@
 },
 "name:ANN A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ANNIE S": {
@@ -5003,7 +5768,7 @@
 },
 "name:ANNIE S A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ANNTAYLOR STORES": {
@@ -5020,22 +5785,22 @@
 },
 "name:AO SMITH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AOL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:APOLLO": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:APOLLO EDUCATION": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:APOLLO INVESTMENT": {
@@ -5046,7 +5811,7 @@
 },
 "name:APPLIED SIGNAL TECHNOLOGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:APPROACH RESOURCES": {
@@ -5057,7 +5822,7 @@
 },
 "name:APPROACH RESOURCES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AQUA AMERICA": {
@@ -5074,7 +5839,7 @@
 },
 "name:ARCH CHEMICALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ARCH COAL": {
@@ -5091,7 +5856,7 @@
 },
 "name:ARKANSAS BEST": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ARQULE": {
@@ -5108,7 +5873,7 @@
 },
 "name:ARRIS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ARRIS INTERNATIONAL": {
@@ -5125,52 +5890,52 @@
 },
 "name:ASCENA RETAIL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ASML NYS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ASPEN INSURANCE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ASSOCIATED ESTATES REALTY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ASSOCIATES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ASTORIA FINANCIAL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ATC TECHNOLOGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ATLANTIC TELE NETWORK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ATLAS AIR WORLDWIDE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ATMEL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ATMI": {
@@ -5193,7 +5958,7 @@
 },
 "name:ATWOOD OCEANICS A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AUDIOVOX": {
@@ -5210,47 +5975,47 @@
 },
 "name:AVOCENT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AVON PRODUCTS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:AXSYS TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:B E AEROSPACE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BALDOR ELECTRIC": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BALLY TECHNOLOGIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BALLY TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BANCORPSOUTH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BANCORPSOUTH BANK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BANK MUTUAL": {
@@ -5267,7 +6032,7 @@
 },
 "name:BANKRATE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BARNES AND NOBLE": {
@@ -5278,7 +6043,7 @@
 },
 "name:BARNES AND NOBLE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BARNES AND NOBLE EDUCATION": {
@@ -5295,12 +6060,12 @@
 },
 "name:BASIC ENERGY SERVICES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BASIC ENERGY SERVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BBCN BANCORP": {
@@ -5311,22 +6076,22 @@
 },
 "name:BE AEROSPACE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BECKMAN COULTER": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BELMOND": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BEMIS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BIG 5 SPORTING GOODS": {
@@ -5337,12 +6102,12 @@
 },
 "name:BIG LOTS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BIGLARI": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BILL BARRETT": {
@@ -5353,22 +6118,22 @@
 },
 "name:BILL BARRETT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BIO REFERENCE LABORATORIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BIO REFERENCE LABORATORIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BIOMED REALTY TRUST": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BIOTELEMETRY": {
@@ -5379,27 +6144,27 @@
 },
 "name:BIOVERATIV": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BJ S RESTAURANTS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BLACK BOX": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BLACKROCK CASH FUNDS INSTITUTIONAL SL AGENCY SHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BLACKROCK CASH FUNDS TREASURY SL AGENCY SHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BLUE COAT SYSTEMS": {
@@ -5410,27 +6175,27 @@
 },
 "name:BLUE NILE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BLUE NILE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BLYTH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BOB EVANS FARMS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BOB EVANS FARMS DE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BOFI": {
@@ -5441,12 +6206,12 @@
 },
 "name:BOFI A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BOISE CASCADE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BONANZA CREEK ENERGY": {
@@ -5457,7 +6222,7 @@
 },
 "name:BOSTON BEER A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BOSTON PRIVATE FINANCIAL": {
@@ -5474,7 +6239,7 @@
 },
 "name:BOTTOMLINE TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BOTTOMLINE TECHNOLOGIES DE": {
@@ -5485,17 +6250,17 @@
 },
 "name:BOWNE AND": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BOYD GAMING A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BRE PROPERTIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BRIGGS AND STRATTON": {
@@ -5506,17 +6271,17 @@
 },
 "name:BRIGHTPOINT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BRINK S HOME SECURITY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BRINKS HOME SECURITY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BROADRIDGE FINANCIAL SOLUTIONS": {
@@ -5527,7 +6292,7 @@
 },
 "name:BROCADE COMMUNICATIONS SYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BROWN SHOE": {
@@ -5544,27 +6309,27 @@
 },
 "name:BUCKEYE TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BUCYRUS INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BUFFALO WILD WINGS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:BUFFALO WILD WINGS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:BURGER KING": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:C AND D TECHNOLOGIES": {
@@ -5581,17 +6346,17 @@
 },
 "name:C AND J ENERGY SERVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CABELA S": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CABELA S A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CABOT MICROELECTRONICS": {
@@ -5602,7 +6367,7 @@
 },
 "name:CACI INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CADENCE DESIGN SYSTEMS": {
@@ -5613,12 +6378,12 @@
 },
 "name:CADENCE DESIGN SYSTEMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CALAMOS ASSET MANAGEMENT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CALAMP": {
@@ -5629,7 +6394,7 @@
 },
 "name:CALAMP A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CALATLANTIC": {
@@ -5640,17 +6405,17 @@
 },
 "name:CALGON CARBON": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CALGON CARBON A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CALIFORNIA PIZZA KITCHEN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CAMBREX": {
@@ -5661,7 +6426,7 @@
 },
 "name:CAMBREX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CANTEL MEDICAL": {
@@ -5684,22 +6449,22 @@
 },
 "name:CARBO CERAMICS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CARDINAL FINANCIAL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CARDTRONICS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CARE CAPITAL PROPERTIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CAREER EDUCATION": {
@@ -5710,7 +6475,7 @@
 },
 "name:CAREER EDUCATION A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CARRIZO OIL AND GAS": {
@@ -5721,12 +6486,12 @@
 },
 "name:CARRIZO OIL AND GAS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CASCADE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CASCADE BANCORP": {
@@ -5737,7 +6502,7 @@
 },
 "name:CASH AMERICA INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CATALENT": {
@@ -5754,12 +6519,12 @@
 },
 "name:CATAPULT COMMUNICATIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CBEYOND": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CBL AND ASSOCIATES PROPERTIES": {
@@ -5776,7 +6541,7 @@
 },
 "name:CDI": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CDK GLOBAL": {
@@ -5793,17 +6558,17 @@
 },
 "name:CEC ENTERTAINMENT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CEDAR REALTY TRUST": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CEDAR SHOPPING CENTERS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CELADON": {
@@ -5820,27 +6585,27 @@
 },
 "name:CENTENE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CENTERS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CENTRAL VERMONT PUBLIC SERVICE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CENTURY ALUMINUM A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CERADYNE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CERNER": {
@@ -5851,27 +6616,27 @@
 },
 "name:CEVA A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CH ENERGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CHARLOTTE RUSSE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CHATTEM": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CHECKPOINT SYSTEMS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CHEMICAL FINANCIAL": {
@@ -5888,12 +6653,12 @@
 },
 "name:CHICAGO MERCANTILE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CHILDREN S PLACE RETAIL STORES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CHIPOTLE MEXICAN GRILL": {
@@ -5910,17 +6675,17 @@
 },
 "name:CHURCH AND DWIGHT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CIBER": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CIENA A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CIMAREX ENERGY": {
@@ -5931,22 +6696,22 @@
 },
 "name:CINCINNATI BELL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CIRRUS LOGIC A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CITY NATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CITY NATIONAL CA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CIVEO": {
@@ -5957,27 +6722,27 @@
 },
 "name:CKE RESTAURANTS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CLARCOR": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CLEAN HARBORS A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CLEARWATER PAPER A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CLECO": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CLIFFS NATURAL RESOURCES": {
@@ -5988,17 +6753,17 @@
 },
 "name:CLOUD PEAK ENERGY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:COCA COLA BOTTLING CONSOLIDATED": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COGENT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COINSTAR": {
@@ -6009,7 +6774,7 @@
 },
 "name:COLDWATER CREEK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COLLECTIVE BRANDS": {
@@ -6020,12 +6785,12 @@
 },
 "name:COLONIAL PROPERTIES TRUST": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COMMERCE BANCSHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COMMSCOPE": {
@@ -6042,32 +6807,32 @@
 },
 "name:COMMUNICATIONS SALES AND LEASING CSL CAPITAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COMMUNITIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COMMVAULT SYSTEMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COMPELLENT TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COMPUTER SCIENCES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COMPUWARE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:COMSCORE": {
@@ -6084,17 +6849,17 @@
 },
 "name:CONCUR TECHNOLOGIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CONCUR TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CONSOLIDATED GRAPHICS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CONSTANT CONTACT": {
@@ -6111,22 +6876,22 @@
 },
 "name:CONTROL4": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CONVERGYS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CONVERSANT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CONVERSANT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COOPER COMPANIES": {
@@ -6161,7 +6926,7 @@
 },
 "name:CORELOGIC U S": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CORESITE REALTY": {
@@ -6172,7 +6937,7 @@
 },
 "name:CORINTHIAN COLLEGES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CORN PRODUCTS INTERNATIONAL": {
@@ -6195,17 +6960,17 @@
 },
 "name:COVANCE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:COVANCE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:COVANCE A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CRAY": {
@@ -6222,32 +6987,32 @@
 },
 "name:CREE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CROCS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CST BRANDS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CUBIC": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CUBIST PHARMACEUTICALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CUBIST PHARMACEUTICALS A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CYBERONICS": {
@@ -6258,12 +7023,12 @@
 },
 "name:CYBERONICS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CYBERSOURCE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CYMER": {
@@ -6280,12 +7045,12 @@
 },
 "name:CYNOSURE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:CYPRESS SEMICONDUCTOR": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:CYRUSONE": {
@@ -6296,7 +7061,7 @@
 },
 "name:CYTEC INDUSTRIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DARLING INTERNATIONAL": {
@@ -6307,22 +7072,22 @@
 },
 "name:DCT INDUSTRIAL TRUST": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DEALERTRACK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DEALERTRACK TECHNOLOGIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:DEALERTRACK TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DEAN FOODS": {
@@ -6333,17 +7098,17 @@
 },
 "name:DEC 2017": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DECKERS OUTDOOR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DELPHI FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DELTIC TIMBER": {
@@ -6378,7 +7143,7 @@
 },
 "name:DG FASTCHANNEL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DHI": {
@@ -6407,7 +7172,7 @@
 },
 "name:DICE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DIEBOLD": {
@@ -6418,17 +7183,17 @@
 },
 "name:DIGI INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DIGITAL GENERATION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DIGITAL RIVER": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:DINEEQUITY": {
@@ -6439,12 +7204,12 @@
 },
 "name:DIODES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DIONEX": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DIPLOMAT PHARMACY": {
@@ -6455,7 +7220,7 @@
 },
 "name:DOLAN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DOLLAR TREE": {
@@ -6472,22 +7237,22 @@
 },
 "name:DPL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DREAMWORKS ANIMATION SKG": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:DREAMWORKS ANIMATION SKG A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DRESS BARN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DRESSER RAND": {
@@ -6498,7 +7263,7 @@
 },
 "name:DRESSER RAND A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DREW INDUSTRIES": {
@@ -6509,12 +7274,12 @@
 },
 "name:DSP": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:DST SYSTEMS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:DSW": {
@@ -6525,17 +7290,17 @@
 },
 "name:DTS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:DTS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DTS CA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:DUKE REALTY": {
@@ -6558,7 +7323,7 @@
 },
 "name:DYNEGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:E W SCRIPPS": {
@@ -6569,7 +7334,7 @@
 },
 "name:E W SCRIPPS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EASTMAN KODAK": {
@@ -6592,7 +7357,7 @@
 },
 "name:ECLIPSYS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EDUCATION REALTY TRUST": {
@@ -6609,17 +7374,17 @@
 },
 "name:EHEALTH A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EL PASO ELECTRIC": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ELECTRO SCIENTIFIC INDUSTRIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ELECTRONICS FOR IMAGING": {
@@ -6630,22 +7395,22 @@
 },
 "name:EMERGENT BIOSOLUTIONS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EMS TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ENCORE ACQUISITION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ENCORE CAPITAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ENDO HEALTH SOLUTIONS": {
@@ -6662,17 +7427,17 @@
 },
 "name:ENDURANCE SPECIALTY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ENERGEN": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ENERGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ENGILITY": {
@@ -6683,7 +7448,7 @@
 },
 "name:ENPRO INDUSTRIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ENSCO": {
@@ -6706,7 +7471,7 @@
 },
 "name:ENTROPIC COMMUNICATIONS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ENZO BIOCHEM": {
@@ -6717,12 +7482,12 @@
 },
 "name:EPICOR SOFTWARE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EPIQ SYSTEMS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:EQUINIX": {
@@ -6733,17 +7498,17 @@
 },
 "name:EQUINIX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EQUINIX A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EQUITY ONE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ERA": {
@@ -6754,12 +7519,12 @@
 },
 "name:ERESEARCH TECHNOLOGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ERESEARCHTECHNOLOGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ESSENDANT": {
@@ -6806,7 +7571,7 @@
 },
 "name:EXAR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EXELIS": {
@@ -6817,17 +7582,17 @@
 },
 "name:EXLSERVICE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EXPRESS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EXPRESS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:EXTERRAN": {
@@ -6844,12 +7609,12 @@
 },
 "name:EZCORP A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:F N B": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:F5 NETWORKS": {
@@ -6866,12 +7631,12 @@
 },
 "name:FAIRCHILD SEMICONDUCTOR INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FAIRPOINT COMMUNICATIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FEDERAL REALTY INVESTMENT TRUST": {
@@ -6882,12 +7647,12 @@
 },
 "name:FEI": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:FIDELITY SOUTHERN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FIESTA RESTAURANT": {
@@ -6898,7 +7663,7 @@
 },
 "name:FIFTH AND PACIFIC COMPANIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FINANCIAL ENGINES": {
@@ -6909,17 +7674,17 @@
 },
 "name:FINANCIAL FEDERAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FINISAR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FINISH LINE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:FIRST AMERICAN": {
@@ -6930,7 +7695,7 @@
 },
 "name:FIRST BANCORP PUERTO RICO A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FIRST CASH FINANCIAL SERVICES": {
@@ -6941,7 +7706,7 @@
 },
 "name:FIRST CASH FINANCIAL SERVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FIRST MIDWEST BANCORP": {
@@ -6952,7 +7717,7 @@
 },
 "name:FIRST MIDWEST BANCORP IL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FIRST NBC BANK": {
@@ -6963,32 +7728,32 @@
 },
 "name:FIRST NIAGARA FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FIRSTMERIT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FLOTEK INDUSTRIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:FLOTEK INDUSTRIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FOREST OIL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:FOREST OIL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FORESTAR": {
@@ -6999,7 +7764,7 @@
 },
 "name:FORESTAR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FORTINET": {
@@ -7022,12 +7787,12 @@
 },
 "name:FRANCESCA S A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FRED S": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:FRONTIER COMMUNICATIONS": {
@@ -7038,27 +7803,27 @@
 },
 "name:FRONTIER FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FRONTIER OIL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FTD COMPANIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:FTD COMPANIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FTI CONSULTING A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:FXCM": {
@@ -7075,7 +7840,7 @@
 },
 "name:G III APPAREL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GARDNER DENVER": {
@@ -7092,17 +7857,17 @@
 },
 "name:GARTNER A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GAS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GEN PROBE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GENCORP": {
@@ -7113,12 +7878,12 @@
 },
 "name:GENCORP A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GENERAL CABLE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:GENERAL COMMUNICATION": {
@@ -7135,47 +7900,47 @@
 },
 "name:GENOPTIX": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GENTEX MI": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GENTIVA HEALTH SERVICES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:GEORESOURCES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GEOSPACE TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GERBER SCIENTIFIC": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GERBER SCIENTIFIC ESCROW": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:GERBER SCIENTIFIC ESCROW A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GEVITY HR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GIGAMON": {
@@ -7192,7 +7957,7 @@
 },
 "name:GLOBE SPECIALTY METALS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:GOVERNMENT PROPERTIES INCOME TRUST": {
@@ -7203,12 +7968,12 @@
 },
 "name:GREAT ATLANTIC AND PACIFIC TEA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GREAT PLAINS ENERGY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:GREAT WESTERN BANCORP": {
@@ -7231,12 +7996,12 @@
 },
 "name:GREEN DOT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GREEN MOUNTAIN COFFEE ROASTERS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GREEN PLAINS RENEWABLE ENERGY": {
@@ -7253,17 +8018,17 @@
 },
 "name:GT ADVANCED TECHNOLOGIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:GT ADVANCED TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GUARANTY FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GULFMARK OFFSHORE": {
@@ -7280,22 +8045,22 @@
 },
 "name:GULFPORT ENERGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:GYMBOREE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HAEMONETICS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HAIN CELESTIAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HALYARD HEALTH": {
@@ -7312,7 +8077,7 @@
 },
 "name:HANGER A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HANGER ORTHOPEDIC": {
@@ -7329,7 +8094,7 @@
 },
 "name:HARMONIC A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HARRIS TEETER SUPERMARKETS": {
@@ -7352,27 +8117,27 @@
 },
 "name:HCC INSURANCE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:HEADWATERS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HEALTH MANAGEMENT ASSOCIATES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HEALTH NET": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:HEALTH NET CA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HEALTHSOUTH": {
@@ -7383,12 +8148,12 @@
 },
 "name:HEALTHSPRING": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HEALTHSTREAM A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HEALTHWAYS": {
@@ -7399,17 +8164,17 @@
 },
 "name:HEALTHWAYS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HEARTLAND PAYMENT SYSTEMS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:HELIX ENERGY SOLUTIONS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HENRY SCHEIN": {
@@ -7420,12 +8185,12 @@
 },
 "name:HENRY SCHEIN A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HEWITT ASSOCIATES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HFF": {
@@ -7442,7 +8207,7 @@
 },
 "name:HIBBETT SPORTS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HIGHER ONE": {
@@ -7453,7 +8218,7 @@
 },
 "name:HIGHER ONE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HIGHPOINT RESOURCES": {
@@ -7476,7 +8241,7 @@
 },
 "name:HITTITE MICROWAVE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HMS": {
@@ -7487,7 +8252,7 @@
 },
 "name:HMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HOLLY": {
@@ -7510,12 +8275,12 @@
 },
 "name:HOLOGIC A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HOME PROPERTIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:HORNBECK OFFSHORE SERVICES": {
@@ -7526,7 +8291,7 @@
 },
 "name:HORNBECK OFFSHORE SERVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HOSPITALITY PROPERTIES TRUST": {
@@ -7537,12 +8302,12 @@
 },
 "name:HOT TOPIC": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HOTEL PROPERTIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HSN": {
@@ -7553,7 +8318,7 @@
 },
 "name:HUB A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:HUNTINGTON INGALLS INDUSTRIES": {
@@ -7570,7 +8335,7 @@
 },
 "name:ICE MARKETS EQUITY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ICONIX BRAND": {
@@ -7581,37 +8346,37 @@
 },
 "name:ICONIX BRAND A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ICU MEDICAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ICU MEDICAL A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IDEX": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:IDEXX LABORATORIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:IDEXX LABORATORIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IDEXX LABORATORIES A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IGATE": {
@@ -7628,17 +8393,17 @@
 },
 "name:II VI A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ILG": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IMATION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IMMUCOR": {
@@ -7655,17 +8420,17 @@
 },
 "name:INDEPENDENT BANK MICHIGAN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INDEPENDENT BANK ROCKLAND MA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INFINITY PROPERTY AND CASUALTY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:INFORMATICA": {
@@ -7688,7 +8453,7 @@
 },
 "name:INLAND REAL ESTATE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:INNOPHOS": {
@@ -7699,7 +8464,7 @@
 },
 "name:INSIGHT ENTERPRISES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INSITUFORM TECHNOLOGIES": {
@@ -7710,22 +8475,22 @@
 },
 "name:INTEGRA LIFESCIENCES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INTEGRAL SYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INTEGRATED DEVICE TECHNOLOGY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:INTEGRATED DEVICE TECHNOLOGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INTELIQUENT": {
@@ -7736,12 +8501,12 @@
 },
 "name:INTERACTIVE INTELLIGENCE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:INTERDIGITAL PA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INTERMEC": {
@@ -7752,7 +8517,7 @@
 },
 "name:INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INTERNATIONAL GAME TECHNOLOGY": {
@@ -7763,7 +8528,7 @@
 },
 "name:INTERNATIONAL RECTIFIER": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:INTERNATIONAL SPEEDWAY": {
@@ -7780,7 +8545,7 @@
 },
 "name:INTERVAL LEISURE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:INTEVAC": {
@@ -7803,12 +8568,12 @@
 },
 "name:INTREPID POTASH A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:INVACARE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:INVENTIV HEALTH": {
@@ -7819,7 +8584,7 @@
 },
 "name:INVESTMENT TECHNOLOGY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ION GEOPHYSICAL": {
@@ -7830,47 +8595,47 @@
 },
 "name:ION GEOPHYSICAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IOWA TELECOMMUNICATIONS SERVICES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IPC HEALTHCARE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IPC HOSPITALIST": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:IPC HOSPITALIST A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IPC HOSPITALIST A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IROBOT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IRWIN FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ITRON A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ITT EDUCATIONAL SERVICES": {
@@ -7881,42 +8646,42 @@
 },
 "name:ITT EDUCATIONAL SERVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IXIA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:IXIA A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:J B HUNT TRANSPORT SERVICES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:J C PENNEY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:J C PENNEY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:J CREW": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:J CREW ESCROW": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:J2 GLOBAL COMMUNICATIONS": {
@@ -7945,7 +8710,7 @@
 },
 "name:JANUS CAPITAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JARDEN": {
@@ -7956,32 +8721,32 @@
 },
 "name:JB HUNT TRANSPORT SERVICES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JC PENNEY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JDA SOFTWARE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JDS UNIPHASE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JEFFERIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JETBLUE AIRWAYS A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JO ANN STORES": {
@@ -7992,47 +8757,47 @@
 },
 "name:JOS A BANK CLOTHIERS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JOS A BANK CLOTHIERS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JOY GLOBAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:JUN 2018": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:K SWISS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KANSAS CITY SOUTHERN INDUSTRIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KAPSTONE PAPER AND PACKAGING": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:KATE SPADE AND": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:KATE SPADE AND A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KAYDON": {
@@ -8043,7 +8808,7 @@
 },
 "name:KEITHLEY INSTRUMENTS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KEMET": {
@@ -8054,12 +8819,12 @@
 },
 "name:KENDLE INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KENSEY NASH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KEYSIGHT TECHNOLOGIES": {
@@ -8082,12 +8847,12 @@
 },
 "name:KINETIC CONCEPTS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KIRBY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KIRKLAND S": {
@@ -8098,12 +8863,12 @@
 },
 "name:KIRKLAND S A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KLX": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KNIGHT TRANSPORTATION": {
@@ -8120,7 +8885,7 @@
 },
 "name:KNOWLES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:KOPIN": {
@@ -8155,7 +8920,7 @@
 },
 "name:LABRANCHE AND": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LACLEDE": {
@@ -8172,12 +8937,12 @@
 },
 "name:LAMAR ADVERTISING A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LANCE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LANDAUER": {
@@ -8188,27 +8953,27 @@
 },
 "name:LANDRY S RESTAURANTS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LANNETT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:LASALLE HOTEL PROPERTIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:LAWSON PRODUCTS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LCA VISION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LEGACYTEXAS FINANCIAL": {
@@ -8231,17 +8996,17 @@
 },
 "name:LENDER PROCESSING SERVICES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LEXMARK INTERNATIONAL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:LHC A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LIBERTY PROPERTY TRUST": {
@@ -8258,12 +9023,12 @@
 },
 "name:LIFE TIME FITNESS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LIFE TIME FITNESS A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LIFEPOINT HEALTH": {
@@ -8274,12 +9039,12 @@
 },
 "name:LIFEPOINT HOSPITALS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:LIGAND PHARMACEUTICALS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LINCARE": {
@@ -8296,7 +9061,7 @@
 },
 "name:LIQUIDITY SERVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LIVE NATION": {
@@ -8307,12 +9072,12 @@
 },
 "name:LIVEPERSON A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LIZ CLAIBORNE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LOGMEIN": {
@@ -8323,17 +9088,17 @@
 },
 "name:LOGMEIN A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LOJACK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LSB INDUSTRIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LSC COMMUNICATIONS": {
@@ -8350,12 +9115,12 @@
 },
 "name:LUFKIN INDUSTRIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LUMBER LIQUIDATORS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LUMINEX": {
@@ -8366,7 +9131,7 @@
 },
 "name:LUMINEX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:LUMOS NETWORKS": {
@@ -8377,27 +9142,27 @@
 },
 "name:LYDALL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:LYDALL A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:M D C": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:M I HOMES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MACROVISION SOLUTIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MAGELLAN HEALTH": {
@@ -8414,7 +9179,7 @@
 },
 "name:MAGNETEK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MAIDEN": {
@@ -8425,12 +9190,12 @@
 },
 "name:MAIDENFORM BRANDS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MALLINCKRODT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MANNATECH": {
@@ -8441,7 +9206,7 @@
 },
 "name:MANPOWER": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MANTECH INTERNATIONAL": {
@@ -8452,27 +9217,27 @@
 },
 "name:MANTECH INTERNATIONAL VA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MAR 2018": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MARINEMAX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MARINER ENERGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MARTEK BIOSCIENCES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MARTIN MARIETTA MATERIALS": {
@@ -8483,22 +9248,22 @@
 },
 "name:MARVEL ENTERTAINMENT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MATERIALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MB FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MEADOWBROOK INSURANCE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:MEASUREMENT SPECIALTIES": {
@@ -8509,7 +9274,7 @@
 },
 "name:MEASUREMENT SPECIALTIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MEDASSETS": {
@@ -8520,7 +9285,7 @@
 },
 "name:MEDCATH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MEDIA INVESTMENT": {
@@ -8531,32 +9296,32 @@
 },
 "name:MEDICINES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:MEDICIS PHARMACEUTICAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MEDIDATA SOLUTIONS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:MEDIDATA SOLUTIONS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MEDIFAST A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MEDNAX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MEMC ELECTRONIC MATERIALS": {
@@ -8567,7 +9332,7 @@
 },
 "name:MEN S WEARHOUSE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:MENTOR GRAPHICS": {
@@ -8590,7 +9355,7 @@
 },
 "name:METAVANTE TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:METTLER TOLEDO INTERNATIONAL": {
@@ -8607,17 +9372,17 @@
 },
 "name:MICREL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:MICROS SYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MICROS SYSTEMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MICROSEMI": {
@@ -8628,7 +9393,7 @@
 },
 "name:MICROSTRATEGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MID AMERICA APARTMENT COMMUNITIES": {
@@ -8639,7 +9404,7 @@
 },
 "name:MIDAS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MIMEDX": {
@@ -8662,7 +9427,7 @@
 },
 "name:MOLINA HEALTHCARE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MOMENTA PHARMACEUTICALS": {
@@ -8697,17 +9462,17 @@
 },
 "name:MONSTER WORLDWIDE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MONTPELIER RE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MPS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MSCI": {
@@ -8718,7 +9483,7 @@
 },
 "name:MSCI A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MTS SYSTEMS": {
@@ -8735,17 +9500,17 @@
 },
 "name:MULTIMEDIA GAMES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:MULTIMEDIA GAMES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MURPHY USA A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:MWI VETERINARY SUPPLY": {
@@ -8756,7 +9521,7 @@
 },
 "name:MWI VETERINARY SUPPLY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NANOMETRICS": {
@@ -8767,7 +9532,7 @@
 },
 "name:NANOMETRICS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NARA BANCORP": {
@@ -8778,12 +9543,12 @@
 },
 "name:NASH FINCH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NATCO": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NATIONAL FINANCIAL PARTNERS": {
@@ -8794,17 +9559,17 @@
 },
 "name:NATIONAL FINANCIAL PARTNERS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NATIONAL PENN BANCSHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NATIONWIDE HEALTH PROPERTIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NATUS MEDICAL": {
@@ -8815,7 +9580,7 @@
 },
 "name:NAUTILUS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NAVIGANT CONSULTING": {
@@ -8832,7 +9597,7 @@
 },
 "name:NBTY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NCI": {
@@ -8843,7 +9608,7 @@
 },
 "name:NCI BUILDING SYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NEENAH": {
@@ -8860,7 +9625,7 @@
 },
 "name:NEOGEN A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NETFLIX": {
@@ -8871,12 +9636,12 @@
 },
 "name:NETGEAR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NETWORK EQUIPMENT TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NEUSTAR": {
@@ -8887,7 +9652,7 @@
 },
 "name:NEUSTAR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NEUTRAL TANDEM": {
@@ -8898,17 +9663,17 @@
 },
 "name:NEWALLIANCE BANCSHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NEWFIELD EXPLORATION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NEWPORT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:NIC": {
@@ -8919,7 +9684,7 @@
 },
 "name:NORTHERN OIL AND GAS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NORTHWEST NATURAL GAS": {
@@ -8936,12 +9701,12 @@
 },
 "name:NOVEN PHARMACEUTICALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NSTAR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:NTELOS": {
@@ -8964,12 +9729,12 @@
 },
 "name:NVR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:O CHARLEY S": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OCLARO": {
@@ -8980,7 +9745,7 @@
 },
 "name:ODYSSEY HEALTHCARE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OFFICE DEPOT": {
@@ -8991,7 +9756,7 @@
 },
 "name:OFFICE DEPOT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OFFICEMAX": {
@@ -9002,17 +9767,17 @@
 },
 "name:OIL STATES INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OM": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:OMNICARE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ON ASSIGNMENT": {
@@ -9023,7 +9788,7 @@
 },
 "name:ON ASSIGNMENT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ONEOK": {
@@ -9034,42 +9799,42 @@
 },
 "name:OPENTABLE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OPENTABLE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OPLINK COMMUNICATIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OPNET TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OPTIONSXPRESS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OPUS BANK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ORBITAL ATK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ORBITAL SCIENCES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ORION": {
@@ -9092,27 +9857,27 @@
 },
 "name:ORTHOFIX INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OSI PHARMACEUTICALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OSI SYSTEMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OSTEOTECH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OTHER SECURITIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OUTERWALL": {
@@ -9123,7 +9888,7 @@
 },
 "name:OUTERWALL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:OVERSEAS SHIPHOLDING": {
@@ -9146,12 +9911,12 @@
 },
 "name:P F CHANG S CHINA BISTRO": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:P H GLATFELTER": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PACKAGING OF AMERICA": {
@@ -9162,32 +9927,32 @@
 },
 "name:PALM": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PALOMAR MEDICAL TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PANERA BREAD": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PANERA BREAD A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PAR PHARMACEUTICAL COMPANIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PARAGON OFFSHORE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PARAMETRIC TECHNOLOGY": {
@@ -9198,12 +9963,12 @@
 },
 "name:PAREXEL INTERNATIONAL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PAREXEL INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PARK ELECTROCHEMICAL": {
@@ -9214,22 +9979,22 @@
 },
 "name:PARKWAY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PARKWAY PROPERTIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PARKWAY PROPERTIES MD": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PATRIOT COAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PATTERSON COMPANIES": {
@@ -9240,17 +10005,17 @@
 },
 "name:PCTEL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PDC ENERGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PEET S COFFEE AND TEA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PENFORD": {
@@ -9261,7 +10026,7 @@
 },
 "name:PENN VIRGINIA A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PENNSYLVANIA REAL ESTATE INVESTMENT TRUST": {
@@ -9272,7 +10037,7 @@
 },
 "name:PENNSYLVANIA REIT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PENTAIR": {
@@ -9283,17 +10048,17 @@
 },
 "name:PEP BOYS MANNY MOE AND JACK": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PEPSIAMERICAS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PERICOM SEMICONDUCTOR": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PERRY ELLIS INTERNATIONAL": {
@@ -9310,17 +10075,17 @@
 },
 "name:PETROQUEST ENERGY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PETROQUEST ENERGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PETSMART": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PGT": {
@@ -9331,37 +10096,37 @@
 },
 "name:PH GLATFELTER": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PHARMACEUTICAL PRODUCT DEVELOPMENT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PHARMERICA": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PHASE FORWARD": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PHIBRO ANIMAL HEALTH SERIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PHILLIPS VAN HEUSEN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PHOENIX TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PIEDMONT NATURAL GAS": {
@@ -9372,32 +10137,32 @@
 },
 "name:PINNACLE ENTERTAINMENT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PINNACLE ENTERTAINMENT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PIONEER DRILLING": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PIONEER ENERGY SERVICES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PIONEER ENERGY SERVICES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PIPER JAFFRAY COMPANIES A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PLAINS EXPLORATION AND PRODUCTION": {
@@ -9408,17 +10173,17 @@
 },
 "name:PLANTRONICS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PLEXUS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:POLARIS INDUSTRIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:POLYCOM": {
@@ -9435,7 +10200,7 @@
 },
 "name:POLYONE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:POPEYES LOUISIANA KITCHEN": {
@@ -9452,7 +10217,7 @@
 },
 "name:PORTFOLIO RECOVERY ASSOCIATES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:POST PROPERTIES": {
@@ -9463,17 +10228,17 @@
 },
 "name:POTLATCH": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PRE PAID LEGAL SERVICES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PRESIDENTIAL LIFE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PRESTIGE BRANDS": {
@@ -9490,22 +10255,22 @@
 },
 "name:PRIDE INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PRIVATEBANCORP": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PROCERA NETWORKS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PROCERA NETWORKS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PROGENICS PHARMACEUTICALS": {
@@ -9516,17 +10281,17 @@
 },
 "name:PROGRESS SOFTWARE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PROPERTIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PROPERTIES TRUST": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PROSPECT CAPITAL": {
@@ -9537,7 +10302,7 @@
 },
 "name:PROTECTIVE LIFE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PROVIDENCE SERVICE": {
@@ -9548,27 +10313,27 @@
 },
 "name:PROVIDENT BANKSHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PS BUSINESS PARKS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:PSS WORLD MEDICAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PSYCHIATRIC SOLUTIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:PULSE ELECTRONICS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:QEP RESOURCES": {
@@ -9585,7 +10350,7 @@
 },
 "name:QUALITY CARE PROPERTIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:QUALITY SYSTEMS": {
@@ -9602,17 +10367,17 @@
 },
 "name:QUESTAR": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:QUESTCOR PHARMACEUTICALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:QUICKSILVER RESOURCES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:QUIKSILVER": {
@@ -9623,12 +10388,12 @@
 },
 "name:QUIKSILVER A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:QUINSTREET A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:QUORUM HEALTH": {
@@ -9639,37 +10404,37 @@
 },
 "name:R R DONNELLEY AND SONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RACKSPACE HOSTING": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:RACKSPACE HOSTING A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RADIANT SYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RADIOSHACK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RADISYS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RALCORP": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RAMCO GERSHENSON PROPERTIES TRUST": {
@@ -9692,7 +10457,7 @@
 },
 "name:RC2": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:REALTY INCOME": {
@@ -9703,7 +10468,7 @@
 },
 "name:RED ROBIN GOURMET BURGERS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:REGENCY CENTERS": {
@@ -9726,12 +10491,12 @@
 },
 "name:REHABCARE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RENT A CENTER": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:REPUBLIC AIRWAYS": {
@@ -9742,7 +10507,7 @@
 },
 "name:RES CARE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RESEARCH": {
@@ -9759,12 +10524,12 @@
 },
 "name:RESOURCES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:REWARDS NETWORK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:REX ENERGY": {
@@ -9775,12 +10540,12 @@
 },
 "name:RF MICRO DEVICES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:RIGHTNOW TECHNOLOGIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RIVERBED TECHNOLOGY": {
@@ -9797,17 +10562,17 @@
 },
 "name:ROADRUNNER TRANSPORTATION SYSTEMS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ROADRUNNER TRANSPORTATION SYSTEMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ROASTERS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ROBBINS AND MYERS": {
@@ -9830,7 +10595,7 @@
 },
 "name:ROFIN SINAR TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ROLLINS": {
@@ -9853,7 +10618,7 @@
 },
 "name:ROSETTA RESOURCES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ROSS STORES": {
@@ -9864,12 +10629,12 @@
 },
 "name:ROVI": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ROWAN COMPANIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:RR DONNELLEY AND SONS": {
@@ -9880,12 +10645,12 @@
 },
 "name:RTI INTERNATIONAL METALS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:RTI INTERNATIONAL METALS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RUBICON TECHNOLOGY": {
@@ -9896,7 +10661,7 @@
 },
 "name:RUBICON TECHNOLOGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RUBY TUESDAY": {
@@ -9907,12 +10672,12 @@
 },
 "name:RUBY TUESDAY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RUCKUS WIRELESS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RUDDICK": {
@@ -9923,17 +10688,17 @@
 },
 "name:RUDOLPH TECHNOLOGIES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:RUDOLPH TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RUE21": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:RUSS BERRIE AND": {
@@ -9944,12 +10709,12 @@
 },
 "name:RYLAND": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SABRA HEALTHCARE REIT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SAGENT PHARMACEUTICALS": {
@@ -9960,7 +10725,7 @@
 },
 "name:SAIA A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SAIC": {
@@ -9971,7 +10736,7 @@
 },
 "name:SAKS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SALIX PHARMACEUTICALS": {
@@ -9982,7 +10747,7 @@
 },
 "name:SALIX PHARMACEUTICALS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SANDERSON FARMS": {
@@ -9993,7 +10758,7 @@
 },
 "name:SANMINA A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SANTARUS": {
@@ -10022,7 +10787,7 @@
 },
 "name:SCIENTIFIC GAMES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SEACOR": {
@@ -10033,7 +10798,7 @@
 },
 "name:SEAHAWK DRILLING": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SELECT COMFORT": {
@@ -10044,17 +10809,17 @@
 },
 "name:SELECT COMFORT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SEMICONDUCTOR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SEMTECH A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SENIOR HOUSING PROPERTIES TRUST": {
@@ -10065,37 +10830,37 @@
 },
 "name:SEPRACOR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SERVICE INTERNATIONAL U S": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SERVICES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SFN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SHAW": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SHFL ENTERTAINMENT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SHUFFLE MASTER": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SHUTTERFLY": {
@@ -10112,7 +10877,7 @@
 },
 "name:SIGNATURE BANK": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SIRONA DENTAL SYSTEMS": {
@@ -10123,17 +10888,17 @@
 },
 "name:SIRONA DENTAL SYSTEMS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SIZMEK": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SIZMEK A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SKYLINE": {
@@ -10162,57 +10927,57 @@
 },
 "name:SNYDER S LANCE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SNYDERS LANCE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SOLERA": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SONIC": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SONIC A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SONIC SOLUTIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SONOSITE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SOTHEBY S": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SOURCEFIRE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SOUTH FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SOUTHERN UNION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SOVRAN SELF STORAGE": {
@@ -10241,12 +11006,12 @@
 },
 "name:SPHERION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SPSS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SPX": {
@@ -10263,7 +11028,7 @@
 },
 "name:SRA INTERNATIONAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SRC ENERGY": {
@@ -10298,17 +11063,17 @@
 },
 "name:STANDARD MICROSYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STANDARD PACIFIC": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:STANDARD PACIFIC A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STANDARD REGISTER": {
@@ -10319,7 +11084,7 @@
 },
 "name:STANLEY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STARTEK": {
@@ -10330,7 +11095,7 @@
 },
 "name:STEAK N SHAKE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STEIN MART": {
@@ -10347,42 +11112,42 @@
 },
 "name:STERLING BANCORP DE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STERLING BANCSHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STERLING FINANCIAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STERLING FINANCIAL WASHINGTON": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STEVEN MADDEN A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STIFEL FINANCIAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STILLWATER MINING": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:STILLWATER MINING A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STONE ENERGY": {
@@ -10393,22 +11158,22 @@
 },
 "name:STONE ENERGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STORES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:STRATASYS": {
@@ -10437,27 +11202,27 @@
 },
 "name:SUNEDISON A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SUPER MICRO COMPUTER A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SUPERIOR ENERGY SERVICES": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SUPERIOR INDUSTRIES INTERNATIONAL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:SUPERIOR WELL SERVICES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SUPERTEX": {
@@ -10480,7 +11245,7 @@
 },
 "name:SURMODICS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SUSQUEHANNA BANCSHARES": {
@@ -10503,7 +11268,7 @@
 },
 "name:SWIFT ENERGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SWS": {
@@ -10514,7 +11279,7 @@
 },
 "name:SYBASE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SYKES ENTERPRISES": {
@@ -10537,12 +11302,12 @@
 },
 "name:SYMMETRY MEDICAL A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SYNAPTICS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SYNCHRONOSS TECHNOLOGIES": {
@@ -10553,7 +11318,7 @@
 },
 "name:SYNCHRONOSS TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SYNERGY RESOURCES": {
@@ -10564,12 +11329,12 @@
 },
 "name:SYNIVERSE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SYNNEX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:SYNOPSYS": {
@@ -10604,7 +11369,7 @@
 },
 "name:TAKE TWO INTERACTIVE SOFTWARE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TALEO": {
@@ -10615,17 +11380,17 @@
 },
 "name:TALMER BANCORP": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TANGOE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TANGOE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TASER INTERNATIONAL": {
@@ -10636,7 +11401,7 @@
 },
 "name:TASER INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TAUBMAN CENTERS": {
@@ -10647,12 +11412,12 @@
 },
 "name:TAYLOR CAPITAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TAYLOR CAPITAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TCF FINANCIAL": {
@@ -10675,12 +11440,12 @@
 },
 "name:TECHNE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TECHNITROL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TECHNOLOGIES": {
@@ -10691,7 +11456,7 @@
 },
 "name:TEKELEC": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TELETECH": {
@@ -10702,7 +11467,7 @@
 },
 "name:TELETECH A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TELLABS": {
@@ -10713,7 +11478,7 @@
 },
 "name:TEMPLE INLAND": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TEMPUR PEDIC INTERNATIONAL": {
@@ -10724,22 +11489,22 @@
 },
 "name:TEMPUR SEALY INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TERADYNE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TERRA INDUSTRIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TESCO": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TESSERA": {
@@ -10756,17 +11521,17 @@
 },
 "name:TETRA TECH A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TETRA TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TEXAS CAPITAL BANCSHARES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TEXAS INDUSTRIES": {
@@ -10777,7 +11542,7 @@
 },
 "name:TEXAS INDUSTRIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:THERAGENICS": {
@@ -10788,32 +11553,32 @@
 },
 "name:THOMAS AND BETTS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:THORATEC": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:THORATEC A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:THQ": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TIBCO SOFTWARE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TICKETMASTER ENTERTAINMENT": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TILE SHOP": {
@@ -10824,12 +11589,12 @@
 },
 "name:TIMBERLAND": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TIME": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TIVITY HEALTH": {
@@ -10846,12 +11611,12 @@
 },
 "name:TOLL BROTHERS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TOLLGRADE COMMUNICATIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TOWER": {
@@ -10868,22 +11633,22 @@
 },
 "name:TOWERS WATSON AND": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TRACTOR SUPPLY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TRADESTATION": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TRANSATLANTIC": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TRAVELPORT WORLDWIDE": {
@@ -10894,17 +11659,17 @@
 },
 "name:TREEHOUSE FOODS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TRIMBLE NAVIGATION": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TRIMBLE NAVIGATION A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TRIQUINT SEMICONDUCTOR": {
@@ -10915,32 +11680,32 @@
 },
 "name:TRUE RELIGION APPAREL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TRUST": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TTM TECHNOLOGIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TUESDAY MORNING": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:TUESDAY MORNING A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TUMI": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:TW TELECOM": {
@@ -10951,7 +11716,7 @@
 },
 "name:TWEEN BRANDS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:U S CONCRETE": {
@@ -10962,7 +11727,7 @@
 },
 "name:U S ECOLOGY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:U S SILICA": {
@@ -10973,12 +11738,12 @@
 },
 "name:U S STEEL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UCBH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UDR": {
@@ -10989,27 +11754,27 @@
 },
 "name:UIL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ULTIMATE SOFTWARE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ULTRATECH": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ULTRATECH A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UNDER ARMOUR A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UNISOURCE ENERGY": {
@@ -11020,12 +11785,12 @@
 },
 "name:UNIT": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:UNITED BANCSHARES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UNITED FIRE AND CASUALTY": {
@@ -11036,12 +11801,12 @@
 },
 "name:UNITED NATURAL FOODS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UNITED ONLINE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UNITED RENTALS": {
@@ -11052,7 +11817,7 @@
 },
 "name:UNITED RENTALS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UNITED STATIONERS": {
@@ -11063,7 +11828,7 @@
 },
 "name:UNITED THERAPEUTICS A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:UNITRIN": {
@@ -11092,7 +11857,7 @@
 },
 "name:URS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:US ECOLOGY": {
@@ -11127,17 +11892,17 @@
 },
 "name:VALSPAR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VARIAN": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VARIAN SEMICONDUCTOR EQUIPMENT ASSOCIATES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VASCO DATA SECURITY INTERNATIONAL": {
@@ -11148,27 +11913,27 @@
 },
 "name:VASCO DATA SECURITY INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VASCULAR SOLUTIONS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VCA": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:VCA ANTECH": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VECTREN": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:VECTRUS": {
@@ -11179,7 +11944,7 @@
 },
 "name:VEECO INSTRUMENTS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VERIFONE SYSTEMS": {
@@ -11190,17 +11955,17 @@
 },
 "name:VERSUM MATERIALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VERTEX PHARMACEUTICALS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VIASAT A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VIEWPOINT FINANCIAL": {
@@ -11211,12 +11976,12 @@
 },
 "name:VIROPHARMA": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VIRTUS INVESTMENT PARTNERS A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VIRTUSA": {
@@ -11227,22 +11992,22 @@
 },
 "name:VISHAY INTERTECHNOLOGY A B": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VITAMIN SHOPPE": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:VITAMIN SHOPPE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VOLCOM": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VOLT INFORMATION SCIENCES": {
@@ -11253,7 +12018,7 @@
 },
 "name:VOLTERRA SEMICONDUCTOR": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:VONAGE": {
@@ -11270,12 +12035,12 @@
 },
 "name:VOXX INTERNATIONAL A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:W R BERKLEY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:WABTEC": {
@@ -11286,7 +12051,7 @@
 },
 "name:WABTEC DE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WADDELL AND REED FINANCIAL": {
@@ -11303,7 +12068,7 @@
 },
 "name:WARNACO": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WASHINGTON PRIME": {
@@ -11320,12 +12085,12 @@
 },
 "name:WATSON WYATT WORLDWIDE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WAUSAU PAPER": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:WCI COMMUNITIES": {
@@ -11348,7 +12113,7 @@
 },
 "name:WEINGARTEN REALTY INVESTORS": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:WELLCARE HEALTH PLANS": {
@@ -11365,22 +12130,22 @@
 },
 "name:WESTAR ENERGY": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:WESTERN REFINING": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WEX A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WGL": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:WHITEWAVE FOODS": {
@@ -11391,7 +12156,7 @@
 },
 "name:WHITNEY": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WILLIAM LYON HOMES": {
@@ -11402,27 +12167,27 @@
 },
 "name:WILMINGTON TRUST": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WILSHIRE BANCORP": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WIND RIVER SYSTEMS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WINNEBAGO INDUSTRIES A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WMS INDUSTRIES": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WOODWARD GOVERNOR": {
@@ -11433,7 +12198,7 @@
 },
 "name:WORLD ACCEPTANCE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WP GLIMCHER": {
@@ -11450,7 +12215,7 @@
 },
 "name:WPX ENERGY A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:WRIGHT EXPRESS": {
@@ -11467,42 +12232,42 @@
 },
 "name:XO A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ZALE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ZALE A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ZELTIQ AESTHETICS": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ZENITH NATIONAL INSURANCE": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ZEP": {
 "cik": "",
-"tries": 2,
+"tries": 3,
 "why": "no ticker found"
 },
 "name:ZOLL MEDICAL": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 },
 "name:ZUMIEZ A": {
 "cik": "",
-"tries": 1,
+"tries": 2,
 "why": "no ticker found"
 }
 },
