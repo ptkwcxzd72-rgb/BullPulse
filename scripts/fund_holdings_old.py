@@ -104,18 +104,18 @@ def period_of(filed: str) -> str:
 
 
 def probe() -> None:
+    """Print the lines that look like fund headings in a few older filings."""
     sid = H.series_ids(["IJH"])
-    for form in FORMS:
-        fs = [f for f in H.filings(sid["IJH"], form) if f["date"] >= SINCE]
-        print(f"== {form}: {len(fs)} filings since {SINCE}: {[f['date'] for f in fs][:40]}")
-        for f in fs[:1] + fs[len(fs) // 2: len(fs) // 2 + 1]:
-            docs = documents(f["cik"], f["adsh"])
-            print(f"  {f['date']} {f['adsh']} docs: {sorted(docs, key=lambda d: -d[1])[:6]}")
-            big = max(docs, key=lambda d: d[1])[0] if docs else ""
-            raw = H.get(f"https://www.sec.gov/Archives/edgar/data/{f['cik']}/{f['adsh'].replace('-', '')}/{big}")
-            t = text_of((raw or b"").decode("utf-8", "ignore"))
-            for m in list(re.finditer(r"(?i)s&p mid-?cap|mid-cap etf|midcap 400", t))[:3]:
-                print("  ---", m.start(), repr(t[m.start(): m.start() + 900]))
+    fs = [f for f in H.filings(sid["IJH"], "N-Q") if "2009-01-01" <= f["date"] < "2019-06-01"]
+    for f in fs[::5]:
+        docs = documents(f["cik"], f["adsh"])
+        big = max(docs, key=lambda d: d[1])[0] if docs else ""
+        raw = H.get(f"https://www.sec.gov/Archives/edgar/data/{f['cik']}/{f['adsh'].replace('-', '')}/{big}")
+        t = text_of((raw or b"").decode("utf-8", "ignore"))
+        heads = sorted({m.group(0).strip()[:90] for m in re.finditer(r"(?im)^[^|\n]*(mid|small)[- ]?cap[^|\n]*$", t)})
+        print(f"== {f['date']} {big} ({len(t)} chars): {heads[:25]}")
+        k = t.lower().find("midcap 400") if "midcap 400" in t.lower() else t.lower().find("mid-cap")
+        print("   ", repr(t[k: k + 700]))
 
 
 MIN_ROWS = {"ijh": 300, "ijr": 450}
