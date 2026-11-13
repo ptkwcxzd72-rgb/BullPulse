@@ -85,11 +85,12 @@ def past_members(universe: set[str]) -> dict[str, dict]:
             key = t or c or ("name:" + BM.simple(r["name"]))
             if not key:
                 continue
-            e = out.setdefault(key, {"name": r["name"], "cusip": c, "ticker": t, "prices": {}})
+            e = out.setdefault(key, {"name": r["name"], "cusip": c, "ticker": t, "prices": {}, "weight": 0.0})
             try:
                 sh, v = float(r["shares"]), float(r["value_usd"])
                 if sh > 0 and v > 0:
                     e["prices"][d] = v / sh
+                e["weight"] += float(r.get("pct") or 0)
             except (TypeError, ValueError):
                 pass
     return out
@@ -174,7 +175,7 @@ def agrees(quoted: dict[str, float], filed: dict[str, float]) -> tuple[bool, str
         checked += 1
         if not any(abs(r * s - 1) < 0.03 for s in [1] + SPLITS):
             bad += 1
-    if checked < 2:
+    if checked < min(2, len(filed)):
         return False, f"only {checked} quarter-ends to check"
     return bad <= max(1, checked // 10), f"{checked - bad} of {checked} quarter-ends agree"
 
@@ -196,7 +197,8 @@ def main() -> int:
     used = state.setdefault("tiingo", {}).get(month, 0)
     room = max(0, min(a.tiingo, 250 - used))
     asked = 0
-    for key, e in sorted(members.items(), key=lambda kv: -len(kv[1]["prices"])):
+    # the largest first: each Tiingo request should add as much of the index's value as possible
+    for key, e in sorted(members.items(), key=lambda kv: -kv[1]["weight"]):
         if time.time() > stop:
             break
         st = state["status"].get(key, {})
@@ -204,11 +206,14 @@ def main() -> int:
             continue
         idkey = e["cusip"] or key
         t = e["ticker"] or state["ids"].get(idkey, "")
-        if not t and os.environ.get("SEC_CONTACT_EMAIL") and "cik" not in st:
+        if not t and os.environ.get("SEC_CONTACT_EMAIL"):
             names = names if names is not None else cik_by_name()
-            ciks = names.get(simple(e["name"]), [])
-            st["cik"] = ciks[0] if len(ciks) == 1 else ""
-            t = cover_ticker(st["cik"]) if st["cik"] else ""
+            st["cik"] = ""
+            for c in names.get(simple(e["name"]), [])[:4]:   # a name filed by several entities: the one with a symbol
+                t = cover_ticker(c)
+                if t:
+                    st["cik"] = c
+                    break
             if t:
                 state["ids"][idkey] = t
         if not t:
@@ -216,13 +221,20 @@ def main() -> int:
             state["status"][key] = st
             continue
         got, why = None, ""
-        res = yahoo(t)
-        if res:
-            ok, why = agrees(res[1], e["prices"])
-            got = res if ok else None
-        if got is None and tkey and asked < room:
+        # a bankrupt company's ticker gains a Q (AKRX -> AKRXQ); the price history is under either
+        tries = [t] + ([t[:-1]] if len(t) == 5 and t.endswith("Q") else [])
+        for tt in tries:
+            res = yahoo(tt)
+            if res:
+                ok, why = agrees(res[1], e["prices"])
+                got = res if ok else None
+            if got:
+                break
+        for tt in tries:
+            if got is not None or not tkey or asked >= room:
+                break
             asked += 1
-            res = tiingo(t, tkey)
+            res = tiingo(tt, tkey)
             if res:
                 ok, why = agrees(res[1], e["prices"])
                 got = res if ok else None
