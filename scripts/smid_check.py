@@ -44,6 +44,24 @@ def load_closes(path: str) -> tuple[list[str], list[float]]:
     return d, c
 
 
+def spliced(live_path: str, archive_path: str) -> tuple[list[str], list[float]]:
+    """Live closes with the 2008-2017 archive in front, scaled to the live basis by the median
+    ratio over the days both have (as internal/core.Splice does)."""
+    d, c = load_closes(live_path)
+    ad, ac = load_closes(archive_path)
+    if not ad:
+        return d, c
+    if not d:
+        return ad, ac
+    live = dict(zip(d, c))
+    ratios = sorted(live[x] / y for x, y in zip(ad, ac) if x in live)
+    if not ratios:
+        return d, c
+    k = ratios[len(ratios) // 2]
+    head = [(x, y * k) for x, y in zip(ad, ac) if x < d[0]]
+    return [x for x, _ in head] + d, [y for _, y in head] + c
+
+
 def on(series, day: str, slack: int = 6):
     """The close on or before day, if within `slack` days."""
     d, c = series
@@ -81,12 +99,13 @@ def check(index: str, prices_for, fund=None, since: str = "", until: str = "9999
     if not spans or not files:
         return None
     cmap = BM.cusip_tickers(files)
+    nmap = BM.name_tickers(files, cmap)
     hold = {}   # quarter-end -> ticker -> value in dollars
     for f in files:
         q = os.path.basename(f)[:10]
         hold[q] = {}
         for r in csv.DictReader(open(f, newline="")):
-            t = BM.norm(r.get("ticker", "")) or cmap.get((r.get("cusip") or "")[:9], "")
+            t = BM.ticker_of(r, cmap, nmap)
             try:
                 v = float(r["value_usd"])
             except (TypeError, ValueError):
@@ -145,7 +164,8 @@ def main() -> int:
     def prices_for(t: str):
         if t not in cache:
             p = paths.get(t) or os.path.join("data/prices_departed", t.lower().replace(".", "-") + ".csv")
-            cache[t] = load_closes(p) if os.path.exists(p) else None
+            arch = os.path.join("data/prices_archive", os.path.basename(p))
+            cache[t] = spliced(p, arch) if os.path.exists(p) else None
         return cache[t]
 
     lines = [f"# Mid and small-cap index check, {dt.date.today().isoformat()}", "",
