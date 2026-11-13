@@ -28,6 +28,8 @@ class FundHoldingsTest(unittest.TestCase):
     def test_intervals(self):
         snaps = [("2020-03-31", {"A", "B"}), ("2020-06-30", {"A"}), ("2020-09-30", {"A", "B", "C"})]
         self.assertEqual(BM.intervals(snaps), [("A", "2020-03-31", ""), ("B", "2020-03-31", "2020-06-30"), ("B", "2020-09-30", ""), ("C", "2020-09-30", "")])
+        gap = [("2014-09-30", {"A"}), ("2019-09-30", {"A"})]
+        self.assertEqual(BM.intervals(gap), [("A", "2014-09-30", "2014-10-01"), ("A", "2019-09-30", "")])
 
 
 if __name__ == "__main__":

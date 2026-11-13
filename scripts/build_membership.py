@@ -84,10 +84,20 @@ def cusip_tickers(files: list[str]) -> dict[str, str]:
     return m
 
 
+MAX_GAP = 200   # days: more than two quarters between schedules on file and membership is unknown
+
+
 def intervals(snaps: list[tuple[str, set[str]]]) -> list[tuple[str, str, str]]:
-    """[(ticker, start, end)] from dated sets of tickers, in date order."""
+    """[(ticker, start, end)] from dated sets of tickers, in date order. Across a gap of more
+    than two quarters with no schedule on file every span is closed the day after the last
+    schedule and reopened at the next, so the unknown stretch counts nobody."""
+    import datetime as dt
     out, open_ = [], {}
     for k, (d, ts) in enumerate(snaps):
+        if k and (dt.date.fromisoformat(d) - dt.date.fromisoformat(snaps[k - 1][0])).days > MAX_GAP:
+            stop = (dt.date.fromisoformat(snaps[k - 1][0]) + dt.timedelta(days=1)).isoformat()
+            out += [(t, s, stop) for t, s in open_.items()]
+            open_ = {}
         for t in ts:
             open_.setdefault(t, d)
         for t in list(open_):

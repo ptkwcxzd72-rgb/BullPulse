@@ -5,11 +5,11 @@ import unittest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 import fund_holdings_old as O  # noqa: E402
 
-NEW = ("iShares Core S&P Mid-Cap ETF \n (Percentages shown are based on Net Assets) \n | \n | \n Security | \n | \n Shares | \n | \n | \n Value | \n | \n Common Stocks \n | \n | \n"
+NEW = ("Schedule of Investments (Unaudited) \n iShares ® Core S&P Mid-Cap ETF \n (Percentages shown are based on Net Assets) \n | \n | \n Security | \n | \n Shares | \n | \n | \n Value | \n | \n Common Stocks \n | \n | \n"
        " Aerospace & Defense — 1.0% | \n | \n Curtiss-Wright Corp. (a) \n | \n | \n | \n 1,233,306 | \n | \n | \n $ | \n 125,945,209 | \n | \n"
        " Esterline Technologies Corp. (a)(b) \n | \n | \n | \n 747,229 | \n | \n | \n | \n 90,750,962 | \n | \n | \n | \n 426,828,529 | \n | \n"
-       "iShares Core S&P Mid-Cap 400 Growth ETF \n | \n Other Co. \n | \n 5 | \n 6 | \n"
-       "iShares Core S&P Mid-Cap ETF \n | \n B/E Aerospace\nInc. a \n | \n | \n | \n 1,458,760 | \n | \n | \n | \n 126,955,883 | \n | \n Total Common Stocks | 1 | 2 |")
+       "Schedule of Investments \n iSHARES ® S&P MID-CAP 400 GROWTH ETF \n | \n Other Co. \n | \n 5 | \n 6 | \n"
+       "Schedule of Investments (continued) \n iSHARES ® S&P MIDCAP 400 INDEX\nFUND \n December 31, 2008 \n | \n B/E Aerospace\nInc. a \n | \n | \n | \n 1,458,760 | \n | \n | \n | \n 126,955,883 | \n | \n Total Common Stocks | 1 | 2 |")
 
 
 class OldHoldingsTest(unittest.TestCase):

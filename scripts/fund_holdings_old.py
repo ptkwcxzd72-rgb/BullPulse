@@ -52,15 +52,31 @@ def clean_name(n: str) -> str:
     return n.strip(" ,")
 
 
+FUND_NAME = {
+    # the fund's own schedule, not its growth or value siblings: the name ends right after the index
+    "ijh": re.compile(r"S&P MID-?CAP(?: 400)?(?: INDEX)? (?:FUND|ETF)\b"),
+    "ijr": re.compile(r"S&P SMALL-?CAP(?: 600)?(?: INDEX)? (?:FUND|ETF)\b"),
+}
+ANCHOR = re.compile(r"(?i)schedule of investments")
+
+
+def which_fund(window: str) -> str:
+    w = re.sub(r"\s+", " ", window.upper().replace("®", " ").replace("\u00ae", " "))
+    for fund, rx in FUND_NAME.items():
+        if rx.search(w):
+            return fund
+    return ""
+
+
 def sections(text: str, fund: str) -> list[str]:
-    """The pages of one fund's schedule: from each of its headings to the next fund's heading."""
-    target = re.compile(HEADINGS[fund], re.I)
-    heads = [(m.start(), bool(target.fullmatch(re.sub(r"(?i)^(ishares\s+)?(core\s+)?", "", m.group(1).strip()))))
-             for m in FUND_LINE.finditer(text)]
+    """The pages of one fund's schedule. Every page starts 'Schedule of Investments' with the
+    fund's name in the next few lines (or, in some reports, just before)."""
+    starts = [m.start() for m in ANCHOR.finditer(text)]
     out = []
-    for k, (pos, mine) in enumerate(heads):
-        if mine:
-            end = heads[k + 1][0] if k + 1 < len(heads) else len(text)
+    for k, pos in enumerate(starts):
+        end = starts[k + 1] if k + 1 < len(starts) else len(text)
+        who = which_fund(text[pos: min(end, pos + 300)]) or which_fund(text[max(0, pos - 250): pos])
+        if who == fund:
             out.append(text[pos:end])
     return out
 
