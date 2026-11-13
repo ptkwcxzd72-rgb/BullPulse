@@ -1,39 +1,104 @@
 {
- "asof": "2026-11-11",
- "checked": 845,
+ "asof": "2026-11-12",
+ "checked": 1823,
  "excluded": [],
  "flagged": [
   {
-   "id": "LSE-GDWN",
-   "reason": "price moved -48% on 23 Mar 2026; history will be re-downloaded in case of an unadjusted split"
-  },
-  {
-   "id": "LSE-RPI",
-   "reason": "price moved +47% on 31 Mar 2026; history will be re-downloaded in case of an unadjusted split"
-  },
-  {
-   "id": "LSE-ROR",
-   "reason": "price moved +67% on 16 Jul 2026; history will be re-downloaded in case of an unadjusted split"
-  },
-  {
-   "id": "LSE-SPI",
-   "reason": "price moved +49% on 14 May 2026; history will be re-downloaded in case of an unadjusted split"
-  },
-  {
-   "id": "LSE-TATE",
-   "reason": "price moved +45% on 14 May 2026; history will be re-downloaded in case of an unadjusted split"
-  },
-  {
    "id": "US-MRNA",
    "reason": "price moved +177% on 19 Aug 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-CAR",
+   "reason": "price moved -48% on 23 Apr 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-CORT",
+   "reason": "price moved -50% on 31 Dec 2025; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-KD",
+   "reason": "price moved -55% on 9 Feb 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-SLAB",
+   "reason": "price moved +49% on 4 Feb 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-STRL",
+   "reason": "price moved +52% on 5 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-CRSR",
+   "reason": "price moved +48% on 13 Feb 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-EFOR",
+   "reason": "price moved -52% on 23 Apr 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-FMC",
+   "reason": "price moved -47% on 30 Oct 2025; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-LQDA",
+   "reason": "price moved -57% on 30 Sep 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-HZO",
+   "reason": "price moved +46% on 10 Aug 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-MXL",
+   "reason": "price moved +76% on 24 Apr 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-PLAB",
+   "reason": "price moved +45% on 10 Dec 2025; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-PRIM",
+   "reason": "price moved -50% on 6 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-LRN",
+   "reason": "price moved -54% on 29 Oct 2025; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-VCYT",
+   "reason": "price moved -54% on 5 Nov 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-VRRM",
+   "reason": "price moved -71% on 27 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-VSXY",
+   "reason": "price moved +47% on 2 Jun 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "US-ZD",
+   "reason": "price moved +48% on 3 Mar 2026; history will be re-downloaded in case of an unadjusted split"
   }
  ],
  "resync": [
-  "uk-gdwn",
-  "uk-rpi",
-  "uk-ror",
-  "uk-spi",
-  "uk-tate",
-  "mrna"
+  "mrna",
+  "car",
+  "cort",
+  "kd",
+  "slab",
+  "strl",
+  "crsr",
+  "efor",
+  "fmc",
+  "lqda",
+  "hzo",
+  "mxl",
+  "plab",
+  "prim",
+  "lrn",
+  "vcyt",
+  "vrrm",
+  "vsxy",
+  "zd"
  ]
 }
