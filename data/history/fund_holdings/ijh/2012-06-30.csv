@@ -1,0 +1,401 @@
+name,cusip,isin,ticker,shares,value_usd,pct
+Lamar Advertising Co. Class A,,,,530934.0,15184712.0,0.150165
+Alliant Techsystems Inc.,,,,301646.0,15254238.0,0.150852
+BE Aerospace Inc.,,,,943522.0,41194170.0,0.407378
+Esterline Technologies Corp.,,,,279708.0,17439794.0,0.172466
+Exelis Inc.,,,,1687227.0,16636058.0,0.164518
+Triumph Group Inc.,,,,451854.0,25425825.0,0.251441
+Universal Corp.,,,,212435.0,9842114.0,0.097331
+Alaska Air Group Inc.,,,,644253.0,23128683.0,0.228725
+JetBlue Airways Corp.,,,,2079427.0,11020963.0,0.108989
+Carter’s Inc.,,,,465524.0,24486562.0,0.242153
+Deckers Outdoor Corp.,,,,350008.0,15403852.0,0.152332
+Hanesbrands Inc.,,,,886725.0,24588884.0,0.243165
+Under Armour Inc. Class A,,,,336208.0,31764932.0,0.31413
+Warnaco Group Inc. (The),,,,370915.0,15793561.0,0.156186
+Oshkosh Corp.,,,,829580.0,17379701.0,0.171872
+Associated Banc-Corp,,,,1579194.0,20829569.0,0.205988
+BancorpSouth Inc.,,,,741537.0,10767117.0,0.106478
+Bank of Hawaii Corp.,,,,413421.0,18996695.0,0.187862
+Cathay General Bancorp,,,,710700.0,11733657.0,0.116037
+City National Corp.,,,,425112.0,20651941.0,0.204232
+Commerce Bancshares Inc.,,,,715867.0,27131359.0,0.268308
+Cullen/Frost Bankers Inc.,,,,557502.0,32050790.0,0.316957
+East West Bancorp Inc.,,,,1309096.0,30711392.0,0.303712
+FirstMerit Corp.,,,,997862.0,16484680.0,0.163021
+Fulton Financial Corp.,,,,1816913.0,18150961.0,0.179499
+Hancock Holding Co.,,,,769801.0,23432743.0,0.231731
+International Bancshares Corp.,,,,479142.0,9352852.0,0.092492
+Prosperity Bancshares Inc.,,,,430867.0,18109340.0,0.179087
+Signature Bank,,,,419667.0,25587097.0,0.253036
+SVB Financial Group,,,,400745.0,23531746.0,0.232711
+Synovus Financial Corp.,,,,6768135.0,13400907.0,0.132524
+TCF Financial Corp.,,,,1466566.0,16836178.0,0.166497
+Trustmark Corp.,,,,586422.0,14355611.0,0.141966
+Valley National Bancorp,,,,1794499.0,19021689.0,0.18811
+Webster Financial Corp.,,,,671841.0,14552076.0,0.143909
+Westamerica Bancorp,,,,253053.0,11941571.0,0.118093
+Green Mountain Coffee Roasters Inc.,,,,1182045.0,25744940.0,0.254597
+Bio-Rad Laboratories Inc. Class A,,,,179038.0,17905590.0,0.177072
+Charles River Laboratories International Inc.,,,,442633.0,14500657.0,0.1434
+Regeneron Pharmaceuticals Inc.,,,,707587.0,80820587.0,0.799252
+United Therapeutics Corp.,,,,487210.0,24058430.0,0.237919
+Vertex Pharmaceuticals Inc.,,,,1914599.0,107064376.0,1.058783
+Fortune Brands Home & Security Inc.,,,,1449302.0,32275956.0,0.319184
+Lennox International Inc.,,,,461680.0,21528138.0,0.212896
+Louisiana-Pacific Corp.,,,,1253139.0,13634152.0,0.134831
+Martin Marietta Materials Inc.,,,,413149.0,32564404.0,0.322036
+Albemarle Corp.,,,,808833.0,48238800.0,0.477044
+Ashland Inc.,,,,711526.0,49315867.0,0.487695
+Cabot Corp.,,,,575890.0,23438723.0,0.231791
+Cytec Industries Inc.,,,,418066.0,24515390.0,0.242438
+Intrepid Potash Inc.,,,,481077.0,10949313.0,0.10828
+Minerals Technologies Inc.,,,,161996.0,10332105.0,0.102176
+NewMarket Corp.,,,,96099.0,20815043.0,0.205844
+Olin Corp.,,,,725125.0,15147861.0,0.1498
+RPM International Inc.,,,,1194060.0,32478432.0,0.321186
+Sensient Technologies Corp.,,,,453991.0,16675090.0,0.164904
+Valspar Corp. (The),,,,826878.0,43402826.0,0.42922
+Arch Coal Inc.,,,,1927388.0,13279703.0,0.131326
+Patriot Coal Corp.,,,,788.0,962.0,1e-05
+Aaron’s Inc.,,,,689893.0,19530871.0,0.193145
+Alliance Data Systems Corp.,,,,456820.0,61670700.0,0.609875
+Brink’s Co. (The),,,,427437.0,9907990.0,0.097982
+Convergys Corp.,,,,1058000.0,15626660.0,0.154535
+CoreLogic Inc.,,,,965977.0,17687039.0,0.174911
+Corporate Executive Board Co. (The),,,,304449.0,12445875.0,0.12308
+Corrections Corp. of America,,,,908763.0,26763070.0,0.264666
+Deluxe Corp.,,,,465422.0,11607625.0,0.11479
+FTI Consulting Inc.,,,,379711.0,10916691.0,0.107958
+Gartner Inc.,,,,846327.0,36434377.0,0.360307
+Global Payments Inc.,,,,712772.0,30813134.0,0.304718
+HMS Holdings Corp.,,,,780885.0,26011279.0,0.257231
+ITT Educational Services Inc.,,,,163219.0,9915554.0,0.098057
+Korn/Ferry International,,,,436592.0,6265095.0,0.061957
+Lender Processing Services Inc.,,,,765924.0,19362559.0,0.191481
+Manpower Inc.,,,,728531.0,26700661.0,0.264049
+Matthews International Corp. Class A,,,,255554.0,8302949.0,0.08211
+Monster Worldwide Inc.,,,,1099887.0,9349040.0,0.092455
+Rent-A-Center Inc.,,,,537838.0,18146654.0,0.179456
+Rollins Inc.,,,,584451.0,13074169.0,0.129293
+SEI Investments Co.,,,,1308557.0,26027199.0,0.257389
+Service Corp. International,,,,1973100.0,24407247.0,0.241369
+Sotheby’s,,,,612595.0,20436169.0,0.202098
+Strayer Education Inc.,,,,108050.0,11779611.0,0.116491
+Towers Watson & Co. Class A,,,,462432.0,27699677.0,0.273928
+United Rentals Inc.,,,,764852.0,26035562.0,0.257471
+Valassis Communications Inc.,,,,390287.0,8488742.0,0.083947
+Wright Express Corp.,,,,353016.0,21788148.0,0.215468
+Cadence Design Systems Inc.,,,,2490679.0,27372562.0,0.270693
+Diebold Inc.,,,,570967.0,21074392.0,0.208409
+DST Systems Inc.,,,,308908.0,16776794.0,0.165909
+Jack Henry & Associates Inc.,,,,792492.0,27356824.0,0.270538
+Mentor Graphics Corp.,,,,849850.0,12747750.0,0.126065
+MICROS Systems Inc.,,,,729992.0,37375590.0,0.369615
+NCR Corp.,,,,1439930.0,32729609.0,0.32367
+Riverbed Technology Inc.,,,,1438781.0,23236313.0,0.229789
+Synopsys Inc.,,,,1336570.0,39335255.0,0.388995
+Arrow Electronics Inc.,,,,1013945.0,33267535.0,0.32899
+Ingram Micro Inc. Class A,,,,1380985.0,24125808.0,0.238585
+LKQ Corp.,,,,1336818.0,44649721.0,0.441551
+Owens & Minor Inc.,,,,576138.0,17647107.0,0.174516
+Watsco Inc.,,,,267777.0,19761943.0,0.19543
+Affiliated Managers Group Inc.,,,,465847.0,50986954.0,0.504221
+CBOE Holdings Inc.,,,,794624.0,21995192.0,0.217515
+Eaton Vance Corp.,,,,1047042.0,28217782.0,0.279052
+Greenhill & Co. Inc.,,,,264215.0,9419265.0,0.093149
+Janus Capital Group Inc.,,,,1704034.0,13325546.0,0.131779
+Jefferies Group Inc.,,,,1363729.0,17714840.0,0.175186
+Raymond James Financial Inc.,,,,1010875.0,34612360.0,0.342289
+Waddell & Reed Financial Inc. Class A,,,,782441.0,23692313.0,0.234298
+Alliant Energy Corp.,,,,1005211.0,45807465.0,0.453
+Black Hills Corp.,,,,401375.0,12912234.0,0.127692
+Cleco Corp.,,,,552557.0,23113459.0,0.228574
+Great Plains Energy Inc.,,,,1389569.0,29750672.0,0.294211
+Hawaiian Electric Industries Inc.,,,,878166.0,25045294.0,0.247678
+IDACORP Inc.,,,,453208.0,19070993.0,0.188597
+MDU Resources Group Inc.,,,,1713237.0,37023052.0,0.366129
+National Fuel Gas Co.,,,,756000.0,35516880.0,0.351234
+NV Energy Inc.,,,,2141186.0,37642050.0,0.37225
+OGE Energy Corp.,,,,893989.0,46299690.0,0.457868
+PNM Resources Inc.,,,,721051.0,14089337.0,0.139333
+Westar Energy Inc.,,,,1142682.0,34223326.0,0.338442
+Acuity Brands Inc.,,,,384546.0,19577237.0,0.193604
+AMETEK Inc.,,,,1458167.0,72777115.0,0.719709
+Energizer Holdings Inc.,,,,592835.0,44610834.0,0.441166
+General Cable Corp.,,,,449420.0,11657955.0,0.115288
+Hubbell Inc. Class B,,,,536878.0,41844271.0,0.413807
+Avnet Inc.,,,,1317214.0,40649224.0,0.401989
+Gentex Corp.,,,,1309993.0,27339554.0,0.270367
+Itron Inc.,,,,363896.0,15007071.0,0.148408
+Mettler-Toledo International Inc.,,,,285673.0,44522137.0,0.440289
+National Instruments Corp.,,,,844033.0,22670727.0,0.224196
+Tech Data Corp.,,,,361875.0,17431519.0,0.172384
+Trimble Navigation Ltd.,,,,1134730.0,52208927.0,0.516305
+Vishay Intertechnology Inc.,,,,1303946.0,12296211.0,0.1216
+Woodward Inc.,,,,545228.0,21503792.0,0.212656
+AECOM Technology Corp.,,,,1024712.0,16856512.0,0.166698
+Granite Construction Inc.,,,,313787.0,8192979.0,0.081022
+KBR Inc.,,,,1347136.0,33287731.0,0.32919
+Shaw Group Inc. (The),,,,595716.0,16269004.0,0.160888
+URS Corp.,,,,688347.0,24009543.0,0.237436
+Bally Technologies Inc.,,,,391431.0,18264170.0,0.180618
+Cinemark Holdings Inc.,,,,928185.0,21209027.0,0.209741
+DreamWorks Animation SKG Inc. Class A,,,,645576.0,12304679.0,0.121684
+International Speedway Corp. Class A,,,,251075.0,6573144.0,0.065003
+Scientific Games Corp. Class A,,,,532925.0,4556509.0,0.04506
+Clean Harbors Inc.,,,,430446.0,24285764.0,0.240167
+Mine Safety Appliances Co.,,,,281622.0,11332469.0,0.112069
+Waste Connections Inc.,,,,1117001.0,33420670.0,0.330504
+Flowers Foods Inc.,,,,1021078.0,23719642.0,0.234569
+Harris Teeter Supermarkets Inc.,,,,446953.0,18320603.0,0.181176
+Hillshire Brands Co.,,,,1075994.0,31193066.0,0.308475
+Ingredion Inc.,,,,693528.0,34343507.0,0.33963
+Lancaster Colony Corp.,,,,179975.0,12816020.0,0.12674
+Post Holdings Inc.,,,,248026.0,7626799.0,0.075423
+Ralcorp Holdings Inc.,,,,500887.0,33429198.0,0.330589
+Smithfield Foods Inc.,,,,1463640.0,31658533.0,0.313078
+SUPERVALU Inc.,,,,1914334.0,9916250.0,0.098064
+Tootsie Roll Industries Inc.,,,,232475.0,5546854.0,0.054854
+Domtar Corp.,,,,328549.0,25202994.0,0.249238
+Atmos Energy Corp.,,,,815942.0,28615086.0,0.282981
+Questar Corp.,,,,1619099.0,33774405.0,0.334002
+UGI Corp.,,,,1019804.0,30012832.0,0.296803
+Vectren Corp.,,,,744143.0,21967101.0,0.217237
+WGL Holdings Inc.,,,,467277.0,18574261.0,0.183685
+Kennametal Inc.,,,,724498.0,24017109.0,0.23751
+Lincoln Electric Holdings Inc.,,,,759246.0,33247382.0,0.328791
+Regal Beloit Corp.,,,,378174.0,23545113.0,0.232843
+Cooper Companies Inc. (The),,,,429022.0,34218795.0,0.338397
+Gen-Probe Inc.,,,,414004.0,34031129.0,0.336541
+Henry Schein Inc.,,,,815248.0,63988815.0,0.632799
+Hill-Rom Holdings Inc.,,,,561396.0,17319067.0,0.171272
+Hologic Inc.,,,,2398781.0,43274009.0,0.427946
+IDEXX Laboratories Inc.,,,,499942.0,48059424.0,0.47527
+Masimo Corp.,,,,519015.0,11615556.0,0.114869
+ResMed Inc.,,,,1293981.0,40372207.0,0.399249
+Steris Corp.,,,,522427.0,16388535.0,0.16207
+TECHNE Corp.,,,,333363.0,24735535.0,0.244615
+Teleflex Inc.,,,,370105.0,22543095.0,0.222934
+Thoratec Corp.,,,,533860.0,17927019.0,0.177284
+AMERIGROUP Corp.,,,,440037.0,29002839.0,0.286815
+Community Health Systems Inc.,,,,823461.0,23081612.0,0.228259
+Covance Inc.,,,,503800.0,24106830.0,0.238398
+Health Management Associates Inc. Class A,,,,2322997.0,18235527.0,0.180335
+Health Net Inc.,,,,756355.0,18356736.0,0.181534
+LifePoint Hospitals Inc.,,,,441632.0,18098079.0,0.178976
+Lincare Holdings Inc.,,,,784669.0,26694439.0,0.263987
+MEDNAX Inc.,,,,446507.0,30603590.0,0.302646
+Universal Health Services Inc. Class B,,,,877071.0,37854384.0,0.37435
+WellCare Health Plans Inc.,,,,391330.0,20740490.0,0.205107
+Apollo Investment Corp.,,,,1848588.0,14197156.0,0.140399
+KB Home,,,,659273.0,6460875.0,0.063893
+M.D.C. Holdings Inc.,,,,342060.0,11175100.0,0.110513
+NVR Inc.,,,,46042.0,39135700.0,0.387021
+Thor Industries Inc.,,,,382748.0,10491123.0,0.103749
+Toll Brothers Inc.,,,,1329679.0,39531357.0,0.390934
+Tempur-Pedic International Inc.,,,,577213.0,13501012.0,0.133514
+Church & Dwight Co. Inc.,,,,1260085.0,69896915.0,0.691226
+Scotts Miracle-Gro Co. (The) Class A,,,,394583.0,16225253.0,0.160455
+Tupperware Brands Corp.,,,,506645.0,27743880.0,0.274365
+Alleghany Corp.,,,,132014.0,44851756.0,0.443549
+American Financial Group Inc.,,,,687211.0,26959288.0,0.266606
+Arthur J. Gallagher & Co.,,,,1074730.0,37690781.0,0.372732
+Aspen Insurance Holdings Ltd.,,,,647239.0,18705207.0,0.18498
+Brown & Brown Inc.,,,,1051824.0,28683240.0,0.283655
+Everest Re Group Ltd.,,,,478411.0,49510754.0,0.489623
+Fidelity National Financial Inc. Class A,,,,2017795.0,38862732.0,0.384322
+First American Financial Corp.,,,,963018.0,16332785.0,0.161518
+Hanover Insurance Group Inc. (The),,,,407842.0,15958857.0,0.157821
+HCC Insurance Holdings Inc.,,,,916131.0,28766513.0,0.284478
+Kemper Corp.,,,,450513.0,13853275.0,0.136998
+Mercury General Corp.,,,,310068.0,12920534.0,0.127774
+Old Republic International Corp.,,,,2356795.0,19537831.0,0.193214
+Protective Life Corp.,,,,735894.0,21642643.0,0.214029
+Reinsurance Group of America Inc.,,,,667657.0,35526029.0,0.351325
+StanCorp Financial Group Inc.,,,,401634.0,14924719.0,0.147594
+W.R. Berkley Corp.,,,,1015492.0,39522949.0,0.390851
+AOL Inc.,,,,849655.0,23858313.0,0.23594
+Equinix Inc.,,,,436131.0,76606410.0,0.757577
+Rackspace Hosting Inc.,,,,967521.0,42512873.0,0.420419
+TIBCO Software Inc.,,,,1495286.0,44738957.0,0.442433
+Carpenter Technology Corp.,,,,398684.0,19073043.0,0.188617
+Commercial Metals Co.,,,,1056184.0,13350166.0,0.132023
+Reliance Steel & Aluminum Co.,,,,682837.0,34483268.0,0.341013
+Steel Dynamics Inc.,,,,1989228.0,23373429.0,0.231145
+Life Time Fitness Inc.,,,,388397.0,18064345.0,0.178642
+Polaris Industries Inc.,,,,622713.0,44511525.0,0.440184
+WMS Industries Inc.,,,,499812.0,9971249.0,0.098608
+AGCO Corp.,,,,882041.0,40335735.0,0.398889
+Gardner Denver Inc.,,,,455117.0,24080241.0,0.238135
+Graco Inc.,,,,548076.0,25255342.0,0.249756
+IDEX Corp.,,,,762227.0,29711608.0,0.293825
+Nordson Corp.,,,,514618.0,26394757.0,0.261023
+Terex Corp.,,,,1002720.0,17878498.0,0.176804
+Wabtec Corp.,,,,437031.0,34092788.0,0.337151
+Zebra Technologies Corp. Class A,,,,471487.0,16200293.0,0.160208
+AptarGroup Inc.,,,,604421.0,30855692.0,0.305139
+Carlisle Companies Inc.,,,,564396.0,29924276.0,0.295928
+CLARCOR Inc.,,,,456574.0,21988604.0,0.21745
+Crane Co.,,,,446564.0,16245998.0,0.16066
+Donaldson Co. Inc.,,,,1349152.0,45021202.0,0.445224
+Harsco Corp.,,,,729176.0,14860607.0,0.14696
+ITT Corp.,,,,837599.0,14741742.0,0.145784
+Pentair Inc.,,,,897280.0,34347879.0,0.339674
+SPX Corp.,,,,458615.0,29956732.0,0.296249
+Trinity Industries Inc.,,,,727157.0,18164382.0,0.179632
+AMC Networks Inc. Class A,,,,522185.0,18563677.0,0.18358
+FactSet Research Systems Inc.,,,,407073.0,37833365.0,0.374142
+John Wiley & Sons Inc. Class A,,,,424187.0,20780921.0,0.205507
+Meredith Corp.,,,,339707.0,10850241.0,0.1073
+New York Times Co. (The) Class A,,,,1108129.0,8643406.0,0.085477
+Scholastic Corp.,,,,229911.0,6474294.0,0.064026
+Timken Co. (The),,,,761609.0,34874076.0,0.344877
+Valmont Industries Inc.,,,,204529.0,24741873.0,0.244678
+Worthington Industries Inc.,,,,479028.0,9805703.0,0.096971
+Compass Minerals International Inc.,,,,299840.0,22871795.0,0.226184
+Royal Gold Inc.,,,,540500.0,42375200.0,0.419058
+Herman Miller Inc.,,,,529791.0,9811729.0,0.09703
+HNI Corp.,,,,415369.0,10695752.0,0.105773
+Atwood Oceanics Inc.,,,,514520.0,19469437.0,0.192537
+Bill Barrett Corp.,,,,437843.0,9378597.0,0.092747
+Cimarex Energy Co.,,,,777699.0,42866769.0,0.423919
+Energen Corp.,,,,655853.0,29598646.0,0.292707
+Forest Oil Corp.,,,,1075771.0,7885401.0,0.07798
+HollyFrontier Corp.,,,,1876064.0,66468947.0,0.657326
+Northern Oil and Gas Inc.,,,,580069.0,9246300.0,0.091439
+Patterson-UTI Energy Inc.,,,,1413351.0,20578391.0,0.203504
+Plains Exploration & Production Co.,,,,1167695.0,41079510.0,0.406244
+Quicksilver Resources Inc.,,,,1095261.0,5936315.0,0.058706
+SM Energy Co.,,,,582942.0,28628282.0,0.283111
+Unit Corp.,,,,378751.0,13972124.0,0.138173
+CARBO Ceramics Inc.,,,,179745.0,13791834.0,0.13639
+Dresser-Rand Group Inc.,,,,687326.0,30613500.0,0.302744
+Dril-Quip Inc.,,,,314439.0,20624054.0,0.203956
+Helix Energy Solutions Group Inc.,,,,956883.0,15702450.0,0.155285
+Oceaneering International Inc.,,,,981194.0,46959945.0,0.464397
+Oil States International Inc.,,,,468955.0,31044821.0,0.307009
+Superior Energy Services Inc.,,,,1427360.0,28875493.0,0.285556
+Greif Inc. Class A,,,,277273.0,11368193.0,0.112423
+Packaging Corp. of America,,,,888966.0,25104400.0,0.248263
+Rock-Tenn Co. Class A,,,,640025.0,34913364.0,0.345266
+Silgan Holdings Inc.,,,,450384.0,19226893.0,0.190139
+Sonoco Products Co.,,,,914271.0,27565270.0,0.272599
+Catalyst Health Solutions Inc.,,,,458529.0,42844950.0,0.423703
+Endo Health Solutions Inc.,,,,1061513.0,32885673.0,0.325214
+Medicis Pharmaceutical Corp. Class A,,,,538327.0,18383867.0,0.181802
+Omnicare Inc.,,,,1023132.0,31952412.0,0.315984
+VCA Antech Inc.,,,,791692.0,17401390.0,0.172086
+Jones Lang LaSalle Inc.,,,,396644.0,27911838.0,0.276026
+Alexandria Real Estate Equities Inc.,,,,562731.0,40921798.0,0.404685
+American Campus Communities Inc.,,,,678237.0,30507100.0,0.301691
+BioMed Realty Trust Inc.,,,,1396171.0,26080474.0,0.257915
+BRE Properties Inc. Class A,,,,696586.0,34843232.0,0.344572
+Camden Property Trust,,,,728125.0,49272219.0,0.487264
+Corporate Office Properties Trust,,,,652142.0,15331858.0,0.15162
+Duke Realty Corp.,,,,2419926.0,35427717.0,0.350352
+Equity One Inc.,,,,538908.0,11424850.0,0.112983
+Essex Property Trust Inc.,,,,319358.0,49155583.0,0.48611
+Federal Realty Investment Trust,,,,579829.0,60354401.0,0.596858
+Highwoods Properties Inc.,,,,665873.0,22406627.0,0.221584
+Home Properties Inc.,,,,441772.0,27107130.0,0.268068
+Hospitality Properties Trust,,,,1122811.0,27812029.0,0.275039
+Liberty Property Trust,,,,1066124.0,39276008.0,0.388409
+Macerich Co. (The),,,,1202569.0,71011700.0,0.70225
+Mack-Cali Realty Corp.,,,,797391.0,23180156.0,0.229234
+National Retail Properties Inc.,,,,970817.0,27464413.0,0.271602
+Omega Healthcare Investors Inc.,,,,958388.0,21563730.0,0.213248
+Potlatch Corp.,,,,367363.0,11733574.0,0.116036
+Rayonier Inc.,,,,1106118.0,49664698.0,0.491145
+Realty Income Corp.,,,,1209066.0,50502687.0,0.499432
+Regency Centers Corp.,,,,815920.0,38813314.0,0.383833
+Senior Housing Properties Trust,,,,1473273.0,32883453.0,0.325192
+SL Green Realty Corp.,,,,813154.0,65247477.0,0.645246
+Taubman Centers Inc.,,,,532288.0,41071342.0,0.406163
+UDR Inc.,,,,2272080.0,58710547.0,0.580601
+Weingarten Realty Investors,,,,1098958.0,28946554.0,0.286259
+Advance Auto Parts Inc.,,,,666442.0,45464673.0,0.44961
+Aeropostale Inc.,,,,736395.0,13129923.0,0.129845
+American Eagle Outfitters Inc.,,,,1779809.0,35115632.0,0.347266
+ANN INC.,,,,441469.0,11253045.0,0.111284
+Ascena Retail Group Inc.,,,,1231530.0,22931089.0,0.226771
+Barnes & Noble Inc.,,,,373977.0,6155661.0,0.060875
+Bob Evans Farms Inc.,,,,262952.0,10570670.0,0.104536
+Brinker International Inc.,,,,685132.0,21835157.0,0.215933
+Cheesecake Factory Inc. (The),,,,490073.0,15662733.0,0.154892
+Chico’s FAS Inc.,,,,1522572.0,22594969.0,0.223447
+Collective Brands Inc.,,,,559220.0,11978492.0,0.118458
+Copart Inc.,,,,945337.0,22395034.0,0.221469
+Dick’s Sporting Goods Inc.,,,,856668.0,41120064.0,0.406645
+Foot Locker Inc.,,,,1377221.0,42115418.0,0.416488
+Guess? Inc.,,,,588122.0,17861265.0,0.176634
+HSN Inc.,,,,356219.0,14373437.0,0.142142
+MSC Industrial Direct Co. Inc. Class A,,,,418742.0,27448538.0,0.271445
+Office Depot Inc.,,,,2566969.0,5544653.0,0.054832
+Panera Bread Co. Class A,,,,269469.0,37574757.0,0.371585
+PetSmart Inc.,,,,983329.0,67043371.0,0.663006
+PVH Corp.,,,,638460.0,49665803.0,0.491156
+RadioShack Corp.,,,,907991.0,3486685.0,0.034481
+Regis Corp.,,,,524632.0,9422391.0,0.09318
+Saks Inc.,,,,1450853.0,15451585.0,0.152804
+Signet Jewelers Ltd.,,,,770825.0,33924008.0,0.335482
+Tractor Supply Co.,,,,653683.0,54294910.0,0.536934
+Wendy’s Co. (The),,,,2678953.0,12644658.0,0.125046
+Williams-Sonoma Inc.,,,,901718.0,31533079.0,0.311837
+World Fuel Services Corp.,,,,651698.0,24784075.0,0.245095
+Astoria Financial Corp.,,,,765517.0,7502067.0,0.07419
+First Niagara Financial Group Inc.,,,,3198140.0,24465771.0,0.241947
+New York Community Bancorp Inc.,,,,3983001.0,49907002.0,0.493541
+Washington Federal Inc.,,,,971704.0,16412081.0,0.162303
+Atmel Corp.,,,,4035899.0,27040523.0,0.26741
+Cree Inc.,,,,1050288.0,26960893.0,0.266622
+Cypress Semiconductor Corp.,,,,1383510.0,18290002.0,0.180874
+Fairchild Semiconductor International Inc.,,,,1150406.0,16220725.0,0.16041
+Integrated Device Technology Inc.,,,,1292196.0,7262142.0,0.071817
+International Rectifier Corp.,,,,631120.0,12616089.0,0.124763
+Intersil Corp. Class A,,,,1154436.0,12294743.0,0.121585
+MEMC Electronic Materials Inc.,,,,2109585.0,4577799.0,0.045271
+Qlogic Corp.,,,,882987.0,12088092.0,0.119542
+Rovi Corp.,,,,1004856.0,19715275.0,0.194969
+Semtech Corp.,,,,594197.0,14450871.0,0.142908
+Silicon Laboratories Inc.,,,,390658.0,14805938.0,0.146419
+Skyworks Solutions Inc.,,,,1719558.0,47064303.0,0.465429
+Huntington Ingalls Industries Inc.,,,,447403.0,18003497.0,0.17804
+ACI Worldwide Inc.,,,,362233.0,16014321.0,0.158369
+Acxiom Corp.,,,,694409.0,10492520.0,0.103763
+Advent Software Inc.,,,,289220.0,7840754.0,0.077539
+Allscripts Healthcare Solutions Inc.,,,,1727652.0,18883236.0,0.18674
+ANSYS Inc.,,,,845003.0,53328139.0,0.527374
+Broadridge Financial Solutions Inc.,,,,1132746.0,24093507.0,0.238266
+Compuware Corp.,,,,1981049.0,18403945.0,0.182001
+Concur Technologies Inc.,,,,426381.0,29036546.0,0.287149
+Fair Isaac Corp.,,,,310698.0,13136312.0,0.129908
+Informatica Corp.,,,,980900.0,41550924.0,0.410906
+ManTech International Corp. Class A,,,,212398.0,4984981.0,0.049298
+MSCI Inc. Class A,,,,1101338.0,37467519.0,0.370524
+Parametric Technology Corp.,,,,1082957.0,22698779.0,0.224473
+Quest Software Inc.,,,,513715.0,14306963.0,0.141485
+Solera Holdings Inc.,,,,631814.0,26403507.0,0.26111
+VeriFone Systems Inc.,,,,976967.0,32327838.0,0.319697
+ADTRAN Inc.,,,,579456.0,17493777.0,0.173
+Ciena Corp.,,,,901412.0,14756115.0,0.145926
+NeuStar Inc. Class A,,,,607396.0,20287026.0,0.200623
+Plantronics Inc.,,,,386102.0,12895807.0,0.127529
+Polycom Inc.,,,,1621431.0,17057454.0,0.168685
+RF Micro Devices Inc.,,,,2516677.0,10695877.0,0.105774
+Telephone & Data Systems Inc.,,,,875759.0,18644909.0,0.184384
+Tellabs Inc.,,,,3336239.0,11109676.0,0.109866
+tw telecom inc.,,,,1363623.0,34990566.0,0.346029
+Mohawk Industries Inc.,,,,519901.0,36304687.0,0.359025
+Alexander & Baldwin Holdings Inc.,,,,382129.0,20348369.0,0.201229
+Con-way Inc.,,,,505929.0,18269096.0,0.180667
+J.B. Hunt Transport Services Inc.,,,,816924.0,48688671.0,0.481493
+Kansas City Southern Industries Inc.,,,,997786.0,69405994.0,0.686371
+Kirby Corp.,,,,507647.0,23900021.0,0.236352
+Landstar System Inc.,,,,426646.0,22066131.0,0.218217
+Tidewater Inc.,,,,465631.0,21586653.0,0.213475
+UTi Worldwide Inc.,,,,938775.0,13715503.0,0.135636
+Werner Enterprises Inc.,,,,406143.0,9702756.0,0.095953
+GATX Corp.,,,,423071.0,16288233.0,0.161078
+Aqua America Inc.,,,,1263289.0,31531693.0,0.311824
+Chicago Mercantile,,,,8455500.0,333230.0,0.003295
