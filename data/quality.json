@@ -1,8 +1,28 @@
 {
- "asof": "2026-11-12",
- "checked": 1823,
+ "asof": "2026-11-13",
+ "checked": 1828,
  "excluded": [],
  "flagged": [
+  {
+   "id": "LSE-GDWN",
+   "reason": "price moved -48% on 23 Mar 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-RPI",
+   "reason": "price moved +47% on 31 Mar 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-ROR",
+   "reason": "price moved +67% on 16 Jul 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-SPI",
+   "reason": "price moved +49% on 14 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
+  {
+   "id": "LSE-TATE",
+   "reason": "price moved +45% on 14 May 2026; history will be re-downloaded in case of an unadjusted split"
+  },
   {
    "id": "US-MRNA",
    "reason": "price moved +177% on 19 Aug 2026; history will be re-downloaded in case of an unadjusted split"
@@ -81,6 +101,11 @@
   }
  ],
  "resync": [
+  "uk-gdwn",
+  "uk-rpi",
+  "uk-ror",
+  "uk-spi",
+  "uk-tate",
   "mrna",
   "car",
   "cort",
