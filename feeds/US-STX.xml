@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-STX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Seagate Technology (STX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-STX</link>
+  <description>Alerts for Seagate Technology from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Seagate Technology: Rank moved up 29 places to #197 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STX</link>
+   <guid isPermaLink="false">2026-11-11-US-STX-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #197 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

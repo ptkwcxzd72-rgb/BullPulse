@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MGY.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Magnolia Oil &amp; Gas, Corp. (MGY)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MGY</link>
+  <description>Alerts for Magnolia Oil &amp; Gas, Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Magnolia Oil &amp; Gas, Corp.: Rank moved down 52 places to #672 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MGY</link>
+   <guid isPermaLink="false">2026-11-13-US-MGY-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 52 places to #672 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

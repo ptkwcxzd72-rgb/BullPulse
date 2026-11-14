@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BAX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Baxter International (BAX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BAX</link>
+  <description>Alerts for Baxter International from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Baxter International: Rank moved down 52 places to #101 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BAX</link>
+   <guid isPermaLink="false">2026-11-06-US-BAX-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 52 places to #101 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Baxter International: New results filed: revenue +5.0% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-BAX</link>
+   <guid isPermaLink="false">2026-11-04-US-BAX-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +5.0% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Baxter International: Rank moved up 25 places to #59 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BAX</link>
+   <guid isPermaLink="false">2026-11-04-US-BAX-rank</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #59 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Baxter International: Rank moved up 28 places to #96 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BAX</link>
+   <guid isPermaLink="false">2026-11-02-US-BAX-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #96 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

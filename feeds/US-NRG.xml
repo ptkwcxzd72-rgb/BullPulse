@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NRG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: NRG Energy (NRG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NRG</link>
+  <description>Alerts for NRG Energy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>NRG Energy: New results filed: revenue +24.5% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-NRG</link>
+   <guid isPermaLink="false">2026-11-13-US-NRG-results</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +24.5% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NRG Energy: Rank moved up 25 places to #449 (score 19)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NRG</link>
+   <guid isPermaLink="false">2026-11-09-US-NRG-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #449 (score 19). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

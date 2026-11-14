@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SKYD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Skydance Corporation (SKYD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SKYD</link>
+  <description>Alerts for Skydance Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Skydance Corporation: New results filed: revenue -1.5% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-SKYD</link>
+   <guid isPermaLink="false">2026-11-13-US-SKYD-results</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue -1.5% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Skydance Corporation: Unusual burst of news coverage (30-day tone -0.05)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SKYD</link>
+   <guid isPermaLink="false">2026-11-09-US-SKYD-news</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.05). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

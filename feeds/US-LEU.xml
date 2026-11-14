@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LEU.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Centrus Energy Corp. (LEU)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LEU</link>
+  <description>Alerts for Centrus Energy Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Centrus Energy Corp.: Rank moved down 38 places to #952 (score 13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LEU</link>
+   <guid isPermaLink="false">2026-11-13-US-LEU-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #952 (score 13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Centrus Energy Corp.: Unusual burst of news coverage (30-day tone -0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LEU</link>
+   <guid isPermaLink="false">2026-11-13-US-LEU-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

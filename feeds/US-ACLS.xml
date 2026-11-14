@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ACLS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Axcelis Technologies, Inc. (ACLS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ACLS</link>
+  <description>Alerts for Axcelis Technologies, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Axcelis Technologies, Inc.: Rank moved up 35 places to #368 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACLS</link>
+   <guid isPermaLink="false">2026-11-13-US-ACLS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 35 places to #368 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KWR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Quaker Chemical Corporation (KWR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KWR</link>
+  <description>Alerts for Quaker Chemical Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

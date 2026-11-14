@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-REZI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Resideo Technologies, Inc. (REZI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-REZI</link>
+  <description>Alerts for Resideo Technologies, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Resideo Technologies, Inc.: Rank moved up 116 places to #721 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-REZI</link>
+   <guid isPermaLink="false">2026-11-13-US-REZI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 116 places to #721 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Resideo Technologies, Inc.: Unusual burst of news coverage (30-day tone +0.76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-REZI</link>
+   <guid isPermaLink="false">2026-11-13-US-REZI-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

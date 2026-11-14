@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LH.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Labcorp (LH)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LH</link>
+  <description>Alerts for Labcorp from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Labcorp: Rank moved down 21 places to #97 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LH</link>
+   <guid isPermaLink="false">2026-11-11-US-LH-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #97 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Labcorp: Rank moved down 20 places to #76 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LH</link>
+   <guid isPermaLink="false">2026-11-10-US-LH-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #76 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Labcorp: Rank moved up 79 places to #56 (score 78)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LH</link>
+   <guid isPermaLink="false">2026-11-09-US-LH-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 79 places to #56 (score 78). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

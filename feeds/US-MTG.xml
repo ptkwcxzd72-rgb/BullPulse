@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MTG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: MGIC Investment Corporation (MTG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MTG</link>
+  <description>Alerts for MGIC Investment Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>MGIC Investment Corporation: Rank moved down 48 places to #550 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTG</link>
+   <guid isPermaLink="false">2026-11-13-US-MTG-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 48 places to #550 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

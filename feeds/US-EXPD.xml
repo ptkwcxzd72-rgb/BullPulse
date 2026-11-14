@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-EXPD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Expeditors International (EXPD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-EXPD</link>
+  <description>Alerts for Expeditors International from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Expeditors International: Rank moved down 32 places to #52 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPD</link>
+   <guid isPermaLink="false">2026-11-06-US-EXPD-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 32 places to #52 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expeditors International: New results filed: revenue +41.9% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPD</link>
+   <guid isPermaLink="false">2026-11-04-US-EXPD-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +41.9% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expeditors International: Unusual burst of news coverage (30-day tone -0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPD</link>
+   <guid isPermaLink="false">2026-10-21-US-EXPD-news</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

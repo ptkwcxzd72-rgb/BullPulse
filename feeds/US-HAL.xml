@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HAL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Halliburton (HAL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HAL</link>
+  <description>Alerts for Halliburton from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Halliburton: Rank moved up 38 places to #242 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAL</link>
+   <guid isPermaLink="false">2026-11-13-US-HAL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 38 places to #242 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Halliburton: Rank moved up 23 places to #280 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAL</link>
+   <guid isPermaLink="false">2026-11-12-US-HAL-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #280 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Halliburton: Rank moved up 27 places to #303 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAL</link>
+   <guid isPermaLink="false">2026-11-11-US-HAL-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #303 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Halliburton: Rank moved up 53 places to #330 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAL</link>
+   <guid isPermaLink="false">2026-11-10-US-HAL-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 53 places to #330 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

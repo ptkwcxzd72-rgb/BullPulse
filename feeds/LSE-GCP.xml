@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-GCP.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: GCP Infrastructure Investments (GCP)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-GCP</link>
+  <description>Alerts for GCP Infrastructure Investments from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>GCP Infrastructure Investments: Rank moved up 95 places to #57 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-GCP</link>
+   <guid isPermaLink="false">2026-11-11-LSE-GCP-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 95 places to #57 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

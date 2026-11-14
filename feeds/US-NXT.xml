@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NXT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Nextpower (NXT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NXT</link>
+  <description>Alerts for Nextpower from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Nextpower: Rank moved up 152 places to #679 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NXT</link>
+   <guid isPermaLink="false">2026-11-13-US-NXT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 152 places to #679 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Nextpower: Unusual burst of news coverage (30-day tone +0.68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NXT</link>
+   <guid isPermaLink="false">2026-11-13-US-NXT-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

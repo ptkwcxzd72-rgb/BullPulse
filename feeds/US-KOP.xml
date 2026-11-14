@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KOP.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Koppers Holdings, Inc. (KOP)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KOP</link>
+  <description>Alerts for Koppers Holdings, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Koppers Holdings, Inc.: Rank moved up 96 places to #240 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KOP</link>
+   <guid isPermaLink="false">2026-11-13-US-KOP-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 96 places to #240 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Koppers Holdings, Inc.: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-KOP</link>
+   <guid isPermaLink="false">2026-11-13-US-KOP-cross</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

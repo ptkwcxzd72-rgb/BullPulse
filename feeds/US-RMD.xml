@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RMD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: ResMed| (RMD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RMD</link>
+  <description>Alerts for ResMed| from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>ResMed|: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMD</link>
+   <guid isPermaLink="false">2026-11-13-US-RMD-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ResMed|: Unusual burst of news coverage (30-day tone +0.10)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMD</link>
+   <guid isPermaLink="false">2026-11-13-US-RMD-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.10). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ResMed|: Unusual burst of news coverage (30-day tone +0.11)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMD</link>
+   <guid isPermaLink="false">2026-11-10-US-RMD-news</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.11). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ResMed|: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMD</link>
+   <guid isPermaLink="false">2026-11-10-US-RMD-early</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ResMed|: Rank moved up 40 places to #364 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMD</link>
+   <guid isPermaLink="false">2026-11-10-US-RMD-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 40 places to #364 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

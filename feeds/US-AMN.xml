@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Amn Healthcare Services, Inc. (AMN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AMN</link>
+  <description>Alerts for Amn Healthcare Services, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

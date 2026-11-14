@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-JCI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Johnson Controls (JCI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+  <description>Alerts for Johnson Controls from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Johnson Controls: Rank moved down 101 places to #189 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-13-US-JCI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 101 places to #189 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-13-US-JCI-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: New results filed: revenue +8.8% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-13-US-JCI-results</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +8.8% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Rank moved up 107 places to #79 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-11-US-JCI-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 107 places to #79 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-11-US-JCI-trend</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-11-US-JCI-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-10-US-JCI-trend</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Rank moved down 97 places to #186 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-10-US-JCI-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 97 places to #186 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Rank moved up 57 places to #89 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-09-US-JCI-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 57 places to #89 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-09-US-JCI-trend</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Johnson Controls: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-JCI</link>
+   <guid isPermaLink="false">2026-11-09-US-JCI-early</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

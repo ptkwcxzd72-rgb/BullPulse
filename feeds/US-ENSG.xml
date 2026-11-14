@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ENSG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Ensign Group (ENSG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ENSG</link>
+  <description>Alerts for Ensign Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Ensign Group: Rank moved up 41 places to #512 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENSG</link>
+   <guid isPermaLink="false">2026-11-13-US-ENSG-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 41 places to #512 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

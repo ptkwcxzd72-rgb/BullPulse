@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FLG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Flagstar Bank (FLG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FLG</link>
+  <description>Alerts for Flagstar Bank from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Flagstar Bank: Rank moved up 68 places to #725 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FLG</link>
+   <guid isPermaLink="false">2026-11-13-US-FLG-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 68 places to #725 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Flagstar Bank: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-FLG</link>
+   <guid isPermaLink="false">2026-11-13-US-FLG-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

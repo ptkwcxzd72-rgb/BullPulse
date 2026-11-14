@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ARMK.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Aramark (ARMK)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ARMK</link>
+  <description>Alerts for Aramark from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Aramark: Rank moved up 104 places to #87 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ARMK</link>
+   <guid isPermaLink="false">2026-11-13-US-ARMK-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 104 places to #87 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aramark: Unusual burst of news coverage (30-day tone +0.65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ARMK</link>
+   <guid isPermaLink="false">2026-11-13-US-ARMK-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WRLD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: World Acceptance Corporation (WRLD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WRLD</link>
+  <description>Alerts for World Acceptance Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>World Acceptance Corporation: Rank moved down 37 places to #468 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WRLD</link>
+   <guid isPermaLink="false">2026-11-13-US-WRLD-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #468 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>World Acceptance Corporation: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-WRLD</link>
+   <guid isPermaLink="false">2026-11-13-US-WRLD-cross</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

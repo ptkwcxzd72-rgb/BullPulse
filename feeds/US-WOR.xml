@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WOR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Worthington Enterprises (WOR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+  <description>Alerts for Worthington Enterprises from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Worthington Enterprises: Rank moved down 90 places to #469 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-13-US-WOR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 90 places to #469 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

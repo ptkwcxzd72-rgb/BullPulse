@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LOW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Lowe&#39;s (LOW)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LOW</link>
+  <description>Alerts for Lowe&#39;s from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Lowe&#39;s: Rank moved up 44 places to #391 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LOW</link>
+   <guid isPermaLink="false">2026-11-11-US-LOW-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 44 places to #391 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

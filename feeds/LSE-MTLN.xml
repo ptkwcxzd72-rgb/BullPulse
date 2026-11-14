@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-MTLN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Metlen Energy &amp; Metals (MTLN)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-MTLN</link>
+  <description>Alerts for Metlen Energy &amp; Metals from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Metlen Energy &amp; Metals: Rank moved up 29 places to #112 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MTLN</link>
+   <guid isPermaLink="false">2026-11-13-LSE-MTLN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #112 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Metlen Energy &amp; Metals: Rank moved down 44 places to #128 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MTLN</link>
+   <guid isPermaLink="false">2026-11-11-LSE-MTLN-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 44 places to #128 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Metlen Energy &amp; Metals: Rank moved down 43 places to #84 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MTLN</link>
+   <guid isPermaLink="false">2026-11-05-LSE-MTLN-rank</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 43 places to #84 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-ATT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Allianz Technology Trust (ATT)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+  <description>Alerts for Allianz Technology Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Allianz Technology Trust: Rank moved down 83 places to #173 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-13-LSE-ATT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 83 places to #173 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allianz Technology Trust: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-13-LSE-ATT-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allianz Technology Trust: Rank moved up 69 places to #96 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-11-LSE-ATT-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 69 places to #96 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allianz Technology Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-11-LSE-ATT-trend</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allianz Technology Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-11-LSE-ATT-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allianz Technology Trust: Rank moved down 20 places to #165 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-10-LSE-ATT-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #165 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allianz Technology Trust: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-03-LSE-ATT-trend</guid>
+   <pubDate>Tue, 03 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Allianz Technology Trust: Rank moved down 68 places to #156 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ATT</link>
+   <guid isPermaLink="false">2026-11-03-LSE-ATT-rank</guid>
+   <pubDate>Tue, 03 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 68 places to #156 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

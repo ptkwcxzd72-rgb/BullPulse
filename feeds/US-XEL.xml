@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-XEL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Xcel Energy (XEL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-XEL</link>
+  <description>Alerts for Xcel Energy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Xcel Energy: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-XEL</link>
+   <guid isPermaLink="false">2026-11-11-US-XEL-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Xcel Energy: Rank moved up 62 places to #303 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XEL</link>
+   <guid isPermaLink="false">2026-11-10-US-XEL-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 62 places to #303 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Xcel Energy: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-XEL</link>
+   <guid isPermaLink="false">2026-11-09-US-XEL-early</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Xcel Energy: Unusual burst of news coverage (30-day tone +0.05)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XEL</link>
+   <guid isPermaLink="false">2026-11-09-US-XEL-news</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.05). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

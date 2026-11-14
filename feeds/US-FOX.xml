@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FOX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Fox Corporation (Class B) (FOX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+  <description>Alerts for Fox Corporation (Class B) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Fox Corporation (Class B): Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+   <guid isPermaLink="false">2026-11-12-US-FOX-early</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class B): Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+   <guid isPermaLink="false">2026-11-10-US-FOX-early</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class B): Rank moved down 30 places to #267 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+   <guid isPermaLink="false">2026-11-09-US-FOX-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 30 places to #267 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class B): Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+   <guid isPermaLink="false">2026-11-06-US-FOX-early</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class B): Rank moved down 131 places to #240 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+   <guid isPermaLink="false">2026-11-06-US-FOX-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 131 places to #240 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class B): New results filed: revenue +22.3% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+   <guid isPermaLink="false">2026-11-04-US-FOX-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +22.3% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fox Corporation (Class B): Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOX</link>
+   <guid isPermaLink="false">2026-11-04-US-FOX-growth</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

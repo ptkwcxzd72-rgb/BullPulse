@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DGX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Quest Diagnostics (DGX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DGX</link>
+  <description>Alerts for Quest Diagnostics from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Quest Diagnostics: Rank moved down 60 places to #140 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DGX</link>
+   <guid isPermaLink="false">2026-11-13-US-DGX-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 60 places to #140 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Quest Diagnostics: Rank moved down 34 places to #65 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DGX</link>
+   <guid isPermaLink="false">2026-11-11-US-DGX-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #65 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Quest Diagnostics: Unusual burst of news coverage (30-day tone +0.34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DGX</link>
+   <guid isPermaLink="false">2026-11-09-US-DGX-news</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

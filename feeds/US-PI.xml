@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Impinj, Inc. (PI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PI</link>
+  <description>Alerts for Impinj, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Impinj, Inc.: Rank moved down 24 places to #431 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PI</link>
+   <guid isPermaLink="false">2026-11-13-US-PI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #431 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Impinj, Inc.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-PI</link>
+   <guid isPermaLink="false">2026-11-13-US-PI-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

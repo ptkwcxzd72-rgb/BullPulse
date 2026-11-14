@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FTRE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Fortrea (FTRE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FTRE</link>
+  <description>Alerts for Fortrea from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Fortrea: Rank moved down 54 places to #167 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FTRE</link>
+   <guid isPermaLink="false">2026-11-13-US-FTRE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 54 places to #167 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

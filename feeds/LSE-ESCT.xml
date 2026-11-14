@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-ESCT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: European Smaller Companies Trust (ESCT)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+  <description>Alerts for European Smaller Companies Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>European Smaller Companies Trust: Rank moved up 90 places to #111 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-12-LSE-ESCT-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 90 places to #111 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-10-LSE-ESCT-early</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-10-LSE-ESCT-trend</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Rank moved up 47 places to #189 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-10-LSE-ESCT-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 47 places to #189 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-06-LSE-ESCT-trend</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Rank moved down 45 places to #236 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-06-LSE-ESCT-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 45 places to #236 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-02-LSE-ESCT-early</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-02-LSE-ESCT-trend</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>European Smaller Companies Trust: Rank moved up 52 places to #166 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-ESCT</link>
+   <guid isPermaLink="false">2026-11-02-LSE-ESCT-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 52 places to #166 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

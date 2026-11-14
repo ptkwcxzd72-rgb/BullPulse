@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TDY.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Teledyne Technologies (TDY)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TDY</link>
+  <description>Alerts for Teledyne Technologies from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Teledyne Technologies: Rank moved down 23 places to #223 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDY</link>
+   <guid isPermaLink="false">2026-11-11-US-TDY-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 23 places to #223 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teledyne Technologies: Rank moved up 43 places to #200 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDY</link>
+   <guid isPermaLink="false">2026-11-10-US-TDY-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 43 places to #200 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teledyne Technologies: Rank moved up 91 places to #243 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDY</link>
+   <guid isPermaLink="false">2026-11-09-US-TDY-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 91 places to #243 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teledyne Technologies: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDY</link>
+   <guid isPermaLink="false">2026-11-09-US-TDY-trend</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teledyne Technologies: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDY</link>
+   <guid isPermaLink="false">2026-11-09-US-TDY-early</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TOST.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Toast, Inc. (TOST)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TOST</link>
+  <description>Alerts for Toast, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Toast, Inc.: Rank moved up 79 places to #538 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TOST</link>
+   <guid isPermaLink="false">2026-11-13-US-TOST-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 79 places to #538 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Toast, Inc.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-TOST</link>
+   <guid isPermaLink="false">2026-11-13-US-TOST-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Toast, Inc.: Unusual burst of news coverage (30-day tone +0.14)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TOST</link>
+   <guid isPermaLink="false">2026-11-13-US-TOST-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.14). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

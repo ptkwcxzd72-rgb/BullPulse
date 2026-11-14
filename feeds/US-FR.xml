@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: First Industrial Realty Trust (FR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FR</link>
+  <description>Alerts for First Industrial Realty Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>First Industrial Realty Trust: Rank moved down 35 places to #761 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FR</link>
+   <guid isPermaLink="false">2026-11-13-US-FR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #761 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

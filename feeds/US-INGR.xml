@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-INGR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Ingredion (INGR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-INGR</link>
+  <description>Alerts for Ingredion from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Ingredion: Rank moved up 80 places to #778 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INGR</link>
+   <guid isPermaLink="false">2026-11-13-US-INGR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 80 places to #778 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

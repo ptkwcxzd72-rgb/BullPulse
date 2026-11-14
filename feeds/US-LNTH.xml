@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LNTH.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Lantheus Holdings (LNTH)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LNTH</link>
+  <description>Alerts for Lantheus Holdings from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Lantheus Holdings: Rank moved down 38 places to #55 (score 80)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LNTH</link>
+   <guid isPermaLink="false">2026-11-13-US-LNTH-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #55 (score 80). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

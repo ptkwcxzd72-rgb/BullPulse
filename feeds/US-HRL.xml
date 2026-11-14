@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HRL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hormel Foods (HRL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HRL</link>
+  <description>Alerts for Hormel Foods from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hormel Foods: Rank moved up 30 places to #377 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HRL</link>
+   <guid isPermaLink="false">2026-11-12-US-HRL-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #377 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hormel Foods: Rank moved down 72 places to #407 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HRL</link>
+   <guid isPermaLink="false">2026-11-11-US-HRL-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 72 places to #407 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hormel Foods: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-HRL</link>
+   <guid isPermaLink="false">2026-11-11-US-HRL-trend</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hormel Foods: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-HRL</link>
+   <guid isPermaLink="false">2026-11-10-US-HRL-early</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hormel Foods: Rank moved up 75 places to #329 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HRL</link>
+   <guid isPermaLink="false">2026-11-09-US-HRL-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 75 places to #329 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hormel Foods: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-HRL</link>
+   <guid isPermaLink="false">2026-11-09-US-HRL-trend</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

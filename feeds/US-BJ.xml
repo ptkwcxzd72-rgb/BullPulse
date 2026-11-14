@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BJ.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: BJ&#39;s Wholesale Club (BJ)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BJ</link>
+  <description>Alerts for BJ&#39;s Wholesale Club from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>BJ&#39;s Wholesale Club: Rank moved down 150 places to #411 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJ</link>
+   <guid isPermaLink="false">2026-11-13-US-BJ-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 150 places to #411 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BJ&#39;s Wholesale Club: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJ</link>
+   <guid isPermaLink="false">2026-11-13-US-BJ-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BJ&#39;s Wholesale Club: Unusual burst of news coverage (30-day tone -0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJ</link>
+   <guid isPermaLink="false">2026-11-13-US-BJ-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

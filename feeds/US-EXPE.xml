@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-EXPE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Expedia Group (EXPE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+  <description>Alerts for Expedia Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Expedia Group: Rank moved down 40 places to #363 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-13-US-EXPE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 40 places to #363 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-13-US-EXPE-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-12-US-EXPE-early</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Rank moved up 43 places to #332 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-11-US-EXPE-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 43 places to #332 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-11-US-EXPE-trend</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-10-US-EXPE-trend</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Rank moved down 155 places to #375 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-10-US-EXPE-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 155 places to #375 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Rank moved down 22 places to #220 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-09-US-EXPE-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #220 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: New results filed: revenue +11.9% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-06-US-EXPE-results</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +11.9% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Expedia Group: Rank moved down 114 places to #212 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXPE</link>
+   <guid isPermaLink="false">2026-11-06-US-EXPE-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 114 places to #212 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-INSW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: International Seaways, Inc. (INSW)</title>
+  <link>https://bullpulse.co.uk/app.html#US-INSW</link>
+  <description>Alerts for International Seaways, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>International Seaways, Inc.: Rank moved up 45 places to #29 (score 84)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSW</link>
+   <guid isPermaLink="false">2026-11-13-US-INSW-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 45 places to #29 (score 84). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Seaways, Inc.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSW</link>
+   <guid isPermaLink="false">2026-11-13-US-INSW-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>International Seaways, Inc.: Unusual burst of news coverage (30-day tone +0.54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSW</link>
+   <guid isPermaLink="false">2026-11-13-US-INSW-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

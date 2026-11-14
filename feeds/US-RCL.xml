@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RCL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Royal Caribbean Group (RCL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RCL</link>
+  <description>Alerts for Royal Caribbean Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Royal Caribbean Group: Rank moved up 20 places to #253 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCL</link>
+   <guid isPermaLink="false">2026-11-13-US-RCL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #253 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Royal Caribbean Group: Rank moved up 23 places to #273 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCL</link>
+   <guid isPermaLink="false">2026-11-12-US-RCL-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #273 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Royal Caribbean Group: Rank moved down 39 places to #296 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCL</link>
+   <guid isPermaLink="false">2026-11-11-US-RCL-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 39 places to #296 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Royal Caribbean Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCL</link>
+   <guid isPermaLink="false">2026-11-11-US-RCL-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

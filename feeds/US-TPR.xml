@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TPR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Tapestry, Inc. (TPR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TPR</link>
+  <description>Alerts for Tapestry, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Tapestry, Inc.: Rank moved up 22 places to #284 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TPR</link>
+   <guid isPermaLink="false">2026-11-12-US-TPR-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #284 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Tapestry, Inc.: Rank moved down 28 places to #306 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TPR</link>
+   <guid isPermaLink="false">2026-11-11-US-TPR-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #306 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Tapestry, Inc.: Rank moved up 35 places to #274 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TPR</link>
+   <guid isPermaLink="false">2026-11-09-US-TPR-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 35 places to #274 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

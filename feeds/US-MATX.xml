@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MATX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Matson, Inc. (MATX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MATX</link>
+  <description>Alerts for Matson, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Matson, Inc.: Rank moved up 23 places to #53 (score 81)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MATX</link>
+   <guid isPermaLink="false">2026-11-13-US-MATX-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #53 (score 81). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Matson, Inc.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-MATX</link>
+   <guid isPermaLink="false">2026-11-13-US-MATX-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

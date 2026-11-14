@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LTC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: LTC Properties, Inc. (LTC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LTC</link>
+  <description>Alerts for LTC Properties, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>LTC Properties, Inc.: Rank moved up 87 places to #52 (score 81)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LTC</link>
+   <guid isPermaLink="false">2026-11-13-US-LTC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 87 places to #52 (score 81). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>LTC Properties, Inc.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-LTC</link>
+   <guid isPermaLink="false">2026-11-13-US-LTC-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

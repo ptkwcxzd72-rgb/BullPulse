@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMPH.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Amphstar Pharmaceuticals, Inc. (AMPH)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AMPH</link>
+  <description>Alerts for Amphstar Pharmaceuticals, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Amphstar Pharmaceuticals, Inc.: Rank moved up 112 places to #290 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMPH</link>
+   <guid isPermaLink="false">2026-11-13-US-AMPH-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 112 places to #290 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-VCYT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Veracyte, Inc. (VCYT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-VCYT</link>
+  <description>Alerts for Veracyte, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Veracyte, Inc.: Rank moved down 259 places to #893 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VCYT</link>
+   <guid isPermaLink="false">2026-11-13-US-VCYT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 259 places to #893 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

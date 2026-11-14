@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-UTI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Universal Technical Institute (UTI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-UTI</link>
+  <description>Alerts for Universal Technical Institute from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Universal Technical Institute: Rank moved down 26 places to #979 (score 6)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UTI</link>
+   <guid isPermaLink="false">2026-11-13-US-UTI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #979 (score 6). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

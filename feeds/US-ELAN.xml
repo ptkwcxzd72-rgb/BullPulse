@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ELAN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Elanco (ELAN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ELAN</link>
+  <description>Alerts for Elanco from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Elanco: Rank moved down 43 places to #587 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELAN</link>
+   <guid isPermaLink="false">2026-11-13-US-ELAN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 43 places to #587 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elanco: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELAN</link>
+   <guid isPermaLink="false">2026-11-13-US-ELAN-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elanco: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELAN</link>
+   <guid isPermaLink="false">2026-11-13-US-ELAN-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

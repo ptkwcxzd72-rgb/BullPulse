@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LFUS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Littelfuse (LFUS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LFUS</link>
+  <description>Alerts for Littelfuse from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Littelfuse: Rank moved up 126 places to #184 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LFUS</link>
+   <guid isPermaLink="false">2026-11-13-US-LFUS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 126 places to #184 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Littelfuse: Unusual burst of news coverage (30-day tone +0.55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LFUS</link>
+   <guid isPermaLink="false">2026-11-13-US-LFUS-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

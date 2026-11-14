@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-EXLS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: EXL Service (EXLS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-EXLS</link>
+  <description>Alerts for EXL Service from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>EXL Service: Rank moved up 267 places to #247 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXLS</link>
+   <guid isPermaLink="false">2026-11-13-US-EXLS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 267 places to #247 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EXL Service: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXLS</link>
+   <guid isPermaLink="false">2026-11-13-US-EXLS-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EXL Service: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EXLS</link>
+   <guid isPermaLink="false">2026-11-13-US-EXLS-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

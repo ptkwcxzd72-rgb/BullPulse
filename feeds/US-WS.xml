@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Worthington Steel (WS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WS</link>
+  <description>Alerts for Worthington Steel from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Worthington Steel: Rank moved up 148 places to #177 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WS</link>
+   <guid isPermaLink="false">2026-11-13-US-WS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 148 places to #177 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Steel: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-WS</link>
+   <guid isPermaLink="false">2026-11-13-US-WS-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Steel: Unusual burst of news coverage (30-day tone +0.62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WS</link>
+   <guid isPermaLink="false">2026-11-13-US-WS-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

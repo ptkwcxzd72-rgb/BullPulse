@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ALB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Albemarle Corporation (ALB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ALB</link>
+  <description>Alerts for Albemarle Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Albemarle Corporation: Rank moved down 25 places to #432 (score 23)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALB</link>
+   <guid isPermaLink="false">2026-11-11-US-ALB-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #432 (score 23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Albemarle Corporation: Rank moved down 34 places to #407 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALB</link>
+   <guid isPermaLink="false">2026-11-10-US-ALB-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #407 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Albemarle Corporation: Rank moved down 219 places to #378 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALB</link>
+   <guid isPermaLink="false">2026-11-06-US-ALB-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 219 places to #378 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Albemarle Corporation: New results filed: revenue +18.8% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-ALB</link>
+   <guid isPermaLink="false">2026-11-04-US-ALB-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +18.8% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

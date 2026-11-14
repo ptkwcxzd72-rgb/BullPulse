@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AKAM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Akamai Technologies (AKAM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AKAM</link>
+  <description>Alerts for Akamai Technologies from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Akamai Technologies: New results filed: revenue +6.4% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-AKAM</link>
+   <guid isPermaLink="false">2026-11-13-US-AKAM-results</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +6.4% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Akamai Technologies: Rank moved down 47 places to #416 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AKAM</link>
+   <guid isPermaLink="false">2026-11-12-US-AKAM-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 47 places to #416 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Akamai Technologies: Rank moved down 27 places to #369 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AKAM</link>
+   <guid isPermaLink="false">2026-11-11-US-AKAM-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #369 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Akamai Technologies: Rank moved down 98 places to #342 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AKAM</link>
+   <guid isPermaLink="false">2026-11-10-US-AKAM-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 98 places to #342 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Akamai Technologies: Rank moved down 136 places to #246 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AKAM</link>
+   <guid isPermaLink="false">2026-11-06-US-AKAM-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 136 places to #246 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

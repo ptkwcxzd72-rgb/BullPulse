@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CENTA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Central Garden &amp; Pet Company (Class A) (CENTA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CENTA</link>
+  <description>Alerts for Central Garden &amp; Pet Company (Class A) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Central Garden &amp; Pet Company (Class A): Rank moved up 116 places to #40 (score 82)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CENTA</link>
+   <guid isPermaLink="false">2026-11-13-US-CENTA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 116 places to #40 (score 82). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FFIN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: First Financial Bankshares (FFIN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FFIN</link>
+  <description>Alerts for First Financial Bankshares from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>First Financial Bankshares: Cluster buying: 3 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-FFIN</link>
+   <guid isPermaLink="false">2026-11-13-US-FFIN-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 3 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

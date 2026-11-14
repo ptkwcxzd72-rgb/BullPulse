@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NWSA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: News Corp (Class A) (NWSA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NWSA</link>
+  <description>Alerts for News Corp (Class A) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>News Corp (Class A): Rank moved up 93 places to #212 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWSA</link>
+   <guid isPermaLink="false">2026-11-13-US-NWSA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 93 places to #212 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>News Corp (Class A): Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWSA</link>
+   <guid isPermaLink="false">2026-11-13-US-NWSA-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>News Corp (Class A): Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWSA</link>
+   <guid isPermaLink="false">2026-11-13-US-NWSA-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>News Corp (Class A): Rank moved down 24 places to #312 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWSA</link>
+   <guid isPermaLink="false">2026-11-10-US-NWSA-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #312 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>News Corp (Class A): Rank moved down 41 places to #288 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWSA</link>
+   <guid isPermaLink="false">2026-11-09-US-NWSA-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 41 places to #288 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

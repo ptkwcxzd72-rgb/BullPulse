@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-GTES.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Gates Corporation (GTES)</title>
+  <link>https://bullpulse.co.uk/app.html#US-GTES</link>
+  <description>Alerts for Gates Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Gates Corporation: Rank moved up 101 places to #383 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTES</link>
+   <guid isPermaLink="false">2026-11-13-US-GTES-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 101 places to #383 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gates Corporation: Unusual burst of news coverage (30-day tone +0.59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTES</link>
+   <guid isPermaLink="false">2026-11-13-US-GTES-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

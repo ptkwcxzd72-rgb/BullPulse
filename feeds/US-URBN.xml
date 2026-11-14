@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-URBN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Urban Outfitters, Inc. (URBN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-URBN</link>
+  <description>Alerts for Urban Outfitters, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Urban Outfitters, Inc.: Rank moved up 62 places to #23 (score 85)</title>
+   <link>https://bullpulse.co.uk/app.html#US-URBN</link>
+   <guid isPermaLink="false">2026-11-13-US-URBN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 62 places to #23 (score 85). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

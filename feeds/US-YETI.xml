@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-YETI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Yeti Holdings (YETI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-YETI</link>
+  <description>Alerts for Yeti Holdings from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Yeti Holdings: Rank moved down 104 places to #849 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-YETI</link>
+   <guid isPermaLink="false">2026-11-13-US-YETI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 104 places to #849 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Yeti Holdings: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-YETI</link>
+   <guid isPermaLink="false">2026-11-13-US-YETI-cross</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Yeti Holdings: Unusual burst of news coverage (30-day tone -0.29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-YETI</link>
+   <guid isPermaLink="false">2026-11-13-US-YETI-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

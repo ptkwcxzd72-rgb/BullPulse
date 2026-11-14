@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LZB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: La-Z-Boy, Inc. (LZB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LZB</link>
+  <description>Alerts for La-Z-Boy, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>La-Z-Boy, Inc.: Rank moved up 117 places to #604 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LZB</link>
+   <guid isPermaLink="false">2026-11-13-US-LZB-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 117 places to #604 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

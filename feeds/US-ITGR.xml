@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ITGR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Integer Holdings Corporation (ITGR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ITGR</link>
+  <description>Alerts for Integer Holdings Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Integer Holdings Corporation: Rank moved down 77 places to #193 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITGR</link>
+   <guid isPermaLink="false">2026-11-13-US-ITGR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 77 places to #193 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KIM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Kimco Realty (KIM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KIM</link>
+  <description>Alerts for Kimco Realty from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Kimco Realty: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-KIM</link>
+   <guid isPermaLink="false">2026-11-12-US-KIM-early</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kimco Realty: Rank moved up 28 places to #201 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KIM</link>
+   <guid isPermaLink="false">2026-11-12-US-KIM-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #201 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kimco Realty: Rank moved down 41 places to #229 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KIM</link>
+   <guid isPermaLink="false">2026-11-09-US-KIM-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 41 places to #229 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMCR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Amcor (AMCR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+  <description>Alerts for Amcor from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Amcor: Rank moved up 22 places to #240 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-11-13-US-AMCR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #240 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amcor: Rank moved down 28 places to #253 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-11-09-US-AMCR-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #253 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amcor: New results filed: revenue +6.7% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-11-06-US-AMCR-results</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +6.7% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amcor: Rank moved down 123 places to #224 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-11-06-US-AMCR-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 123 places to #224 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amcor: Rank moved down 35 places to #109 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-11-05-US-AMCR-rank</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #109 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amcor: Rank moved up 21 places to #44 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-11-04-US-AMCR-rank</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #44 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amcor: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMCR</link>
+   <guid isPermaLink="false">2026-10-27-US-AMCR-early</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

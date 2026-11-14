@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PNFP.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Pinnacle Financial Partners (PNFP)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PNFP</link>
+  <description>Alerts for Pinnacle Financial Partners from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Pinnacle Financial Partners: Rank moved up 157 places to #156 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PNFP</link>
+   <guid isPermaLink="false">2026-11-13-US-PNFP-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 157 places to #156 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Pinnacle Financial Partners: Cluster buying: 3 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-PNFP</link>
+   <guid isPermaLink="false">2026-11-13-US-PNFP-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 3 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Pinnacle Financial Partners: Unusual burst of news coverage (30-day tone +0.78)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PNFP</link>
+   <guid isPermaLink="false">2026-11-13-US-PNFP-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.78). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

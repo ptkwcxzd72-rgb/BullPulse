@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TER.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Teradyne (TER)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TER</link>
+  <description>Alerts for Teradyne from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Teradyne: Rank moved up 23 places to #262 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TER</link>
+   <guid isPermaLink="false">2026-11-13-US-TER-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #262 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teradyne: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-TER</link>
+   <guid isPermaLink="false">2026-11-13-US-TER-cross</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teradyne: Rank moved down 47 places to #279 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TER</link>
+   <guid isPermaLink="false">2026-11-09-US-TER-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 47 places to #279 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

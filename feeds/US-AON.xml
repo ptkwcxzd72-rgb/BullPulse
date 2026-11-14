@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AON.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Aon plc (AON)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AON</link>
+  <description>Alerts for Aon plc from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Aon plc: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AON</link>
+   <guid isPermaLink="false">2026-11-13-US-AON-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aon plc: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AON</link>
+   <guid isPermaLink="false">2026-11-11-US-AON-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aon plc: Rank moved down 218 places to #367 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AON</link>
+   <guid isPermaLink="false">2026-11-06-US-AON-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 218 places to #367 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aon plc: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-AON</link>
+   <guid isPermaLink="false">2026-11-02-US-AON-trend</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aon plc: Rank moved up 24 places to #155 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AON</link>
+   <guid isPermaLink="false">2026-11-02-US-AON-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #155 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Aon plc: New results filed: revenue +2.6% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-AON</link>
+   <guid isPermaLink="false">2026-10-28-US-AON-results</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +2.6% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

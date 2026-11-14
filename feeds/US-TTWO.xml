@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TTWO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Take-Two Interactive (TTWO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TTWO</link>
+  <description>Alerts for Take-Two Interactive from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Take-Two Interactive: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTWO</link>
+   <guid isPermaLink="false">2026-11-13-US-TTWO-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Take-Two Interactive: New results filed: revenue -15.6% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTWO</link>
+   <guid isPermaLink="false">2026-11-13-US-TTWO-results</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue -15.6% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Take-Two Interactive: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTWO</link>
+   <guid isPermaLink="false">2026-11-10-US-TTWO-early</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Take-Two Interactive: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTWO</link>
+   <guid isPermaLink="false">2026-11-10-US-TTWO-trend</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Take-Two Interactive: Rank moved up 68 places to #390 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTWO</link>
+   <guid isPermaLink="false">2026-11-10-US-TTWO-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 68 places to #390 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

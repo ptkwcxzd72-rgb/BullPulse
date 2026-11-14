@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ADC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Agree Realty (ADC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ADC</link>
+  <description>Alerts for Agree Realty from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Agree Realty: Rank moved up 87 places to #649 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADC</link>
+   <guid isPermaLink="false">2026-11-13-US-ADC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 87 places to #649 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Agree Realty: Cluster buying: 3 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADC</link>
+   <guid isPermaLink="false">2026-11-13-US-ADC-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 3 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Agree Realty: Unusual burst of news coverage (30-day tone +0.38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ADC</link>
+   <guid isPermaLink="false">2026-11-13-US-ADC-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

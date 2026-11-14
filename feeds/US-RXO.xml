@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RXO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: RXO, Inc. (RXO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RXO</link>
+  <description>Alerts for RXO, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>RXO, Inc.: Rank moved down 51 places to #131 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RXO</link>
+   <guid isPermaLink="false">2026-11-13-US-RXO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 51 places to #131 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RXO, Inc.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RXO</link>
+   <guid isPermaLink="false">2026-11-13-US-RXO-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

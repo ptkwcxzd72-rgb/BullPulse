@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PSA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Public Storage (PSA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PSA</link>
+  <description>Alerts for Public Storage from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Public Storage: Rank moved up 47 places to #127 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PSA</link>
+   <guid isPermaLink="false">2026-11-13-US-PSA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 47 places to #127 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Public Storage: Rank moved down 32 places to #174 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PSA</link>
+   <guid isPermaLink="false">2026-11-12-US-PSA-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 32 places to #174 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Public Storage: Rank moved down 25 places to #142 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PSA</link>
+   <guid isPermaLink="false">2026-11-11-US-PSA-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #142 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Public Storage: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-PSA</link>
+   <guid isPermaLink="false">2026-11-11-US-PSA-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Public Storage: Unusual burst of news coverage (30-day tone +0.30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PSA</link>
+   <guid isPermaLink="false">2026-11-10-US-PSA-news</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Public Storage: Rank moved down 24 places to #117 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PSA</link>
+   <guid isPermaLink="false">2026-11-10-US-PSA-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #117 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

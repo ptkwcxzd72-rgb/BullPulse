@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DOCU.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Docusign (DOCU)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DOCU</link>
+  <description>Alerts for Docusign from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Docusign: Rank moved up 77 places to #211 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DOCU</link>
+   <guid isPermaLink="false">2026-11-13-US-DOCU-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 77 places to #211 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Docusign: Unusual burst of news coverage (30-day tone +0.05)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DOCU</link>
+   <guid isPermaLink="false">2026-11-13-US-DOCU-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.05). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

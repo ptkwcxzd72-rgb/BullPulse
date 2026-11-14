@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MSCI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: MSCI (MSCI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MSCI</link>
+  <description>Alerts for MSCI from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>MSCI: Rank moved down 44 places to #283 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MSCI</link>
+   <guid isPermaLink="false">2026-11-11-US-MSCI-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 44 places to #283 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MSCI: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-MSCI</link>
+   <guid isPermaLink="false">2026-11-10-US-MSCI-early</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MSCI: Rank moved up 33 places to #239 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MSCI</link>
+   <guid isPermaLink="false">2026-11-10-US-MSCI-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #239 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

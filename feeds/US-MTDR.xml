@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MTDR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Matador Resources (MTDR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MTDR</link>
+  <description>Alerts for Matador Resources from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Matador Resources: Rank moved up 76 places to #287 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTDR</link>
+   <guid isPermaLink="false">2026-11-13-US-MTDR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 76 places to #287 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Matador Resources: Cluster buying: 9 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTDR</link>
+   <guid isPermaLink="false">2026-11-13-US-MTDR-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 9 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Matador Resources: Unusual burst of news coverage (30-day tone +0.20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTDR</link>
+   <guid isPermaLink="false">2026-11-13-US-MTDR-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

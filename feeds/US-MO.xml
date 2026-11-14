@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Altria (MO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MO</link>
+  <description>Alerts for Altria from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Altria: Rank moved down 28 places to #40 (score 78)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MO</link>
+   <guid isPermaLink="false">2026-11-06-US-MO-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #40 (score 78). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Altria: New results filed: revenue +1.0% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-MO</link>
+   <guid isPermaLink="false">2026-11-04-US-MO-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +1.0% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

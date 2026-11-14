@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BKE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: The Buckle, Inc. (BKE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BKE</link>
+  <description>Alerts for The Buckle, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>The Buckle, Inc.: Rank moved up 63 places to #843 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BKE</link>
+   <guid isPermaLink="false">2026-11-13-US-BKE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 63 places to #843 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NEO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: NeoGenomics Laboratories, Inc. (NEO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NEO</link>
+  <description>Alerts for NeoGenomics Laboratories, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>NeoGenomics Laboratories, Inc.: Rank moved down 29 places to #194 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NEO</link>
+   <guid isPermaLink="false">2026-11-13-US-NEO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #194 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

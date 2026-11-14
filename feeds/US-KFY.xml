@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KFY.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Korn/Ferry International (KFY)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KFY</link>
+  <description>Alerts for Korn/Ferry International from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Korn/Ferry International: Rank moved up 168 places to #90 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KFY</link>
+   <guid isPermaLink="false">2026-11-13-US-KFY-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 168 places to #90 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

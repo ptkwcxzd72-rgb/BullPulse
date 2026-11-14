@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PFS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Provident Financial Services, Inc. (PFS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PFS</link>
+  <description>Alerts for Provident Financial Services, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Provident Financial Services, Inc.: Rank moved down 36 places to #220 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PFS</link>
+   <guid isPermaLink="false">2026-11-13-US-PFS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #220 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

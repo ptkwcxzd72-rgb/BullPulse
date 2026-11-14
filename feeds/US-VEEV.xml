@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-VEEV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Veeva Systems (VEEV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-VEEV</link>
+  <description>Alerts for Veeva Systems from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Veeva Systems: Rank moved down 34 places to #185 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VEEV</link>
+   <guid isPermaLink="false">2026-11-13-US-VEEV-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #185 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Veeva Systems: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-VEEV</link>
+   <guid isPermaLink="false">2026-11-11-US-VEEV-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Veeva Systems: Rank moved up 32 places to #140 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VEEV</link>
+   <guid isPermaLink="false">2026-11-09-US-VEEV-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #140 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Veeva Systems: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-VEEV</link>
+   <guid isPermaLink="false">2026-11-09-US-VEEV-early</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

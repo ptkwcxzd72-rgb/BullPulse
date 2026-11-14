@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-IEX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: IDEX Corporation (IEX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-IEX</link>
+  <description>Alerts for IDEX Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>IDEX Corporation: Rank moved down 45 places to #120 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IEX</link>
+   <guid isPermaLink="false">2026-11-11-US-IEX-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 45 places to #120 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IDEX Corporation: Rank moved up 51 places to #75 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IEX</link>
+   <guid isPermaLink="false">2026-11-10-US-IEX-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 51 places to #75 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PATK.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Patrick Industries, Inc. (PATK)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PATK</link>
+  <description>Alerts for Patrick Industries, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Patrick Industries, Inc.: Rank moved up 147 places to #755 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PATK</link>
+   <guid isPermaLink="false">2026-11-13-US-PATK-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 147 places to #755 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

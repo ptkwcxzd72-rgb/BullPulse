@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ROK.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Rockwell Automation (ROK)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ROK</link>
+  <description>Alerts for Rockwell Automation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Rockwell Automation: New results filed: revenue +7.8% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROK</link>
+   <guid isPermaLink="false">2026-11-13-US-ROK-results</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +7.8% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rockwell Automation: Rank moved down 24 places to #325 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROK</link>
+   <guid isPermaLink="false">2026-11-11-US-ROK-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #325 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rockwell Automation: Rank moved down 38 places to #311 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROK</link>
+   <guid isPermaLink="false">2026-11-09-US-ROK-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #311 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

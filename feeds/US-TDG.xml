@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TDG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: TransDigm Group (TDG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+  <description>Alerts for TransDigm Group from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>TransDigm Group: Rank moved up 42 places to #389 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-13-US-TDG-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #389 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-13-US-TDG-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: New results filed: revenue +19.5% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-13-US-TDG-results</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +19.5% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-12-US-TDG-trend</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Rank moved down 29 places to #431 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-12-US-TDG-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #431 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-10-US-TDG-growth</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-10-US-TDG-early</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-10-US-TDG-trend</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Rank moved up 75 places to #391 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-10-US-TDG-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 75 places to #391 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Rank moved down 20 places to #466 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-09-US-TDG-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #466 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TransDigm Group: Unusual burst of news coverage (30-day tone -0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDG</link>
+   <guid isPermaLink="false">2026-11-09-US-TDG-news</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

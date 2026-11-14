@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: DoubleVerify Holdings Inc. (DV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DV</link>
+  <description>Alerts for DoubleVerify Holdings Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>DoubleVerify Holdings Inc.: Rank moved down 153 places to #311 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DV</link>
+   <guid isPermaLink="false">2026-11-13-US-DV-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 153 places to #311 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

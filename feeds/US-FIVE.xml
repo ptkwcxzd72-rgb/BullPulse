@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FIVE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Five Below (FIVE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FIVE</link>
+  <description>Alerts for Five Below from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Five Below: Rank moved down 139 places to #183 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVE</link>
+   <guid isPermaLink="false">2026-11-13-US-FIVE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 139 places to #183 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Five Below: Unusual burst of news coverage (30-day tone -0.01)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVE</link>
+   <guid isPermaLink="false">2026-11-13-US-FIVE-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.01). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-COF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Capital One (COF)</title>
+  <link>https://bullpulse.co.uk/app.html#US-COF</link>
+  <description>Alerts for Capital One from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Capital One: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-11-12-US-COF-cross</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Rank moved down 101 places to #375 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-11-09-US-COF-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 101 places to #375 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-11-09-US-COF-trend</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Rank moved down 153 places to #276 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-11-06-US-COF-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 153 places to #276 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-11-05-US-COF-early</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: New results filed: revenue +24.2% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-11-04-US-COF-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +24.2% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-10-30-US-COF-early</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-10-26-US-COF-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Rank moved up 37 places to #116 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-10-21-US-COF-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #116 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Capital One: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-COF</link>
+   <guid isPermaLink="false">2026-10-21-US-COF-trend</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

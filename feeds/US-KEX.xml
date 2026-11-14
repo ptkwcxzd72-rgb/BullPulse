@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KEX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Kirby Corporation (KEX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+  <description>Alerts for Kirby Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Kirby Corporation: Rank moved up 75 places to #451 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+   <guid isPermaLink="false">2026-11-13-US-KEX-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 75 places to #451 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

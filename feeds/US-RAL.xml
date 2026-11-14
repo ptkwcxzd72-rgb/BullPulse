@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RAL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Ralliant Corp (RAL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RAL</link>
+  <description>Alerts for Ralliant Corp from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Ralliant Corp: Rank moved up 64 places to #121 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RAL</link>
+   <guid isPermaLink="false">2026-11-13-US-RAL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 64 places to #121 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ralliant Corp: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RAL</link>
+   <guid isPermaLink="false">2026-11-13-US-RAL-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ELF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: e.l.f. Beauty (ELF)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ELF</link>
+  <description>Alerts for e.l.f. Beauty from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>e.l.f. Beauty: Rank moved up 31 places to #32 (score 83)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELF</link>
+   <guid isPermaLink="false">2026-11-13-US-ELF-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 31 places to #32 (score 83). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>e.l.f. Beauty: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELF</link>
+   <guid isPermaLink="false">2026-11-13-US-ELF-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>e.l.f. Beauty: Unusual burst of news coverage (30-day tone +0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELF</link>
+   <guid isPermaLink="false">2026-11-13-US-ELF-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

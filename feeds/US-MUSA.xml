@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MUSA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Murphy USA (MUSA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MUSA</link>
+  <description>Alerts for Murphy USA from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Murphy USA: Rank moved down 55 places to #229 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MUSA</link>
+   <guid isPermaLink="false">2026-11-13-US-MUSA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 55 places to #229 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Murphy USA: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-MUSA</link>
+   <guid isPermaLink="false">2026-11-13-US-MUSA-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

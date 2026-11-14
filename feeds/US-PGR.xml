@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PGR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Progressive Corporation (PGR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PGR</link>
+  <description>Alerts for Progressive Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Progressive Corporation: Rank moved up 33 places to #157 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PGR</link>
+   <guid isPermaLink="false">2026-11-13-US-PGR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #157 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Progressive Corporation: Rank moved down 37 places to #183 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PGR</link>
+   <guid isPermaLink="false">2026-11-11-US-PGR-rank</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #183 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

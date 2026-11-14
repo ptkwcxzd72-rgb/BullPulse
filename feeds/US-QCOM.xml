@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-QCOM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Qualcomm (QCOM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-QCOM</link>
+  <description>Alerts for Qualcomm from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Qualcomm: Rank moved up 80 places to #326 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-QCOM</link>
+   <guid isPermaLink="false">2026-11-09-US-QCOM-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 80 places to #326 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Qualcomm: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-QCOM</link>
+   <guid isPermaLink="false">2026-11-09-US-QCOM-trend</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

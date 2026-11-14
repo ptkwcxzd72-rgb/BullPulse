@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ENOV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Enovis (ENOV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ENOV</link>
+  <description>Alerts for Enovis from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Enovis: Rank moved up 64 places to #702 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENOV</link>
+   <guid isPermaLink="false">2026-11-13-US-ENOV-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 64 places to #702 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enovis: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENOV</link>
+   <guid isPermaLink="false">2026-11-13-US-ENOV-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

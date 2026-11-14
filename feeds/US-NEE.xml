@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NEE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: NextEra Energy (NEE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NEE</link>
+  <description>Alerts for NextEra Energy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>NextEra Energy: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-NEE</link>
+   <guid isPermaLink="false">2026-11-10-US-NEE-trend</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NextEra Energy: Rank moved down 55 places to #412 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NEE</link>
+   <guid isPermaLink="false">2026-11-10-US-NEE-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 55 places to #412 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>
