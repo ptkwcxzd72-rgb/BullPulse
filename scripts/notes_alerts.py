@@ -136,6 +136,31 @@ def verified(points: list, notes: str) -> list[dict]:
     return out
 
 
+def flash_rank(name: str) -> tuple:
+    """Sort key for Gemini model names: the newest stable Flash first (not Lite, previews or
+    experiments, whose free quotas and lifetimes are shorter)."""
+    n = name.split("/")[-1]
+    v = re.search(r"gemini-(\d+(?:\.\d+)?)", n)
+    unstable = any(x in n for x in ("preview", "exp", "lite", "image", "tts", "live", "thinking"))
+    return (not unstable, float(v.group(1)) if v else 0.0, n == f"gemini-{v.group(1)}-flash" if v else False)
+
+
+def pick_model(key: str) -> str:
+    """The model to use: GEMINI_MODEL if it is still offered, else the newest Flash model this key
+    can call (Google retires model names, as gemini-2.5-flash was in 2026)."""
+    try:
+        req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", headers={"x-goog-api-key": key})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            models = json.load(r).get("models", [])
+    except Exception:
+        return MODEL
+    ok = [m["name"].split("/")[-1] for m in models if "generateContent" in m.get("supportedGenerationMethods", [])]
+    if MODEL in ok:
+        return MODEL
+    flash = sorted((n for n in ok if "flash" in n), key=flash_rank, reverse=True)
+    return flash[0] if flash else MODEL
+
+
 def ask(key: str, prompt: str) -> tuple[list | None, str]:
     """The model's points, or None and why (the key never appears in messages)."""
     body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -169,6 +194,9 @@ def main() -> int:
     if not contact():
         print("::warning::Notes alerts skipped: SEC_CONTACT_EMAIL is not set.")
         return 0
+    global MODEL
+    MODEL = pick_model(key)
+    print(f"  model: {MODEL}")
     uni = {}
     for f in sorted(glob.glob(os.path.join(a.universe, "*.csv"))):
         for r in csv.DictReader(open(f, newline="")):

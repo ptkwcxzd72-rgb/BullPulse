@@ -1,0 +1,41 @@
+name: Notes alerts
+
+# Runs scripts/notes_alerts.py on its own (the evening job also runs it), for a quick check or to
+# catch up after a quota day. The site shows the points after the next nightly run.
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Reports to summarise"
+        default: "5"
+      days:
+        description: "Filing days to look back"
+        default: "4"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: evening
+  cancel-in-progress: false
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python scripts/notes_alerts.py --max "${{ inputs.max }}" --days "${{ inputs.days }}"
+      - name: Commit the alerts
+        run: |
+          git config user.name "bullpulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -e data/notes_alerts.json ] && git add data/notes_alerts.json
+          git diff --cached --quiet || git commit -m "Notes alerts $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 20; done

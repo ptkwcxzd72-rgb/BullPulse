@@ -38,5 +38,11 @@ class NotesAlertsTest(unittest.TestCase):
         self.assertEqual(len(v), 1)
 
 
+    def test_newest_stable_flash_first(self):
+        names = ["gemini-2.0-flash", "gemini-3-flash", "gemini-3-flash-lite", "gemini-3.5-flash-preview", "gemini-3-pro"]
+        flash = sorted((n for n in names if "flash" in n), key=N.flash_rank, reverse=True)
+        self.assertEqual(flash[0], "gemini-3-flash")
+
+
 if __name__ == "__main__":
     unittest.main()
