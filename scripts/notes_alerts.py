@@ -34,7 +34,7 @@ OUT = "data/notes_alerts.json"
 KEEP = 600            # alerts kept, newest first
 MAX_CHARS = 400_000   # notes text sent to the model (about 100,000 tokens)
 FORMS = {"10-K", "10-Q", "10-K/A", "10-Q/A"}
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+MODEL = os.environ.get("GEMINI_MODEL", "")   # empty: the newest stable Flash model offered
 GEMINI = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
 PROMPT = """You are reading the notes to the financial statements of {name}'s {form} for the period to {period}.
@@ -154,16 +154,16 @@ def pick_model(key: str) -> str:
             models = json.load(r).get("models", [])
     except urllib.error.HTTPError as e:
         print(f"::warning::Gemini model list: HTTP {e.code} {e.read().decode('utf-8', 'ignore')[:200]}")
-        return MODEL
+        return MODEL or "gemini-flash-latest"
     except Exception as e:
         print(f"::warning::Gemini model list: {type(e).__name__}")
-        return MODEL
+        return MODEL or "gemini-flash-latest"
     ok = [m["name"].split("/")[-1] for m in models if "generateContent" in m.get("supportedGenerationMethods", [])]
     print(f"  {len(ok)} models offered; Flash: {sorted(n for n in ok if 'flash' in n)[:12]}")
-    if MODEL in ok:
+    if MODEL and MODEL in ok:
         return MODEL
     flash = sorted((n for n in ok if "flash" in n), key=flash_rank, reverse=True)
-    return flash[0] if flash else MODEL
+    return flash[0] if flash else (MODEL or "gemini-flash-latest")
 
 
 def ask(key: str, prompt: str) -> tuple[list | None, str]:
@@ -226,10 +226,10 @@ def main() -> int:
             if cik in uni and cik not in seen:
                 seen.add(cik)
                 todo.append(cik)
-    made, refused, why = 0, 0, ""
+    made, refused, why, stop_now = 0, 0, "", False
     checked = list(store.get("checked", []))[-2000:]
     for cik in todo:
-        if made >= a.max:
+        if made >= a.max or stop_now:
             break
         sub = sec_get(f"https://data.sec.gov/submissions/CIK{int(cik):010d}.json")
         rec = (sub or {}).get("filings", {}).get("recent", {})
@@ -256,7 +256,7 @@ def main() -> int:
                 done.discard(acc)
                 # the day's free quota, or a setup problem that every request would hit: stop
                 if err.startswith(("HTTP 429", "HTTP 404", "HTTP 403", "HTTP 400")) and refused >= 2:
-                    made = a.max
+                    stop_now = True
                 break
             store["alerts"].insert(0, {"id": "US-" + r["ticker"].replace(".", ""), "name": r["name"], "form": form, "accession": acc,
                                        "filed": rec["filingDate"][j], "period": rec.get("reportDate", [""] * (j + 1))[j], "url": url,
