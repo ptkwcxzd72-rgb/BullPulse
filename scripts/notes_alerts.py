@@ -114,6 +114,31 @@ def notes_section(text: str) -> str:
     return best[:MAX_CHARS]
 
 
+RISKY = re.compile(r"(?i)contingenc|litigation|lawsuit|legal proceeding|settlement|covenant|waiver|default|going concern|"
+                   r"subsequent event|impairment|restat|material weakness|related part|investigation|subpoena|"
+                   r"guarantee|off-balance|restructuring|goodwill|uncertain tax|regulatory")
+SEND_CHARS = 60_000   # about 15,000 tokens: inside the free tier's per-minute limits, and faster
+
+
+def risk_excerpt(notes: str, limit: int = SEND_CHARS) -> str:
+    """The notes to send to the model: paragraphs that mention a risk topic, each with the
+    paragraph before it (often the note's heading), in order, up to `limit` characters. Points
+    are still checked against the full notes."""
+    paras = [p for p in notes.split("\n") if p.strip()]
+    keep: set[int] = set()
+    for k, p in enumerate(paras):
+        if RISKY.search(p):
+            keep.update({k - 1, k} if k else {k})
+    out, n = [], 0
+    for k in sorted(keep):
+        p = paras[k].strip()
+        if n + len(p) > limit:
+            break
+        out.append(p)
+        n += len(p) + 1
+    return "\n".join(out) if out else notes[:limit]
+
+
 def norm(s: str) -> str:
     s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"').replace("—", "-").replace("–", "-")
     return re.sub(r"\s+", " ", s).strip().lower()
@@ -183,16 +208,17 @@ def ask(key: str, prompt: str) -> tuple[list | None, str]:
         MODEL = CANDIDATES[0]
         req = urllib.request.Request(GEMINI.format(model=MODEL), data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
         try:
-            with urllib.request.urlopen(req, timeout=180) as r:
+            with urllib.request.urlopen(req, timeout=240) as r:
                 d = json.load(r)
         except urllib.error.HTTPError as e:
             # Google's error text (it never contains the key) says why
-            err = f"HTTP {e.code} ({MODEL}): {e.read().decode('utf-8', 'ignore')[:140]}"
+            raw_err = e.read().decode("utf-8", "ignore")
+            err = f"HTTP {e.code} ({MODEL}): " + re.sub(r"\s+", " ", raw_err)[:400]
             if e.code == 503 and MODEL not in tried_503:
                 tried_503.add(MODEL)
                 time.sleep(15)
                 continue
-            if e.code == 429 and "limit: 0" not in err and "PerDay" not in err:
+            if e.code == 429 and "limit: 0" not in raw_err and "PerDay" not in raw_err and "per day" not in raw_err.lower():
                 if ("429", MODEL) in tried_503:
                     return None, err         # still limited: leave this report for the next run
                 tried_503.add(("429", MODEL))
@@ -278,7 +304,7 @@ def main() -> int:
                 break
             r = uni[cik]
             t1 = time.time()
-            pts, err = ask(key, PROMPT.format(name=r["name"], form=form, period=rec.get("reportDate", [""] * (j + 1))[j], notes=notes))
+            pts, err = ask(key, PROMPT.format(name=r["name"], form=form, period=rec.get("reportDate", [""] * (j + 1))[j], notes=risk_excerpt(notes)))
             print(f"  {r['ticker']} {form}: {len(raw or '') // 1000}k document, {len(notes) // 1000}k of notes, read in {t1 - t0:.0f}s; "
                   f"model {time.time() - t1:.0f}s, {('points: ' + str(len(pts))) if pts is not None else err[:80]}", flush=True)
             if pts is None:
