@@ -31,7 +31,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: python scripts/notes_alerts.py --max "${{ inputs.max }}" --days "${{ inputs.days }}"
+      - run: python -u scripts/notes_alerts.py --max "${{ inputs.max }}" --days "${{ inputs.days }}" --budget-min 20
       - name: Commit the alerts
         run: |
           git config user.name "bullpulse-bot"

@@ -60,7 +60,7 @@ jobs:
         timeout-minutes: 25
         continue-on-error: true
       - name: Notes alerts from new 10-K and 10-Q reports (Gemini free tier; skipped without the GEMINI_API_KEY secret)
-        run: python scripts/notes_alerts.py --days 4 --max 40
+        run: python -u scripts/notes_alerts.py --days 4 --max 40 --budget-min 25
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         timeout-minutes: 30

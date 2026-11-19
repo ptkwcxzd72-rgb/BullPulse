@@ -191,6 +191,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=4, help="filing days to look back")
     ap.add_argument("--max", type=int, default=40, help="reports to summarise this run (free-tier quota)")
+    ap.add_argument("--budget-min", type=float, default=25, help="stop starting new reports after this long")
     ap.add_argument("--universe", default="universe")
     a = ap.parse_args()
     key = os.environ.get("GEMINI_API_KEY", "").strip()
@@ -227,9 +228,11 @@ def main() -> int:
                 seen.add(cik)
                 todo.append(cik)
     made, refused, why, stop_now = 0, 0, "", False
+    deadline = time.time() + a.budget_min * 60
+    print(f"  {len(todo)} universe companies filed reports in the window", flush=True)
     checked = list(store.get("checked", []))[-2000:]
     for cik in todo:
-        if made >= a.max or stop_now:
+        if made >= a.max or stop_now or time.time() > deadline:
             break
         sub = sec_get(f"https://data.sec.gov/submissions/CIK{int(cik):010d}.json")
         rec = (sub or {}).get("filings", {}).get("recent", {})
@@ -241,6 +244,7 @@ def main() -> int:
                 break
             doc = rec["primaryDocument"][j]
             url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc.replace('-', '')}/{doc}"
+            t0 = time.time()
             raw = sec_get(url, as_json=False)
             notes = notes_section(text_of(raw or ""))
             checked.append(acc)
@@ -248,7 +252,10 @@ def main() -> int:
             if len(notes) < 2000:
                 break
             r = uni[cik]
+            t1 = time.time()
             pts, err = ask(key, PROMPT.format(name=r["name"], form=form, period=rec.get("reportDate", [""] * (j + 1))[j], notes=notes))
+            print(f"  {r['ticker']} {form}: {len(raw or '') // 1000}k document, {len(notes) // 1000}k of notes, read in {t1 - t0:.0f}s; "
+                  f"model {time.time() - t1:.0f}s, {('points: ' + str(len(pts))) if pts is not None else err[:80]}", flush=True)
             if pts is None:
                 refused += 1
                 why = err
