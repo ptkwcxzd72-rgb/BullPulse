@@ -145,46 +145,72 @@ def flash_rank(name: str) -> tuple:
     return (not unstable, float(v.group(1)) if v else 0.0, n == f"gemini-{v.group(1)}-flash" if v else False)
 
 
-def pick_model(key: str) -> str:
-    """The model to use: GEMINI_MODEL if it is still offered, else the newest Flash model this key
-    can call (Google retires model names, as gemini-2.5-flash was in 2026)."""
+CANDIDATES: list[str] = []   # models to try, best first (pick_models)
+
+
+def pick_models(key: str) -> list[str]:
+    """Models to try, best first: GEMINI_MODEL if set, then the stable Flash models this key can
+    call, newest first, then the Lite ones. Google retires names (gemini-2.5-flash was closed to
+    new keys in 2026) and the newest model often has no free-tier quota, so ask() moves down the
+    list when a model refuses."""
     try:
         req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", headers={"x-goog-api-key": key})
         with urllib.request.urlopen(req, timeout=60) as r:
             models = json.load(r).get("models", [])
     except urllib.error.HTTPError as e:
         print(f"::warning::Gemini model list: HTTP {e.code} {e.read().decode('utf-8', 'ignore')[:200]}")
-        return MODEL or "gemini-flash-latest"
+        return [m for m in (MODEL, "gemini-flash-latest") if m]
     except Exception as e:
         print(f"::warning::Gemini model list: {type(e).__name__}")
-        return MODEL or "gemini-flash-latest"
+        return [m for m in (MODEL, "gemini-flash-latest") if m]
     ok = [m["name"].split("/")[-1] for m in models if "generateContent" in m.get("supportedGenerationMethods", [])]
-    print(f"  {len(ok)} models offered; Flash: {sorted(n for n in ok if 'flash' in n)[:12]}")
-    if MODEL and MODEL in ok:
-        return MODEL
-    flash = sorted((n for n in ok if "flash" in n), key=flash_rank, reverse=True)
-    return flash[0] if flash else (MODEL or "gemini-flash-latest")
+    flash = sorted((n for n in ok if "flash" in n and flash_rank(n)[0]), key=flash_rank, reverse=True)
+    lite = sorted((n for n in ok if "flash-lite" in n and not any(x in n for x in ("preview", "image", "tts"))), key=flash_rank, reverse=True)
+    out = ([MODEL] if MODEL in ok else []) + flash + lite + (["gemini-flash-latest"] if "gemini-flash-latest" in ok else [])
+    return list(dict.fromkeys(out)) or ["gemini-flash-latest"]
 
 
 def ask(key: str, prompt: str) -> tuple[list | None, str]:
-    """The model's points, or None and why (the key never appears in messages)."""
-    body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0, "responseMimeType": "application/json"}}
-    req = urllib.request.Request(GEMINI.format(model=MODEL), data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": key})
-    try:
-        with urllib.request.urlopen(req, timeout=180) as r:
-            d = json.load(r)
-    except urllib.error.HTTPError as e:
-        # Google's error text (it never contains the key) says why
-        return None, f"HTTP {e.code}: {e.read().decode('utf-8', 'ignore')[:160]}"
-    except Exception as e:
-        return None, type(e).__name__
-    try:
-        txt = d["candidates"][0]["content"]["parts"][0]["text"]
-        return json.loads(txt).get("points", []), ""
-    except Exception:
-        return None, "unreadable reply"
+    """The model's points, or None and why (the key never appears in messages). A model that is
+    overloaded (503) is retried once; one without quota or closed to this key (429, 404, 403) is
+    dropped from CANDIDATES for the rest of the run, and the next one is tried."""
+    global MODEL
+    body = json.dumps({"contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                       "generationConfig": {"temperature": 0, "responseMimeType": "application/json"}}).encode()
+    err = "no model"
+    tried_503 = set()
+    while CANDIDATES:
+        MODEL = CANDIDATES[0]
+        req = urllib.request.Request(GEMINI.format(model=MODEL), data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                d = json.load(r)
+        except urllib.error.HTTPError as e:
+            # Google's error text (it never contains the key) says why
+            err = f"HTTP {e.code} ({MODEL}): {e.read().decode('utf-8', 'ignore')[:140]}"
+            if e.code == 503 and MODEL not in tried_503:
+                tried_503.add(MODEL)
+                time.sleep(15)
+                continue
+            if e.code == 429 and "limit: 0" not in err and "PerDay" not in err:
+                if ("429", MODEL) in tried_503:
+                    return None, err         # still limited: leave this report for the next run
+                tried_503.add(("429", MODEL))
+                time.sleep(45)               # a per-minute limit: wait and try once more
+                continue
+            if e.code in (429, 404, 403, 503):
+                print(f"  {MODEL} refused (HTTP {e.code}); trying the next model", flush=True)
+                CANDIDATES.pop(0)
+                continue
+            return None, err
+        except Exception as e:
+            return None, type(e).__name__
+        try:
+            txt = d["candidates"][0]["content"]["parts"][0]["text"]
+            return json.loads(txt).get("points", []), ""
+        except Exception:
+            return None, "unreadable reply"
+    return None, err
 
 
 def main() -> int:
@@ -201,9 +227,8 @@ def main() -> int:
     if not contact():
         print("::warning::Notes alerts skipped: SEC_CONTACT_EMAIL is not set.")
         return 0
-    global MODEL
-    MODEL = pick_model(key)
-    print(f"  model: {MODEL}")
+    CANDIDATES[:] = pick_models(key)
+    print(f"  models to try: {CANDIDATES[:6]}")
     uni = {}
     for f in sorted(glob.glob(os.path.join(a.universe, "*.csv"))):
         for r in csv.DictReader(open(f, newline="")):
@@ -262,7 +287,7 @@ def main() -> int:
                 checked.pop()
                 done.discard(acc)
                 # the day's free quota, or a setup problem that every request would hit: stop
-                if err.startswith(("HTTP 429", "HTTP 404", "HTTP 403", "HTTP 400")) and refused >= 2:
+                if (not CANDIDATES or err.startswith(("HTTP 400", "HTTP 429"))) and refused >= 2:
                     stop_now = True
                 break
             store["alerts"].insert(0, {"id": "US-" + r["ticker"].replace(".", ""), "name": r["name"], "form": form, "accession": acc,
