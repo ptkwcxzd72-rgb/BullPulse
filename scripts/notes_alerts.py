@@ -152,9 +152,14 @@ def pick_model(key: str) -> str:
         req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", headers={"x-goog-api-key": key})
         with urllib.request.urlopen(req, timeout=60) as r:
             models = json.load(r).get("models", [])
-    except Exception:
+    except urllib.error.HTTPError as e:
+        print(f"::warning::Gemini model list: HTTP {e.code} {e.read().decode('utf-8', 'ignore')[:200]}")
+        return MODEL
+    except Exception as e:
+        print(f"::warning::Gemini model list: {type(e).__name__}")
         return MODEL
     ok = [m["name"].split("/")[-1] for m in models if "generateContent" in m.get("supportedGenerationMethods", [])]
+    print(f"  {len(ok)} models offered; Flash: {sorted(n for n in ok if 'flash' in n)[:12]}")
     if MODEL in ok:
         return MODEL
     flash = sorted((n for n in ok if "flash" in n), key=flash_rank, reverse=True)
@@ -171,7 +176,8 @@ def ask(key: str, prompt: str) -> tuple[list | None, str]:
         with urllib.request.urlopen(req, timeout=180) as r:
             d = json.load(r)
     except urllib.error.HTTPError as e:
-        return None, f"HTTP {e.code}"
+        # Google's error text (it never contains the key) says why
+        return None, f"HTTP {e.code}: {e.read().decode('utf-8', 'ignore')[:160]}"
     except Exception as e:
         return None, type(e).__name__
     try:
@@ -248,7 +254,8 @@ def main() -> int:
                 why = err
                 checked.pop()
                 done.discard(acc)
-                if err == "HTTP 429":   # the day's free quota: carry on tomorrow
+                # the day's free quota, or a setup problem that every request would hit: stop
+                if err.startswith(("HTTP 429", "HTTP 404", "HTTP 403", "HTTP 400")) and refused >= 2:
                     made = a.max
                 break
             store["alerts"].insert(0, {"id": "US-" + r["ticker"].replace(".", ""), "name": r["name"], "form": form, "accession": acc,
