@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-GTY.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Getty Realty Corp. (GTY)</title>
+  <link>https://bullpulse.co.uk/app.html#US-GTY</link>
+  <description>Alerts for Getty Realty Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Getty Realty Corp.: Rank moved up 36 places to #630 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTY</link>
+   <guid isPermaLink="false">2026-11-20-US-GTY-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #630 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Getty Realty Corp.: Rank moved up 37 places to #666 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTY</link>
+   <guid isPermaLink="false">2026-11-19-US-GTY-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #666 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Getty Realty Corp.: Rank moved down 31 places to #703 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTY</link>
+   <guid isPermaLink="false">2026-11-18-US-GTY-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #703 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Getty Realty Corp.: Rank moved down 21 places to #672 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTY</link>
+   <guid isPermaLink="false">2026-11-17-US-GTY-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #672 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Getty Realty Corp.: Rank moved down 25 places to #670 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTY</link>
+   <guid isPermaLink="false">2026-11-13-US-GTY-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #670 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

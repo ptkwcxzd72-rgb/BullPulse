@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MPT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Medical Properties Trust (MPT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MPT</link>
+  <description>Alerts for Medical Properties Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Medical Properties Trust: Rank moved down 61 places to #942 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MPT</link>
+   <guid isPermaLink="false">2026-11-20-US-MPT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 61 places to #942 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Medical Properties Trust: Rank moved up 78 places to #881 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MPT</link>
+   <guid isPermaLink="false">2026-11-19-US-MPT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 78 places to #881 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

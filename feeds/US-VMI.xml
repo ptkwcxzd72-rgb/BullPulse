@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-VMI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Valmont Industries (VMI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-VMI</link>
+  <description>Alerts for Valmont Industries from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Valmont Industries: Rank moved down 24 places to #830 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VMI</link>
+   <guid isPermaLink="false">2026-11-20-US-VMI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #830 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valmont Industries: Unusual burst of news coverage (30-day tone -0.47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VMI</link>
+   <guid isPermaLink="false">2026-11-19-US-VMI-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valmont Industries: Rank moved down 70 places to #806 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VMI</link>
+   <guid isPermaLink="false">2026-11-19-US-VMI-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 70 places to #806 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valmont Industries: Rank moved down 148 places to #741 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VMI</link>
+   <guid isPermaLink="false">2026-11-13-US-VMI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 148 places to #741 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

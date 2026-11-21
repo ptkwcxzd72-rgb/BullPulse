@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-GXO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: GXO Logistics (GXO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+  <description>Alerts for GXO Logistics from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>GXO Logistics: Rank moved up 46 places to #400 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+   <guid isPermaLink="false">2026-11-20-US-GXO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 46 places to #400 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>GXO Logistics: Rank moved up 21 places to #446 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+   <guid isPermaLink="false">2026-11-19-US-GXO-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #446 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>GXO Logistics: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+   <guid isPermaLink="false">2026-11-17-US-GXO-early</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>GXO Logistics: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+   <guid isPermaLink="false">2026-11-17-US-GXO-cross</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>GXO Logistics: Rank moved up 36 places to #498 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+   <guid isPermaLink="false">2026-11-16-US-GXO-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #498 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>GXO Logistics: Unusual burst of news coverage (30-day tone +0.84)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+   <guid isPermaLink="false">2026-11-13-US-GXO-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.84). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>GXO Logistics: Rank moved up 119 places to #534 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GXO</link>
+   <guid isPermaLink="false">2026-11-13-US-GXO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 119 places to #534 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Stifel (SF)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SF</link>
+  <description>Alerts for Stifel from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Stifel: Rank moved down 95 places to #938 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SF</link>
+   <guid isPermaLink="false">2026-11-20-US-SF-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 95 places to #938 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stifel: Rank moved down 33 places to #843 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SF</link>
+   <guid isPermaLink="false">2026-11-19-US-SF-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 33 places to #843 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stifel: Rank moved down 57 places to #810 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SF</link>
+   <guid isPermaLink="false">2026-11-18-US-SF-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 57 places to #810 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stifel: Unusual burst of news coverage (30-day tone +0.15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SF</link>
+   <guid isPermaLink="false">2026-11-13-US-SF-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stifel: Rank moved up 77 places to #729 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SF</link>
+   <guid isPermaLink="false">2026-11-13-US-SF-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 77 places to #729 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

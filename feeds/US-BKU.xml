@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BKU.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: BankUnited, Inc. (BKU)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BKU</link>
+  <description>Alerts for BankUnited, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>BankUnited, Inc.: Rank moved up 60 places to #616 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BKU</link>
+   <guid isPermaLink="false">2026-11-20-US-BKU-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 60 places to #616 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BankUnited, Inc.: Unusual burst of news coverage (30-day tone +0.29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BKU</link>
+   <guid isPermaLink="false">2026-11-19-US-BKU-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BankUnited, Inc.: Rank moved up 47 places to #676 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BKU</link>
+   <guid isPermaLink="false">2026-11-19-US-BKU-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 47 places to #676 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BankUnited, Inc.: Rank moved down 31 places to #723 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BKU</link>
+   <guid isPermaLink="false">2026-11-18-US-BKU-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #723 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

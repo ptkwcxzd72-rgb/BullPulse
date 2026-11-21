@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMKR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Amkor Technology (AMKR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AMKR</link>
+  <description>Alerts for Amkor Technology from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Amkor Technology: Rank moved down 94 places to #566 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMKR</link>
+   <guid isPermaLink="false">2026-11-20-US-AMKR-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 94 places to #566 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amkor Technology: Rank moved up 43 places to #472 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMKR</link>
+   <guid isPermaLink="false">2026-11-19-US-AMKR-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 43 places to #472 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amkor Technology: Rank moved up 36 places to #515 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMKR</link>
+   <guid isPermaLink="false">2026-11-18-US-AMKR-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #515 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amkor Technology: Rank moved up 133 places to #564 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMKR</link>
+   <guid isPermaLink="false">2026-11-16-US-AMKR-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 133 places to #564 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amkor Technology: Unusual burst of news coverage (30-day tone +0.10)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMKR</link>
+   <guid isPermaLink="false">2026-11-16-US-AMKR-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.10). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amkor Technology: Rank moved down 94 places to #697 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMKR</link>
+   <guid isPermaLink="false">2026-11-13-US-AMKR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 94 places to #697 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

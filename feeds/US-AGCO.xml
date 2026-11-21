@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AGCO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: AGCO (AGCO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AGCO</link>
+  <description>Alerts for AGCO from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>AGCO: Rank moved down 74 places to #642 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGCO</link>
+   <guid isPermaLink="false">2026-11-20-US-AGCO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 74 places to #642 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGCO: Rank moved up 29 places to #568 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGCO</link>
+   <guid isPermaLink="false">2026-11-19-US-AGCO-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #568 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGCO: Rank moved up 79 places to #597 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGCO</link>
+   <guid isPermaLink="false">2026-11-18-US-AGCO-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 79 places to #597 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGCO: Unusual burst of news coverage (30-day tone +0.12)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGCO</link>
+   <guid isPermaLink="false">2026-11-17-US-AGCO-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.12). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGCO: Rank moved up 80 places to #668 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGCO</link>
+   <guid isPermaLink="false">2026-11-16-US-AGCO-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 80 places to #668 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGCO: Rank moved down 62 places to #748 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGCO</link>
+   <guid isPermaLink="false">2026-11-13-US-AGCO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 62 places to #748 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MIDD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Middleby (MIDD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+  <description>Alerts for Middleby from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Middleby: Rank moved up 55 places to #311 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+   <guid isPermaLink="false">2026-11-20-US-MIDD-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 55 places to #311 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Middleby: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+   <guid isPermaLink="false">2026-11-19-US-MIDD-early</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Middleby: Rank moved up 167 places to #372 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+   <guid isPermaLink="false">2026-11-18-US-MIDD-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 167 places to #372 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Middleby: Unusual burst of news coverage (30-day tone -0.07)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+   <guid isPermaLink="false">2026-11-17-US-MIDD-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.07). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Middleby: Rank moved down 56 places to #539 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+   <guid isPermaLink="false">2026-11-17-US-MIDD-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 56 places to #539 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Middleby: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+   <guid isPermaLink="false">2026-11-13-US-MIDD-cross</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Middleby: Rank moved up 20 places to #498 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MIDD</link>
+   <guid isPermaLink="false">2026-11-13-US-MIDD-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #498 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

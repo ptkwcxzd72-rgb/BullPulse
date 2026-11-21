@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FHI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Federated Hermes (FHI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FHI</link>
+  <description>Alerts for Federated Hermes from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Federated Hermes: Rank moved up 37 places to #382 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FHI</link>
+   <guid isPermaLink="false">2026-11-20-US-FHI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #382 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Federated Hermes: Rank moved down 91 places to #419 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FHI</link>
+   <guid isPermaLink="false">2026-11-19-US-FHI-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 91 places to #419 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Federated Hermes: Rank moved down 40 places to #325 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FHI</link>
+   <guid isPermaLink="false">2026-11-16-US-FHI-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 40 places to #325 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Federated Hermes: Rank moved down 35 places to #285 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FHI</link>
+   <guid isPermaLink="false">2026-11-13-US-FHI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #285 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

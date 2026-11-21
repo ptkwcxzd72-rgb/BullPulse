@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FIVN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Five9, Inc. (FIVN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+  <description>Alerts for Five9, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Five9, Inc.: Rank moved up 54 places to #319 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+   <guid isPermaLink="false">2026-11-20-US-FIVN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 54 places to #319 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Five9, Inc.: Unusual burst of news coverage (30-day tone -0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+   <guid isPermaLink="false">2026-11-19-US-FIVN-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Five9, Inc.: Rank moved down 82 places to #373 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+   <guid isPermaLink="false">2026-11-19-US-FIVN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 82 places to #373 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Five9, Inc.: Rank moved down 164 places to #291 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+   <guid isPermaLink="false">2026-11-18-US-FIVN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 164 places to #291 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Five9, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+   <guid isPermaLink="false">2026-11-18-US-FIVN-trend</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Five9, Inc.: Rank moved up 152 places to #141 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+   <guid isPermaLink="false">2026-11-16-US-FIVN-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 152 places to #141 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Five9, Inc.: Rank moved down 134 places to #293 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FIVN</link>
+   <guid isPermaLink="false">2026-11-13-US-FIVN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 134 places to #293 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

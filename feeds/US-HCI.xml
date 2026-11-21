@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HCI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: HCI Group, Inc. (HCI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HCI</link>
+  <description>Alerts for HCI Group, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>HCI Group, Inc.: Rank moved down 84 places to #259 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HCI</link>
+   <guid isPermaLink="false">2026-11-20-US-HCI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 84 places to #259 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>HCI Group, Inc.: Rank moved up 35 places to #175 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HCI</link>
+   <guid isPermaLink="false">2026-11-19-US-HCI-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 35 places to #175 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>HCI Group, Inc.: Rank moved up 30 places to #210 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HCI</link>
+   <guid isPermaLink="false">2026-11-18-US-HCI-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #210 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>HCI Group, Inc.: Rank moved up 218 places to #240 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HCI</link>
+   <guid isPermaLink="false">2026-11-17-US-HCI-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 218 places to #240 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>HCI Group, Inc.: Rank moved up 30 places to #458 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HCI</link>
+   <guid isPermaLink="false">2026-11-16-US-HCI-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #458 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>HCI Group, Inc.: Rank moved down 50 places to #488 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HCI</link>
+   <guid isPermaLink="false">2026-11-13-US-HCI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 50 places to #488 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

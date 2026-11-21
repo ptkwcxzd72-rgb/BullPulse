@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-EAT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Brinker International (EAT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-EAT</link>
+  <description>Alerts for Brinker International from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Brinker International: Rank moved down 20 places to #59 (score 82)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EAT</link>
+   <guid isPermaLink="false">2026-11-19-US-EAT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #59 (score 82). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brinker International: Unusual burst of news coverage (30-day tone +0.26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EAT</link>
+   <guid isPermaLink="false">2026-11-16-US-EAT-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

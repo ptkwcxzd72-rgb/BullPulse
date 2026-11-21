@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-UGI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: UGI Corp (UGI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+  <description>Alerts for UGI Corp from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>UGI Corp: New results filed: revenue +0.1% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+   <guid isPermaLink="false">2026-11-20-US-UGI-results</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +0.1% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UGI Corp: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+   <guid isPermaLink="false">2026-11-19-US-UGI-trend</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UGI Corp: Rank moved down 91 places to #611 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+   <guid isPermaLink="false">2026-11-19-US-UGI-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 91 places to #611 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UGI Corp: Unusual burst of news coverage (30-day tone -0.31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+   <guid isPermaLink="false">2026-11-18-US-UGI-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UGI Corp: Rank moved down 145 places to #505 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+   <guid isPermaLink="false">2026-11-17-US-UGI-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 145 places to #505 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UGI Corp: Rank moved up 69 places to #360 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+   <guid isPermaLink="false">2026-11-16-US-UGI-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 69 places to #360 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UGI Corp: Rank moved down 46 places to #429 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UGI</link>
+   <guid isPermaLink="false">2026-11-13-US-UGI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 46 places to #429 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

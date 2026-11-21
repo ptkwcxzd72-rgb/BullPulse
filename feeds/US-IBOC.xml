@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-IBOC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Intl Bancshares Corp (IBOC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-IBOC</link>
+  <description>Alerts for Intl Bancshares Corp from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Intl Bancshares Corp: Rank moved up 31 places to #801 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IBOC</link>
+   <guid isPermaLink="false">2026-11-20-US-IBOC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 31 places to #801 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Intl Bancshares Corp: Rank moved down 23 places to #811 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IBOC</link>
+   <guid isPermaLink="false">2026-11-16-US-IBOC-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 23 places to #811 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ASO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Academy Sports + Outdoors (ASO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ASO</link>
+  <description>Alerts for Academy Sports + Outdoors from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Academy Sports + Outdoors: Rank moved up 20 places to #19 (score 87)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASO</link>
+   <guid isPermaLink="false">2026-11-20-US-ASO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #19 (score 87). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Academy Sports + Outdoors: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASO</link>
+   <guid isPermaLink="false">2026-11-20-US-ASO-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Academy Sports + Outdoors: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASO</link>
+   <guid isPermaLink="false">2026-11-17-US-ASO-early</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Academy Sports + Outdoors: Rank moved up 252 places to #36 (score 83)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASO</link>
+   <guid isPermaLink="false">2026-11-16-US-ASO-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 252 places to #36 (score 83). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Academy Sports + Outdoors: Unusual burst of news coverage (30-day tone +0.54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASO</link>
+   <guid isPermaLink="false">2026-11-16-US-ASO-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Academy Sports + Outdoors: Rank moved down 183 places to #288 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASO</link>
+   <guid isPermaLink="false">2026-11-13-US-ASO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 183 places to #288 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-OXIG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Oxford Instruments (OXIG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-OXIG</link>
+  <description>Alerts for Oxford Instruments from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Oxford Instruments: Rank moved down 38 places to #181 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-OXIG</link>
+   <guid isPermaLink="false">2026-11-06-LSE-OXIG-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #181 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Oxford Instruments: Rank moved up 26 places to #125 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-OXIG</link>
+   <guid isPermaLink="false">2026-11-05-LSE-OXIG-rank</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #125 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

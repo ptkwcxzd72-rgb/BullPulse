@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Amn Healthcare Services, Inc. (AMN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AMN</link>
+  <description>Alerts for Amn Healthcare Services, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Amn Healthcare Services, Inc.: Rank moved up 34 places to #65 (score 81)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMN</link>
+   <guid isPermaLink="false">2026-11-18-US-AMN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #65 (score 81). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amn Healthcare Services, Inc.: Rank moved down 20 places to #89 (score 78)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMN</link>
+   <guid isPermaLink="false">2026-11-16-US-AMN-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #89 (score 78). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

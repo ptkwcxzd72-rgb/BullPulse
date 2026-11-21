@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-UAA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Under Armour (Class A) (UAA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-UAA</link>
+  <description>Alerts for Under Armour (Class A) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Under Armour (Class A): Rank moved up 62 places to #650 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UAA</link>
+   <guid isPermaLink="false">2026-11-20-US-UAA-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 62 places to #650 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Under Armour (Class A): Rank moved down 51 places to #712 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UAA</link>
+   <guid isPermaLink="false">2026-11-19-US-UAA-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 51 places to #712 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Under Armour (Class A): Rank moved up 34 places to #661 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UAA</link>
+   <guid isPermaLink="false">2026-11-18-US-UAA-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #661 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Under Armour (Class A): Unusual burst of news coverage (30-day tone +0.32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UAA</link>
+   <guid isPermaLink="false">2026-11-17-US-UAA-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Under Armour (Class A): Rank moved up 83 places to #707 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UAA</link>
+   <guid isPermaLink="false">2026-11-13-US-UAA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 83 places to #707 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

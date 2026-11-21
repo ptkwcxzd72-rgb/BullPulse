@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AGNC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: AGNC Investment (AGNC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AGNC</link>
+  <description>Alerts for AGNC Investment from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>AGNC Investment: Rank moved up 21 places to #875 (score 20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGNC</link>
+   <guid isPermaLink="false">2026-11-20-US-AGNC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #875 (score 20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGNC Investment: Rank moved down 98 places to #906 (score 19)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGNC</link>
+   <guid isPermaLink="false">2026-11-18-US-AGNC-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 98 places to #906 (score 19). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGNC Investment: Rank moved down 44 places to #808 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGNC</link>
+   <guid isPermaLink="false">2026-11-17-US-AGNC-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 44 places to #808 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGNC Investment: Rank moved down 28 places to #764 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGNC</link>
+   <guid isPermaLink="false">2026-11-16-US-AGNC-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #764 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGNC Investment: Unusual burst of news coverage (30-day tone +0.21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGNC</link>
+   <guid isPermaLink="false">2026-11-13-US-AGNC-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AGNC Investment: Rank moved up 89 places to #736 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGNC</link>
+   <guid isPermaLink="false">2026-11-13-US-AGNC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 89 places to #736 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ARCB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: ArcBest Corp. (ARCB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ARCB</link>
+  <description>Alerts for ArcBest Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>ArcBest Corp.: Rank moved down 133 places to #140 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ARCB</link>
+   <guid isPermaLink="false">2026-11-20-US-ARCB-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 133 places to #140 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ArcBest Corp.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-ARCB</link>
+   <guid isPermaLink="false">2026-11-20-US-ARCB-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ArcBest Corp.: Rank moved up 95 places to #6 (score 89)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ARCB</link>
+   <guid isPermaLink="false">2026-11-16-US-ARCB-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 95 places to #6 (score 89). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ArcBest Corp.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ARCB</link>
+   <guid isPermaLink="false">2026-11-13-US-ARCB-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ArcBest Corp.: Rank moved down 92 places to #101 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ARCB</link>
+   <guid isPermaLink="false">2026-11-13-US-ARCB-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 92 places to #101 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

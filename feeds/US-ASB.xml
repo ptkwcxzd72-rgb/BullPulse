@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ASB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Associated Bank (ASB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ASB</link>
+  <description>Alerts for Associated Bank from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Associated Bank: Rank moved down 113 places to #308 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASB</link>
+   <guid isPermaLink="false">2026-11-19-US-ASB-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 113 places to #308 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated Bank: Rank moved down 35 places to #202 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASB</link>
+   <guid isPermaLink="false">2026-11-17-US-ASB-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #202 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated Bank: Rank moved up 96 places to #167 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASB</link>
+   <guid isPermaLink="false">2026-11-16-US-ASB-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 96 places to #167 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Associated Bank: Rank moved down 38 places to #263 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ASB</link>
+   <guid isPermaLink="false">2026-11-13-US-ASB-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #263 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

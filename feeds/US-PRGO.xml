@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PRGO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Perrigo (PRGO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PRGO</link>
+  <description>Alerts for Perrigo from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Perrigo: Rank moved up 34 places to #42 (score 85)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PRGO</link>
+   <guid isPermaLink="false">2026-11-20-US-PRGO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #42 (score 85). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Perrigo: Rank moved up 163 places to #79 (score 80)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PRGO</link>
+   <guid isPermaLink="false">2026-11-18-US-PRGO-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 163 places to #79 (score 80). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-UFPI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: UFP Industries (UFPI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-UFPI</link>
+  <description>Alerts for UFP Industries from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>UFP Industries: Rank moved up 53 places to #780 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UFPI</link>
+   <guid isPermaLink="false">2026-11-20-US-UFPI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 53 places to #780 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UFP Industries: Rank moved down 211 places to #851 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UFPI</link>
+   <guid isPermaLink="false">2026-11-18-US-UFPI-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 211 places to #851 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UFP Industries: Unusual burst of news coverage (30-day tone -0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UFPI</link>
+   <guid isPermaLink="false">2026-11-18-US-UFPI-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UFP Industries: Rank moved up 38 places to #640 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UFPI</link>
+   <guid isPermaLink="false">2026-11-17-US-UFPI-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 38 places to #640 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UFP Industries: Rank moved up 140 places to #667 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UFPI</link>
+   <guid isPermaLink="false">2026-11-13-US-UFPI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 140 places to #667 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

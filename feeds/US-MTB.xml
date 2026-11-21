@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MTB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: M&amp;T Bank (MTB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MTB</link>
+  <description>Alerts for M&amp;T Bank from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>M&amp;T Bank: Rank moved down 31 places to #228 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTB</link>
+   <guid isPermaLink="false">2026-11-18-US-MTB-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #228 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;T Bank: Unusual burst of news coverage (30-day tone +0.57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTB</link>
+   <guid isPermaLink="false">2026-11-17-US-MTB-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;T Bank: Rank moved up 21 places to #197 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTB</link>
+   <guid isPermaLink="false">2026-11-17-US-MTB-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #197 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;T Bank: Rank moved up 42 places to #218 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTB</link>
+   <guid isPermaLink="false">2026-11-16-US-MTB-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #218 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>M&amp;T Bank: Rank moved down 43 places to #257 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTB</link>
+   <guid isPermaLink="false">2026-11-12-US-MTB-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 43 places to #257 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-THRM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Gentherm Incorporated (THRM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-THRM</link>
+  <description>Alerts for Gentherm Incorporated from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Gentherm Incorporated: Rank moved down 103 places to #755 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-THRM</link>
+   <guid isPermaLink="false">2026-11-20-US-THRM-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 103 places to #755 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gentherm Incorporated: Rank moved up 20 places to #671 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-THRM</link>
+   <guid isPermaLink="false">2026-11-17-US-THRM-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #671 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gentherm Incorporated: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-THRM</link>
+   <guid isPermaLink="false">2026-11-16-US-THRM-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gentherm Incorporated: Unusual burst of news coverage (30-day tone +0.82)</title>
+   <link>https://bullpulse.co.uk/app.html#US-THRM</link>
+   <guid isPermaLink="false">2026-11-16-US-THRM-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.82). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

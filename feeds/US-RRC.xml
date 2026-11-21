@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RRC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Range Resources (RRC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+  <description>Alerts for Range Resources from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Range Resources: Rank moved down 124 places to #264 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+   <guid isPermaLink="false">2026-11-19-US-RRC-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 124 places to #264 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Range Resources: Rank moved down 29 places to #140 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+   <guid isPermaLink="false">2026-11-18-US-RRC-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #140 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Range Resources: Unusual burst of news coverage (30-day tone +0.68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+   <guid isPermaLink="false">2026-11-17-US-RRC-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Range Resources: Rank moved down 24 places to #111 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+   <guid isPermaLink="false">2026-11-17-US-RRC-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #111 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Range Resources: Rank moved up 38 places to #87 (score 78)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+   <guid isPermaLink="false">2026-11-16-US-RRC-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 38 places to #87 (score 78). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Range Resources: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+   <guid isPermaLink="false">2026-11-13-US-RRC-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Range Resources: Rank moved up 168 places to #125 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RRC</link>
+   <guid isPermaLink="false">2026-11-13-US-RRC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 168 places to #125 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

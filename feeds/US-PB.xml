@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Prosperity Bancshares (PB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PB</link>
+  <description>Alerts for Prosperity Bancshares from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Prosperity Bancshares: Rank moved down 99 places to #595 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PB</link>
+   <guid isPermaLink="false">2026-11-20-US-PB-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 99 places to #595 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Prosperity Bancshares: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-PB</link>
+   <guid isPermaLink="false">2026-11-20-US-PB-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Prosperity Bancshares: Rank moved down 209 places to #496 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PB</link>
+   <guid isPermaLink="false">2026-11-19-US-PB-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 209 places to #496 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Prosperity Bancshares: Rank moved down 21 places to #285 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PB</link>
+   <guid isPermaLink="false">2026-11-17-US-PB-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #285 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Prosperity Bancshares: Rank moved up 131 places to #264 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PB</link>
+   <guid isPermaLink="false">2026-11-16-US-PB-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 131 places to #264 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Prosperity Bancshares: Rank moved down 40 places to #395 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PB</link>
+   <guid isPermaLink="false">2026-11-13-US-PB-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 40 places to #395 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

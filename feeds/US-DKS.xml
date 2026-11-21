@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DKS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Dick&#39;s Sporting Goods (DKS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DKS</link>
+  <description>Alerts for Dick&#39;s Sporting Goods from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Dick&#39;s Sporting Goods: Rank moved down 148 places to #966 (score 10)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DKS</link>
+   <guid isPermaLink="false">2026-11-19-US-DKS-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 148 places to #966 (score 10). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dick&#39;s Sporting Goods: Rank moved down 50 places to #818 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DKS</link>
+   <guid isPermaLink="false">2026-11-18-US-DKS-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 50 places to #818 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dick&#39;s Sporting Goods: Unusual burst of news coverage (30-day tone +0.30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DKS</link>
+   <guid isPermaLink="false">2026-11-17-US-DKS-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dick&#39;s Sporting Goods: Rank moved up 162 places to #768 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DKS</link>
+   <guid isPermaLink="false">2026-11-17-US-DKS-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 162 places to #768 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dick&#39;s Sporting Goods: Cluster buying: 7 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-DKS</link>
+   <guid isPermaLink="false">2026-11-13-US-DKS-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 7 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dick&#39;s Sporting Goods: Rank moved down 72 places to #948 (score 13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DKS</link>
+   <guid isPermaLink="false">2026-11-13-US-DKS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 72 places to #948 (score 13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

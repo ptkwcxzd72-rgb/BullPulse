@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TRN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Trinity Industries, Inc. (TRN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+  <description>Alerts for Trinity Industries, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Trinity Industries, Inc.: Rank moved up 33 places to #649 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+   <guid isPermaLink="false">2026-11-20-US-TRN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #649 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Trinity Industries, Inc.: Unusual burst of news coverage (30-day tone +0.08)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+   <guid isPermaLink="false">2026-11-19-US-TRN-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.08). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Trinity Industries, Inc.: Rank moved down 46 places to #682 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+   <guid isPermaLink="false">2026-11-19-US-TRN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 46 places to #682 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Trinity Industries, Inc.: Rank moved down 25 places to #636 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+   <guid isPermaLink="false">2026-11-18-US-TRN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #636 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Trinity Industries, Inc.: Rank moved down 22 places to #611 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+   <guid isPermaLink="false">2026-11-17-US-TRN-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #611 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Trinity Industries, Inc.: Rank moved down 43 places to #589 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+   <guid isPermaLink="false">2026-11-16-US-TRN-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 43 places to #589 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Trinity Industries, Inc.: Rank moved up 29 places to #546 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TRN</link>
+   <guid isPermaLink="false">2026-11-13-US-TRN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #546 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

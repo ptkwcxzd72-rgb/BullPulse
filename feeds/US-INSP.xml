@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-INSP.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Inspire Medical Systems, Inc. (INSP)</title>
+  <link>https://bullpulse.co.uk/app.html#US-INSP</link>
+  <description>Alerts for Inspire Medical Systems, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Inspire Medical Systems, Inc.: Rank moved down 52 places to #794 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSP</link>
+   <guid isPermaLink="false">2026-11-20-US-INSP-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 52 places to #794 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Inspire Medical Systems, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSP</link>
+   <guid isPermaLink="false">2026-11-20-US-INSP-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Inspire Medical Systems, Inc.: Rank moved up 29 places to #742 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSP</link>
+   <guid isPermaLink="false">2026-11-19-US-INSP-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #742 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Inspire Medical Systems, Inc.: Rank moved down 58 places to #771 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSP</link>
+   <guid isPermaLink="false">2026-11-18-US-INSP-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 58 places to #771 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Inspire Medical Systems, Inc.: Unusual burst of news coverage (30-day tone -0.11)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSP</link>
+   <guid isPermaLink="false">2026-11-18-US-INSP-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.11). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Inspire Medical Systems, Inc.: Rank moved down 23 places to #718 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-INSP</link>
+   <guid isPermaLink="false">2026-11-13-US-INSP-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 23 places to #718 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

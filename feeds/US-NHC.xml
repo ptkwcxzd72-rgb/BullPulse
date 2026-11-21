@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NHC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: National Healthcare, Corp. (NHC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NHC</link>
+  <description>Alerts for National Healthcare, Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>National Healthcare, Corp.: Rank moved up 37 places to #294 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NHC</link>
+   <guid isPermaLink="false">2026-11-20-US-NHC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #294 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>National Healthcare, Corp.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-NHC</link>
+   <guid isPermaLink="false">2026-11-19-US-NHC-trend</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>National Healthcare, Corp.: Rank moved down 156 places to #331 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NHC</link>
+   <guid isPermaLink="false">2026-11-19-US-NHC-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 156 places to #331 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>National Healthcare, Corp.: Rank moved down 52 places to #170 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NHC</link>
+   <guid isPermaLink="false">2026-11-13-US-NHC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 52 places to #170 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

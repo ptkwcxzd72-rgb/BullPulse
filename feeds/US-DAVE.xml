@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DAVE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Dave, Inc. (DAVE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DAVE</link>
+  <description>Alerts for Dave, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Dave, Inc.: Rank moved up 39 places to #212 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DAVE</link>
+   <guid isPermaLink="false">2026-11-20-US-DAVE-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 39 places to #212 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dave, Inc.: Rank moved up 35 places to #255 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DAVE</link>
+   <guid isPermaLink="false">2026-11-18-US-DAVE-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 35 places to #255 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dave, Inc.: Rank moved down 37 places to #290 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DAVE</link>
+   <guid isPermaLink="false">2026-11-17-US-DAVE-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #290 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dave, Inc.: Rank moved up 117 places to #253 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DAVE</link>
+   <guid isPermaLink="false">2026-11-16-US-DAVE-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 117 places to #253 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dave, Inc.: Unusual burst of news coverage (30-day tone +0.07)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DAVE</link>
+   <guid isPermaLink="false">2026-11-16-US-DAVE-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.07). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dave, Inc.: Rank moved down 24 places to #370 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DAVE</link>
+   <guid isPermaLink="false">2026-11-13-US-DAVE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #370 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

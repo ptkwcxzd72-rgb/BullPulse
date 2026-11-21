@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CNM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Core &amp; Main (CNM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CNM</link>
+  <description>Alerts for Core &amp; Main from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Core &amp; Main: Rank moved up 30 places to #785 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CNM</link>
+   <guid isPermaLink="false">2026-11-20-US-CNM-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #785 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Core &amp; Main: Rank moved up 145 places to #806 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CNM</link>
+   <guid isPermaLink="false">2026-11-18-US-CNM-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 145 places to #806 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Core &amp; Main: Rank moved down 123 places to #951 (score 13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CNM</link>
+   <guid isPermaLink="false">2026-11-17-US-CNM-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 123 places to #951 (score 13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ITT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: ITT Inc. (ITT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+  <description>Alerts for ITT Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>ITT Inc.: Rank moved down 47 places to #359 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-20-US-ITT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 47 places to #359 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ITT Inc.: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-19-US-ITT-insider</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ITT Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-19-US-ITT-early</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ITT Inc.: Rank moved up 131 places to #312 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-19-US-ITT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 131 places to #312 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ITT Inc.: Rank moved down 39 places to #443 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-18-US-ITT-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 39 places to #443 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ITT Inc.: Unusual burst of news coverage (30-day tone -0.03)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-17-US-ITT-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.03). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ITT Inc.: Rank moved up 21 places to #404 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-16-US-ITT-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #404 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ITT Inc.: Rank moved down 98 places to #425 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ITT</link>
+   <guid isPermaLink="false">2026-11-13-US-ITT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 98 places to #425 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

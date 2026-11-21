@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WHR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Whirlpool Corporation (WHR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WHR</link>
+  <description>Alerts for Whirlpool Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Whirlpool Corporation: Rank moved up 49 places to #889 (score 20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WHR</link>
+   <guid isPermaLink="false">2026-11-19-US-WHR-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 49 places to #889 (score 20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Whirlpool Corporation: Unusual burst of news coverage (30-day tone +0.07)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WHR</link>
+   <guid isPermaLink="false">2026-11-18-US-WHR-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.07). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Whirlpool Corporation: Rank moved down 137 places to #927 (score 16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WHR</link>
+   <guid isPermaLink="false">2026-11-17-US-WHR-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 137 places to #927 (score 16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Whirlpool Corporation: Rank moved up 126 places to #790 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WHR</link>
+   <guid isPermaLink="false">2026-11-16-US-WHR-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 126 places to #790 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

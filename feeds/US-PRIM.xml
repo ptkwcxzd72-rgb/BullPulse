@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PRIM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Primoris Services Corporation (PRIM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PRIM</link>
+  <description>Alerts for Primoris Services Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Primoris Services Corporation: Unusual burst of news coverage (30-day tone -0.40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PRIM</link>
+   <guid isPermaLink="false">2026-11-19-US-PRIM-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Primoris Services Corporation: Rank moved down 20 places to #981 (score 6)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PRIM</link>
+   <guid isPermaLink="false">2026-11-18-US-PRIM-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #981 (score 6). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

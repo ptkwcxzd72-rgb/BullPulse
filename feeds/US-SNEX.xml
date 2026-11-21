@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SNEX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: StoneX Group Inc. (SNEX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SNEX</link>
+  <description>Alerts for StoneX Group Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>StoneX Group Inc.: Rank moved up 20 places to #546 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SNEX</link>
+   <guid isPermaLink="false">2026-11-20-US-SNEX-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #546 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StoneX Group Inc.: Rank moved down 72 places to #566 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SNEX</link>
+   <guid isPermaLink="false">2026-11-19-US-SNEX-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 72 places to #566 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StoneX Group Inc.: Rank moved up 25 places to #494 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SNEX</link>
+   <guid isPermaLink="false">2026-11-18-US-SNEX-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #494 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StoneX Group Inc.: Unusual burst of news coverage (30-day tone -0.25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SNEX</link>
+   <guid isPermaLink="false">2026-11-18-US-SNEX-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StoneX Group Inc.: Rank moved down 193 places to #512 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SNEX</link>
+   <guid isPermaLink="false">2026-11-16-US-SNEX-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 193 places to #512 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StoneX Group Inc.: Rank moved up 57 places to #319 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SNEX</link>
+   <guid isPermaLink="false">2026-11-13-US-SNEX-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 57 places to #319 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

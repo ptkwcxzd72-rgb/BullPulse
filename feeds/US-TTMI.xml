@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TTMI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: TTM Technologies (TTMI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TTMI</link>
+  <description>Alerts for TTM Technologies from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>TTM Technologies: Rank moved down 212 places to #673 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTMI</link>
+   <guid isPermaLink="false">2026-11-20-US-TTMI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 212 places to #673 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TTM Technologies: Rank moved up 23 places to #461 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTMI</link>
+   <guid isPermaLink="false">2026-11-19-US-TTMI-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #461 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TTM Technologies: Rank moved up 34 places to #469 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTMI</link>
+   <guid isPermaLink="false">2026-11-17-US-TTMI-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #469 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TTM Technologies: Rank moved up 36 places to #503 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTMI</link>
+   <guid isPermaLink="false">2026-11-16-US-TTMI-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #503 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TTM Technologies: Unusual burst of news coverage (30-day tone +0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTMI</link>
+   <guid isPermaLink="false">2026-11-16-US-TTMI-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>TTM Technologies: Cluster buying: 4 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-TTMI</link>
+   <guid isPermaLink="false">2026-11-13-US-TTMI-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 4 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

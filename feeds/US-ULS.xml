@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ULS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: UL Solutions (ULS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ULS</link>
+  <description>Alerts for UL Solutions from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>UL Solutions: Rank moved down 77 places to #726 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ULS</link>
+   <guid isPermaLink="false">2026-11-20-US-ULS-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 77 places to #726 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UL Solutions: Unusual burst of news coverage (30-day tone +0.41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ULS</link>
+   <guid isPermaLink="false">2026-11-17-US-ULS-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UL Solutions: Rank moved up 128 places to #625 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ULS</link>
+   <guid isPermaLink="false">2026-11-17-US-ULS-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 128 places to #625 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>UL Solutions: Rank moved up 74 places to #753 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ULS</link>
+   <guid isPermaLink="false">2026-11-16-US-ULS-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 74 places to #753 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CWK.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Cushman &amp; Wakefield plc (CWK)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+  <description>Alerts for Cushman &amp; Wakefield plc from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Cushman &amp; Wakefield plc: Rank moved up 33 places to #675 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+   <guid isPermaLink="false">2026-11-20-US-CWK-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #675 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cushman &amp; Wakefield plc: Rank moved up 33 places to #713 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+   <guid isPermaLink="false">2026-11-18-US-CWK-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #713 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cushman &amp; Wakefield plc: Unusual burst of news coverage (30-day tone +0.50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+   <guid isPermaLink="false">2026-11-18-US-CWK-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cushman &amp; Wakefield plc: Rank moved down 110 places to #729 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+   <guid isPermaLink="false">2026-11-16-US-CWK-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 110 places to #729 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cushman &amp; Wakefield plc: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+   <guid isPermaLink="false">2026-11-16-US-CWK-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cushman &amp; Wakefield plc: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+   <guid isPermaLink="false">2026-11-13-US-CWK-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cushman &amp; Wakefield plc: Rank moved up 111 places to #619 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CWK</link>
+   <guid isPermaLink="false">2026-11-13-US-CWK-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 111 places to #619 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

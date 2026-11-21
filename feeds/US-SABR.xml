@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SABR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Sabre (SABR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+  <description>Alerts for Sabre from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Sabre: Rank moved up 26 places to #581 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+   <guid isPermaLink="false">2026-11-20-US-SABR-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #581 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Sabre: Rank moved down 117 places to #610 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+   <guid isPermaLink="false">2026-11-18-US-SABR-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 117 places to #610 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Sabre: Unusual burst of news coverage (30-day tone +0.14)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+   <guid isPermaLink="false">2026-11-18-US-SABR-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.14). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Sabre: Rank moved down 154 places to #511 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+   <guid isPermaLink="false">2026-11-16-US-SABR-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 154 places to #511 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Sabre: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+   <guid isPermaLink="false">2026-11-16-US-SABR-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Sabre: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+   <guid isPermaLink="false">2026-11-13-US-SABR-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Sabre: Rank moved up 54 places to #357 (score 61)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SABR</link>
+   <guid isPermaLink="false">2026-11-13-US-SABR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 54 places to #357 (score 61). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

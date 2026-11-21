@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SHAK.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Shake Shack, Inc. (SHAK)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+  <description>Alerts for Shake Shack, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Shake Shack, Inc.: Rank moved down 118 places to #757 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-20-US-SHAK-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 118 places to #757 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-20-US-SHAK-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Rank moved up 48 places to #639 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-19-US-SHAK-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 48 places to #639 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Rank moved up 101 places to #687 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-18-US-SHAK-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 101 places to #687 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-18-US-SHAK-trend</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Unusual burst of news coverage (30-day tone +0.11)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-18-US-SHAK-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.11). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Rank moved down 150 places to #795 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-16-US-SHAK-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 150 places to #795 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-16-US-SHAK-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-13-US-SHAK-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shake Shack, Inc.: Rank moved up 193 places to #645 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHAK</link>
+   <guid isPermaLink="false">2026-11-13-US-SHAK-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 193 places to #645 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

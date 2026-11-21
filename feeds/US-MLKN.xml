@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MLKN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: MillerKnoll, Inc. (MLKN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MLKN</link>
+  <description>Alerts for MillerKnoll, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>MillerKnoll, Inc.: Unusual burst of news coverage (30-day tone +0.42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MLKN</link>
+   <guid isPermaLink="false">2026-11-19-US-MLKN-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MillerKnoll, Inc.: Rank moved down 33 places to #88 (score 79)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MLKN</link>
+   <guid isPermaLink="false">2026-11-19-US-MLKN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 33 places to #88 (score 79). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MillerKnoll, Inc.: Rank moved up 63 places to #63 (score 81)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MLKN</link>
+   <guid isPermaLink="false">2026-11-17-US-MLKN-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 63 places to #63 (score 81). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MillerKnoll, Inc.: Rank moved down 35 places to #126 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MLKN</link>
+   <guid isPermaLink="false">2026-11-16-US-MLKN-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #126 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MillerKnoll, Inc.: Rank moved down 51 places to #91 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MLKN</link>
+   <guid isPermaLink="false">2026-11-13-US-MLKN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 51 places to #91 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

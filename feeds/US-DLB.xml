@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DLB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Dolby (DLB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+  <description>Alerts for Dolby from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Dolby: Rank moved up 24 places to #677 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+   <guid isPermaLink="false">2026-11-20-US-DLB-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #677 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dolby: New results filed: revenue +5.3% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+   <guid isPermaLink="false">2026-11-20-US-DLB-results</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +5.3% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dolby: Unusual burst of news coverage (30-day tone -0.21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+   <guid isPermaLink="false">2026-11-17-US-DLB-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dolby: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+   <guid isPermaLink="false">2026-11-17-US-DLB-trend</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dolby: Rank moved down 256 places to #735 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+   <guid isPermaLink="false">2026-11-17-US-DLB-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 256 places to #735 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dolby: Rank moved down 114 places to #479 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+   <guid isPermaLink="false">2026-11-16-US-DLB-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 114 places to #479 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Dolby: Rank moved up 68 places to #365 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DLB</link>
+   <guid isPermaLink="false">2026-11-13-US-DLB-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 68 places to #365 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

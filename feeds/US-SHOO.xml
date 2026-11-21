@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SHOO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Steven Madden, Ltd. (SHOO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+  <description>Alerts for Steven Madden, Ltd. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Steven Madden, Ltd.: Rank moved down 23 places to #464 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-20-US-SHOO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 23 places to #464 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-19-US-SHOO-trend</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Rank moved down 115 places to #441 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-19-US-SHOO-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 115 places to #441 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Rank moved up 73 places to #326 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-18-US-SHOO-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 73 places to #326 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-18-US-SHOO-trend</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-18-US-SHOO-early</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Unusual burst of news coverage (30-day tone +0.39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-17-US-SHOO-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-17-US-SHOO-trend</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Rank moved up 161 places to #399 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-17-US-SHOO-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 161 places to #399 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Steven Madden, Ltd.: Rank moved down 128 places to #557 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SHOO</link>
+   <guid isPermaLink="false">2026-11-13-US-SHOO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 128 places to #557 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

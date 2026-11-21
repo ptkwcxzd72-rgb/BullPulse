@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HXL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hexcel (HXL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HXL</link>
+  <description>Alerts for Hexcel from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hexcel: Rank moved down 128 places to #817 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HXL</link>
+   <guid isPermaLink="false">2026-11-20-US-HXL-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 128 places to #817 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hexcel: Rank moved down 23 places to #689 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HXL</link>
+   <guid isPermaLink="false">2026-11-19-US-HXL-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 23 places to #689 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hexcel: Rank moved down 30 places to #666 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HXL</link>
+   <guid isPermaLink="false">2026-11-18-US-HXL-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 30 places to #666 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hexcel: Rank moved down 86 places to #636 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HXL</link>
+   <guid isPermaLink="false">2026-11-17-US-HXL-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 86 places to #636 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hexcel: Rank moved down 34 places to #535 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HXL</link>
+   <guid isPermaLink="false">2026-11-13-US-HXL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #535 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

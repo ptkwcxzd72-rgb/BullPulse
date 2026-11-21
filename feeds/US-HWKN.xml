@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HWKN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hawkins, Inc. (HWKN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+  <description>Alerts for Hawkins, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hawkins, Inc.: Rank moved up 44 places to #518 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-20-US-HWKN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 44 places to #518 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-20-US-HWKN-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Unusual burst of news coverage (30-day tone +0.03)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-20-US-HWKN-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.03). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Rank moved down 73 places to #562 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-19-US-HWKN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 73 places to #562 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Rank moved up 23 places to #489 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-18-US-HWKN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #489 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-18-US-HWKN-cross</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Rank moved up 104 places to #512 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-17-US-HWKN-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 104 places to #512 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-16-US-HWKN-early</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-16-US-HWKN-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hawkins, Inc.: Rank moved down 61 places to #631 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HWKN</link>
+   <guid isPermaLink="false">2026-11-13-US-HWKN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 61 places to #631 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

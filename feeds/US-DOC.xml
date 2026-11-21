@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DOC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Healthpeak Properties (DOC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DOC</link>
+  <description>Alerts for Healthpeak Properties from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Healthpeak Properties: Rank moved up 41 places to #130 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DOC</link>
+   <guid isPermaLink="false">2026-11-20-US-DOC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 41 places to #130 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

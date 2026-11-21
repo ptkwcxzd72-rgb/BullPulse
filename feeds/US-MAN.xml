@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MAN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: ManpowerGroup (MAN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MAN</link>
+  <description>Alerts for ManpowerGroup from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>ManpowerGroup: Rank moved up 31 places to #162 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MAN</link>
+   <guid isPermaLink="false">2026-11-19-US-MAN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 31 places to #162 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ManpowerGroup: Rank moved up 63 places to #179 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MAN</link>
+   <guid isPermaLink="false">2026-11-17-US-MAN-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 63 places to #179 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ManpowerGroup: Rank moved down 27 places to #242 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MAN</link>
+   <guid isPermaLink="false">2026-11-16-US-MAN-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #242 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ManpowerGroup: Rank moved down 98 places to #215 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MAN</link>
+   <guid isPermaLink="false">2026-11-13-US-MAN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 98 places to #215 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

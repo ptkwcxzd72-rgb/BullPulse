@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-BAG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: A.G. Barr (BAG)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-BAG</link>
+  <description>Alerts for A.G. Barr from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>A.G. Barr: Rank moved up 32 places to #291 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-BAG</link>
+   <guid isPermaLink="false">2026-11-02-LSE-BAG-rank</guid>
+   <pubDate>Mon, 02 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #291 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CTRE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: CareTrust REIT (CTRE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+  <description>Alerts for CareTrust REIT from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>CareTrust REIT: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+   <guid isPermaLink="false">2026-11-20-US-CTRE-cross</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CareTrust REIT: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+   <guid isPermaLink="false">2026-11-19-US-CTRE-early</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CareTrust REIT: Rank moved down 27 places to #612 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+   <guid isPermaLink="false">2026-11-18-US-CTRE-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #612 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CareTrust REIT: Rank moved down 54 places to #585 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+   <guid isPermaLink="false">2026-11-17-US-CTRE-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 54 places to #585 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CareTrust REIT: Rank moved up 145 places to #531 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+   <guid isPermaLink="false">2026-11-16-US-CTRE-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 145 places to #531 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CareTrust REIT: Unusual burst of news coverage (30-day tone +0.22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+   <guid isPermaLink="false">2026-11-16-US-CTRE-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CareTrust REIT: Rank moved down 71 places to #676 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTRE</link>
+   <guid isPermaLink="false">2026-11-13-US-CTRE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 71 places to #676 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CDE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Coeur Mining (CDE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CDE</link>
+  <description>Alerts for Coeur Mining from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Coeur Mining: Rank moved down 63 places to #841 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CDE</link>
+   <guid isPermaLink="false">2026-11-19-US-CDE-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 63 places to #841 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Coeur Mining: Rank moved down 131 places to #778 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CDE</link>
+   <guid isPermaLink="false">2026-11-18-US-CDE-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 131 places to #778 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Coeur Mining: Unusual burst of news coverage (30-day tone +0.07)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CDE</link>
+   <guid isPermaLink="false">2026-11-17-US-CDE-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.07). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Coeur Mining: Rank moved up 24 places to #647 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CDE</link>
+   <guid isPermaLink="false">2026-11-17-US-CDE-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #647 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Coeur Mining: Rank moved up 22 places to #677 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CDE</link>
+   <guid isPermaLink="false">2026-11-13-US-CDE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #677 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

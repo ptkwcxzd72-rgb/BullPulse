@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-VVV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Valvoline (VVV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+  <description>Alerts for Valvoline from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Valvoline: Rank moved up 205 places to #515 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-20-US-VVV-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 205 places to #515 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-20-US-VVV-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-20-US-VVV-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-20-US-VVV-growth</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: New results filed: revenue +20.7% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-20-US-VVV-results</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +20.7% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Rank moved up 28 places to #741 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-17-US-VVV-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #741 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Rank moved down 79 places to #769 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-16-US-VVV-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 79 places to #769 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-16-US-VVV-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Unusual burst of news coverage (30-day tone -0.52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-16-US-VVV-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Valvoline: Rank moved down 129 places to #690 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VVV</link>
+   <guid isPermaLink="false">2026-11-13-US-VVV-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 129 places to #690 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

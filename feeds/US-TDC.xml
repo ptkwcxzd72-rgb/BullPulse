@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TDC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Teradata (TDC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TDC</link>
+  <description>Alerts for Teradata from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Teradata: Rank moved up 24 places to #255 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDC</link>
+   <guid isPermaLink="false">2026-11-19-US-TDC-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #255 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teradata: Rank moved up 129 places to #279 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDC</link>
+   <guid isPermaLink="false">2026-11-18-US-TDC-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 129 places to #279 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teradata: Rank moved up 30 places to #408 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TDC</link>
+   <guid isPermaLink="false">2026-11-17-US-TDC-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #408 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MWA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Mueller Water Products (MWA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MWA</link>
+  <description>Alerts for Mueller Water Products from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Mueller Water Products: Rank moved up 29 places to #782 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MWA</link>
+   <guid isPermaLink="false">2026-11-20-US-MWA-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #782 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mueller Water Products: New results filed: revenue +3.2% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-MWA</link>
+   <guid isPermaLink="false">2026-11-20-US-MWA-results</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +3.2% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mueller Water Products: Rank moved down 50 places to #827 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MWA</link>
+   <guid isPermaLink="false">2026-11-18-US-MWA-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 50 places to #827 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mueller Water Products: Rank moved down 43 places to #798 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MWA</link>
+   <guid isPermaLink="false">2026-11-13-US-MWA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 43 places to #798 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

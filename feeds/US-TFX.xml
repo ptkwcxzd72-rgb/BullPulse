@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-TFX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Teleflex (TFX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-TFX</link>
+  <description>Alerts for Teleflex from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Teleflex: Rank moved up 47 places to #133 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TFX</link>
+   <guid isPermaLink="false">2026-11-20-US-TFX-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 47 places to #133 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teleflex: Rank moved down 31 places to #180 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TFX</link>
+   <guid isPermaLink="false">2026-11-19-US-TFX-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #180 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teleflex: Rank moved down 41 places to #149 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TFX</link>
+   <guid isPermaLink="false">2026-11-18-US-TFX-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 41 places to #149 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teleflex: Unusual burst of news coverage (30-day tone +0.18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TFX</link>
+   <guid isPermaLink="false">2026-11-18-US-TFX-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teleflex: Rank moved down 41 places to #108 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TFX</link>
+   <guid isPermaLink="false">2026-11-17-US-TFX-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 41 places to #108 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Teleflex: Rank moved up 215 places to #67 (score 80)</title>
+   <link>https://bullpulse.co.uk/app.html#US-TFX</link>
+   <guid isPermaLink="false">2026-11-16-US-TFX-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 215 places to #67 (score 80). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

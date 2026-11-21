@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RSI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Rush Street Interactive, Inc. (RSI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RSI</link>
+  <description>Alerts for Rush Street Interactive, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Rush Street Interactive, Inc.: Rank moved down 60 places to #812 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RSI</link>
+   <guid isPermaLink="false">2026-11-20-US-RSI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 60 places to #812 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rush Street Interactive, Inc.: Rank moved down 97 places to #757 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RSI</link>
+   <guid isPermaLink="false">2026-11-18-US-RSI-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 97 places to #757 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rush Street Interactive, Inc.: Unusual burst of news coverage (30-day tone +0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RSI</link>
+   <guid isPermaLink="false">2026-11-18-US-RSI-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rush Street Interactive, Inc.: Rank moved up 102 places to #655 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RSI</link>
+   <guid isPermaLink="false">2026-11-16-US-RSI-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 102 places to #655 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rush Street Interactive, Inc.: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-RSI</link>
+   <guid isPermaLink="false">2026-11-16-US-RSI-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

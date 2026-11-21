@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AIZ.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Assurant (AIZ)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AIZ</link>
+  <description>Alerts for Assurant from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Assurant: New results filed: revenue +9.2% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIZ</link>
+   <guid isPermaLink="false">2026-11-06-US-AIZ-results</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +9.2% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Assurant: Unusual burst of news coverage (30-day tone +0.12)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AIZ</link>
+   <guid isPermaLink="false">2026-10-29-US-AIZ-news</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.12). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

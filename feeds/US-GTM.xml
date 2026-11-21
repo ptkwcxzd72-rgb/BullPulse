@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-GTM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: ZoomInfo (GTM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-GTM</link>
+  <description>Alerts for ZoomInfo from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>ZoomInfo: Rank moved up 23 places to #861 (score 22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTM</link>
+   <guid isPermaLink="false">2026-11-20-US-GTM-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #861 (score 22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ZoomInfo: Unusual burst of news coverage (30-day tone +0.38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTM</link>
+   <guid isPermaLink="false">2026-11-19-US-GTM-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ZoomInfo: Rank moved up 40 places to #884 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTM</link>
+   <guid isPermaLink="false">2026-11-19-US-GTM-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 40 places to #884 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ZoomInfo: Rank moved up 47 places to #924 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GTM</link>
+   <guid isPermaLink="false">2026-11-18-US-GTM-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 47 places to #924 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CMCSA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Comcast (CMCSA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CMCSA</link>
+  <description>Alerts for Comcast from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Comcast: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMCSA</link>
+   <guid isPermaLink="false">2026-11-19-US-CMCSA-trend</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Comcast: Rank moved down 49 places to #456 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMCSA</link>
+   <guid isPermaLink="false">2026-11-19-US-CMCSA-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 49 places to #456 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Comcast: Rank moved up 45 places to #418 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMCSA</link>
+   <guid isPermaLink="false">2026-11-16-US-CMCSA-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 45 places to #418 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Comcast: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMCSA</link>
+   <guid isPermaLink="false">2026-11-16-US-CMCSA-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Comcast: Rank moved down 260 places to #458 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMCSA</link>
+   <guid isPermaLink="false">2026-11-06-US-CMCSA-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 260 places to #458 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Comcast: New results filed: revenue -6.1% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-CMCSA</link>
+   <guid isPermaLink="false">2026-10-28-US-CMCSA-results</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue -6.1% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

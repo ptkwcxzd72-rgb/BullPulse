@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AWI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Armstrong World Industries, Inc. (AWI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AWI</link>
+  <description>Alerts for Armstrong World Industries, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Armstrong World Industries, Inc.: Rank moved down 106 places to #770 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AWI</link>
+   <guid isPermaLink="false">2026-11-20-US-AWI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 106 places to #770 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Armstrong World Industries, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-AWI</link>
+   <guid isPermaLink="false">2026-11-20-US-AWI-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Armstrong World Industries, Inc.: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-AWI</link>
+   <guid isPermaLink="false">2026-11-17-US-AWI-cross</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Armstrong World Industries, Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-AWI</link>
+   <guid isPermaLink="false">2026-11-13-US-AWI-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Armstrong World Industries, Inc.: Rank moved down 22 places to #691 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AWI</link>
+   <guid isPermaLink="false">2026-11-13-US-AWI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #691 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LEA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Lear (LEA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LEA</link>
+  <description>Alerts for Lear from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Lear: Unusual burst of news coverage (30-day tone +0.16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LEA</link>
+   <guid isPermaLink="false">2026-11-19-US-LEA-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lear: Rank moved down 84 places to #660 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LEA</link>
+   <guid isPermaLink="false">2026-11-19-US-LEA-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 84 places to #660 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lear: Rank moved up 88 places to #576 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LEA</link>
+   <guid isPermaLink="false">2026-11-18-US-LEA-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 88 places to #576 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lear: Rank moved up 69 places to #657 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LEA</link>
+   <guid isPermaLink="false">2026-11-16-US-LEA-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 69 places to #657 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lear: Rank moved down 36 places to #726 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LEA</link>
+   <guid isPermaLink="false">2026-11-13-US-LEA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #726 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

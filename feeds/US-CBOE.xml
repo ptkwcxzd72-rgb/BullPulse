@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CBOE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Cboe Global Markets (CBOE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+  <description>Alerts for Cboe Global Markets from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Cboe Global Markets: Rank moved up 23 places to #36 (score 79)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-11-12-US-CBOE-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #36 (score 79). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cboe Global Markets: Rank moved down 21 places to #48 (score 78)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-11-10-US-CBOE-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #48 (score 78). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cboe Global Markets: Rank moved down 34 places to #58 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-11-06-US-CBOE-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #58 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cboe Global Markets: New results filed: revenue +19.0% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-11-04-US-CBOE-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +19.0% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cboe Global Markets: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-10-26-US-CBOE-early</guid>
+   <pubDate>Mon, 26 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Cboe Global Markets: Rank moved up 59 places to #40 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CBOE</link>
+   <guid isPermaLink="false">2026-10-21-US-CBOE-rank</guid>
+   <pubDate>Wed, 21 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 59 places to #40 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

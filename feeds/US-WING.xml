@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WING.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Wingstop (WING)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WING</link>
+  <description>Alerts for Wingstop from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Wingstop: Rank moved down 87 places to #707 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-20-US-WING-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 87 places to #707 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-20-US-WING-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Rank moved up 114 places to #629 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-18-US-WING-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 114 places to #629 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-18-US-WING-trend</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Rank moved up 28 places to #743 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-17-US-WING-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #743 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Rank moved down 134 places to #771 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-16-US-WING-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 134 places to #771 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-16-US-WING-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-13-US-WING-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Wingstop: Rank moved up 142 places to #637 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WING</link>
+   <guid isPermaLink="false">2026-11-13-US-WING-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 142 places to #637 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

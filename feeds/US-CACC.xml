@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CACC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Credit Acceptance (CACC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CACC</link>
+  <description>Alerts for Credit Acceptance from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Credit Acceptance: Rank moved up 31 places to #561 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CACC</link>
+   <guid isPermaLink="false">2026-11-20-US-CACC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 31 places to #561 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Credit Acceptance: Rank moved down 107 places to #593 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CACC</link>
+   <guid isPermaLink="false">2026-11-18-US-CACC-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 107 places to #593 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Credit Acceptance: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-CACC</link>
+   <guid isPermaLink="false">2026-11-16-US-CACC-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Credit Acceptance: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-CACC</link>
+   <guid isPermaLink="false">2026-11-13-US-CACC-cross</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Credit Acceptance: Rank moved down 26 places to #476 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CACC</link>
+   <guid isPermaLink="false">2026-11-13-US-CACC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #476 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

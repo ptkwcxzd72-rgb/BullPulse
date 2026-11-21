@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-GNTX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Gentex (GNTX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-GNTX</link>
+  <description>Alerts for Gentex from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Gentex: Rank moved up 38 places to #747 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GNTX</link>
+   <guid isPermaLink="false">2026-11-20-US-GNTX-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 38 places to #747 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gentex: Rank moved up 60 places to #788 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GNTX</link>
+   <guid isPermaLink="false">2026-11-18-US-GNTX-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 60 places to #788 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gentex: Unusual burst of news coverage (30-day tone +0.22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GNTX</link>
+   <guid isPermaLink="false">2026-11-18-US-GNTX-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gentex: Rank moved down 25 places to #837 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GNTX</link>
+   <guid isPermaLink="false">2026-11-16-US-GNTX-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #837 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Gentex: Rank moved up 45 places to #812 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-GNTX</link>
+   <guid isPermaLink="false">2026-11-13-US-GNTX-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 45 places to #812 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

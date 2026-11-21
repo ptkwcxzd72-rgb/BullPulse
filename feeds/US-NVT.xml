@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NVT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: nVent Electric plc (NVT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NVT</link>
+  <description>Alerts for nVent Electric plc from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>nVent Electric plc: Rank moved down 94 places to #587 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NVT</link>
+   <guid isPermaLink="false">2026-11-20-US-NVT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 94 places to #587 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>nVent Electric plc: Rank moved down 26 places to #481 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NVT</link>
+   <guid isPermaLink="false">2026-11-18-US-NVT-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #481 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>nVent Electric plc: Rank moved down 49 places to #455 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NVT</link>
+   <guid isPermaLink="false">2026-11-17-US-NVT-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 49 places to #455 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>nVent Electric plc: Rank moved up 94 places to #406 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NVT</link>
+   <guid isPermaLink="false">2026-11-16-US-NVT-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 94 places to #406 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>nVent Electric plc: Unusual burst of news coverage (30-day tone +0.29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NVT</link>
+   <guid isPermaLink="false">2026-11-16-US-NVT-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>nVent Electric plc: Rank moved down 134 places to #500 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NVT</link>
+   <guid isPermaLink="false">2026-11-13-US-NVT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 134 places to #500 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

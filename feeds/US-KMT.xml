@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KMT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Kennametal (KMT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KMT</link>
+  <description>Alerts for Kennametal from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Kennametal: Unusual burst of news coverage (30-day tone +0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMT</link>
+   <guid isPermaLink="false">2026-11-18-US-KMT-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kennametal: Rank moved up 57 places to #643 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMT</link>
+   <guid isPermaLink="false">2026-11-17-US-KMT-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 57 places to #643 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kennametal: Rank moved down 29 places to #700 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMT</link>
+   <guid isPermaLink="false">2026-11-16-US-KMT-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #700 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kennametal: Cluster buying: 3 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMT</link>
+   <guid isPermaLink="false">2026-11-16-US-KMT-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 3 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kennametal: Rank moved up 25 places to #671 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMT</link>
+   <guid isPermaLink="false">2026-11-13-US-KMT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #671 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

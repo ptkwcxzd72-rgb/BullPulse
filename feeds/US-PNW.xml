@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PNW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Pinnacle West Capital (PNW)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PNW</link>
+  <description>Alerts for Pinnacle West Capital from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Pinnacle West Capital: Rank moved up 20 places to #105 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PNW</link>
+   <guid isPermaLink="false">2026-11-20-US-PNW-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #105 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Pinnacle West Capital: Rank moved down 37 places to #125 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PNW</link>
+   <guid isPermaLink="false">2026-11-19-US-PNW-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #125 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Pinnacle West Capital: Rank moved up 98 places to #70 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PNW</link>
+   <guid isPermaLink="false">2026-11-17-US-PNW-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 98 places to #70 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

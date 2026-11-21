@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BCPC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Balchem Corporation (BCPC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BCPC</link>
+  <description>Alerts for Balchem Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Balchem Corporation: Rank moved up 30 places to #574 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCPC</link>
+   <guid isPermaLink="false">2026-11-20-US-BCPC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #574 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Balchem Corporation: Rank moved down 38 places to #604 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCPC</link>
+   <guid isPermaLink="false">2026-11-19-US-BCPC-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #604 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Balchem Corporation: Rank moved down 23 places to #566 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCPC</link>
+   <guid isPermaLink="false">2026-11-18-US-BCPC-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 23 places to #566 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Balchem Corporation: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCPC</link>
+   <guid isPermaLink="false">2026-11-17-US-BCPC-trend</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Balchem Corporation: Rank moved down 198 places to #543 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCPC</link>
+   <guid isPermaLink="false">2026-11-17-US-BCPC-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 198 places to #543 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Balchem Corporation: Rank moved down 68 places to #339 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCPC</link>
+   <guid isPermaLink="false">2026-11-13-US-BCPC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 68 places to #339 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

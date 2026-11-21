@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ACMR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: ACM Research, Inc. (ACMR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ACMR</link>
+  <description>Alerts for ACM Research, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>ACM Research, Inc.: Rank moved up 189 places to #317 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACMR</link>
+   <guid isPermaLink="false">2026-11-18-US-ACMR-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 189 places to #317 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ACM Research, Inc.: Unusual burst of news coverage (30-day tone +0.28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACMR</link>
+   <guid isPermaLink="false">2026-11-18-US-ACMR-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ACM Research, Inc.: Rank moved up 47 places to #506 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACMR</link>
+   <guid isPermaLink="false">2026-11-17-US-ACMR-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 47 places to #506 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ACM Research, Inc.: Rank moved down 96 places to #553 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACMR</link>
+   <guid isPermaLink="false">2026-11-16-US-ACMR-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 96 places to #553 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ACM Research, Inc.: Rank moved down 56 places to #457 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ACMR</link>
+   <guid isPermaLink="false">2026-11-13-US-ACMR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 56 places to #457 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-UTL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Unitil Corporation (UTL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-UTL</link>
+  <description>Alerts for Unitil Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Unitil Corporation: Rank moved up 57 places to #281 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UTL</link>
+   <guid isPermaLink="false">2026-11-20-US-UTL-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 57 places to #281 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Unitil Corporation: Rank moved down 31 places to #345 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UTL</link>
+   <guid isPermaLink="false">2026-11-18-US-UTL-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #345 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Unitil Corporation: Rank moved down 38 places to #314 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UTL</link>
+   <guid isPermaLink="false">2026-11-17-US-UTL-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #314 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Unitil Corporation: Rank moved up 23 places to #276 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UTL</link>
+   <guid isPermaLink="false">2026-11-16-US-UTL-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #276 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Unitil Corporation: Rank moved down 54 places to #299 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-UTL</link>
+   <guid isPermaLink="false">2026-11-13-US-UTL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 54 places to #299 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>
