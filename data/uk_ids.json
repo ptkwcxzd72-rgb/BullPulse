@@ -29,6 +29,7 @@
  "AEP": {},
  "AGT": {},
  "AIE": {},
+ "AJB": {},
  "ALFA": {},
  "ALW": {
   "isin": "GB00B11V7W98",
@@ -102,27 +103,32 @@
   "legal_name": "LION FINANCE GROUP PLC",
   "lei": "213800XKDG12NQG8VC53"
  },
+ "BKG": {},
  "BLND": {
   "isin": "GB0001367019",
   "legal_name": "BRITISH LAND COMPANY PUBLIC LIMITED COMPANY(THE)",
   "lei": "RV5B68J2GV3QGMRPW209"
  },
  "BME": {},
+ "BMY": {},
  "BNZL": {
   "isin": "GB00B0744B38",
   "legal_name": "BUNZL PUBLIC LIMITED COMPANY",
   "lei": "213800Q1Q9DV4L78UM09"
  },
+ "BOY": {},
  "BP": {
   "isin": "GB0007980591",
   "legal_name": "BP P.L.C.",
   "lei": "213800LH1BZH3DI6G760"
  },
+ "BPT": {},
  "BRBY": {
   "isin": "GB0031743007",
   "legal_name": "BURBERRY GROUP PLC",
   "lei": "213800PE1KEFCNFR1R50"
  },
+ "BREE": {},
  "BT.A": {
   "isin": "GB0030913577",
   "legal_name": "BT GROUP PLC",
@@ -133,6 +139,10 @@
   "legal_name": "BARRATT REDROW PLC",
   "lei": "2138006R85VEOF5YNK29"
  },
+ "BWY": {},
+ "BYG": {},
+ "BYIT": {},
+ "CBG": {},
  "CCC": {
   "isin": "GB00BV9FP302",
   "legal_name": "COMPUTACENTER PLC",
@@ -148,11 +158,16 @@
   "legal_name": "Coca-Cola HBC AG",
   "lei": "549300EFP3TNG7JGVE49"
  },
+ "CHG": {},
+ "CKN": {},
+ "CMCX": {},
  "CNA": {
   "isin": "GB00B033F229",
   "legal_name": "CENTRICA PLC",
   "lei": "E26EDV109X6EEPBKVH76"
  },
+ "COA": {},
+ "COST": {},
  "CPG": {
   "isin": "GB00BD6K4575",
   "legal_name": "COMPASS GROUP PLC",
@@ -163,11 +178,15 @@
   "legal_name": "CRODA INTERNATIONAL PUBLIC LIMITED COMPANY",
   "lei": "2138004WCNBFJEEOXV26"
  },
+ "CSN": {},
  "CTEC": {
   "isin": "GB00BD3VFW73",
   "legal_name": "CONVATEC GROUP PLC",
   "lei": "213800LS272L4FIDOH92"
  },
+ "CURY": {},
+ "CWK": {},
+ "CWR": {},
  "DCC": {
   "isin": "IE0002424939"
  },
