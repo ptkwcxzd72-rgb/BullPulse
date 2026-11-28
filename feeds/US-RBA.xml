@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RBA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: RB Global (RBA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+  <description>Alerts for RB Global from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>RB Global: Rank moved up 104 places to #716 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-25-US-RBA-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 104 places to #716 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-25-US-RBA-trend</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-25-US-RBA-early</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-25-US-RBA-growth</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Rank moved up 32 places to #828 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-20-US-RBA-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #828 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Rank moved up 26 places to #860 (score 22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-19-US-RBA-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #860 (score 22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Rank moved down 167 places to #883 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-17-US-RBA-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 167 places to #883 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Unusual burst of news coverage (30-day tone +0.27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-13-US-RBA-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-13-US-RBA-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RB Global: Rank moved up 63 places to #715 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBA</link>
+   <guid isPermaLink="false">2026-11-13-US-RBA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 63 places to #715 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

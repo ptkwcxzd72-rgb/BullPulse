@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-JBLU.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: JetBlue (JBLU)</title>
+  <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+  <description>Alerts for JetBlue from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>JetBlue: Rank moved up 36 places to #777 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+   <guid isPermaLink="false">2026-11-25-US-JBLU-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #777 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JetBlue: Rank moved up 82 places to #813 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+   <guid isPermaLink="false">2026-11-24-US-JBLU-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 82 places to #813 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JetBlue: Rank moved up 26 places to #903 (score 19)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+   <guid isPermaLink="false">2026-11-19-US-JBLU-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #903 (score 19). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JetBlue: Rank moved down 201 places to #935 (score 16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+   <guid isPermaLink="false">2026-11-16-US-JBLU-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 201 places to #935 (score 16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JetBlue: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+   <guid isPermaLink="false">2026-11-16-US-JBLU-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JetBlue: Unusual burst of news coverage (30-day tone -0.12)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+   <guid isPermaLink="false">2026-11-16-US-JBLU-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.12). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>JetBlue: Rank moved up 132 places to #734 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JBLU</link>
+   <guid isPermaLink="false">2026-11-13-US-JBLU-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 132 places to #734 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

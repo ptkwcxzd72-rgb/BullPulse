@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CHWY.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Chewy (CHWY)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CHWY</link>
+  <description>Alerts for Chewy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Chewy: Rank moved up 23 places to #910 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHWY</link>
+   <guid isPermaLink="false">2026-11-24-US-CHWY-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #910 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Chewy: Rank moved down 130 places to #937 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHWY</link>
+   <guid isPermaLink="false">2026-11-16-US-CHWY-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 130 places to #937 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Chewy: Unusual burst of news coverage (30-day tone -0.16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHWY</link>
+   <guid isPermaLink="false">2026-11-16-US-CHWY-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Chewy: Rank moved up 68 places to #807 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHWY</link>
+   <guid isPermaLink="false">2026-11-13-US-CHWY-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 68 places to #807 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

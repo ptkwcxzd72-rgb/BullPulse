@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CTVA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Corteva (CTVA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+  <description>Alerts for Corteva from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Corteva: Rank moved down 31 places to #757 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-25-US-CTVA-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #757 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Corteva: Rank moved down 140 places to #726 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-24-US-CTVA-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 140 places to #726 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Corteva: Rank moved up 23 places to #586 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-20-US-CTVA-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #586 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Corteva: Rank moved down 77 places to #613 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-18-US-CTVA-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 77 places to #613 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Corteva: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-18-US-CTVA-cross</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Corteva: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-16-US-CTVA-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Corteva: Unusual burst of news coverage (30-day tone -0.58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-13-US-CTVA-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Corteva: Rank moved down 167 places to #548 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CTVA</link>
+   <guid isPermaLink="false">2026-11-13-US-CTVA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 167 places to #548 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

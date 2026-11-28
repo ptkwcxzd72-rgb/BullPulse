@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SARO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: StandardAero (SARO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+  <description>Alerts for StandardAero from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>StandardAero: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+   <guid isPermaLink="false">2026-11-27-US-SARO-early</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StandardAero: Unusual burst of news coverage (30-day tone +0.65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+   <guid isPermaLink="false">2026-11-27-US-SARO-news</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StandardAero: Unusual burst of news coverage (30-day tone +0.82)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+   <guid isPermaLink="false">2026-11-24-US-SARO-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.82). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StandardAero: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+   <guid isPermaLink="false">2026-11-24-US-SARO-early</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StandardAero: Rank moved up 142 places to #503 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+   <guid isPermaLink="false">2026-11-24-US-SARO-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 142 places to #503 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StandardAero: Rank moved up 27 places to #681 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+   <guid isPermaLink="false">2026-11-18-US-SARO-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #681 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>StandardAero: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-SARO</link>
+   <guid isPermaLink="false">2026-11-13-US-SARO-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

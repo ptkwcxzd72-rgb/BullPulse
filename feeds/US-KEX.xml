@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KEX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Kirby Corporation (KEX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+  <description>Alerts for Kirby Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Kirby Corporation: Rank moved down 111 places to #602 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+   <guid isPermaLink="false">2026-11-27-US-KEX-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 111 places to #602 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kirby Corporation: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+   <guid isPermaLink="false">2026-11-24-US-KEX-cross</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kirby Corporation: Rank moved up 24 places to #500 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+   <guid isPermaLink="false">2026-11-24-US-KEX-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #500 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kirby Corporation: Rank moved down 33 places to #524 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+   <guid isPermaLink="false">2026-11-20-US-KEX-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 33 places to #524 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kirby Corporation: Rank moved down 27 places to #480 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+   <guid isPermaLink="false">2026-11-18-US-KEX-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #480 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kirby Corporation: Rank moved up 75 places to #451 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KEX</link>
+   <guid isPermaLink="false">2026-11-13-US-KEX-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 75 places to #451 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

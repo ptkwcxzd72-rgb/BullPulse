@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HSY.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hershey Company (The) (HSY)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HSY</link>
+  <description>Alerts for Hershey Company (The) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hershey Company (The): Rank moved down 24 places to #416 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HSY</link>
+   <guid isPermaLink="false">2026-11-24-US-HSY-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #416 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hershey Company (The): Rank moved up 23 places to #392 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HSY</link>
+   <guid isPermaLink="false">2026-11-20-US-HSY-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #392 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

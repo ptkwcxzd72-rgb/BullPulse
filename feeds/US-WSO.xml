@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WSO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Watsco (WSO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WSO</link>
+  <description>Alerts for Watsco from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Watsco: Rank moved down 27 places to #767 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSO</link>
+   <guid isPermaLink="false">2026-11-27-US-WSO-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #767 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Watsco: Rank moved down 62 places to #765 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSO</link>
+   <guid isPermaLink="false">2026-11-25-US-WSO-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 62 places to #765 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Watsco: Unusual burst of news coverage (30-day tone +0.32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSO</link>
+   <guid isPermaLink="false">2026-11-25-US-WSO-news</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Watsco: Rank moved up 56 places to #684 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSO</link>
+   <guid isPermaLink="false">2026-11-20-US-WSO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 56 places to #684 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Watsco: Unusual burst of news coverage (30-day tone +0.64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSO</link>
+   <guid isPermaLink="false">2026-11-19-US-WSO-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Watsco: Rank moved up 165 places to #742 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSO</link>
+   <guid isPermaLink="false">2026-11-17-US-WSO-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 165 places to #742 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

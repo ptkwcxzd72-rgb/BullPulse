@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ROIV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Roivant Sciences (ROIV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ROIV</link>
+  <description>Alerts for Roivant Sciences from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Roivant Sciences: Rank moved up 22 places to #47 (score 84)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROIV</link>
+   <guid isPermaLink="false">2026-11-20-US-ROIV-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #47 (score 84). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Roivant Sciences: Rank moved down 36 places to #69 (score 81)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROIV</link>
+   <guid isPermaLink="false">2026-11-19-US-ROIV-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #69 (score 81). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Roivant Sciences: Unusual burst of news coverage (30-day tone +0.21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROIV</link>
+   <guid isPermaLink="false">2026-11-17-US-ROIV-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Roivant Sciences: Rank moved up 141 places to #17 (score 86)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROIV</link>
+   <guid isPermaLink="false">2026-11-16-US-ROIV-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 141 places to #17 (score 86). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Roivant Sciences: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROIV</link>
+   <guid isPermaLink="false">2026-11-13-US-ROIV-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Roivant Sciences: Rank moved down 127 places to #158 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ROIV</link>
+   <guid isPermaLink="false">2026-11-13-US-ROIV-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 127 places to #158 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

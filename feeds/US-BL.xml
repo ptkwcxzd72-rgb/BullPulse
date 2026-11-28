@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: BlackLine Systems, Inc. (BL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BL</link>
+  <description>Alerts for BlackLine Systems, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>BlackLine Systems, Inc.: Rank moved up 96 places to #841 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BL</link>
+   <guid isPermaLink="false">2026-11-25-US-BL-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 96 places to #841 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BlackLine Systems, Inc.: Rank moved down 45 places to #937 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BL</link>
+   <guid isPermaLink="false">2026-11-24-US-BL-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 45 places to #937 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BlackLine Systems, Inc.: Rank moved up 40 places to #892 (score 19)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BL</link>
+   <guid isPermaLink="false">2026-11-20-US-BL-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 40 places to #892 (score 19). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BlackLine Systems, Inc.: Rank moved up 52 places to #924 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BL</link>
+   <guid isPermaLink="false">2026-11-17-US-BL-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 52 places to #924 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BlackLine Systems, Inc.: Unusual burst of news coverage (30-day tone -0.10)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BL</link>
+   <guid isPermaLink="false">2026-11-16-US-BL-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.10). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

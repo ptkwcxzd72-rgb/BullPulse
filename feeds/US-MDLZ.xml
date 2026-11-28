@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MDLZ.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Mondelez International (MDLZ)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MDLZ</link>
+  <description>Alerts for Mondelez International from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Mondelez International: Rank moved down 25 places to #224 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MDLZ</link>
+   <guid isPermaLink="false">2026-11-24-US-MDLZ-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #224 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mondelez International: Rank moved up 36 places to #199 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MDLZ</link>
+   <guid isPermaLink="false">2026-11-20-US-MDLZ-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #199 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mondelez International: Rank moved down 69 places to #235 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MDLZ</link>
+   <guid isPermaLink="false">2026-11-19-US-MDLZ-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 69 places to #235 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mondelez International: Rank moved up 30 places to #176 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MDLZ</link>
+   <guid isPermaLink="false">2026-11-10-US-MDLZ-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #176 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-AZN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: AstraZeneca (AZN)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+  <description>Alerts for AstraZeneca from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>AstraZeneca: Rank moved up 71 places to #218 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-25-LSE-AZN-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 71 places to #218 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Unusual burst of news coverage (30-day tone +0.21)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-25-LSE-AZN-news</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Rank moved up 47 places to #279 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-20-LSE-AZN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 47 places to #279 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-20-LSE-AZN-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-19-LSE-AZN-trend</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Rank moved down 103 places to #326 (score 16)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-19-LSE-AZN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 103 places to #326 (score 16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-18-LSE-AZN-early</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-12-LSE-AZN-cross</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-12-LSE-AZN-early</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-11-09-LSE-AZN-early</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-10-30-LSE-AZN-trend</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Rank moved up 33 places to #202 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-10-30-LSE-AZN-rank</guid>
+   <pubDate>Fri, 30 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #202 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AstraZeneca: Rank moved down 157 places to #227 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-AZN</link>
+   <guid isPermaLink="false">2026-10-22-LSE-AZN-rank</guid>
+   <pubDate>Thu, 22 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 157 places to #227 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

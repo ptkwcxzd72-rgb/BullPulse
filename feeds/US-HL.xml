@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hecla Mining (HL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HL</link>
+  <description>Alerts for Hecla Mining from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hecla Mining: Rank moved down 47 places to #833 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HL</link>
+   <guid isPermaLink="false">2026-11-24-US-HL-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 47 places to #833 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hecla Mining: Rank moved down 67 places to #786 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HL</link>
+   <guid isPermaLink="false">2026-11-19-US-HL-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 67 places to #786 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hecla Mining: Rank moved down 32 places to #719 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HL</link>
+   <guid isPermaLink="false">2026-11-18-US-HL-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 32 places to #719 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hecla Mining: Rank moved up 27 places to #672 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HL</link>
+   <guid isPermaLink="false">2026-11-16-US-HL-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #672 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hecla Mining: Unusual burst of news coverage (30-day tone +0.68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HL</link>
+   <guid isPermaLink="false">2026-11-16-US-HL-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

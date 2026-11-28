@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RCUS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Arcus Biosciences, Inc. (RCUS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+  <description>Alerts for Arcus Biosciences, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Arcus Biosciences, Inc.: Rank moved down 50 places to #957 (score 12)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+   <guid isPermaLink="false">2026-11-24-US-RCUS-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 50 places to #957 (score 12). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arcus Biosciences, Inc.: Rank moved down 150 places to #907 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+   <guid isPermaLink="false">2026-11-20-US-RCUS-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 150 places to #907 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arcus Biosciences, Inc.: Unusual burst of news coverage (30-day tone -0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+   <guid isPermaLink="false">2026-11-19-US-RCUS-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arcus Biosciences, Inc.: Rank moved up 37 places to #757 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+   <guid isPermaLink="false">2026-11-19-US-RCUS-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #757 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arcus Biosciences, Inc.: Rank moved up 27 places to #794 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+   <guid isPermaLink="false">2026-11-18-US-RCUS-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #794 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arcus Biosciences, Inc.: Rank moved down 38 places to #831 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+   <guid isPermaLink="false">2026-11-16-US-RCUS-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #831 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Arcus Biosciences, Inc.: Rank moved down 91 places to #793 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RCUS</link>
+   <guid isPermaLink="false">2026-11-13-US-RCUS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 91 places to #793 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-RTW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: RTW Biotech Opportunities (RTW)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-RTW</link>
+  <description>Alerts for RTW Biotech Opportunities from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>RTW Biotech Opportunities: Rank moved up 21 places to #52 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RTW</link>
+   <guid isPermaLink="false">2026-11-25-LSE-RTW-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #52 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RTW Biotech Opportunities: Rank moved down 20 places to #73 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RTW</link>
+   <guid isPermaLink="false">2026-11-24-LSE-RTW-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #73 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RTW Biotech Opportunities: Rank moved up 24 places to #59 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RTW</link>
+   <guid isPermaLink="false">2026-11-19-LSE-RTW-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #59 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RTW Biotech Opportunities: Rank moved down 22 places to #89 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RTW</link>
+   <guid isPermaLink="false">2026-11-17-LSE-RTW-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #89 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RTW Biotech Opportunities: Rank moved up 62 places to #33 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-RTW</link>
+   <guid isPermaLink="false">2026-10-29-LSE-RTW-rank</guid>
+   <pubDate>Thu, 29 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 62 places to #33 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

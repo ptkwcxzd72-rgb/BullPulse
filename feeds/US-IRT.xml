@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-IRT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Independence Realty Trust (IRT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-IRT</link>
+  <description>Alerts for Independence Realty Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Independence Realty Trust: Rank moved down 57 places to #786 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IRT</link>
+   <guid isPermaLink="false">2026-11-25-US-IRT-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 57 places to #786 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Independence Realty Trust: Unusual burst of news coverage (30-day tone +0.29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IRT</link>
+   <guid isPermaLink="false">2026-11-25-US-IRT-news</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Independence Realty Trust: Rank moved up 136 places to #729 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IRT</link>
+   <guid isPermaLink="false">2026-11-24-US-IRT-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 136 places to #729 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Independence Realty Trust: Rank moved down 98 places to #865 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IRT</link>
+   <guid isPermaLink="false">2026-11-20-US-IRT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 98 places to #865 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Independence Realty Trust: Rank moved up 23 places to #767 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IRT</link>
+   <guid isPermaLink="false">2026-11-19-US-IRT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #767 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Independence Realty Trust: Rank moved down 39 places to #777 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IRT</link>
+   <guid isPermaLink="false">2026-11-13-US-IRT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 39 places to #777 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

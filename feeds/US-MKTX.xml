@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MKTX.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: MarketAxess (MKTX)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+  <description>Alerts for MarketAxess from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>MarketAxess: Rank moved up 45 places to #520 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-27-US-MKTX-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 45 places to #520 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MarketAxess: Rank moved up 21 places to #563 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-24-US-MKTX-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #563 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MarketAxess: Rank moved up 38 places to #584 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-20-US-MKTX-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 38 places to #584 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MarketAxess: Rank moved up 24 places to #622 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-19-US-MKTX-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #622 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MarketAxess: Unusual burst of news coverage (30-day tone -0.28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-18-US-MKTX-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MarketAxess: Rank moved up 21 places to #632 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-17-US-MKTX-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #632 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MarketAxess: Rank moved down 97 places to #653 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-16-US-MKTX-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 97 places to #653 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MarketAxess: Rank moved down 50 places to #556 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MKTX</link>
+   <guid isPermaLink="false">2026-11-13-US-MKTX-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 50 places to #556 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

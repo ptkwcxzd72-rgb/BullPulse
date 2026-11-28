@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RBC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: RBC Bearings (RBC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RBC</link>
+  <description>Alerts for RBC Bearings from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>RBC Bearings: Rank moved up 99 places to #668 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBC</link>
+   <guid isPermaLink="false">2026-11-27-US-RBC-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 99 places to #668 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RBC Bearings: Unusual burst of news coverage (30-day tone -0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBC</link>
+   <guid isPermaLink="false">2026-11-24-US-RBC-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RBC Bearings: Rank moved up 23 places to #767 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBC</link>
+   <guid isPermaLink="false">2026-11-24-US-RBC-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #767 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RBC Bearings: Rank moved down 71 places to #790 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBC</link>
+   <guid isPermaLink="false">2026-11-20-US-RBC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 71 places to #790 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RBC Bearings: Rank moved up 23 places to #717 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBC</link>
+   <guid isPermaLink="false">2026-11-16-US-RBC-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #717 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RBC Bearings: Rank moved down 47 places to #740 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RBC</link>
+   <guid isPermaLink="false">2026-11-13-US-RBC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 47 places to #740 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

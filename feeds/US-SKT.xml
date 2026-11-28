@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SKT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Tanger Factory Outlet Centers, Inc. (SKT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SKT</link>
+  <description>Alerts for Tanger Factory Outlet Centers, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Tanger Factory Outlet Centers, Inc.: Rank moved down 37 places to #584 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SKT</link>
+   <guid isPermaLink="false">2026-11-24-US-SKT-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #584 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Tanger Factory Outlet Centers, Inc.: Rank moved up 20 places to #547 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SKT</link>
+   <guid isPermaLink="false">2026-11-20-US-SKT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #547 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Tanger Factory Outlet Centers, Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-SKT</link>
+   <guid isPermaLink="false">2026-11-19-US-SKT-early</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Tanger Factory Outlet Centers, Inc.: Rank moved down 24 places to #567 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SKT</link>
+   <guid isPermaLink="false">2026-11-19-US-SKT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #567 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

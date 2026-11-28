@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HOOD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Robinhood Markets (HOOD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HOOD</link>
+  <description>Alerts for Robinhood Markets from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Robinhood Markets: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-HOOD</link>
+   <guid isPermaLink="false">2026-11-12-US-HOOD-cross</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

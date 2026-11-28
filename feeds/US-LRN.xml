@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LRN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Stride, Inc. (LRN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+  <description>Alerts for Stride, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Stride, Inc.: Rank moved up 147 places to #507 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+   <guid isPermaLink="false">2026-11-27-US-LRN-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 147 places to #507 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stride, Inc.: Rank moved up 20 places to #667 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+   <guid isPermaLink="false">2026-11-25-US-LRN-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #667 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stride, Inc.: Rank moved down 164 places to #687 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+   <guid isPermaLink="false">2026-11-24-US-LRN-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 164 places to #687 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stride, Inc.: Rank moved down 65 places to #528 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+   <guid isPermaLink="false">2026-11-19-US-LRN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 65 places to #528 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stride, Inc.: Cluster buying: 3 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+   <guid isPermaLink="false">2026-11-16-US-LRN-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 3 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stride, Inc.: Unusual burst of news coverage (30-day tone +0.33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+   <guid isPermaLink="false">2026-11-13-US-LRN-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stride, Inc.: Rank moved up 93 places to #448 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LRN</link>
+   <guid isPermaLink="false">2026-11-13-US-LRN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 93 places to #448 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

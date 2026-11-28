@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PPG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: PPG Industries (PPG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PPG</link>
+  <description>Alerts for PPG Industries from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>PPG Industries: Rank moved down 30 places to #136 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PPG</link>
+   <guid isPermaLink="false">2026-11-27-US-PPG-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 30 places to #136 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>PPG Industries: Rank moved up 20 places to #187 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PPG</link>
+   <guid isPermaLink="false">2026-11-25-US-PPG-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #187 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>PPG Industries: Rank moved down 30 places to #207 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PPG</link>
+   <guid isPermaLink="false">2026-11-24-US-PPG-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 30 places to #207 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>PPG Industries: Unusual burst of news coverage (30-day tone +0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PPG</link>
+   <guid isPermaLink="false">2026-11-20-US-PPG-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>PPG Industries: Rank moved down 28 places to #176 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PPG</link>
+   <guid isPermaLink="false">2026-11-09-US-PPG-rank</guid>
+   <pubDate>Mon, 09 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #176 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

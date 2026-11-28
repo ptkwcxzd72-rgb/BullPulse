@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BYD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Boyd Gaming (BYD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+  <description>Alerts for Boyd Gaming from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Boyd Gaming: Rank moved up 22 places to #787 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+   <guid isPermaLink="false">2026-11-27-US-BYD-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #787 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Boyd Gaming: Rank moved down 28 places to #806 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+   <guid isPermaLink="false">2026-11-24-US-BYD-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #806 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Boyd Gaming: Rank moved down 78 places to #778 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+   <guid isPermaLink="false">2026-11-20-US-BYD-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 78 places to #778 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Boyd Gaming: Unusual burst of news coverage (30-day tone +0.28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+   <guid isPermaLink="false">2026-11-19-US-BYD-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Boyd Gaming: Rank moved up 62 places to #700 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+   <guid isPermaLink="false">2026-11-19-US-BYD-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 62 places to #700 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Boyd Gaming: Rank moved down 41 places to #765 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+   <guid isPermaLink="false">2026-11-16-US-BYD-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 41 places to #765 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Boyd Gaming: Rank moved up 68 places to #724 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BYD</link>
+   <guid isPermaLink="false">2026-11-13-US-BYD-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 68 places to #724 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

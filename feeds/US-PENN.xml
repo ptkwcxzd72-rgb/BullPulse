@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-PENN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Penn Entertainment (PENN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+  <description>Alerts for Penn Entertainment from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Penn Entertainment: Rank moved down 35 places to #537 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-27-US-PENN-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #537 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Rank moved up 37 places to #472 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-20-US-PENN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #472 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-19-US-PENN-early</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Rank moved up 100 places to #509 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-19-US-PENN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 100 places to #509 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Rank moved up 50 places to #609 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-18-US-PENN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 50 places to #609 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Unusual burst of news coverage (30-day tone -0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-18-US-PENN-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Rank moved down 131 places to #659 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-17-US-PENN-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 131 places to #659 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-13-US-PENN-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Penn Entertainment: Rank moved up 74 places to #527 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-PENN</link>
+   <guid isPermaLink="false">2026-11-13-US-PENN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 74 places to #527 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

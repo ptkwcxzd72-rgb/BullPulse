@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CHCO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: City Holding Company (CHCO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CHCO</link>
+  <description>Alerts for City Holding Company from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>City Holding Company: Unusual burst of news coverage (30-day tone -0.43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHCO</link>
+   <guid isPermaLink="false">2026-11-27-US-CHCO-news</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>City Holding Company: Rank moved down 31 places to #431 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHCO</link>
+   <guid isPermaLink="false">2026-11-20-US-CHCO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #431 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>City Holding Company: Rank moved down 99 places to #400 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHCO</link>
+   <guid isPermaLink="false">2026-11-19-US-CHCO-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 99 places to #400 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>City Holding Company: Rank moved down 51 places to #303 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHCO</link>
+   <guid isPermaLink="false">2026-11-17-US-CHCO-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 51 places to #303 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>City Holding Company: Cluster buying: 4 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHCO</link>
+   <guid isPermaLink="false">2026-11-16-US-CHCO-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 4 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>City Holding Company: Rank moved down 38 places to #255 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHCO</link>
+   <guid isPermaLink="false">2026-11-13-US-CHCO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #255 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

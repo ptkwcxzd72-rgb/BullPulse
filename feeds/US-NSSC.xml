@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NSSC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Napco Security Technologies (NSSC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NSSC</link>
+  <description>Alerts for Napco Security Technologies from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Napco Security Technologies: Rank moved down 35 places to #753 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NSSC</link>
+   <guid isPermaLink="false">2026-11-27-US-NSSC-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #753 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Napco Security Technologies: Rank moved up 92 places to #733 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NSSC</link>
+   <guid isPermaLink="false">2026-11-25-US-NSSC-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 92 places to #733 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Napco Security Technologies: Rank moved up 34 places to #825 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NSSC</link>
+   <guid isPermaLink="false">2026-11-24-US-NSSC-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #825 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Napco Security Technologies: Rank moved up 23 places to #859 (score 22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NSSC</link>
+   <guid isPermaLink="false">2026-11-20-US-NSSC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #859 (score 22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Napco Security Technologies: Rank moved up 26 places to #882 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NSSC</link>
+   <guid isPermaLink="false">2026-11-19-US-NSSC-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #882 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

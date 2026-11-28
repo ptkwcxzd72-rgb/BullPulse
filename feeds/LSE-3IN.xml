@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-3IN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: 3i Infrastructure (3IN)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-3IN</link>
+  <description>Alerts for 3i Infrastructure from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+ </channel>
+</rss>

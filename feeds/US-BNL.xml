@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BNL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Broadstone Net Lease, Inc. (BNL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BNL</link>
+  <description>Alerts for Broadstone Net Lease, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Broadstone Net Lease, Inc.: Rank moved down 46 places to #605 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BNL</link>
+   <guid isPermaLink="false">2026-11-24-US-BNL-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 46 places to #605 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Broadstone Net Lease, Inc.: Rank moved down 58 places to #559 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BNL</link>
+   <guid isPermaLink="false">2026-11-20-US-BNL-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 58 places to #559 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Broadstone Net Lease, Inc.: Unusual burst of news coverage (30-day tone +0.67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BNL</link>
+   <guid isPermaLink="false">2026-11-19-US-BNL-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Broadstone Net Lease, Inc.: Rank moved up 65 places to #504 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BNL</link>
+   <guid isPermaLink="false">2026-11-18-US-BNL-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 65 places to #504 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Broadstone Net Lease, Inc.: Rank moved up 132 places to #540 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BNL</link>
+   <guid isPermaLink="false">2026-11-13-US-BNL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 132 places to #540 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

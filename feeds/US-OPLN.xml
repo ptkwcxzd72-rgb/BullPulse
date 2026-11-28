@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-OPLN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: OPENLANE, Inc. (OPLN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+  <description>Alerts for OPENLANE, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>OPENLANE, Inc.: Rank moved up 91 places to #140 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-27-US-OPLN-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 91 places to #140 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>OPENLANE, Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-24-US-OPLN-early</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>OPENLANE, Inc.: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-24-US-OPLN-trend</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>OPENLANE, Inc.: Rank moved up 155 places to #254 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-24-US-OPLN-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 155 places to #254 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>OPENLANE, Inc.: Rank moved up 28 places to #409 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-20-US-OPLN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #409 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>OPENLANE, Inc.: Rank moved down 102 places to #448 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-16-US-OPLN-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 102 places to #448 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>OPENLANE, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-16-US-OPLN-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>OPENLANE, Inc.: Rank moved down 137 places to #346 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OPLN</link>
+   <guid isPermaLink="false">2026-11-13-US-OPLN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 137 places to #346 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SGI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Somnigroup International (SGI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SGI</link>
+  <description>Alerts for Somnigroup International from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Somnigroup International: Rank moved up 85 places to #851 (score 23)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SGI</link>
+   <guid isPermaLink="false">2026-11-27-US-SGI-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 85 places to #851 (score 23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Somnigroup International: Rank moved down 40 places to #913 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SGI</link>
+   <guid isPermaLink="false">2026-11-19-US-SGI-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 40 places to #913 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Somnigroup International: Unusual burst of news coverage (30-day tone +0.17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SGI</link>
+   <guid isPermaLink="false">2026-11-17-US-SGI-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Somnigroup International: Rank moved up 46 places to #898 (score 20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SGI</link>
+   <guid isPermaLink="false">2026-11-16-US-SGI-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 46 places to #898 (score 20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

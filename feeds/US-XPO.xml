@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-XPO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: XPO, Inc. (XPO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-XPO</link>
+  <description>Alerts for XPO, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>XPO, Inc.: Rank moved down 97 places to #569 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XPO</link>
+   <guid isPermaLink="false">2026-11-27-US-XPO-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 97 places to #569 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>XPO, Inc.: Rank moved up 28 places to #477 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XPO</link>
+   <guid isPermaLink="false">2026-11-25-US-XPO-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #477 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>XPO, Inc.: Rank moved down 54 places to #505 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XPO</link>
+   <guid isPermaLink="false">2026-11-24-US-XPO-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 54 places to #505 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>XPO, Inc.: The 50-day average fell below the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-XPO</link>
+   <guid isPermaLink="false">2026-11-20-US-XPO-cross</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>The 50-day average fell below the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>XPO, Inc.: Unusual burst of news coverage (30-day tone +0.05)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XPO</link>
+   <guid isPermaLink="false">2026-11-16-US-XPO-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.05). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>XPO, Inc.: Rank moved up 36 places to #455 (score 54)</title>
+   <link>https://bullpulse.co.uk/app.html#US-XPO</link>
+   <guid isPermaLink="false">2026-11-13-US-XPO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #455 (score 54). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

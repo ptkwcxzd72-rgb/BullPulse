@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ELV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Elevance Health (ELV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ELV</link>
+  <description>Alerts for Elevance Health from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Elevance Health: Rank moved down 22 places to #192 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELV</link>
+   <guid isPermaLink="false">2026-11-27-US-ELV-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #192 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elevance Health: Rank moved down 24 places to #162 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELV</link>
+   <guid isPermaLink="false">2026-11-25-US-ELV-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #162 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elevance Health: Rank moved down 38 places to #138 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELV</link>
+   <guid isPermaLink="false">2026-11-24-US-ELV-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #138 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elevance Health: Rank moved down 29 places to #100 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELV</link>
+   <guid isPermaLink="false">2026-11-20-US-ELV-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #100 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elevance Health: Rank moved down 61 places to #67 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELV</link>
+   <guid isPermaLink="false">2026-11-18-US-ELV-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 61 places to #67 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Elevance Health: New results filed: revenue +1.4% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-ELV</link>
+   <guid isPermaLink="false">2026-10-28-US-ELV-results</guid>
+   <pubDate>Wed, 28 Oct 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +1.4% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

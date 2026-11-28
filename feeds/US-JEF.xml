@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-JEF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Jefferies (JEF)</title>
+  <link>https://bullpulse.co.uk/app.html#US-JEF</link>
+  <description>Alerts for Jefferies from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Jefferies: Rank moved up 20 places to #858 (score 22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JEF</link>
+   <guid isPermaLink="false">2026-11-27-US-JEF-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #858 (score 22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Jefferies: Rank moved up 84 places to #852 (score 22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JEF</link>
+   <guid isPermaLink="false">2026-11-24-US-JEF-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 84 places to #852 (score 22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Jefferies: Rank moved up 21 places to #936 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JEF</link>
+   <guid isPermaLink="false">2026-11-18-US-JEF-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #936 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Jefferies: Rank moved down 35 places to #957 (score 12)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JEF</link>
+   <guid isPermaLink="false">2026-11-16-US-JEF-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #957 (score 12). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Jefferies: Unusual burst of news coverage (30-day tone -0.30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JEF</link>
+   <guid isPermaLink="false">2026-11-13-US-JEF-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Jefferies: Rank moved down 101 places to #922 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-JEF</link>
+   <guid isPermaLink="false">2026-11-13-US-JEF-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 101 places to #922 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

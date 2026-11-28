@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RGEN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Repligen (RGEN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RGEN</link>
+  <description>Alerts for Repligen from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Repligen: Rank moved up 46 places to #386 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RGEN</link>
+   <guid isPermaLink="false">2026-11-27-US-RGEN-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 46 places to #386 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Repligen: Rank moved down 48 places to #314 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RGEN</link>
+   <guid isPermaLink="false">2026-11-18-US-RGEN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 48 places to #314 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Repligen: Rank moved up 223 places to #248 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RGEN</link>
+   <guid isPermaLink="false">2026-11-16-US-RGEN-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 223 places to #248 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Repligen: Unusual burst of news coverage (30-day tone +0.32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RGEN</link>
+   <guid isPermaLink="false">2026-11-16-US-RGEN-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Repligen: Rank moved down 115 places to #471 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RGEN</link>
+   <guid isPermaLink="false">2026-11-13-US-RGEN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 115 places to #471 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

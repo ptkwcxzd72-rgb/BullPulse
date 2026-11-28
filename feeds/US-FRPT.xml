@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FRPT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Freshpet (FRPT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+  <description>Alerts for Freshpet from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Freshpet: Rank moved up 97 places to #277 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-25-US-FRPT-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 97 places to #277 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-25-US-FRPT-trend</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Rank moved up 143 places to #374 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-24-US-FRPT-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 143 places to #374 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Rank moved down 169 places to #517 (score 50)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-20-US-FRPT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 169 places to #517 (score 50). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-20-US-FRPT-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Rank moved up 29 places to #348 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-19-US-FRPT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 29 places to #348 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Rank moved down 27 places to #377 (score 59)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-18-US-FRPT-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #377 (score 59). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Rank moved down 113 places to #350 (score 61)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-16-US-FRPT-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 113 places to #350 (score 61). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Freshpet: Rank moved down 57 places to #237 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FRPT</link>
+   <guid isPermaLink="false">2026-11-13-US-FRPT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 57 places to #237 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

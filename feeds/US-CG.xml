@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Carlyle Group (The) (CG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CG</link>
+  <description>Alerts for Carlyle Group (The) from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Carlyle Group (The): Rank moved up 86 places to #819 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CG</link>
+   <guid isPermaLink="false">2026-11-27-US-CG-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 86 places to #819 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Carlyle Group (The): Rank moved up 20 places to #902 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CG</link>
+   <guid isPermaLink="false">2026-11-20-US-CG-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #902 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Carlyle Group (The): Rank moved up 42 places to #922 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CG</link>
+   <guid isPermaLink="false">2026-11-19-US-CG-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #922 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Carlyle Group (The): Rank moved down 43 places to #972 (score 9)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CG</link>
+   <guid isPermaLink="false">2026-11-17-US-CG-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 43 places to #972 (score 9). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Carlyle Group (The): Unusual burst of news coverage (30-day tone -0.25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CG</link>
+   <guid isPermaLink="false">2026-11-13-US-CG-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Carlyle Group (The): Rank moved down 82 places to #938 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CG</link>
+   <guid isPermaLink="false">2026-11-13-US-CG-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 82 places to #938 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

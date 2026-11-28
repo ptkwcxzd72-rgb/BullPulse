@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-MRC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Mercantile Investment Trust (MRC)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-MRC</link>
+  <description>Alerts for Mercantile Investment Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Mercantile Investment Trust: Rank moved up 62 places to #157 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MRC</link>
+   <guid isPermaLink="false">2026-11-27-LSE-MRC-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 62 places to #157 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mercantile Investment Trust: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MRC</link>
+   <guid isPermaLink="false">2026-11-27-LSE-MRC-trend</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mercantile Investment Trust: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MRC</link>
+   <guid isPermaLink="false">2026-11-27-LSE-MRC-early</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mercantile Investment Trust: Rank moved down 60 places to #162 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MRC</link>
+   <guid isPermaLink="false">2026-11-20-LSE-MRC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 60 places to #162 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Mercantile Investment Trust: Rank moved up 81 places to #90 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-MRC</link>
+   <guid isPermaLink="false">2026-10-27-LSE-MRC-rank</guid>
+   <pubDate>Tue, 27 Oct 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 81 places to #90 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-KMPR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Kemper Corporation (KMPR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-KMPR</link>
+  <description>Alerts for Kemper Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Kemper Corporation: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMPR</link>
+   <guid isPermaLink="false">2026-11-20-US-KMPR-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kemper Corporation: Rank moved up 114 places to #490 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMPR</link>
+   <guid isPermaLink="false">2026-11-17-US-KMPR-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 114 places to #490 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kemper Corporation: Unusual burst of news coverage (30-day tone +0.53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMPR</link>
+   <guid isPermaLink="false">2026-11-16-US-KMPR-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kemper Corporation: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMPR</link>
+   <guid isPermaLink="false">2026-11-13-US-KMPR-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Kemper Corporation: Rank moved up 84 places to #622 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-KMPR</link>
+   <guid isPermaLink="false">2026-11-13-US-KMPR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 84 places to #622 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

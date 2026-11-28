@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MXL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: MaxLinear, Inc. (MXL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+  <description>Alerts for MaxLinear, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>MaxLinear, Inc.: Rank moved up 22 places to #274 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+   <guid isPermaLink="false">2026-11-27-US-MXL-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #274 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MaxLinear, Inc.: Rank moved up 25 places to #243 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+   <guid isPermaLink="false">2026-11-25-US-MXL-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #243 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MaxLinear, Inc.: Rank moved down 80 places to #268 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+   <guid isPermaLink="false">2026-11-24-US-MXL-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 80 places to #268 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MaxLinear, Inc.: Rank moved up 40 places to #189 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+   <guid isPermaLink="false">2026-11-19-US-MXL-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 40 places to #189 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MaxLinear, Inc.: Rank moved up 138 places to #229 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+   <guid isPermaLink="false">2026-11-18-US-MXL-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 138 places to #229 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MaxLinear, Inc.: Unusual burst of news coverage (30-day tone -0.20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+   <guid isPermaLink="false">2026-11-16-US-MXL-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MaxLinear, Inc.: Rank moved down 134 places to #375 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MXL</link>
+   <guid isPermaLink="false">2026-11-13-US-MXL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 134 places to #375 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

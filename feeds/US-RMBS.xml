@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RMBS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Rambus (RMBS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RMBS</link>
+  <description>Alerts for Rambus from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Rambus: Rank moved up 23 places to #791 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMBS</link>
+   <guid isPermaLink="false">2026-11-27-US-RMBS-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #791 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rambus: Rank moved down 60 places to #812 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMBS</link>
+   <guid isPermaLink="false">2026-11-25-US-RMBS-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 60 places to #812 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rambus: Rank moved up 51 places to #752 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMBS</link>
+   <guid isPermaLink="false">2026-11-24-US-RMBS-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 51 places to #752 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rambus: Rank moved down 56 places to #803 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMBS</link>
+   <guid isPermaLink="false">2026-11-20-US-RMBS-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 56 places to #803 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rambus: Unusual burst of news coverage (30-day tone +0.38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMBS</link>
+   <guid isPermaLink="false">2026-11-13-US-RMBS-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Rambus: Rank moved up 114 places to #766 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RMBS</link>
+   <guid isPermaLink="false">2026-11-13-US-RMBS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 114 places to #766 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

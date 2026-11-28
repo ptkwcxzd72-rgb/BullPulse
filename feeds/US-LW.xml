@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Lamb Weston (LW)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LW</link>
+  <description>Alerts for Lamb Weston from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Lamb Weston: Rank moved down 20 places to #519 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-27-US-LW-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #519 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lamb Weston: Rank moved up 69 places to #441 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-25-US-LW-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 69 places to #441 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lamb Weston: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-25-US-LW-early</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lamb Weston: Rank moved down 20 places to #510 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-24-US-LW-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #510 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lamb Weston: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-19-US-LW-early</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lamb Weston: Rank moved up 43 places to #482 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-19-US-LW-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 43 places to #482 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lamb Weston: Unusual burst of news coverage (30-day tone -0.32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-16-US-LW-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lamb Weston: Rank moved down 115 places to #555 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LW</link>
+   <guid isPermaLink="false">2026-11-13-US-LW-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 115 places to #555 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

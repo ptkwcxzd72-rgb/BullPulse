@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AUB.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Atlantic Union Bankshares, Corp. (AUB)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AUB</link>
+  <description>Alerts for Atlantic Union Bankshares, Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Atlantic Union Bankshares, Corp.: Rank moved down 22 places to #455 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AUB</link>
+   <guid isPermaLink="false">2026-11-27-US-AUB-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #455 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atlantic Union Bankshares, Corp.: Rank moved down 44 places to #433 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AUB</link>
+   <guid isPermaLink="false">2026-11-19-US-AUB-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 44 places to #433 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atlantic Union Bankshares, Corp.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-AUB</link>
+   <guid isPermaLink="false">2026-11-17-US-AUB-trend</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atlantic Union Bankshares, Corp.: Rank moved down 237 places to #392 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AUB</link>
+   <guid isPermaLink="false">2026-11-17-US-AUB-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 237 places to #392 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atlantic Union Bankshares, Corp.: Rank moved up 78 places to #155 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AUB</link>
+   <guid isPermaLink="false">2026-11-16-US-AUB-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 78 places to #155 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Atlantic Union Bankshares, Corp.: Rank moved down 34 places to #233 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AUB</link>
+   <guid isPermaLink="false">2026-11-13-US-AUB-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #233 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-LAD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Lithia Motors (LAD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+  <description>Alerts for Lithia Motors from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Lithia Motors: Rank moved up 131 places to #734 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+   <guid isPermaLink="false">2026-11-27-US-LAD-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 131 places to #734 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lithia Motors: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+   <guid isPermaLink="false">2026-11-27-US-LAD-trend</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lithia Motors: Rank moved down 48 places to #866 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+   <guid isPermaLink="false">2026-11-20-US-LAD-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 48 places to #866 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lithia Motors: Rank moved down 203 places to #818 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+   <guid isPermaLink="false">2026-11-19-US-LAD-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 203 places to #818 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lithia Motors: Unusual burst of news coverage (30-day tone +0.00)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+   <guid isPermaLink="false">2026-11-17-US-LAD-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.00). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lithia Motors: Rank moved up 114 places to #612 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+   <guid isPermaLink="false">2026-11-17-US-LAD-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 114 places to #612 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Lithia Motors: Rank moved down 108 places to #738 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-LAD</link>
+   <guid isPermaLink="false">2026-11-13-US-LAD-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 108 places to #738 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

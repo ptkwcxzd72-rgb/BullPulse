@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DEI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Douglas Emmett (DEI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DEI</link>
+  <description>Alerts for Douglas Emmett from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Douglas Emmett: Rank moved up 37 places to #855 (score 22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DEI</link>
+   <guid isPermaLink="false">2026-11-20-US-DEI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #855 (score 22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Douglas Emmett: Unusual burst of news coverage (30-day tone +0.03)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DEI</link>
+   <guid isPermaLink="false">2026-11-19-US-DEI-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.03). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Douglas Emmett: Rank moved up 24 places to #892 (score 20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DEI</link>
+   <guid isPermaLink="false">2026-11-19-US-DEI-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #892 (score 20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Douglas Emmett: Rank moved down 97 places to #917 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DEI</link>
+   <guid isPermaLink="false">2026-11-17-US-DEI-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 97 places to #917 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MTRN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Materion Corp. (MTRN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+  <description>Alerts for Materion Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Materion Corp.: Rank moved down 38 places to #328 (score 62)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+   <guid isPermaLink="false">2026-11-25-US-MTRN-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #328 (score 62). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Materion Corp.: Rank moved down 56 places to #290 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+   <guid isPermaLink="false">2026-11-24-US-MTRN-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 56 places to #290 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Materion Corp.: Rank moved up 95 places to #234 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+   <guid isPermaLink="false">2026-11-20-US-MTRN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 95 places to #234 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Materion Corp.: Unusual burst of news coverage (30-day tone +0.10)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+   <guid isPermaLink="false">2026-11-20-US-MTRN-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.10). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Materion Corp.: Rank moved up 26 places to #329 (score 63)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+   <guid isPermaLink="false">2026-11-19-US-MTRN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #329 (score 63). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Materion Corp.: Rank moved down 65 places to #366 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+   <guid isPermaLink="false">2026-11-17-US-MTRN-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 65 places to #366 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Materion Corp.: Rank moved down 37 places to #316 (score 64)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MTRN</link>
+   <guid isPermaLink="false">2026-11-13-US-MTRN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #316 (score 64). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

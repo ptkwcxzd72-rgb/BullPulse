@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WKC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: World Kinect Corporation (WKC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WKC</link>
+  <description>Alerts for World Kinect Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>World Kinect Corporation: Rank moved up 159 places to #48 (score 84)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WKC</link>
+   <guid isPermaLink="false">2026-11-24-US-WKC-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 159 places to #48 (score 84). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>World Kinect Corporation: Rank moved up 25 places to #207 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WKC</link>
+   <guid isPermaLink="false">2026-11-20-US-WKC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #207 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>World Kinect Corporation: Rank moved up 33 places to #232 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WKC</link>
+   <guid isPermaLink="false">2026-11-19-US-WKC-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #232 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>World Kinect Corporation: Rank moved down 22 places to #245 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WKC</link>
+   <guid isPermaLink="false">2026-11-16-US-WKC-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #245 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>World Kinect Corporation: Rank moved down 34 places to #223 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WKC</link>
+   <guid isPermaLink="false">2026-11-13-US-WKC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #223 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

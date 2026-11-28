@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-APPF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: AppFolio (APPF)</title>
+  <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+  <description>Alerts for AppFolio from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>AppFolio: Rank moved up 55 places to #529 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-27-US-APPF-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 55 places to #529 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Unusual burst of news coverage (30-day tone +0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-24-US-APPF-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Rank moved up 48 places to #548 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-20-US-APPF-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 48 places to #548 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-20-US-APPF-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Rank moved up 23 places to #598 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-18-US-APPF-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #598 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-18-US-APPF-early</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Rank moved down 106 places to #621 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-17-US-APPF-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 106 places to #621 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Rank moved up 92 places to #515 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-16-US-APPF-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 92 places to #515 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-13-US-APPF-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>AppFolio: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-APPF</link>
+   <guid isPermaLink="false">2026-11-13-US-APPF-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

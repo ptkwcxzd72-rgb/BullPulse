@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BCO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Brink&#39;s (BCO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+  <description>Alerts for Brink&#39;s from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Brink&#39;s: Rank moved down 24 places to #521 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-25-US-BCO-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #521 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brink&#39;s: Unusual burst of news coverage (30-day tone +0.34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-24-US-BCO-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brink&#39;s: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-24-US-BCO-early</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brink&#39;s: Rank moved up 53 places to #497 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-24-US-BCO-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 53 places to #497 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brink&#39;s: Rank moved up 33 places to #550 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-20-US-BCO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 33 places to #550 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brink&#39;s: Rank moved up 68 places to #583 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-19-US-BCO-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 68 places to #583 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brink&#39;s: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-17-US-BCO-early</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Brink&#39;s: Rank moved down 24 places to #662 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BCO</link>
+   <guid isPermaLink="false">2026-11-13-US-BCO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #662 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

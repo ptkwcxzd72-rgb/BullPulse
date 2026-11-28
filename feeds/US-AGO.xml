@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AGO.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Assured Guaranty Ltd. (AGO)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AGO</link>
+  <description>Alerts for Assured Guaranty Ltd. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Assured Guaranty Ltd.: Rank moved down 36 places to #728 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGO</link>
+   <guid isPermaLink="false">2026-11-25-US-AGO-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #728 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Assured Guaranty Ltd.: Unusual burst of news coverage (30-day tone +0.42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGO</link>
+   <guid isPermaLink="false">2026-11-24-US-AGO-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Assured Guaranty Ltd.: Rank moved up 148 places to #692 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGO</link>
+   <guid isPermaLink="false">2026-11-24-US-AGO-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 148 places to #692 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Assured Guaranty Ltd.: Rank moved up 35 places to #840 (score 23)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGO</link>
+   <guid isPermaLink="false">2026-11-20-US-AGO-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 35 places to #840 (score 23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Assured Guaranty Ltd.: Rank moved down 21 places to #875 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGO</link>
+   <guid isPermaLink="false">2026-11-19-US-AGO-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #875 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Assured Guaranty Ltd.: Rank moved down 29 places to #851 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AGO</link>
+   <guid isPermaLink="false">2026-11-13-US-AGO-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #851 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

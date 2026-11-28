@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MYRG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: MYR Group, Inc. (MYRG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+  <description>Alerts for MYR Group, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>MYR Group, Inc.: Rank moved up 44 places to #523 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+   <guid isPermaLink="false">2026-11-27-US-MYRG-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 44 places to #523 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MYR Group, Inc.: Rank moved up 41 places to #564 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+   <guid isPermaLink="false">2026-11-24-US-MYRG-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 41 places to #564 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MYR Group, Inc.: Rank moved down 28 places to #605 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+   <guid isPermaLink="false">2026-11-20-US-MYRG-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 28 places to #605 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MYR Group, Inc.: Unusual burst of news coverage (30-day tone +0.02)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+   <guid isPermaLink="false">2026-11-20-US-MYRG-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.02). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MYR Group, Inc.: Rank moved down 31 places to #581 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+   <guid isPermaLink="false">2026-11-18-US-MYRG-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #581 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MYR Group, Inc.: Rank moved up 36 places to #550 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+   <guid isPermaLink="false">2026-11-17-US-MYRG-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #550 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>MYR Group, Inc.: Rank moved down 45 places to #582 (score 45)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MYRG</link>
+   <guid isPermaLink="false">2026-11-13-US-MYRG-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 45 places to #582 (score 45). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

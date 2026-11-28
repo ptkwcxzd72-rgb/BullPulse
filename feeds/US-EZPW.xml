@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-EZPW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: EZCORP, Inc. (EZPW)</title>
+  <link>https://bullpulse.co.uk/app.html#US-EZPW</link>
+  <description>Alerts for EZCORP, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>EZCORP, Inc.: Rank moved down 22 places to #426 (score 56)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EZPW</link>
+   <guid isPermaLink="false">2026-11-24-US-EZPW-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #426 (score 56). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EZCORP, Inc.: Rank moved down 135 places to #404 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EZPW</link>
+   <guid isPermaLink="false">2026-11-20-US-EZPW-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 135 places to #404 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EZCORP, Inc.: Rank moved down 34 places to #273 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EZPW</link>
+   <guid isPermaLink="false">2026-11-18-US-EZPW-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 34 places to #273 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EZCORP, Inc.: Rank moved up 37 places to #221 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EZPW</link>
+   <guid isPermaLink="false">2026-11-16-US-EZPW-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #221 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EZCORP, Inc.: Unusual burst of news coverage (30-day tone +0.01)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EZPW</link>
+   <guid isPermaLink="false">2026-11-13-US-EZPW-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.01). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EZCORP, Inc.: Rank moved up 41 places to #258 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EZPW</link>
+   <guid isPermaLink="false">2026-11-13-US-EZPW-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 41 places to #258 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

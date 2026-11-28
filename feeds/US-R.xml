@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-R.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Ryder (R)</title>
+  <link>https://bullpulse.co.uk/app.html#US-R</link>
+  <description>Alerts for Ryder from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Ryder: Rank moved down 36 places to #157 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#US-R</link>
+   <guid isPermaLink="false">2026-11-27-US-R-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #157 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ryder: Rank moved up 40 places to #83 (score 80)</title>
+   <link>https://bullpulse.co.uk/app.html#US-R</link>
+   <guid isPermaLink="false">2026-11-24-US-R-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 40 places to #83 (score 80). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ryder: Rank moved up 61 places to #123 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-R</link>
+   <guid isPermaLink="false">2026-11-20-US-R-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 61 places to #123 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ryder: Unusual burst of news coverage (30-day tone +0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-R</link>
+   <guid isPermaLink="false">2026-11-20-US-R-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ryder: Rank moved down 26 places to #171 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-R</link>
+   <guid isPermaLink="false">2026-11-16-US-R-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 26 places to #171 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ryder: Unusual burst of news coverage (30-day tone +0.08)</title>
+   <link>https://bullpulse.co.uk/app.html#US-R</link>
+   <guid isPermaLink="false">2026-11-13-US-R-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.08). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Ryder: Rank moved up 71 places to #145 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#US-R</link>
+   <guid isPermaLink="false">2026-11-13-US-R-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 71 places to #145 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

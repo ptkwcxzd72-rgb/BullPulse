@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HGV.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hilton Grand Vacations (HGV)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+  <description>Alerts for Hilton Grand Vacations from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hilton Grand Vacations: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-24-US-HGV-trend</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hilton Grand Vacations: Rank moved up 220 places to #544 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-24-US-HGV-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 220 places to #544 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hilton Grand Vacations: Rank moved down 74 places to #764 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-20-US-HGV-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 74 places to #764 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hilton Grand Vacations: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-20-US-HGV-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hilton Grand Vacations: Rank moved up 118 places to #696 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-16-US-HGV-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 118 places to #696 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hilton Grand Vacations: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-16-US-HGV-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hilton Grand Vacations: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-13-US-HGV-insider</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hilton Grand Vacations: Rank moved down 38 places to #814 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HGV</link>
+   <guid isPermaLink="false">2026-11-13-US-HGV-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #814 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

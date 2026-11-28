@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DIOD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Diodes Incorporated (DIOD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DIOD</link>
+  <description>Alerts for Diodes Incorporated from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Diodes Incorporated: Unusual burst of news coverage (30-day tone +0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DIOD</link>
+   <guid isPermaLink="false">2026-11-24-US-DIOD-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diodes Incorporated: Rank moved down 151 places to #337 (score 61)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DIOD</link>
+   <guid isPermaLink="false">2026-11-24-US-DIOD-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 151 places to #337 (score 61). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diodes Incorporated: Rank moved down 81 places to #171 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DIOD</link>
+   <guid isPermaLink="false">2026-11-18-US-DIOD-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 81 places to #171 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diodes Incorporated: Unusual burst of news coverage (30-day tone +0.49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DIOD</link>
+   <guid isPermaLink="false">2026-11-17-US-DIOD-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diodes Incorporated: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-DIOD</link>
+   <guid isPermaLink="false">2026-11-13-US-DIOD-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diodes Incorporated: Rank moved down 85 places to #103 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DIOD</link>
+   <guid isPermaLink="false">2026-11-13-US-DIOD-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 85 places to #103 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

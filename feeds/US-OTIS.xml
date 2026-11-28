@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-OTIS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Otis Worldwide (OTIS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+  <description>Alerts for Otis Worldwide from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Otis Worldwide: Unusual burst of news coverage (30-day tone +0.35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+   <guid isPermaLink="false">2026-11-24-US-OTIS-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Otis Worldwide: Rank moved down 21 places to #306 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+   <guid isPermaLink="false">2026-11-24-US-OTIS-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #306 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Otis Worldwide: Rank moved up 28 places to #285 (score 47)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+   <guid isPermaLink="false">2026-11-20-US-OTIS-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #285 (score 47). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Otis Worldwide: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+   <guid isPermaLink="false">2026-11-20-US-OTIS-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Otis Worldwide: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+   <guid isPermaLink="false">2026-11-17-US-OTIS-early</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Otis Worldwide: Rank moved up 23 places to #314 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+   <guid isPermaLink="false">2026-11-17-US-OTIS-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #314 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Otis Worldwide: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-OTIS</link>
+   <guid isPermaLink="false">2026-11-11-US-OTIS-early</guid>
+   <pubDate>Wed, 11 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

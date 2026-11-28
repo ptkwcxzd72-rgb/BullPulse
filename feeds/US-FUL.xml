@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FUL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: H.B. Fuller Company (FUL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FUL</link>
+  <description>Alerts for H.B. Fuller Company from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>H.B. Fuller Company: Rank moved down 32 places to #759 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FUL</link>
+   <guid isPermaLink="false">2026-11-24-US-FUL-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 32 places to #759 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>H.B. Fuller Company: Rank moved up 32 places to #727 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FUL</link>
+   <guid isPermaLink="false">2026-11-20-US-FUL-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #727 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>H.B. Fuller Company: Rank moved down 99 places to #761 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FUL</link>
+   <guid isPermaLink="false">2026-11-17-US-FUL-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 99 places to #761 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>H.B. Fuller Company: Rank moved down 22 places to #662 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FUL</link>
+   <guid isPermaLink="false">2026-11-16-US-FUL-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #662 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>H.B. Fuller Company: Cluster buying: 9 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-FUL</link>
+   <guid isPermaLink="false">2026-11-16-US-FUL-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 9 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>H.B. Fuller Company: Rank moved up 146 places to #640 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FUL</link>
+   <guid isPermaLink="false">2026-11-13-US-FUL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 146 places to #640 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

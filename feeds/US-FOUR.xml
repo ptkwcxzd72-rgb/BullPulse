@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FOUR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Shift4 (FOUR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+  <description>Alerts for Shift4 from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Shift4: Rank moved up 96 places to #643 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+   <guid isPermaLink="false">2026-11-27-US-FOUR-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 96 places to #643 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shift4: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+   <guid isPermaLink="false">2026-11-27-US-FOUR-trend</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shift4: Rank moved down 37 places to #732 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+   <guid isPermaLink="false">2026-11-24-US-FOUR-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 37 places to #732 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shift4: Rank moved up 32 places to #695 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+   <guid isPermaLink="false">2026-11-20-US-FOUR-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #695 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shift4: Unusual burst of news coverage (30-day tone +0.71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+   <guid isPermaLink="false">2026-11-17-US-FOUR-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shift4: Rank moved up 28 places to #740 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+   <guid isPermaLink="false">2026-11-17-US-FOUR-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 28 places to #740 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Shift4: Rank moved up 124 places to #767 (score 30)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FOUR</link>
+   <guid isPermaLink="false">2026-11-13-US-FOUR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 124 places to #767 (score 30). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ENPH.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Enphase Energy (ENPH)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+  <description>Alerts for Enphase Energy from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Enphase Energy: Rank moved down 109 places to #911 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-27-US-ENPH-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 109 places to #911 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Rank moved down 36 places to #793 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-25-US-ENPH-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #793 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Rank moved up 20 places to #771 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-20-US-ENPH-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #771 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Rank moved down 36 places to #796 (score 28)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-18-US-ENPH-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #796 (score 28). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Rank moved down 136 places to #760 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-17-US-ENPH-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 136 places to #760 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Rank moved up 217 places to #624 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-16-US-ENPH-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 217 places to #624 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-16-US-ENPH-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Unusual burst of news coverage (30-day tone +0.18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-16-US-ENPH-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Enphase Energy: Rank moved down 110 places to #841 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ENPH</link>
+   <guid isPermaLink="false">2026-11-13-US-ENPH-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 110 places to #841 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

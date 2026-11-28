@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-VSTS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Vestis (VSTS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+  <description>Alerts for Vestis from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Vestis: Rank moved up 25 places to #6 (score 93)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+   <guid isPermaLink="false">2026-11-27-US-VSTS-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #6 (score 93). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vestis: Rank moved up 27 places to #30 (score 86)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+   <guid isPermaLink="false">2026-11-25-US-VSTS-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #30 (score 86). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vestis: Rank moved up 74 places to #58 (score 83)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+   <guid isPermaLink="false">2026-11-19-US-VSTS-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 74 places to #58 (score 83). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vestis: Rank moved up 68 places to #132 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+   <guid isPermaLink="false">2026-11-18-US-VSTS-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 68 places to #132 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vestis: Unusual burst of news coverage (30-day tone +0.00)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+   <guid isPermaLink="false">2026-11-18-US-VSTS-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.00). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vestis: Rank moved down 121 places to #213 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+   <guid isPermaLink="false">2026-11-16-US-VSTS-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 121 places to #213 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vestis: Rank moved down 89 places to #92 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VSTS</link>
+   <guid isPermaLink="false">2026-11-13-US-VSTS-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 89 places to #92 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

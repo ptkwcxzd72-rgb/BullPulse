@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-EDIN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Edinburgh Investment Trust (EDIN)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-EDIN</link>
+  <description>Alerts for Edinburgh Investment Trust from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Edinburgh Investment Trust: Rank moved up 21 places to #175 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EDIN</link>
+   <guid isPermaLink="false">2026-11-20-LSE-EDIN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #175 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Edinburgh Investment Trust: Rank moved down 67 places to #196 (score 48)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-EDIN</link>
+   <guid isPermaLink="false">2026-11-19-LSE-EDIN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 67 places to #196 (score 48). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

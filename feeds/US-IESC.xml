@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-IESC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: IES Holdings (IESC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+  <description>Alerts for IES Holdings from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>IES Holdings: Cluster buying: 2 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+   <guid isPermaLink="false">2026-11-27-US-IESC-insider</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 2 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IES Holdings: Rank moved down 20 places to #737 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+   <guid isPermaLink="false">2026-11-25-US-IESC-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #737 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IES Holdings: New results filed: revenue +32.8% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+   <guid isPermaLink="false">2026-11-20-US-IESC-results</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +32.8% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IES Holdings: Unusual burst of news coverage (30-day tone +0.00)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+   <guid isPermaLink="false">2026-11-20-US-IESC-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.00). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IES Holdings: Rank moved down 20 places to #701 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+   <guid isPermaLink="false">2026-11-18-US-IESC-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #701 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IES Holdings: Unusual burst of news coverage (30-day tone -0.14)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+   <guid isPermaLink="false">2026-11-13-US-IESC-news</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.14). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>IES Holdings: Rank moved down 99 places to #688 (score 36)</title>
+   <link>https://bullpulse.co.uk/app.html#US-IESC</link>
+   <guid isPermaLink="false">2026-11-13-US-IESC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 99 places to #688 (score 36). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

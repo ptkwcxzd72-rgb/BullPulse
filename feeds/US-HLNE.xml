@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HLNE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hamilton Lane (HLNE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+  <description>Alerts for Hamilton Lane from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hamilton Lane: Rank moved up 54 places to #862 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-24-US-HLNE-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 54 places to #862 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hamilton Lane: Rank moved down 74 places to #916 (score 17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-20-US-HLNE-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 74 places to #916 (score 17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hamilton Lane: Rank moved down 21 places to #849 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-18-US-HLNE-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #849 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hamilton Lane: Unusual burst of news coverage (30-day tone +0.06)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-18-US-HLNE-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.06). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hamilton Lane: Rank moved down 63 places to #839 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-16-US-HLNE-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 63 places to #839 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hamilton Lane: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-16-US-HLNE-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hamilton Lane: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-13-US-HLNE-trend</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hamilton Lane: Rank moved up 103 places to #776 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HLNE</link>
+   <guid isPermaLink="false">2026-11-13-US-HLNE-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 103 places to #776 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

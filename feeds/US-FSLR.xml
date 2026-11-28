@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FSLR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: First Solar (FSLR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FSLR</link>
+  <description>Alerts for First Solar from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>First Solar: Rank moved down 271 places to #472 (score 13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FSLR</link>
+   <guid isPermaLink="false">2026-11-06-US-FSLR-rank</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 271 places to #472 (score 13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>First Solar: New results filed: revenue -22.8% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-FSLR</link>
+   <guid isPermaLink="false">2026-11-04-US-FSLR-results</guid>
+   <pubDate>Wed, 04 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue -22.8% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

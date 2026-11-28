@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/LSE-SRP.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Serco (SRP)</title>
+  <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+  <description>Alerts for Serco from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Serco: Rank moved up 37 places to #197 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+   <guid isPermaLink="false">2026-11-27-LSE-SRP-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 37 places to #197 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Serco: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+   <guid isPermaLink="false">2026-11-27-LSE-SRP-trend</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Serco: Rank moved up 40 places to #195 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+   <guid isPermaLink="false">2026-11-25-LSE-SRP-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 40 places to #195 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Serco: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+   <guid isPermaLink="false">2026-11-25-LSE-SRP-trend</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Serco: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+   <guid isPermaLink="false">2026-11-18-LSE-SRP-trend</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Serco: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+   <guid isPermaLink="false">2026-11-06-LSE-SRP-early</guid>
+   <pubDate>Fri, 06 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Serco: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#LSE-SRP</link>
+   <guid isPermaLink="false">2026-11-05-LSE-SRP-early</guid>
+   <pubDate>Thu, 05 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

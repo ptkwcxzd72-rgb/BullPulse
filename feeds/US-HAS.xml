@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-HAS.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Hasbro (HAS)</title>
+  <link>https://bullpulse.co.uk/app.html#US-HAS</link>
+  <description>Alerts for Hasbro from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Hasbro: Rank moved down 20 places to #24 (score 82)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAS</link>
+   <guid isPermaLink="false">2026-11-19-US-HAS-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #24 (score 82). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hasbro: Rank moved up 42 places to #14 (score 84)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAS</link>
+   <guid isPermaLink="false">2026-11-17-US-HAS-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #14 (score 84). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hasbro: Rank moved up 30 places to #56 (score 78)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAS</link>
+   <guid isPermaLink="false">2026-11-16-US-HAS-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 30 places to #56 (score 78). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Hasbro: Rank moved up 27 places to #77 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-HAS</link>
+   <guid isPermaLink="false">2026-11-12-US-HAS-rank</guid>
+   <pubDate>Thu, 12 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 27 places to #77 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

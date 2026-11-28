@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-AMSF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Amerisafe, Inc. (AMSF)</title>
+  <link>https://bullpulse.co.uk/app.html#US-AMSF</link>
+  <description>Alerts for Amerisafe, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Amerisafe, Inc.: Rank moved down 48 places to #971 (score 8)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMSF</link>
+   <guid isPermaLink="false">2026-11-27-US-AMSF-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 48 places to #971 (score 8). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amerisafe, Inc.: Rank moved up 25 places to #906 (score 18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMSF</link>
+   <guid isPermaLink="false">2026-11-20-US-AMSF-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #906 (score 18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Amerisafe, Inc.: Rank moved up 42 places to #908 (score 19)</title>
+   <link>https://bullpulse.co.uk/app.html#US-AMSF</link>
+   <guid isPermaLink="false">2026-11-16-US-AMSF-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #908 (score 19). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

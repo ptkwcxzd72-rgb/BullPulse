@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FNF.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Fidelity National Financial (FNF)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FNF</link>
+  <description>Alerts for Fidelity National Financial from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Fidelity National Financial: Rank moved down 75 places to #875 (score 20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FNF</link>
+   <guid isPermaLink="false">2026-11-24-US-FNF-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 75 places to #875 (score 20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fidelity National Financial: Rank moved up 31 places to #800 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FNF</link>
+   <guid isPermaLink="false">2026-11-20-US-FNF-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 31 places to #800 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fidelity National Financial: Rank moved down 20 places to #847 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FNF</link>
+   <guid isPermaLink="false">2026-11-18-US-FNF-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #847 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fidelity National Financial: Unusual burst of news coverage (30-day tone +0.01)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FNF</link>
+   <guid isPermaLink="false">2026-11-17-US-FNF-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.01). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fidelity National Financial: Rank moved up 50 places to #827 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FNF</link>
+   <guid isPermaLink="false">2026-11-17-US-FNF-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 50 places to #827 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Fidelity National Financial: Rank moved down 27 places to #869 (score 22)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FNF</link>
+   <guid isPermaLink="false">2026-11-13-US-FNF-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #869 (score 22). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

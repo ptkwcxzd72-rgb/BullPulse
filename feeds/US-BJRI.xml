@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BJRI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: BJ&#39;s Restaurants, Inc. (BJRI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BJRI</link>
+  <description>Alerts for BJ&#39;s Restaurants, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>BJ&#39;s Restaurants, Inc.: Rank moved down 38 places to #138 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJRI</link>
+   <guid isPermaLink="false">2026-11-27-US-BJRI-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 38 places to #138 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BJ&#39;s Restaurants, Inc.: Rank moved down 43 places to #125 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJRI</link>
+   <guid isPermaLink="false">2026-11-24-US-BJRI-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 43 places to #125 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BJ&#39;s Restaurants, Inc.: Rank moved up 32 places to #82 (score 79)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJRI</link>
+   <guid isPermaLink="false">2026-11-20-US-BJRI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #82 (score 79). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BJ&#39;s Restaurants, Inc.: Unusual burst of news coverage (30-day tone +0.24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJRI</link>
+   <guid isPermaLink="false">2026-11-17-US-BJRI-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BJ&#39;s Restaurants, Inc.: Rank moved down 48 places to #97 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJRI</link>
+   <guid isPermaLink="false">2026-11-16-US-BJRI-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 48 places to #97 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>BJ&#39;s Restaurants, Inc.: Rank moved up 105 places to #49 (score 81)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BJRI</link>
+   <guid isPermaLink="false">2026-11-13-US-BJRI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 105 places to #49 (score 81). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

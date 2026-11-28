@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-STBA.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: S&amp;T Bancorp, Inc. (STBA)</title>
+  <link>https://bullpulse.co.uk/app.html#US-STBA</link>
+  <description>Alerts for S&amp;T Bancorp, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>S&amp;T Bancorp, Inc.: Rank moved down 22 places to #183 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STBA</link>
+   <guid isPermaLink="false">2026-11-24-US-STBA-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #183 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>S&amp;T Bancorp, Inc.: Unusual burst of news coverage (30-day tone +0.03)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STBA</link>
+   <guid isPermaLink="false">2026-11-20-US-STBA-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.03). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>S&amp;T Bancorp, Inc.: Rank moved down 20 places to #167 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STBA</link>
+   <guid isPermaLink="false">2026-11-19-US-STBA-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #167 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>S&amp;T Bancorp, Inc.: Rank moved down 61 places to #166 (score 73)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STBA</link>
+   <guid isPermaLink="false">2026-11-17-US-STBA-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 61 places to #166 (score 73). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>S&amp;T Bancorp, Inc.: Rank moved up 103 places to #105 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STBA</link>
+   <guid isPermaLink="false">2026-11-16-US-STBA-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 103 places to #105 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>S&amp;T Bancorp, Inc.: Rank moved down 65 places to #208 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STBA</link>
+   <guid isPermaLink="false">2026-11-13-US-STBA-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 65 places to #208 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

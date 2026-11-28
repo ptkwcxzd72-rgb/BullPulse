@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-DBD.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Diebold Nixdorf (DBD)</title>
+  <link>https://bullpulse.co.uk/app.html#US-DBD</link>
+  <description>Alerts for Diebold Nixdorf from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Diebold Nixdorf: Rank moved down 80 places to #823 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DBD</link>
+   <guid isPermaLink="false">2026-11-27-US-DBD-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 80 places to #823 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diebold Nixdorf: Rank moved down 59 places to #740 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DBD</link>
+   <guid isPermaLink="false">2026-11-25-US-DBD-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 59 places to #740 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diebold Nixdorf: Rank moved up 26 places to #696 (score 35)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DBD</link>
+   <guid isPermaLink="false">2026-11-20-US-DBD-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 26 places to #696 (score 35). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diebold Nixdorf: Unusual burst of news coverage (30-day tone +0.20)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DBD</link>
+   <guid isPermaLink="false">2026-11-19-US-DBD-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.20). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diebold Nixdorf: Rank moved up 32 places to #722 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DBD</link>
+   <guid isPermaLink="false">2026-11-19-US-DBD-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 32 places to #722 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Diebold Nixdorf: Rank moved up 88 places to #758 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-DBD</link>
+   <guid isPermaLink="false">2026-11-17-US-DBD-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 88 places to #758 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

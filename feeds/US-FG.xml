@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-FG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: F&amp;G Annuities &amp; Life, Inc. (FG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-FG</link>
+  <description>Alerts for F&amp;G Annuities &amp; Life, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>F&amp;G Annuities &amp; Life, Inc.: Rank moved down 87 places to #928 (score 16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FG</link>
+   <guid isPermaLink="false">2026-11-24-US-FG-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 87 places to #928 (score 16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>F&amp;G Annuities &amp; Life, Inc.: Rank moved up 36 places to #841 (score 23)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FG</link>
+   <guid isPermaLink="false">2026-11-20-US-FG-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #841 (score 23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>F&amp;G Annuities &amp; Life, Inc.: Rank moved up 25 places to #877 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FG</link>
+   <guid isPermaLink="false">2026-11-19-US-FG-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #877 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>F&amp;G Annuities &amp; Life, Inc.: Rank moved up 23 places to #887 (score 21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-FG</link>
+   <guid isPermaLink="false">2026-11-17-US-FG-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 23 places to #887 (score 21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

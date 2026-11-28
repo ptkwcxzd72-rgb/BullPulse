@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-STC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Stewart Information Services Corporation (STC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-STC</link>
+  <description>Alerts for Stewart Information Services Corporation from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Stewart Information Services Corporation: Rank moved up 85 places to #857 (score 23)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STC</link>
+   <guid isPermaLink="false">2026-11-25-US-STC-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 85 places to #857 (score 23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stewart Information Services Corporation: Unusual burst of news coverage (30-day tone +0.08)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STC</link>
+   <guid isPermaLink="false">2026-11-24-US-STC-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.08). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stewart Information Services Corporation: Rank moved up 24 places to #938 (score 16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STC</link>
+   <guid isPermaLink="false">2026-11-19-US-STC-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 24 places to #938 (score 16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stewart Information Services Corporation: Rank moved down 20 places to #963 (score 12)</title>
+   <link>https://bullpulse.co.uk/app.html#US-STC</link>
+   <guid isPermaLink="false">2026-11-17-US-STC-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #963 (score 12). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Stewart Information Services Corporation: Cluster buying: 5 insiders bought shares in the open market in the last 90 days</title>
+   <link>https://bullpulse.co.uk/app.html#US-STC</link>
+   <guid isPermaLink="false">2026-11-16-US-STC-insider</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Cluster buying: 5 insiders bought shares in the open market in the last 90 days. BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

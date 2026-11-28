@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WOR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Worthington Enterprises (WOR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+  <description>Alerts for Worthington Enterprises from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Worthington Enterprises: Unusual burst of news coverage (30-day tone +0.23)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-25-US-WOR-news</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.23). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-24-US-WOR-early</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-24-US-WOR-trend</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Rank moved up 119 places to #293 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-24-US-WOR-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 119 places to #293 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Rank moved down 154 places to #412 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-20-US-WOR-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 154 places to #412 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-20-US-WOR-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Rank moved down 42 places to #258 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-19-US-WOR-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 42 places to #258 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Rank moved up 232 places to #219 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-17-US-WOR-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 232 places to #219 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Worthington Enterprises: Rank moved down 90 places to #469 (score 53)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WOR</link>
+   <guid isPermaLink="false">2026-11-13-US-WOR-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 90 places to #469 (score 53). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

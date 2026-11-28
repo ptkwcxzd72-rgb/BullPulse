@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-MRK.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Merck &amp; Co. (MRK)</title>
+  <link>https://bullpulse.co.uk/app.html#US-MRK</link>
+  <description>Alerts for Merck &amp; Co. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Merck &amp; Co.: Rank moved down 20 places to #72 (score 74)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MRK</link>
+   <guid isPermaLink="false">2026-11-27-US-MRK-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #72 (score 74). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Merck &amp; Co.: Rank moved down 25 places to #57 (score 77)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MRK</link>
+   <guid isPermaLink="false">2026-11-24-US-MRK-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #57 (score 77). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Merck &amp; Co.: Rank moved down 46 places to #49 (score 79)</title>
+   <link>https://bullpulse.co.uk/app.html#US-MRK</link>
+   <guid isPermaLink="false">2026-11-18-US-MRK-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 46 places to #49 (score 79). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

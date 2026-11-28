@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-ICUI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: ICU Medical (ICUI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+  <description>Alerts for ICU Medical from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>ICU Medical: Rank moved up 36 places to #242 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+   <guid isPermaLink="false">2026-11-27-US-ICUI-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 36 places to #242 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ICU Medical: Rank moved down 83 places to #279 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+   <guid isPermaLink="false">2026-11-25-US-ICUI-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 83 places to #279 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ICU Medical: Unusual burst of news coverage (30-day tone +0.13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+   <guid isPermaLink="false">2026-11-25-US-ICUI-news</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ICU Medical: Rank moved down 54 places to #196 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+   <guid isPermaLink="false">2026-11-24-US-ICUI-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 54 places to #196 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ICU Medical: Rank moved up 34 places to #142 (score 75)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+   <guid isPermaLink="false">2026-11-20-US-ICUI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 34 places to #142 (score 75). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ICU Medical: Rank moved up 98 places to #174 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+   <guid isPermaLink="false">2026-11-18-US-ICUI-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 98 places to #174 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>ICU Medical: Rank moved down 21 places to #260 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-ICUI</link>
+   <guid isPermaLink="false">2026-11-13-US-ICUI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #260 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

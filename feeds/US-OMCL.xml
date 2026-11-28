@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-OMCL.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Omnicell (OMCL)</title>
+  <link>https://bullpulse.co.uk/app.html#US-OMCL</link>
+  <description>Alerts for Omnicell from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Omnicell: Rank moved down 20 places to #821 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OMCL</link>
+   <guid isPermaLink="false">2026-11-25-US-OMCL-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 20 places to #821 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Omnicell: Rank moved down 27 places to #801 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OMCL</link>
+   <guid isPermaLink="false">2026-11-24-US-OMCL-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #801 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Omnicell: Rank moved up 63 places to #774 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OMCL</link>
+   <guid isPermaLink="false">2026-11-20-US-OMCL-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 63 places to #774 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Omnicell: Unusual burst of news coverage (30-day tone +0.03)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OMCL</link>
+   <guid isPermaLink="false">2026-11-20-US-OMCL-news</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.03). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Omnicell: Rank moved down 83 places to #841 (score 25)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OMCL</link>
+   <guid isPermaLink="false">2026-11-17-US-OMCL-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 83 places to #841 (score 25). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Omnicell: Rank moved down 21 places to #754 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OMCL</link>
+   <guid isPermaLink="false">2026-11-13-US-OMCL-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 21 places to #754 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

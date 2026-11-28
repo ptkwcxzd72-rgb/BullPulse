@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-RLI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: RLI Corp. (RLI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-RLI</link>
+  <description>Alerts for RLI Corp. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>RLI Corp.: Rank moved up 42 places to #195 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RLI</link>
+   <guid isPermaLink="false">2026-11-20-US-RLI-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 42 places to #195 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RLI Corp.: Rank moved up 64 places to #222 (score 69)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RLI</link>
+   <guid isPermaLink="false">2026-11-18-US-RLI-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 64 places to #222 (score 69). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RLI Corp.: Unusual burst of news coverage (30-day tone +0.16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RLI</link>
+   <guid isPermaLink="false">2026-11-16-US-RLI-news</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>RLI Corp.: Rank moved up 96 places to #271 (score 66)</title>
+   <link>https://bullpulse.co.uk/app.html#US-RLI</link>
+   <guid isPermaLink="false">2026-11-13-US-RLI-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 96 places to #271 (score 66). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-SAFE.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Safehold, Inc. (SAFE)</title>
+  <link>https://bullpulse.co.uk/app.html#US-SAFE</link>
+  <description>Alerts for Safehold, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Safehold, Inc.: Rank moved up 25 places to #930 (score 16)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SAFE</link>
+   <guid isPermaLink="false">2026-11-20-US-SAFE-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 25 places to #930 (score 16). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Safehold, Inc.: Rank moved down 40 places to #956 (score 13)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SAFE</link>
+   <guid isPermaLink="false">2026-11-17-US-SAFE-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 40 places to #956 (score 13). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Safehold, Inc.: Rank moved down 25 places to #916 (score 19)</title>
+   <link>https://bullpulse.co.uk/app.html#US-SAFE</link>
+   <guid isPermaLink="false">2026-11-16-US-SAFE-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #916 (score 19). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

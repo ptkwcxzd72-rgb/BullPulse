@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-BRKR.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Bruker (BRKR)</title>
+  <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+  <description>Alerts for Bruker from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Bruker: Rank moved down 23 places to #379 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+   <guid isPermaLink="false">2026-11-24-US-BRKR-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 23 places to #379 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bruker: Rank moved down 122 places to #356 (score 60)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+   <guid isPermaLink="false">2026-11-20-US-BRKR-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 122 places to #356 (score 60). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bruker: Rank moved up 49 places to #234 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+   <guid isPermaLink="false">2026-11-19-US-BRKR-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 49 places to #234 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bruker: Rank moved down 36 places to #283 (score 65)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+   <guid isPermaLink="false">2026-11-18-US-BRKR-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #283 (score 65). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bruker: Unusual burst of news coverage (30-day tone -0.17)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+   <guid isPermaLink="false">2026-11-17-US-BRKR-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.17). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bruker: Rank moved down 139 places to #247 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+   <guid isPermaLink="false">2026-11-17-US-BRKR-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 139 places to #247 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Bruker: Rank moved down 31 places to #108 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-BRKR</link>
+   <guid isPermaLink="false">2026-11-16-US-BRKR-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #108 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

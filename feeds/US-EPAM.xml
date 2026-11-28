@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-EPAM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: EPAM Systems (EPAM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+  <description>Alerts for EPAM Systems from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>EPAM Systems: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-27-US-EPAM-early</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EPAM Systems: Rank moved up 45 places to #589 (score 44)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-25-US-EPAM-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 45 places to #589 (score 44). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EPAM Systems: Unusual burst of news coverage (30-day tone +0.04)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-24-US-EPAM-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.04). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EPAM Systems: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-20-US-EPAM-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EPAM Systems: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-17-US-EPAM-early</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EPAM Systems: Rank moved up 80 places to #610 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-17-US-EPAM-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 80 places to #610 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EPAM Systems: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-13-US-EPAM-early</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>EPAM Systems: Rank moved down 29 places to #684 (score 37)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EPAM</link>
+   <guid isPermaLink="false">2026-11-13-US-EPAM-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #684 (score 37). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

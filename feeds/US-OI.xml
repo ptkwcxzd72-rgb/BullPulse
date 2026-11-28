@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-OI.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: O-I Glass, Inc. (OI)</title>
+  <link>https://bullpulse.co.uk/app.html#US-OI</link>
+  <description>Alerts for O-I Glass, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>O-I Glass, Inc.: Rank moved up 38 places to #937 (score 15)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OI</link>
+   <guid isPermaLink="false">2026-11-27-US-OI-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 38 places to #937 (score 15). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>O-I Glass, Inc.: Rank moved up 150 places to #815 (score 26)</title>
+   <link>https://bullpulse.co.uk/app.html#US-OI</link>
+   <guid isPermaLink="false">2026-11-24-US-OI-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 150 places to #815 (score 26). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

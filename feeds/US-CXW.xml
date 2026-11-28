@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CXW.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: CoreCivic (CXW)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CXW</link>
+  <description>Alerts for CoreCivic from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>CoreCivic: Unusual burst of news coverage (30-day tone +0.31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CXW</link>
+   <guid isPermaLink="false">2026-11-24-US-CXW-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CoreCivic: Rank moved down 35 places to #74 (score 81)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CXW</link>
+   <guid isPermaLink="false">2026-11-24-US-CXW-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 35 places to #74 (score 81). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CoreCivic: Rank moved up 166 places to #24 (score 86)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CXW</link>
+   <guid isPermaLink="false">2026-11-19-US-CXW-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 166 places to #24 (score 86). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CoreCivic: Rank moved down 25 places to #189 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CXW</link>
+   <guid isPermaLink="false">2026-11-16-US-CXW-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 25 places to #189 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CoreCivic: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CXW</link>
+   <guid isPermaLink="false">2026-11-13-US-CXW-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CoreCivic: Rank moved down 55 places to #164 (score 72)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CXW</link>
+   <guid isPermaLink="false">2026-11-13-US-CXW-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 55 places to #164 (score 72). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

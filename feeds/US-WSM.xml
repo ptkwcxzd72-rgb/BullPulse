@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-WSM.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Williams-Sonoma, Inc. (WSM)</title>
+  <link>https://bullpulse.co.uk/app.html#US-WSM</link>
+  <description>Alerts for Williams-Sonoma, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Williams-Sonoma, Inc.: New results filed: revenue +5.8% year on year</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSM</link>
+   <guid isPermaLink="false">2026-11-27-US-WSM-results</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>New results filed: revenue +5.8% year on year. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Williams-Sonoma, Inc.: Rank moved down 72 places to #202 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSM</link>
+   <guid isPermaLink="false">2026-11-20-US-WSM-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 72 places to #202 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Williams-Sonoma, Inc.: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSM</link>
+   <guid isPermaLink="false">2026-11-20-US-WSM-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Williams-Sonoma, Inc.: Rank moved down 102 places to #130 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSM</link>
+   <guid isPermaLink="false">2026-11-19-US-WSM-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 102 places to #130 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Williams-Sonoma, Inc.: Rank moved up 44 places to #43 (score 80)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSM</link>
+   <guid isPermaLink="false">2026-11-17-US-WSM-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 44 places to #43 (score 80). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Williams-Sonoma, Inc.: Rank moved down 31 places to #103 (score 71)</title>
+   <link>https://bullpulse.co.uk/app.html#US-WSM</link>
+   <guid isPermaLink="false">2026-11-10-US-WSM-rank</guid>
+   <pubDate>Tue, 10 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 31 places to #103 (score 71). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

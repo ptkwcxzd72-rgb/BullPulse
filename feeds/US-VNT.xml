@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-VNT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Vontier (VNT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-VNT</link>
+  <description>Alerts for Vontier from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Vontier: Rank moved up 97 places to #403 (score 58)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VNT</link>
+   <guid isPermaLink="false">2026-11-20-US-VNT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 97 places to #403 (score 58). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vontier: Rank moved up 21 places to #500 (score 51)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VNT</link>
+   <guid isPermaLink="false">2026-11-19-US-VNT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #500 (score 51). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vontier: Rank moved down 87 places to #521 (score 49)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VNT</link>
+   <guid isPermaLink="false">2026-11-18-US-VNT-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 87 places to #521 (score 49). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vontier: Unusual burst of news coverage (30-day tone -0.12)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VNT</link>
+   <guid isPermaLink="false">2026-11-18-US-VNT-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.12). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Vontier: Rank moved up 145 places to #417 (score 57)</title>
+   <link>https://bullpulse.co.uk/app.html#US-VNT</link>
+   <guid isPermaLink="false">2026-11-13-US-VNT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 145 places to #417 (score 57). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

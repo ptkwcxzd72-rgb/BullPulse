@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-EBC.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Eastern Bankshares, Inc. (EBC)</title>
+  <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+  <description>Alerts for Eastern Bankshares, Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Eastern Bankshares, Inc.: Rank moved down 36 places to #240 (score 67)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+   <guid isPermaLink="false">2026-11-27-US-EBC-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 36 places to #240 (score 67). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eastern Bankshares, Inc.: Rank moved down 81 places to #207 (score 70)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+   <guid isPermaLink="false">2026-11-24-US-EBC-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 81 places to #207 (score 70). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eastern Bankshares, Inc.: Rank moved down 52 places to #126 (score 76)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+   <guid isPermaLink="false">2026-11-20-US-EBC-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 52 places to #126 (score 76). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eastern Bankshares, Inc.: Unusual burst of news coverage (30-day tone +0.52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+   <guid isPermaLink="false">2026-11-17-US-EBC-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eastern Bankshares, Inc.: Rank moved up 141 places to #79 (score 79)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+   <guid isPermaLink="false">2026-11-17-US-EBC-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 141 places to #79 (score 79). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eastern Bankshares, Inc.: Joined the growing and turning up screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+   <guid isPermaLink="false">2026-11-13-US-EBC-growth</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the growing and turning up screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Eastern Bankshares, Inc.: Rank moved down 56 places to #235 (score 68)</title>
+   <link>https://bullpulse.co.uk/app.html#US-EBC</link>
+   <guid isPermaLink="false">2026-11-13-US-EBC-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 56 places to #235 (score 68). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NWN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: NW Natural (NWN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+  <description>Alerts for NW Natural from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>NW Natural: Rank moved down 29 places to #490 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+   <guid isPermaLink="false">2026-11-24-US-NWN-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 29 places to #490 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NW Natural: Rank moved up 22 places to #461 (score 55)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+   <guid isPermaLink="false">2026-11-20-US-NWN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 22 places to #461 (score 55). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NW Natural: Unusual burst of news coverage (30-day tone +0.18)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+   <guid isPermaLink="false">2026-11-19-US-NWN-news</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.18). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NW Natural: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+   <guid isPermaLink="false">2026-11-19-US-NWN-early</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NW Natural: Rank moved up 177 places to #483 (score 52)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+   <guid isPermaLink="false">2026-11-19-US-NWN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 177 places to #483 (score 52). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NW Natural: Rank moved down 78 places to #660 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+   <guid isPermaLink="false">2026-11-18-US-NWN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 78 places to #660 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>NW Natural: Rank moved down 77 places to #571 (score 46)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NWN</link>
+   <guid isPermaLink="false">2026-11-13-US-NWN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 77 places to #571 (score 46). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

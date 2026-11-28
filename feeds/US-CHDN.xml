@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CHDN.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Churchill Downs Inc. (CHDN)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+  <description>Alerts for Churchill Downs Inc. from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Churchill Downs Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-27-US-CHDN-early</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Rank moved up 59 places to #770 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-25-US-CHDN-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 59 places to #770 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Golden cross: the 50-day average moved above the 200-day</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-25-US-CHDN-cross</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Golden cross: the 50-day average moved above the 200-day. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Unusual burst of news coverage (30-day tone +0.05)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-25-US-CHDN-news</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.05). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Rank moved down 68 places to #829 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-24-US-CHDN-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 68 places to #829 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Rank moved up 39 places to #761 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-20-US-CHDN-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 39 places to #761 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-20-US-CHDN-early</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Rank moved down 69 places to #800 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-19-US-CHDN-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 69 places to #800 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Rank moved down 27 places to #731 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-18-US-CHDN-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 27 places to #731 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Churchill Downs Inc.: Rank moved down 24 places to #711 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CHDN</link>
+   <guid isPermaLink="false">2026-11-13-US-CHDN-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #711 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

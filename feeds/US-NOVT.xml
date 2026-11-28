@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NOVT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: Novanta (NOVT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NOVT</link>
+  <description>Alerts for Novanta from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>Novanta: Unusual burst of news coverage (30-day tone +0.08)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NOVT</link>
+   <guid isPermaLink="false">2026-11-24-US-NOVT-news</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.08). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Novanta: Rank moved up 71 places to #599 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NOVT</link>
+   <guid isPermaLink="false">2026-11-24-US-NOVT-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 71 places to #599 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Novanta: Rank moved down 45 places to #661 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NOVT</link>
+   <guid isPermaLink="false">2026-11-19-US-NOVT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 45 places to #661 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Novanta: Unusual burst of news coverage (30-day tone -0.09)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NOVT</link>
+   <guid isPermaLink="false">2026-11-18-US-NOVT-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone -0.09). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Novanta: Rank moved up 63 places to #613 (score 42)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NOVT</link>
+   <guid isPermaLink="false">2026-11-17-US-NOVT-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 63 places to #613 (score 42). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>Novanta: Rank moved down 162 places to #665 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NOVT</link>
+   <guid isPermaLink="false">2026-11-13-US-NOVT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 162 places to #665 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

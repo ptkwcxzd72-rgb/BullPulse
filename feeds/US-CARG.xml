@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-CARG.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: CarGurus (CARG)</title>
+  <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+  <description>Alerts for CarGurus from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>CarGurus: Rank moved down 22 places to #752 (score 32)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-27-US-CARG-rank</guid>
+   <pubDate>Fri, 27 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #752 (score 32). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Rank moved down 24 places to #730 (score 33)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-25-US-CARG-rank</guid>
+   <pubDate>Wed, 25 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 24 places to #730 (score 33). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Rank moved up 127 places to #706 (score 34)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-24-US-CARG-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 127 places to #706 (score 34). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Rank moved down 182 places to #833 (score 24)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-20-US-CARG-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 182 places to #833 (score 24). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-20-US-CARG-trend</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Rank moved up 21 places to #651 (score 39)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-19-US-CARG-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #651 (score 39). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Unusual burst of news coverage (30-day tone +0.06)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-17-US-CARG-news</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.06). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-17-US-CARG-early</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>CarGurus: Rank moved up 43 places to #630 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-CARG</link>
+   <guid isPermaLink="false">2026-11-13-US-CARG-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 43 places to #630 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>

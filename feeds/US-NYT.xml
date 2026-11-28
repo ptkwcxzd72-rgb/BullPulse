@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://bullpulse.co.uk/feeds/US-NYT.xml" rel="self" type="application/rss+xml"></atom:link>
+  <title>BullPulse: New York Times Company (NYT)</title>
+  <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+  <description>Alerts for New York Times Company from the BullPulse nightly screen.</description>
+  <ttl>720</ttl>
+  <item>
+   <title>New York Times Company: Rank moved down 68 places to #798 (score 27)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-24-US-NYT-rank</guid>
+   <pubDate>Tue, 24 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 68 places to #798 (score 27). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Rank moved up 38 places to #730 (score 31)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-20-US-NYT-rank</guid>
+   <pubDate>Fri, 20 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 38 places to #730 (score 31). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Rank moved down 165 places to #768 (score 29)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-19-US-NYT-rank</guid>
+   <pubDate>Thu, 19 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 165 places to #768 (score 29). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Rank moved up 21 places to #603 (score 43)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-18-US-NYT-rank</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 21 places to #603 (score 43). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Closed below its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-18-US-NYT-trend</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed below its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Unusual burst of news coverage (30-day tone +0.21)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-18-US-NYT-news</guid>
+   <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Unusual burst of news coverage (30-day tone +0.21). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Rank moved up 20 places to #624 (score 41)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-17-US-NYT-rank</guid>
+   <pubDate>Tue, 17 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #624 (score 41). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Rank moved up 20 places to #644 (score 40)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-16-US-NYT-rank</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved up 20 places to #644 (score 40). BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Closed back above its 200-day average</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-16-US-NYT-trend</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Closed back above its 200-day average. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Joined the early trend changes screen</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-16-US-NYT-early</guid>
+   <pubDate>Mon, 16 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Joined the early trend changes screen. BullPulse is a research screen, not investment advice.</description>
+  </item>
+  <item>
+   <title>New York Times Company: Rank moved down 22 places to #664 (score 38)</title>
+   <link>https://bullpulse.co.uk/app.html#US-NYT</link>
+   <guid isPermaLink="false">2026-11-13-US-NYT-rank</guid>
+   <pubDate>Fri, 13 Nov 2026 22:00:00 +0000</pubDate>
+   <description>Rank moved down 22 places to #664 (score 38). BullPulse is a research screen, not investment advice.</description>
+  </item>
+ </channel>
+</rss>
